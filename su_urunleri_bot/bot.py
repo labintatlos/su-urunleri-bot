@@ -223,6 +223,53 @@ def kb(rows):
     return InlineKeyboardMarkup([[InlineKeyboardButton(title, callback_data=data) for title, data in row] for row in rows])
 
 
+# ── Shared visual language ────────────────────────────────────────────────
+# Telegram gives us HTML and Unicode only, so hierarchy has to come from a
+# small, consistently applied set of building blocks rather than styling.
+
+HR = '━━━━━━━━━━━━━━━━━━━━'
+
+
+def progress_bar(current, total, width=10):
+    """Render '▰▰▰▱▱▱▱▱▱▱ 3/12' for a step in a multi-step flow."""
+    total = max(int(total), 1)
+    current = min(max(int(current), 0), total)
+    filled = round(width * current / total)
+    return f'{"▰" * filled}{"▱" * (width - filled)}  {current}/{total}'
+
+
+def header(icon, title, subtitle=None):
+    """A consistent title block: icon + bold caps title, optional subtitle."""
+    out = f'{icon} <b>{esc(title)}</b>'
+    if subtitle:
+        out += f'\n<i>{esc(subtitle)}</i>'
+    return out
+
+
+def field(label, value, icon=''):
+    """One aligned 'label … value' row for a detail card."""
+    prefix = f'{icon} ' if icon else ''
+    return f'{prefix}{esc(label)}: <b>{esc(value)}</b>'
+
+
+def badge(state, title, detail=''):
+    """A prominent status line: state is 'ok', 'warn' or 'stop'."""
+    icon = {'ok': '🟢', 'warn': '🟡', 'stop': '🔴'}.get(state, 'ℹ️')
+    out = f'{icon} <b>{esc(title)}</b>'
+    if detail:
+        out += f'\n{detail}'
+    return out
+
+
+def tally(answers):
+    """Running counts for a checklist: '✅ 3 · ❌ 1 · ⚪ 2 · ⋯ 6'."""
+    ok = sum(1 for a in answers if a == 'ok')
+    bad = sum(1 for a in answers if a == 'bad')
+    skip = sum(1 for a in answers if a == 'skip')
+    left = sum(1 for a in answers if a is None)
+    return f'✅ {ok}  ·  ❌ {bad}  ·  ⚪ {skip}  ·  ⋯ {left}'
+
+
 
 
 
@@ -1076,19 +1123,38 @@ async def show_species(q, kind, sid, context=None):
     today = audit_date(context) if context is not None and context.user_data.get('guided_active') else datetime.now(TZ).date()
     closed = any(in_date_range(today, span) for span in bans)
     title = 'Ticari — 6/1' if kind == 'commercial' else 'Amatör — 6/2'
-    text = f'🐟 <b>{esc(row["name"])}</b>\n<b>{title}</b>\n\n'
+    text = f'{header("🐟", row["name"], title)}\n{HR}\n'
     if row['min_cm'] is not None:
-        text += f'📏 Asgari boy: <b>{row["min_cm"]:g} cm</b>\n'
+        text += field('Asgari boy', f'{row["min_cm"]:g} cm', '📏') + '\n'
     if row['min_kg'] is not None:
-        text += f'⚖️ Asgari ağırlık: <b>{row["min_kg"]:g} kg</b>\n'
+        text += field('Asgari ağırlık', f'{row["min_kg"]:g} kg', '⚖️') + '\n'
     if kind == 'amateur':
-        text += f'🎒 Alıkonulabilir miktar: <b>{esc(row["limit_text"])}</b>\n'
+        text += field('Alıkonulabilir miktar', row['limit_text'], '🎒') + '\n'
     if bans:
         human = ', '.join(span.replace('/', ' – ') for span in bans)
-        text += f'📅 Zaman yasağı: <b>{esc(human)}</b>\n'
-        text += f'🔴 <b>{today.strftime("%d.%m.%Y")} tarihi bu tür için kaydedilmiş zaman yasağı aralığına denk geliyor.</b> İzin ve istisnalar varsa özel maddeden ayrıca kontrol edilmelidir.\n' if closed else f'🟢 {today.strftime("%d.%m.%Y")}: kaydedilmiş zaman yasağı aralığına denk gelmiyor; özel saha/izin/kota hükümleri yine devam edebilir.\n'
+        text += field('Zaman yasağı', human, '📅') + '\n'
+        stamp = today.strftime('%d.%m.%Y')
+        text += HR + '\n'
+        if closed:
+            text += badge(
+                'stop', f'{stamp} — ZAMAN YASAĞI DÖNEMİ',
+                'Bu tarih, tür için kaydedilmiş zaman yasağı aralığına denk geliyor. '
+                'İzin ve istisnalar varsa özel maddeden ayrıca kontrol edilmelidir.',
+            ) + '\n'
+        else:
+            text += badge(
+                'ok', f'{stamp} — Yasak aralığı dışında',
+                'Kaydedilmiş zaman yasağı aralığına denk gelmiyor; özel saha/izin/kota '
+                'hükümleri yine devam edebilir.',
+            ) + '\n'
     else:
-        text += '📅 Boy/miktar veri satırında tek bir zaman yasağı aralığı kaydedilmemiştir. Türün özel maddesi varsa bölge, kota, izin veya dönem hükümleri ayrıca kontrol edilmelidir.\n'
+        text += HR + '\n'
+        text += badge(
+            'warn', 'Zaman yasağı kaydı yok',
+            'Boy/miktar veri satırında tek bir zaman yasağı aralığı kaydedilmemiştir. '
+            'Türün özel maddesi varsa bölge, kota, izin veya dönem hükümleri ayrıca '
+            'kontrol edilmelidir.',
+        ) + '\n'
 
     source = '61' if kind == 'commercial' else '62'
     article = 17 if kind == 'commercial' else 15
@@ -1336,12 +1402,16 @@ async def guide_render(q, context, idx):
     item = g['rows'][idx]
     answers = context.user_data.get('guide_answers') or [None] * len(g['rows'])
     current = answers[idx] if idx < len(answers) else None
-    state = {'ok':'✅ Uygun', 'bad':'❌ Uygunsuz', 'skip':'⚪ Kontrol Edilmedi'}.get(current, 'Henüz işaretlenmedi')
+    state = {'ok':'✅ Uygun', 'bad':'❌ Uygunsuz', 'skip':'⚪ Kontrol Edilmedi'}.get(current, '— Henüz işaretlenmedi')
     text = (
-        f'📋 <b>{esc(g["short_title"])}</b> — {idx+1}/{len(g["rows"])}\n\n'
+        f'{header("📋", g["short_title"])}\n'
+        f'{progress_bar(idx + 1, len(g["rows"]))}\n'
+        f'{tally(answers)}\n'
+        f'{HR}\n\n'
         f'<b>{esc(item["text"])}</b>\n\n'
+        f'{HR}\n'
         f'📚 <i>{esc(guide_ref_label(item["ref"]))}</i>\n'
-        f'İşaret: <b>{esc(state)}</b>'
+        f'🔖 İşaret: <b>{esc(state)}</b>'
     )
     rows = [
         [('✅ Uygun', f'guide:ans:{idx}:ok'), ('❌ Uygunsuz', f'guide:ans:{idx}:bad')],
@@ -1859,9 +1929,11 @@ async def audit_quick_render(q, context, idx):
     item = qs[idx]
     subject = SUBJECT_LABEL.get(context.user_data.get('audit_subject'), 'Denetim')
     text = (
-        f'🛡️ <b>DURUMA ÖZEL DENETİM</b> — {idx+1}/{len(qs)}\n'
-        f'<i>{esc(subject)}</i>\n\n'
-        f'{esc(item["q"])}\n\n'
+        f'{header("🛡️", "DURUMA ÖZEL DENETİM", subject)}\n'
+        f'{progress_bar(idx + 1, len(qs))}\n'
+        f'{HR}\n\n'
+        f'<b>{esc(item["q"])}</b>\n\n'
+        f'{HR}\n'
         '<i>“Bilinmiyor” seçeneği ihlal kararı üretmez; kontrol edilmesi gereken eksik unsur olarak sonuçta gösterilir.</i>'
     )
     await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([

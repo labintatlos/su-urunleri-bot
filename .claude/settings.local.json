@@ -18,7 +18,10 @@
       "Bash(sort -u -t: -k3)",
       "Bash(python -m py_compile bot.py db.py)",
       "Bash(TELEGRAM_TOKEN=123456:AAFakeTokenForVerificationOnly python -c ' *)",
-      "Bash(TELEGRAM_TOKEN=123456:AAFake python -c ' *)"
+      "Bash(TELEGRAM_TOKEN=123456:AAFake python -c ' *)",
+      "Bash(python -m py_compile bot.py)",
+      "Bash(PYTHONIOENCODING=utf-8 TELEGRAM_TOKEN=123456:AAFake python -c ' *)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)"
     ]
   }
 }
