@@ -10,8 +10,8 @@ Usage:
 
 import sys
 import argparse
-import asyncio
 
+from bot import __version__
 from bot.main import main
 from bot.health import get_health
 from bot.logger import setup_logger
@@ -49,7 +49,7 @@ def main_entry():
     parser.add_argument(
         '--version',
         action='version',
-        version='%(prog)s 5.0.0'
+        version=f'%(prog)s {__version__}'
     )
 
     args = parser.parse_args()
@@ -62,9 +62,9 @@ def main_entry():
     try:
         logger.info("=" * 60)
         logger.info("SU ÜRÜNLERİ DENETIM ASİSTANI - TELEGRAM BOT")
-        logger.info("Versiyon: 5.0.0")
+        logger.info(f"Versiyon: {__version__}")
         logger.info("=" * 60)
-        asyncio.run(main())
+        main()
     except KeyboardInterrupt:
         logger.info("Bot stopped by user")
         sys.exit(0)

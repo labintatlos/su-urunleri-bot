@@ -3,7 +3,6 @@ Main application entry point.
 Initializes and runs the Telegram bot.
 """
 
-import asyncio
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -36,7 +35,7 @@ from bot.handlers.callback_handlers import (
 logger = setup_logger(__name__)
 
 
-async def initialize_app() -> Application:
+def initialize_app() -> Application:
     """Initialize the Telegram bot application."""
     config = get_config()
 
@@ -154,13 +153,18 @@ async def handle_text_message(update, context):
         )
 
 
-async def main():
-    """Main entry point."""
+def main():
+    """Main entry point.
+
+    Note: this is deliberately synchronous. Application.run_polling() is a
+    blocking call that creates and owns its own event loop, so it must not be
+    awaited or run inside asyncio.run().
+    """
     try:
         logger.info("Starting bot application")
 
         # Initialize app
-        app = await initialize_app()
+        app = initialize_app()
 
         # Get config
         config = get_config()
@@ -177,7 +181,7 @@ async def main():
 
         # Run bot
         logger.info("Starting polling")
-        await app.run_polling(
+        app.run_polling(
             allowed_updates=["message", "callback_query", "my_chat_member"],
             drop_pending_updates=True,
         )
@@ -190,4 +194,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

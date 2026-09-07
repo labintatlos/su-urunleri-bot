@@ -1,6 +1,6 @@
 name: "Su Ürünleri Denetim Asistanı"
 description: "Deniz görev alanı su ürünleri denetimi rehberi - Telegram Bot"
-version: "5.0.2"
+version: "5.0.3"
 slug: "su_urunleri_bot"
 url: "https://github.com/labintatlos/su-urunleri-bot"
 init: false
