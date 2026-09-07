@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
+from telegram import BotCommand, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.constants import ParseMode
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler, filters
 
@@ -307,13 +307,17 @@ async def guard(update):
     return True
 
 
+# Users whose legacy reply keyboard has been cleared during this run.
+_REPLY_KB_CLEARED = set()
+
 MAIN = [
     [('📋 Tekne Türü Kılavuzları', 'guide:menu'), ('🚨 Denetime Başla', 'audit:start')],
     [('📖 Pratik Ceza Rehberi', 'ceza:menu'), ('📖 Pratik Tür Çizelgesi', 'turcizelge:menu')],
     [('🚢 Gemi / Ruhsat / BAGİS', 'vessel:menu')],
     [('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
     [('🧮 Hesaplayıcılar', 'calc:menu'), ('⭐ Favoriler', 'fav:list')],
-    [('🕘 Son Sorgular', 'history'), ('ℹ️ Sürüm', 'about')],
+    [('🕘 Son Sorgular', 'history'), ('❓ Yardım', 'help')],
+    [('ℹ️ Sürüm', 'about')],
 ]
 
 
@@ -325,7 +329,9 @@ async def send_menu(target, user_id=None, edit=False, update=None, context=None,
         've uygulanacak işlemlerin belirlenmesine yardımcı olur.\n\n'
         '📋 <b>Tekne Türü Kılavuzları</b> ile çıkacağınız tekneye özel kontrol föyünü açabilir, '
         'her maddeyi Uygun / Uygunsuz / Kontrol Edilmedi olarak işaretleyebilirsiniz.\n\n'
-        '🚨 <b>Denetime Başla</b> ise bölgeden başlayıp faaliyet, gemi boyu, tarih, av aracı ve türe doğru adım adım ilerleyen yönlendirilmiş kontrolü başlatır.'
+        '🚨 <b>Denetime Başla</b> ise bölgeden başlayıp faaliyet, gemi boyu, tarih, av aracı ve türe doğru adım adım ilerleyen yönlendirilmiş kontrolü başlatır.\n\n'
+        '💬 <b>Aramak için doğrudan yazın.</b> Tür, ceza veya mevzuat kelimesi yazmanız yeterli — '
+        'örn. <code>hamsi</code>, <code>ruhsatsız</code>, <code>BAGİS</code>.'
     )
     rows = list(MAIN)
     if user_id in ADMIN_IDS:
@@ -343,12 +349,20 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await guard(update):
         return
     context.user_data.clear()
-    db.log(update.effective_user.id, 'start')
-    
-    # Send persistent keyboard
-    tmp = await send_or_edit(update, context, '🔄 Arayüz güncelleniyor...', reply_markup=ReplyKeyboardRemove())
-    await tmp.delete()
-    
+    uid = update.effective_user.id
+    db.log(uid, 'start')
+
+    # Older versions sent a persistent reply keyboard; nothing does any more.
+    # Clearing it needs a throwaway message, so only do it once per user per
+    # run instead of flashing it on every /start.
+    if uid not in _REPLY_KB_CLEARED:
+        _REPLY_KB_CLEARED.add(uid)
+        try:
+            tmp = await send_or_edit(update, context, '⚓', reply_markup=ReplyKeyboardRemove())
+            await tmp.delete()
+        except Exception:
+            pass
+
     await send_menu(update.effective_message, update.effective_user.id, update=update, context=context, force_new=True)
 
 
@@ -757,6 +771,12 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return await show_history(q, uid)
     if data == 'about':
         return await show_about(q)
+    if data == 'help':
+        db.log(uid, 'help')
+        return await q.edit_message_text(
+            HELP_TEXT, parse_mode=ParseMode.HTML,
+            reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
+        )
     if data.startswith('fav:add:'):
         _, _, item_type, item_id = data.split(':', 3)
         db.add_fav(uid, item_type, item_id)
@@ -2464,6 +2484,50 @@ async def id_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_or_edit(update, context, f'🆔 Telegram kullanıcı ID’niz: <code>{update.effective_user.id}</code>', parse_mode=ParseMode.HTML)
 
 
+HELP_TEXT = (
+    '<b>❓ YARDIM</b>\n\n'
+    '<b>💬 Doğrudan yazarak arama</b>\n'
+    'Menüde gezmeden, aklınıza gelen kelimeyi yazmanız yeterli. Tür adı, ceza '
+    'konusu veya mevzuat kelimesi yazdığınızda tür, ceza ve madde sonuçları '
+    'birlikte listelenir.\n'
+    '<i>Örnek:</i> <code>hamsi</code> · <code>ruhsatsız</code> · <code>BAGİS</code>\n\n'
+    '<b>📋 Tekne Türü Kılavuzları</b>\n'
+    'Çıkacağınız tekneye özel kontrol föyünü açar. Her maddeyi Uygun / Uygunsuz / '
+    'Kontrol Edilmedi olarak işaretleyip sonunda özet alırsınız.\n\n'
+    '<b>🚨 Denetime Başla</b>\n'
+    'Bölge, faaliyet, gemi boyu, tarih, av aracı ve tür sırasıyla ilerleyen '
+    'yönlendirilmiş denetim akışıdır.\n\n'
+    '<b>⌨️ Komutlar</b>\n'
+    '/start · /menu — Ana menüyü açar\n'
+    '/help — Bu yardım ekranı\n'
+    '/id — Telegram kullanıcı ID’nizi gösterir\n\n'
+    '<b>⭐ Favoriler ve 🕘 Son Sorgular</b>\n'
+    'Sık kullandığınız tür, ceza ve maddeleri favorilere ekleyip ana menüden '
+    'hızlıca açabilirsiniz.'
+)
+
+
+async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await guard(update):
+        return
+    db.log(update.effective_user.id, 'help')
+    await send_or_edit(
+        update, context, HELP_TEXT,
+        parse_mode=ParseMode.HTML,
+        reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
+    )
+
+
+async def post_init(application):
+    """Populate Telegram's "/" command menu so the commands are discoverable."""
+    await application.bot.set_my_commands([
+        BotCommand('start', 'Ana menüyü aç'),
+        BotCommand('menu', 'Ana menüyü aç'),
+        BotCommand('help', 'Yardım ve kullanım'),
+        BotCommand('id', 'Telegram ID’mi göster'),
+    ])
+
+
 
 async def error_handler(update, context):
     import traceback
@@ -2481,9 +2545,10 @@ async def error_handler(update, context):
 
 def main():
     db.init_db()
-    app = Application.builder().token(TOKEN).build()
+    app = Application.builder().token(TOKEN).post_init(post_init).build()
     app.add_handler(CommandHandler('start', start))
     app.add_handler(CommandHandler('menu', start))
+    app.add_handler(CommandHandler('help', help_cmd))
     app.add_handler(CommandHandler('admin', admin_cmd))
     app.add_handler(CommandHandler('istatistik', admin_cmd))
     app.add_handler(CommandHandler('id', id_cmd))
