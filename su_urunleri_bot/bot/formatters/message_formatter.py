@@ -74,8 +74,9 @@ Yardım için <code>/help</code> yazabilirsiniz."""
     @staticmethod
     def article_message(article: Dict) -> str:
         """Format article/regulation message."""
+        title = article.get('title') or f"Madde {article.get('article', '?')}"
         lines = [
-            f"📚 <b>{TextFormatter.escape_html(article.get('title', f'Madde {article.get(\"article\")}'))}</b>",
+            f"📚 <b>{TextFormatter.escape_html(title)}</b>",
             f"Kaynak: {TextFormatter.escape_html(article.get('source', '?'))}",
             f"Sayfa: {article.get('page_start', '?')}-{article.get('page_end', '?')}",
             "",

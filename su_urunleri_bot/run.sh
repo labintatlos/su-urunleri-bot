@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-bashio::log.info "Su Ürünleri Denetim Asistanı başlatılıyor (v5.0.0)..."
+bashio::log.info "Su Ürünleri Denetim Asistanı başlatılıyor..."
 
 if ! bashio::config.has_value 'bot_token'; then
   bashio::log.error "Telegram Bot Token boş bırakılamaz!"

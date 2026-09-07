@@ -10,7 +10,10 @@
       "Bash(git push *)",
       "Bash(gh --version)",
       "Bash(git rm *)",
-      "Bash(git commit -q -m ' *)"
+      "Bash(git commit -q -m ' *)",
+      "Bash(grep -rn 'f\"[^\"]*\\\\\\\\\\\\\\\\\"' bot/ run.py)",
+      "Bash(python -m compileall -q bot/ run.py)",
+      "Bash(BOT_TOKEN=dummy TELEGRAM_TOKEN=dummy python -c \"import bot.main; print\\('import OK'\\)\")"
     ]
   }
 }
