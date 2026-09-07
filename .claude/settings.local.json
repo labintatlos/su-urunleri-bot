@@ -13,7 +13,11 @@
       "Bash(git commit -q -m ' *)",
       "Bash(grep -rn 'f\"[^\"]*\\\\\\\\\\\\\\\\\"' bot/ run.py)",
       "Bash(python -m compileall -q bot/ run.py)",
-      "Bash(BOT_TOKEN=dummy TELEGRAM_TOKEN=dummy python -c \"import bot.main; print\\('import OK'\\)\")"
+      "Bash(BOT_TOKEN=dummy TELEGRAM_TOKEN=dummy python -c \"import bot.main; print\\('import OK'\\)\")",
+      "Bash(grep -rn \"placeholder\\\\|would be implemented\\\\|stub\\\\|TODO\\\\|pass$\" bot/handlers/)",
+      "Bash(sort -u -t: -k3)",
+      "Bash(python -m py_compile bot.py db.py)",
+      "Bash(TELEGRAM_TOKEN=123456:AAFakeTokenForVerificationOnly python -c ' *)"
     ]
   }
 }
