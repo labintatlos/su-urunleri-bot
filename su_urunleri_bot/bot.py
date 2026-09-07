@@ -364,7 +364,6 @@ MAIN = [
     [('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
     [('🧮 Hesaplayıcılar', 'calc:menu'), ('⭐ Favoriler', 'fav:list')],
     [('🕘 Son Sorgular', 'history'), ('❓ Yardım', 'help')],
-    [('ℹ️ Sürüm', 'about')],
 ]
 
 
@@ -816,8 +815,6 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return await show_favorites(q, uid)
     if data == 'history':
         return await show_history(q, uid)
-    if data == 'about':
-        return await show_about(q)
     if data == 'help':
         db.log(uid, 'help')
         return await q.edit_message_text(
@@ -1606,12 +1603,44 @@ async def guide_from_gear(q, context):
     )
 
 
+AUDIT_STEPS = 7
+
+
+def audit_breadcrumb(context):
+    """Everything the guided audit has captured so far, one line per answer."""
+    d = context.user_data
+    parts = []
+    if d.get('audit_region'):
+        parts.append(f'\U0001f30a {esc(REGION_LABEL.get(d["audit_region"], d["audit_region"]))}')
+    if d.get('audit_activity'):
+        line = '\u2693 ' + ('Ticari' if d['audit_activity'] == 'commercial' else 'Amat\u00f6r')
+        if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
+            line += f' \u00b7 {esc(audit_length_label(context))}'
+        parts.append(line)
+    if d.get('audit_date'):
+        parts.append('\U0001f4c5 ' + audit_date(context).strftime('%d.%m.%Y'))
+    if d.get('audit_subject'):
+        parts.append(f'\U0001f3af {esc(SUBJECT_LABEL.get(d["audit_subject"], d["audit_subject"]))}')
+    if d.get('audit_gear'):
+        parts.append(f'\U0001fa9d {esc(d["audit_gear"])}')
+    return '\n'.join(parts)
+
+
+def audit_step(context, n):
+    """Header for step n: title, progress bar and the answers so far."""
+    out = '\U0001f6a8 <b>YEN\u0130 DENET\u0130M</b>\n' + progress_bar(n, AUDIT_STEPS) + '\n'
+    crumbs = audit_breadcrumb(context)
+    if crumbs:
+        out += HR + '\n' + crumbs + '\n'
+    return out + HR + '\n\n'
+
+
 async def audit_start(q, context):
     context.user_data.clear()
     context.user_data['guided_active'] = True
     db.log(q.from_user.id, 'audit_start')
     await q.edit_message_text(
-        '🚨 <b>YENİ DENETİM — 1. ADIM</b>\n\n'
+        audit_step(context, 1) +
         'Önce <b>deniz bölgesini</b> seçin. Sonraki sorular seçtiğiniz bölgeye göre daraltılacaktır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
@@ -1625,10 +1654,8 @@ async def audit_start(q, context):
 
 
 async def audit_choose_activity(q, context):
-    region = REGION_LABEL.get(context.user_data.get('audit_region'), context.user_data.get('audit_region'))
     await q.edit_message_text(
-        '🚨 <b>YENİ DENETİM — 2. ADIM</b>\n\n'
-        f'Bölge: <b>{esc(region)}</b>\n\n'
+        audit_step(context, 2) +
         'Kontrol edilen faaliyet hangi kapsamda?',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
@@ -1639,10 +1666,8 @@ async def audit_choose_activity(q, context):
 
 
 async def audit_choose_length(q, context):
-    activity = context.user_data.get('audit_activity')
     await q.edit_message_text(
-        '🚨 <b>YENİ DENETİM — 3. ADIM</b>\n\n'
-        f'Faaliyet: <b>{"Ticari" if activity == "commercial" else "Amatör"}</b>\n\n'
+        audit_step(context, 3) +
         'Gemi/tekne durumunu seçin. Boy grubu; BAGİS, donanım ve yaptırım değerlendirmesinde kullanılacaktır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
@@ -1657,10 +1682,7 @@ async def audit_choose_length(q, context):
 
 async def audit_choose_date(q, context):
     await q.edit_message_text(
-        '🚨 <b>YENİ DENETİM — 4. ADIM</b>\n\n'
-        f'Bölge: <b>{esc(REGION_LABEL.get(context.user_data.get("audit_region"), "—"))}</b>\n'
-        f'Faaliyet: <b>{"Ticari" if context.user_data.get("audit_activity") == "commercial" else "Amatör"}</b>\n'
-        f'Gemi/Tekne: <b>{esc(audit_length_label(context))}</b>\n\n'
+        audit_step(context, 4) +
         'Olay veya kontrol tarihi nedir? Tarih; kapalı dönem ve tür zaman yasaklarının değerlendirilmesinde kullanılır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
@@ -1674,10 +1696,7 @@ async def audit_choose_subject(q, context):
     activity = context.user_data.get('audit_activity')
     d = audit_date(context)
     text = (
-        '🚨 <b>YENİ DENETİM — 5. ADIM</b>\n\n'
-        f'🌊 {esc(REGION_LABEL.get(context.user_data.get("audit_region"), "—"))}\n'
-        f'⚓ {"Ticari" if activity == "commercial" else "Amatör"} · {esc(audit_length_label(context))}\n'
-        f'📅 {d.strftime("%d.%m.%Y")}\n\n'
+        audit_step(context, 5) +
         '<b>Denetimin ana konusu nedir?</b> Bundan sonra yalnız ilgili ayrıntılar sorulacaktır.'
     )
     if activity == 'commercial':
@@ -1721,7 +1740,7 @@ async def audit_choose_gear(q, context):
         ]
     rows += [[('↩️ Konuyu Değiştir', 'audit:subjectmenu'), ('🏠 Ana Menü', 'menu')]]
     await q.edit_message_text(
-        '🚨 <b>YENİ DENETİM — 6. ADIM</b>\n\n'
+        audit_step(context, 6) +
         'Kullanılan veya kontrol edilen <b>av aracı / yöntemi</b> seçin.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb(rows),
@@ -1735,9 +1754,8 @@ async def audit_after_gear(q, context):
     if flags:
         warning = '\n\n' + '\n'.join(f'🔴 {esc(x["tag"])}' for x in flags[:3])
     await q.edit_message_text(
-        '🚨 <b>YENİ DENETİM — 7. ADIM</b>\n\n'
-        f'Av aracı/yöntem: <b>{esc(gear)}</b>{warning}\n\n'
-        'Kontrol edilen ürün/tür belli mi?',
+        audit_step(context, 7) +
+        f'Kontrol edilen ürün/tür belli mi?{warning}',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
             [('🐟 Türü seç / yaz', 'audit:guided:species')],
@@ -2191,17 +2209,6 @@ async def show_history(q, uid):
     await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
 
-async def show_about(q):
-    text = (
-        '<b>ℹ️ SU ÜRÜNLERİ KOLLUK ASİSTANI v4.1.0</b>\n\n'
-        '📋 19 ayrı tekne/av yöntemi için sahaya özel interaktif kontrol föyleri içerir.\n'
-        '🚨 Bölgeden başlayarak faaliyet, gemi/tekne durumu, tarih, denetim konusu, av aracı ve türe doğru ilerleyen yönlendirilmiş denetim akışı kullanır.\n'
-        '🌊 Normal görev akışı deniz sahasına odaklanır.\n'
-        '⚖️ Föyde uygunsuz işaretlenen maddelerden doğrudan yaptırım aramasına ve ilgili kaynak maddesine geçilebilir.'
-    )
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
-
-
 async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await guard(update):
         return
@@ -2418,10 +2425,13 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if mode is None:
         # Doğal Dil / Genel Arama
-        results_species_com = db.search_species(text, 'commercial', 2)
-        results_species_ama = db.search_species(text, 'amateur', 2)
-        results_penalties = db.search_penalties(text, 3)
-        results_articles = db.search_articles(text, 3)
+        # Honour the configured RESULT_LIMIT instead of fixed counts, while
+        # keeping each category small enough that the list stays scannable.
+        per = max(2, LIMIT // 2)
+        results_species_com = db.search_species(text, 'commercial', per)
+        results_species_ama = db.search_species(text, 'amateur', per)
+        results_penalties = db.search_penalties(text, per)
+        results_articles = db.search_articles(text, per)
         
         rows = []
         # Türleri ekle
@@ -2444,16 +2454,38 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if rows:
             rows.append([('🏠 Ana Menü', 'menu')])
             db.log(uid, 'general_search', text)
-            return await send_or_edit(update, context, 
-                f'🔍 <b>"{esc(text)}"</b> için karma arama sonuçları:',
+            counts = []
+            n_species = len(results_species_com) + len(results_species_ama)
+            if n_species:
+                counts.append(f'🐟 Tür {n_species}')
+            if results_penalties:
+                counts.append(f'⚖️ Ceza {len(results_penalties)}')
+            if results_articles:
+                counts.append(f'📚 Mevzuat {len(results_articles)}')
+            body = header('🔍', f'“{text}”', 'Karma arama sonuçları')
+            body += '\n' + HR + '\n' + '  ·  '.join(counts)
+            return await send_or_edit(update, context,
+                body,
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb(rows)
             )
         else:
-            return await send_or_edit(update, context, 
-                f'🔍 <b>"{esc(text)}"</b> ile eşleşen tür, ceza veya mevzuat bulunamadı.\n\nFarklı bir kelime deneyin veya alt kısımdaki sabit butonları kullanın.',
+            body = header('🔍', f'“{text}”', 'Sonuç bulunamadı')
+            body += (
+                '\n' + HR + '\n'
+                'Tür, ceza veya mevzuat kayıtlarında eşleşme yok.\n\n'
+                '<b>Deneyebilecekleriniz</b>\n'
+                '• Kelimenin kökünü yazın — <code>ruhsat</code>, <code>ağ</code>\n'
+                '• Tür adını tek başına yazın — <code>lüfer</code>\n'
+                '• Aşağıdaki menülerden ilerleyin'
+            )
+            return await send_or_edit(update, context,
+                body,
                 parse_mode=ParseMode.HTML,
-                reply_markup=kb([[('🏠 Ana Menü', 'menu')]])
+                reply_markup=kb([
+                    [('📖 Ceza Rehberi', 'ceza:menu'), ('📖 Tür Çizelgesi', 'turcizelge:menu')],
+                    [('🏠 Ana Menü', 'menu')],
+                ])
             )
 
     await send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
