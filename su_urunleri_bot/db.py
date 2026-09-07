@@ -82,6 +82,8 @@ def init_db():
     CREATE TABLE IF NOT EXISTS users(user_id INTEGER PRIMARY KEY, username TEXT, first_name TEXT, last_seen TEXT);
     CREATE TABLE IF NOT EXISTS query_log(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, action TEXT, query TEXT, created_at TEXT);
     CREATE TABLE IF NOT EXISTS favorites(user_id INTEGER, item_type TEXT, item_id TEXT, created_at TEXT, PRIMARY KEY(user_id,item_type,item_id));
+    CREATE TABLE IF NOT EXISTS inspections(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, kind TEXT, title TEXT, state TEXT, report TEXT, status TEXT, created_at TEXT, updated_at TEXT);
+    CREATE INDEX IF NOT EXISTS idx_inspections_user ON inspections(user_id, status, updated_at);
     ''')
     old = q.execute("SELECT v FROM meta WHERE k='dataset'").fetchone()
     if not old or old[0] != DATASET:
@@ -269,3 +271,85 @@ def admin_audit_activity():
     ''').fetchall()
     c.close()
     return guides, searches
+
+
+# ── Inspections ───────────────────────────────────────────────────────────
+# A guided audit or a checklist run is kept as a row so the work survives a
+# restart: one 'open' draft per user, promoted to 'done' with its report text
+# when the inspector finishes.
+
+def _now():
+    return datetime.now().isoformat(timespec='seconds')
+
+
+def save_draft(uid, kind, title, state):
+    """Create or refresh this user's open draft; returns its id."""
+    blob = json.dumps(state, ensure_ascii=False, default=str)
+    c = con()
+    row = c.execute("SELECT id FROM inspections WHERE user_id=? AND status='open'", (uid,)).fetchone()
+    if row:
+        iid = row['id']
+        c.execute('UPDATE inspections SET kind=?,title=?,state=?,updated_at=? WHERE id=?',
+                  (kind, title, blob, _now(), iid))
+    else:
+        cur = c.execute('INSERT INTO inspections(user_id,kind,title,state,report,status,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?)',
+                        (uid, kind, title, blob, '', 'open', _now(), _now()))
+        iid = cur.lastrowid
+    c.commit()
+    c.close()
+    return iid
+
+
+def open_draft(uid):
+    c = con()
+    r = c.execute("SELECT * FROM inspections WHERE user_id=? AND status='open' ORDER BY updated_at DESC LIMIT 1", (uid,)).fetchone()
+    c.close()
+    return r
+
+
+def drop_draft(uid):
+    c = con()
+    c.execute("DELETE FROM inspections WHERE user_id=? AND status='open'", (uid,))
+    c.commit()
+    c.close()
+
+
+def finish_inspection(uid, kind, title, state, report):
+    """Close this user's draft as a completed record; returns its id."""
+    blob = json.dumps(state, ensure_ascii=False, default=str)
+    c = con()
+    row = c.execute("SELECT id FROM inspections WHERE user_id=? AND status='open'", (uid,)).fetchone()
+    if row:
+        iid = row['id']
+        c.execute("UPDATE inspections SET kind=?,title=?,state=?,report=?,status='done',updated_at=? WHERE id=?",
+                  (kind, title, blob, report, _now(), iid))
+    else:
+        cur = c.execute("INSERT INTO inspections(user_id,kind,title,state,report,status,created_at,updated_at) VALUES(?,?,?,?,?,'done',?,?)",
+                        (uid, kind, title, blob, report, _now(), _now()))
+        iid = cur.lastrowid
+    c.commit()
+    c.close()
+    return iid
+
+
+def list_inspections(uid, limit=10):
+    c = con()
+    rows = c.execute("SELECT * FROM inspections WHERE user_id=? AND status='done' ORDER BY updated_at DESC LIMIT ?", (uid, int(limit))).fetchall()
+    c.close()
+    return rows
+
+
+def get_inspection(iid):
+    c = con()
+    r = c.execute('SELECT * FROM inspections WHERE id=?', (int(iid),)).fetchone()
+    c.close()
+    return r
+
+
+def load_state(row):
+    """Decode a stored state blob, tolerating a corrupt or empty column."""
+    try:
+        data = json.loads(row['state'] or '{}')
+        return data if isinstance(data, dict) else {}
+    except (ValueError, TypeError):
+        return {}

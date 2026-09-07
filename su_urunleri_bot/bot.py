@@ -1,4 +1,5 @@
 import html
+import io
 import json
 import os
 import re
@@ -380,6 +381,13 @@ async def send_menu(target, user_id=None, edit=False, update=None, context=None,
         'örn. <code>hamsi</code>, <code>ruhsatsız</code>, <code>BAGİS</code>.'
     )
     rows = list(MAIN)
+    if user_id:
+        try:
+            if db.open_draft(user_id):
+                rows = [[('\u21a9\ufe0f Yar\u0131da Kalan Denetime Devam', 'insp:resume')],
+                        [('\U0001f5d1 Yar\u0131da Kalan\u0131 Sil', 'insp:discard')]] + rows
+        except Exception:
+            pass
     if user_id in ADMIN_IDS:
         rows = rows + [[('🔐 Yönetici Paneli', 'admin:panel')]]
     if edit:
@@ -815,6 +823,14 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return await show_favorites(q, uid)
     if data == 'history':
         return await show_history(q, uid)
+    if data.startswith('insp:report:'):
+        return await send_inspection_report(q, data.split(':')[2])
+    if data == 'insp:resume':
+        return await resume_draft(q, context)
+    if data == 'insp:discard':
+        db.drop_draft(uid)
+        context.user_data.clear()
+        return await send_menu(q, uid, edit=True)
     if data == 'help':
         db.log(uid, 'help')
         return await q.edit_message_text(
@@ -1435,6 +1451,7 @@ async def guide_answer(q, context, idx, ans):
         answers.append(None)
     if 0 <= idx < len(answers):
         answers[idx] = ans
+    remember_draft(q, context, 'guide')
     next_idx = idx + 1
     if next_idx >= len(g['rows']):
         return await guide_finish(q, context)
@@ -1456,6 +1473,109 @@ def guide_result_parts(context):
         else:
             unchecked.append((idx, item))
     return g, ok, bad, unchecked
+
+
+def inspection_title(context, kind):
+    """Short label stored with the record and shown in listings."""
+    if kind == 'guide':
+        g = guide_current(context)
+        return g['short_title'] if g else 'Kontrol f\u00f6y\u00fc'
+    region = REGION_LABEL.get(context.user_data.get('audit_region'), '\u2014')
+    return f'Denetim \u2014 {region}'
+
+
+def remember_draft(q, context, kind):
+    """Snapshot the in-progress inspection so a restart cannot lose it."""
+    try:
+        db.save_draft(q.from_user.id, kind, inspection_title(context, kind), dict(context.user_data))
+    except Exception:
+        # Persistence is a safety net; never let it break the flow.
+        pass
+
+
+def build_report(context, kind):
+    """Plain-text tutanak. No HTML, so it is safe to store and to send as .txt."""
+    d = context.user_data
+    out = []
+    out.append('SU \u00dcR\u00dcNLER\u0130 DENET\u0130M TUTANA\u011eI')
+    out.append('=' * 44)
+    out.append('D\u00fczenlenme  : ' + datetime.now(TZ).strftime('%d.%m.%Y %H:%M'))
+    if d.get('audit_region'):
+        out.append('B\u00f6lge        : ' + str(REGION_LABEL.get(d['audit_region'], d['audit_region'])))
+    if d.get('audit_activity'):
+        out.append('Faaliyet     : ' + ('Ticari' if d['audit_activity'] == 'commercial' else 'Amat\u00f6r'))
+    if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
+        out.append('Gemi/Tekne   : ' + audit_length_label(context))
+    if d.get('audit_date'):
+        out.append('Kontrol tar. : ' + audit_date(context).strftime('%d.%m.%Y'))
+    if d.get('audit_subject'):
+        out.append('Konu         : ' + str(SUBJECT_LABEL.get(d['audit_subject'], d['audit_subject'])))
+    if d.get('audit_gear'):
+        out.append('Av arac\u0131     : ' + str(d['audit_gear']))
+    if d.get('audit_species_name'):
+        out.append('T\u00fcr          : ' + str(d['audit_species_name']))
+
+    if kind == 'guide':
+        g, ok, bad, unchecked = guide_result_parts(context)
+        if g:
+            out.append('')
+            out.append('KONTROL F\u00d6Y\u00dc: ' + g['short_title'])
+            out.append('-' * 44)
+            out.append('Uygun            : ' + str(len(ok)))
+            out.append('Uygunsuz         : ' + str(len(bad)))
+            out.append('Kontrol edilmedi : ' + str(len(unchecked)))
+            if bad:
+                out.append('')
+                out.append('UYGUNSUZ \u0130\u015eARETLENENLER')
+                for idx, item in bad:
+                    out.append(f'  {idx + 1}. {item["text"]}')
+                    out.append('      Dayanak: ' + guide_ref_label(item['ref']))
+            if unchecked:
+                out.append('')
+                out.append('KONTROL ED\u0130LMEYENLER')
+                for idx, item in unchecked:
+                    out.append(f'  {idx + 1}. {item["text"]}')
+            measurements = d.get('guide_measurements') or {}
+            if measurements:
+                out.append('')
+                out.append('\u00d6L\u00c7\u00dcM / KAYITLAR')
+                for name, value in measurements.items():
+                    out.append(f'  {name}: {value}')
+
+    out.append('')
+    out.append('-' * 44)
+    out.append('Bu \u00e7\u0131kt\u0131 nihai yapt\u0131r\u0131m karar\u0131 de\u011fildir. Dayanak maddeleri ve')
+    out.append('ceza tablosundaki maddi unsurlar ayr\u0131ca do\u011frulanmal\u0131d\u0131r.')
+    return '\n'.join(out)
+
+
+async def send_inspection_report(q, iid):
+    """Deliver the stored report as a fresh message plus a .txt attachment."""
+    row = db.get_inspection(iid)
+    if not row or not row['report']:
+        return await q.answer('Tutanak bulunamad\u0131.', show_alert=True)
+    payload = io.BytesIO(row['report'].encode('utf-8'))
+    payload.name = 'denetim-' + datetime.now(TZ).strftime('%Y%m%d-%H%M') + '.txt'
+    await q.message.reply_document(
+        document=payload,
+        filename=payload.name,
+        caption='\U0001f4c4 Denetim tutana\u011f\u0131 \u2014 ' + str(row['title']),
+    )
+    await q.answer('Tutanak g\u00f6nderildi.')
+
+
+async def resume_draft(q, context):
+    """Reload the stored draft and drop the inspector back where they stopped."""
+    row = db.open_draft(q.from_user.id)
+    if not row:
+        return await q.answer('Yar\u0131da kalan denetim yok.', show_alert=True)
+    context.user_data.clear()
+    context.user_data.update(db.load_state(row))
+    if row['kind'] == 'guide' and guide_current(context):
+        answers = context.user_data.get('guide_answers') or []
+        idx = next((i for i, a in enumerate(answers) if a is None), 0)
+        return await guide_render(q, context, idx)
+    return await audit_hub_edit(q, context)
 
 
 async def guide_finish(q, context):
@@ -1492,6 +1612,12 @@ async def guide_finish(q, context):
     else:
         rows.append([('↩️ Föye Dön', f'guide:open:{g["key"]}'), ('🏠 Ana Menü', 'menu')])
     db.log(q.from_user.id, 'guide_finish', f'{g["short_title"]}: bad={len(bad)}, unchecked={len(unchecked)}')
+    try:
+        iid = db.finish_inspection(q.from_user.id, 'guide', inspection_title(context, 'guide'),
+                                   dict(context.user_data), build_report(context, 'guide'))
+        rows.insert(0, [('\U0001f4c4 Tutanak \u0130ndir / Payla\u015f', f'insp:report:{iid}')])
+    except Exception:
+        pass
     await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
@@ -1693,6 +1819,7 @@ async def audit_choose_date(q, context):
 
 
 async def audit_choose_subject(q, context):
+    remember_draft(q, context, 'audit')
     activity = context.user_data.get('audit_activity')
     d = audit_date(context)
     text = (
@@ -1748,6 +1875,7 @@ async def audit_choose_gear(q, context):
 
 
 async def audit_after_gear(q, context):
+    remember_draft(q, context, 'audit')
     gear = context.user_data.get('audit_gear')
     flags = build_context_flags(context)
     warning = ''
@@ -1767,6 +1895,7 @@ async def audit_after_gear(q, context):
 
 
 async def audit_hub_edit(q, context):
+    remember_draft(q, context, 'audit')
     activity = context.user_data.get('audit_activity')
     gear = context.user_data.get('audit_gear')
     species = context.user_data.get('audit_species_name')
