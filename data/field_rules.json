@@ -1,0 +1,590 @@
+[
+  {
+    "id": "license_commercial",
+    "cat": "Gemi/Ruhsat",
+    "title": "Ticari avcılık ruhsat/izin",
+    "summary": "Ticari amaçlı avcılık yapan gerçek/tüzel kişiler ile ticari avcılıkta kullanılan gemi ve diğer su vasıtaları için ruhsat tezkeresi veya izin zorunludur; talep edildiğinde gösterilir.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 3
+      },
+      {
+        "s": "reg",
+        "a": 4
+      }
+    ]
+  },
+  {
+    "id": "crew_20",
+    "cat": "Gemi/Ruhsat",
+    "title": "Personel ruhsatı — %20 istisnası",
+    "summary": "Gemide toplam çalışanların %20’sini geçmemek üzere yalnız 16–18 yaş arasındaki balıkçı yardımcıları ruhsat almadan çalıştırılabilir.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 4
+      }
+    ]
+  },
+  {
+    "id": "plate",
+    "cat": "Gemi/Ruhsat",
+    "title": "Ruhsat kod/plaka",
+    "summary": "Gemi ruhsat numarasının Bakanlıkça belirlenen şekilde gemide görünür olarak yazılması zorunludur.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 5
+      },
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "bagis_12",
+    "cat": "BAGİS",
+    "title": "12 m ve üzeri BAGİS",
+    "summary": "Genel kural olarak denizlerde ticari avcılık için ruhsatlandırılmış, boyu 12 m ve üzeri gemilerde Bakanlık sistemine uygun BAGİS cihazı takılı ve çalışır olmalıdır. Ancak Genel Müdürlük, boy veya faaliyet tipine bağlı olmaksızın diğer gemilere de BAGİS takılmasını zorunlu tutabilir; 12 m altı gemi otomatik olarak kapsam dışı kabul edilmemelidir.",
+    "refs": [
+      {
+        "s": "bagis",
+        "a": 5
+      },
+      {
+        "s": "bagis",
+        "a": 12
+      }
+    ]
+  },
+  {
+    "id": "bagis_fault",
+    "cat": "BAGİS",
+    "title": "BAGİS arıza süreci",
+    "summary": "Cihaz çalışmaz veya 6 saat konum göndermemişse en geç 12 saat içinde arıza bildirimi gerekir. Arıza kaydı sonrasında cihaz düzeltilene kadar avcılık yapılamaz.",
+    "refs": [
+      {
+        "s": "bagis",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "e_log",
+    "cat": "Gemi/Ruhsat",
+    "title": "E-seyir defteri",
+    "summary": "12 metre ve üzeri balıkçı gemilerinde avcılık ve avlanan ürünlere ilişkin kayıtların e-seyir defterine girilmesine ilişkin yükümlülükler uygulanır; ayrıca Tebliğde özel tür/faaliyet kayıtları vardır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "primary_gear",
+    "cat": "Av Aracı",
+    "title": "12 m+ birincil av aracı",
+    "summary": "12 m ve üzeri gemiler ruhsatta birincil av aracı olarak belirtilmeyen av aracını kullanamaz/bulunduramaz; Tebliğdeki istisna ve değişiklik tarihleri ayrıca uygulanır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "closed_gear",
+    "cat": "Av Aracı",
+    "title": "Yasak dönemde av aracı bulundurma",
+    "summary": "Avlanma yasağı süresince gemilerde ve istihsal yerlerinde yasak kapsamındaki istihsal vasıtaları bulundurulamaz; Geçiş İzin Belgesi istisnası vardır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "girgir",
+    "cat": "Av Aracı",
+    "title": "Gırgır kontrolü",
+    "summary": "Gırgırda yer, kapalı dönem, derinlik, ağ derinliği ve Ağ Ölçüm Belgesi birlikte kontrol edilmelidir. Akdeniz’de kapalı dönem 15 Nisan–15 Eylül, diğer denizlerde 15 Nisan–31 Ağustos; Karadeniz’de dönemsel 18/24 m derinlik sınırı vardır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 12
+      }
+    ]
+  },
+  {
+    "id": "trol",
+    "cat": "Av Aracı",
+    "title": "Trol kontrolü",
+    "summary": "Her türlü trol yasağı bulunan sahalar, dip trolü kapalı dönem/mesafe/ağ şartları ve ortasu trolü şartları ayrı ayrı kontrol edilmelidir. Marmara ve boğazlarda her türlü trol yasağı Kanun/Tebliğ hükümleriyle değerlendirilir.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 24
+      },
+      {
+        "s": "61",
+        "a": 9
+      },
+      {
+        "s": "61",
+        "a": 10
+      },
+      {
+        "s": "61",
+        "a": 11
+      }
+    ]
+  },
+  {
+    "id": "light",
+    "cat": "Av Aracı",
+    "title": "Işıkla avcılık",
+    "summary": "Karadeniz, Marmara Denizi, İstanbul ve Çanakkale Boğazlarında ışıkla avcılık yasaktır. Diğer alanlarda dönem, izin, güç, derinlik, çiftlik mesafesi ve ışık teknesi şartları kontrol edilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 13
+      }
+    ]
+  },
+  {
+    "id": "nets",
+    "cat": "Av Aracı",
+    "title": "Uzatma / monofilament ağ",
+    "summary": "Uzatma ağlarında genel göz açıklığı, ağ derinliği, toplam uzunluk ve işaretleme; monofilament/multimonofilament ağlarda denize göre göz açıklığı, 1000 m uzunluk ve izin şartları kontrol edilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 14
+      }
+    ]
+  },
+  {
+    "id": "parakete",
+    "cat": "Av Aracı",
+    "title": "Parakete",
+    "summary": "Paraketede gündüz/gece işaretleme ve asgari iğne ölçüsü kontrol edilir; kalkan avcılığında parakete yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 15
+      }
+    ]
+  },
+  {
+    "id": "algarna",
+    "cat": "Av Aracı",
+    "title": "Algarna",
+    "summary": "Algarna Ege/Akdeniz’de tamamen; Karadeniz’de deniz salyangozu ve Marmara’da karides dışında kullanılamaz. Tür/faaliyet özel ölçü, izin, saat ve saha şartları ayrıca kontrol edilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 14
+      },
+      {
+        "s": "61",
+        "a": 29
+      }
+    ]
+  },
+  {
+    "id": "harbour100",
+    "cat": "Yer/Saha",
+    "title": "Liman/barınak 100 m",
+    "summary": "Liman, balıkçı barınağı, barınma ve çekek yerlerinde ve giriş mendirek başından itibaren 100 m yarıçaplı alanda avcılık yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "hatchery500",
+    "cat": "Yer/Saha",
+    "title": "Deniz kuluçkahanesi 500 m",
+    "summary": "Deniz ürünleri kuluçkahanelerinin deniz suyu alım noktasından itibaren 500 m yarıçapta avcılık yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "river500",
+    "cat": "Yer/Saha",
+    "title": "Ek-7 akarsu ağızları 500 m",
+    "summary": "6/1 Tebliğ Ek-7’deki akarsuların denize karıştığı yerler merkez olmak üzere denize ve akarsu yönüne doğru 500 m yarıçaplı sahada avcılık yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "species_size",
+    "cat": "Ürün/Tür",
+    "title": "Ticari asgari boy/ağırlık",
+    "summary": "6/1 Tebliğ Madde 17 tablosundaki asgari boy/ağırlıkların altındaki ürünlerin avlanması, gemide bulundurulması, karaya çıkarılması, nakli ve satışı yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 17
+      }
+    ]
+  },
+  {
+    "id": "bycatch",
+    "cat": "Ürün/Tür",
+    "title": "Hedef dışı av",
+    "summary": "Genel hedef dışı av oranı ağırlıkça %5; algarna ile karideste %15’tir. Hedef dışı tür/miktar kayıtları ve sadece hedef dışı ürün yakalanması durumu ayrıca değerlendirilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 18
+      }
+    ]
+  },
+  {
+    "id": "commercial_tol",
+    "cat": "Ürün/Tür",
+    "title": "Ticari küçük boy toleransı",
+    "summary": "Hamsi, sardalya ve istavritte ağırlıkça %15; diğer türlerde genel olarak %5 küçük boy toleransı uygulanır; tür özel hükümleri saklıdır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 18
+      }
+    ]
+  },
+  {
+    "id": "transport",
+    "cat": "Nakil/Satış",
+    "title": "Nakil/Menşe Belgesi",
+    "summary": "İlk satış, hal, soğuk hava, işleme/başka yetiştiricilik tesisi ve canlı nakillerde Tebliğdeki Nakil/Menşe Belgesi hükümleri uygulanır; genel 50 kg istisnası ve miktardan bağımsız belge gereken tür/durumlar ayrıca kontrol edilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 46
+      }
+    ]
+  },
+  {
+    "id": "closed_stock",
+    "cat": "Nakil/Satış",
+    "title": "Yasak dönem öncesi stok",
+    "summary": "Yasak başlamadan önce avlanmış ve yasak dönemde satış/işleme/muhafaza edilecek ürünlerde en geç 24 saat içinde stok tespiti gerekir; izin olmadan kullanma/satış/nakil/ihracat yapılamaz.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "amateur_sale",
+    "cat": "Amatör",
+    "title": "Amatör ürünün ticareti",
+    "summary": "Amatör avcılıkla elde edilen su ürünlerinin satışı, canlı nakli ve başka kaynaklara bırakılması yasaktır.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "amateur_gear",
+    "cat": "Amatör",
+    "title": "Amatör deniz av araçları",
+    "summary": "Denizde çırpma/çarpma ve bırakma olta, parakete, pinter ve sepet yasaktır; izinli olta takımları, serpme, yemlik uzatma ağı ve sualtı tüfeği Tebliğ şartlarıyla kullanılabilir.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 16
+      }
+    ]
+  },
+  {
+    "id": "amateur_amount",
+    "cat": "Amatör",
+    "title": "Amatör boy/miktar/zaman",
+    "summary": "Deniz amatör avcılığında Çizelge 7’deki boy, adet/kg ve zaman yasakları uygulanır; kg limitli türlerde toplam 5 kg ve Tebliğdeki 4 kg/tek büyük birey istisnası vardır.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 15
+      }
+    ]
+  },
+  {
+    "id": "amateur_spear",
+    "cat": "Amatör",
+    "title": "Sualtı tüfeği",
+    "summary": "Gün batımı–gün doğumu arasında kullanılamaz; ışık ve yapay hava kaynakları yasaktır, şamandıra zorunludur. 1 Ocak 2026’dan itibaren ilgili Amatör Balıkçı Belgesi gerekir.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 16
+      }
+    ]
+  },
+  {
+    "id": "evidence",
+    "cat": "Kolluk İşlemi",
+    "title": "Tespitin delillendirilmesi",
+    "summary": "Mümkün olduğunda fotoğraf, kamera ve diğer teknik cihazlardan yararlanılabilir; gerekiyorsa numune usulüne uygun alınır/mühürlenir. Fiili imkânsızlık halinde suç tespit tutanağı tanzimi yeterlidir.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 37
+      }
+    ]
+  },
+  {
+    "id": "team",
+    "cat": "Kolluk İşlemi",
+    "title": "Kontrol ekibi",
+    "summary": "Yönetmelik kapsamında kontrol ve tespit, Kanun 33’teki personelden seçilen en az iki kişilik kontrol ekiplerince yapılır. Sahil Güvenlik bot komutanlarının denizlerde idari para cezası kesme yetkisi ayrıca düzenlenmiştir.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 35
+      },
+      {
+        "s": "reg",
+        "a": 36
+      }
+    ]
+  },
+  {
+    "id": "forms",
+    "cat": "Kolluk İşlemi",
+    "title": "Karar/tutanak/el koyma belgeleri",
+    "summary": "İdari Para Cezası Kararı, Tutanak ve Tebligat ve zapt gerekiyorsa Zapt Etme (El Koyma) Tutanağı düzenlenir; tebliğ ve gönderim işlemleri Yönetmelik Madde 40’a göre yürütülür.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 39
+      },
+      {
+        "s": "reg",
+        "a": 40
+      }
+    ]
+  },
+  {
+    "id": "seizure",
+    "cat": "Kolluk İşlemi",
+    "title": "El konulan ürün/vasıta",
+    "summary": "El konulan su ürünleri ve istihsal vasıtalarının satış, yediemin, bağış/imha ve diğer işlemleri Kanun Madde 34’e göre yürütülür; mülkiyetin kamuya geçirilmesi kararı vali tarafından verilir.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 34
+      }
+    ]
+  },
+  {
+    "id": "license_withdraw",
+    "cat": "Kolluk İşlemi",
+    "title": "Ruhsat geri alma/iptal",
+    "summary": "Kanun 23/24’e dayalı ilgili ihlallerde ruhsat ilkinde 1 ay, ikincide 3 ay geri alınır; iki yıl içinde tekrar halinde iptal hükümleri uygulanır.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 41
+      },
+      {
+        "s": "law",
+        "a": 36
+      }
+    ]
+  },
+  {
+    "id": "vessel_22_equipment",
+    "cat": "Gemi/Ruhsat",
+    "title": "22 m+ zorunlu gemi donanımı",
+    "summary": "22 metre ve daha büyük gemilerde işaret tabancası ve fişeği, telsiz, su üstü radarı, pis su tankı ve asgari soğuk muhafaza şartlarını sağlayan depo bulundurulması zorunludur; Yönetmelikteki geçiş istisnası ayrıca dikkate alınır.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 13
+      }
+    ]
+  },
+  {
+    "id": "under12_deck_equipment",
+    "cat": "Gemi/Ruhsat",
+    "title": "12 m altı vinç/bom/matafora kontrolü",
+    "summary": "Karides, deniz salyangozu ve midye için geçerli özel avcılık izni bulunan gemiler hariç, 12 metrenin altındaki gemilerde vinç, çelik halat, bom direği, matafora ve bunlara uyarlanmış/modifiye donanım bulundurulması yasaktır. Özel izinli gemilerde yasak dönemde mühür şartı ayrıca kontrol edilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "tracking_2026",
+    "cat": "BAGİS",
+    "title": "1 Eylül 2026 ek izleme/kayıt cihazı yükümlülüğü",
+    "summary": "Algarna, manyat, dreç ve dalma yöntemiyle avcılık yapan balıkçı gemileri ile ticari amaçlı amatör balıkçılık turizm gemileri, 1 Eylül 2026’dan itibaren Bakanlıkça istenen gemi izleme ve kayıt cihazlarını işler ve çalışır durumda bulundurmak zorundadır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "aquaculture100",
+    "cat": "Yer/Saha",
+    "title": "Yetiştiricilik tesisi mesafesi",
+    "summary": "Ticari avcılıkta yetiştiricilik tesisi sınırına 100 metreden daha yakın avcılık yasaktır. Karadeniz’de Türk somonu yetiştiricilik tesisleri için 15 Haziran–31 Ağustos arasında mesafe 50 metre uygulanır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "swim_zone",
+    "cat": "Yer/Saha",
+    "title": "Yüzme alanı yasağı",
+    "summary": "1 Nisan–15 Kasım döneminde, sahilden itibaren uzaklığı 200 metreyi geçmeyen ve şamandıralarla çevrilmiş yüzme alanlarında su ürünleri avcılığı yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 8
+      },
+      {
+        "s": "62",
+        "a": 16
+      }
+    ]
+  },
+  {
+    "id": "reef_gear",
+    "cat": "Yer/Saha",
+    "title": "Yapay resif sahasında av aracı",
+    "summary": "Deniz seyir haritalarında yapay resif sahası olarak belirtilen alanlarda olta, çapari ve parakete dışında her türlü istihsal vasıtasıyla avcılık yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "subsea_cable",
+    "cat": "Yer/Saha",
+    "title": "Denizaltı kablosu — dip trolü",
+    "summary": "Turmeos I ve Turcyos I denizaltı kablolarının güzergâhlarında kabloların 100 metre sağında ve solunda dip trolü ile avcılık yasaktır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "protected_dive",
+    "cat": "Yer/Saha",
+    "title": "Dalışa yasak koruma sahaları / fok mağaraları",
+    "summary": "İlan edilen dalışa yasak kültür ve tabiat varlığı sahalarında dalışla su ürünleri avcılığı yapılamaz. Akdeniz fokunun yaşadığı kıyı mağaralarında Tebliğde sayılan ışık, dalış, giriş, bekleme ve demirleme yasakları ayrıca uygulanır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "amateur_classification",
+    "cat": "Amatör",
+    "title": "Amatör ihlalin ticari nitelikte değerlendirilmesi",
+    "summary": "6/2 Tebliğ Madde 19’daki miktar, yasak tür/zaman, av aracı ve yasak yöntem eşiklerinden yalnız birinin gerçekleşmesi bile aykırılığın ticari amaçla yapılan avcılık faaliyetine aykırılık kapsamında değerlendirilmesine yol açabilir. Botun “Nitelik Kontrolü” bu maddede sayılan eşikleri tek tek sorar.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 19
+      }
+    ]
+  },
+  {
+    "id": "amateur_light",
+    "cat": "Amatör",
+    "title": "Amatör avcılıkta ışık yasağı",
+    "summary": "Amatör balıkçılıkta avlanma amaçlı her türlü ışık kullanımı yasaktır; can ve mal güvenliği için 50 wattı geçmeyen gemi/kıyı aydınlatması bu kapsamda değerlendirilmez.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "amateur_aquaculture",
+    "cat": "Amatör",
+    "title": "Amatör yetiştiricilik tesisi mesafesi",
+    "summary": "Denizdeki yetiştiricilik tesisi sınırına 100 metreden daha yakın amatör avcılık yapılamaz.",
+    "refs": [
+      {
+        "s": "62",
+        "a": 8
+      }
+    ]
+  },
+  {
+    "id": "hamsi_hours_boxes",
+    "cat": "Ürün/Tür",
+    "title": "Hamsi saat/kota ve kasa-kutu kontrolü",
+    "summary": "Marmara ve Karadeniz’de gırgırla hamsi avcılığı 15.00–09.00 arasında yapılır; izin/kota/karaya çıkış hükümleri uygulanır. Hamsi, istavrit ve sardalya naklinde Tebliğde belirtilen kasa/kutu azami ölçüleri ayrıca kontrol edilir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 19
+      }
+    ]
+  },
+  {
+    "id": "fok_magarasi",
+    "cat": "Yer/Saha",
+    "title": "Akdeniz Foku Mağarası",
+    "summary": "Bakanlıkça belirlenmiş Akdeniz foku yaşam alanları ve mağaralarda her türlü su ürünleri avcılığı yasaktır. Bu alanların koordinat bilgileri 6/1 Md.8 ve 6/2 Md.17'de yer almaktadır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 8
+      },
+      {
+        "s": "62",
+        "a": 17
+      }
+    ]
+  },
+  {
+    "id": "kasa_olculeri",
+    "cat": "Ürün/Tür",
+    "title": "Hamsi / İstavrit / Sardalya Kasa Ölçüleri",
+    "summary": "Hamsi, istavrit ve sardalya için kullanılan kasaların iç ölçüleri en fazla 54 cm × 9 cm × 37 cm (uzunluk × yükseklik × genişlik) olmalıdır. Standart dışı kasayla satış/nakil yapılması ihlaldir.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 18
+      }
+    ]
+  }
+]

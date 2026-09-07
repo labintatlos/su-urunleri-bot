@@ -1,0 +1,377 @@
+[
+  {
+    "name": "Ahtapot",
+    "min_cm": null,
+    "min_kg": 0.75,
+    "limit": "1 adet",
+    "time_bans": [
+      "04-15/10-31"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Akya",
+    "min_cm": 40,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "04-15/05-15"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Bakalyaro (Berlam)",
+    "min_cm": 20,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Barbunya",
+    "min_cm": 12,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Çipura",
+    "min_cm": 20,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Deniz böceği",
+    "min_cm": 25,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Dil",
+    "min_cm": 20,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [
+      "01-01/02-15"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Eşkina",
+    "min_cm": 35,
+    "min_kg": null,
+    "limit": "3 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "İstavrit",
+    "min_cm": 13,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Istakoz",
+    "min_cm": 25,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kalkan",
+    "min_cm": 45,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "04-15/06-15"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Karagöz",
+    "min_cm": 18,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kefal (Amuderya kefali)",
+    "min_cm": 35,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kefal (Diğer kefaller)",
+    "min_cm": 20,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kefal (Has kefal)",
+    "min_cm": 30,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kefal (Sarıkulak kefal)",
+    "min_cm": 30,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kılıç",
+    "min_cm": 110,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "02-15/03-15",
+      "10-01/11-30"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kırlangıç",
+    "min_cm": 18,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kırma (Kırmızı) mercan",
+    "min_cm": 15,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Kolyoz",
+    "min_cm": 18,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Lagos",
+    "min_cm": 50,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "06-01/08-31"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Lipsöz",
+    "min_cm": 15,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Lambuka",
+    "min_cm": 50,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "01-01/08-14"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Levrek",
+    "min_cm": 25,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Lüfer",
+    "min_cm": 18,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Mavi yengeç",
+    "min_cm": 13,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Mavi yüzgeçli orkinos",
+    "min_cm": 115,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "10-15/06-15"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Mezgit",
+    "min_cm": 13,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Minekop (Kötek, Karakulak)",
+    "min_cm": 45,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Palamut",
+    "min_cm": 25,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [
+      "04-01/08-14"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Pisi",
+    "min_cm": 20,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Sargos",
+    "min_cm": 21,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Sarıağız",
+    "min_cm": 25,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Sarıkuyruk",
+    "min_cm": 30,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "04-15/05-15"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Sinagrit",
+    "min_cm": 35,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Tekir",
+    "min_cm": 12,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Uskumru",
+    "min_cm": 20,
+    "min_kg": null,
+    "limit": "kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Uzun kanat orkinos (tulina)",
+    "min_cm": null,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "02-15/03-15",
+      "10-01/11-30"
+    ],
+    "source": "62",
+    "article": 15
+  },
+  {
+    "name": "Yazılı orkinos",
+    "min_cm": 45,
+    "min_kg": null,
+    "limit": "2 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 15
+  }
+]

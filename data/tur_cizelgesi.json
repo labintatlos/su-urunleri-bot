@@ -1,0 +1,1867 @@
+[
+  {
+    "id": "1",
+    "title": "1. 6/1 Numaralı Ticari Amaçlı Su Ürünleri Avcılığı Tebliği",
+    "items": [],
+    "sub": [
+      {
+        "id": "1.1",
+        "title": "1.1 Avlanması Yasak Türler",
+        "items": [
+          {
+            "id": "1.1_0",
+            "title": "Akdeniz foku",
+            "details": {
+              "Türkçe Adı": "Akdeniz foku",
+              "Latince Adı": "*Monachus monachus*"
+            }
+          },
+          {
+            "id": "1.1_1",
+            "title": "Akdeniz mercanı",
+            "details": {
+              "Türkçe Adı": "Akdeniz mercanı",
+              "Latince Adı": "*Cladocora caespitosa*"
+            }
+          },
+          {
+            "id": "1.1_2",
+            "title": "Altı yarıklı bozcamgöz",
+            "details": {
+              "Türkçe Adı": "Altı yarıklı bozcamgöz",
+              "Latince Adı": "*Hexanchus griseus*"
+            }
+          },
+          {
+            "id": "1.1_3",
+            "title": "Batman bantlı çöpçü balığı",
+            "details": {
+              "Türkçe Adı": "Batman bantlı çöpçü balığı",
+              "Latince Adı": "*Paraschistura chrysicristinae*"
+            }
+          },
+          {
+            "id": "1.1_4",
+            "title": "Beyaz çalı",
+            "details": {
+              "Türkçe Adı": "Beyaz çalı",
+              "Latince Adı": "*Spinimuricea kalvereni*"
+            }
+          },
+          {
+            "id": "1.1_5",
+            "title": "Beyaz deniz dalı",
+            "details": {
+              "Türkçe Adı": "Beyaz deniz dalı",
+              "Latince Adı": "*Eunicella singularis*"
+            }
+          },
+          {
+            "id": "1.1_6",
+            "title": "Beyaz yüzgeçli köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Beyaz yüzgeçli köpekbalığı",
+              "Latince Adı": "*Carcharhinus longimanus*"
+            }
+          },
+          {
+            "id": "1.1_7",
+            "title": "Büyük beyaz köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Büyük beyaz köpekbalığı",
+              "Latince Adı": "*Carcharodon carcharias*"
+            }
+          },
+          {
+            "id": "1.1_8",
+            "title": "Büyük camgöz (güneşlenen) köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Büyük camgöz (güneşlenen) köpekbalığı",
+              "Latince Adı": "*Cetorhinus maximus*"
+            }
+          },
+          {
+            "id": "1.1_9",
+            "title": "Camgöz",
+            "details": {
+              "Türkçe Adı": "Camgöz",
+              "Latince Adı": "*Galeorhinus galeus*"
+            }
+          },
+          {
+            "id": "1.1_10",
+            "title": "Çekiç köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Çekiç köpekbalığı",
+              "Latince Adı": "*Sphyrna zygaena*"
+            }
+          },
+          {
+            "id": "1.1_11",
+            "title": "Çivili köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Çivili köpekbalığı",
+              "Latince Adı": "*Echinorhinus brucus*"
+            }
+          },
+          {
+            "id": "1.1_12",
+            "title": "Denizatı",
+            "details": {
+              "Türkçe Adı": "Denizatı",
+              "Latince Adı": "*Hippocampus hippocampus*"
+            }
+          },
+          {
+            "id": "1.1_13",
+            "title": "Deniz alası",
+            "details": {
+              "Türkçe Adı": "Deniz alası",
+              "Latince Adı": "*Salmo labrax*"
+            }
+          },
+          {
+            "id": "1.1_14",
+            "title": "Deniz kaplumbağaları",
+            "details": {
+              "Türkçe Adı": "Deniz kaplumbağaları",
+              "Latince Adı": "*Caretta caretta, Chelonia mydas, Dermochelys coriacea, Trionyx triunguis*"
+            }
+          },
+          {
+            "id": "1.1_15",
+            "title": "Deniz çayırları",
+            "details": {
+              "Türkçe Adı": "Deniz çayırları",
+              "Latince Adı": "*Posidonia oceanica, Nanozostera noltei*"
+            }
+          },
+          {
+            "id": "1.1_16",
+            "title": "Deniz kulağı",
+            "details": {
+              "Türkçe Adı": "Deniz kulağı",
+              "Latince Adı": "*Tonna galea, Haliotis tuberculata*"
+            }
+          },
+          {
+            "id": "1.1_17",
+            "title": "Dikburun harharyas",
+            "details": {
+              "Türkçe Adı": "Dikburun harharyas",
+              "Latince Adı": "*Lamna nasus*"
+            }
+          },
+          {
+            "id": "1.1_18",
+            "title": "Dikenli vatoz",
+            "details": {
+              "Türkçe Adı": "Dikenli vatoz",
+              "Latince Adı": "*Raja clavata*"
+            }
+          },
+          {
+            "id": "1.1_19",
+            "title": "Dikenli keler",
+            "details": {
+              "Türkçe Adı": "Dikenli keler",
+              "Latince Adı": "*Squatina aculeata*"
+            }
+          },
+          {
+            "id": "1.1_20",
+            "title": "Domuz köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Domuz köpekbalığı",
+              "Latince Adı": "*Oxynotus centrina*"
+            }
+          },
+          {
+            "id": "1.1_21",
+            "title": "İpeksi köpekbalığı",
+            "details": {
+              "Türkçe Adı": "İpeksi köpekbalığı",
+              "Latince Adı": "*Carcharhinus falciformis*"
+            }
+          },
+          {
+            "id": "1.1_22",
+            "title": "İri gözlü sapan köpekbalığı",
+            "details": {
+              "Türkçe Adı": "İri gözlü sapan köpekbalığı",
+              "Latince Adı": "*Alopias superciliosus*"
+            }
+          },
+          {
+            "id": "1.1_23",
+            "title": "Kazıkkuyruk",
+            "details": {
+              "Türkçe Adı": "Kazıkkuyruk",
+              "Latince Adı": "*Gymnura altavela*"
+            }
+          },
+          {
+            "id": "1.1_24",
+            "title": "Keler",
+            "details": {
+              "Türkçe Adı": "Keler",
+              "Latince Adı": "*Squatina squatina*"
+            }
+          },
+          {
+            "id": "1.1_25",
+            "title": "Kemane",
+            "details": {
+              "Türkçe Adı": "Kemane",
+              "Latince Adı": "*Glaucostegus cemiculus*"
+            }
+          },
+          {
+            "id": "1.1_26",
+            "title": "Kırmızı mercan",
+            "details": {
+              "Türkçe Adı": "Kırmızı mercan",
+              "Latince Adı": "*Corallium rubrum*"
+            }
+          },
+          {
+            "id": "1.1_27",
+            "title": "Kırmızı yıldız",
+            "details": {
+              "Türkçe Adı": "Kırmızı yıldız",
+              "Latince Adı": "*Echinaster sepositus*"
+            }
+          },
+          {
+            "id": "1.1_28",
+            "title": "Kum köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Kum köpekbalığı",
+              "Latince Adı": "*Carcharhinus plumbeus*"
+            }
+          },
+          {
+            "id": "1.1_29",
+            "title": "Lekeli keler",
+            "details": {
+              "Türkçe Adı": "Lekeli keler",
+              "Latince Adı": "*Squatina oculata*"
+            }
+          },
+          {
+            "id": "1.1_30",
+            "title": "Leopar sazanı",
+            "details": {
+              "Türkçe Adı": "Leopar sazanı",
+              "Latince Adı": "*Luciobarbus supquincunciatus*"
+            }
+          },
+          {
+            "id": "1.1_31",
+            "title": "Mahmuzlu camgöz",
+            "details": {
+              "Türkçe Adı": "Mahmuzlu camgöz",
+              "Latince Adı": "*Squalus acanthias, Squalus blainville*"
+            }
+          },
+          {
+            "id": "1.1_32",
+            "title": "Mantalar",
+            "details": {
+              "Türkçe Adı": "Mantalar",
+              "Latince Adı": "*Mobulinae (Mobula mobular, Pteromylaeus bovinus, Rhinoptera marginata)*"
+            }
+          },
+          {
+            "id": "1.1_33",
+            "title": "Mavi köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Mavi köpekbalığı",
+              "Latince Adı": "*Prionace glauca*"
+            }
+          },
+          {
+            "id": "1.1_34",
+            "title": "Maya",
+            "details": {
+              "Türkçe Adı": "Maya",
+              "Latince Adı": "*Maja squinado*"
+            }
+          },
+          {
+            "id": "1.1_35",
+            "title": "Mersin balıkları",
+            "details": {
+              "Türkçe Adı": "Mersin balıkları",
+              "Latince Adı": "*Acipenser spp.*"
+            }
+          },
+          {
+            "id": "1.1_36",
+            "title": "Mersin morinası",
+            "details": {
+              "Türkçe Adı": "Mersin morinası",
+              "Latince Adı": "*Huso huso*"
+            }
+          },
+          {
+            "id": "1.1_37",
+            "title": "Minare",
+            "details": {
+              "Türkçe Adı": "Minare",
+              "Latince Adı": "*Cerithium vulgatum*"
+            }
+          },
+          {
+            "id": "1.1_38",
+            "title": "Mor deniz dalı",
+            "details": {
+              "Türkçe Adı": "Mor deniz dalı",
+              "Latince Adı": "*Paramuricea clavata*"
+            }
+          },
+          {
+            "id": "1.1_39",
+            "title": "Mühreler",
+            "details": {
+              "Türkçe Adı": "Mühreler",
+              "Latince Adı": "*Lamellaridae*"
+            }
+          },
+          {
+            "id": "1.1_40",
+            "title": "Orfoz",
+            "details": {
+              "Türkçe Adı": "Orfoz",
+              "Latince Adı": "*Epinephelus marginatus*"
+            }
+          },
+          {
+            "id": "1.1_41",
+            "title": "Pina",
+            "details": {
+              "Türkçe Adı": "Pina",
+              "Latince Adı": "*Pinna nobilis*"
+            }
+          },
+          {
+            "id": "1.1_42",
+            "title": "Sapan köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Sapan köpekbalığı",
+              "Latince Adı": "*Alopias vulpinus*"
+            }
+          },
+          {
+            "id": "1.1_43",
+            "title": "Sarı deniz dalı",
+            "details": {
+              "Türkçe Adı": "Sarı deniz dalı",
+              "Latince Adı": "*Eunicella cavolini*"
+            }
+          },
+          {
+            "id": "1.1_44",
+            "title": "Sivriburun harharyas",
+            "details": {
+              "Türkçe Adı": "Sivriburun harharyas",
+              "Latince Adı": "*Isurus oxyrinchus*"
+            }
+          },
+          {
+            "id": "1.1_45",
+            "title": "Siyah mercan",
+            "details": {
+              "Türkçe Adı": "Siyah mercan",
+              "Latince Adı": "*Savalia savaglia*"
+            }
+          },
+          {
+            "id": "1.1_46",
+            "title": "Uzun kemane",
+            "details": {
+              "Türkçe Adı": "Uzun kemane",
+              "Latince Adı": "*Rhinobatos rhinobatos*"
+            }
+          },
+          {
+            "id": "1.1_47",
+            "title": "Yağ balığı",
+            "details": {
+              "Türkçe Adı": "Yağ balığı",
+              "Latince Adı": "*Pseudophoxinus sp.*"
+            }
+          },
+          {
+            "id": "1.1_48",
+            "title": "Yağlı balık",
+            "details": {
+              "Türkçe Adı": "Yağlı balık",
+              "Latince Adı": "*Garra rufa*"
+            }
+          },
+          {
+            "id": "1.1_49",
+            "title": "Yunus ve Balinalar",
+            "details": {
+              "Türkçe Adı": "Yunus ve Balinalar",
+              "Latince Adı": "*Cetacea*"
+            }
+          }
+        ],
+        "content": ""
+      },
+      {
+        "id": "1.2",
+        "title": "1.2 Boy ve Ağırlık Yasakları",
+        "items": [
+          {
+            "id": "1.2_0",
+            "title": "Ahtapot",
+            "details": {
+              "Türkçe Adı": "Ahtapot",
+              "Latince Adı": "*Octopus vulgaris*",
+              "Asgari Boy": "-",
+              "Asgari Ağırlık": "0,75 kg"
+            }
+          },
+          {
+            "id": "1.2_1",
+            "title": "Akivades",
+            "details": {
+              "Türkçe Adı": "Akivades",
+              "Latince Adı": "*Tapes decussatus, Tapes philippinarum*",
+              "Asgari Boy": "2,4 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_2",
+            "title": "Akya",
+            "details": {
+              "Türkçe Adı": "Akya",
+              "Latince Adı": "*Lichia amia*",
+              "Asgari Boy": "40 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_3",
+            "title": "Bakalyaro (Berlam)",
+            "details": {
+              "Türkçe Adı": "Bakalyaro (Berlam)",
+              "Latince Adı": "*Merluccius merluccius*",
+              "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_4",
+            "title": "Barbunya",
+            "details": {
+              "Türkçe Adı": "Barbunya",
+              "Latince Adı": "*Mullus barbatus*",
+              "Asgari Boy": "12 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_5",
+            "title": "Çipura",
+            "details": {
+              "Türkçe Adı": "Çipura",
+              "Latince Adı": "*Sparus aurata*",
+              "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_6",
+            "title": "Deniz böceği",
+            "details": {
+              "Türkçe Adı": "Deniz böceği",
+              "Latince Adı": "*Palinurus elephas*",
+              "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_7",
+            "title": "Dev Kırmızı Karides / Mavi-Kırmızı Karides",
+            "details": {
+              "Türkçe Adı": "Dev Kırmızı Karides / Mavi-Kırmızı Karides",
+              "Latince Adı": "*Aristaeomorpha foliacea, Aristeus antennatus*",
+              "Asgari Boy": "2,5 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_8",
+            "title": "Dil",
+            "details": {
+              "Türkçe Adı": "Dil",
+              "Latince Adı": "*Solea solea*",
+              "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_9",
+            "title": "Eşkina",
+            "details": {
+              "Türkçe Adı": "Eşkina",
+              "Latince Adı": "*Sciaena umbra*",
+              "Asgari Boy": "35 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_10",
+            "title": "Hamsi",
+            "details": {
+              "Türkçe Adı": "Hamsi",
+              "Latince Adı": "*Engraulis encrasicolus*",
+              "Asgari Boy": "9 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_11",
+            "title": "Istakoz",
+            "details": {
+              "Türkçe Adı": "Istakoz",
+              "Latince Adı": "*Homarus gammarus*",
+              "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_12",
+            "title": "İstavrit / İstavrit (Karagöz İstavrit)",
+            "details": {
+              "Türkçe Adı": "İstavrit / İstavrit (Karagöz İstavrit)",
+              "Latince Adı": "*Trachurus trachurus, Trachurus mediterraneus*",
+              "Asgari Boy": "13 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_13",
+            "title": "İstiridye",
+            "details": {
+              "Türkçe Adı": "İstiridye",
+              "Latince Adı": "*Ostrea edulis*",
+              "Asgari Boy": "6 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_14",
+            "title": "Kalkan",
+            "details": {
+              "Türkçe Adı": "Kalkan",
+              "Latince Adı": "*Scopthalmus spp.*",
+              "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_15",
+            "title": "Karagöz",
+            "details": {
+              "Türkçe Adı": "Karagöz",
+              "Latince Adı": "*Diplodus vulgaris*",
+              "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_16",
+            "title": "Kefal (Amuderya kefali)",
+            "details": {
+              "Türkçe Adı": "Kefal (Amuderya kefali)",
+              "Latince Adı": "*Planiliza haematocheilus*",
+              "Asgari Boy": "35 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_17",
+            "title": "Kefal (Diğer kefaller)",
+            "details": {
+              "Türkçe Adı": "Kefal (Diğer kefaller)",
+              "Latince Adı": "*Oedalechius labeo, Chelon labrosus, Chelon ramada, Chelon saliens*",
+              "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_18",
+            "title": "Kefal (Has kefal)",
+            "details": {
+              "Türkçe Adı": "Kefal (Has kefal)",
+              "Latince Adı": "*Mugil cephalus*",
+              "Asgari Boy": "30 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_19",
+            "title": "Kefal (Sarıkulak kefal)",
+            "details": {
+              "Türkçe Adı": "Kefal (Sarıkulak kefal)",
+              "Latince Adı": "*Chelon auratus*",
+              "Asgari Boy": "30 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_20",
+            "title": "Kılıç",
+            "details": {
+              "Türkçe Adı": "Kılıç",
+              "Latince Adı": "*Xiphias gladius*",
+              "Asgari Boy": "110 cm*",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_21",
+            "title": "Kırlangıç",
+            "details": {
+              "Türkçe Adı": "Kırlangıç",
+              "Latince Adı": "*Chelidonichthys lucerna*",
+              "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_22",
+            "title": "Kırma (Kırmızı) mercan",
+            "details": {
+              "Türkçe Adı": "Kırma (Kırmızı) mercan",
+              "Latince Adı": "*Pagellus erythrinus*",
+              "Asgari Boy": "15 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_23",
+            "title": "Kidonya",
+            "details": {
+              "Türkçe Adı": "Kidonya",
+              "Latince Adı": "*Venus verrucosa*",
+              "Asgari Boy": "3 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_24",
+            "title": "Kolyoz",
+            "details": {
+              "Türkçe Adı": "Kolyoz",
+              "Latince Adı": "*Scomber colias*",
+              "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_25",
+            "title": "Kum şirlanı (Tellina)",
+            "details": {
+              "Türkçe Adı": "Kum şirlanı (Tellina)",
+              "Latince Adı": "*Donax trunculus*",
+              "Asgari Boy": "2,5 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_26",
+            "title": "Lagos",
+            "details": {
+              "Türkçe Adı": "Lagos",
+              "Latince Adı": "*Epinephelus aeneus*",
+              "Asgari Boy": "50 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_27",
+            "title": "Lambuka",
+            "details": {
+              "Türkçe Adı": "Lambuka",
+              "Latince Adı": "*Coryphaena hippurus*",
+              "Asgari Boy": "50 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_28",
+            "title": "Levrek",
+            "details": {
+              "Türkçe Adı": "Levrek",
+              "Latince Adı": "*Dicentrarchus labrax*",
+              "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_29",
+            "title": "Lipsöz",
+            "details": {
+              "Türkçe Adı": "Lipsöz",
+              "Latince Adı": "*Scorpaena scrofa*",
+              "Asgari Boy": "15 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_30",
+            "title": "Lüfer",
+            "details": {
+              "Türkçe Adı": "Lüfer",
+              "Latince Adı": "*Pomatomus saltatrix*",
+              "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_31",
+            "title": "Mavi yengeç",
+            "details": {
+              "Türkçe Adı": "Mavi yengeç",
+              "Latince Adı": "*Callinectes sapidus*",
+              "Asgari Boy": "11 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_32",
+            "title": "Mavi yüzgeçli orkinos**",
+            "details": {
+              "Türkçe Adı": "Mavi yüzgeçli orkinos**",
+              "Latince Adı": "*Thunnus thynnus*",
+              "Asgari Boy": "115 cm*",
+              "Asgari Ağırlık": "30 kg"
+            }
+          },
+          {
+            "id": "1.2_33",
+            "title": "Mezgit",
+            "details": {
+              "Türkçe Adı": "Mezgit",
+              "Latince Adı": "*Merlangius merlangus*",
+              "Asgari Boy": "13 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_34",
+            "title": "Midye (Beyaz kum midyesi)",
+            "details": {
+              "Türkçe Adı": "Midye (Beyaz kum midyesi)",
+              "Latince Adı": "*Chamelea gallina*",
+              "Asgari Boy": "1,7 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_35",
+            "title": "Minekop (Kötek, Karakulak)",
+            "details": {
+              "Türkçe Adı": "Minekop (Kötek, Karakulak)",
+              "Latince Adı": "*Umbrina cirrosa*",
+              "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_36",
+            "title": "Nil barbunyası",
+            "details": {
+              "Türkçe Adı": "Nil barbunyası",
+              "Latince Adı": "*Upeneus moluccensis*",
+              "Asgari Boy": "10 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_37",
+            "title": "Palamut",
+            "details": {
+              "Türkçe Adı": "Palamut",
+              "Latince Adı": "*Sarda sarda*",
+              "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_38",
+            "title": "Pisi",
+            "details": {
+              "Türkçe Adı": "Pisi",
+              "Latince Adı": "*Pleuronectes spp.*",
+              "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_39",
+            "title": "Sardalya",
+            "details": {
+              "Türkçe Adı": "Sardalya",
+              "Latince Adı": "*Sardina pilchardus, Sardinella aurita*",
+              "Asgari Boy": "11 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_40",
+            "title": "Sargos",
+            "details": {
+              "Türkçe Adı": "Sargos",
+              "Latince Adı": "*Diplodus sargos*",
+              "Asgari Boy": "21 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_41",
+            "title": "Sarıağız (Halili, Muskar, Grenyüz)",
+            "details": {
+              "Türkçe Adı": "Sarıağız (Halili, Muskar, Grenyüz)",
+              "Latince Adı": "*Argyrosomus regius*",
+              "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_42",
+            "title": "Sarıkuyruk",
+            "details": {
+              "Türkçe Adı": "Sarıkuyruk",
+              "Latince Adı": "*Seriola dumerili*",
+              "Asgari Boy": "30 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_43",
+            "title": "Sinagrit",
+            "details": {
+              "Türkçe Adı": "Sinagrit",
+              "Latince Adı": "*Dentex dentex*",
+              "Asgari Boy": "35 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_44",
+            "title": "Tekir",
+            "details": {
+              "Türkçe Adı": "Tekir",
+              "Latince Adı": "*Mullus surmuletus*",
+              "Asgari Boy": "12 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_45",
+            "title": "Uskumru",
+            "details": {
+              "Türkçe Adı": "Uskumru",
+              "Latince Adı": "*Scomber scombrus*",
+              "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "-"
+            }
+          },
+          {
+            "id": "1.2_46",
+            "title": "Yazılı orkinos",
+            "details": {
+              "Türkçe Adı": "Yazılı orkinos",
+              "Latince Adı": "*Euthynus alletteratus*",
+              "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "-"
+            }
+          }
+        ],
+        "content": ""
+      }
+    ],
+    "content": ""
+  },
+  {
+    "id": "2",
+    "title": "2. 6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığı Tebliği",
+    "items": [],
+    "sub": [
+      {
+        "id": "2.1",
+        "title": "2.1 Avlanması Tamamen Yasak Olan Türler",
+        "items": [
+          {
+            "id": "2.1_0",
+            "title": "Akdeniz foku",
+            "details": {
+              "Türkçe Adı": "Akdeniz foku",
+              "Latince Adı": "*Monachus monachus*"
+            }
+          },
+          {
+            "id": "2.1_1",
+            "title": "Akdeniz mercanı",
+            "details": {
+              "Türkçe Adı": "Akdeniz mercanı",
+              "Latince Adı": "*Cladocora caespitosa*"
+            }
+          },
+          {
+            "id": "2.1_2",
+            "title": "Alakır alası",
+            "details": {
+              "Türkçe Adı": "Alakır alası",
+              "Latince Adı": "*Salmo kottelati*"
+            }
+          },
+          {
+            "id": "2.1_3",
+            "title": "Altı yarıklı bozcamgöz",
+            "details": {
+              "Türkçe Adı": "Altı yarıklı bozcamgöz",
+              "Latince Adı": "*Hexanchus griseus*"
+            }
+          },
+          {
+            "id": "2.1_4",
+            "title": "Batman bantlı çöpçü balığı",
+            "details": {
+              "Türkçe Adı": "Batman bantlı çöpçü balığı",
+              "Latince Adı": "*Paraschistura chrysicristinae*"
+            }
+          },
+          {
+            "id": "2.1_5",
+            "title": "Beyaz çalı",
+            "details": {
+              "Türkçe Adı": "Beyaz çalı",
+              "Latince Adı": "*Spinimuricea klavereni*"
+            }
+          },
+          {
+            "id": "2.1_6",
+            "title": "Beyaz deniz dalı",
+            "details": {
+              "Türkçe Adı": "Beyaz deniz dalı",
+              "Latince Adı": "*Eunicella singularis*"
+            }
+          },
+          {
+            "id": "2.1_7",
+            "title": "Beyaz yüzgeçli köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Beyaz yüzgeçli köpekbalığı",
+              "Latince Adı": "*Carcharhinus longimanus*"
+            }
+          },
+          {
+            "id": "2.1_8",
+            "title": "Büyük beyaz köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Büyük beyaz köpekbalığı",
+              "Latince Adı": "*Carcharodon carcharias*"
+            }
+          },
+          {
+            "id": "2.1_9",
+            "title": "Büyük camgöz (güneşlenen) köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Büyük camgöz (güneşlenen) köpekbalığı",
+              "Latince Adı": "*Cetorhinus maximus*"
+            }
+          },
+          {
+            "id": "2.1_10",
+            "title": "Camgöz",
+            "details": {
+              "Türkçe Adı": "Camgöz",
+              "Latince Adı": "*Galeorhinus galeus*"
+            }
+          },
+          {
+            "id": "2.1_11",
+            "title": "Çekiç köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Çekiç köpekbalığı",
+              "Latince Adı": "*Sphyrna zygaena*"
+            }
+          },
+          {
+            "id": "2.1_12",
+            "title": "Çivili köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Çivili köpekbalığı",
+              "Latince Adı": "*Echinorhinus brucus*"
+            }
+          },
+          {
+            "id": "2.1_13",
+            "title": "Denizatı",
+            "details": {
+              "Türkçe Adı": "Denizatı",
+              "Latince Adı": "*Hippocampus hippocampus*"
+            }
+          },
+          {
+            "id": "2.1_14",
+            "title": "Deniz alası",
+            "details": {
+              "Türkçe Adı": "Deniz alası",
+              "Latince Adı": "*Salmo labrax*"
+            }
+          },
+          {
+            "id": "2.1_15",
+            "title": "Deniz çayırları",
+            "details": {
+              "Türkçe Adı": "Deniz çayırları",
+              "Latince Adı": "*Posidonia oceanica, Nanozostera noltei*"
+            }
+          },
+          {
+            "id": "2.1_16",
+            "title": "Deniz kaplumbağaları",
+            "details": {
+              "Türkçe Adı": "Deniz kaplumbağaları",
+              "Latince Adı": "*Caretta caretta, Chelonia mydas, Dermochelys coriacea, Trionyx triunguis*"
+            }
+          },
+          {
+            "id": "2.1_17",
+            "title": "Deniz kulağı",
+            "details": {
+              "Türkçe Adı": "Deniz kulağı",
+              "Latince Adı": "*Tonna galea, Haliotis tuberculata*"
+            }
+          },
+          {
+            "id": "2.1_18",
+            "title": "Dikburun harharyas",
+            "details": {
+              "Türkçe Adı": "Dikburun harharyas",
+              "Latince Adı": "*Lamna nasus*"
+            }
+          },
+          {
+            "id": "2.1_19",
+            "title": "Dikenli keler",
+            "details": {
+              "Türkçe Adı": "Dikenli keler",
+              "Latince Adı": "*Squatina aculeata*"
+            }
+          },
+          {
+            "id": "2.1_20",
+            "title": "Dikenli vatoz",
+            "details": {
+              "Türkçe Adı": "Dikenli vatoz",
+              "Latince Adı": "*Raja clavata*"
+            }
+          },
+          {
+            "id": "2.1_21",
+            "title": "Domuz köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Domuz köpekbalığı",
+              "Latince Adı": "*Oxynotus centrina*"
+            }
+          },
+          {
+            "id": "2.1_22",
+            "title": "İpeksi köpekbalığı",
+            "details": {
+              "Türkçe Adı": "İpeksi köpekbalığı",
+              "Latince Adı": "*Carcharhinus falciformis*"
+            }
+          },
+          {
+            "id": "2.1_23",
+            "title": "İri gözlü sapan köpekbalığı",
+            "details": {
+              "Türkçe Adı": "İri gözlü sapan köpekbalığı",
+              "Latince Adı": "*Alopias superciliosus*"
+            }
+          },
+          {
+            "id": "2.1_24",
+            "title": "Kazıkkuyruk",
+            "details": {
+              "Türkçe Adı": "Kazıkkuyruk",
+              "Latince Adı": "*Gymnura altavela*"
+            }
+          },
+          {
+            "id": "2.1_25",
+            "title": "Keler",
+            "details": {
+              "Türkçe Adı": "Keler",
+              "Latince Adı": "*Squatina squatina*"
+            }
+          },
+          {
+            "id": "2.1_26",
+            "title": "Kemane",
+            "details": {
+              "Türkçe Adı": "Kemane",
+              "Latince Adı": "*Glaucostegus cemiculus*"
+            }
+          },
+          {
+            "id": "2.1_27",
+            "title": "Kırmızı mercan",
+            "details": {
+              "Türkçe Adı": "Kırmızı mercan",
+              "Latince Adı": "*Corallium rubrum*"
+            }
+          },
+          {
+            "id": "2.1_28",
+            "title": "Kırmızı yıldız",
+            "details": {
+              "Türkçe Adı": "Kırmızı yıldız",
+              "Latince Adı": "*Echinaster sepositus*"
+            }
+          },
+          {
+            "id": "2.1_29",
+            "title": "Kum köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Kum köpekbalığı",
+              "Latince Adı": "*Carcharhinus plumbeus*"
+            }
+          },
+          {
+            "id": "2.1_30",
+            "title": "Lekeli keler",
+            "details": {
+              "Türkçe Adı": "Lekeli keler",
+              "Latince Adı": "*Squatina oculata*"
+            }
+          },
+          {
+            "id": "2.1_31",
+            "title": "Leopar sazanı",
+            "details": {
+              "Türkçe Adı": "Leopar sazanı",
+              "Latince Adı": "*Luciobarbus supquincunciatus*"
+            }
+          },
+          {
+            "id": "2.1_32",
+            "title": "Mahmuzlu camgöz",
+            "details": {
+              "Türkçe Adı": "Mahmuzlu camgöz",
+              "Latince Adı": "*Squalus acanthias, Squalus blainville*"
+            }
+          },
+          {
+            "id": "2.1_33",
+            "title": "Mantalar",
+            "details": {
+              "Türkçe Adı": "Mantalar",
+              "Latince Adı": "*Mobulinae (Mobula mobular, Pteromylaeus bovinus, Rhinoptera marginata)*"
+            }
+          },
+          {
+            "id": "2.1_34",
+            "title": "Mavi köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Mavi köpekbalığı",
+              "Latince Adı": "*Prionace glauca*"
+            }
+          },
+          {
+            "id": "2.1_35",
+            "title": "Maya",
+            "details": {
+              "Türkçe Adı": "Maya",
+              "Latince Adı": "*Maja squinado*"
+            }
+          },
+          {
+            "id": "2.1_36",
+            "title": "Mersin balıkları",
+            "details": {
+              "Türkçe Adı": "Mersin balıkları",
+              "Latince Adı": "*Acipenser spp.*"
+            }
+          },
+          {
+            "id": "2.1_37",
+            "title": "Mersin morinası",
+            "details": {
+              "Türkçe Adı": "Mersin morinası",
+              "Latince Adı": "*Huso huso*"
+            }
+          },
+          {
+            "id": "2.1_38",
+            "title": "Minare",
+            "details": {
+              "Türkçe Adı": "Minare",
+              "Latince Adı": "*Cerithium vulgatum*"
+            }
+          },
+          {
+            "id": "2.1_39",
+            "title": "Mor deniz dalı",
+            "details": {
+              "Türkçe Adı": "Mor deniz dalı",
+              "Latince Adı": "*Paramuricea clavata*"
+            }
+          },
+          {
+            "id": "2.1_40",
+            "title": "Mühreler",
+            "details": {
+              "Türkçe Adı": "Mühreler",
+              "Latince Adı": "*Lamellaridae*"
+            }
+          },
+          {
+            "id": "2.1_41",
+            "title": "Orfoz",
+            "details": {
+              "Türkçe Adı": "Orfoz",
+              "Latince Adı": "*Epinephelus marginatus*"
+            }
+          },
+          {
+            "id": "2.1_42",
+            "title": "Pina",
+            "details": {
+              "Türkçe Adı": "Pina",
+              "Latince Adı": "*Pinna nobilis*"
+            }
+          },
+          {
+            "id": "2.1_43",
+            "title": "Sapan köpekbalığı",
+            "details": {
+              "Türkçe Adı": "Sapan köpekbalığı",
+              "Latince Adı": "*Alopias vulpinus*"
+            }
+          },
+          {
+            "id": "2.1_44",
+            "title": "Sarı deniz dalı",
+            "details": {
+              "Türkçe Adı": "Sarı deniz dalı",
+              "Latince Adı": "*Eunicella cavolini*"
+            }
+          },
+          {
+            "id": "2.1_45",
+            "title": "Sivriburun harharyas",
+            "details": {
+              "Türkçe Adı": "Sivriburun harharyas",
+              "Latince Adı": "*Isurus oxyrinchus*"
+            }
+          },
+          {
+            "id": "2.1_46",
+            "title": "Siyah mercan",
+            "details": {
+              "Türkçe Adı": "Siyah mercan",
+              "Latince Adı": "*Savalia savaglia*"
+            }
+          },
+          {
+            "id": "2.1_47",
+            "title": "Ticari deniz süngerleri",
+            "details": {
+              "Türkçe Adı": "Ticari deniz süngerleri",
+              "Latince Adı": "*Spongia officinalis, Spongia agaricina, Hippospongia communis*"
+            }
+          },
+          {
+            "id": "2.1_48",
+            "title": "Uzun kemane",
+            "details": {
+              "Türkçe Adı": "Uzun kemane",
+              "Latince Adı": "*Rhinobatos rhinobatos*"
+            }
+          },
+          {
+            "id": "2.1_49",
+            "title": "Yağ balığı",
+            "details": {
+              "Türkçe Adı": "Yağ balığı",
+              "Latince Adı": "*Pseudophoxinus sp.*"
+            }
+          },
+          {
+            "id": "2.1_50",
+            "title": "Yağlı balık",
+            "details": {
+              "Türkçe Adı": "Yağlı balık",
+              "Latince Adı": "*Garra rufa*"
+            }
+          },
+          {
+            "id": "2.1_51",
+            "title": "Yılan balığı",
+            "details": {
+              "Türkçe Adı": "Yılan balığı",
+              "Latince Adı": "*Anguilla anguilla*"
+            }
+          },
+          {
+            "id": "2.1_52",
+            "title": "Yunus ve Balinalar",
+            "details": {
+              "Türkçe Adı": "Yunus ve Balinalar",
+              "Latince Adı": "*Cetacea*"
+            }
+          }
+        ],
+        "content": ""
+      },
+      {
+        "id": "2.2",
+        "title": "2.2 Yemlik Balıklar",
+        "items": [
+          {
+            "id": "2.2_0",
+            "title": "Çaça",
+            "details": {
+              "Türkçe Adı": "Çaça",
+              "Latince Adı": "*Sprattus sprattus*"
+            }
+          },
+          {
+            "id": "2.2_1",
+            "title": "Horozbina",
+            "details": {
+              "Türkçe Adı": "Horozbina",
+              "Latince Adı": "*Blennius sp.*"
+            }
+          },
+          {
+            "id": "2.2_2",
+            "title": "İnci balığı",
+            "details": {
+              "Türkçe Adı": "İnci balığı",
+              "Latince Adı": "*Alburnus alburnus*"
+            }
+          },
+          {
+            "id": "2.2_3",
+            "title": "İstavrit",
+            "details": {
+              "Türkçe Adı": "İstavrit",
+              "Latince Adı": "*Trachurus sp.*"
+            }
+          },
+          {
+            "id": "2.2_4",
+            "title": "İzmarit",
+            "details": {
+              "Türkçe Adı": "İzmarit",
+              "Latince Adı": "*Maena smaris*"
+            }
+          },
+          {
+            "id": "2.2_5",
+            "title": "Gümüş",
+            "details": {
+              "Türkçe Adı": "Gümüş",
+              "Latince Adı": "*Atherina boyeri*"
+            }
+          },
+          {
+            "id": "2.2_6",
+            "title": "Tatlısu kaya balığı",
+            "details": {
+              "Türkçe Adı": "Tatlısu kaya balığı",
+              "Latince Adı": "*Proterorhinus marmoratus*"
+            }
+          },
+          {
+            "id": "2.2_7",
+            "title": "Tirsi",
+            "details": {
+              "Türkçe Adı": "Tirsi",
+              "Latince Adı": "*Alosa fallax nilotica*"
+            }
+          },
+          {
+            "id": "2.2_8",
+            "title": "Sardalya",
+            "details": {
+              "Türkçe Adı": "Sardalya",
+              "Latince Adı": "*Sardinella aurita, Sardina pilcardus*"
+            }
+          },
+          {
+            "id": "2.2_9",
+            "title": "Tatlısu kolyozu",
+            "details": {
+              "Türkçe Adı": "Tatlısu kolyozu",
+              "Latince Adı": "*Chalcalburnus mossulensis, Alburnus mossulensis*"
+            }
+          }
+        ],
+        "content": ""
+      },
+      {
+        "id": "2.3",
+        "title": "2.3 Denizlerde Avlanabilecek Türler",
+        "items": [
+          {
+            "id": "2.3_0",
+            "title": "Ahtapot",
+            "details": {
+              "Türkçe Adı": "Ahtapot",
+              "Latince Adı": "*Octopus vulgaris*",
+              "Boy/Ağırlık Limiti (en az)": "750 gr",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Nisan - 31 Ekim"
+            }
+          },
+          {
+            "id": "2.3_1",
+            "title": "Akya",
+            "details": {
+              "Türkçe Adı": "Akya",
+              "Latince Adı": "*Lichia amia*",
+              "Boy/Ağırlık Limiti (en az)": "40 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Nisan - 15 Mayıs"
+            }
+          },
+          {
+            "id": "2.3_2",
+            "title": "Bakalyaro (Berlam)",
+            "details": {
+              "Türkçe Adı": "Bakalyaro (Berlam)",
+              "Latince Adı": "*Merluccius merluccius*",
+              "Boy/Ağırlık Limiti (en az)": "20 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_3",
+            "title": "Barbunya",
+            "details": {
+              "Türkçe Adı": "Barbunya",
+              "Latince Adı": "*Mullus barbatus*",
+              "Boy/Ağırlık Limiti (en az)": "12 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_4",
+            "title": "Çipura",
+            "details": {
+              "Türkçe Adı": "Çipura",
+              "Latince Adı": "*Sparus aurata*",
+              "Boy/Ağırlık Limiti (en az)": "20 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_5",
+            "title": "Deniz böceği",
+            "details": {
+              "Türkçe Adı": "Deniz böceği",
+              "Latince Adı": "*Palinurus elephas*",
+              "Boy/Ağırlık Limiti (en az)": "25 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_6",
+            "title": "Dil",
+            "details": {
+              "Türkçe Adı": "Dil",
+              "Latince Adı": "*Solea solea*",
+              "Boy/Ağırlık Limiti (en az)": "20 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "1 Ocak - 15 Şubat"
+            }
+          },
+          {
+            "id": "2.3_7",
+            "title": "Eşkina",
+            "details": {
+              "Türkçe Adı": "Eşkina",
+              "Latince Adı": "*Sciana umbra*",
+              "Boy/Ağırlık Limiti (en az)": "35 cm",
+              "Alıkonulabilir Miktar (en fazla)": "3 adet",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_8",
+            "title": "İstavrit / İstavrit (karagöz)",
+            "details": {
+              "Türkçe Adı": "İstavrit / İstavrit (karagöz)",
+              "Latince Adı": "*Trachurus trachurus, Trachurus mediterraneus*",
+              "Boy/Ağırlık Limiti (en az)": "13 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_9",
+            "title": "Istakoz",
+            "details": {
+              "Türkçe Adı": "Istakoz",
+              "Latince Adı": "*Homarus gammarus*",
+              "Boy/Ağırlık Limiti (en az)": "25 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_10",
+            "title": "Kalkan",
+            "details": {
+              "Türkçe Adı": "Kalkan",
+              "Latince Adı": "*Scopthalmus spp.*",
+              "Boy/Ağırlık Limiti (en az)": "45 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Nisan - 15 Haziran"
+            }
+          },
+          {
+            "id": "2.3_11",
+            "title": "Karagöz",
+            "details": {
+              "Türkçe Adı": "Karagöz",
+              "Latince Adı": "*Diplodus vulgaris*",
+              "Boy/Ağırlık Limiti (en az)": "18 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_12",
+            "title": "Kefal (Amuderya kefali)",
+            "details": {
+              "Türkçe Adı": "Kefal (Amuderya kefali)",
+              "Latince Adı": "*Planiliza haematocheilus*",
+              "Boy/Ağırlık Limiti (en az)": "35 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_13",
+            "title": "Kefal (Diğer kefaller)",
+            "details": {
+              "Türkçe Adı": "Kefal (Diğer kefaller)",
+              "Latince Adı": "*Oedalechius labeo, Chelon labrosus, Chelon ramada, Chelon saliens*",
+              "Boy/Ağırlık Limiti (en az)": "20 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_14",
+            "title": "Kefal (Has kefal)",
+            "details": {
+              "Türkçe Adı": "Kefal (Has kefal)",
+              "Latince Adı": "*Mugil cephalus*",
+              "Boy/Ağırlık Limiti (en az)": "30 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_15",
+            "title": "Kefal (Sarıkulak kefal)",
+            "details": {
+              "Türkçe Adı": "Kefal (Sarıkulak kefal)",
+              "Latince Adı": "*Chelon auratus*",
+              "Boy/Ağırlık Limiti (en az)": "30 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_16",
+            "title": "Kılıç",
+            "details": {
+              "Türkçe Adı": "Kılıç",
+              "Latince Adı": "*Xiphias gladius*",
+              "Boy/Ağırlık Limiti (en az)": "110* cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Şubat - 15 Mart; 1 Ekim - 30 Kasım"
+            }
+          },
+          {
+            "id": "2.3_17",
+            "title": "Kırlangıç",
+            "details": {
+              "Türkçe Adı": "Kırlangıç",
+              "Latince Adı": "*Chelidonichthys lucerna*",
+              "Boy/Ağırlık Limiti (en az)": "18 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_18",
+            "title": "Kırma (Kırmızı) mercan",
+            "details": {
+              "Türkçe Adı": "Kırma (Kırmızı) mercan",
+              "Latince Adı": "*Pagellus erythrinus*",
+              "Boy/Ağırlık Limiti (en az)": "15 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_19",
+            "title": "Kolyoz",
+            "details": {
+              "Türkçe Adı": "Kolyoz",
+              "Latince Adı": "*Scomber japonicus*",
+              "Boy/Ağırlık Limiti (en az)": "18 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_20",
+            "title": "Lagos",
+            "details": {
+              "Türkçe Adı": "Lagos",
+              "Latince Adı": "*Epinephelus aeneus*",
+              "Boy/Ağırlık Limiti (en az)": "50 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "1 Haziran - 31 Ağustos"
+            }
+          },
+          {
+            "id": "2.3_21",
+            "title": "Lipsöz",
+            "details": {
+              "Türkçe Adı": "Lipsöz",
+              "Latince Adı": "*Scorpaena scrofa*",
+              "Boy/Ağırlık Limiti (en az)": "15 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_22",
+            "title": "Lambuka",
+            "details": {
+              "Türkçe Adı": "Lambuka",
+              "Latince Adı": "*Coryphaena hippurus*",
+              "Boy/Ağırlık Limiti (en az)": "50 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "1 Ocak - 14 Ağustos"
+            }
+          },
+          {
+            "id": "2.3_23",
+            "title": "Levrek",
+            "details": {
+              "Türkçe Adı": "Levrek",
+              "Latince Adı": "*Dicentrarchus labrax*",
+              "Boy/Ağırlık Limiti (en az)": "25 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_24",
+            "title": "Lüfer",
+            "details": {
+              "Türkçe Adı": "Lüfer",
+              "Latince Adı": "*Pomatomus saltatrix*",
+              "Boy/Ağırlık Limiti (en az)": "18 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_25",
+            "title": "Mavi yengeç",
+            "details": {
+              "Türkçe Adı": "Mavi yengeç",
+              "Latince Adı": "*Callinectes sapidus*",
+              "Boy/Ağırlık Limiti (en az)": "13 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_26",
+            "title": "Mavi yüzgeçli orkinos**",
+            "details": {
+              "Türkçe Adı": "Mavi yüzgeçli orkinos**",
+              "Latince Adı": "*Thunnus thynnus*",
+              "Boy/Ağırlık Limiti (en az)": "115* cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Ekim - 15 Haziran"
+            }
+          },
+          {
+            "id": "2.3_27",
+            "title": "Mezgit",
+            "details": {
+              "Türkçe Adı": "Mezgit",
+              "Latince Adı": "*Merlangius merlangus*",
+              "Boy/Ağırlık Limiti (en az)": "13 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_28",
+            "title": "Minekop (Kötek, Karakulak)",
+            "details": {
+              "Türkçe Adı": "Minekop (Kötek, Karakulak)",
+              "Latince Adı": "*Umbrina cirrosa*",
+              "Boy/Ağırlık Limiti (en az)": "45 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_29",
+            "title": "Palamut",
+            "details": {
+              "Türkçe Adı": "Palamut",
+              "Latince Adı": "*Sarda sarda*",
+              "Boy/Ağırlık Limiti (en az)": "25 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "1 Nisan - 14 Ağustos"
+            }
+          },
+          {
+            "id": "2.3_30",
+            "title": "Pisi",
+            "details": {
+              "Türkçe Adı": "Pisi",
+              "Latince Adı": "*Pleuronectes limanda*",
+              "Boy/Ağırlık Limiti (en az)": "20 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_31",
+            "title": "Sargos",
+            "details": {
+              "Türkçe Adı": "Sargos",
+              "Latince Adı": "*Diplodus sargos*",
+              "Boy/Ağırlık Limiti (en az)": "21 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_32",
+            "title": "Sarıağız (Halili, Muskar, Grenyüz)",
+            "details": {
+              "Türkçe Adı": "Sarıağız (Halili, Muskar, Grenyüz)",
+              "Latince Adı": "*Argyrosomus regius*",
+              "Boy/Ağırlık Limiti (en az)": "25 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_33",
+            "title": "Sarıkuyruk",
+            "details": {
+              "Türkçe Adı": "Sarıkuyruk",
+              "Latince Adı": "*Seriola dumerili*",
+              "Boy/Ağırlık Limiti (en az)": "30 cm",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Nisan - 15 Mayıs"
+            }
+          },
+          {
+            "id": "2.3_34",
+            "title": "Sinagrit",
+            "details": {
+              "Türkçe Adı": "Sinagrit",
+              "Latince Adı": "*Dentex dentex*",
+              "Boy/Ağırlık Limiti (en az)": "35 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_35",
+            "title": "Tekir",
+            "details": {
+              "Türkçe Adı": "Tekir",
+              "Latince Adı": "*Mullus surmuletus*",
+              "Boy/Ağırlık Limiti (en az)": "12 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_36",
+            "title": "Uskumru",
+            "details": {
+              "Türkçe Adı": "Uskumru",
+              "Latince Adı": "*Scomber scombrus*",
+              "Boy/Ağırlık Limiti (en az)": "20 cm",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_37",
+            "title": "Uzun kanat orkinos (tulina)",
+            "details": {
+              "Türkçe Adı": "Uzun kanat orkinos (tulina)",
+              "Latince Adı": "*Thunnus alalunga*",
+              "Boy/Ağırlık Limiti (en az)": "-",
+              "Alıkonulabilir Miktar (en fazla)": "1 adet",
+              "Zaman Yasağı": "15 Şubat - 15 Mart; 1 Ekim - 30 Kasım"
+            }
+          },
+          {
+            "id": "2.3_38",
+            "title": "Yazılı orkinos",
+            "details": {
+              "Türkçe Adı": "Yazılı orkinos",
+              "Latince Adı": "*Euthynnus alletteratus*",
+              "Boy/Ağırlık Limiti (en az)": "45 cm",
+              "Alıkonulabilir Miktar (en fazla)": "2 adet",
+              "Zaman Yasağı": "-"
+            }
+          },
+          {
+            "id": "2.3_39",
+            "title": "Diğer türler",
+            "details": {
+              "Türkçe Adı": "Diğer türler",
+              "Latince Adı": "-",
+              "Boy/Ağırlık Limiti (en az)": "Yok",
+              "Alıkonulabilir Miktar (en fazla)": "kg",
+              "Zaman Yasağı": "-"
+            }
+          }
+        ],
+        "content": ""
+      }
+    ],
+    "content": ""
+  }
+]

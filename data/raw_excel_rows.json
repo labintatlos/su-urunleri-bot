@@ -1,0 +1,6568 @@
+[
+  {
+    "source_row": 1,
+    "cells": [
+      "İHLAL NEDENİ",
+      null,
+      "İHLAL MADDESİ",
+      null,
+      "Kanunun 36. Maddesinin",
+      "İPC Miktarı (TL)",
+      "El Koyma",
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇  i̇hlal maddesi̇  kanunun 36. maddesinin i̇pc miktarı (tl) el koyma "
+  },
+  {
+    "source_row": 2,
+    "cells": [
+      null,
+      null,
+      "Kanun",
+      "Yönetmelik",
+      null,
+      null,
+      "Ürün",
+      "İstihsal Vasıtası"
+    ],
+    "search_text": "  kanun yönetmelik   ürün i̇stihsal vasıtası"
+  },
+  {
+    "source_row": 3,
+    "cells": [
+      "Ruhsat Tezkeresi Cezaları - KİŞİ",
+      "Ruhsat tezkeresini yeniletmeden ticari avcılık",
+      "3",
+      "4",
+      "a",
+      "9473",
+      "Evet",
+      "Evet"
+    ],
+    "search_text": "ruhsat tezkeresi cezaları - ki̇şi̇ ruhsat tezkeresini yeniletmeden ticari avcılık 3 4 a 9473 evet evet"
+  },
+  {
+    "source_row": 4,
+    "cells": [
+      null,
+      "Ruhsat tezkeresini almadan ticari avcılık (içsu)",
+      "3",
+      "4",
+      "a",
+      "18954",
+      null,
+      null
+    ],
+    "search_text": " ruhsat tezkeresini almadan ticari avcılık (içsu) 3 4 a 18954  "
+  },
+  {
+    "source_row": 5,
+    "cells": [
+      null,
+      "Ruhsat tezkeresini almadan ticari avcılık (deniz)",
+      "3",
+      "4",
+      "a",
+      "37914",
+      null,
+      null
+    ],
+    "search_text": " ruhsat tezkeresini almadan ticari avcılık (deniz) 3 4 a 37914  "
+  },
+  {
+    "source_row": 6,
+    "cells": [
+      null,
+      "Ruhsat tezkeresini almadan su ürünleri avcılık (dalarak)",
+      "3",
+      "4",
+      "a",
+      "47397",
+      null,
+      null
+    ],
+    "search_text": " ruhsat tezkeresini almadan su ürünleri avcılık (dalarak) 3 4 a 47397  "
+  },
+  {
+    "source_row": 7,
+    "cells": [
+      "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+      "5 metre altı",
+      "3",
+      "4",
+      "a",
+      "47397",
+      "Evet",
+      "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur."
+    ],
+    "search_text": "ruhsat tezkeresi almadan\nsu ürünleri avcılığı - gemi̇ 5 metre altı 3 4 a 47397 evet aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur."
+  },
+  {
+    "source_row": 8,
+    "cells": [
+      null,
+      "5m. Dahil\n10m.'den küçük",
+      "3",
+      "4",
+      "a",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": " 5m. dahil\n10m.'den küçük 3 4 a 94811  "
+  },
+  {
+    "source_row": 9,
+    "cells": [
+      null,
+      "10 m. Dahil\n12 m.'den küçük",
+      "3",
+      "4",
+      "a",
+      "142217",
+      null,
+      null
+    ],
+    "search_text": " 10 m. dahil\n12 m.'den küçük 3 4 a 142217  "
+  },
+  {
+    "source_row": 10,
+    "cells": [
+      null,
+      "12 m. Dahil\n18m.'den küçük",
+      "3",
+      "4",
+      "a",
+      "237034",
+      null,
+      null
+    ],
+    "search_text": " 12 m. dahil\n18m.'den küçük 3 4 a 237034  "
+  },
+  {
+    "source_row": 11,
+    "cells": [
+      null,
+      "18 m. Dahil\n22 m.'den küçük",
+      "3",
+      "4",
+      "a",
+      "331855",
+      null,
+      null
+    ],
+    "search_text": " 18 m. dahil\n22 m.'den küçük 3 4 a 331855  "
+  },
+  {
+    "source_row": 12,
+    "cells": [
+      null,
+      "22 m. Dahil\n35 m.'den küçük",
+      "3",
+      "4",
+      "a",
+      "379267",
+      null,
+      null
+    ],
+    "search_text": " 22 m. dahil\n35 m.'den küçük 3 4 a 379267  "
+  },
+  {
+    "source_row": 13,
+    "cells": [
+      null,
+      "35 m. ve üstü",
+      "3",
+      "4",
+      "a",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " 35 m. ve üstü 3 4 a 474079  "
+  },
+  {
+    "source_row": 14,
+    "cells": [
+      "Amatör Avcılık\nİhlali",
+      "Gemi kullanmamışsa",
+      "3",
+      "6",
+      "a",
+      "2356",
+      "Evet",
+      "Hayır"
+    ],
+    "search_text": "amatör avcılık\ni̇hlali gemi kullanmamışsa 3 6 a 2356 evet hayır"
+  },
+  {
+    "source_row": 15,
+    "cells": [
+      null,
+      "İç su (gemi kullanmışsa)",
+      "3",
+      "6",
+      "a",
+      "18954",
+      null,
+      null
+    ],
+    "search_text": " i̇ç su (gemi kullanmışsa) 3 6 a 18954  "
+  },
+  {
+    "source_row": 16,
+    "cells": [
+      null,
+      "Deniz (gemi kullanmışsa)",
+      "3",
+      "6",
+      "a",
+      "28433",
+      null,
+      null
+    ],
+    "search_text": " deniz (gemi kullanmışsa) 3 6 a 28433  "
+  },
+  {
+    "source_row": 17,
+    "cells": [
+      "Amatör Avcılık Birden\nFazla İhlali",
+      "Gemi kullanmamışsa",
+      "3",
+      "6",
+      "a",
+      "4730",
+      "Evet",
+      "Hayır"
+    ],
+    "search_text": "amatör avcılık birden\nfazla i̇hlali gemi kullanmamışsa 3 6 a 4730 evet hayır"
+  },
+  {
+    "source_row": 18,
+    "cells": [
+      null,
+      "İç su (gemi kullanmışsa)",
+      "3",
+      "6",
+      "a",
+      "28433",
+      null,
+      null
+    ],
+    "search_text": " i̇ç su (gemi kullanmışsa) 3 6 a 28433  "
+  },
+  {
+    "source_row": 19,
+    "cells": [
+      null,
+      "Deniz (gemi kullanmışsa)",
+      "3",
+      "6",
+      "a",
+      "47397",
+      null,
+      null
+    ],
+    "search_text": " deniz (gemi kullanmışsa) 3 6 a 47397  "
+  },
+  {
+    "source_row": 20,
+    "cells": [
+      "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet",
+      "Kişi",
+      "3",
+      "-",
+      "a",
+      "47397",
+      "Evet",
+      "Hayır"
+    ],
+    "search_text": "av miktarı, bölge ve av araçlarına ait alınan izinlere aykırı faaliyet kişi 3 - a 47397 evet hayır"
+  },
+  {
+    "source_row": 21,
+    "cells": [
+      "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+      "5 metre altı",
+      "3",
+      "-",
+      "a",
+      "47397",
+      "Evet",
+      "Hayır"
+    ],
+    "search_text": "av miktarı, bölge ve av araçlarına ait alınan izinlere aykırı faaliyet - gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.) 5 metre altı 3 - a 47397 evet hayır"
+  },
+  {
+    "source_row": 22,
+    "cells": [
+      null,
+      "5m. Dahil\n10m.'den küçük",
+      "3",
+      "-",
+      "a",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": " 5m. dahil\n10m.'den küçük 3 - a 94811  "
+  },
+  {
+    "source_row": 23,
+    "cells": [
+      null,
+      "10 m. Dahil\n12 m.'den küçük",
+      "3",
+      "-",
+      "a",
+      "142217",
+      null,
+      null
+    ],
+    "search_text": " 10 m. dahil\n12 m.'den küçük 3 - a 142217  "
+  },
+  {
+    "source_row": 24,
+    "cells": [
+      null,
+      "12 m. Dahil\n18m.'den küçük",
+      "3",
+      "-",
+      "a",
+      "237034",
+      null,
+      null
+    ],
+    "search_text": " 12 m. dahil\n18m.'den küçük 3 - a 237034  "
+  },
+  {
+    "source_row": 25,
+    "cells": [
+      null,
+      "18 m. Dahil\n22 m.'den küçük",
+      "3",
+      "-",
+      "a",
+      "331855",
+      null,
+      null
+    ],
+    "search_text": " 18 m. dahil\n22 m.'den küçük 3 - a 331855  "
+  },
+  {
+    "source_row": 26,
+    "cells": [
+      null,
+      "22 m. Dahil\n35 m.'den küçük",
+      "3",
+      "-",
+      "a",
+      "379267",
+      null,
+      null
+    ],
+    "search_text": " 22 m. dahil\n35 m.'den küçük 3 - a 379267  "
+  },
+  {
+    "source_row": 27,
+    "cells": [
+      null,
+      "35 m. ve üstü",
+      "3",
+      "-",
+      "a",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " 35 m. ve üstü 3 - a 474079  "
+  },
+  {
+    "source_row": 28,
+    "cells": [
+      "Ruhsat Kod Numarasının Gemiye Yazılmaması",
+      "12 m.'den küçük",
+      "3",
+      "5",
+      "a",
+      "47397",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "ruhsat kod numarasının gemiye yazılmaması 12 m.'den küçük 3 5 a 47397 hayır hayır"
+  },
+  {
+    "source_row": 29,
+    "cells": [
+      null,
+      "12 m. Ve üstü",
+      "3",
+      "5",
+      "a",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": " 12 m. ve üstü 3 5 a 94811  "
+  },
+  {
+    "source_row": 30,
+    "cells": [
+      "İzin ve ruhsat belgesini göstermeme (kişi-donatan vs.)",
+      null,
+      "3",
+      "-",
+      "a",
+      "9473",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "i̇zin ve ruhsat belgesini göstermeme (kişi-donatan vs.)  3 - a 9473 hayır hayır"
+  },
+  {
+    "source_row": 31,
+    "cells": [
+      "İstihsal yerlerinde değişiklik",
+      "İç su",
+      "7",
+      "7",
+      "c",
+      "94811",
+      "Evet (kum, çakıl vs.)",
+      "Hayır"
+    ],
+    "search_text": "i̇stihsal yerlerinde değişiklik i̇ç su 7 7 c 94811 evet (kum, çakıl vs.) hayır"
+  },
+  {
+    "source_row": 32,
+    "cells": [
+      null,
+      "Deniz",
+      "7",
+      "7",
+      "c",
+      "189630",
+      null,
+      null
+    ],
+    "search_text": " deniz 7 7 c 189630  "
+  },
+  {
+    "source_row": 33,
+    "cells": [
+      "Akarsudan su alımlarında filtre vb. tedbirleri almama",
+      null,
+      "9",
+      "8",
+      "d",
+      "47397",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "akarsudan su alımlarında filtre vb. tedbirleri almama  9 8 d 47397 hayır hayır"
+  },
+  {
+    "source_row": 34,
+    "cells": [
+      "Akarsu üzerinde bulunan yetiştiricilik tesisinin suyunu kesme/bırakmama",
+      null,
+      "9",
+      "-",
+      "d",
+      "237034",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "akarsu üzerinde bulunan yetiştiricilik tesisinin suyunu kesme/bırakmama  9 - d 237034 hayır hayır"
+  },
+  {
+    "source_row": 35,
+    "cells": [
+      "Akarsu, göllerde su alımlarında tedbirleri almama",
+      null,
+      "9",
+      "8",
+      "d",
+      "237034",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "akarsu, göllerde su alımlarında tedbirleri almama  9 8 d 237034 hayır hayır"
+  },
+  {
+    "source_row": 36,
+    "cells": [
+      "HES'lerin can suyunu bırakmaması",
+      null,
+      "9",
+      "8",
+      "d",
+      "474079",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "hes'lerin can suyunu bırakmaması  9 8 d 474079 hayır hayır"
+  },
+  {
+    "source_row": 37,
+    "cells": [
+      "Patlayıcı, öldürücü uyuşturucu, elektroşok vb ile avcılık",
+      null,
+      "19",
+      "9",
+      "g",
+      "94811",
+      "Evet",
+      "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir."
+    ],
+    "search_text": "patlayıcı, öldürücü uyuşturucu, elektroşok vb ile avcılık  19 9 g 94811 evet aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir."
+  },
+  {
+    "source_row": 38,
+    "cells": [
+      "Sulara zararlı madde dökülmesi",
+      "Kişi",
+      "20",
+      "11",
+      "h",
+      "47397",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "sulara zararlı madde dökülmesi kişi 20 11 h 47397 hayır hayır"
+  },
+  {
+    "source_row": 39,
+    "cells": [
+      null,
+      "Gıda / Tarım İşletmecisi",
+      "20",
+      "11",
+      "h",
+      "189630",
+      null,
+      null
+    ],
+    "search_text": " gıda / tarım i̇şletmecisi 20 11 h 189630  "
+  },
+  {
+    "source_row": 40,
+    "cells": [
+      null,
+      "Sanayi İşletmecisi",
+      "20",
+      "11",
+      "h",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " sanayi i̇şletmecisi 20 11 h 474079  "
+  },
+  {
+    "source_row": 41,
+    "cells": [
+      "Yabancıların Su Ürünleri İstihsali Yasağı",
+      null,
+      "21",
+      "5",
+      "i",
+      "189630",
+      "Evet",
+      "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir (Gemi dahil)"
+    ],
+    "search_text": "yabancıların su ürünleri i̇stihsali yasağı  21 5 i 189630 evet aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir (gemi dahil)"
+  },
+  {
+    "source_row": 42,
+    "cells": [
+      "Akarsulara engel (ağ, bent, çit vs.) koyma",
+      null,
+      "22",
+      "8",
+      "j",
+      "16106",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "akarsulara engel (ağ, bent, çit vs.) koyma  22 8 j 16106 hayır hayır"
+  },
+  {
+    "source_row": 43,
+    "cells": [
+      "Balık Geçidi",
+      "Yapmayanlara",
+      "22-2",
+      "8",
+      "j",
+      "2370440",
+      "Hayır",
+      "Hayır"
+    ],
+    "search_text": "balık geçidi yapmayanlara 22-2 8 j 2370440 hayır hayır"
+  },
+  {
+    "source_row": 44,
+    "cells": [
+      null,
+      null,
+      "Yaptırması için 18 ay süre verilir, yaptırmaması halinde İPC uygulanır.",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": "  yaptırması için 18 ay süre verilir, yaptırmaması halinde i̇pc uygulanır.     "
+  },
+  {
+    "source_row": 45,
+    "cells": [
+      null,
+      "İşlevsiz olması durumunda gerekli tedbirleri almayanlara",
+      "22-2",
+      "8",
+      "j",
+      "1896350",
+      null,
+      null
+    ],
+    "search_text": " i̇şlevsiz olması durumunda gerekli tedbirleri almayanlara 22-2 8 j 1896350  "
+  },
+  {
+    "source_row": 46,
+    "cells": [
+      null,
+      "Çalıştırmayanlara",
+      "22-2",
+      "8",
+      "j",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " çalıştırmayanlara 22-2 8 j 474079  "
+  },
+  {
+    "source_row": 47,
+    "cells": [
+      "Amatör Avcılık Kurallarının İhlali",
+      "Kişi",
+      "23-a/b",
+      "6",
+      "k",
+      "4730",
+      "Evet",
+      "Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)"
+    ],
+    "search_text": "amatör avcılık kurallarının i̇hlali kişi 23-a/b 6 k 4730 evet evet (gemi hariç) (kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)"
+  },
+  {
+    "source_row": 48,
+    "cells": [
+      null,
+      "Gemi",
+      "23-a/b",
+      "6",
+      "k",
+      "7105",
+      null,
+      null
+    ],
+    "search_text": " gemi 23-a/b 6 k 7105  "
+  },
+  {
+    "source_row": 50,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 51,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 52,
+    "cells": [
+      "23 üncü madde hükümlerine aykırı faaliyet yapan kişi (Tayfa)",
+      "23-b",
+      "16/14",
+      "-",
+      "k",
+      "Hayır",
+      "Hayır",
+      null
+    ],
+    "search_text": "23 üncü madde hükümlerine aykırı faaliyet yapan kişi (tayfa) 23-b 16/14 - k hayır hayır "
+  },
+  {
+    "source_row": 53,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 54,
+    "cells": [
+      null,
+      "16106",
+      null,
+      null,
+      "Suçun 2 yıl içinde tekrarı halinde 2 katı uygulanır.",
+      null,
+      null,
+      null
+    ],
+    "search_text": " 16106   suçun 2 yıl içinde tekrarı halinde 2 katı uygulanır.   "
+  },
+  {
+    "source_row": 55,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 56,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 57,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 59,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 60,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 61,
+    "cells": [
+      "Yasak zamanda gırgır ağları ile istihsal yapmak",
+      "23-b",
+      "16/14",
+      "12",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "yasak zamanda gırgır ağları ile istihsal yapmak 23-b 16/14 12 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 62,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 63,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 64,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 65,
+    "cells": [
+      null,
+      null,
+      "71.076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71.076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 66,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 67,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 68,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 70,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 71,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 72,
+    "cells": [
+      "Gırgır ağı ölçüm belgesi olmaması",
+      "23-a",
+      "14",
+      "12/7",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "gırgır ağı ölçüm belgesi olmaması 23-a 14 12/7 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 73,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 74,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 75,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 76,
+    "cells": [
+      null,
+      null,
+      "71.076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71.076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 77,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 78,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 79,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 81,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 82,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 83,
+    "cells": [
+      "Parekata ve fanyalı ağ ile kalkan avcılığı",
+      "23-a",
+      "14",
+      "21 - 1-d",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "parekata ve fanyalı ağ ile kalkan avcılığı 23-a 14 21 - 1-d k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 84,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 85,
+    "cells": [
+      null,
+      "23.692 (tekne boyuna göre katı)",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23.692 (tekne boyuna göre katı) gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 86,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 87,
+    "cells": [
+      null,
+      null,
+      "71076",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 23692 47384 71076  "
+  },
+  {
+    "source_row": 88,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 89,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 90,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 92,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 93,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 94,
+    "cells": [
+      "Salyangoz avcılığı (05:00-20:00)",
+      "23-b",
+      "16/14",
+      "29 / 1-ç",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "salyangoz avcılığı (05:00-20:00) 23-b 16/14 29 / 1-ç k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 95,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 96,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 97,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 98,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 99,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 100,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 101,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 103,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 104,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 105,
+    "cells": [
+      "Birden fazla algarna ile avlanma",
+      "23-a",
+      "17/5",
+      "29 / 1-c-(4)",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "birden fazla algarna ile avlanma 23-a 17/5 29 / 1-c-(4) k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 106,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 107,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 108,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 109,
+    "cells": [
+      null,
+      null,
+      "71076",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 23692 47384 71076  "
+  },
+  {
+    "source_row": 110,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 111,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 112,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 114,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 115,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 116,
+    "cells": [
+      "90 kulaçtan daha derin gırgır ağı",
+      "23-a",
+      "14",
+      "12/5",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "90 kulaçtan daha derin gırgır ağı 23-a 14 12/5 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 117,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 118,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 119,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 120,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 121,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 122,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 123,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 125,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 126,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 127,
+    "cells": [
+      "Derinlik yasağına (18-24 metreden sığda vb) aykırı avcılık",
+      "23-b",
+      "16/14",
+      "12 / 6-a",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "derinlik yasağına (18-24 metreden sığda vb) aykırı avcılık 23-b 16/14 12 / 6-a k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 128,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 129,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 130,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 131,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 132,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 133,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 134,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 136,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 137,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 138,
+    "cells": [
+      "Yasak zamanda av aracını gemilerde/istihsal yerlerinde bulundurmak",
+      "23-b",
+      "16/7",
+      "Deniz: 50/10\nİçsu: 51/5",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "yasak zamanda av aracını gemilerde/istihsal yerlerinde bulundurmak 23-b 16/7 deniz: 50/10\ni̇çsu: 51/5 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 139,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 140,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 141,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 142,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 143,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 144,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 145,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 147,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 148,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 149,
+    "cells": [
+      "Tüp, Nargile, Zıpkın, Su altı tüfeği vs. balık avcılık yapmak",
+      "23-a",
+      "17/8",
+      "49/11",
+      "k",
+      "Evet",
+      "Evet (3 tekrar sonunda)",
+      null
+    ],
+    "search_text": "tüp, nargile, zıpkın, su altı tüfeği vs. balık avcılık yapmak 23-a 17/8 49/11 k evet evet (3 tekrar sonunda) "
+  },
+  {
+    "source_row": 150,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 151,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 152,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 153,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 154,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 155,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 156,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 158,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 159,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 160,
+    "cells": [
+      "Misina ağlarıyla avcılık kurallarını ihlal (Denizde)",
+      "23-a",
+      "14",
+      "14 / 2-ç",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "misina ağlarıyla avcılık kurallarını ihlal (denizde) 23-a 14 14 / 2-ç k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 161,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 162,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 163,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 164,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 165,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 166,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 167,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 169,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 170,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 171,
+    "cells": [
+      "Şamandıralara plaka yazılmaması\n\nMarkasız av aracı",
+      "23-a",
+      "15/3\n\n14 (markasız av aracı)",
+      "----\n\n49/2",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "şamandıralara plaka yazılmaması\n\nmarkasız av aracı 23-a 15/3\n\n14 (markasız av aracı) ----\n\n49/2 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 172,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 173,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 174,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 175,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 176,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 177,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 178,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 180,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 181,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 182,
+    "cells": [
+      "Manyat, ığrıp, trata, tarlakoz vb. sürütme ağları ile avcılık",
+      "23-a",
+      "14",
+      "14/1",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "manyat, ığrıp, trata, tarlakoz vb. sürütme ağları ile avcılık 23-a 14 14/1 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 183,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 184,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 185,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 186,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 187,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 188,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 189,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 191,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 192,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 193,
+    "cells": [
+      "12 metreden küçük tekne ile gırgır avcılığı",
+      "23-a",
+      "13",
+      "-",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "12 metreden küçük tekne ile gırgır avcılığı 23-a 13 - k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 194,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 195,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır ağı ile avlanıyorsa (3 katı)",
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null,
+      null,
+      null
+    ],
+    "search_text": " 23692 gırgır ağı ile avlanıyorsa (3 katı)  suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.   "
+  },
+  {
+    "source_row": 197,
+    "cells": [
+      null,
+      null,
+      "71076",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": "  71076     "
+  },
+  {
+    "source_row": 198,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 199,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 200,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 202,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 203,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 204,
+    "cells": [
+      "İkinci av aracı bulundurma (12 metre ve üzeri teknelerde)",
+      "23-a",
+      "14",
+      "50/11",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "i̇kinci av aracı bulundurma (12 metre ve üzeri teknelerde) 23-a 14 50/11 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 205,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 206,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 207,
+    "cells": [
+      null,
+      null,
+      null,
+      "12-22 (2 katı)",
+      null,
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   12-22 (2 katı)  22< (3 katı)  "
+  },
+  {
+    "source_row": 208,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "47384",
+      null,
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 47384  71076  "
+  },
+  {
+    "source_row": 209,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 210,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 211,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 213,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 214,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 215,
+    "cells": [
+      "Tırıvırı ile avcılık",
+      "23-a",
+      "14",
+      "49/13",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "tırıvırı ile avcılık 23-a 14 49/13 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 216,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 217,
+    "cells": [
+      null,
+      "23692",
+      null,
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692  tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 218,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 219,
+    "cells": [
+      null,
+      null,
+      null,
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "   23692 47384 71076  "
+  },
+  {
+    "source_row": 220,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 221,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 222,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 224,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 225,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 226,
+    "cells": [
+      "Zaman, yer yasağını ihlal (algarna ile deniz salyangoz avcılığı)",
+      "23-b",
+      "16/14",
+      "29/c",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "zaman, yer yasağını ihlal (algarna ile deniz salyangoz avcılığı) 23-b 16/14 29/c k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 227,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 228,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 229,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 230,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 231,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 232,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 233,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 235,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 236,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 237,
+    "cells": [
+      "Zaman, yer yasağını ihlal (beyaz kum midyesi)",
+      "23-b",
+      "16/14",
+      "28/1,9",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "zaman, yer yasağını ihlal (beyaz kum midyesi) 23-b 16/14 28/1,9 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 238,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 239,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 240,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 241,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 242,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 243,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 244,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 246,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 247,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 248,
+    "cells": [
+      "Kalkan avcılığı kuralları ihlali (zaman, av aracı, izin belge vs.)",
+      "23-b",
+      "16/14\n14\n15/4",
+      "21 / 1-a",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "kalkan avcılığı kuralları ihlali (zaman, av aracı, izin belge vs.) 23-b 16/14\n14\n15/4 21 / 1-a k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 249,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 250,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 251,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 252,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 253,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 254,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 255,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 257,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 258,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 259,
+    "cells": [
+      "Palamut kuralları ihlali (zaman, av aracı)",
+      "23-b",
+      "16/14\n14",
+      "20/1",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "palamut kuralları ihlali (zaman, av aracı) 23-b 16/14\n14 20/1 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 260,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 261,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 262,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 263,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 264,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 265,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 266,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 268,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 269,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 270,
+    "cells": [
+      "Tebliğ ile belirlenen akarsuların deniz ile birleştiği noktadan (mansap) 500 m. yarıçap içerisinde ticari avcılık",
+      "23-b",
+      "17/6",
+      "49/19",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "tebliğ ile belirlenen akarsuların deniz ile birleştiği noktadan (mansap) 500 m. yarıçap içerisinde ticari avcılık 23-b 17/6 49/19 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 271,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 272,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 273,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 274,
+    "cells": [
+      null,
+      null,
+      "71076",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 23692 47384 71076  "
+  },
+  {
+    "source_row": 275,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 276,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 277,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 279,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 280,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 281,
+    "cells": [
+      "Liman, barınak, barınma yeri, çekek yerince avcılık",
+      "23-b",
+      "16/14",
+      "50/8",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "liman, barınak, barınma yeri, çekek yerince avcılık 23-b 16/14 50/8 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 282,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 283,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 284,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 285,
+    "cells": [
+      null,
+      null,
+      "71076 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  71076 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 286,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 287,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 288,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 290,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 291,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 292,
+    "cells": [
+      "Serpme ile ticari avcılık (iç su)",
+      "23-b",
+      "16/14",
+      "6/2 tebliğ\n13-2",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "serpme ile ticari avcılık (iç su) 23-b 16/14 6/2 tebliğ\n13-2 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 293,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 294,
+    "cells": [
+      null,
+      "23692",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null,
+      null,
+      null
+    ],
+    "search_text": " 23692   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.   "
+  },
+  {
+    "source_row": 297,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 298,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 299,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 301,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 302,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 303,
+    "cells": [
+      "Avlanması yasak olan su ürünlerini (tür yasağı) avlanma",
+      "23-b",
+      "16/14",
+      "16/1",
+      "k",
+      "Evet",
+      "Evet (3 tekrar sonunda gemi hariç)",
+      null
+    ],
+    "search_text": "avlanması yasak olan su ürünlerini (tür yasağı) avlanma 23-b 16/14 16/1 k evet evet (3 tekrar sonunda gemi hariç) "
+  },
+  {
+    "source_row": 304,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 305,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 306,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 307,
+    "cells": [
+      null,
+      null,
+      "56640",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  56640 23692 47384 71076  "
+  },
+  {
+    "source_row": 308,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 309,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 310,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 312,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 313,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 314,
+    "cells": [
+      "Yasak boyda su ürünü avlama",
+      "23-b",
+      "16/14",
+      "17/1",
+      "k",
+      "Evet",
+      "Evet (3 tekrar sonunda gemi hariç)",
+      null
+    ],
+    "search_text": "yasak boyda su ürünü avlama 23-b 16/14 17/1 k evet evet (3 tekrar sonunda gemi hariç) "
+  },
+  {
+    "source_row": 315,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 316,
+    "cells": [
+      null,
+      "23692",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 317,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 318,
+    "cells": [
+      null,
+      null,
+      "56640 (tekne boyuna göre katı)",
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "  56640 (tekne boyuna göre katı) 23692 47384 71076  "
+  },
+  {
+    "source_row": 319,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 320,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 321,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 323,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 324,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 325,
+    "cells": [
+      "Işık ile avcılık",
+      "23-b",
+      "16/14",
+      "13",
+      "k",
+      "Evet",
+      "Aykırılığa neden olan av aracı, eşya, alet, edavat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir.",
+      null
+    ],
+    "search_text": "işık ile avcılık 23-b 16/14 13 k evet aykırılığa neden olan av aracı, eşya, alet, edavat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. "
+  },
+  {
+    "source_row": 326,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 327,
+    "cells": [
+      null,
+      "474079",
+      "Gırgır (3 katı)",
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 474079 gırgır (3 katı) tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 328,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 329,
+    "cells": [
+      null,
+      null,
+      "1422237",
+      "474079",
+      "948158",
+      "1422237",
+      null,
+      null
+    ],
+    "search_text": "  1422237 474079 948158 1422237  "
+  },
+  {
+    "source_row": 330,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 331,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 332,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 334,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 335,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 336,
+    "cells": [
+      "İç sular, Marmara Denizi ve boğazlarda trol avcılığı (kişiler)",
+      "24-1/a",
+      "16/14",
+      "9-1",
+      "1",
+      "-",
+      "-",
+      null
+    ],
+    "search_text": "i̇ç sular, marmara denizi ve boğazlarda trol avcılığı (kişiler) 24-1/a 16/14 9-1 1 - - "
+  },
+  {
+    "source_row": 337,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 338,
+    "cells": [
+      null,
+      "94811",
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " 94811 suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.     "
+  },
+  {
+    "source_row": 340,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 341,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 342,
+    "cells": [
+      "İç sular, Marmara Denizi ve boğazlarda trol avcılığı (gemi donatanı veya sahibi)",
+      "24-1/a",
+      "16/14",
+      "9",
+      "1",
+      "Evet",
+      "(İstanbul ve Çanakkale Boğazların ile Marmara Denizinde) İstihsal vasıtaları zapt ve mülkiyeti kamuya geçirilir. Tekrarı halinde 1 yıldan 3 yıla kadar (5000-1000 gün adli para cezası) hapis cezası, su ürünleri ve istihsal vasıtalarına el konularak mülkiyeti kamuya geçirilir. (gemi dahil)",
+      null
+    ],
+    "search_text": "i̇ç sular, marmara denizi ve boğazlarda trol avcılığı (gemi donatanı veya sahibi) 24-1/a 16/14 9 1 evet (i̇stanbul ve çanakkale boğazların ile marmara denizinde) i̇stihsal vasıtaları zapt ve mülkiyeti kamuya geçirilir. tekrarı halinde 1 yıldan 3 yıla kadar (5000-1000 gün adli para cezası) hapis cezası, su ürünleri ve istihsal vasıtalarına el konularak mülkiyeti kamuya geçirilir. (gemi dahil) "
+  },
+  {
+    "source_row": 343,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 344,
+    "cells": [
+      null,
+      "189630",
+      null,
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 189630  tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 345,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 346,
+    "cells": [
+      null,
+      null,
+      null,
+      "189630",
+      "379260",
+      "568890",
+      null,
+      null
+    ],
+    "search_text": "   189630 379260 568890  "
+  },
+  {
+    "source_row": 347,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 348,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 349,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 351,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 352,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 353,
+    "cells": [
+      "Dip trolüne ilişkin yasakların ihlali (kişi-tayfa)",
+      "24/b",
+      "Ağlar 14\n\nYer, zaman vs. 16/14",
+      "10",
+      "1",
+      "Hayır",
+      "Hayır",
+      null
+    ],
+    "search_text": "dip trolüne ilişkin yasakların ihlali (kişi-tayfa) 24/b ağlar 14\n\nyer, zaman vs. 16/14 10 1 hayır hayır "
+  },
+  {
+    "source_row": 354,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 355,
+    "cells": [
+      null,
+      "23692",
+      null,
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null,
+      null
+    ],
+    "search_text": " 23692    suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.  "
+  },
+  {
+    "source_row": 358,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 359,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 360,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 362,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 363,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 364,
+    "cells": [
+      "Dip trolüne ilişkin yasakların ihlali (donatan veya sahip)",
+      "24/b",
+      "Ağlar 14\n\nYer, zaman vs. 16/14",
+      "10",
+      "1",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "dip trolüne ilişkin yasakların ihlali (donatan veya sahip) 24/b ağlar 14\n\nyer, zaman vs. 16/14 10 1 evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 365,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 366,
+    "cells": [
+      null,
+      "66357",
+      null,
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 66357  tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 367,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 368,
+    "cells": [
+      null,
+      null,
+      null,
+      "66357",
+      "132714",
+      "199071",
+      null,
+      null
+    ],
+    "search_text": "   66357 132714 199071  "
+  },
+  {
+    "source_row": 369,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 370,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 371,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 373,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 374,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 375,
+    "cells": [
+      "Orta su trolüne ilişkin yasakların ihlali (kişi-tayfa)",
+      "24/c",
+      "Ağlar 14\n\nYer, zaman vs. 16/14",
+      "11",
+      "k",
+      "Hayır",
+      "Hayır",
+      null
+    ],
+    "search_text": "orta su trolüne ilişkin yasakların ihlali (kişi-tayfa) 24/c ağlar 14\n\nyer, zaman vs. 16/14 11 k hayır hayır "
+  },
+  {
+    "source_row": 376,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 377,
+    "cells": [
+      null,
+      "16106",
+      null,
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null,
+      null
+    ],
+    "search_text": " 16106    suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.  "
+  },
+  {
+    "source_row": 380,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 381,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 382,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 384,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 385,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 386,
+    "cells": [
+      "Orta su trolüne ilişkin yasakların ihlali (donatan veya sahip)",
+      "24/c",
+      "Ağlar 14\n\nYer, zaman vs. 16/14",
+      "11",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "orta su trolüne ilişkin yasakların ihlali (donatan veya sahip) 24/c ağlar 14\n\nyer, zaman vs. 16/14 11 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 387,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 388,
+    "cells": [
+      null,
+      "23692",
+      null,
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 23692  tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 389,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 390,
+    "cells": [
+      null,
+      null,
+      null,
+      "23692",
+      "47384",
+      "71076",
+      null,
+      null
+    ],
+    "search_text": "   23692 47384 71076  "
+  },
+  {
+    "source_row": 391,
+    "cells": [
+      null,
+      "Ruhsatı Geri Alma",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " ruhsatı geri alma      "
+  },
+  {
+    "source_row": 392,
+    "cells": [
+      null,
+      "1. Kez",
+      null,
+      "2. Kez",
+      null,
+      "3. Kez",
+      null,
+      null
+    ],
+    "search_text": " 1. kez  2. kez  3. kez  "
+  },
+  {
+    "source_row": 393,
+    "cells": [
+      null,
+      "1 (bir) ay",
+      null,
+      "3 (üç) ay",
+      null,
+      "İPTAL",
+      null,
+      null
+    ],
+    "search_text": " 1 (bir) ay  3 (üç) ay  i̇ptal  "
+  },
+  {
+    "source_row": 395,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 396,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürün",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürün i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 397,
+    "cells": [
+      "Bilgi belge vermemek (seyir defteri)",
+      "28",
+      "16/14",
+      "48/10",
+      "n",
+      "Hayır",
+      "Hayır",
+      null
+    ],
+    "search_text": "bilgi belge vermemek (seyir defteri) 28 16/14 48/10 n hayır hayır "
+  },
+  {
+    "source_row": 398,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 399,
+    "cells": [
+      null,
+      "6627",
+      null,
+      "Tekne Boyu",
+      null,
+      null,
+      "Suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır.",
+      null
+    ],
+    "search_text": " 6627  tekne boyu   suçun 2 yıl içerisinde tekrarı halinde 2 katı uygulanır. "
+  },
+  {
+    "source_row": 400,
+    "cells": [
+      null,
+      null,
+      null,
+      "<12",
+      "12-22 (2 katı)",
+      "22< (3 katı)",
+      null,
+      null
+    ],
+    "search_text": "   <12 12-22 (2 katı) 22< (3 katı)  "
+  },
+  {
+    "source_row": 401,
+    "cells": [
+      null,
+      null,
+      null,
+      "6627",
+      "13254",
+      "19881",
+      null,
+      null
+    ],
+    "search_text": "   6627 13254 19881  "
+  },
+  {
+    "source_row": 403,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "İPC Miktarı",
+      "El Koyma",
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin i̇pc miktarı el koyma "
+  },
+  {
+    "source_row": 404,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      null,
+      "Ürün",
+      "İstihsal Vasıtası"
+    ],
+    "search_text": " kanun yönetmelik tebliğ   ürün i̇stihsal vasıtası"
+  },
+  {
+    "source_row": 405,
+    "cells": [
+      "Yasak su ürünleirnin satışı, nakli vb. (av sezonunda)",
+      "25/1",
+      "16/14",
+      "16-17",
+      "m",
+      "47397",
+      "Evet",
+      "Hayır"
+    ],
+    "search_text": "yasak su ürünleirnin satışı, nakli vb. (av sezonunda) 25/1 16/14 16-17 m 47397 evet hayır"
+  },
+  {
+    "source_row": 406,
+    "cells": [
+      "Yasak su ürünleirnin satışı, nakli vb. (yasak zamanda)",
+      "25/1",
+      "16/2\n16/14",
+      "16-17 veya 49/20",
+      "m",
+      "47397",
+      null,
+      null
+    ],
+    "search_text": "yasak su ürünleirnin satışı, nakli vb. (yasak zamanda) 25/1 16/2\n16/14 16-17 veya 49/20 m 47397  "
+  },
+  {
+    "source_row": 407,
+    "cells": [
+      "Avlanması yasak olan su ürünlerinin imalatta kullanıması (muhafaza, işleme bv.)",
+      "25/1",
+      "16/14",
+      "16\n17\n49/20",
+      "m",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": "avlanması yasak olan su ürünlerinin imalatta kullanıması (muhafaza, işleme bv.) 25/1 16/14 16\n17\n49/20 m 94811  "
+  },
+  {
+    "source_row": 408,
+    "cells": [
+      "Yasak vasıta ve usullerle izinsiz ilmi teknik çalışma yapmak",
+      "29",
+      "16/9",
+      "49/18",
+      "m",
+      "8048",
+      "Hayır",
+      "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat bv. Zapt ve mülkiyeti kamuya geçirilir."
+    ],
+    "search_text": "yasak vasıta ve usullerle izinsiz ilmi teknik çalışma yapmak 29 16/9 49/18 m 8048 hayır aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat bv. zapt ve mülkiyeti kamuya geçirilir."
+  },
+  {
+    "source_row": 410,
+    "cells": [
+      "İHLAL NEDENİ",
+      null,
+      "İHLAL MADDESİ",
+      null,
+      "Kanunun 36. Maddesinin",
+      "İPC Miktarı (TL)",
+      "El Koyma",
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇  i̇hlal maddesi̇  kanunun 36. maddesinin i̇pc miktarı (tl) el koyma "
+  },
+  {
+    "source_row": 411,
+    "cells": [
+      null,
+      null,
+      "Kanun",
+      "Yönetmelik",
+      null,
+      null,
+      "Ürün",
+      "İstihsal Vasıtası"
+    ],
+    "search_text": "  kanun yönetmelik   ürün i̇stihsal vasıtası"
+  },
+  {
+    "source_row": 412,
+    "cells": [
+      "Su ürünlerini izinsiz yurt dışına çıkarma",
+      "Deniz patlıcanı (500 ge'dan fazla 10 kg'a kadar)",
+      "25-3",
+      "-",
+      "m",
+      "237034",
+      "Evet",
+      "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)"
+    ],
+    "search_text": "su ürünlerini izinsiz yurt dışına çıkarma deniz patlıcanı (500 ge'dan fazla 10 kg'a kadar) 25-3 - m 237034 evet aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)"
+  },
+  {
+    "source_row": 413,
+    "cells": [
+      null,
+      "Deniz patlıcanı (10 kg dahil 100 kg'a kadar)",
+      "25-3",
+      "-",
+      "m",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " deniz patlıcanı (10 kg dahil 100 kg'a kadar) 25-3 - m 474079  "
+  },
+  {
+    "source_row": 414,
+    "cells": [
+      null,
+      "Deniz patlıcanı (100 kg dahil ve daha fazlası)",
+      "25-3",
+      "-",
+      "m",
+      "948169",
+      null,
+      null
+    ],
+    "search_text": " deniz patlıcanı (100 kg dahil ve daha fazlası) 25-3 - m 948169  "
+  },
+  {
+    "source_row": 415,
+    "cells": [
+      null,
+      "Çift kabuklu yumuşakça (2 kg'dan fazla 100 kg kg'a kadar)",
+      "25-3",
+      "-",
+      "m",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": " çift kabuklu yumuşakça (2 kg'dan fazla 100 kg kg'a kadar) 25-3 - m 94811  "
+  },
+  {
+    "source_row": 416,
+    "cells": [
+      null,
+      "Çift kabuklu yumuşakça (100kg dahil 300 kg'a kadar)",
+      "25-3",
+      "-",
+      "m",
+      "284449",
+      null,
+      null
+    ],
+    "search_text": " çift kabuklu yumuşakça (100kg dahil 300 kg'a kadar) 25-3 - m 284449  "
+  },
+  {
+    "source_row": 417,
+    "cells": [
+      null,
+      "Çift kabuklu yumuşakça (300 kg dahil ve daha fazlası)",
+      "25-3",
+      "-",
+      "m",
+      "948169",
+      null,
+      null
+    ],
+    "search_text": " çift kabuklu yumuşakça (300 kg dahil ve daha fazlası) 25-3 - m 948169  "
+  },
+  {
+    "source_row": 418,
+    "cells": [
+      null,
+      "Sülük (10 adetten fazla 100 adete kadar)",
+      "25-3",
+      "-",
+      "m",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": " sülük (10 adetten fazla 100 adete kadar) 25-3 - m 94811  "
+  },
+  {
+    "source_row": 419,
+    "cells": [
+      null,
+      "Sülük (100 adet dahilve daha fazlası)",
+      "25-3",
+      "-",
+      "m",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " sülük (100 adet dahilve daha fazlası) 25-3 - m 474079  "
+  },
+  {
+    "source_row": 420,
+    "cells": [
+      null,
+      "Endemik veya koruma altındaki türleri canlı olarak",
+      "25-3",
+      "-",
+      "m",
+      "474079",
+      null,
+      null
+    ],
+    "search_text": " endemik veya koruma altındaki türleri canlı olarak 25-3 - m 474079  "
+  },
+  {
+    "source_row": 421,
+    "cells": [
+      "Su ürünlerinin izinsiz yurt içine sokulması",
+      "1000 adete kadar",
+      "25-3",
+      "-",
+      "m",
+      "47397",
+      "Evet",
+      "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)"
+    ],
+    "search_text": "su ürünlerinin izinsiz yurt içine sokulması 1000 adete kadar 25-3 - m 47397 evet aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)"
+  },
+  {
+    "source_row": 422,
+    "cells": [
+      null,
+      "1000 adet dahil 3000 adete kadar",
+      "25-3",
+      "-",
+      "m",
+      "94811",
+      null,
+      null
+    ],
+    "search_text": " 1000 adet dahil 3000 adete kadar 25-3 - m 94811  "
+  },
+  {
+    "source_row": 423,
+    "cells": [
+      null,
+      "3000 adet dahil 5000 adete kadar",
+      "25-3",
+      "-",
+      "m",
+      "142217",
+      null,
+      null
+    ],
+    "search_text": " 3000 adet dahil 5000 adete kadar 25-3 - m 142217  "
+  },
+  {
+    "source_row": 424,
+    "cells": [
+      null,
+      "5000 adet dahil ve daha fazlası",
+      "25-3",
+      "-",
+      "m",
+      "189630",
+      null,
+      null
+    ],
+    "search_text": " 5000 adet dahil ve daha fazlası 25-3 - m 189630  "
+  },
+  {
+    "source_row": 427,
+    "cells": [
+      "BAGİS",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": "bagi̇s       "
+  },
+  {
+    "source_row": 428,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesi",
+      "İPC Miktarı (TL)",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesi i̇pc miktarı (tl)  "
+  },
+  {
+    "source_row": 429,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "BAGİS Tebliği",
+      null,
+      "Tekne Boyu < 12",
+      "Tekne Boyu 12-22",
+      "Tekne Boyu 22 <"
+    ],
+    "search_text": " kanun yönetmelik bagi̇s tebliği  tekne boyu < 12 tekne boyu 12-22 tekne boyu 22 <"
+  },
+  {
+    "source_row": 430,
+    "cells": [
+      "BAGİS'in afet vs. durumunda işlevsiz olduğunu 15 gün içinde bildirmeme",
+      "Ek madde - 4",
+      "13",
+      "9/3",
+      "p",
+      "9473",
+      "15098",
+      "22647"
+    ],
+    "search_text": "bagi̇s'in afet vs. durumunda işlevsiz olduğunu 15 gün içinde bildirmeme ek madde - 4 13 9/3 p 9473 15098 22647"
+  },
+  {
+    "source_row": 431,
+    "cells": [
+      "BAGİS arızasını bildirmeme (12 saat içinde)",
+      "Ek madde - 4",
+      "13",
+      "8/1",
+      "p",
+      "16106",
+      "32212",
+      "48318"
+    ],
+    "search_text": "bagi̇s arızasını bildirmeme (12 saat içinde) ek madde - 4 13 8/1 p 16106 32212 48318"
+  },
+  {
+    "source_row": 432,
+    "cells": [
+      "BAGİS cihazını teslime etmeme (15 gün içinde)",
+      "Ek madde - 4",
+      "13",
+      "9/1",
+      "p",
+      "47397",
+      "94397",
+      "142191"
+    ],
+    "search_text": "bagi̇s cihazını teslime etmeme (15 gün içinde) ek madde - 4 13 9/1 p 47397 94397 142191"
+  },
+  {
+    "source_row": 433,
+    "cells": [
+      "BAGİS cihazını takmama, çalıştırmama",
+      "Ek madde - 4",
+      "13",
+      "7/1",
+      "p",
+      "47397",
+      "94397",
+      "142191"
+    ],
+    "search_text": "bagi̇s cihazını takmama, çalıştırmama ek madde - 4 13 7/1 p 47397 94397 142191"
+  },
+  {
+    "source_row": 434,
+    "cells": [
+      "BAGİS arızası giderilmeden avcılık yapma",
+      "Ek madde - 4",
+      "13",
+      "8/2",
+      "p",
+      "16106",
+      "32212",
+      "22647"
+    ],
+    "search_text": "bagi̇s arızası giderilmeden avcılık yapma ek madde - 4 13 8/2 p 16106 32212 22647"
+  },
+  {
+    "source_row": 436,
+    "cells": [
+      "İHLAL NEDENİ",
+      null,
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "İPC Miktarı (TL)",
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇  i̇hlal maddesi̇   kanunun 36. maddesinin i̇pc miktarı (tl) "
+  },
+  {
+    "source_row": 437,
+    "cells": [
+      null,
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      null,
+      null
+    ],
+    "search_text": "  kanun yönetmelik tebliğ   "
+  },
+  {
+    "source_row": 438,
+    "cells": [
+      "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak",
+      "Tam boyu 12 m'den küçük balıkçı gemileri",
+      "Ek madde - 5",
+      "16/15",
+      "49/26",
+      "r",
+      "9473",
+      null
+    ],
+    "search_text": "i̇stihsal edilen ürünü karaya çıkış noktalarından boşaltmamak tam boyu 12 m'den küçük balıkçı gemileri ek madde - 5 16/15 49/26 r 9473 "
+  },
+  {
+    "source_row": 439,
+    "cells": [
+      null,
+      "Tam boyu 12 m. dahil, 22 m'den küçük balıkçı tekneleri",
+      "Ek madde - 5",
+      "16/15",
+      "49/26",
+      "r",
+      "28433",
+      null
+    ],
+    "search_text": " tam boyu 12 m. dahil, 22 m'den küçük balıkçı tekneleri ek madde - 5 16/15 49/26 r 28433 "
+  },
+  {
+    "source_row": 440,
+    "cells": [
+      null,
+      "Tam boyu 22m dahil ve daha büyük balıkçı gemileri",
+      "Ek madde - 5",
+      "16/15",
+      "49/26",
+      "r",
+      "47397",
+      null
+    ],
+    "search_text": " tam boyu 22m dahil ve daha büyük balıkçı gemileri ek madde - 5 16/15 49/26 r 47397 "
+  },
+  {
+    "source_row": 441,
+    "cells": [
+      "Uluslararası sularda izinsiz avcılık yapmak",
+      "12 m'den küçük (ruhsatlı balıkçı gemisi)",
+      "Ek madde - 7",
+      "18",
+      "50/4",
+      "t",
+      "94811",
+      null
+    ],
+    "search_text": "uluslararası sularda izinsiz avcılık yapmak 12 m'den küçük (ruhsatlı balıkçı gemisi) ek madde - 7 18 50/4 t 94811 "
+  },
+  {
+    "source_row": 442,
+    "cells": [
+      null,
+      "12 m dahil, 22 m'den küçük (ruhsatlı balıkçı gemisi)",
+      "Ek madde - 7",
+      "18",
+      "50/4",
+      "t",
+      "189630",
+      null
+    ],
+    "search_text": " 12 m dahil, 22 m'den küçük (ruhsatlı balıkçı gemisi) ek madde - 7 18 50/4 t 189630 "
+  },
+  {
+    "source_row": 443,
+    "cells": [
+      null,
+      "22 m dahil ve daha büyük (ruhsatlı balıkçı gemisi)",
+      "Ek madde - 7",
+      "18",
+      "50/4",
+      "t",
+      "284449",
+      null
+    ],
+    "search_text": " 22 m dahil ve daha büyük (ruhsatlı balıkçı gemisi) ek madde - 7 18 50/4 t 284449 "
+  },
+  {
+    "source_row": 444,
+    "cells": [
+      null,
+      "12 m'den küçük (ruhsatsız gemi)",
+      "Ek madde - 7",
+      "18",
+      "50/4",
+      "t",
+      "189630",
+      null
+    ],
+    "search_text": " 12 m'den küçük (ruhsatsız gemi) ek madde - 7 18 50/4 t 189630 "
+  },
+  {
+    "source_row": 445,
+    "cells": [
+      null,
+      "12 m dahil, 22 m'den küçük (ruhsatsız gemi)",
+      "Ek madde - 7",
+      "18",
+      "50/4",
+      "t",
+      "379267",
+      null
+    ],
+    "search_text": " 12 m dahil, 22 m'den küçük (ruhsatsız gemi) ek madde - 7 18 50/4 t 379267 "
+  },
+  {
+    "source_row": 446,
+    "cells": [
+      null,
+      "22 m dahil ve daha büyük (ruhsatsız gemi)",
+      "Ek madde - 7",
+      "18",
+      "50/4",
+      "t",
+      "474079",
+      null
+    ],
+    "search_text": " 22 m dahil ve daha büyük (ruhsatsız gemi) ek madde - 7 18 50/4 t 474079 "
+  },
+  {
+    "source_row": 447,
+    "cells": [
+      "İzinsiz Balıklandırma Yapmak",
+      "Gerçek kişi",
+      "Ek madde - 6",
+      "16/10",
+      "49/22",
+      "s",
+      "94811",
+      null
+    ],
+    "search_text": "i̇zinsiz balıklandırma yapmak gerçek kişi ek madde - 6 16/10 49/22 s 94811 "
+  },
+  {
+    "source_row": 448,
+    "cells": [
+      null,
+      "Tüzel kişi",
+      "Ek madde - 6",
+      "16/10",
+      "49/22",
+      "s",
+      "189630",
+      null
+    ],
+    "search_text": " tüzel kişi ek madde - 6 16/10 49/22 s 189630 "
+  },
+  {
+    "source_row": 449,
+    "cells": [
+      "Nakil belgesi bulundurmamak",
+      null,
+      "Ek madde - 5",
+      "16/15",
+      "46",
+      "r",
+      "18954",
+      null
+    ],
+    "search_text": "nakil belgesi bulundurmamak  ek madde - 5 16/15 46 r 18954 "
+  },
+  {
+    "source_row": 450,
+    "cells": [
+      "Nakil belgesini istenilen şekil ve zamanda göndermemek",
+      null,
+      "Ek madde - 5",
+      "16/15",
+      "46",
+      "r",
+      "9473",
+      null
+    ],
+    "search_text": "nakil belgesini istenilen şekil ve zamanda göndermemek  ek madde - 5 16/15 46 r 9473 "
+  },
+  {
+    "source_row": 452,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 453,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürüne",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürüne i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 454,
+    "cells": [
+      "Kotaya tabi ürünün belgesiz nakli",
+      "25",
+      "16/15",
+      "46/4",
+      "m",
+      "Evet",
+      "Hayır",
+      null
+    ],
+    "search_text": "kotaya tabi ürünün belgesiz nakli 25 16/15 46/4 m evet hayır "
+  },
+  {
+    "source_row": 455,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 456,
+    "cells": [
+      null,
+      "47397",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " 47397      "
+  },
+  {
+    "source_row": 458,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 459,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürüne",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürüne i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 460,
+    "cells": [
+      "Hedef Dışı Türün E-Seyirde Bildirilmemesi",
+      "28",
+      "16/15",
+      "18-b",
+      "n",
+      "Hayır",
+      "Hayır",
+      null
+    ],
+    "search_text": "hedef dışı türün e-seyirde bildirilmemesi 28 16/15 18-b n hayır hayır "
+  },
+  {
+    "source_row": 461,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 462,
+    "cells": [
+      null,
+      "6627",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " 6627      "
+  },
+  {
+    "source_row": 463,
+    "cells": [
+      null,
+      "Tekne boyuna göre ceza miktarları",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " tekne boyuna göre ceza miktarları      "
+  },
+  {
+    "source_row": 464,
+    "cells": [
+      null,
+      "<12 m",
+      null,
+      "12-22 m",
+      null,
+      "> 22 m",
+      null,
+      null
+    ],
+    "search_text": " <12 m  12-22 m  > 22 m  "
+  },
+  {
+    "source_row": 465,
+    "cells": [
+      null,
+      "6627",
+      null,
+      "13254",
+      null,
+      "19881",
+      null,
+      null
+    ],
+    "search_text": " 6627  13254  19881  "
+  },
+  {
+    "source_row": 467,
+    "cells": [
+      "İHLAL NEDENİ",
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "El Koyma",
+      null,
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇ i̇hlal maddesi̇   kanunun 36. maddesinin el koyma  "
+  },
+  {
+    "source_row": 468,
+    "cells": [
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      "Ürüne",
+      "İstihsal Vasıtası",
+      null
+    ],
+    "search_text": " kanun yönetmelik tebliğ  ürüne i̇stihsal vasıtası "
+  },
+  {
+    "source_row": 469,
+    "cells": [
+      "Yetiştiricilik Tesislerine Mesafe Yasağına Uymama",
+      "23-b",
+      "16/14",
+      "49/15",
+      "k",
+      "Evet",
+      "Evet (gemi hariç)",
+      null
+    ],
+    "search_text": "yetiştiricilik tesislerine mesafe yasağına uymama 23-b 16/14 49/15 k evet evet (gemi hariç) "
+  },
+  {
+    "source_row": 470,
+    "cells": [
+      null,
+      "İPC Miktarı",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " i̇pc miktarı      "
+  },
+  {
+    "source_row": 471,
+    "cells": [
+      null,
+      "23692",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " 23692      "
+  },
+  {
+    "source_row": 472,
+    "cells": [
+      null,
+      "Tekne boyuna göre ceza miktarları",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " tekne boyuna göre ceza miktarları      "
+  },
+  {
+    "source_row": 473,
+    "cells": [
+      null,
+      "Gırgır (3 katı)",
+      null,
+      "<12 m",
+      "12-22 m",
+      null,
+      "> 22 m",
+      null
+    ],
+    "search_text": " gırgır (3 katı)  <12 m 12-22 m  > 22 m "
+  },
+  {
+    "source_row": 474,
+    "cells": [
+      null,
+      "71076",
+      null,
+      "23692",
+      "47384",
+      null,
+      "71076",
+      null
+    ],
+    "search_text": " 71076  23692 47384  71076 "
+  },
+  {
+    "source_row": 476,
+    "cells": [
+      "İHLAL NEDENİ",
+      null,
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "İPC Miktarı (TL)",
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇  i̇hlal maddesi̇   kanunun 36. maddesinin i̇pc miktarı (tl) "
+  },
+  {
+    "source_row": 477,
+    "cells": [
+      null,
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      null,
+      null
+    ],
+    "search_text": "  kanun yönetmelik tebliğ   "
+  },
+  {
+    "source_row": 478,
+    "cells": [
+      "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+      "Avcılığa ait güncel kayıtların tutulmaması veya bulundurulmaması",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "23692",
+      null
+    ],
+    "search_text": "i̇stihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi avcılığa ait güncel kayıtların tutulmaması veya bulundurulmaması 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 23692 "
+  },
+  {
+    "source_row": 479,
+    "cells": [
+      null,
+      "İstihsal alanının şeklinin ve özelliğinin değiştirilmesi veya değiştirilmesine izin verilmesi",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "94811",
+      null
+    ],
+    "search_text": " i̇stihsal alanının şeklinin ve özelliğinin değiştirilmesi veya değiştirilmesine izin verilmesi 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 94811 "
+  },
+  {
+    "source_row": 480,
+    "cells": [
+      null,
+      "Kira süresi sonunda veya sözleşmenin feshi halinde kiralanan yerin istenilen şartlarda teslim edilmemesi",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "142217",
+      null
+    ],
+    "search_text": " kira süresi sonunda veya sözleşmenin feshi halinde kiralanan yerin istenilen şartlarda teslim edilmemesi 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 142217 "
+  },
+  {
+    "source_row": 481,
+    "cells": [
+      null,
+      "Kiralama teknik şartnamesinde belirtilen miktardan %10'a kadar fazla avcılık yaptırılması",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "47397",
+      null
+    ],
+    "search_text": " kiralama teknik şartnamesinde belirtilen miktardan %10'a kadar fazla avcılık yaptırılması 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 47397 "
+  },
+  {
+    "source_row": 482,
+    "cells": [
+      null,
+      "Kiralama teknik şartnamesinde belirtilen miktardan %10 dahil %5*'ye kadar fazla avcılık yaptırılması",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "94811",
+      null
+    ],
+    "search_text": " kiralama teknik şartnamesinde belirtilen miktardan %10 dahil %5*'ye kadar fazla avcılık yaptırılması 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 94811 "
+  },
+  {
+    "source_row": 483,
+    "cells": [
+      null,
+      "Kiralama teknik şartnamesinde belirtilen miktardan %50 dahil fazla avcılık yaptırılması",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "189630",
+      null
+    ],
+    "search_text": " kiralama teknik şartnamesinde belirtilen miktardan %50 dahil fazla avcılık yaptırılması 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 189630 "
+  },
+  {
+    "source_row": 484,
+    "cells": [
+      null,
+      "Kiracıların kiralama haklarını başkalarına devretmesi",
+      "4",
+      "Su ürünleri üretiminde kiralama yön. Md. 13/1",
+      "-",
+      "b",
+      "237034",
+      null
+    ],
+    "search_text": " kiracıların kiralama haklarını başkalarına devretmesi 4 su ürünleri üretiminde kiralama yön. md. 13/1 - b 237034 "
+  },
+  {
+    "source_row": 485,
+    "cells": [
+      null,
+      "Aynı kabahatin tekrarında idari para cezaları iki katı olarak uygulanır ve kira sözleşmeşeri feshedilir.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " aynı kabahatin tekrarında idari para cezaları iki katı olarak uygulanır ve kira sözleşmeşeri feshedilir.      "
+  },
+  {
+    "source_row": 487,
+    "cells": [
+      "İHLAL NEDENİ",
+      null,
+      "İHLAL MADDESİ",
+      null,
+      null,
+      "Kanunun 36. Maddesinin",
+      "İPC Miktarı (TL)",
+      null
+    ],
+    "search_text": "i̇hlal nedeni̇  i̇hlal maddesi̇   kanunun 36. maddesinin i̇pc miktarı (tl) "
+  },
+  {
+    "source_row": 488,
+    "cells": [
+      null,
+      null,
+      "Kanun",
+      "Yönetmelik",
+      "Tebliğ",
+      null,
+      null,
+      null
+    ],
+    "search_text": "  kanun yönetmelik tebliğ   "
+  },
+  {
+    "source_row": 489,
+    "cells": [
+      "Balıkçı barınakları mevzuatlarına aykırılık",
+      "Balıkçı barınaklarında bağlama planı yapılmaması",
+      "17",
+      "Balıkçı Barınakları Yönetmeliği\n9",
+      "-",
+      "f",
+      "23692",
+      null
+    ],
+    "search_text": "balıkçı barınakları mevzuatlarına aykırılık balıkçı barınaklarında bağlama planı yapılmaması 17 balıkçı barınakları yönetmeliği\n9 - f 23692 "
+  },
+  {
+    "source_row": 490,
+    "cells": [
+      null,
+      "Balıkçı barınaklarında ticari amaçla su ürünleri avcılığına izin verilmesi",
+      "17",
+      "Balıkçı Barınakları Yönetmeliği\n9",
+      "-",
+      "f",
+      "23692",
+      null
+    ],
+    "search_text": " balıkçı barınaklarında ticari amaçla su ürünleri avcılığına izin verilmesi 17 balıkçı barınakları yönetmeliği\n9 - f 23692 "
+  },
+  {
+    "source_row": 491,
+    "cells": [
+      null,
+      "Balıkçı barınaklarında mevzuata aykırı yapı yapılması",
+      "17",
+      "Balıkçı Barınakları Yönetmeliği 13,19",
+      "-",
+      "f",
+      "237034",
+      null
+    ],
+    "search_text": " balıkçı barınaklarında mevzuata aykırı yapı yapılması 17 balıkçı barınakları yönetmeliği 13,19 - f 237034 "
+  },
+  {
+    "source_row": 492,
+    "cells": [
+      null,
+      "Balıkçı barınakları ile barınaklarda bulunan alt ve üst yapıların amaç dışı kullanılması veya kullandırılması",
+      "17",
+      "Balıkçı Barınakları Yönetmeliği 13,19, 9",
+      "-",
+      "f",
+      "142217",
+      null
+    ],
+    "search_text": " balıkçı barınakları ile barınaklarda bulunan alt ve üst yapıların amaç dışı kullanılması veya kullandırılması 17 balıkçı barınakları yönetmeliği 13,19, 9 - f 142217 "
+  },
+  {
+    "source_row": 493,
+    "cells": [
+      null,
+      "Kiralanan barınak ve barınaktaki üst yapıların kiralayanlar tarafından üçüncü şahıslara kiralanması, devredilmesi veya ortak alınması",
+      "17",
+      "Balıkçı Barınakları Yönetmeliği\n8, 9",
+      "-",
+      "f",
+      "237034",
+      null
+    ],
+    "search_text": " kiralanan barınak ve barınaktaki üst yapıların kiralayanlar tarafından üçüncü şahıslara kiralanması, devredilmesi veya ortak alınması 17 balıkçı barınakları yönetmeliği\n8, 9 - f 237034 "
+  },
+  {
+    "source_row": 494,
+    "cells": [
+      null,
+      "Bakanlıkça belirtilen gemilerin barınaklardan yararlanmasına izin verilmemesi",
+      "17",
+      "Balıkçı Barınakları Yönetmeliği\n8, 9, 4, 19",
+      "-",
+      "f",
+      "142217",
+      null
+    ],
+    "search_text": " bakanlıkça belirtilen gemilerin barınaklardan yararlanmasına izin verilmemesi 17 balıkçı barınakları yönetmeliği\n8, 9, 4, 19 - f 142217 "
+  },
+  {
+    "source_row": 495,
+    "cells": [
+      "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+      "Kuluçkahane (kapasitesi 1 milyondan az)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "94811",
+      null
+    ],
+    "search_text": "i̇zinsiz su ürünleri yetiştiricilik tesisi kurma kuluçkahane (kapasitesi 1 milyondan az) 13 - - e 94811 "
+  },
+  {
+    "source_row": 496,
+    "cells": [
+      null,
+      "Kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "284449",
+      null
+    ],
+    "search_text": " kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az) 13 - - e 284449 "
+  },
+  {
+    "source_row": 497,
+    "cells": [
+      null,
+      "Kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "474079",
+      null
+    ],
+    "search_text": " kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az) 13 - - e 474079 "
+  },
+  {
+    "source_row": 498,
+    "cells": [
+      null,
+      "Kuluçkahane (kapasitesi 10 milyon dahil ve fazlası)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "948169",
+      null
+    ],
+    "search_text": " kuluçkahane (kapasitesi 10 milyon dahil ve fazlası) 13 - - e 948169 "
+  },
+  {
+    "source_row": 499,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 50 ton/yıl'dan az)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "94811",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 50 ton/yıl'dan az) 13 - - e 94811 "
+  },
+  {
+    "source_row": 500,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "284449",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az) 13 - - e 284449 "
+  },
+  {
+    "source_row": 501,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "474079",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az) 13 - - e 474079 "
+  },
+  {
+    "source_row": 502,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası)",
+      "13",
+      "-",
+      "-",
+      "e",
+      "948169",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası) 13 - - e 948169 "
+  },
+  {
+    "source_row": 503,
+    "cells": [
+      "Teknik personel bulundurmama",
+      "Kapasitesi kuluçkahanede 10 milyondan az - büyütmede 500 ton/yıl'dan az",
+      "13",
+      "20",
+      "-",
+      "e",
+      "331855",
+      null
+    ],
+    "search_text": "teknik personel bulundurmama kapasitesi kuluçkahanede 10 milyondan az - büyütmede 500 ton/yıl'dan az 13 20 - e 331855 "
+  },
+  {
+    "source_row": 504,
+    "cells": [
+      null,
+      "Kapasitesi kuluçkahanede 10 milyon dahil fazlası - büyütmede 500 ton/yıl dahil fazlası",
+      "13",
+      "20",
+      "-",
+      "e",
+      "474079",
+      null
+    ],
+    "search_text": " kapasitesi kuluçkahanede 10 milyon dahil fazlası - büyütmede 500 ton/yıl dahil fazlası 13 20 - e 474079 "
+  },
+  {
+    "source_row": 505,
+    "cells": [
+      "Artıma sistemi kurmama veya çalıştırmama",
+      "Kapasitesi kuluçkahanede 5 milyondan az - büyütmede 50 ton/yıl'dan az",
+      "13",
+      "22",
+      "-",
+      "-",
+      "47397",
+      null
+    ],
+    "search_text": "artıma sistemi kurmama veya çalıştırmama kapasitesi kuluçkahanede 5 milyondan az - büyütmede 50 ton/yıl'dan az 13 22 - - 47397 "
+  },
+  {
+    "source_row": 506,
+    "cells": [
+      null,
+      "Kapasitesi kuluçkahanede 5 milyon dahil fazla - büyütmede 50 ton/yıl dahil fazla",
+      "13",
+      "22",
+      "-",
+      "-",
+      "474079",
+      null
+    ],
+    "search_text": " kapasitesi kuluçkahanede 5 milyon dahil fazla - büyütmede 50 ton/yıl dahil fazla 13 22 - - 474079 "
+  },
+  {
+    "source_row": 507,
+    "cells": [
+      "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+      "Kuluçkahane (kapasitesi 1 milyondan az)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "47397",
+      null
+    ],
+    "search_text": "su ürünleri yetiştiricilik yönetmeliği hükümlerine aykırılık kuluçkahane (kapasitesi 1 milyondan az) 13 yetiştiricilik yönetmeliğinde uygun madde - e 47397 "
+  },
+  {
+    "source_row": 508,
+    "cells": [
+      null,
+      "Kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "189630",
+      null
+    ],
+    "search_text": " kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az) 13 yetiştiricilik yönetmeliğinde uygun madde - e 189630 "
+  },
+  {
+    "source_row": 509,
+    "cells": [
+      null,
+      "Kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "284449",
+      null
+    ],
+    "search_text": " kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az) 13 yetiştiricilik yönetmeliğinde uygun madde - e 284449 "
+  },
+  {
+    "source_row": 510,
+    "cells": [
+      null,
+      "Kuluçkahane (kapasitesi 10 milyon dahil ve fazlası)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "474079",
+      null
+    ],
+    "search_text": " kuluçkahane (kapasitesi 10 milyon dahil ve fazlası) 13 yetiştiricilik yönetmeliğinde uygun madde - e 474079 "
+  },
+  {
+    "source_row": 511,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 50 ton/yıl'dan az)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "47397",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 50 ton/yıl'dan az) 13 yetiştiricilik yönetmeliğinde uygun madde - e 47397 "
+  },
+  {
+    "source_row": 512,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "189630",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az) 13 yetiştiricilik yönetmeliğinde uygun madde - e 189630 "
+  },
+  {
+    "source_row": 513,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "284449",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az) 13 yetiştiricilik yönetmeliğinde uygun madde - e 284449 "
+  },
+  {
+    "source_row": 514,
+    "cells": [
+      null,
+      "Büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası)",
+      "13",
+      "Yetiştiricilik Yönetmeliğinde Uygun Madde",
+      "-",
+      "e",
+      "474079",
+      null
+    ],
+    "search_text": " büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası) 13 yetiştiricilik yönetmeliğinde uygun madde - e 474079 "
+  },
+  {
+    "source_row": 515,
+    "cells": [
+      "İstihsal Haklarını Kiralayanların Yönetmelikle Belirlenen Kurallara Aykırı Hareket Etmesi",
+      "Kiralanan su miktarı veya su alanından %10'a kadar fazla su yada su alanı kullanılması",
+      "13",
+      "Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3",
+      "-",
+      "e",
+      "47397",
+      null
+    ],
+    "search_text": "i̇stihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi kiralanan su miktarı veya su alanından %10'a kadar fazla su yada su alanı kullanılması 13 su ürünleri üretiminde kiralama yön. md. 13/3 - e 47397 "
+  },
+  {
+    "source_row": 516,
+    "cells": [
+      null,
+      "Kiralanan su miktarı veya su alanından %10 dahil, %30'a kadar fazla su yada su alanı kullanılması",
+      "13",
+      "Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3",
+      "-",
+      "e",
+      "94811",
+      null
+    ],
+    "search_text": " kiralanan su miktarı veya su alanından %10 dahil, %30'a kadar fazla su yada su alanı kullanılması 13 su ürünleri üretiminde kiralama yön. md. 13/3 - e 94811 "
+  },
+  {
+    "source_row": 517,
+    "cells": [
+      null,
+      "Kiralanan su miktarı veya su alanından %30 dahil, %60'a kadar fazla su yada su alanı kullanılması",
+      "13",
+      "Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3",
+      "-",
+      "e",
+      "189630",
+      null
+    ],
+    "search_text": " kiralanan su miktarı veya su alanından %30 dahil, %60'a kadar fazla su yada su alanı kullanılması 13 su ürünleri üretiminde kiralama yön. md. 13/3 - e 189630 "
+  },
+  {
+    "source_row": 518,
+    "cells": [
+      null,
+      "Kiralanan su miktarı veya su alanından %60 dahil fazla su yada su alanı kullanılması",
+      "13",
+      "Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3",
+      "-",
+      "e",
+      "237034",
+      null
+    ],
+    "search_text": " kiralanan su miktarı veya su alanından %60 dahil fazla su yada su alanı kullanılması 13 su ürünleri üretiminde kiralama yön. md. 13/3 - e 237034 "
+  },
+  {
+    "source_row": 519,
+    "cells": [
+      null,
+      "Yazılı idari para cezaları, yetiştiricilik proje kapasitesi 250 ton/yıl ve daha fazla olan yetiştiricilik tesisleri ile kuluçkahane kapasitesi 5 milyon adet/yıl ve daha fazla olan kuluçkahaneler için iki katı olarak uygulanır.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "search_text": " yazılı idari para cezaları, yetiştiricilik proje kapasitesi 250 ton/yıl ve daha fazla olan yetiştiricilik tesisleri ile kuluçkahane kapasitesi 5 milyon adet/yıl ve daha fazla olan kuluçkahaneler için iki katı olarak uygulanır.      "
+  }
+]

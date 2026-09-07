@@ -1,0 +1,3036 @@
+[
+  {
+    "key": "01_Girgir",
+    "short_title": "Gırgır",
+    "title": "GIRGIR TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Gırgır ağı ve varsa ışık/yardımcı tekne kontrolleri",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 8,
+        "text": "Ek-3 Ağ Ölçüm Belgesi var ve ilgili av sezonu için geçerli mi?",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "gırgır ağı ölçüm belgesi"
+      },
+      {
+        "no": 9,
+        "text": "Gırgır ağının derinliği 164 m (90 kulaç) sınırına uygun mu? Ton balığı türleri istisnası varsa belge/faaliyet yönünden teyit et.",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 10,
+        "text": "Olay tarihi av dönemine uygun mu? Akdeniz’de genel kapalı dönem 15 Nisan-15 Eylül; diğer denizlerde 15 Nisan-31 Ağustos.",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 11,
+        "text": "Av sahası gırgıra açık mı? Bölgesel yasak alan/koordinatları ve kıyı derinliği sınırlarını konum üzerinden kontrol et.",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 12,
+        "text": "Kıyı derinliği uygun mu? Karadeniz’de 1 Eylül-15 Aralık en az 18 m; 16 Aralık-14 Nisan en az 24 m; diğer denizlerde genel olarak en az 24 m.",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 13,
+        "text": "Hamsi avlanıyorsa Ek-2 izin, kota, belirlenen karaya çıkış noktası ve Karadeniz/Marmara için 15.00-09.00 saat kuralı uygun mu?",
+        "ref": [
+          "61",
+          19
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 14,
+        "text": "Işık kullanılıyorsa bölge izinli mi; Ek-2 ışık avcılığı izni, tek ışık gemisi, personel, 200 m takım mesafesi ve toplam <=8000 W şartları sağlanıyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 15,
+        "text": "Işık kullanılıyorsa aydınlatma yalnız su üstünde mi, beyaz ışık kullanılmıyor mu, 30 m’den sığ su ve kafeslere 300 m’den yakın alan dışında mı?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 16,
+        "text": "Marmara/İstanbul/Çanakkale’de yardımcı gemi varsa yalnız gırgır ağını çeviren bot istisnasına mı giriyor? Diğer yardımcı gemiler avlanma alanında bulunmamalı.",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 17,
+        "text": "Kapalı dönem/yerden geçiş veya gemi-donanım denemesi söz konusuysa gerekli Geçiş İzin Belgesi / test izni mevcut mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 18,
+        "text": "Akdeniz — Susanoğlu–Atakent ile Akıncı Burnu arası: 11 m ve daha derin sularda max 600 m boy, 33 m derinlikte gırgır serbest; ancak bu teknelerde bom, ağ makarası direği, vinç, power-block bulundurulamaz ve alttan büzülme hariç mekanik güç kullanılamaz.",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "gırgır"
+      }
+    ],
+    "measure_fields": [
+      "Ağ derinliği (m/kulaç)",
+      "Su derinliği (m)",
+      "Işık toplam gücü (W)",
+      "Ek-3 belge no",
+      "Ek-2/Geçiş izin no"
+    ],
+    "refs": [
+      [
+        "61",
+        12
+      ],
+      [
+        "61",
+        13
+      ],
+      [
+        "61",
+        19
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ],
+      [
+        "law",
+        3
+      ],
+      [
+        "law",
+        33
+      ],
+      [
+        "law",
+        36
+      ]
+    ]
+  },
+  {
+    "key": "02_Dip_Trolu",
+    "short_title": "Dip Trolü",
+    "title": "DİP TROLÜ TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Trol sahası, dönem, ağ/torba ve kapı kontrolleri",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "dip trolüne ilişkin yasak"
+      },
+      {
+        "no": 8,
+        "text": "Marmara Denizi ile İstanbul ve Çanakkale Boğazlarında dip trolü yapılmadığı teyit edildi mi?",
+        "ref": [
+          "61",
+          9
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 9,
+        "text": "Olay tarihi açık dönemde mi? Akdeniz’de 15 Nisan-15 Eylül, diğer açık denizlerde 15 Nisan-31 Ağustos genel kapalı dönemdir.",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 10,
+        "text": "Mevki, 6/1 Md.9-10’daki tam yasak saha ve kıyıdan mesafe yasaklarının dışında mı? GPS/harita üzerinden teyit et.",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "dip trolüne ilişkin yasak"
+      },
+      {
+        "no": 11,
+        "text": "Ege/Akdeniz’de torba: baklava >=44 mm veya kare >=40 mm; muhafaza ağı ilgili torba ölçüsünün en az 2 katı mı?",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 12,
+        "text": "Karadeniz’de torba ağ gözü >=40 mm ve muhafaza >=80 mm mi? (Baklava torba 1 Eylül 2028’den sonra 44 mm.)",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 13,
+        "text": "Torba kısmında torba+muhafaza dışında daha küçük gözlü ek ağ veya monofilament ağ bulunmuyor mu?",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 14,
+        "text": "Dip trolü tek gemiyle çekiliyor mu; gemide asgari gözden küçük dip trol ağı yok mu; avcılık 1000 m’den derin suda yapılmıyor mu?",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 15,
+        "text": "Trol gemisinde su üstü radarı veya GPS gibi mevki konumlandırıcı cihaz mevcut mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 16,
+        "text": "Yasak yer/zamanda geçiş varsa ağ toplanmış mı; kapılar asılı değil mi ve matafora gemi içine dönük mü? Marmara geçişinde Ek-4, mühür ve 3 günlük süre uygun mu?",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolüne ilişkin yasak"
+      },
+      {
+        "no": 17,
+        "text": "Liman/barınak/çekek yerinde kapalı dönemde mühürsüz trol ağı/kapısı bulunuyor mu? Marmara ve Boğazlarda bu kontrol Tebliğ dönemi boyunca yapılır.",
+        "ref": [
+          "61",
+          10
+        ],
+        "penalty_query": "dip trolü"
+      }
+    ],
+    "measure_fields": [
+      "Torba göz (mm)",
+      "Muhafaza göz (mm)",
+      "Av derinliği (m)",
+      "GPS/Radar",
+      "Kapı/ağ mühür no"
+    ],
+    "refs": [
+      [
+        "61",
+        9
+      ],
+      [
+        "61",
+        10
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "reg",
+        14
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ],
+      [
+        "law",
+        24
+      ],
+      [
+        "law",
+        33
+      ],
+      [
+        "law",
+        36
+      ]
+    ]
+  },
+  {
+    "key": "03_Ortasu_Trolu",
+    "short_title": "Ortasu Trolü",
+    "title": "ORTASU TROLÜ TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Karadeniz odaklı çift gemi trol kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 8,
+        "text": "Faaliyet Karadeniz’de ve her türlü trolün yasak olmadığı bir sahada mı? Marmara, Ege ve Akdeniz’de ortasu trolü yasaktır.",
+        "ref": [
+          "61",
+          9
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 9,
+        "text": "Ortasu trolü yalnız çift gemiyle mi çekiliyor? Eş geminin kimliği/ruhsatı kaydedildi mi?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 10,
+        "text": "Gemi ruhsat tezkeresinin verildiği il/ilçe müdürlüğünden alınmış Ek-2 Avcılık İzin Belgesi mevcut mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 11,
+        "text": "Karadeniz’de avcılık 24 m’den daha derin suda mı ve 15 Nisan-31 Ağustos kapalı dönemine uyuluyor mu?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 12,
+        "text": "15 Nisan-15 Mayıs çaça istisnası kullanılıyorsa yalnız Yakakent Çayağzı Burnu-Ünye Taşkana Burnu arasındaki tanımlı sahada mı?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 13,
+        "text": "Faaliyet sırasında barbunya, tekir, kalkan, mezgit gibi dip balıkları gemide bulunmuyor mu?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "kalkan avcılığı"
+      },
+      {
+        "no": 14,
+        "text": "Çaça avlanıyorsa ürün Bakanlıkça belirlenen karaya çıkış yerlerinden mi çıkarılıyor?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 15,
+        "text": "Hamsi avlanıyorsa Ek-2 hamsi izni, kota ve Bakanlıkça belirlenen karaya çıkış noktası şartları sağlanıyor mu?",
+        "ref": [
+          "61",
+          19
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 16,
+        "text": "Trol gemisinde su üstü radarı veya GPS gibi mevki konumlandırıcı cihaz mevcut mu?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 17,
+        "text": "Kapalı yer/zamandan transit geçişte trol ağı/kapıları için mühür, konum ve Geçiş İzin Belgesi kuralları sağlanıyor mu?",
+        "ref": [
+          "61",
+          11
+        ],
+        "penalty_query": "orta su trolü"
+      }
+    ],
+    "measure_fields": [
+      "Su derinliği (m)",
+      "Eş gemi adı/ruhsat",
+      "Ek-2 izin no",
+      "Hedef tür",
+      "Karaya çıkış noktası"
+    ],
+    "refs": [
+      [
+        "61",
+        9
+      ],
+      [
+        "61",
+        11
+      ],
+      [
+        "61",
+        19
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ],
+      [
+        "law",
+        24
+      ],
+      [
+        "law",
+        33
+      ],
+      [
+        "law",
+        36
+      ]
+    ]
+  },
+  {
+    "key": "04_Uzatma_Agi",
+    "short_title": "Uzatma Ağı",
+    "title": "UZATMA AĞI TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Ağ uzunluğu, göz açıklığı, işaretleme ve tür özel kontrolleri",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 8,
+        "text": "Ağ gözü, tür için daha büyük özel bir ölçü yoksa 16 mm’den küçük değil mi? >=50 mm gözlü ağlar hariç ağ derinliği 30 m/17 kulaç sınırını aşıyor mu?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 9,
+        "text": "Gemide donamlı toplam uzatma ağı uzunluğu 6000 m’yi geçmiyor mu?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 10,
+        "text": "Denize bırakılan ağlar gündüz flâma/şamandıra, gece ışıklı şamandıra ile işaretlenmiş mi?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "şamandıra"
+      },
+      {
+        "no": 11,
+        "text": "Monofilament/multimonofilament kullanılıyorsa Karadeniz-Marmara-İstanbul Boğazı >=34 mm; Çanakkale-Ege-Akdeniz >=48 mm şartı sağlanıyor mu?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 12,
+        "text": "Monofilament/multimonofilament ağ toplamı 1000 m’yi geçmiyor mu ve Ek-2 Avcılık İzin Belgesi var mı?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 13,
+        "text": "Dolanan (drift-net) ağ gemide/barınakta bulunmuyor ve kullanılmıyor mu?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 14,
+        "text": "Kalkan hedefleniyorsa dönem (15 Nisan-15 Haziran kapalı), göz açıklığı >=400 mm, Ek-2 izin ve belirlenen karaya çıkış noktası şartları uygun mu?",
+        "ref": [
+          "61",
+          21
+        ],
+        "penalty_query": "kalkan avcılığı"
+      },
+      {
+        "no": 15,
+        "text": "Kalkan avında fanyalı ağ kullanılmıyor mu? Parakete ile kalkan avı da yasaktır.",
+        "ref": [
+          "61",
+          21
+        ],
+        "penalty_query": "kalkan avcılığı"
+      },
+      {
+        "no": 16,
+        "text": "Böcek/ıstakoz uzatma ağı avcılığı yapılıyorsa Ek-2 Avcılık İzin Belgesi mevcut mu?",
+        "ref": [
+          "61",
+          30
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 17,
+        "text": "Avlanan türlerin boy, zaman, kota/izin ve hedef dışı av oranları kontrol edildi mi?",
+        "ref": [
+          "61",
+          18
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 18,
+        "text": "Dil/Pisi türleri hedefleniyorsa ağ göz açıklığı asgari 80 mm mi? (Kalkan için 400 mm kuralı ayrıca geçerlidir.)",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "ağ göz açıklığı"
+      }
+    ],
+    "measure_fields": [
+      "Ağ göz açıklığı (mm)",
+      "Ağ derinliği (m)",
+      "Toplam ağ (m)",
+      "Mono ağ (m)",
+      "Özel izin no"
+    ],
+    "refs": [
+      [
+        "61",
+        14
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        21
+      ],
+      [
+        "61",
+        30
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "05_Parakete",
+    "short_title": "Parakete",
+    "title": "PARAKETE TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | İşaretleme, iğne ölçüsü ve hedef tür kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 8,
+        "text": "Denize bırakılan paraketeler gündüz flâma/şamandıra, gece ışıklı şamandıra ile işaretlenmiş mi?",
+        "ref": [
+          "61",
+          15
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 9,
+        "text": "Genel parakete iğne ağız açıklığı 7,2 mm’den küçük değil mi?",
+        "ref": [
+          "61",
+          15
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 10,
+        "text": "Kılıç/uzun kanat orkinos (tulina) hedefleniyorsa dairesel iğne ağız açıklığı >=2,8 cm mi; çapraz boyunlu ise açı <=10° mi?",
+        "ref": [
+          "61",
+          25
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 11,
+        "text": "Kalkan avcılığında parakete kullanılmıyor mu? Parakete ile kalkan avı yasaktır.",
+        "ref": [
+          "61",
+          21
+        ],
+        "penalty_query": "parekata kalkan"
+      },
+      {
+        "no": 12,
+        "text": "Kılıç/tulina avcılığı varsa ilgili Ek-2 izin, dönem ve belirlenen karaya çıkış noktası şartları kontrol edildi mi?",
+        "ref": [
+          "61",
+          25
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 13,
+        "text": "Hedef türün genel ve bölgesel zaman yasağı, asgari boy/ağırlık ve kota şartları uygun mu?",
+        "ref": [
+          "61",
+          15
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 14,
+        "text": "Hedef dışı av varsa izin verilen oran ve e-seyir/Nakil-Menşe bildirim şartları sağlanıyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 15,
+        "text": "Av sahası genel yer yasakları, liman/barınak 100 m ve yetiştiricilik tesisi mesafe hükümlerine uygun mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "parakete"
+      }
+    ],
+    "measure_fields": [
+      "Genel iğne açıklığı (mm)",
+      "Dairesel iğne (cm)",
+      "İğne açı (°)",
+      "Hedef tür",
+      "Özel izin no"
+    ],
+    "refs": [
+      [
+        "61",
+        15
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        21
+      ],
+      [
+        "61",
+        25
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "06_Algarna_Karides",
+    "short_title": "Algarna – Marmara Karides",
+    "title": "ALGARNA - MARMARA KARİDES TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Marmara karidesi için özel algarna şartları",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 8,
+        "text": "Algarnayla karides avcılığı Marmara Denizi’nde ve İstanbul/Çanakkale Boğazları dışındaki izinli sahada mı?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 9,
+        "text": "Marmara’da 15 Nisan-31 Ağustos ve 1-31 Ocak genel karides yasağına uyuluyor mu?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 10,
+        "text": "Av sahası Md.27’de algarnaya kapalı alanların dışında ve serbest alanlarda en az 50 m derinlikte mi?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 11,
+        "text": "Ek-2 Avcılık İzin Belgesi var mı; izin verilen hedef tür dışındaki türler avlanmıyor mu?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 12,
+        "text": "Avcılık 05.00-20.00 saatleri arasında mı ve ürün il müdürlüğünce belirlenen yerden mi karaya çıkarılıyor?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 13,
+        "text": "Algarna ağız yüksekliği <=50 cm, tek torbalı, omuz/torba göz açıklığı >=32 mm ve torba boyu <=11 m mi?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 14,
+        "text": "Gemide kullanılan algarna sayısı <=2 ve toplam kiriş boyu <=10 m mi?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 15,
+        "text": "Algarnada çelik halat kullanılmıyor mu; kullanılan halat çapı <=16 mm mi?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 16,
+        "text": "Algarna karidesinde hedef dışı av ağırlıkça %15 sınırında mı ve e-seyir/Nakil-Menşe bildirimleri yapılmış mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "algarna karides"
+      },
+      {
+        "no": 17,
+        "text": "01.09.2026’dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı işler durumda mı? <12 m ise özel izin/donanım-mühür şartları ayrıca uygun mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "algarna karides"
+      }
+    ],
+    "measure_fields": [
+      "Su derinliği (m)",
+      "Ağız yük. (cm)",
+      "Göz (mm)",
+      "Torba (m)",
+      "Algarna adedi / kiriş (m)"
+    ],
+    "refs": [
+      [
+        "61",
+        14
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        27
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "07_Manyat_Karides",
+    "short_title": "Manyat – Marmara Karides",
+    "title": "MANYAT - MARMARA KARİDES TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Genel manyat yasağının Marmara karides istisnası",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 8,
+        "text": "Manyat genel olarak yasaktır; faaliyet yalnız 6/1 Tebliğdeki Marmara karides istisnası kapsamında mı?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 9,
+        "text": "Marmara’da 15 Nisan-31 Ağustos ve 1-31 Ocak genel karides yasağına uyuluyor mu?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 10,
+        "text": "Av sahası İstanbul/Çanakkale Boğazları ve Md.27’de sayılan manyat yasak alanlarının dışında mı?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 11,
+        "text": "Ek-2 Avcılık İzin Belgesi mevcut mu; izin verilen hedef tür dışında av yapılmıyor mu?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 12,
+        "text": "Avcılık 05.00-20.00 saatleri arasında mı?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 13,
+        "text": "Avlanan ürün il müdürlüğünce belirlenen karaya çıkış yerinden mi çıkarılıyor?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 14,
+        "text": "Manyat torba ağ göz açıklığı 32 mm’den küçük değil mi?",
+        "ref": [
+          "61",
+          27
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 15,
+        "text": "Hedef dışı av genel sınırlar içinde mi ve gerekiyorsa e-seyir/Nakil-Menşe kayıtları doğru mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 16,
+        "text": "01.09.2026’dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı işler durumda mı?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "manyat"
+      },
+      {
+        "no": 17,
+        "text": "Gemide faaliyete izin verilmeyen başka sürütme ağı/donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "manyat"
+      }
+    ],
+    "measure_fields": [
+      "Torba göz (mm)",
+      "Av saati",
+      "Mevki/derinlik",
+      "Ek-2 izin no",
+      "Karaya çıkış"
+    ],
+    "refs": [
+      [
+        "61",
+        14
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        27
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "08_Algarna_Deniz_Salyangozu",
+    "short_title": "Algarna – Deniz Salyangozu",
+    "title": "ALGARNA - DENİZ SALYANGOZU TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Karadeniz ağırlıklı deniz salyangozu algarna kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 8,
+        "text": "Deniz salyangozu avcılığı; İzmit Körfezi tanımlı alanı, İstanbul Boğazı girişindeki tanımlı Karadeniz alanı, Ege ve Akdeniz dışında mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 9,
+        "text": "Algarna yöntemi Marmara, İstanbul ve Çanakkale Boğazlarında kullanılmıyor mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 10,
+        "text": "Algarna ile avcılık açık alanda ve 15 Nisan-31 Ağustos kapalı döneminin dışında mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 11,
+        "text": "Algarna ağız genişliği <=4 m, ağız derinliği <=40 cm, torba boyu <=1,5 m ve torba göz açıklığı 72 mm mi?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 12,
+        "text": "Avcılık sahilden en az 500 m uzakta mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 13,
+        "text": "Gemide yalnız bir algarna bulunuyor ve kullanılıyor mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 14,
+        "text": "Sinop Usta Burnu-İnceburun arasındaki yasak sahada algarna ile avcılık yapılmıyor mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 15,
+        "text": "Ek-2 Avcılık İzin Belgesi var mı; faaliyet 05.00-20.00 saatleri arasında mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 16,
+        "text": "Gemide zıpkın bulunmuyor mu; algarna avında hedef tür dışında ürün bulunmuyor mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      },
+      {
+        "no": 17,
+        "text": "01.09.2026’dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı işler durumda mı?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "deniz salyangozu algarna"
+      }
+    ],
+    "measure_fields": [
+      "Ağız genişliği (m)",
+      "Ağız derinliği (cm)",
+      "Torba boyu (m)",
+      "Torba göz (mm)",
+      "Sahile mesafe (m)"
+    ],
+    "refs": [
+      [
+        "61",
+        14
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        29
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "09_Drec_Beyaz_Kum_Midyesi",
+    "short_title": "Dreç/Algarna – Beyaz Kum Midyesi",
+    "title": "DREÇ / ALGARNA - BEYAZ KUM MİDYESİ TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Kota, saha, e-seyir ve dreç ölçümleri",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 8,
+        "text": "Faaliyet Marmara/Boğazlar ile Karadeniz Akçay-Gürcistan arasındaki yasak alanların dışında mı?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 9,
+        "text": "01.09.2026-14.04.2028 dönemi için açık ilan edilen Karadeniz saha segmentlerinden birinde mi ve 15 Nisan-31 Ağustos yasağına uyuluyor mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 10,
+        "text": "Bakanlıkça ilan edilen av kotası dolmamış mı ve avcılık kota/usul esaslarına uygun mu?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 11,
+        "text": "Ek-2 Avcılık İzin Belgesi mevcut mu?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 12,
+        "text": "Gemi boyuna bakılmaksızın e-seyir defteri tutuluyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 13,
+        "text": "Ürün yalnız il müdürlüğünce belirlenen karaya çıkış noktasından mı çıkarılıyor?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 14,
+        "text": "Algarna/dreç ağız açıklığı <=80 cm, ağız derinliği <=20 cm, torba boyu <=200 cm mi? Hidrolik dreçte ağız <=350 cm ve boy <=300 cm mi?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 15,
+        "text": "Dreç/elek metal yuvarlak çubuk aralığı >=8,5 mm mi?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 16,
+        "text": "Avcılık 5 m’den daha derin suda mı ve gemide birden fazla algarna/dreç bulunmuyor mu?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 17,
+        "text": "01.09.2026’dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı işler durumda mı?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      }
+    ],
+    "measure_fields": [
+      "Ağız (cm)",
+      "Ağız derinliği (cm)",
+      "Torba/boy (cm)",
+      "Çubuk aralığı (mm)",
+      "Su derinliği (m)"
+    ],
+    "refs": [
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        28
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "10_Dalma_Yontemi",
+    "short_title": "Dalma Yöntemi",
+    "title": "DALMA YÖNTEMİ TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Deniz patlıcanı, denizkestanesi, sünger ve diğer izinli su ürünleri",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 8,
+        "text": "Dalma yöntemi balık dışındaki izinli su ürünlerine yönelik mi? Tüp/nargile/maske/zıpkın/sualtı tüfeği ile ticari balık avcılığı yapılmıyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "tüp nargile zıpkın"
+      },
+      {
+        "no": 9,
+        "text": "Dalış yapan personelin Profesyonel Sualtıadamları Yönetmeliği kapsamında gerekli dalış belgesi mevcut mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 10,
+        "text": "Kompresör, nargile donanımı ve tüpler yalnız dalma yöntemi için izinli gemide ve yalnız bu faaliyet sırasında mı bulunuyor?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "tüp nargile zıpkın"
+      },
+      {
+        "no": 11,
+        "text": "Hedef tür için Ek-2 Avcılık İzin Belgesi ve bölgesel izin şartları sağlanıyor mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 12,
+        "text": "İzin verilen hedef tür dışında ürün bulunmuyor mu? İzinli faaliyette sualtı tüfeği/zıpkın bulunmaması gereken türlerde bunlar yok mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "tüp nargile zıpkın"
+      },
+      {
+        "no": 13,
+        "text": "Deniz patlıcanı ise: yalnız izinli Ege sahasında, 1 Mayıs-31 Ekim yasağı dışında ve gün doğumu-gün batımı arasında mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 14,
+        "text": "Deniz patlıcanında kota, belirlenen karaya çıkış noktası ve Ek-6 Nakil/Menşe Belgesi şartları uygun mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "nakil belgesi"
+      },
+      {
+        "no": 15,
+        "text": "Denizkestanesi ise yalnız dalma yöntemi, Ek-2 izin, hedef tür tekliği, gündüz avcılığı ve Ek-6 Nakil/Menşe şartları uygun mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "nakil belgesi"
+      },
+      {
+        "no": 16,
+        "text": "Sünger ise yalnız Meriç-Babakale arasındaki açık alanda, dalma yöntemiyle ve Ek-2 izinle mi; gemide sünger dışında ürün/zıpkın/sualtı tüfeği yok mu?",
+        "ref": [
+          "61",
+          32
+        ],
+        "penalty_query": "tüp nargile zıpkın"
+      },
+      {
+        "no": 17,
+        "text": "01.09.2026’dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı işler durumda mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      }
+    ],
+    "measure_fields": [
+      "Hedef tür",
+      "Ek-2 izin no",
+      "Dalış belgesi no",
+      "Av saati",
+      "Nakil/Menşe no"
+    ],
+    "refs": [
+      [
+        "61",
+        29
+      ],
+      [
+        "61",
+        32
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "11_Isik_Teknesi",
+    "short_title": "Işık Teknesi / Işıkla Avcılık",
+    "title": "IŞIK TEKNESİ / IŞIKLA AVCILIK - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Işık gemisi, güç, saha ve izin kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "markasız av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "Işıkla avcılık Karadeniz, Marmara, İstanbul veya Çanakkale Boğazlarında yapılmıyor mu? Bu alanlarda ışıkla avcılık yasaktır.",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 6,
+        "text": "Ege/Akdeniz’de faaliyet varsa Md.13’teki bölgesel/zamansal ışık yasaklarının dışında mı?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 7,
+        "text": "Yasak bölgeden ışığa açık bölgeye geçiş söz konusuysa Ek-4 Geçiş İzin Belgesi alınmış ve geçiş 3 gün içinde mi?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 8,
+        "text": "Takımda yalnız bir ışık gemisi kullanılıyor mu? Gırgır hizmet botu ışık teknesiyse ayrıca başka ışık gemisi kullanılmıyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 9,
+        "text": "Işık teknesinde personel var mı ve iki ayrı takımın ışık tekneleri arasında en az 200 m mesafe korunuyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 10,
+        "text": "Ek-2 Işıkla Avcılık İzin Belgesi mevcut mu ve izin belgesindeki ışık gemisi fiilen kullanılan gemi mi?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 11,
+        "text": "İzin verilen alanda ana+yardımcı+taşıyıcı teknelerde toplam ışık gücü <=8000 W mı? İzinsiz destek gemisi denizi >100 W ile aydınlatmıyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 12,
+        "text": "Güverte ışıkları sabit mi; aydınlatma yalnız su üstünde mi; beyaz ışık kullanılmıyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 13,
+        "text": "Işık 30 m’den sığ suda veya balık çiftliği kafeslerine 300 m’den yakın yerde yakılmıyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 14,
+        "text": "Işıkla avcılık izni olmayan gemide ışıkla avcılık teçhizatı bulunmuyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 15,
+        "text": "Gırgır ağı olmayan gemiye ışıkla avcılık izni verilmez (mekanize kalamar istisnası saklı). 6/1 Md.13/10.",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışıkla avcılık"
+      }
+    ],
+    "measure_fields": [
+      "Toplam güç (W)",
+      "Su derinliği (m)",
+      "Kafese mesafe (m)",
+      "Takımlar arası (m)",
+      "Ek-2/Geçiş izin"
+    ],
+    "refs": [
+      [
+        "61",
+        13
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        15
+      ],
+      [
+        "law",
+        33
+      ],
+      [
+        "law",
+        36
+      ]
+    ]
+  },
+  {
+    "key": "12_Alamana_Voli",
+    "short_title": "Alamana / Voli",
+    "title": "ALAMANA (VOLİ) TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Ticari avcılık | Çevirme ağı, ölçü, saha ve hedef ürün kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Gemi ruhsat tezkeresi geçerli mi? Ruhsat numarası/plakası gemide sağdan, soldan ve üstten görülebiliyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Kaptan/personelin ruhsatları kontrol edildi mi? Ruhsatsız 16-18 yaş balıkçı yardımcısı varsa toplam çalışanların %20 sınırı içinde mi?",
+        "ref": [
+          "reg",
+          4
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 3,
+        "text": "Gemideki ticari av araçları Bakanlık usulüne göre markalı ve SUBİS kayıtlı mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Tam boy belge üzerinden kaydedildi mi? 12 m ve üzerindeyse gemideki av aracı ruhsat tezkeresindeki birincil av aracıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "12 m ve üzerindeyse BAGİS takılı ve işler durumda mı; e-seyir defteri yükümlülüğü yerine getiriliyor mu?",
+        "ref": [
+          "bagis",
+          7
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 6,
+        "text": "22 m ve üzerindeyse işaret tabancası/fişeği, telsiz, su üstü radarı, pis su tankı ve gerekli soğuk muhafaza donanımı mevcut mu? (Yönetmelikteki eski ruhsat istisnasını ayrıca teyit et.)",
+        "ref": [
+          "reg",
+          13
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 7,
+        "text": "Patlayıcı, zehirleyici/bayıl­tıcı maddeler, elektrik/elektroşok amaçlı jeneratör veya yasak av donanımı bulunuyor mu? Bulunmaması gerekir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 8,
+        "text": "Alamana ağ derinliği 30 m/17 kulaçtan fazla değil mi? ⚠️ DİKKAT: Bu kural göz açıklığı (<16 mm) ile BİRLİKTE değerlendirilir — iki şart aynı anda sağlanıyorsa yasaktır (6/1 Md.12/8-b).",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 9,
+        "text": "Alamana ağ göz açıklığı 16 mm’den küçük değil mi?",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 10,
+        "text": "Md.12’de alamana için yasaklanan özel sahaların dışında mı?",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 11,
+        "text": "Çevirme ağıyla alan kapatıp dalarak/elle çekerek kıyıda dar alana toplama (elleme/eleme) yöntemi kullanılmıyor mu?",
+        "ref": [
+          "61",
+          12
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 12,
+        "text": "Hamsi avlanıyorsa Ek-2 Avcılık İzin Belgesi, kota ve Bakanlıkça belirlenen karaya çıkış noktası şartları uygun mu?",
+        "ref": [
+          "61",
+          19
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 13,
+        "text": "Hedef türün zaman, boy/ağırlık, kota ve özel izin hükümleri uygun mu?",
+        "ref": [
+          "61",
+          18
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 14,
+        "text": "12 m ve üzerindeyse birincil av aracı kuralı uygulanmış mı? Alamana birincil araç grubunda ise gemide tek tür av aracı bulundurma istisnası doğru uygulanmış mı?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 15,
+        "text": "Av sahası genel yer yasakları, liman/barınak 100 m ve yetiştiricilik tesisi mesafe hükümlerine uygun mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      }
+    ],
+    "measure_fields": [
+      "Ağ derinliği (m)",
+      "Göz açıklığı (mm)",
+      "Hedef tür",
+      "Ek-2 izin no",
+      "Mevki/koordinat"
+    ],
+    "refs": [
+      [
+        "61",
+        12
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        19
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        4
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "bagis",
+        7
+      ]
+    ]
+  },
+  {
+    "key": "13_Balikci_Yardimci_Gemisi",
+    "short_title": "Balıkçı Yardımcı Gemisi",
+    "title": "BALIKÇI YARDIMCI GEMİSİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Yardımcı gemi | Avcılık yapmama, donanım, taşıma ve bölgesel kullanım",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Balıkçı yardımcı gemisine ait ruhsat tezkeresi geçerli mi ve ruhsat numarası/plakası gemide görünür mü?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 2,
+        "text": "Gemi fiilen su ürünleri avcılığı yapmıyor mu? Balıkçı yardımcı gemileri avcılık faaliyetinde bulunamaz.",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 3,
+        "text": "Gemide bom direği, power-block, matafora, ırgat veya avcılıkta kullanılacak başka alet/ekipman bulunmuyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 4,
+        "text": "Balık nakli yapılıyorsa gemi Bakanlıkça su ürünleri av gemisi veya balıkçı yardımcı gemisi olarak ruhsatlandırılmış mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ruhsat tezkeresi"
+      },
+      {
+        "no": 5,
+        "text": "Marmara Denizi, İstanbul veya Çanakkale Boğazlarında avlanma alanında bulunuyorsa gırgır ağını çevirmekte kullanılan bot istisnasına mı giriyor?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 6,
+        "text": "Marmara/Boğazlarda diğer yardımcı gemiler yalnız karaya çıkış noktasında mı bulunuyor?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 7,
+        "text": "Yardımcı geminin kullanımının serbest olduğu başka denize geçişinde Ek-4 Geçiş İzin Belgesi var mı ve geçiş en geç 3 gün içinde mi?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "yasak av aracı"
+      },
+      {
+        "no": 8,
+        "text": "Gırgır hizmet botu ışık teknesi olarak kullanılıyorsa takımda başka ışık gemisi yok mu ve ışık teknesinde personel bulunuyor mu?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 9,
+        "text": "Işık teknesi olarak kullanılıyorsa ışıkla avcılık saha, izin, güç ve mesafe şartları ayrıca kontrol edildi mi?",
+        "ref": [
+          "61",
+          13
+        ],
+        "penalty_query": "ışık ile avcılık"
+      },
+      {
+        "no": 10,
+        "text": "Taşınan ürün varsa tür, boy, zaman, belge ve karaya çıkış/nakil kuralları yönünden kaynak kayıtlarıyla uyumlu mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "nakil belgesi"
+      }
+    ],
+    "measure_fields": [
+      "Gemi ruhsat no",
+      "Ana av gemisi",
+      "Ek-4 izin no",
+      "Taşınan ürün/miktar",
+      "Mevki"
+    ],
+    "refs": [
+      [
+        "61",
+        13
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        13
+      ],
+      [
+        "law",
+        33
+      ],
+      [
+        "law",
+        36
+      ]
+    ]
+  },
+  {
+    "key": "14_Amator_Tekne",
+    "short_title": "Amatör Avcılık Teknesi",
+    "title": "AMATÖR AVCILIK TEKNESİ - SAHA KONTROL FÖYÜ",
+    "subtitle": "Denizlerde amatör avcılık | Av aracı, miktar, boy, satış ve ticari nitelik kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Faaliyet gerçekten amatör nitelikte mi (rekreasyon/spor/dinlence, ticari kazanç yok, avlanan ürün satılmıyor)?",
+        "ref": [
+          "62",
+          8
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 2,
+        "text": "Amatör avda parakete, bırakma olta, çırpma/çarpma, pinter veya sepet kullanılmıyor mu?",
+        "ref": [
+          "62",
+          16
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 3,
+        "text": "İzin verilenler dışındaki ağ/tuzaklar ile patlayıcı, zehirleyici/bayıl­tıcı maddeler, karpit vb. gemide/av mahallinde bulunmuyor mu?",
+        "ref": [
+          "62",
+          16
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 4,
+        "text": "Tırıvırı-paraşüt bulunmuyor ve kullanılmıyor mu?",
+        "ref": [
+          "62",
+          8
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 5,
+        "text": "Kişi başına en fazla 4 olta takımı ve her takımda en fazla 6 iğne kuralı; çapari varsa tek takım ve en fazla 15 iğne kuralı sağlanıyor mu?",
+        "ref": [
+          "62",
+          16
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 6,
+        "text": "Serpme kullanılıyorsa kapalı yüksekliği <=3 m ve göz açıklığı >=28 mm mi?",
+        "ref": [
+          "62",
+          16
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 7,
+        "text": "Sualtı tüfeği kullanılıyorsa yalnız gündüz mü; ışık/yapay hava/tüp/nargile yok mu; şamandıra var mı; 01.01.2026’dan itibaren gerekli Amatör Balıkçı Belgesi mevcut mu?",
+        "ref": [
+          "62",
+          16
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 8,
+        "text": "Türün asgari boyu, alıkonulabilir miktarı ve varsa zaman yasağı 6/2 Çizelge 7’ye uygun mu?",
+        "ref": [
+          "62",
+          15
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 9,
+        "text": "Amatör avla elde edilen ürün satılmıyor, canlı nakledilmiyor ve başka kaynaklara bırakılmıyor mu?",
+        "ref": [
+          "62",
+          8
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 10,
+        "text": "Yetiştiricilik tesisi sınırına 100 m’den yakın avcılık veya 1 Nisan-15 Kasım döneminde kıyıdan <=200 m işaretli yüzme alanında avcılık yok mu?",
+        "ref": [
+          "62",
+          17
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 11,
+        "text": "Aykırılık ticari nitelik eşiğine ulaşıyor mu? Özellikle 3x miktar, 2x zaman yasağı miktarı, 2x av aracı, ticari ağ/araç veya yasak maddeler yönünden Md.19 kontrol edildi mi?",
+        "ref": [
+          "62",
+          19
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      }
+    ],
+    "measure_fields": [
+      "Kişi sayısı",
+      "Olta / iğne sayısı",
+      "Tür / boy (cm)",
+      "Miktar (adet/kg)",
+      "Sualtı belgesi no"
+    ],
+    "refs": [
+      [
+        "62",
+        4
+      ],
+      [
+        "62",
+        6
+      ],
+      [
+        "62",
+        8
+      ],
+      [
+        "62",
+        15
+      ],
+      [
+        "62",
+        16
+      ],
+      [
+        "62",
+        17
+      ],
+      [
+        "62",
+        18
+      ],
+      [
+        "62",
+        19
+      ],
+      [
+        "law",
+        33
+      ],
+      [
+        "law",
+        36
+      ]
+    ]
+  },
+  {
+    "key": "15_Monofilament",
+    "short_title": "Monofilament Ağ",
+    "title": "MONOFİLAMENT / MULTİMONOFİLAMENT KARTI",
+    "subtitle": "Ticari avcılık | Monofilament ağ donanımı kontrolleri",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Karadeniz, İstanbul Boğazı veya Marmara Denizi'nde mi? Kullanılan ağın tam göz boyu asgari 34 mm mi?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "monofilament"
+      },
+      {
+        "no": 2,
+        "text": "Çanakkale Boğazı, Ege veya Akdeniz'de mi? Kullanılan ağın tam göz boyu asgari 48 mm mi?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "monofilament"
+      },
+      {
+        "no": 3,
+        "text": "Kullanılan veya gemide bulundurulan monofilament/multimonofilament ağların toplam uzunluğu 1000 metreyi aşıyor mu? (Aşmaması gerekir)",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "monofilament"
+      },
+      {
+        "no": 4,
+        "text": "Geminin/Balıkçının Ek-2 Avcılık İzin Belgesi var mı?",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "izin belgesi"
+      }
+    ]
+  },
+  {
+    "key": "16_Deniz_Patlicani",
+    "short_title": "Deniz Patlıcanı",
+    "title": "DENİZ PATLICANI KARTI - EGE",
+    "subtitle": "Ticari avcılık | Dalma yöntemiyle patlıcan avcılığı",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Faaliyet 1 Mayıs – 31 Ekim tarihleri dışında mı yapılıyor? (Açık dönem genel olarak 1 Kasım-30 Nisan)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "zaman yasağı"
+      },
+      {
+        "no": 2,
+        "text": "Avcılık Balıkesir veya İzmir il/ilçe müdürlüğünden alınmış Ek-2 İzin Belgesi ile mi yapılıyor?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "izin belgesi"
+      },
+      {
+        "no": 3,
+        "text": "Saha 6/1 Tebliği Md.29/2-a'da tanımlanan İzmir-Balıkesir Ege bölgesi sınırları içinde mi? (Diğer yerler yasaktır)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "yer yasağı"
+      },
+      {
+        "no": 4,
+        "text": "Avcılık münhasıran dalma yöntemi ile mi yapılıyor? Algarna, dreç vb. sürütme araçları var mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "algarna"
+      },
+      {
+        "no": 5,
+        "text": "Faaliyet sırasında gemide deniz patlıcanı dışında başka bir su ürünü bulunuyor mu? (Bulunmaması gerekir)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "hedef dışı"
+      },
+      {
+        "no": 6,
+        "text": "Gemide sualtı tüfeği veya zıpkın bulunuyor mu? (Bulunmaması gerekir)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "zıpkın"
+      },
+      {
+        "no": 7,
+        "text": "Avcılık gün doğumu ile gün batımı arasında mı yapılıyor? (Gece yasaktır)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "zaman yasağı"
+      },
+      {
+        "no": 8,
+        "text": "Kota dahilinde mi ve ürünler belirlenmiş karaya çıkış noktasından mı çıkarılıyor?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "kota"
+      },
+      {
+        "no": 9,
+        "text": "Nakil/Menşe belgesi düzenlenmiş mi?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "nakil belgesi"
+      }
+    ]
+  },
+  {
+    "key": "17_Denizkestanesi",
+    "short_title": "Denizkestanesi",
+    "title": "DENİZKESTANESİ KARTI",
+    "subtitle": "Ticari avcılık | Dalma yöntemiyle denizkestanesi avcılığı",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Avcılık dalma yöntemi ile mi yapılıyor?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "dalma"
+      },
+      {
+        "no": 2,
+        "text": "Geminin/Balıkçının Ek-2 İzin Belgesi var mı?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "izin belgesi"
+      },
+      {
+        "no": 3,
+        "text": "Faaliyet sırasında gemide başka bir su ürünü, sualtı tüfeği veya zıpkın var mı? (Bulunmaması gerekir)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "hedef dışı"
+      },
+      {
+        "no": 4,
+        "text": "Gece vakti avcılık yapılıyor mu? (Gün batımından doğuşuna kadar yasaktır)",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "zaman yasağı"
+      },
+      {
+        "no": 5,
+        "text": "Nakil/Menşe Belgesi zorunluluğuna uyuluyor mu?",
+        "ref": [
+          "61",
+          29
+        ],
+        "penalty_query": "nakil belgesi"
+      }
+    ]
+  },
+  {
+    "key": "18_Sunger",
+    "short_title": "Sünger",
+    "title": "SÜNGER KARTI",
+    "subtitle": "Ticari avcılık | Dalma yöntemiyle sünger avcılığı",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Av sahası Ege Denizi'nde Meriç Nehri ağzı ile Babakale (Çanakkale) arasında kalan karasularında mı? (Diğer yerlerde yasak)",
+        "ref": [
+          "61",
+          30
+        ],
+        "penalty_query": "yer yasağı"
+      },
+      {
+        "no": 2,
+        "text": "Sünger avcılığı münhasıran dalma yöntemiyle mi yapılıyor?",
+        "ref": [
+          "61",
+          30
+        ],
+        "penalty_query": "dalma"
+      },
+      {
+        "no": 3,
+        "text": "İl Müdürlüğünden alınmış Ek-2 İzin belgesi var mı?",
+        "ref": [
+          "61",
+          30
+        ],
+        "penalty_query": "izin belgesi"
+      },
+      {
+        "no": 4,
+        "text": "Faaliyet sırasında sünger dışında su ürünü, zıpkın veya sualtı tüfeği bulunduruluyor mu? (Bulundurulamaz)",
+        "ref": [
+          "61",
+          30
+        ],
+        "penalty_query": "hedef dışı"
+      }
+    ]
+  },
+  {
+    "key": "19_Amator_Turizm",
+    "short_title": "Amatör Turizm",
+    "title": "TİCARİ AMAÇLI AMATÖR BALIKÇILIK TURİZMİ (EK-9) KARTI",
+    "subtitle": "Amatör | Turizm gemisi denetimi",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Geminin Ulaştırma Bakanlığından alınmış 'Turistik Amaçlı Olta Balıkçılığı Gemisi' cinsli Denize Elverişlilik Belgesi var mı?",
+        "ref": [
+          "62",
+          15
+        ],
+        "penalty_query": "denize elverişlilik"
+      },
+      {
+        "no": 2,
+        "text": "Geminin İl Müdürlüğünden alınmış, 2 yıl geçerli Ek-9 'Ticari Amaçlı Amatör Balıkçılık Turizm İzin Belgesi' var mı?",
+        "ref": [
+          "62",
+          15
+        ],
+        "penalty_query": "ek-9"
+      },
+      {
+        "no": 3,
+        "text": "Bağlama kütüğü deniz olan gemi denizde mi faaliyet gösteriyor? (İçsu gemisi denizde yapamaz)",
+        "ref": [
+          "62",
+          15
+        ],
+        "penalty_query": "yer yasağı"
+      },
+      {
+        "no": 4,
+        "text": "1 Eylül 2026'dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı takılı ve işler durumda mı?",
+        "ref": [
+          "62",
+          15
+        ],
+        "penalty_query": "gemi izleme"
+      },
+      {
+        "no": 5,
+        "text": "Gemideki amatör avcıların av araçları, boy/sayı limitleri 6/2 Amatör kurallarına uygun mu? (Uygun değilse Ek-9 sahibi de sorumludur)",
+        "ref": [
+          "62",
+          15
+        ],
+        "penalty_query": "amatör limit"
+      }
+    ]
+  }
+]

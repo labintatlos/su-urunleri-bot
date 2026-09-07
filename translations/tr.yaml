@@ -1,0 +1,16 @@
+configuration:
+  telegram_token:
+    name: Telegram Bot Token
+    description: BotFather tarafından oluşturulan bot tokenı. Tokenı sohbetlerde paylaşmayın.
+  admin_ids:
+    name: Yönetici Telegram ID'leri
+    description: Yönetici kullanıcı ID'leri. Tek ID veya virgülle ayrılmış birden fazla ID yazılabilir. Örn. 986648852
+  allowed_user_ids:
+    name: Yetkili kullanıcı Telegram ID'leri
+    description: Botu kullanmasına izin verilen diğer kullanıcı ID'leri. Boşsa yalnız yöneticiler kullanabilir. Birden fazla ID virgülle ayrılır.
+  timezone:
+    name: Saat dilimi
+    description: Tarih ve zaman yasaklarının değerlendirilmesinde kullanılacak saat dilimi.
+  result_limit:
+    name: Arama sonuç sayısı
+    description: Tek sorguda gösterilecek azami sonuç sayısı.

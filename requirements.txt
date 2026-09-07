@@ -1,0 +1,24 @@
+# Core Dependencies
+python-telegram-bot>=22.8
+aiohttp>=3.9.0
+
+# Database
+# (sqlite3 is built-in)
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+
+# Code Quality
+black>=23.0.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Development
+python-dotenv>=1.0.0
+
+# Utilities
+pyyaml>=6.0
