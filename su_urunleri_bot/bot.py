@@ -122,7 +122,7 @@ try:
 except ValueError:
     LIMIT = 8
 GEMINI_API_KEY = (os.environ.get('GEMINI_API_KEY') or options.get('gemini_api_key') or '').strip()
-GEMINI_MODEL = os.environ.get('GEMINI_MODEL') or 'gemini-2.5-flash'
+GEMINI_MODEL = (os.environ.get('GEMINI_MODEL') or options.get('gemini_model') or 'gemini-3.6-flash').strip()
 
 SRC_LABEL = {
     'law': '1380 Kanun',
@@ -444,6 +444,12 @@ def _ai_call_gemini_sync(prompt):
             raise AIError('Gemini API isteği reddetti (400) — API anahtarını kontrol edin.') from e
         if e.code == 429:
             raise AIError('Gemini API kotası doldu, birkaç dakika sonra tekrar deneyin.') from e
+        if e.code == 404:
+            raise AIError(
+                f'Gemini modeli "{GEMINI_MODEL}" artık kullanılamıyor. Eklenti ayarlarından '
+                '"Gemini Model" alanına Google\'ın önerdiği güncel model adını girip botu '
+                'yeniden başlatın.'
+            ) from e
         raise AIError(f'Gemini API hatası ({e.code}): {body}') from e
     except urllib.error.URLError as e:
         raise AIError(f'Gemini API’ye bağlanılamadı: {e.reason}') from e
