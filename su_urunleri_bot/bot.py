@@ -3,6 +3,9 @@ import io
 import json
 import os
 import re
+import asyncio
+import urllib.error
+import urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -118,6 +121,8 @@ try:
     LIMIT = int(os.environ.get('RESULT_LIMIT') or options.get('result_limit', 8))
 except ValueError:
     LIMIT = 8
+GEMINI_API_KEY = (os.environ.get('GEMINI_API_KEY') or options.get('gemini_api_key') or '').strip()
+GEMINI_MODEL = os.environ.get('GEMINI_MODEL') or 'gemini-2.5-flash'
 
 SRC_LABEL = {
     'law': '1380 Kanun',
@@ -274,6 +279,216 @@ def tally(answers):
 
 
 
+class AIError(Exception):
+    """A Gemini call failed in a way the user should see a plain message for."""
+
+
+# Matches the sources the user's own Gemini Gem was given: kanun, yönetmelik
+# and the two avcılık tebliğleri, plus BAGİS since it governs a lot of the
+# same enforcement questions. Deliberately excludes 'kilavuz' (our own field
+# guide) so the model never treats our editorial notes as if they were law.
+AI_SOURCES = ['law', 'reg', '61', '62', 'bagis']
+AI_SOURCE_ORDER = {src: i for i, src in enumerate(AI_SOURCES)}
+
+AI_SYSTEM_INSTRUCTION = (
+    "Sen Türkiye'de deniz görev alanında çalışan su ürünleri kolluk personeli için bir "
+    "hukuki tespit asistanısın. Sana bir olay/durum anlatılacak. Görevin, SADECE aşağıda "
+    "verilen KAYNAK MADDE METİNLERİ içinde geçen hükümlere dayanarak, olayın hangi "
+    "mevzuat hükümlerine aykırılık oluşturduğunu tespit etmektir.\n\n"
+    "KURALLAR:\n"
+    "- Kaynaklarda yer almayan hiçbir madde numarasını, ceza tutarını veya hükmü UYDURMA.\n"
+    "- Kaynaklarda olaya doğrudan karşılık gelen bir hüküm yoksa bunu açıkça yaz: "
+    "\"Verilen kaynaklarda bu olaya doğrudan karşılık gelen bir hüküm bulunamadı.\"\n"
+    "- Sadece verilen KAYNAK MADDE METİNLERİ'ni kullan; kendi genel bilgini kullanma.\n"
+    "- Yanıtını şu başlıklarla, aşağıdaki örnek düzende ver:\n\n"
+    "OLAYIN HUKUKİ TESPİTİ VE MEVZUAT KARŞILIKLARI\n\n"
+    "1. TEBLİĞ KARŞILIĞI\n"
+    "(İlgili tebliğ maddelerini, madde numarasını **kalın** yazarak ve kısa alıntıyla belirt)\n\n"
+    "2. YÖNETMELİK KARŞILIĞI\n"
+    "(İlgili yönetmelik maddelerini aynı şekilde belirt; yoksa bunu söyle)\n\n"
+    "3. KANUN KARŞILIĞI VE İDARİ YAPTIRIMLAR\n"
+    "(İlgili kanun maddelerini ve varsa idari para cezası / el koyma bilgisini belirt)\n\n"
+    "Madde numaralarını ve önemli hukuki terimleri **iki yıldız** ile kalın yaz. HTML veya "
+    "markdown başlık işareti (#) kullanma; sadece düz metin ve **kalın** kullan. Kısa ve öz "
+    "ol; kolluk personelinin sahada hızla okuyabileceği netlikte yaz."
+)
+
+
+def _ai_token_tally(query, search_fn, cap_per_token=40):
+    """Score rows by an IDF-style tally across the scenario's own words.
+
+    db.search_articles/search_penalties require most words in a query to hit
+    (tuned for short search-box phrases), so passing a whole free-text
+    scenario straight through matches nothing — an 11-word sentence needs 7
+    hits and generic connectors never contribute any. Instead, search once
+    per individual word and weight each hit by 1/(matches for that word):
+    a rare, specific word like "algarna" outweighs a common one like "ile"
+    without any hardcoded stopword list, because "ile" simply matches far
+    more rows and so contributes far less per hit.
+    """
+    tally, rows_by_key = {}, {}
+    for token in db._tokens(query):
+        hits = search_fn(token, cap_per_token)
+        if not hits:
+            continue
+        weight = 1.0 / len(hits)
+        for row in hits:
+            key = row['id'] if 'id' in row.keys() else (row['source'], row['article'])
+            tally[key] = tally.get(key, 0.0) + weight
+            rows_by_key[key] = row
+    ranked = sorted(tally.items(), key=lambda kv: -kv[1])
+    return [rows_by_key[key] for key, _ in ranked]
+
+
+def ai_gather_context(query, max_articles=8, max_penalties=5):
+    """Pull the most relevant law/regulation/tebliğ articles and penalty
+    entries for this scenario using the word-tally ranking above, then keep
+    per-source diversity so one heavily-worded tebliğ cannot crowd out the
+    kanun or yönetmelik entirely."""
+    per_source = {}
+    ranked_articles = _ai_token_tally(
+        query, lambda t, cap: db.search_articles(t, cap, source=None))
+    articles = []
+    for a in ranked_articles:
+        if a['source'] not in AI_SOURCES:
+            continue
+        if per_source.get(a['source'], 0) >= 3:
+            continue
+        per_source[a['source']] = per_source.get(a['source'], 0) + 1
+        articles.append(a)
+        if len(articles) >= max_articles:
+            break
+    articles.sort(key=lambda a: (AI_SOURCE_ORDER.get(a['source'], 9), a['article']))
+    penalties = _ai_token_tally(query, db.search_penalties)[:max_penalties]
+    return articles, penalties
+
+
+def ai_build_context_block(articles, penalties):
+    parts = []
+    for a in articles:
+        label = SRC_LABEL.get(a['source'], a['source'])
+        body = (a['body'] or '').strip()
+        if len(body) > 900:
+            body = body[:900].rsplit(' ', 1)[0] + ' …'
+        parts.append(f"[{label} — Madde {a['article']}] {a['title']}\n{body}")
+    for p in penalties:
+        bits = [f"İhlal: {p['violation']}"]
+        if p['option_text']:
+            bits.append(f"Seçenek: {p['option_text']}")
+        if p['law']:
+            bits.append(f"Kanun Md.{p['law']}")
+        if p['regulation']:
+            bits.append(f"Yönetmelik Md.{p['regulation']}")
+        if p['art36']:
+            bits.append(f"1380 s.K. Md.36/{p['art36']}")
+        if p['base_ipc']:
+            bits.append(f"Taban ceza: {money(p['base_ipc'])}")
+        if p['product_seizure']:
+            bits.append(f"Ürüne el koyma: {p['product_seizure']}")
+        if p['means_seizure']:
+            bits.append(f"Av aracına el koyma: {p['means_seizure']}")
+        parts.append('[İdari Yaptırım Tablosu] ' + ' · '.join(bits))
+    return '\n\n'.join(parts) if parts else '(İlgili madde veya ceza kaydı bulunamadı.)'
+
+
+def ai_build_prompt(scenario, articles, penalties):
+    return (
+        AI_SYSTEM_INSTRUCTION
+        + '\n\n=== KAYNAK MADDE METİNLERİ ===\n' + ai_build_context_block(articles, penalties)
+        + '\n\n=== OLAY ===\n' + scenario.strip()
+        + '\n\n=== ANALİZ ==='
+    )
+
+
+def md_to_tg_html(text):
+    """Turn **bold** markers into <b> after escaping everything else, so the
+    tags are always balanced — we insert them ourselves from matched pairs,
+    never trusting HTML the model might have written directly."""
+    escaped = esc(text)
+    return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', escaped, flags=re.S)
+
+
+def tg_chunks(html_text, limit=3500):
+    """Split for Telegram's 4096-char cap without ever cutting inside a tag."""
+    chunks = article_chunks(html_text, limit)
+    safe = []
+    for c in chunks:
+        if c.count('<b>') != c.count('</b>'):
+            c = re.sub(r'</?b>', '', c)
+        safe.append(c)
+    return safe
+
+
+def _ai_call_gemini_sync(prompt):
+    """Blocking HTTP call, run off the event loop via asyncio.to_thread.
+
+    Talks to Gemini's plain REST endpoint with urllib instead of the
+    google-generativeai SDK: that SDK pulls in grpcio/protobuf, which need a
+    C toolchain and previously broke the Alpine addon build (see the
+    requirements.txt history). A stdlib POST has no such dependency.
+    """
+    if not GEMINI_API_KEY:
+        raise AIError('Gemini API anahtarı yapılandırılmamış. Yönetici eklenti ayarlarından eklemelidir.')
+    url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}'
+    payload = json.dumps({
+        'contents': [{'parts': [{'text': prompt}]}],
+        'generationConfig': {'temperature': 0.15, 'maxOutputTokens': 2048},
+    }).encode('utf-8')
+    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'}, method='POST')
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+    except urllib.error.HTTPError as e:
+        body = e.read().decode('utf-8', 'replace')[:300]
+        if e.code == 400:
+            raise AIError('Gemini API isteği reddetti (400) — API anahtarını kontrol edin.') from e
+        if e.code == 429:
+            raise AIError('Gemini API kotası doldu, birkaç dakika sonra tekrar deneyin.') from e
+        raise AIError(f'Gemini API hatası ({e.code}): {body}') from e
+    except urllib.error.URLError as e:
+        raise AIError(f'Gemini API’ye bağlanılamadı: {e.reason}') from e
+    except TimeoutError:
+        raise AIError('Gemini API zaman aşımına uğradı, tekrar deneyin.')
+
+    candidates = data.get('candidates') or []
+    if not candidates:
+        reason = (data.get('promptFeedback') or {}).get('blockReason')
+        raise AIError(f'Gemini yanıtı engellendi: {reason}' if reason else 'Gemini boş yanıt döndürdü.')
+    try:
+        text = ''.join(p.get('text', '') for p in candidates[0]['content']['parts']).strip()
+    except (KeyError, IndexError, TypeError) as e:
+        raise AIError('Gemini yanıtı beklenmeyen biçimde geldi.') from e
+    if not text:
+        raise AIError('Gemini boş yanıt döndürdü.')
+    return text
+
+
+async def ai_analyze(scenario):
+    """Retrieve grounding context, call Gemini, return (raw, html, articles, penalties)."""
+    articles, penalties = ai_gather_context(scenario)
+    prompt = ai_build_prompt(scenario, articles, penalties)
+    raw_text = await asyncio.to_thread(_ai_call_gemini_sync, prompt)
+    return raw_text, md_to_tg_html(raw_text), articles, penalties
+
+
+async def ai_show(context, chat_id, text, new=False, **kwargs):
+    """Edit the tracked bot message, or append a fresh one when new=True.
+
+    Multi-chunk AI answers must not all edit the same message id — only the
+    last edit would remain visible. The first chunk reuses the 'preparing…'
+    placeholder; every chunk after that is sent as a new message instead.
+    """
+    last_id = context.user_data.get('last_bot_msg_id')
+    if not new and last_id:
+        try:
+            return await context.bot.edit_message_text(chat_id=chat_id, message_id=last_id, text=text, **kwargs)
+        except Exception:
+            pass
+    new_msg = await context.bot.send_message(chat_id=chat_id, text=text, **kwargs)
+    context.user_data['last_bot_msg_id'] = new_msg.message_id
+    return new_msg
+
+
 async def send_or_edit(update, context, text, force_new=False, **kwargs):
     try:
         await update.effective_message.delete()
@@ -365,6 +580,7 @@ MAIN = [
     [('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
     [('🧮 Hesaplayıcılar', 'calc:menu'), ('⭐ Favoriler', 'fav:list')],
     [('🕘 Son Sorgular', 'history'), ('❓ Yardım', 'help')],
+    [('🤖 AI Hukuki Analiz', 'ai:start')],
 ]
 
 
@@ -535,6 +751,16 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         out += f"▪️ <b>{esc(k)}:</b> {esc(v).replace('*', '')}\n"
                 
                 return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Geri', back_data)], [('🏠 Ana Menü', 'menu')]]))
+
+    if data == 'ai:start':
+        context.user_data['mode'] = 'ai_analysis'
+        text_ai = (
+            header('🤖', 'AI HUKUKİ ANALİZ', 'Kanun, Yönetmelik ve Tebliğ metinlerine dayanır') + '\n' + HR + '\n\n'
+            'Olayı serbest metinle anlatın — ne yapıldığı, hangi av aracı, hangi belge/ruhsat durumu vb.\n\n'
+            '<i>Örnek: Teknenin birincil av aracı algarna ama dip trolü ile avcılık yapıyor.</i>\n\n'
+            '⚠️ Yanıt sadece verilen mevzuat metinlerine dayanır; nihai karar değildir, dayanak maddeler ayrıca teyit edilmelidir.'
+        )
+        return await q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
     if data.startswith('mode:'):
         mode = data.split(':', 1)[1]
@@ -2345,6 +2571,40 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.effective_message.text.strip()
     mode = context.user_data.get('mode')
 
+
+    if mode == 'ai_analysis':
+        context.user_data.pop('mode', None)
+        scenario = text
+        chat_id = update.effective_chat.id
+        db.log(uid, 'ai_analysis', scenario[:120])
+        await send_or_edit(
+            update, context,
+            header('🤖', 'AI HUKUKİ ANALİZ', 'Hazırlanıyor, 10-20 sn sürebilir…'),
+            parse_mode=ParseMode.HTML,
+        )
+        try:
+            raw_text, html_text, arts, pens = await ai_analyze(scenario)
+        except AIError as e:
+            fail = header('🤖', 'AI HUKUKİ ANALİZ') + '\n' + HR + '\n\n' + badge('stop', 'Analiz tamamlanamadı', esc(str(e)))
+            return await ai_show(context, chat_id, fail, parse_mode=ParseMode.HTML,
+                                  reply_markup=kb([[('🔁 Tekrar Dene', 'ai:start')], [('🏠 Ana Menü', 'menu')]]))
+        try:
+            iid = db.finish_inspection(uid, 'ai', 'AI Hukuki Analiz — ' + scenario[:40], {'scenario': scenario}, raw_text)
+        except Exception:
+            iid = None
+        art_rows = [[(f"📚 {SRC_LABEL.get(a['source'], a['source'])} Md.{a['article']}", f"art:{a['source']}:{a['article']}")] for a in arts[:6]]
+        pen_rows = [[(f"⚖️ {p['violation'][:55]}", f"pen:{p['id']}")] for p in pens[:3]]
+        tail_rows = []
+        if iid:
+            tail_rows.append([('📄 Tutanak İndir / Paylaş', f'insp:report:{iid}')])
+        tail_rows.append([('🔁 Yeni Analiz', 'ai:start'), ('🏠 Ana Menü', 'menu')])
+        body = header('🤖', 'AI HUKUKİ ANALİZ') + '\n' + HR + '\n\n' + html_text
+        chunks = tg_chunks(body)
+        for i, chunk in enumerate(chunks):
+            last = i == len(chunks) - 1
+            await ai_show(context, chat_id, chunk, parse_mode=ParseMode.HTML, new=(i > 0),
+                          reply_markup=kb(art_rows + pen_rows + tail_rows) if last else None)
+        return
 
     if mode == 'guide_measure':
         g = guide_current(context)

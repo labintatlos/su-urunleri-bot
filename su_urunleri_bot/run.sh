@@ -13,6 +13,9 @@ export ADMIN_IDS="$(bashio::config 'admin_id')"
 export ALLOWED_USER_IDS="$(bashio::config 'allowed_users')"
 export TZ="$(bashio::config 'timezone')"
 export RESULT_LIMIT="$(bashio::config 'result_limit')"
+if bashio::config.has_value 'gemini_api_key'; then
+  export GEMINI_API_KEY="$(bashio::config 'gemini_api_key')"
+fi
 
 cd /app
 

@@ -1,6 +1,6 @@
 name: "Su Ürünleri Denetim Asistanı"
 description: "Deniz görev alanı su ürünleri denetimi rehberi - Telegram Bot"
-version: "5.5.0"
+version: "5.6.0"
 slug: "su_urunleri_bot"
 url: "https://github.com/labintatlos/su-urunleri-bot"
 init: false
@@ -19,6 +19,7 @@ map:
 options:
   bot_token: ""
   admin_id: ""
+  gemini_api_key: ""
   allowed_users: []
   result_limit: 8
   timezone: "Europe/Istanbul"
@@ -30,6 +31,7 @@ options:
 schema:
   bot_token: str
   admin_id: str?
+  gemini_api_key: str?
   allowed_users:
     - str
   result_limit: int(1,20)
