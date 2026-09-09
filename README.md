@@ -24,11 +24,8 @@ Karıştırılan balık türleri için teşhis kartları ve yasak av araçların
 ### ⚖️ Hukuki Değerlendirme
 Olay serbest metinle anlatılır ve yüklü mevzuatın tam metni üzerinden değerlendirilir. Denetim sonucu ekranlarındaki **“Bu Denetimi Değerlendir”** düğmesi, o denetimde girilen bilgileri ve işaretlenen uygunsuzlukları otomatik olarak değerlendirmeye taşır.
 
-### 📅 Mevzuat Sürümü
-Botun hangi kaynak metinlerle çalıştığını, tebliğlerin Resmî Gazete yayım tarihi ile sayısını ve av dönemi bitiş tarihlerini gösterir. Av dönemi sonuna 180 günden az kaldığında ekran uyarır.
-
 ### 💬 Doğrudan Arama
-Menüde gezmeden tür, ceza veya mevzuat kelimesi yazmak yeterlidir; tür, ceza ve madde sonuçları birlikte listelenir.
+Menüde gezmeden tür, ceza veya mevzuat kelimesi yazmak yeterlidir; tür, ceza ve madde sonuçları birlikte listelenir. Mevzuat maddelerine buradan ve her ekrandaki dayanak düğmelerinden ulaşılır; madde ekranından kaynağın tüm madde listesi açılabilir.
 
 ### 🔐 Yönetici Paneli
 Kullanıcı istatistikleri, denetim ve arama dağılımı, işlem kayıtları.
@@ -83,7 +80,7 @@ su_urunleri_bot/
 │   ├── articles.json          # Kanun/yönetmelik/tebliğ maddeleri
 │   ├── penalty_cards.json     # İdari yaptırım tablosu
 │   ├── vessel_guides.json     # Tekne türü kontrol föyleri
-│   └── sources.json           # Kaynak metinler ve yayım/geçerlilik bilgisi
+│   └── sources.json           # Kaynak metin tanımları
 ├── config.yaml       # Home Assistant eklenti tanımı
 ├── Dockerfile
 └── run.sh            # Eklenti giriş noktası
@@ -109,9 +106,8 @@ güncelledikten sonra bu sürümü artırmak gerekir.
 - İdari yaptırım (ceza) tablosu
 
 6/1 ve 6/2 tebliğleri **1/9/2024 – 31/8/2028** av dönemi için yayımlanmıştır.
-Dönem sonuna yaklaşıldığında “Mevzuat Sürümü” ekranı uyarır. Yeni tebliğ
-yayımlandığında metinler `data/` altındaki JSON dosyalarına işlenmeden bot eski
-hükümlerle cevap vermeye devam eder.
+Dönem sonunda yenileriyle değiştirilirler; yeni metinler `data/` altındaki JSON
+dosyalarına işlenmeden bot eski hükümlerle cevap vermeye devam eder.
 
 ## ⚠️ Sorumluluk
 

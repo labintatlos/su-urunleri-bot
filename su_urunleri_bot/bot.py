@@ -28,12 +28,6 @@ with open(ASSET_DIR / 'ceza_rehberi_v2.json', 'r', encoding='utf-8') as f:
 with open(ASSET_DIR / 'tur_cizelgesi.json', 'r', encoding='utf-8') as f:
     TUR_CIZELGESI = json.load(f)
 
-# Publication and av-dönemi metadata for the loaded texts; the database
-# keeps only the columns it was built with, so the version screen reads
-# the file directly.
-with open(ASSET_DIR / 'sources.json', 'r', encoding='utf-8') as f:
-    SOURCE_META = {s['key']: s for s in json.load(f)}
-
 
 
 
@@ -459,17 +453,6 @@ def _gemini_post(path, body, timeout):
         return json.loads(resp.read().decode('utf-8'))
 
 
-def ai_cache_status():
-    """Human-readable state of the context cache, for the admin screen."""
-    if not GEMINI_API_KEY:
-        return 'yapılandırılmamış'
-    if _ai_cache['unavailable']:
-        return 'kullanılamıyor (tam istem gönderiliyor)'
-    if _ai_cache['name'] and time.monotonic() < _ai_cache['expires']:
-        return 'etkin'
-    return 'ilk soruda kurulacak'
-
-
 def _ai_ensure_cache():
     """Name of a live context cache holding the corpus, or None.
 
@@ -749,7 +732,6 @@ MAIN = [
     [('📋 Tekne Türü Kılavuzları', 'guide:menu'), ('🚨 Denetime Başla', 'audit:start')],
     [('📖 Pratik Ceza Rehberi', 'ceza:menu'), ('📖 Pratik Tür Çizelgesi', 'turcizelge:menu')],
     [('🚢 Gemi / Ruhsat / BAGİS', 'vessel:menu'), ('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
-    [('📚 Mevzuat Kaynakları', 'sources'), ('📅 Mevzuat Sürümü', 'srcver')],
     [('⚖️ Hukuki Değerlendirme', 'ai:start')],
 ]
 
@@ -949,10 +931,6 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
         return await q.edit_message_text(prompts[mode], parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
-    if data == 'srcver':
-        return await show_source_version(q)
-    if data == 'sources':
-        return await show_sources(q)
     if data.startswith('src:'):
         key = data.split(':', 1)[1]
         if key == 'excel':
@@ -1219,18 +1197,6 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         db.drop_draft(uid)
         context.user_data.clear()
         return await send_menu(q, uid, edit=True)
-
-
-async def show_sources(q):
-    rows = []
-    for source in db.list_sources():
-        rows.append([(f'{source["type"]}: {source["title"][:29]}', f'src:{source["key"]}')])
-    rows.append([('↩️ Ana Menü', 'menu')])
-    await q.edit_message_text(
-        '📚 <b>MEVZUAT KAYNAKLARI</b>\n\nDeniz görev alanındaki denetimlerde kullanılan mevzuat ve yaptırım kaynaklarını buradan inceleyebilirsiniz. İçsuya özgü hükümler normal görev akışında gösterilmez.',
-        parse_mode=ParseMode.HTML,
-        reply_markup=kb(rows),
-    )
 
 
 def article_chunks(text, limit=2450):
@@ -3032,74 +2998,6 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     await send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
-
-
-# Warn this far ahead of an av dönemi ending, so a superseded tebliğ does
-# not go unnoticed.
-SOURCE_EXPIRY_WARNING_DAYS = 180
-
-
-def source_expiry_state(key, today):
-    """(state, end_date) for a source with a fixed av dönemi; (None, None)
-    for the open-ended ones."""
-    raw = (SOURCE_META.get(key) or {}).get('valid_until')
-    if not raw:
-        return None, None
-    try:
-        end = datetime.strptime(raw, '%Y-%m-%d').date()
-    except ValueError:
-        return None, None
-    left = (end - today).days
-    if left < 0:
-        return 'expired', end
-    if left <= SOURCE_EXPIRY_WARNING_DAYS:
-        return 'soon', end
-    return 'valid', end
-
-
-async def show_source_version(q):
-    """Which texts the bot is actually answering from, and how current they are."""
-    today = datetime.now(TZ).date()
-    lines = [header('📅', 'MEVZUAT SÜRÜMÜ', 'Botun cevap ürettiği kaynak metinler'), HR, '']
-    for source in db.list_sources():
-        meta = SOURCE_META.get(source['key']) or {}
-        lines.append(f'📖 <b>{esc(source["title"])}</b>')
-        bits = []
-        if source['number']:
-            bits.append('No: ' + str(source['number']))
-        if meta.get('published'):
-            try:
-                pub = datetime.strptime(meta['published'], '%Y-%m-%d').strftime('%d.%m.%Y')
-                bits.append('RG: ' + pub + (' / ' + meta['rg_sayi'] if meta.get('rg_sayi') else ''))
-            except ValueError:
-                pass
-        if bits:
-            lines.append('   ' + esc(' · '.join(bits)))
-        state, end = source_expiry_state(source['key'], today)
-        if state == 'expired':
-            lines.append(f'   ⛔ Av dönemi {end.strftime("%d.%m.%Y")} tarihinde doldu — '
-                         'yerine yeni tebliğ yayımlanmış olabilir.')
-        elif state == 'soon':
-            lines.append(f'   ⚠️ Av dönemi {end.strftime("%d.%m.%Y")} tarihinde doluyor '
-                         f'({(end - today).days} gün kaldı).')
-        elif state == 'valid':
-            lines.append(f'   ✅ Av dönemi sonu: {end.strftime("%d.%m.%Y")}')
-        lines.append('')
-
-    lines.append(HR)
-    lines.append(
-        '⚠️ <i>6/1 ve 6/2 tebliğleri belirli bir av dönemi için yayımlanır ve dönem '
-        'sonunda yenileriyle değiştirilir. Yeni tebliğ yayımlandığında buradaki '
-        'metinler güncellenmedikçe bot eski hükümlerle cevap vermeye devam eder.</i>'
-    )
-
-    rows = []
-    if q.from_user.id in ADMIN_IDS:
-        lines.append('')
-        lines.append('🧠 Değerlendirme önbelleği: <b>' + esc(ai_cache_status()) + '</b>')
-    rows.append([('📚 Mevzuat Kaynakları', 'sources'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text('\n'.join(lines), parse_mode=ParseMode.HTML,
-                              reply_markup=kb(rows), disable_web_page_preview=True)
 
 
 async def show_admin_panel(q, section='main'):
