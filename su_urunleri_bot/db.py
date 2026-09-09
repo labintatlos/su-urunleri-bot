@@ -215,18 +215,6 @@ def search_raw(query,limit=8):
     return _rank_rows(rows,query,limit,('raw_text',))
 
 
-def add_fav(uid,typ,item):
-    c=con(); c.execute('INSERT OR IGNORE INTO favorites VALUES(?,?,?,?)',(uid,typ,str(item),datetime.now().isoformat(timespec='seconds'))); c.commit(); c.close()
-
-
-def favs(uid):
-    c=con(); rows=c.execute('SELECT * FROM favorites WHERE user_id=? ORDER BY created_at DESC LIMIT 30',(uid,)).fetchall(); c.close(); return rows
-
-
-def history(uid):
-    c=con(); rows=c.execute('SELECT * FROM query_log WHERE user_id=? ORDER BY id DESC LIMIT 12',(uid,)).fetchall(); c.close(); return rows
-
-
 def admin_stats():
     c=con()
     users=c.execute('SELECT COUNT(*) FROM users').fetchone()[0]

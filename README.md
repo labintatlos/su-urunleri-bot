@@ -1,209 +1,120 @@
 # Su Ürünleri Denetim Asistanı
 
-**Telegram Bot** | **Home Assistant Eklentisi** | **v5.0.0**
+**Telegram Bot** | **Home Assistant Eklentisi**
 
-Deniz görev alanında su ürünleri denetimlerinde mevzuat hükümlerinin değerlendirilmesi, ihlallerin tespiti ve uygulanacak işlemlerin belirlenmesinde yardımcı olan akıllı Telegram botu.
+Deniz görev alanında su ürünleri denetimlerinde mevzuat hükümlerinin değerlendirilmesine, ihlallerin tespitine ve uygulanacak işlemlerin belirlenmesine yardımcı olan Telegram botu.
 
 ## 🌊 Özellikler
 
 ### 📋 Tekne Türü Kılavuzları
-- Çıkacağınız tekneye özel kontrol föyleri
-- Dinamik uygunluk/uygunsuzluk işaretleme
-- Otomatik rapor oluşturma
+Çıkılacak tekneye özel kontrol föyü açılır; her madde **Uygun / Uygunsuz / Kontrol Edilmedi** olarak işaretlenir, sonunda özet ve dayanak maddeleri gösterilir. Ölçüm/kayıt alanları ayrıca girilebilir.
 
 ### 🚨 Denetime Başla
-- Adım adım denetim rehberi
-- Bölge, faaliyet, gemi boyu seçimi
-- Otomatik ihlal tespiti ve ceza hesaplaması
+Bölge → faaliyet → gemi boyu → tarih → konu → av aracı → tür sırasıyla ilerleyen yönlendirilmiş denetim. Seçimlerden doğrudan çıkan mevzuat uyarıları ile cevaplara göre olası aykırılıklar ayrı ayrı listelenir. Yarıda kalan denetim kaydedilir ve sonra kaldığı yerden sürdürülebilir.
 
-### 📖 Ceza Rehberi
-- 1380 Sayılı Kanun maddeleri
-- İdari cezalar ve yaptırımlar
-- Tekrar ihlal çarpanları
+### 📖 Pratik Ceza Rehberi
+İdari yaptırım tablosundan ihlal başlığına göre ceza kartları; tutar, ürüne/av aracına el koyma, ruhsat işlemi ve dayanak maddeleri.
 
-### 🐟 Tür Çizelgesi
-- Ticari (6/1) ve Amatör (6/2) türleri
-- Asgari boy/ağırlık bilgileri
-- Mevsimsel avlanma yasağı
+### 📖 Pratik Tür Çizelgesi
+Ticari (6/1) ve amatör (6/2) türler, asgari boy/ağırlık, alıkonulabilir miktar ve zaman yasakları.
 
 ### 🖼️ Görsel Rehberler
-- Balık türleri teşhis kartları
-- Yasak av araçları görsel tespiti
-- İşlemli fotoğraf rehberleri
+Karıştırılan balık türleri için teşhis kartları ve yasak av araçlarının görsel tespiti.
 
-### 🧮 Hesaplayıcılar
-- Mavi yüzgeçli orkinos %5 adet toleransı
-- Ticari küçük boy toleransı (%5-15)
-- Otomatik ceza hesaplama
+### ⚖️ Hukuki Değerlendirme
+Olay serbest metinle anlatılır ve yüklü mevzuatın tam metni üzerinden değerlendirilir. Denetim sonucu ekranlarındaki **“Bu Denetimi Değerlendir”** düğmesi, o denetimde girilen bilgileri ve işaretlenen uygunsuzlukları otomatik olarak değerlendirmeye taşır.
 
-### 👤 Yönetici Paneli
-- Kullanıcı istatistikleri
-- Sorgu geçmişi analizi
-- Sistem durumu izleme
+### 📅 Mevzuat Sürümü
+Botun hangi kaynak metinlerle çalıştığını, tebliğlerin Resmî Gazete yayım tarihi ile sayısını ve av dönemi bitiş tarihlerini gösterir. Av dönemi sonuna 180 günden az kaldığında ekran uyarır.
 
-## 🚀 Başlangıç
+### 💬 Doğrudan Arama
+Menüde gezmeden tür, ceza veya mevzuat kelimesi yazmak yeterlidir; tür, ceza ve madde sonuçları birlikte listelenir.
 
-### Gereksinimler
-- Python 3.9+
-- Telegram Bot Token ([@BotFather](https://t.me/botfather))
-- Home Assistant (optional)
+### 🔐 Yönetici Paneli
+Kullanıcı istatistikleri, denetim ve arama dağılımı, işlem kayıtları.
 
-### Kurulum
+## 🚀 Kurulum
 
-#### Yerel Kurulum
+### Home Assistant Eklentisi (kullanılan yöntem)
+
+Depoyu Home Assistant’a eklenti deposu olarak ekleyin, ardından eklenti ayarlarından doldurun:
+
+```yaml
+bot_token: "TELEGRAM_BOT_TOKEN"
+admin_id: "123456789"
+allowed_users: ["123456789"]
+gemini_api_key: ""          # Hukuki değerlendirme için (opsiyonel)
+gemini_model: "gemini-3.6-flash"
+result_limit: 8
+timezone: "Europe/Istanbul"
+```
+
+Eklenti `run.sh` üzerinden `bot.py` dosyasını çalıştırır.
+
+### Yerel Çalıştırma
+
 ```bash
-# Depo klonlama
-git clone <repo-url>
-cd su-urunleri-bot
-
-# Bağımlılıkları yükleme
+cd su_urunleri_bot
 pip install -r requirements.txt
 
-# Ortam değişkenleri
-export TELEGRAM_TOKEN="your_token_here"
+export TELEGRAM_TOKEN="..."
 export ADMIN_IDS="123456789"
+export ALLOWED_USER_IDS="123456789"
+export GEMINI_API_KEY="..."      # opsiyonel
 
-# Çalıştırma
-python run.py
-```
-
-#### Home Assistant Eklentisi
-```yaml
-# configuration.yaml
-su_urunleri_bot:
-  bot_token: !secret telegram_token
-  admin_id: "123456789"
-  allowed_users: []
-  result_limit: 8
-  log_level: INFO
-```
-
-### Sağlık Kontrolü
-```bash
-python run.py --check
+python bot.py
 ```
 
 ## 📖 Komutlar
 
 | Komut | Açıklama |
 |-------|----------|
-| `/start` | Botu başlat ve menüyü göster |
-| `/menu` | Ana menüyü göster |
-| `/help` | Yardım mesajını göster |
-| `/id` | Telegram ID'nizi öğrenin (Admin) |
+| `/start` · `/menu` | Ana menüyü aç |
+| `/id` | Telegram kullanıcı ID’nizi göster |
+| `/admin` · `/istatistik` | Yönetici paneli (yalnız yönetici) |
 
-## 🎯 Ana Menü
-
-- **📋 Tekne Türü Kılavuzları** - Kontrol föyü seç
-- **🚨 Denetime Başla** - Denetim başlat
-- **📖 Pratik Ceza Rehberi** - Cezaları ara
-- **📖 Pratik Tür Çizelgesi** - Türleri ara
-- **🚢 Gemi/Ruhsat/BAGİS** - Gemi kontrol kartları
-- **🧾 Kolluk İşlem Rehberi** - İşlem prosedürleri
-- **🧮 Hesaplayıcılar** - Otomatik hesaplama
-- **⭐ Favoriler** - Kayıtlı araştırmalar
-- **🕘 Son Sorgular** - Geçmiş araştırmalar
-- **ℹ️ Sürüm** - Versiyon bilgisi
-
-## 🏗️ Mimarisi
+## 🏗️ Yapı
 
 ```
-bot/
-├── config.py           # Konfigürasyon yönetimi
-├── logger.py           # Yapılandırılmış logging
-├── exceptions.py       # Özel istisnalar
-├── main.py            # Uygulama entry point
-├── health.py          # Sağlık kontrolleri
-├── handlers/          # Command & callback handlers
-├── services/          # İş mantığı servisleri
-├── models/            # Veri modelleri
-├── formatters/        # Mesaj formatlamayı
-├── middleware/        # Auth & rate limiting
-└── db/               # Veritabanı & repositories
+su_urunleri_bot/
+├── bot.py            # Botun tamamı: menüler, denetim akışları, arama, AI
+├── db.py             # SQLite şeması, veri yükleme ve arama
+├── data/             # Mevzuat, tür, ceza ve kılavuz verileri (JSON)
+│   ├── articles.json          # Kanun/yönetmelik/tebliğ maddeleri
+│   ├── penalty_cards.json     # İdari yaptırım tablosu
+│   ├── vessel_guides.json     # Tekne türü kontrol föyleri
+│   └── sources.json           # Kaynak metinler ve yayım/geçerlilik bilgisi
+├── config.yaml       # Home Assistant eklenti tanımı
+├── Dockerfile
+└── run.sh            # Eklenti giriş noktası
 ```
 
-## 🧪 Testler
+Veriler `data/` altındaki JSON dosyalarından SQLite’a yüklenir. `db.py` içindeki
+`DATASET` sürümü değiştiğinde veritabanı yeniden kurulur; veri dosyalarını
+güncelledikten sonra bu sürümü artırmak gerekir.
 
-```bash
-# Tüm testleri çalıştır
-pytest
+## 📊 Veritabanı Tabloları
 
-# Belirli test türü
-pytest -m unit
-pytest -m integration
+`sources`, `articles`, `rules`, `commercial_species`, `amateur_species`,
+`prohibited_species`, `penalty_cards`, `raw_excel_rows`, `users`, `query_log`,
+`inspections`, `meta`.
 
-# Coverage raporu ile
-pytest --cov=bot --cov-report=html
+## 📚 Mevzuat Kaynakları
 
-# Belirli dosya
-pytest tests/test_models/test_user.py
-```
+- 1380 sayılı Su Ürünleri Kanunu
+- Su Ürünleri Yönetmeliği
+- 6/1 Numaralı Ticari Amaçlı Su Ürünleri Avcılığı Tebliği (2024/20)
+- 6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığı Tebliği (2024/21)
+- Balıkçı Gemilerini İzleme Sistemi Tebliği (2021/26)
+- İdari yaptırım (ceza) tablosu
 
-## 📊 Veritabanı
+6/1 ve 6/2 tebliğleri **1/9/2024 – 31/8/2028** av dönemi için yayımlanmıştır.
+Dönem sonuna yaklaşıldığında “Mevzuat Sürümü” ekranı uyarır. Yeni tebliğ
+yayımlandığında metinler `data/` altındaki JSON dosyalarına işlenmeden bot eski
+hükümlerle cevap vermeye devam eder.
 
-SQLite veritabanı yapısı:
-- **users** - Kullanıcı bilgileri
-- **query_log** - Sorgu geçmişi
-- **articles** - Mevzuat maddeleri
-- **commercial_species** - Ticari türler
-- **amateur_species** - Amatör türler
-- **prohibited_species** - Yasaklı türler
-- **penalty_cards** - Ceza kartları
-- **favorites** - Kullanıcı favorileri
-- **audit_records** - Denetim kayıtları
+## ⚠️ Sorumluluk
 
-## 🔐 Güvenlik
-
-- ✅ Kullanıcı kimlik doğrulaması
-- ✅ Admin rol kontrolleri
-- ✅ Oran limitlemesi (10 req/min)
-- ✅ Giriş kayıtlama
-- ✅ Yapılandırılmış hata işleme
-
-## 📝 Yapılandırma
-
-### Ortam Değişkenleri
-```bash
-TELEGRAM_TOKEN          # Bot tokeni (gerekli)
-ADMIN_IDS              # Admin ID'leri (opsiyonel)
-ALLOWED_USER_IDS       # İzin verilen kullanıcılar
-RESULT_LIMIT           # Arama sonucu limiti (default: 8)
-TZ                     # Saat dilimi (default: Europe/Istanbul)
-LOG_LEVEL              # Loglama seviyesi (default: INFO)
-```
-
-### Home Assistant Options
-```yaml
-bot_token: "TOKEN"
-admin_id: "ID"
-allowed_users: []
-result_limit: 8
-log_level: "INFO"
-enable_admin_panel: true
-rate_limit_enabled: true
-```
-
-## 🤝 Katkı Yapma
-
-1. Branch oluştur: `git checkout -b feature/yeni-ozellik`
-2. Değişiklikleri commit et: `git commit -m "Açıkla"`
-3. Push et: `git push origin feature/yeni-ozellik`
-4. Pull Request oluştur
-
-## 📚 Belgelendirme
-
-- [DEVELOPMENT.md](DEVELOPMENT.md) - Geliştirme rehberi
-- [ARCHITECTURE.md](ARCHITECTURE.md) - Mimari tasarım
-- [API.md](API.md) - API referansı
-
-## 📄 Lisans
-
-MIT License - Detaylar için LICENSE dosyasına bakın.
-
-## 📞 Destek
-
-Sorularınız için [GitHub Issues](https://github.com/repo/issues) sayfasını kullanın.
-
----
-
-**Versiyon:** 5.0.0 | **Güncelleme:** 2024 | **Python:** 3.9+
+Bot bir karar destek aracıdır. Ürettiği hiçbir sonuç nihai yaptırım kararı
+değildir; dayanak maddeler ve ceza tablosundaki maddi unsurlar her olayda ayrıca
+doğrulanmalıdır.

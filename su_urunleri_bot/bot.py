@@ -1,5 +1,4 @@
 import html
-import io
 import json
 import logging
 import os
@@ -28,6 +27,12 @@ with open(ASSET_DIR / 'ceza_rehberi_v2.json', 'r', encoding='utf-8') as f:
 
 with open(ASSET_DIR / 'tur_cizelgesi.json', 'r', encoding='utf-8') as f:
     TUR_CIZELGESI = json.load(f)
+
+# Publication and av-dönemi metadata for the loaded texts; the database
+# keeps only the columns it was built with, so the version screen reads
+# the file directly.
+with open(ASSET_DIR / 'sources.json', 'r', encoding='utf-8') as f:
+    SOURCE_META = {s['key']: s for s in json.load(f)}
 
 
 
@@ -369,13 +374,28 @@ def ai_full_corpus():
     return _AI_CORPUS_CACHE
 
 
-def ai_build_prompt(scenario):
+def ai_prompt_prefix():
+    """The part of the prompt that is identical for every question: the
+    instruction block plus the whole corpus. Split out so it can be parked in
+    a Gemini context cache instead of being re-uploaded each time."""
     return (
         AI_SYSTEM_INSTRUCTION
         + '\n\n=== MEVZUAT METİNLERİ VE CEZA TABLOSU ===\n' + ai_full_corpus()
-        + '\n\n=== SORU / OLAY ===\n' + scenario.strip()
-        + '\n\n=== CEVAP ==='
     )
+
+
+def ai_prompt_tail(scenario):
+    """The only part that changes between questions."""
+    return '\n\n=== SORU / OLAY ===\n' + scenario.strip() + '\n\n=== CEVAP ==='
+
+
+def ai_build_prompt(scenario):
+    """The whole prompt as one blob, used whenever the context cache is not
+    available. Deliberately identical, character for character, to
+    prefix + tail: a cached run and an uncached run put exactly the same text
+    in front of the model, so the answer does not depend on which path ran.
+    """
+    return ai_prompt_prefix() + ai_prompt_tail(scenario)
 
 
 def md_to_tg_html(text):
@@ -397,39 +417,114 @@ def tg_chunks(html_text, limit=3500):
     return safe
 
 
-def _ai_call_gemini_sync(prompt):
-    """Blocking HTTP call, run off the event loop via asyncio.to_thread.
+# ── Gemini bağlam önbelleği ─────────────────────────────────────────────
+# The corpus prefix is ~75K tokens and never changes, so re-uploading it on
+# every question is the biggest cost in this feature, both in latency and in
+# billed input tokens. The cachedContents endpoint stores that prefix
+# server-side and lets a request reference it by name.
+#
+# The cache is strictly an optimisation: if creating or using one fails for
+# any reason (a model without cache support, quota, expiry, network), the
+# call falls back to sending the full prompt inline, which is exactly what
+# the feature did before caching existed. The text the model sees is
+# identical either way, so the answer never depends on which path ran.
+GEMINI_API_ROOT = 'https://generativelanguage.googleapis.com/v1beta'
+AI_CACHE_TTL_SECONDS = 3600
+# Stop reusing a cache slightly before it expires server-side, so a request
+# never races the deletion.
+AI_CACHE_SAFETY_MARGIN = 300
 
-    Talks to Gemini's plain REST endpoint with urllib instead of the
-    google-generativeai SDK: that SDK pulls in grpcio/protobuf, which need a
-    C toolchain and previously broke the Alpine addon build (see the
-    requirements.txt history). A stdlib POST has no such dependency.
-    """
-    # User-facing messages are deliberately generic (no "Gemini"/"API"/model
-    # names) so the feature doesn't read as AI-powered from the chat; the
-    # real cause always goes to the container log for whoever administers
-    # the bot to diagnose.
+_ai_cache = {'name': None, 'model': None, 'expires': 0.0, 'unavailable': False}
+
+
+class _AIRequestRejected(Exception):
+    """The service refused the request itself (4xx). Carries the status code so
+    the caller can tell a stale cache reference from a genuinely bad request."""
+
+    def __init__(self, code, body):
+        super().__init__(f'HTTP {code}')
+        self.code = code
+        self.body = body
+
+
+def _gemini_post(path, body, timeout):
+    url = f'{GEMINI_API_ROOT}/{path}?key={GEMINI_API_KEY}'
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(body).encode('utf-8'),
+        headers={'Content-Type': 'application/json'},
+        method='POST',
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode('utf-8'))
+
+
+def ai_cache_status():
+    """Human-readable state of the context cache, for the admin screen."""
     if not GEMINI_API_KEY:
-        logger.error('Hukuki değerlendirme: GEMINI_API_KEY yapılandırılmamış.')
-        raise AIError('Bu özellik şu anda yapılandırılmamış.')
-    url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}'
-    payload = json.dumps({
-        'contents': [{'parts': [{'text': prompt}]}],
-        'generationConfig': {'temperature': 0.15, 'maxOutputTokens': 4096},
-    }).encode('utf-8')
-    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'}, method='POST')
+        return 'yapılandırılmamış'
+    if _ai_cache['unavailable']:
+        return 'kullanılamıyor (tam istem gönderiliyor)'
+    if _ai_cache['name'] and time.monotonic() < _ai_cache['expires']:
+        return 'etkin'
+    return 'ilk soruda kurulacak'
+
+
+def _ai_ensure_cache():
+    """Name of a live context cache holding the corpus, or None.
+
+    Never raises: a failure here only means the caller sends the full prompt.
+    """
+    if _ai_cache['unavailable']:
+        return None
+    now = time.monotonic()
+    if (_ai_cache['name'] and _ai_cache['model'] == GEMINI_MODEL
+            and now < _ai_cache['expires']):
+        return _ai_cache['name']
+    body = {
+        'model': f'models/{GEMINI_MODEL}',
+        'displayName': 'su-urunleri-mevzuat',
+        'ttl': f'{AI_CACHE_TTL_SECONDS}s',
+        'contents': [{'role': 'user', 'parts': [{'text': ai_prompt_prefix()}]}],
+    }
     try:
-        # The prompt now carries the full corpus (~75K tokens), so a slow
-        # response takes noticeably longer than a short grounded snippet did.
-        with urllib.request.urlopen(req, timeout=75) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
+        # Uploading the corpus is much slower than asking a question about it.
+        data = _gemini_post('cachedContents', body, 180)
+        name = data.get('name')
+        if not name:
+            raise ValueError(f'yanitta cache adi yok: {str(data)[:200]}')
     except urllib.error.HTTPError as e:
-        body = e.read().decode('utf-8', 'replace')[:300]
-        logger.error('Hukuki değerlendirme HTTP %s (model=%s): %s', e.code, GEMINI_MODEL, body)
+        detail = e.read().decode('utf-8', 'replace')[:300]
+        logger.warning('Mevzuat önbelleği kurulamadı (HTTP %s): %s — tam istem gönderilecek.',
+                       e.code, detail)
+        _ai_cache['unavailable'] = True
+        return None
+    except Exception as e:
+        logger.warning('Mevzuat önbelleği kurulamadı: %s — tam istem gönderilecek.', e)
+        _ai_cache['unavailable'] = True
+        return None
+    tokens = (data.get('usageMetadata') or {}).get('totalTokenCount')
+    logger.info('Mevzuat önbelleği kuruldu: %s (%s token, ttl %s sn)', name, tokens,
+                AI_CACHE_TTL_SECONDS)
+    _ai_cache.update(name=name, model=GEMINI_MODEL,
+                     expires=now + AI_CACHE_TTL_SECONDS - AI_CACHE_SAFETY_MARGIN)
+    return name
+
+
+def _ai_generate(body):
+    """One generateContent round trip. Returns the answer text."""
+    try:
+        # The uncached path carries the full corpus, so a slow response there
+        # takes noticeably longer than a cached one.
+        data = _gemini_post(f'models/{GEMINI_MODEL}:generateContent', body, 120)
+    except urllib.error.HTTPError as e:
+        body_text = e.read().decode('utf-8', 'replace')[:300]
+        logger.error('Hukuki değerlendirme HTTP %s (model=%s): %s', e.code,
+                     GEMINI_MODEL, body_text)
         if e.code == 429:
             raise AIError('Sorgu kotanız doldu, birkaç dakika sonra tekrar deneyin.') from e
-        if e.code in (400, 404):
-            raise AIError('Bu özellik şu anda kullanılamıyor.') from e
+        if 400 <= e.code < 500:
+            raise _AIRequestRejected(e.code, body_text) from e
         raise AIError('Sorgu şu anda tamamlanamadı, birkaç dakika sonra tekrar deneyin.') from e
     except urllib.error.URLError as e:
         logger.error('Hukuki değerlendirme bağlantı hatası: %s', e.reason)
@@ -454,10 +549,51 @@ def _ai_call_gemini_sync(prompt):
     return text
 
 
+def _ai_call_gemini_sync(scenario):
+    """Blocking HTTP call, run off the event loop via asyncio.to_thread.
+
+    Talks to the plain REST endpoint with urllib instead of the
+    google-generativeai SDK: that SDK pulls in grpcio/protobuf, which need a
+    C toolchain and previously broke the Alpine addon build (see the
+    requirements.txt history). A stdlib POST has no such dependency.
+    """
+    # User-facing messages are deliberately generic (no service or model
+    # names) so the feature does not read as AI-powered from the chat; the
+    # real cause always goes to the container log for whoever administers
+    # the bot to diagnose.
+    if not GEMINI_API_KEY:
+        logger.error('Hukuki değerlendirme: GEMINI_API_KEY yapılandırılmamış.')
+        raise AIError('Bu özellik şu anda yapılandırılmamış.')
+
+    generation_config = {'temperature': 0.15, 'maxOutputTokens': 4096}
+    cache_name = _ai_ensure_cache()
+    if cache_name:
+        try:
+            return _ai_generate({
+                'contents': [{'role': 'user', 'parts': [{'text': ai_prompt_tail(scenario)}]}],
+                'cachedContent': cache_name,
+                'generationConfig': generation_config,
+            })
+        except _AIRequestRejected as e:
+            # Most likely the cache expired or was deleted server-side. Forget
+            # it and answer from the full prompt rather than failing the user.
+            logger.warning('Önbellekli istek reddedildi (HTTP %s), tam istemle tekrar deneniyor.',
+                           e.code)
+            _ai_cache.update(name=None, expires=0.0)
+
+    try:
+        return _ai_generate({
+            'contents': [{'parts': [{'text': ai_build_prompt(scenario)}]}],
+            'generationConfig': generation_config,
+        })
+    except _AIRequestRejected as e:
+        logger.error('Hukuki değerlendirme reddedildi (HTTP %s): %s', e.code, e.body)
+        raise AIError('Bu özellik şu anda kullanılamıyor.') from e
+
+
 async def ai_analyze(scenario):
     """Run the question against the full legal corpus. Returns (raw, html)."""
-    prompt = ai_build_prompt(scenario)
-    raw_text = await asyncio.to_thread(_ai_call_gemini_sync, prompt)
+    raw_text = await asyncio.to_thread(_ai_call_gemini_sync, scenario)
     return raw_text, md_to_tg_html(raw_text)
 
 
@@ -613,8 +749,7 @@ MAIN = [
     [('📋 Tekne Türü Kılavuzları', 'guide:menu'), ('🚨 Denetime Başla', 'audit:start')],
     [('📖 Pratik Ceza Rehberi', 'ceza:menu'), ('📖 Pratik Tür Çizelgesi', 'turcizelge:menu')],
     [('🚢 Gemi / Ruhsat / BAGİS', 'vessel:menu'), ('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
-    [('🧮 Hesaplayıcılar', 'calc:menu'), ('⭐ Favoriler', 'fav:list')],
-    [('🕘 Son Sorgular', 'history'), ('❓ Yardım', 'help')],
+    [('📚 Mevzuat Kaynakları', 'sources'), ('📅 Mevzuat Sürümü', 'srcver')],
     [('⚖️ Hukuki Değerlendirme', 'ai:start')],
 ]
 
@@ -788,6 +923,10 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 
                 return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Geri', back_data)], [('🏠 Ana Menü', 'menu')]]))
 
+    if data == 'ai:audit':
+        return await ai_audit_preview(q, context)
+    if data == 'ai:audit:run':
+        return await ai_audit_run(q, context)
     if data == 'ai:start':
         context.user_data['mode'] = 'ai_analysis'
         text_ai = (
@@ -810,6 +949,8 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
         return await q.edit_message_text(prompts[mode], parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
+    if data == 'srcver':
+        return await show_source_version(q)
     if data == 'sources':
         return await show_sources(q)
     if data.startswith('src:'):
@@ -1061,6 +1202,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return await audit_quick_start(q, context)
     if data == 'audit:hub':
         return await audit_hub_edit(q, context)
+    if data == 'classify:start':
         return await amateur_classification_start(q, context)
     if data.startswith('classify:ans:'):
         _, _, idx, ans = data.split(':', 3)
@@ -1071,39 +1213,12 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         _, _, _, idx, ans = data.split(':', 4)
         return await audit_quick_answer(q, context, int(idx), ans)
 
-    if data == 'calc:menu':
-        return await calc_menu(q)
-    if data == 'calc:tuna':
-        context.user_data.update(mode='tuna_total')
-        return await q.edit_message_text('🧮 <b>Mavi yüzgeçli orkinos %5 adet toleransı</b>\n\nKontrol edilen toplam mavi yüzgeçli orkinos adedini yazın.\n\n<i>6/1 Md.18: 8–30 kg veya 75–115 cm aralığındaki bireyler için sayı bazında %5 tolerans hükmü esas alınır.</i>',parse_mode=ParseMode.HTML,reply_markup=kb([[('📚 6/1 Md.18','art:61:18')],[('↩️ Hesaplayıcılar','calc:menu')]]))
-    if data.startswith('calc:tol:'):
-        species = data.rsplit(':', 1)[1]
-        context.user_data.update(mode='tol_total', tol_species=species)
-        limit = 15 if species in {'hamsi', 'sardalya', 'istavrit'} else 5
-        return await q.edit_message_text(f'🧮 <b>Ticari küçük boy toleransı — %{limit}</b>\n\nToplam av ağırlığını kg olarak yazın.', parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 İptal', 'calc:menu')]]))
-
-    if data == 'fav:list':
-        return await show_favorites(q, uid)
-    if data == 'history':
-        return await show_history(q, uid)
-    if data.startswith('insp:report:'):
-        return await send_inspection_report(q, data.split(':')[2])
     if data == 'insp:resume':
         return await resume_draft(q, context)
     if data == 'insp:discard':
         db.drop_draft(uid)
         context.user_data.clear()
         return await send_menu(q, uid, edit=True)
-    if data == 'help':
-        db.log(uid, 'help')
-        return await q.edit_message_text(
-            HELP_TEXT, parse_mode=ParseMode.HTML,
-            reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
-        )
-    if data.startswith('fav:add:'):
-        _, _, item_type, item_id = data.split(':', 3)
-        db.add_fav(uid, item_type, item_id)
-        return await q.answer('Favorilere eklendi.')
 
 
 async def show_sources(q):
@@ -1168,7 +1283,7 @@ async def show_article(q, source, article, page=0, context=None):
     if page+1<len(chunks): nav.append(('Sonraki ▶️',f'artp:{source}:{article}:{page+1}'))
     rows=[]
     if nav: rows.append(nav)
-    rows.append([('⭐ Favoriye Ekle', f'fav:add:article:{source}-{article}'), ('📑 Madde Listesi', f'srclist:{source}:0')])
+    rows.append([('📑 Madde Listesi', f'srclist:{source}:0')])
     if context and context.user_data.get('guide_key'):
         rows.append([('🔙 Uygunsuzluk Listesine Dön', 'guide:badmenu')])
     rows.append([('🏠 Ana Menü', 'menu')])
@@ -1545,7 +1660,7 @@ async def show_penalty(q, pid, context):
     if any(k in amounts for k in ['<12 m','12–<22 m','≥22 m']):
         rows.append([('🚤 Gemi Boyuna Göre Göster',f'pen:length:{pid}')])
     rows.append([('📊 Excel Ham Satır', f'raw:{row["source_row"]}'), ('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
-    rows.append([('⭐ Favoriye Ekle', f'fav:add:penalty:{pid}'), ('🏠 Ana Menü', 'menu')])
+    rows.append([('🏠 Ana Menü', 'menu')])
     await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
@@ -1756,77 +1871,6 @@ def remember_draft(q, context, kind):
         pass
 
 
-def build_report(context, kind):
-    """Plain-text tutanak. No HTML, so it is safe to store and to send as .txt."""
-    d = context.user_data
-    out = []
-    out.append('SU \u00dcR\u00dcNLER\u0130 DENET\u0130M TUTANA\u011eI')
-    out.append('=' * 44)
-    out.append('D\u00fczenlenme  : ' + datetime.now(TZ).strftime('%d.%m.%Y %H:%M'))
-    if d.get('audit_region'):
-        out.append('B\u00f6lge        : ' + str(REGION_LABEL.get(d['audit_region'], d['audit_region'])))
-    if d.get('audit_activity'):
-        out.append('Faaliyet     : ' + ('Ticari' if d['audit_activity'] == 'commercial' else 'Amat\u00f6r'))
-    if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
-        out.append('Gemi/Tekne   : ' + audit_length_label(context))
-    if d.get('audit_date'):
-        out.append('Kontrol tar. : ' + audit_date(context).strftime('%d.%m.%Y'))
-    if d.get('audit_subject'):
-        out.append('Konu         : ' + str(SUBJECT_LABEL.get(d['audit_subject'], d['audit_subject'])))
-    if d.get('audit_gear'):
-        out.append('Av arac\u0131     : ' + str(d['audit_gear']))
-    if d.get('audit_species_name'):
-        out.append('T\u00fcr          : ' + str(d['audit_species_name']))
-
-    if kind == 'guide':
-        g, ok, bad, unchecked = guide_result_parts(context)
-        if g:
-            out.append('')
-            out.append('KONTROL F\u00d6Y\u00dc: ' + g['short_title'])
-            out.append('-' * 44)
-            out.append('Uygun            : ' + str(len(ok)))
-            out.append('Uygunsuz         : ' + str(len(bad)))
-            out.append('Kontrol edilmedi : ' + str(len(unchecked)))
-            if bad:
-                out.append('')
-                out.append('UYGUNSUZ \u0130\u015eARETLENENLER')
-                for idx, item in bad:
-                    out.append(f'  {idx + 1}. {item["text"]}')
-                    out.append('      Dayanak: ' + guide_ref_label(item['ref']))
-            if unchecked:
-                out.append('')
-                out.append('KONTROL ED\u0130LMEYENLER')
-                for idx, item in unchecked:
-                    out.append(f'  {idx + 1}. {item["text"]}')
-            measurements = d.get('guide_measurements') or {}
-            if measurements:
-                out.append('')
-                out.append('\u00d6L\u00c7\u00dcM / KAYITLAR')
-                for name, value in measurements.items():
-                    out.append(f'  {name}: {value}')
-
-    out.append('')
-    out.append('-' * 44)
-    out.append('Bu \u00e7\u0131kt\u0131 nihai yapt\u0131r\u0131m karar\u0131 de\u011fildir. Dayanak maddeleri ve')
-    out.append('ceza tablosundaki maddi unsurlar ayr\u0131ca do\u011frulanmal\u0131d\u0131r.')
-    return '\n'.join(out)
-
-
-async def send_inspection_report(q, iid):
-    """Deliver the stored report as a fresh message plus a .txt attachment."""
-    row = db.get_inspection(iid)
-    if not row or not row['report']:
-        return await q.answer('Tutanak bulunamad\u0131.', show_alert=True)
-    payload = io.BytesIO(row['report'].encode('utf-8'))
-    payload.name = 'denetim-' + datetime.now(TZ).strftime('%Y%m%d-%H%M') + '.txt'
-    await q.message.reply_document(
-        document=payload,
-        filename=payload.name,
-        caption='\U0001f4c4 Denetim tutana\u011f\u0131 \u2014 ' + str(row['title']),
-    )
-    await q.answer('Tutanak g\u00f6nderildi.')
-
-
 async def resume_draft(q, context):
     """Reload the stored draft and drop the inspector back where they stopped."""
     row = db.open_draft(q.from_user.id)
@@ -1869,6 +1913,7 @@ async def guide_finish(q, context):
     rows = [[('📐 Ölçüm / Kayıt Gir', 'guide:measure:start')]]
     if bad:
         rows.append([('⚖️ Uygunsuzluk → Yaptırım', 'guide:badmenu')])
+    rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Aynı Föyü Yenile', f'guide:start:{g["key"]}')])
     if context.user_data.get('guided_active'):
         rows.append([('🚨 Denetime Dön', 'audit:hub'), ('🏠 Ana Menü', 'menu')])
@@ -1876,9 +1921,9 @@ async def guide_finish(q, context):
         rows.append([('↩️ Föye Dön', f'guide:open:{g["key"]}'), ('🏠 Ana Menü', 'menu')])
     db.log(q.from_user.id, 'guide_finish', f'{g["short_title"]}: bad={len(bad)}, unchecked={len(unchecked)}')
     try:
-        iid = db.finish_inspection(q.from_user.id, 'guide', inspection_title(context, 'guide'),
-                                   dict(context.user_data), build_report(context, 'guide'))
-        rows.insert(0, [('\U0001f4c4 Tutanak \u0130ndir / Payla\u015f', f'insp:report:{iid}')])
+        # Closes the open draft so the "yarıda kalan denetim" prompt clears.
+        db.finish_inspection(q.from_user.id, 'guide', inspection_title(context, 'guide'),
+                             dict(context.user_data), '')
     except Exception:
         pass
     await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
@@ -2364,7 +2409,9 @@ async def audit_quick_answer(q, context, idx, ans):
     return await audit_quick_render(q, context, idx + 1)
 
 
-async def audit_quick_finish(q, context):
+def quick_result_parts(context):
+    """Partition the guided-audit answers into the buckets both the result
+    screen and the legal-assessment scenario need."""
     qs = context.user_data.get('quick_questions') or []
     answers = context.user_data.get('quick_answers') or []
     flags = context.user_data.get('context_flags') or build_context_flags(context)
@@ -2378,6 +2425,184 @@ async def audit_quick_finish(q, context):
                 procedure.append(item)
         elif ans != item['expected']:
             possible.append(item)
+    return flags, possible, unknown, procedure
+
+
+def ai_scenario_from_context(context):
+    """Turn whatever the inspector has already entered into the plain-text
+    scenario the legal assessment expects.
+
+    Written straight from context.user_data rather than per-screen, so the
+    same button works from the kontrol föyü result, the guided audit result,
+    the ticari-nitelik screen and the av aracı screen — each one simply
+    contributes the parts it has filled in. Returns None when nothing has
+    been entered yet, so the caller can say so instead of asking the model
+    about an empty inspection.
+    """
+    d = context.user_data
+    facts, findings, missing = [], [], []
+
+    if d.get('audit_region'):
+        facts.append('Bölge: ' + str(REGION_LABEL.get(d['audit_region'], d['audit_region'])))
+    if d.get('audit_activity'):
+        facts.append('Faaliyet: ' + ('Ticari amaçlı avcılık' if d['audit_activity'] == 'commercial'
+                                     else 'Amatör amaçlı avcılık'))
+    if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
+        facts.append('Gemi/tekne: ' + audit_length_label(context))
+    if d.get('audit_date'):
+        facts.append('Kontrol tarihi: ' + audit_date(context).strftime('%d.%m.%Y'))
+    if d.get('audit_subject'):
+        facts.append('Denetim konusu: ' + str(SUBJECT_LABEL.get(d['audit_subject'], d['audit_subject'])))
+    if d.get('audit_gear'):
+        facts.append('Kullanılan av aracı: ' + str(d['audit_gear']))
+    if d.get('audit_species_name'):
+        facts.append('Kontrol edilen tür: ' + str(d['audit_species_name']))
+
+    # Kontrol föyü (tekne türü kılavuzu)
+    g, _ok, bad, unchecked = guide_result_parts(context)
+    if g:
+        facts.append('Uygulanan kontrol föyü: ' + g['short_title'])
+        for _idx, item in bad:
+            findings.append(f"{item['text']} (dayanak: {guide_ref_label(item['ref'])})")
+        for _idx, item in unchecked:
+            missing.append(item['text'])
+        for name, value in (d.get('guide_measurements') or {}).items():
+            facts.append(f'Ölçüm/kayıt — {name}: {value}')
+
+    # Yönlendirilmiş denetim: the tag alone is too terse to reason from, so
+    # each question goes in with the answer that was actually given.
+    if d.get('quick_questions'):
+        flags, possible, unknown, procedure = quick_result_parts(context)
+        for item in flags:
+            findings.append(f"{item['tag']} — seçilen bilgilerden doğrudan çıkan mevzuat "
+                            f"uyarısı (dayanak: {guide_ref_label(item['ref'])})")
+        answer_label = {'yes': 'Evet', 'no': 'Hayır', 'unknown': 'Bilinmiyor'}
+        given = d.get('quick_answers') or []
+        for i, item in enumerate(d['quick_questions']):
+            ans = given[i] if i < len(given) else 'unknown'
+            line = (f"{item['q']} → Cevap: {answer_label.get(ans, ans)} "
+                    f"(dayanak: {guide_ref_label(item['ref'])})")
+            if item in possible:
+                findings.append(line + ' — olası aykırılık')
+            elif item in procedure:
+                findings.append(line + ' — delil/işlem eksiği')
+            elif item in unknown:
+                missing.append(line)
+
+    # Amatör → ticari nitelik değerlendirmesi
+    answers = d.get('classify_answers') or []
+    for i, ans in enumerate(answers):
+        if i >= len(CLASSIFICATION_QUESTIONS):
+            break
+        if ans == 'yes':
+            findings.append('6/2 Tebliğ Md.19/1 ölçütü gerçekleşti: ' + CLASSIFICATION_QUESTIONS[i])
+        elif ans in {None, 'unknown'}:
+            missing.append(CLASSIFICATION_QUESTIONS[i])
+
+    if not facts and not findings:
+        return None
+
+    parts = ['Deniz görev alanında yapılan bir su ürünleri denetimidir.']
+    if facts:
+        parts.append('DENETİM BİLGİLERİ\n' + '\n'.join('- ' + f for f in facts))
+    if findings:
+        parts.append('DENETİMDE TESPİT EDİLEN / İŞARETLENEN HUSUSLAR\n'
+                     + '\n'.join('- ' + f for f in findings))
+    else:
+        parts.append('DENETİMDE TESPİT EDİLEN / İŞARETLENEN HUSUSLAR\n'
+                     '- Bu akışta doğrudan bir aykırılık işaretlenmedi.')
+    if missing:
+        parts.append('KONTROL EDİLEMEYEN / BİLİNMEYEN UNSURLAR\n'
+                     + '\n'.join('- ' + m for m in missing))
+    parts.append(
+        'Yukarıdaki denetimi mevzuat karşısında değerlendir. Tespit edilen her husus için '
+        'hangi hükmün ihlal edildiğini ve uygulanacak idari yaptırımı belirt. Kontrol '
+        'edilemeyen unsurlardan hangilerinin sonucu değiştirebileceğini de kısaca yaz.'
+    )
+    return '\n\n'.join(parts)
+
+
+async def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_analysis'):
+    """The legal-assessment pipeline, shared by the free-text question and the
+    "bu denetimi değerlendir" button.
+
+    show_first renders the first message of the flow, because the two entry
+    points differ there: the text path goes through send_or_edit so the
+    inspector's typed question is removed from the chat, while the button
+    path just edits the screen that is already on show.
+    """
+    wait_left = ai_rate_limit_remaining(uid)
+    if wait_left > 0:
+        return await show_first(
+            header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n'
+            + badge('warn', 'Kotanız doldu', f'Lütfen {wait_left} saniye sonra tekrar deneyin.'),
+            parse_mode=ParseMode.HTML,
+            reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
+        )
+    ai_rate_limit_mark(uid)
+
+    db.log(uid, log_action, scenario[:120])
+    await show_first(
+        header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Mevzuat taranıyor, 20-45 sn sürebilir…'),
+        parse_mode=ParseMode.HTML,
+    )
+    try:
+        _, html_text = await ai_analyze(scenario)
+    except AIError as e:
+        fail = (header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n'
+                + badge('stop', 'Tamamlanamadı', esc(str(e))))
+        return await ai_show(context, chat_id, fail, parse_mode=ParseMode.HTML,
+                             reply_markup=kb([[('🔁 Tekrar Dene', 'ai:start')],
+                                              [('🏠 Ana Menü', 'menu')]]))
+    body = header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n' + html_text
+    chunks = tg_chunks(body)
+    tail_rows = [[('🔁 Yeni Değerlendirme', 'ai:start'), ('🏠 Ana Menü', 'menu')]]
+    for i, chunk in enumerate(chunks):
+        last = i == len(chunks) - 1
+        await ai_show(context, chat_id, chunk, parse_mode=ParseMode.HTML, new=(i > 0),
+                      reply_markup=kb(tail_rows) if last else None)
+
+
+async def ai_audit_preview(q, context):
+    """Show what would be sent for the current inspection, then let the
+    inspector confirm. The preview matters because the assessment is
+    rate-limited: it should be obvious what the one request will ask."""
+    scenario = ai_scenario_from_context(context)
+    if not scenario:
+        return await q.answer('Değerlendirilecek denetim bilgisi bulunamadı.', show_alert=True)
+    context.user_data['ai_audit_scenario'] = scenario
+    preview = esc(scenario.split('\n\nYukarıdaki denetimi')[0])
+    text = (
+        header('⚖️', 'BU DENETİMİ DEĞERLENDİR', 'Denetim bilgileri değerlendirmeye aktarıldı')
+        + '\n' + HR + '\n\n'
+        + f'<code>{preview}</code>\n\n'
+        + f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir.</b>\n\n'
+        + '⚠️ Değerlendirme nihai karar değildir; dayanak maddeler ayrıca teyit edilmelidir.'
+    )
+    return await q.edit_message_text(
+        text, parse_mode=ParseMode.HTML,
+        reply_markup=kb([
+            [('⚖️ Değerlendirmeyi Başlat', 'ai:audit:run')],
+            [('✍️ Kendim Yazayım', 'ai:start'), ('🏠 Ana Menü', 'menu')],
+        ]),
+    )
+
+
+async def ai_audit_run(q, context):
+    scenario = context.user_data.get('ai_audit_scenario') or ai_scenario_from_context(context)
+    if not scenario:
+        return await q.answer('Değerlendirilecek denetim bilgisi bulunamadı.', show_alert=True)
+    chat_id = q.message.chat_id
+
+    async def show_first(text, **kwargs):
+        return await ai_show(context, chat_id, text, **kwargs)
+
+    return await ai_run(context, chat_id, q.from_user.id, scenario, show_first,
+                        log_action='ai_audit')
+
+
+async def audit_quick_finish(q, context):
+    flags, possible, unknown, procedure = quick_result_parts(context)
 
     activity = context.user_data.get('audit_activity')
     region = REGION_LABEL.get(context.user_data.get('audit_region'), context.user_data.get('audit_region'))
@@ -2431,6 +2656,7 @@ async def audit_quick_finish(q, context):
     else:
         if activity == 'amateur':
             rows.append([('🔎 Amatör → Ticari Nitelik', 'classify:start')])
+    rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Yeni Denetim', 'audit:start'), ('🏠 Ana Menü', 'menu')])
     db.log(q.from_user.id, 'guided_audit', ', '.join([x['tag'] for x in flags + possible]))
     await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
@@ -2501,6 +2727,7 @@ async def amateur_classification_finish(q, context):
     db.log(q.from_user.id,'amateur_classification',f'yes={len(yes)}, unknown={len(unknown)}')
     await q.edit_message_text(text,parse_mode=ParseMode.HTML,reply_markup=kb([
         [('📚 6/2 Md.19','art:62:19'),('⚖️ Yaptırım Ara','mode:penalty')],
+        [('⚖️ Bu Denetimi Değerlendir', 'ai:audit')],
         [('🚨 Kontrole Dön','audit:hub'),('🏠 Ana Menü','menu')],
     ]))
 
@@ -2566,39 +2793,10 @@ async def audit_gear_result(q, context):
     rows = []
     for row in ordered[:8]:
         rows.append([(f'{SRC_LABEL[row["source"]]} Md.{row["article"]} — {row["title"][:23]}', f'art:{row["source"]}:{row["article"]}')])
+    rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🚨 Kontrole Dön','audit:hub'),('⚖️ Yaptırım Ara', 'mode:penalty')])
     rows.append([('🏠 Ana Menü', 'menu')])
     await q.edit_message_text(text + '📚 İlgili kaynak maddeleri:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
-
-
-async def calc_menu(q):
-    await q.edit_message_text(
-        '🧮 <b>HESAPLAYICILAR</b>\n\nExcel satırı zaten tekne boyuna göre ayrı tutar veriyorsa ayrıca tekrar 2x/3x boy katsayısı uygulanmamalıdır.',
-        parse_mode=ParseMode.HTML,
-        reply_markup=kb([
-            [('Hamsi %15', 'calc:tol:hamsi'), ('Sardalya %15', 'calc:tol:sardalya')],
-            [('İstavrit %15', 'calc:tol:istavrit'), ('Diğer Tür %5', 'calc:tol:diger')],
-            [('Mavi yüzgeçli orkinos %5 (adet)', 'calc:tuna')],
-            [('↩️ Ana Menü', 'menu')],
-        ]),
-    )
-
-
-async def show_favorites(q, uid):
-    rows = db.favs(uid)
-    text = '⭐ <b>FAVORİLER</b>\n\n'
-    if not rows:
-        text += 'Henüz favori yok.'
-    else:
-        text += ''.join(f'• {esc(r["item_type"])} — {esc(r["item_id"])}\n' for r in rows)
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
-
-
-async def show_history(q, uid):
-    rows = db.history(uid)
-    text = '🕘 <b>SON İŞLEMLER</b>\n\n'
-    text += ''.join(f'• {esc(r["action"])} — {esc(r["query"] or "")}\n' for r in rows) if rows else 'Henüz işlem yok.'
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
 
 async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -2611,39 +2809,11 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if mode == 'ai_analysis':
         context.user_data.pop('mode', None)
-        scenario = text
-        chat_id = update.effective_chat.id
 
-        wait_left = ai_rate_limit_remaining(uid)
-        if wait_left > 0:
-            return await send_or_edit(
-                update, context,
-                header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n'
-                + badge('warn', 'Kotanız doldu', f'Lütfen {wait_left} saniye sonra tekrar deneyin.'),
-                parse_mode=ParseMode.HTML,
-                reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
-            )
-        ai_rate_limit_mark(uid)
+        async def show_first(body, **kwargs):
+            return await send_or_edit(update, context, body, **kwargs)
 
-        db.log(uid, 'ai_analysis', scenario[:120])
-        await send_or_edit(
-            update, context,
-            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Mevzuat taranıyor, 20-45 sn sürebilir…'),
-            parse_mode=ParseMode.HTML,
-        )
-        try:
-            _, html_text = await ai_analyze(scenario)
-        except AIError as e:
-            fail = header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n' + badge('stop', 'Tamamlanamadı', esc(str(e)))
-            return await ai_show(context, chat_id, fail, parse_mode=ParseMode.HTML,
-                                  reply_markup=kb([[('🔁 Tekrar Dene', 'ai:start')], [('🏠 Ana Menü', 'menu')]]))
-        body = header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n' + html_text
-        chunks = tg_chunks(body)
-        tail_rows = [[('🔁 Yeni Değerlendirme', 'ai:start'), ('🏠 Ana Menü', 'menu')]]
-        for i, chunk in enumerate(chunks):
-            last = i == len(chunks) - 1
-            await ai_show(context, chat_id, chunk, parse_mode=ParseMode.HTML, new=(i > 0),
-                          reply_markup=kb(tail_rows) if last else None)
+        await ai_run(context, update.effective_chat.id, uid, text, show_first)
         return
 
     if mode == 'guide_measure':
@@ -2796,62 +2966,6 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         db.log(uid, 'legal_search', text)
         return await send_or_edit(update, context, f'🔎 <b>{esc(text)}</b> — deniz/genel kaynak eşleşmeleri', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
-    if mode == 'tuna_total':
-        try:
-            total=int(text)
-            if total <= 0:
-                raise ValueError
-        except ValueError:
-            return await send_or_edit(update, context, 'Toplam adedi pozitif tam sayı olarak yazın.')
-        context.user_data.update(mode='tuna_band', tuna_total=total)
-        return await send_or_edit(update, context, '8–30 kg veya 75–115 cm aralığında tespit edilen birey sayısını yazın.')
-
-    if mode == 'tuna_band':
-        try:
-            band=int(text)
-            total=context.user_data['tuna_total']
-            if band < 0 or band > total:
-                raise ValueError
-        except ValueError:
-            return await send_or_edit(update, context, 'Adedi 0 ile toplam birey sayısı arasında tam sayı olarak yazın.')
-        ratio=band/total*100
-        context.user_data.clear()
-        result='🔴 %5 adet toleransı aşılmış görünüyor.' if ratio>5 else '🟢 %5 adet toleransı içinde görünüyor.'
-        return await send_or_edit(update, context, 
-            f'🧮 İstisna bandındaki birey oranı: <b>%{ratio:.2f}</b> ({band}/{total})\nKaynak sınır: <b>%5 (adet)</b>\n{result}\n\n<i>Kaynak: 6/1 Tebliğ Madde 18. Mavi yüzgeçli orkinosun kota/izin, alan ve diğer özel hükümleri ayrıca kontrol edilmelidir.</i>',
-            parse_mode=ParseMode.HTML,
-            reply_markup=kb([[('📚 6/1 Md.18','art:61:18'),('📚 6/1 Md.22','art:61:22')],[('🏠 Ana Menü','menu')]])
-        )
-
-    if mode == 'tol_total':
-        try:
-            total = float(text.replace(',', '.'))
-            if total <= 0:
-                raise ValueError
-        except ValueError:
-            return await send_or_edit(update, context, 'Toplam kg değerini sayı olarak yazın.')
-        context.user_data.update(mode='tol_small', tol_total=total)
-        return await send_or_edit(update, context, 'Asgari boyun altındaki ürünün toplam ağırlığını kg olarak yazın.')
-
-    if mode == 'tol_small':
-        try:
-            small = float(text.replace(',', '.'))
-            if small < 0:
-                raise ValueError
-        except ValueError:
-            return await send_or_edit(update, context, 'Küçük boy kg değerini sayı olarak yazın.')
-        total = context.user_data['tol_total']
-        species = context.user_data['tol_species']
-        limit = 15 if species in {'hamsi', 'sardalya', 'istavrit'} else 5
-        ratio = small / total * 100
-        context.user_data.clear()
-        result = '🔴 Tolerans aşılmış görünüyor.' if ratio > limit else '🟢 Tolerans içinde görünüyor.'
-        return await send_or_edit(update, context, 
-            f'🧮 Küçük boy oranı: <b>%{ratio:.2f}</b>\nKaynak tolerans: <b>%{limit}</b>\n{result}\n\nKaynak: 6/1 Tebliğ Madde 18. Tür özel hükümlerini ayrıca kontrol edin.',
-            parse_mode=ParseMode.HTML,
-            reply_markup=kb([[('📚 6/1 Md.18', 'art:61:18'), ('🏠 Ana Menü', 'menu')]]),
-        )
-
     if mode is None:
         # Doğal Dil / Genel Arama
         # Honour the configured RESULT_LIMIT instead of fixed counts, while
@@ -2918,6 +3032,74 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     await send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
+
+
+# Warn this far ahead of an av dönemi ending, so a superseded tebliğ does
+# not go unnoticed.
+SOURCE_EXPIRY_WARNING_DAYS = 180
+
+
+def source_expiry_state(key, today):
+    """(state, end_date) for a source with a fixed av dönemi; (None, None)
+    for the open-ended ones."""
+    raw = (SOURCE_META.get(key) or {}).get('valid_until')
+    if not raw:
+        return None, None
+    try:
+        end = datetime.strptime(raw, '%Y-%m-%d').date()
+    except ValueError:
+        return None, None
+    left = (end - today).days
+    if left < 0:
+        return 'expired', end
+    if left <= SOURCE_EXPIRY_WARNING_DAYS:
+        return 'soon', end
+    return 'valid', end
+
+
+async def show_source_version(q):
+    """Which texts the bot is actually answering from, and how current they are."""
+    today = datetime.now(TZ).date()
+    lines = [header('📅', 'MEVZUAT SÜRÜMÜ', 'Botun cevap ürettiği kaynak metinler'), HR, '']
+    for source in db.list_sources():
+        meta = SOURCE_META.get(source['key']) or {}
+        lines.append(f'📖 <b>{esc(source["title"])}</b>')
+        bits = []
+        if source['number']:
+            bits.append('No: ' + str(source['number']))
+        if meta.get('published'):
+            try:
+                pub = datetime.strptime(meta['published'], '%Y-%m-%d').strftime('%d.%m.%Y')
+                bits.append('RG: ' + pub + (' / ' + meta['rg_sayi'] if meta.get('rg_sayi') else ''))
+            except ValueError:
+                pass
+        if bits:
+            lines.append('   ' + esc(' · '.join(bits)))
+        state, end = source_expiry_state(source['key'], today)
+        if state == 'expired':
+            lines.append(f'   ⛔ Av dönemi {end.strftime("%d.%m.%Y")} tarihinde doldu — '
+                         'yerine yeni tebliğ yayımlanmış olabilir.')
+        elif state == 'soon':
+            lines.append(f'   ⚠️ Av dönemi {end.strftime("%d.%m.%Y")} tarihinde doluyor '
+                         f'({(end - today).days} gün kaldı).')
+        elif state == 'valid':
+            lines.append(f'   ✅ Av dönemi sonu: {end.strftime("%d.%m.%Y")}')
+        lines.append('')
+
+    lines.append(HR)
+    lines.append(
+        '⚠️ <i>6/1 ve 6/2 tebliğleri belirli bir av dönemi için yayımlanır ve dönem '
+        'sonunda yenileriyle değiştirilir. Yeni tebliğ yayımlandığında buradaki '
+        'metinler güncellenmedikçe bot eski hükümlerle cevap vermeye devam eder.</i>'
+    )
+
+    rows = []
+    if q.from_user.id in ADMIN_IDS:
+        lines.append('')
+        lines.append('🧠 Değerlendirme önbelleği: <b>' + esc(ai_cache_status()) + '</b>')
+    rows.append([('📚 Mevzuat Kaynakları', 'sources'), ('🏠 Ana Menü', 'menu')])
+    await q.edit_message_text('\n'.join(lines), parse_mode=ParseMode.HTML,
+                              reply_markup=kb(rows), disable_web_page_preview=True)
 
 
 async def show_admin_panel(q, section='main'):
@@ -3017,46 +3199,11 @@ async def id_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_or_edit(update, context, f'🆔 Telegram kullanıcı ID’niz: <code>{update.effective_user.id}</code>', parse_mode=ParseMode.HTML)
 
 
-HELP_TEXT = (
-    '<b>❓ YARDIM</b>\n\n'
-    '<b>💬 Doğrudan yazarak arama</b>\n'
-    'Menüde gezmeden, aklınıza gelen kelimeyi yazmanız yeterli. Tür adı, ceza '
-    'konusu veya mevzuat kelimesi yazdığınızda tür, ceza ve madde sonuçları '
-    'birlikte listelenir.\n'
-    '<i>Örnek:</i> <code>hamsi</code> · <code>ruhsatsız</code> · <code>BAGİS</code>\n\n'
-    '<b>📋 Tekne Türü Kılavuzları</b>\n'
-    'Çıkacağınız tekneye özel kontrol föyünü açar. Her maddeyi Uygun / Uygunsuz / '
-    'Kontrol Edilmedi olarak işaretleyip sonunda özet alırsınız.\n\n'
-    '<b>🚨 Denetime Başla</b>\n'
-    'Bölge, faaliyet, gemi boyu, tarih, av aracı ve tür sırasıyla ilerleyen '
-    'yönlendirilmiş denetim akışıdır.\n\n'
-    '<b>⌨️ Komutlar</b>\n'
-    '/start · /menu — Ana menüyü açar\n'
-    '/help — Bu yardım ekranı\n'
-    '/id — Telegram kullanıcı ID’nizi gösterir\n\n'
-    '<b>⭐ Favoriler ve 🕘 Son Sorgular</b>\n'
-    'Sık kullandığınız tür, ceza ve maddeleri favorilere ekleyip ana menüden '
-    'hızlıca açabilirsiniz.'
-)
-
-
-async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await guard(update):
-        return
-    db.log(update.effective_user.id, 'help')
-    await send_or_edit(
-        update, context, HELP_TEXT,
-        parse_mode=ParseMode.HTML,
-        reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
-    )
-
-
 async def post_init(application):
     """Populate Telegram's "/" command menu so the commands are discoverable."""
     await application.bot.set_my_commands([
         BotCommand('start', 'Ana menüyü aç'),
         BotCommand('menu', 'Ana menüyü aç'),
-        BotCommand('help', 'Yardım ve kullanım'),
         BotCommand('id', 'Telegram ID’mi göster'),
     ])
 
@@ -3081,7 +3228,6 @@ def main():
     app = Application.builder().token(TOKEN).post_init(post_init).build()
     app.add_handler(CommandHandler('start', start))
     app.add_handler(CommandHandler('menu', start))
-    app.add_handler(CommandHandler('help', help_cmd))
     app.add_handler(CommandHandler('admin', admin_cmd))
     app.add_handler(CommandHandler('istatistik', admin_cmd))
     app.add_handler(CommandHandler('id', id_cmd))

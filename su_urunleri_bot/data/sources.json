@@ -5,7 +5,11 @@
     "type": "Kanun",
     "number": "1380",
     "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md",
-    "sha256": ""
+    "sha256": "",
+    "published": "1971-04-04",
+    "rg_sayi": "13799",
+    "effective": "1971-04-04",
+    "valid_until": ""
   },
   {
     "key": "reg",
@@ -13,7 +17,11 @@
     "type": "Yönetmelik",
     "number": "",
     "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/1380 SU ÜRÜNLERİ YÖNETMELİĞİ MARKDOWN.md",
-    "sha256": ""
+    "sha256": "",
+    "published": "1995-03-10",
+    "rg_sayi": "22223",
+    "effective": "1995-03-10",
+    "valid_until": ""
   },
   {
     "key": "61",
@@ -21,7 +29,11 @@
     "type": "Tebliğ",
     "number": "2024/20",
     "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/6-1 TİCARİ AMAÇLI SU ÜRÜNLERİ AVCILIĞININ DÜZENLENMESİ TEBLİĞİ MARKDOWN.md",
-    "sha256": ""
+    "sha256": "",
+    "published": "2024-08-11",
+    "rg_sayi": "32629",
+    "effective": "2024-09-01",
+    "valid_until": "2028-08-31"
   },
   {
     "key": "62",
@@ -29,7 +41,11 @@
     "type": "Tebliğ",
     "number": "2024/21",
     "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/6-2 AMATÖR AMAÇLI SU ÜRÜNLERİ AVCILIĞININ DÜZENLENMESİ TEBLİĞİ MARKDOWN.md",
-    "sha256": ""
+    "sha256": "",
+    "published": "2024-08-11",
+    "rg_sayi": "32629",
+    "effective": "2024-09-01",
+    "valid_until": "2028-08-31"
   },
   {
     "key": "bagis",
@@ -37,7 +53,11 @@
     "type": "Tebliğ",
     "number": "2021/26",
     "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/BALIKÇI GEMİLERİNİ İZLEME SİSTEMİ TEBLİĞİ MARKDOWN.md",
-    "sha256": ""
+    "sha256": "",
+    "published": "",
+    "rg_sayi": "",
+    "effective": "2021-01-01",
+    "valid_until": ""
   },
   {
     "key": "excel",
@@ -45,7 +65,11 @@
     "type": "Excel",
     "number": "",
     "filename": "Su ürünleri cezaları.xlsx",
-    "sha256": "1637d2e2196a34a4e63ea534a82c06ca996dd85cb2aa859c75e6181da8a48927"
+    "sha256": "1637d2e2196a34a4e63ea534a82c06ca996dd85cb2aa859c75e6181da8a48927",
+    "published": "",
+    "rg_sayi": "",
+    "effective": "",
+    "valid_until": ""
   },
   {
     "key": "kilavuz",
@@ -53,6 +77,10 @@
     "type": "Kılavuz",
     "number": "2026",
     "filename": "TURKIYE_DENIZLERI_SU_URUNLERI_SAHA_KONTROL_KILAVUZU_2026.md",
-    "sha256": ""
+    "sha256": "",
+    "published": "",
+    "rg_sayi": "",
+    "effective": "",
+    "valid_until": ""
   }
 ]
