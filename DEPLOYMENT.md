@@ -95,7 +95,7 @@ TZ=Europe/Istanbul
 
 ### Procfile (Heroku)
 ```
-web: python run.py
+web: python bot.py
 ```
 
 ## 📊 Sağlık Kontrolleri

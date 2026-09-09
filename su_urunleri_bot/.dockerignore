@@ -1,5 +1,2 @@
-tests/
-pytest.ini
 __pycache__/
 *.py[cod]
-.pytest_cache/
