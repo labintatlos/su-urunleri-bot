@@ -794,6 +794,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Kanun, Yönetmelik ve Tebliğ hükümlerine göre') + '\n' + HR + '\n\n'
             'Olayı serbest metinle anlatın — ne yapıldığı, hangi av aracı, hangi belge/ruhsat durumu vb.\n\n'
             '<i>Örnek: Teknenin birincil av aracı algarna ama dip trolü ile avcılık yapıyor.</i>\n\n'
+            f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir</b> — sorunuzu göndermeden önce net ve eksiksiz yazın.\n\n'
             '⚠️ Değerlendirme nihai karar değildir; dayanak maddeler ayrıca teyit edilmelidir.'
         )
         return await q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
