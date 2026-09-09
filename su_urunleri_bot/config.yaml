@@ -24,10 +24,6 @@ options:
   allowed_users: []
   result_limit: 8
   timezone: "Europe/Istanbul"
-  log_level: "INFO"
-  enable_admin_panel: true
-  rate_limit_enabled: true
-  max_requests_per_minute: 10
 
 schema:
   bot_token: str
@@ -38,7 +34,3 @@ schema:
     - str
   result_limit: int(1,20)
   timezone: str
-  log_level: list(DEBUG|INFO|WARNING|ERROR)
-  enable_admin_panel: bool
-  rate_limit_enabled: bool
-  max_requests_per_minute: int(1,60)

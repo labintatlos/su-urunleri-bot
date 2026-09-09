@@ -1,2 +1,6 @@
 __pycache__/
 *.py[cod]
+# Never ship a prebuilt database or old logs: db.py rebuilds the database
+# under /share on first start, so a copy inside the image is dead weight.
+su_urunleri_kolluk.db
+logs/

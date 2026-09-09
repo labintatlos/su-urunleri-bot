@@ -8,3 +8,7 @@ venv/
 .venv/
 options.json
 *.log
+
+# Runtime SQLite database. Rebuilt from data/*.json on first start
+# (db.py init_db) and holds real usage: users, query_log, inspections.
+su_urunleri_kolluk.db

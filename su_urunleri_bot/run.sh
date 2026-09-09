@@ -22,7 +22,4 @@ fi
 
 cd /app
 
-# Runs the complete, feature-carrying bot. The bot/ package is an in-progress
-# modular rewrite whose guide and species screens are still placeholders, so it
-# is deliberately not the entrypoint yet.
 exec python3 -u /app/bot.py
