@@ -292,25 +292,26 @@ AI_SOURCE_ORDER = {src: i for i, src in enumerate(AI_SOURCES)}
 
 AI_SYSTEM_INSTRUCTION = (
     "Sen Türkiye'de deniz görev alanında çalışan su ürünleri kolluk personeli için bir "
-    "hukuki tespit asistanısın. Sana bir olay/durum anlatılacak. Görevin, SADECE aşağıda "
-    "verilen KAYNAK MADDE METİNLERİ içinde geçen hükümlere dayanarak, olayın hangi "
-    "mevzuat hükümlerine aykırılık oluşturduğunu tespit etmektir.\n\n"
+    "hukuki danışma asistanısın. Sana aşağıda 1380 sayılı Su Ürünleri Kanunu'nun, Su "
+    "Ürünleri Yönetmeliği'nin, 6/1 ve 6/2 numaralı avcılık tebliğlerinin ve BAGİS "
+    "Tebliği'nin TAM METNİ ile idari yaptırım (ceza) tablosunun tamamı veriliyor. Sana "
+    "bir soru veya olay anlatılacak.\n\n"
     "KURALLAR:\n"
-    "- Kaynaklarda yer almayan hiçbir madde numarasını, ceza tutarını veya hükmü UYDURMA.\n"
-    "- Kaynaklarda olaya doğrudan karşılık gelen bir hüküm yoksa bunu açıkça yaz: "
-    "\"Verilen kaynaklarda bu olaya doğrudan karşılık gelen bir hüküm bulunamadı.\"\n"
-    "- Sadece verilen KAYNAK MADDE METİNLERİ'ni kullan; kendi genel bilgini kullanma.\n"
-    "- Yanıtını şu başlıklarla, aşağıdaki örnek düzende ver:\n\n"
-    "OLAYIN HUKUKİ TESPİTİ VE MEVZUAT KARŞILIKLARI\n\n"
-    "1. TEBLİĞ KARŞILIĞI\n"
-    "(İlgili tebliğ maddelerini, madde numarasını **kalın** yazarak ve kısa alıntıyla belirt)\n\n"
-    "2. YÖNETMELİK KARŞILIĞI\n"
-    "(İlgili yönetmelik maddelerini aynı şekilde belirt; yoksa bunu söyle)\n\n"
-    "3. KANUN KARŞILIĞI VE İDARİ YAPTIRIMLAR\n"
-    "(İlgili kanun maddelerini ve varsa idari para cezası / el koyma bilgisini belirt)\n\n"
-    "Madde numaralarını ve önemli hukuki terimleri **iki yıldız** ile kalın yaz. HTML veya "
-    "markdown başlık işareti (#) kullanma; sadece düz metin ve **kalın** kullan. Kısa ve öz "
-    "ol; kolluk personelinin sahada hızla okuyabileceği netlikte yaz."
+    "- Sadece aşağıda verilen mevzuat metinlerine dayan; kendi genel bilgini veya tahminini "
+    "kullanma, hiçbir madde numarasını, tutarı veya hükmü UYDURMA.\n"
+    "- Cevabını doğrudan, akıcı bir metin olarak ver — sabit bir başlık şablonu veya "
+    "numaralı bölüm dayatması yok. Soru neyi gerektiriyorsa onu yaz: bazen tek bir madde "
+    "yeterlidir, bazen birden çok kaynağın (kanun/yönetmelik/tebliğ) karşılığını birlikte "
+    "vermek gerekir.\n"
+    "- İlgili her madde numarasını metnin içinde **kalın** ve kaynağıyla birlikte belirt "
+    "(örn. **6/1 Tebliğ Madde 50** veya **1380 sayılı Kanun Madde 36**).\n"
+    "- Somut bir ihlal varsa uygulanacak idari yaptırımı (ceza tutarı, el koyma, ruhsat "
+    "iptali vb.) tabloya dayanarak belirt.\n"
+    "- Verilen metinlerde soruya doğrudan karşılık gelen bir hüküm yoksa bunu açıkça söyle; "
+    "en yakın ilgili hükmü yine de belirtebilirsin ama bunun doğrudan karşılık olmadığını "
+    "yaz.\n"
+    "- HTML veya markdown başlık işareti (#) kullanma; sadece düz metin ve **kalın** kullan. "
+    "Kolluk personelinin sahada hızla okuyabileceği netlikte, gereksiz tekrar olmadan yaz."
 )
 
 
@@ -341,10 +342,11 @@ def _ai_token_tally(query, search_fn, cap_per_token=40):
 
 
 def ai_gather_context(query, max_articles=8, max_penalties=5):
-    """Pull the most relevant law/regulation/tebliğ articles and penalty
-    entries for this scenario using the word-tally ranking above, then keep
-    per-source diversity so one heavily-worded tebliğ cannot crowd out the
-    kanun or yönetmelik entirely."""
+    """Suggest the articles/penalties most related to this question, purely
+    to offer as tappable buttons under the AI's answer — NOT what grounds the
+    answer itself (see ai_full_corpus: the model gets the complete text of
+    every source, the same way the user's own Gemini Gem had the full PDFs
+    as sources, rather than a handful of retrieved snippets)."""
     per_source = {}
     ranked_articles = _ai_token_tally(
         query, lambda t, cap: db.search_articles(t, cap, source=None))
@@ -363,40 +365,63 @@ def ai_gather_context(query, max_articles=8, max_penalties=5):
     return articles, penalties
 
 
-def ai_build_context_block(articles, penalties):
+_AI_CORPUS_CACHE = None
+
+
+def ai_full_corpus():
+    """The complete text of every source the model may reason over: every
+    article of the kanun/yönetmelik/tebliğler (no scope filtering — this is a
+    reference tool, not the sea-duty menus) plus the full idari yaptırım
+    table. Built once and cached; only ~300K characters (~75K tokens) total,
+    trivial for a model with a six-figure-token context window, so there is
+    no retrieval step here and nothing gets left out the way a top-K snippet
+    search inevitably would.
+    """
+    global _AI_CORPUS_CACHE
+    if _AI_CORPUS_CACHE is not None:
+        return _AI_CORPUS_CACHE
     parts = []
-    for a in articles:
-        label = SRC_LABEL.get(a['source'], a['source'])
-        body = (a['body'] or '').strip()
-        if len(body) > 900:
-            body = body[:900].rsplit(' ', 1)[0] + ' …'
-        parts.append(f"[{label} — Madde {a['article']}] {a['title']}\n{body}")
-    for p in penalties:
-        bits = [f"İhlal: {p['violation']}"]
-        if p['option_text']:
-            bits.append(f"Seçenek: {p['option_text']}")
-        if p['law']:
-            bits.append(f"Kanun Md.{p['law']}")
-        if p['regulation']:
-            bits.append(f"Yönetmelik Md.{p['regulation']}")
-        if p['art36']:
-            bits.append(f"1380 s.K. Md.36/{p['art36']}")
-        if p['base_ipc']:
-            bits.append(f"Taban ceza: {money(p['base_ipc'])}")
-        if p['product_seizure']:
-            bits.append(f"Ürüne el koyma: {p['product_seizure']}")
-        if p['means_seizure']:
-            bits.append(f"Av aracına el koyma: {p['means_seizure']}")
-        parts.append('[İdari Yaptırım Tablosu] ' + ' · '.join(bits))
-    return '\n\n'.join(parts) if parts else '(İlgili madde veya ceza kaydı bulunamadı.)'
+    for src in AI_SOURCES:
+        for a in db.list_articles(src, include_inland=True):
+            label = SRC_LABEL.get(src, src)
+            body = (a['body'] or '').strip()
+            parts.append(f"[{label} — Madde {a['article']}] {a['title']}\n{body}")
+    parts.append('=== İDARİ YAPTIRIM (CEZA) TABLOSU ===')
+    conn = db.con()
+    try:
+        for p in conn.execute('SELECT * FROM penalty_cards ORDER BY source_row').fetchall():
+            bits = [f"İhlal: {p['violation']}"]
+            if p['option_text']:
+                bits.append(f"Seçenek: {p['option_text']}")
+            if p['law']:
+                bits.append(f"Kanun Md.{p['law']}")
+            if p['regulation']:
+                bits.append(f"Yönetmelik Md.{p['regulation']}")
+            if p['teblig']:
+                bits.append(f"Tebliğ Md.{p['teblig']}")
+            if p['art36']:
+                bits.append(f"1380 s.K. Md.36/{p['art36']}")
+            if p['base_ipc']:
+                bits.append(f"Taban ceza: {money(p['base_ipc'])}")
+            if p['product_seizure']:
+                bits.append(f"Ürüne el koyma: {p['product_seizure']}")
+            if p['means_seizure']:
+                bits.append(f"Av aracına el koyma: {p['means_seizure']}")
+            if p['license_action']:
+                bits.append(f"Ruhsat işlemi: {p['license_action']}")
+            parts.append('• ' + ' · '.join(bits))
+    finally:
+        conn.close()
+    _AI_CORPUS_CACHE = '\n\n'.join(parts)
+    return _AI_CORPUS_CACHE
 
 
-def ai_build_prompt(scenario, articles, penalties):
+def ai_build_prompt(scenario):
     return (
         AI_SYSTEM_INSTRUCTION
-        + '\n\n=== KAYNAK MADDE METİNLERİ ===\n' + ai_build_context_block(articles, penalties)
-        + '\n\n=== OLAY ===\n' + scenario.strip()
-        + '\n\n=== ANALİZ ==='
+        + '\n\n=== MEVZUAT METİNLERİ VE CEZA TABLOSU ===\n' + ai_full_corpus()
+        + '\n\n=== SORU / OLAY ===\n' + scenario.strip()
+        + '\n\n=== CEVAP ==='
     )
 
 
@@ -432,11 +457,13 @@ def _ai_call_gemini_sync(prompt):
     url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}'
     payload = json.dumps({
         'contents': [{'parts': [{'text': prompt}]}],
-        'generationConfig': {'temperature': 0.15, 'maxOutputTokens': 2048},
+        'generationConfig': {'temperature': 0.15, 'maxOutputTokens': 4096},
     }).encode('utf-8')
     req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'}, method='POST')
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        # The prompt now carries the full corpus (~75K tokens), so a slow
+        # response takes noticeably longer than a short grounded snippet did.
+        with urllib.request.urlopen(req, timeout=75) as resp:
             data = json.loads(resp.read().decode('utf-8'))
     except urllib.error.HTTPError as e:
         body = e.read().decode('utf-8', 'replace')[:300]
@@ -470,10 +497,12 @@ def _ai_call_gemini_sync(prompt):
 
 
 async def ai_analyze(scenario):
-    """Retrieve grounding context, call Gemini, return (raw, html, articles, penalties)."""
-    articles, penalties = ai_gather_context(scenario)
-    prompt = ai_build_prompt(scenario, articles, penalties)
+    """Call Gemini with the full legal corpus as grounding, and separately
+    suggest a handful of related articles/penalties as tappable buttons.
+    Returns (raw, html, suggested_articles, suggested_penalties)."""
+    prompt = ai_build_prompt(scenario)
     raw_text = await asyncio.to_thread(_ai_call_gemini_sync, prompt)
+    articles, penalties = ai_gather_context(scenario)
     return raw_text, md_to_tg_html(raw_text), articles, penalties
 
 
@@ -2585,7 +2614,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         db.log(uid, 'ai_analysis', scenario[:120])
         await send_or_edit(
             update, context,
-            header('🤖', 'AI HUKUKİ ANALİZ', 'Hazırlanıyor, 10-20 sn sürebilir…'),
+            header('🤖', 'AI HUKUKİ ANALİZ', 'Tüm mevzuat metni taranıyor, 20-45 sn sürebilir…'),
             parse_mode=ParseMode.HTML,
         )
         try:
