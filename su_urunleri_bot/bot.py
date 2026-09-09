@@ -1,13 +1,17 @@
 import html
 import io
 import json
+import logging
 import os
 import re
+import time
 import asyncio
 import urllib.error
 import urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
+
+logger = logging.getLogger(__name__)
 
 from telegram import BotCommand, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.constants import ParseMode
@@ -288,7 +292,6 @@ class AIError(Exception):
 # same enforcement questions. Deliberately excludes 'kilavuz' (our own field
 # guide) so the model never treats our editorial notes as if they were law.
 AI_SOURCES = ['law', 'reg', '61', '62', 'bagis']
-AI_SOURCE_ORDER = {src: i for i, src in enumerate(AI_SOURCES)}
 
 AI_SYSTEM_INSTRUCTION = (
     "Sen Türkiye'de deniz görev alanında çalışan su ürünleri kolluk personeli için bir "
@@ -313,56 +316,6 @@ AI_SYSTEM_INSTRUCTION = (
     "- HTML veya markdown başlık işareti (#) kullanma; sadece düz metin ve **kalın** kullan. "
     "Kolluk personelinin sahada hızla okuyabileceği netlikte, gereksiz tekrar olmadan yaz."
 )
-
-
-def _ai_token_tally(query, search_fn, cap_per_token=40):
-    """Score rows by an IDF-style tally across the scenario's own words.
-
-    db.search_articles/search_penalties require most words in a query to hit
-    (tuned for short search-box phrases), so passing a whole free-text
-    scenario straight through matches nothing — an 11-word sentence needs 7
-    hits and generic connectors never contribute any. Instead, search once
-    per individual word and weight each hit by 1/(matches for that word):
-    a rare, specific word like "algarna" outweighs a common one like "ile"
-    without any hardcoded stopword list, because "ile" simply matches far
-    more rows and so contributes far less per hit.
-    """
-    tally, rows_by_key = {}, {}
-    for token in db._tokens(query):
-        hits = search_fn(token, cap_per_token)
-        if not hits:
-            continue
-        weight = 1.0 / len(hits)
-        for row in hits:
-            key = row['id'] if 'id' in row.keys() else (row['source'], row['article'])
-            tally[key] = tally.get(key, 0.0) + weight
-            rows_by_key[key] = row
-    ranked = sorted(tally.items(), key=lambda kv: -kv[1])
-    return [rows_by_key[key] for key, _ in ranked]
-
-
-def ai_gather_context(query, max_articles=8, max_penalties=5):
-    """Suggest the articles/penalties most related to this question, purely
-    to offer as tappable buttons under the AI's answer — NOT what grounds the
-    answer itself (see ai_full_corpus: the model gets the complete text of
-    every source, the same way the user's own Gemini Gem had the full PDFs
-    as sources, rather than a handful of retrieved snippets)."""
-    per_source = {}
-    ranked_articles = _ai_token_tally(
-        query, lambda t, cap: db.search_articles(t, cap, source=None))
-    articles = []
-    for a in ranked_articles:
-        if a['source'] not in AI_SOURCES:
-            continue
-        if per_source.get(a['source'], 0) >= 3:
-            continue
-        per_source[a['source']] = per_source.get(a['source'], 0) + 1
-        articles.append(a)
-        if len(articles) >= max_articles:
-            break
-    articles.sort(key=lambda a: (AI_SOURCE_ORDER.get(a['source'], 9), a['article']))
-    penalties = _ai_token_tally(query, db.search_penalties)[:max_penalties]
-    return articles, penalties
 
 
 _AI_CORPUS_CACHE = None
@@ -452,8 +405,13 @@ def _ai_call_gemini_sync(prompt):
     C toolchain and previously broke the Alpine addon build (see the
     requirements.txt history). A stdlib POST has no such dependency.
     """
+    # User-facing messages are deliberately generic (no "Gemini"/"API"/model
+    # names) so the feature doesn't read as AI-powered from the chat; the
+    # real cause always goes to the container log for whoever administers
+    # the bot to diagnose.
     if not GEMINI_API_KEY:
-        raise AIError('Gemini API anahtarı yapılandırılmamış. Yönetici eklenti ayarlarından eklemelidir.')
+        logger.error('Hukuki değerlendirme: GEMINI_API_KEY yapılandırılmamış.')
+        raise AIError('Bu özellik şu anda yapılandırılmamış.')
     url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}'
     payload = json.dumps({
         'contents': [{'parts': [{'text': prompt}]}],
@@ -467,51 +425,74 @@ def _ai_call_gemini_sync(prompt):
             data = json.loads(resp.read().decode('utf-8'))
     except urllib.error.HTTPError as e:
         body = e.read().decode('utf-8', 'replace')[:300]
-        if e.code == 400:
-            raise AIError('Gemini API isteği reddetti (400) — API anahtarını kontrol edin.') from e
+        logger.error('Hukuki değerlendirme HTTP %s (model=%s): %s', e.code, GEMINI_MODEL, body)
         if e.code == 429:
-            raise AIError('Gemini API kotası doldu, birkaç dakika sonra tekrar deneyin.') from e
-        if e.code == 404:
-            raise AIError(
-                f'Gemini modeli "{GEMINI_MODEL}" artık kullanılamıyor. Eklenti ayarlarından '
-                '"Gemini Model" alanına Google\'ın önerdiği güncel model adını girip botu '
-                'yeniden başlatın.'
-            ) from e
-        raise AIError(f'Gemini API hatası ({e.code}): {body}') from e
+            raise AIError('Sorgu kotanız doldu, birkaç dakika sonra tekrar deneyin.') from e
+        if e.code in (400, 404):
+            raise AIError('Bu özellik şu anda kullanılamıyor.') from e
+        raise AIError('Sorgu şu anda tamamlanamadı, birkaç dakika sonra tekrar deneyin.') from e
     except urllib.error.URLError as e:
-        raise AIError(f'Gemini API’ye bağlanılamadı: {e.reason}') from e
+        logger.error('Hukuki değerlendirme bağlantı hatası: %s', e.reason)
+        raise AIError('Bağlantı kurulamadı, birkaç dakika sonra tekrar deneyin.') from e
     except TimeoutError:
-        raise AIError('Gemini API zaman aşımına uğradı, tekrar deneyin.')
+        logger.error('Hukuki değerlendirme zaman aşımına uğradı (model=%s).', GEMINI_MODEL)
+        raise AIError('Sorgu zaman aşımına uğradı, tekrar deneyin.')
 
     candidates = data.get('candidates') or []
     if not candidates:
         reason = (data.get('promptFeedback') or {}).get('blockReason')
-        raise AIError(f'Gemini yanıtı engellendi: {reason}' if reason else 'Gemini boş yanıt döndürdü.')
+        logger.error('Hukuki değerlendirme boş/engellenmiş yanıt: %s', reason)
+        raise AIError('Bu soruya şu anda yanıt üretilemedi.')
     try:
         text = ''.join(p.get('text', '') for p in candidates[0]['content']['parts']).strip()
     except (KeyError, IndexError, TypeError) as e:
-        raise AIError('Gemini yanıtı beklenmeyen biçimde geldi.') from e
+        logger.error('Hukuki değerlendirme beklenmeyen yanıt biçimi: %r', data)
+        raise AIError('Beklenmeyen bir hata oluştu.') from e
     if not text:
-        raise AIError('Gemini boş yanıt döndürdü.')
+        logger.error('Hukuki değerlendirme boş metin döndürdü.')
+        raise AIError('Bu soruya şu anda yanıt üretilemedi.')
     return text
 
 
 async def ai_analyze(scenario):
-    """Call Gemini with the full legal corpus as grounding, and separately
-    suggest a handful of related articles/penalties as tappable buttons.
-    Returns (raw, html, suggested_articles, suggested_penalties)."""
+    """Run the question against the full legal corpus. Returns (raw, html)."""
     prompt = ai_build_prompt(scenario)
     raw_text = await asyncio.to_thread(_ai_call_gemini_sync, prompt)
-    articles, penalties = ai_gather_context(scenario)
-    return raw_text, md_to_tg_html(raw_text), articles, penalties
+    return raw_text, md_to_tg_html(raw_text)
+
+
+# ── Per-user rate limit ─────────────────────────────────────────────────
+# In-memory only: one request per user per AI_RATE_LIMIT_SECONDS. A dict
+# resets on restart, which just means a fresh 2-minute allowance after an
+# addon update — an acceptable trade for not needing a DB round trip on
+# every question. Deliberately scoped to this feature; the bot's normal
+# navigation has no such limit.
+AI_RATE_LIMIT_SECONDS = 120
+_ai_last_request = {}
+
+
+def ai_rate_limit_remaining(uid):
+    """Seconds left before this user may ask again; 0 or less means allowed."""
+    last = _ai_last_request.get(uid)
+    if last is None:
+        return 0
+    elapsed = time.monotonic() - last
+    return max(0, int(AI_RATE_LIMIT_SECONDS - elapsed) + 1)
+
+
+def ai_rate_limit_mark(uid):
+    _ai_last_request[uid] = time.monotonic()
 
 
 async def ai_show(context, chat_id, text, new=False, **kwargs):
     """Edit the tracked bot message, or append a fresh one when new=True.
 
-    Multi-chunk AI answers must not all edit the same message id — only the
+    Multi-chunk answers must not all edit the same message id — only the
     last edit would remain visible. The first chunk reuses the 'preparing…'
-    placeholder; every chunk after that is sent as a new message instead.
+    placeholder; every chunk after that is sent as a new message instead. The
+    message that gets superseded this way is queued in 'extra_msg_ids' so
+    cleanup_extra_messages() can remove it once the next unrelated action
+    starts, instead of leaving old chunks sitting in the chat forever.
     """
     last_id = context.user_data.get('last_bot_msg_id')
     if not new and last_id:
@@ -519,9 +500,29 @@ async def ai_show(context, chat_id, text, new=False, **kwargs):
             return await context.bot.edit_message_text(chat_id=chat_id, message_id=last_id, text=text, **kwargs)
         except Exception:
             pass
+    if new and last_id:
+        context.user_data.setdefault('extra_msg_ids', []).append(last_id)
     new_msg = await context.bot.send_message(chat_id=chat_id, text=text, **kwargs)
     context.user_data['last_bot_msg_id'] = new_msg.message_id
     return new_msg
+
+
+async def cleanup_extra_messages(context, chat_id):
+    """Delete any chat bubbles left behind by a prior multi-chunk answer.
+
+    The bot otherwise keeps exactly one live message per user, edited in
+    place; a long free-text answer that had to spill into extra messages is
+    the one place several bubbles can pile up, so wipe them as soon as the
+    next, unrelated action starts.
+    """
+    ids = context.user_data.pop('extra_msg_ids', None)
+    if not ids:
+        return
+    for mid in ids:
+        try:
+            await context.bot.delete_message(chat_id=chat_id, message_id=mid)
+        except Exception:
+            pass
 
 
 async def send_or_edit(update, context, text, force_new=False, **kwargs):
@@ -611,11 +612,10 @@ _REPLY_KB_CLEARED = set()
 MAIN = [
     [('📋 Tekne Türü Kılavuzları', 'guide:menu'), ('🚨 Denetime Başla', 'audit:start')],
     [('📖 Pratik Ceza Rehberi', 'ceza:menu'), ('📖 Pratik Tür Çizelgesi', 'turcizelge:menu')],
-    [('🚢 Gemi / Ruhsat / BAGİS', 'vessel:menu')],
-    [('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
+    [('🚢 Gemi / Ruhsat / BAGİS', 'vessel:menu'), ('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
     [('🧮 Hesaplayıcılar', 'calc:menu'), ('⭐ Favoriler', 'fav:list')],
     [('🕘 Son Sorgular', 'history'), ('❓ Yardım', 'help')],
-    [('🤖 AI Hukuki Analiz', 'ai:start')],
+    [('⚖️ Hukuki Değerlendirme', 'ai:start')],
 ]
 
 
@@ -676,6 +676,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     q = update.callback_query
     await q.answer()
+    await cleanup_extra_messages(context, q.message.chat_id)
     context.user_data['last_bot_msg_id'] = q.message.message_id
     data = q.data
     uid = q.from_user.id
@@ -790,10 +791,10 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == 'ai:start':
         context.user_data['mode'] = 'ai_analysis'
         text_ai = (
-            header('🤖', 'AI HUKUKİ ANALİZ', 'Kanun, Yönetmelik ve Tebliğ metinlerine dayanır') + '\n' + HR + '\n\n'
+            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Kanun, Yönetmelik ve Tebliğ hükümlerine göre') + '\n' + HR + '\n\n'
             'Olayı serbest metinle anlatın — ne yapıldığı, hangi av aracı, hangi belge/ruhsat durumu vb.\n\n'
             '<i>Örnek: Teknenin birincil av aracı algarna ama dip trolü ile avcılık yapıyor.</i>\n\n'
-            '⚠️ Yanıt sadece verilen mevzuat metinlerine dayanır; nihai karar değildir, dayanak maddeler ayrıca teyit edilmelidir.'
+            '⚠️ Değerlendirme nihai karar değildir; dayanak maddeler ayrıca teyit edilmelidir.'
         )
         return await q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
@@ -2605,40 +2606,43 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid = update.effective_user.id
     text = update.effective_message.text.strip()
     mode = context.user_data.get('mode')
-
+    await cleanup_extra_messages(context, update.effective_chat.id)
 
     if mode == 'ai_analysis':
         context.user_data.pop('mode', None)
         scenario = text
         chat_id = update.effective_chat.id
+
+        wait_left = ai_rate_limit_remaining(uid)
+        if wait_left > 0:
+            return await send_or_edit(
+                update, context,
+                header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n'
+                + badge('warn', 'Kotanız doldu', f'Lütfen {wait_left} saniye sonra tekrar deneyin.'),
+                parse_mode=ParseMode.HTML,
+                reply_markup=kb([[('🏠 Ana Menü', 'menu')]]),
+            )
+        ai_rate_limit_mark(uid)
+
         db.log(uid, 'ai_analysis', scenario[:120])
         await send_or_edit(
             update, context,
-            header('🤖', 'AI HUKUKİ ANALİZ', 'Tüm mevzuat metni taranıyor, 20-45 sn sürebilir…'),
+            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Mevzuat taranıyor, 20-45 sn sürebilir…'),
             parse_mode=ParseMode.HTML,
         )
         try:
-            raw_text, html_text, arts, pens = await ai_analyze(scenario)
+            _, html_text = await ai_analyze(scenario)
         except AIError as e:
-            fail = header('🤖', 'AI HUKUKİ ANALİZ') + '\n' + HR + '\n\n' + badge('stop', 'Analiz tamamlanamadı', esc(str(e)))
+            fail = header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n' + badge('stop', 'Tamamlanamadı', esc(str(e)))
             return await ai_show(context, chat_id, fail, parse_mode=ParseMode.HTML,
                                   reply_markup=kb([[('🔁 Tekrar Dene', 'ai:start')], [('🏠 Ana Menü', 'menu')]]))
-        try:
-            iid = db.finish_inspection(uid, 'ai', 'AI Hukuki Analiz — ' + scenario[:40], {'scenario': scenario}, raw_text)
-        except Exception:
-            iid = None
-        art_rows = [[(f"📚 {SRC_LABEL.get(a['source'], a['source'])} Md.{a['article']}", f"art:{a['source']}:{a['article']}")] for a in arts[:6]]
-        pen_rows = [[(f"⚖️ {p['violation'][:55]}", f"pen:{p['id']}")] for p in pens[:3]]
-        tail_rows = []
-        if iid:
-            tail_rows.append([('📄 Tutanak İndir / Paylaş', f'insp:report:{iid}')])
-        tail_rows.append([('🔁 Yeni Analiz', 'ai:start'), ('🏠 Ana Menü', 'menu')])
-        body = header('🤖', 'AI HUKUKİ ANALİZ') + '\n' + HR + '\n\n' + html_text
+        body = header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n' + html_text
         chunks = tg_chunks(body)
+        tail_rows = [[('🔁 Yeni Değerlendirme', 'ai:start'), ('🏠 Ana Menü', 'menu')]]
         for i, chunk in enumerate(chunks):
             last = i == len(chunks) - 1
             await ai_show(context, chat_id, chunk, parse_mode=ParseMode.HTML, new=(i > 0),
-                          reply_markup=kb(art_rows + pen_rows + tail_rows) if last else None)
+                          reply_markup=kb(tail_rows) if last else None)
         return
 
     if mode == 'guide_measure':
