@@ -81,6 +81,8 @@ def init_db():
     CREATE TABLE IF NOT EXISTS raw_excel_rows(source_row INTEGER PRIMARY KEY, raw_text TEXT, search_text TEXT);
     CREATE TABLE IF NOT EXISTS users(user_id INTEGER PRIMARY KEY, username TEXT, first_name TEXT, last_seen TEXT);
     CREATE TABLE IF NOT EXISTS query_log(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, action TEXT, query TEXT, created_at TEXT);
+    CREATE TABLE IF NOT EXISTS activity_log(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, action TEXT, detail TEXT, created_at TEXT);
+    CREATE INDEX IF NOT EXISTS idx_activity_log_created ON activity_log(id DESC);
     CREATE TABLE IF NOT EXISTS favorites(user_id INTEGER, item_type TEXT, item_id TEXT, created_at TEXT, PRIMARY KEY(user_id,item_type,item_id));
     CREATE TABLE IF NOT EXISTS inspections(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, kind TEXT, title TEXT, state TEXT, report TEXT, status TEXT, created_at TEXT, updated_at TEXT);
     CREATE INDEX IF NOT EXISTS idx_inspections_user ON inspections(user_id, status, updated_at);
@@ -125,6 +127,40 @@ def touch_user(u, custom_name=None):
 
 def log(uid,action,query=''):
     c=con(); c.execute('INSERT INTO query_log(user_id,action,query,created_at) VALUES(?,?,?,?)',(uid,action,query,datetime.now().isoformat(timespec='seconds'))); c.commit(); c.close()
+
+
+def log_activity(uid, action, detail=''):
+    """Web kullanıcısının güvenli denetim kaydı; parola ve oturum verisi almaz."""
+    detail = ' '.join(str(detail or '').split())[:240]
+    c = con()
+    c.execute('INSERT INTO activity_log(user_id,action,detail,created_at) VALUES(?,?,?,?)',
+              (uid, str(action)[:40], detail, datetime.now().isoformat(timespec='seconds')))
+    c.commit()
+    c.close()
+
+
+def activity_count():
+    c = con()
+    count = c.execute('SELECT COUNT(*) FROM activity_log').fetchone()[0]
+    c.close()
+    return count
+
+
+def admin_activity(limit=30):
+    """En yeni web işlemleri ve kalıcı hesap adı; eski Telegram kimlikleri de desteklenir."""
+    c = con()
+    rows = c.execute('''
+        SELECT a.user_id, a.action, a.detail, a.created_at,
+               COALESCE(w.display_name, u.first_name, u.username, CAST(a.user_id AS TEXT)) AS display_name,
+               COALESCE(w.username, u.username, '') AS username
+        FROM activity_log a
+        LEFT JOIN users u ON u.user_id = a.user_id
+        LEFT JOIN web_accounts w ON a.user_id = -w.id
+        ORDER BY a.id DESC
+        LIMIT ?
+    ''', (int(limit),)).fetchall()
+    c.close()
+    return rows
 
 
 def search_articles(query,limit=8,source=None,include_inland=False):
@@ -227,9 +263,9 @@ def admin_stats():
 def admin_user_activity():
     c=con()
     rows=c.execute('''
-        SELECT u.user_id, u.username, u.first_name, u.last_seen, COUNT(q.id) as query_count
+        SELECT u.user_id, u.username, u.first_name, u.last_seen, COUNT(a.id) as query_count
         FROM users u
-        LEFT JOIN query_log q ON q.user_id = u.user_id
+        LEFT JOIN activity_log a ON a.user_id = u.user_id
         GROUP BY u.user_id
         ORDER BY query_count DESC
     ''').fetchall()

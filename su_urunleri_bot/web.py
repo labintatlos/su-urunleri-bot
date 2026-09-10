@@ -126,6 +126,38 @@ def type_text(text):
     return lambda screen, context, uid: screens.text_handler(screens.WebUpdate(uid, text), context)
 
 
+def _button_label(uid, data):
+    """Kayıtta iç callback kodu yerine kullanıcının gördüğü düğme metnini kullanır."""
+    _, view = load_state(uid)
+    for row in (view or {}).get('buttons', []):
+        for button in row:
+            if button.get('data') == data:
+                return button.get('text') or data
+    return 'Ana Menü' if data == 'menu' else data
+
+
+TEXT_ACTIONS = {
+    'ai_analysis': 'Hukuki değerlendirme',
+    'penalty': 'Ceza araması',
+    'species_search': 'Tür araması',
+    'audit_species_search': 'Denetimde tür araması',
+    'source_search': 'Mevzuat araması',
+    'gear': 'Av aracı araması',
+    'place': 'Yer bilgisi',
+    'lawsearch': 'Kanun araması',
+    'audit_length_exact': 'Gemi boyu',
+    'penalty_length': 'Gemi boyu',
+    'audit_date': 'Denetim tarihi',
+    'guide_measure': 'Ölçüm değeri',
+}
+
+
+def _text_detail(uid, text):
+    data, _ = load_state(uid)
+    label = TEXT_ACTIONS.get(data.get('mode'), 'Genel arama')
+    return f'{label}: {text}'
+
+
 # ── HTTP ─────────────────────────────────────────────────────────────────
 
 class Handler(BaseHTTPRequestHandler):
@@ -280,26 +312,34 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/setup':
             return self.setup_admin(data)
         if path == '/api/logout':
+            account = self.require_account()
+            db.log_activity(accounts.uid_of(account), 'logout')
             return self.send_json(200, {'ok': True}, cookies=[
                 f'{accounts.COOKIE_NAME}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax'])
         account = self.require_account()
+        uid = accounts.uid_of(account)
         if path == '/api/action':
             value = data.get('data')
             if not isinstance(value, str) or not value or len(value) > 256:
                 raise ApiError(400, 'Geçersiz düğme.')
+            db.log_activity(uid, 'button', _button_label(uid, value))
             return self.send_json(200, run_screen(account, press(value)))
         if path == '/api/text':
             text = str(data.get('text') or '').strip()
             if not text:
                 raise ApiError(400, 'Bir şey yazın.')
+            db.log_activity(uid, 'text', _text_detail(uid, text[:MAX_TEXT_LENGTH]))
             return self.send_json(200, run_screen(account, type_text(text[:MAX_TEXT_LENGTH])))
         if path == '/api/password':
             updated = accounts.change_own_password(account, data.get('current'), data.get('new'))
+            db.log_activity(uid, 'password_change')
             return self.send_json(200, {'ok': True}, cookies=[self.session_cookie(updated, True)])
         if path == '/api/people':
             self.require_account(admin=True)
             created = accounts.create_account(data.get('username'), data.get('display_name'),
                                               data.get('password'), bool(data.get('is_admin')))
+            role = 'yönetici' if created['is_admin'] else 'kullanıcı'
+            db.log_activity(uid, 'person_create', f'{created["display_name"]} (@{created["username"]}) · {role}')
             return self.send_json(200, {'person': accounts.public(created)})
         match = re.fullmatch(r'/api/people/(\d+)', path)
         if match:
@@ -309,6 +349,15 @@ class Handler(BaseHTTPRequestHandler):
                                               display_name=data.get('display_name'),
                                               is_admin=flag('is_admin'), is_active=flag('is_active'),
                                               password=data.get('password') or None)
+            changes = []
+            if 'display_name' in data: changes.append('adını değiştirdi')
+            if 'is_admin' in data:
+                changes.append('yönetici yaptı' if data['is_admin'] else 'yöneticiliğini kaldırdı')
+            if 'is_active' in data:
+                changes.append('etkinleştirdi' if data['is_active'] else 'pasif yaptı')
+            if data.get('password'): changes.append('şifresini yeniledi')
+            detail = f'{updated["display_name"]} (@{updated["username"]}): ' + ', '.join(changes)
+            db.log_activity(uid, 'person_update', detail)
             return self.send_json(200, {'person': accounts.public(updated)})
         raise ApiError(404, 'Sayfa bulunamadı.')
 
@@ -325,6 +374,7 @@ class Handler(BaseHTTPRequestHandler):
         throttle.clear(key)
         accounts.mark_login(account, ha_user=self.ha_user())
         db.log(accounts.uid_of(account), 'login')
+        db.log_activity(accounts.uid_of(account), 'login')
         self.send_json(200, {'ok': True}, cookies=[self.session_cookie(account, bool(data.get('remember')))])
 
     def setup_admin(self, data):
@@ -341,6 +391,7 @@ class Handler(BaseHTTPRequestHandler):
         accounts.clear_setup_code()
         throttle.clear(key)
         accounts.mark_login(account, ha_user=self.ha_user())
+        db.log_activity(accounts.uid_of(account), 'setup')
         logger.info('İlk yönetici oluşturuldu: %s', account['username'])
         self.send_json(200, {'ok': True}, cookies=[self.session_cookie(account, True)])
 

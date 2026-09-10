@@ -103,7 +103,7 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 1 | Devir dokümanı (bu dosya), ortak tarama betiği | ✅ 6.0.2 |
 | 2 | Telefon / tablet / PC uyumluluğu (telefonda tek satır üst çubuk, 44 px dokunma hedefleri, çentik boşlukları, yatay telefon, ━━━ ayırıcıları) | ✅ 6.0.3 |
 | 3 | Aydınlık / karanlık arayüz | ✅ 6.0.4 |
-| 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ⏳ bekliyor |
+| 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ✅ 6.0.5 |
 | 5 | Ana sayfada **Üye ol** sekmesi: ad, soyad, e-posta, telefon, statü (subay, astsubay, uzman, memur). Yönetici onayı gerekip gerekmediği kullanıcıya sorulacak | ⏳ bekliyor |
 | 6 | Sayfada **Sorun bildir** butonu | ⏳ bekliyor |
 | 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ⏳ bekliyor |

@@ -2919,26 +2919,46 @@ def text_handler(update, context):
     send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
 
 
+ACTIVITY_LABELS = {
+    'setup': 'İlk yönetici hesabını oluşturdu',
+    'login': 'Giriş yaptı',
+    'logout': 'Çıkış yaptı',
+    'button': 'Düğmeye bastı',
+    'text': 'Metin gönderdi',
+    'password_change': 'Kendi şifresini değiştirdi',
+    'person_create': 'Kişi oluşturdu',
+    'person_update': 'Kişi bilgilerini değiştirdi',
+}
+
+
+def activity_label(action):
+    return esc(ACTIVITY_LABELS.get(action, action))
+
+
 def show_admin_panel(q, section='main'):
     if q.from_user.id not in ADMIN_IDS:
         return q.answer('Yönetici yetkisi gerekli.', show_alert=True)
     
     if section == 'main':
-        users, count, rows = db.admin_stats()
+        users, _, _ = db.admin_stats()
+        count = db.activity_count()
+        rows = db.admin_activity(8)
         text = (
             f'🔐 <b>YÖNETİCİ VE DENETİM PANELİ</b>\n\n'
             f'👥 <b>Kayıtlı Kullanıcı Sayısı:</b> {users}\n'
-            f'⚡ <b>Toplam İşlem & Sorgu:</b> {count}\n\n'
+            f'⚡ <b>Toplam Kullanıcı İşlemi:</b> {count}\n\n'
             f'<b>Son Yapılan İşlemler:</b>\n'
         )
-        for r in rows[:8]:
-            dname = USER_NAMES.get(r['user_id'], r['first_name'] or r['username'] or str(r['user_id']))
+        for r in rows:
+            dname = r['display_name']
             time_str = r['created_at'].split('T')[-1] if 'T' in str(r['created_at']) else str(r['created_at'])
-            text += f'• <code>{time_str[:8]}</code> <b>{esc(dname)}</b>: {esc(r["action"])} {esc(r["query"] or "")[:25]}\n'
+            label = activity_label(r['action'])
+            detail = f': {esc(r["detail"])}' if r['detail'] else ''
+            text += f'• <code>{time_str[:8]}</code> <b>{esc(dname)}</b> · {label}{detail}\n'
         
         rows_kb = [
             [('📊 Denetim & Arama Dağılımı', 'admin:stats:vessels')],
-            [('👥 Personel Faaliyetleri', 'admin:stats:users'), ('📋 Son 30 Log', 'admin:stats:logs')],
+            [('👥 Personel Faaliyetleri', 'admin:stats:users'), ('📋 İşlem Kayıtları', 'admin:stats:logs')],
             [('👤 Kişiler / Şifreler', 'web:people')],
             [('🏠 Ana Menü', 'menu')]
         ]
@@ -2980,13 +3000,15 @@ def show_admin_panel(q, section='main'):
         return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
     elif section == 'logs':
-        _, _, rows = db.admin_stats()
-        text = '📋 <b>SON 30 İŞLEM KAYDI (LOGLAR)</b>\n\n'
+        rows = db.admin_activity(30)
+        text = '📋 <b>SON 30 KULLANICI İŞLEMİ</b>\n\n'
         for r in rows:
-            dname = USER_NAMES.get(r['user_id'], r['first_name'] or r['username'] or str(r['user_id']))
+            dname = r['display_name']
             time_str = r['created_at'].replace('T', ' ')[5:19] if r['created_at'] else ''
-            q_info = f' — <i>{esc(r["query"][:30])}</i>' if r['query'] else ''
-            text += f'• <code>{time_str}</code> <b>{esc(dname)}</b> → {esc(r["action"])}{q_info}\n'
+            detail = f' — <i>{esc(r["detail"])}</i>' if r['detail'] else ''
+            text += f'• <code>{time_str}</code> <b>{esc(dname)}</b> → {activity_label(r["action"])}{detail}\n'
+        if not rows:
+            text += '<i>Henüz kullanıcı işlemi kaydedilmedi.</i>\n'
             
         rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
         return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))

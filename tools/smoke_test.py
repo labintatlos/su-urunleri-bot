@@ -10,6 +10,7 @@ HTTP hatası görülürse listeler ve 1 ile çıkar.
 import http.cookiejar
 import json
 import os
+import sqlite3
 import subprocess
 import sys
 import tempfile
@@ -97,6 +98,40 @@ def main():
                         seen.add(data)
                         stack.append(path + (data,))
         print(f'distinct buttons visited: {len(seen)}, presses: {presses}')
+
+        # Hesap işlemlerinin denetim kaydı oluşmalı; parola değerleri kayda
+        # kesinlikle girmemeli.
+        secret_a, secret_b = 'KaydaGirmemeli123!', 'YeniKaydaGirmemeli123!'
+        s, created = call('/api/people', {'username': 'ikinci', 'display_name': 'İkinci Kişi',
+                                          'password': secret_a, 'is_admin': False})
+        if s != 200:
+            errors.append((('ACTIVITY_ACCOUNT', 'create'), s, created))
+        else:
+            s, changed = call(f'/api/people/{created["person"]["id"]}', {'password': secret_b})
+            if s != 200:
+                errors.append((('ACTIVITY_ACCOUNT', 'update'), s, changed))
+        s, changed = call('/api/password', {'current': 'DenemeSifre123!',
+                                             'new': 'DenemeYeniSifre123!'})
+        if s != 200:
+            errors.append((('ACTIVITY_ACCOUNT', 'password'), s, changed))
+        call('/api/logout', {})
+        s, logged_in = call('/api/login', {'username': 'deneme', 'password': 'DenemeYeniSifre123!',
+                                            'remember': False})
+        if s != 200:
+            errors.append((('ACTIVITY_ACCOUNT', 'login'), s, logged_in))
+
+        with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
+            activity = dict(audit_db.execute(
+                'SELECT action, COUNT(*) FROM activity_log GROUP BY action').fetchall())
+            activity_text = '\n'.join(row[0] or '' for row in audit_db.execute(
+                'SELECT detail FROM activity_log').fetchall())
+        print('activity log:', activity)
+        for required in ('setup', 'login', 'logout', 'button', 'text', 'password_change',
+                         'person_create', 'person_update'):
+            if not activity.get(required):
+                errors.append((('ACTIVITY_LOG', required), 0, 'beklenen işlem kaydı yok'))
+        if secret_a in activity_text or secret_b in activity_text:
+            errors.append((('ACTIVITY_LOG', 'password'), 0, 'parola işlem kaydına yazılmış'))
         print('errors:', len(errors))
         for e in errors[:40]:
             print('  ', e)

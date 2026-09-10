@@ -31,7 +31,7 @@ Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belge
 Site ilk açılışta cihazın görünüm ayarını izler. Giriş ekranındaki veya üst çubuktaki ay/güneş düğmesiyle görünüm değiştirilebilir; seçim aynı tarayıcıda korunur.
 
 ### 🔐 Yönetici Paneli ve Kişiler
-Kullanıcı istatistikleri, denetim ve arama dağılımı, işlem kayıtları. Yönetici **Kişiler / Şifreler** ekranından kişi ekler, şifre verir, yönetici yapar veya pasifleştirir. Herkes kendi şifresini sağ üstteki menüden değiştirebilir.
+Kullanıcı istatistikleri, denetim ve arama dağılımı, hangi kişinin ne zaman hangi işlemi yaptığını gösteren son 30 işlem kaydı. Giriş/çıkış, düğme kullanımı, arama ve hesap yönetimi kaydedilir; parolalar kayda alınmaz. Yönetici **Kişiler / Şifreler** ekranından kişi ekler, şifre verir, yönetici yapar veya pasifleştirir. Herkes kendi şifresini sağ üstteki menüden değiştirebilir.
 
 ## 🚀 Kurulum
 
@@ -93,7 +93,7 @@ güncelledikten sonra bu sürümü artırmak gerekir.
 `sources`, `articles`, `rules`, `commercial_species`, `amateur_species`,
 `prohibited_species`, `penalty_cards`, `raw_excel_rows`, `users`, `query_log`,
 `inspections`, `meta`, `web_accounts` (site kişileri), `web_state` (kişinin
-kaldığı ekran ve akış durumu).
+kaldığı ekran ve akış durumu), `activity_log` (kullanıcı işlem kayıtları).
 
 ## 📚 Mevzuat Kaynakları
 
