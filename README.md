@@ -22,7 +22,7 @@ Ticari (6/1) ve amatör (6/2) türler, asgari boy/ağırlık, alıkonulabilir mi
 Karıştırılan balık türleri için teşhis kartları ve yasak av araçlarının görsel tespiti.
 
 ### ⚖️ Hukuki Değerlendirme
-Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belgelerinin tam metni üzerinden Gemini 3.5 Flash-Lite ile değerlendirilir. Denetim sonucu ekranlarındaki **“Bu Denetimi Değerlendir”** düğmesi, o denetimde girilen bilgileri ve işaretlenen uygunsuzlukları otomatik olarak değerlendirmeye taşır.
+Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belgelerinin tam metni üzerinden Gemini 3.5 Flash-Lite ile değerlendirilir. Yanıtlar daima **Kanun → Yönetmelik → Tebliğ** sırasıyla hazırlanır; somut karşılığı bulunmayan bölümün yeri boş bırakılarak sıra korunur. Denetim sonucu ekranlarındaki **“Bu Denetimi Değerlendir”** düğmesi, o denetimde girilen bilgileri ve işaretlenen uygunsuzlukları otomatik olarak değerlendirmeye taşır.
 
 ### 💬 Doğrudan Arama
 Menüde gezmeden tür, ceza veya mevzuat kelimesi yazmak yeterlidir; tür, ceza ve madde sonuçları birlikte listelenir. Mevzuat maddelerine buradan ve her ekrandaki dayanak düğmelerinden ulaşılır; madde ekranından kaynağın tüm madde listesi açılabilir.

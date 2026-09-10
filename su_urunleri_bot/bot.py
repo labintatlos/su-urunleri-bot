@@ -310,7 +310,40 @@ AI_SYSTEM_INSTRUCTION = (
     "[ÇIKTI FORMATI]\n"
     "- Bütün yanıtları anlaşılır başlıklar ve madde işaretleri kullanarak yapılandır.\n"
     "- Karmaşık paragraf blokları yerine liste formatını tercih et.\n"
-    "- Başlıkları **kalın**, maddeleri '- ' işaretiyle yaz. HTML kullanma."
+    "- Başlıkları **kalın**, maddeleri '- ' işaretiyle yaz. HTML kullanma.\n\n"
+    "[ZORUNLU CEVAP ŞABLONU VE SIRALAMA]\n"
+    "- Her cevapta aşağıdaki ana başlıkları aynen ve daima aynı sırayla kullan. "
+    "Olayda en açık karşılık Tebliğde bulunsa dahi sıralamayı değiştirme:\n\n"
+    "**OLAYIN HUKUKİ TESPİTİ VE MEVZUAT KARŞILIKLARI**\n"
+    "- Olayın belgelerden doğrudan çıkan kısa ve kesin hukuki tespitini yaz.\n\n"
+    "**1. KANUN KARŞILIĞI VE İDARİ YAPTIRIMLAR**\n"
+    "**(1380 Sayılı Su Ürünleri Kanunu)**\n"
+    "**İhlal Edilen Kanun Maddeleri**\n"
+    "- **Madde [numara]:** Belgedeki hükmü ve somut olayla doğrudan ilişkisini yaz.\n"
+    "**Uygulanacak İdari/Cezai Yaptırımlar**\n"
+    "- Belgede olay için açıkça yer alan para cezası, el koyma, mülkiyetin kamuya geçirilmesi, "
+    "ruhsat işlemi ve tekrar hükümlerini yaz.\n"
+    "**Görev ve Yetki**\n"
+    "- Belgede olay bakımından açıkça yer alan görev ve yetki hükümlerini yaz.\n\n"
+    "**2. YÖNETMELİK KARŞILIĞI**\n"
+    "**(Su Ürünleri Yönetmeliği)**\n"
+    "**[Hükmün Konusu]**\n"
+    "- **Madde [numara]:** Belgedeki hükmü ve somut olayla doğrudan ilişkisini yaz.\n\n"
+    "**3. TEBLİĞ KARŞILIĞI**\n"
+    "**([İlgili Tebliğin Tam Adı ve Numarası])**\n"
+    "**[Hükmün Konusu]**\n"
+    "- **Madde [numara/fıkra]:** Belgedeki hükmü ve somut olayla doğrudan ilişkisini yaz.\n\n"
+    "- Üç ana mevzuat başlığını her cevapta mutlaka göster. Kanun, Yönetmelik veya Tebliğ "
+    "bölümlerinden birinde somut olaya doğrudan karşılık gelen hüküm yoksa o bölümün ana "
+    "başlığını koru; altını tamamen boş bırak. Kaynak adı, alt başlık, madde, 'hüküm yoktur', "
+    "'uygulanmaz' veya benzeri "
+    "bir açıklama yazma. Yakın ya da dolaylı bir hükümle boşluğu doldurma.\n"
+    "- Bir bölümde yalnızca belgelerde somut olayla doğrudan ilişkili olan maddeleri göster. "
+    "Her maddeyi kendi mevzuat bölümüne yerleştir.\n"
+    "- Birden fazla ilgili Tebliğ varsa her birinin tam adını ayrı bir kalın alt başlık altında "
+    "yaz; ancak tamamını üçüncü ana bölüm içinde tut.\n"
+    "- Madde numarasını önce, hükmü sonra yaz. Hükmün somut olaya etkisini kısa bir cümleyle "
+    "belirt. Belgede bulunmayan bir yaptırım sonucu veya hukuki nitelendirme ekleme."
 )
 
 
@@ -358,6 +391,68 @@ def ai_prompt_tail(scenario):
 def ai_build_prompt(scenario):
     """The document context and question used when explicit caching is unavailable."""
     return ai_prompt_prefix() + ai_prompt_tail(scenario)
+
+
+AI_NO_INFO_MESSAGE = 'Verilen belgelerde bu hususla ilgili bir bilgi bulunmamaktadır.'
+AI_MAIN_HEADING = '**OLAYIN HUKUKİ TESPİTİ VE MEVZUAT KARŞILIKLARI**'
+AI_SECTION_HEADINGS = {
+    'law': '**1. KANUN KARŞILIĞI VE İDARİ YAPTIRIMLAR**',
+    'regulation': '**2. YÖNETMELİK KARŞILIĞI**',
+    'communique': '**3. TEBLİĞ KARŞILIĞI**',
+}
+_AI_TURKISH_HEADING_CHARS = str.maketrans('ÇĞİÖŞÜ', 'CGIOSU')
+
+
+def _ai_heading_fold(text):
+    return text.upper().translate(_AI_TURKISH_HEADING_CHARS)
+
+
+def _ai_section_key(line):
+    """Recognize a model-produced main legal section despite minor Markdown variation."""
+    plain = re.sub(r'[*_#`]', '', line).strip()
+    plain = re.sub(r'^\d+\s*[.)-]\s*', '', plain)
+    folded = _ai_heading_fold(plain)
+    if folded.startswith('KANUN KARSILIGI'):
+        return 'law'
+    if folded.startswith('YONETMELIK KARSILIGI'):
+        return 'regulation'
+    if folded.startswith('TEBLIG KARSILIGI'):
+        return 'communique'
+    return None
+
+
+def enforce_ai_section_order(text):
+    """Keep Kanun → Yönetmelik → Tebliğ order even if the model drifts."""
+    stripped = text.strip()
+    if stripped == AI_NO_INFO_MESSAGE:
+        return stripped
+
+    intro = []
+    sections = {key: [] for key in AI_SECTION_HEADINGS}
+    current = None
+    for line in stripped.splitlines():
+        plain = re.sub(r'[*_#`]', '', line).strip()
+        if _ai_heading_fold(plain) == 'OLAYIN HUKUKI TESPITI VE MEVZUAT KARSILIKLARI':
+            continue
+        key = _ai_section_key(line)
+        if key:
+            current = key
+            continue
+        if current:
+            sections[current].append(line)
+        else:
+            intro.append(line)
+
+    output = [AI_MAIN_HEADING]
+    intro_text = '\n'.join(intro).strip()
+    if intro_text:
+        output.append(intro_text)
+    for key, heading_text in AI_SECTION_HEADINGS.items():
+        output.append(heading_text)
+        section_text = '\n'.join(sections[key]).strip()
+        if section_text:
+            output.append(section_text)
+    return '\n\n'.join(output)
 
 
 def md_to_tg_html(text):
@@ -547,7 +642,8 @@ def _ai_call_gemini_sync(scenario):
 async def ai_analyze(scenario):
     """Run the question against the full legal corpus. Returns (raw, html)."""
     raw_text = await asyncio.to_thread(_ai_call_gemini_sync, scenario)
-    return raw_text, md_to_tg_html(raw_text)
+    ordered_text = enforce_ai_section_order(raw_text)
+    return ordered_text, md_to_tg_html(ordered_text)
 
 
 # ── Per-user rate limit ─────────────────────────────────────────────────
