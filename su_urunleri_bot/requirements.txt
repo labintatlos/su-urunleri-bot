@@ -1,4 +1,0 @@
-# Runtime dependencies only.
-# Development/test tooling lives in ../requirements-dev.txt so the addon
-# image stays small and avoids packages that need a C toolchain on Alpine.
-python-telegram-bot>=22.8

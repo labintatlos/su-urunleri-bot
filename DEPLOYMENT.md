@@ -1,237 +1,76 @@
-# Deployment Rehberi
+# Home Assistant OS Dağıtımı ve KeenDNS
 
-## 🏠 Home Assistant Eklentisi
+## Mimari
 
-### Kurulum Adımları
+| Giriş | Kimlik | Nereden |
+|-------|--------|---------|
+| **Web sitesi** (port 8101) | kullanıcı adı ve şifre | ev ağından `http://homeassistant.local:8101`, dışarıdan KeenDNS adresi |
+| **Home Assistant paneli** (Ingress, port 8099) | HA oturumu | HA'nın sol menüsündeki **Su Ürünleri** |
 
-#### 1. Eklentiyi Ekleme
-```yaml
-# configuration.yaml veya su_urunleri_bot.yaml
-su_urunleri_bot:
-  bot_token: !secret telegram_token
-  admin_id: "123456789"
-  allowed_users: []
-  result_limit: 8
-  log_level: INFO
-  enable_admin_panel: true
-  rate_limit_enabled: true
-```
+İki giriş aynı süreçte, aynı veritabanıyla çalışır. 8101 portu Ingress
+başlıklarına hiç güvenmez; kimlik yalnızca şifreyle verilen oturum çerezinden
+gelir. 8099 portu dışarıya açılmaz ve `X-Remote-User-Name` başlığına yalnızca
+Supervisor'ın adresinden gelen istekte güvenilir.
 
-#### 2. secrets.yaml
-```yaml
-# secrets.yaml
-telegram_token: "YOUR_BOT_TOKEN_HERE"
-```
+Veritabanı `/share/su_urunleri_bot/su_urunleri_kolluk.db` içindedir; eklenti
+güncellense veya yeniden kurulsa da silinmez. Oturum imza anahtarı
+(`session_secret`) da aynı klasördedir.
 
-#### 3. HA Yeniden Başlat
-- Settings → Developer Tools → YAML
-- Reload veya restart yapın
+## 5.x (Telegram botu) → 6.0 geçişi
 
-### Yapılandırma Seçenekleri
+- Telegram ayarları (`bot_token`, `admin_id`, `allowed_users`) kalkar; bot
+  artık Telegram'a bağlanmaz.
+- Denetim kayıtları, işlem geçmişi ve istatistikler olduğu gibi kalır; eski
+  Telegram kullanıcılarının geçmişi yönetici panelinde görünmeye devam eder.
+- Kişiler Telegram kimliğiyle değil, sitede açılan kullanıcı adıyla girer.
+  Yönetici herkesi **Kişiler / Şifreler** ekranından ekler.
 
-| Seçenek | Tür | Varsayılan | Açıklama |
-|---------|-----|-----------|----------|
-| `bot_token` | string | (gerekli) | Telegram bot tokeni |
-| `admin_id` | string | - | Admin Telegram ID |
-| `allowed_users` | list | [] | İzin verilen kullanıcılar |
-| `result_limit` | int | 8 | Arama sonuçları sayısı |
-| `timezone` | string | Europe/Istanbul | Saat dilimi |
-| `log_level` | string | INFO | Loglama seviyesi |
-| `enable_admin_panel` | bool | true | Admin panelini etkinleştir |
-| `rate_limit_enabled` | bool | true | Oran limitlemesi |
-| `max_requests_per_minute` | int | 10 | Maksimum istek/dakika |
+## İlk kurulum
 
-## 🐳 Docker Kurulumu
+1. Eklentiyi güncelleyin veya kurun ve başlatın.
+2. **Günlük** sekmesinde `İlk yönetici henüz oluşturulmadı ... kurulum kodunu girin: 1234-5678` satırını bulun.
+3. Siteyi açın, kodu, adınızı, kullanıcı adınızı ve şifrenizi girin.
+4. Sağ üstteki menüden **Kişiler / Şifreler** ile diğer kişileri ekleyin.
 
-### docker-compose.yml
-```yaml
-version: '3.8'
+Kullanıcı adı 3-32 karakterdir (küçük harf, rakam, nokta, alt çizgi); şifre en
+az 8 karakterdir. Aynı kullanıcı adıyla 15 dakika içinde 5 hatalı deneme
+yapılırsa o ad bir süre için kilitlenir.
 
-services:
-  su-urunleri-bot:
-    image: ghcr.io/username/su_urunleri_bot:latest
-    container_name: su_urunleri_bot
-    restart: unless-stopped
-    environment:
-      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-      ADMIN_IDS: ${ADMIN_IDS}
-      LOG_LEVEL: INFO
-      TZ: Europe/Istanbul
-    volumes:
-      - ./data:/share/su_urunleri_bot
-      - ./logs:/share/su_urunleri_bot/logs
-    ports:
-      - "8000:8000"  # Health check
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 5s
-```
+## KeenDNS ile HTTPS adres (Keenetic modem)
 
-### Başlatma
-```bash
-# .env dosyası oluştur
-echo "TELEGRAM_TOKEN=your_token_here" > .env
-echo "ADMIN_IDS=123456789" >> .env
+Keenetic modem, KeenDNS alan adı için HTTPS sertifikasını kendisi alır ve gelen
+isteği ev ağındaki Raspberry Pi'ye iletir. Modemde port açmak gerekmez.
 
-# Çalıştır
-docker-compose up -d
+1. Modem arayüzünü açın (`http://192.168.1.1` veya `my.keenetic.net`).
+2. **Ağ kuralları → Alan adı** (bazı sürümlerde **Yönetim → KeenDNS**)
+   bölümünde KeenDNS adınızın kayıtlı olduğunu görün (ör. `evim.keenetic.pro`).
+3. **Ev ağındaki web uygulamalarına erişim** kısmında yeni kayıt ekleyin:
 
-# Logları kontrol et
-docker-compose logs -f
-```
+   | Alan | Değer |
+   |------|-------|
+   | Ad | `suurunleri` → adres `suurunleri.evim.keenetic.pro` olur |
+   | Cihaz | Home Assistant (Raspberry Pi) |
+   | Protokol | HTTP (dış tarafta HTTPS'i KeenDNS sağlar) |
+   | Port | `8101` |
+   | Yetkilendirme | Kapalı (site kendi şifresini ister) |
 
-## 🚀 Bulut Dağıtımı (Heroku, Railway, vb.)
+4. Telefonda mobil veriyle `https://suurunleri.evim.keenetic.pro` adresini açın.
 
-### Environment Değişkenleri
-```
-TELEGRAM_TOKEN=your_token
-ADMIN_IDS=123456789
-LOG_LEVEL=INFO
-TZ=Europe/Istanbul
-```
+Modemde 8101 portunu doğrudan düz HTTP olarak internete açmayın: şifre
+şifrelenmeden gider.
 
-### Procfile (Heroku)
-```
-web: python bot.py
-```
+## Kontrol
 
-## 📊 Sağlık Kontrolleri
+| İstek | Beklenen |
+|-------|----------|
+| `https://suurunleri.evim.keenetic.pro/health` | `{"status":"ok"}` |
+| `https://suurunleri.evim.keenetic.pro/api/screen` (giriş yapmadan) | `401` |
 
-### Health Endpoint
-```bash
-curl http://localhost:8000/health
+## Sorun giderme
 
-# Yanıt:
-{
-  "status": "healthy",
-  "timestamp": "2024-01-01T12:00:00",
-  "uptime": "1d 2h 30m",
-  "telegram": {
-    "status": "healthy",
-    "message": "Telegram API accessible"
-  },
-  "database": {
-    "status": "healthy",
-    "message": "Database accessible"
-  }
-}
-```
-
-## 📈 Monitoring
-
-### Logları İzleme
-```bash
-# Home Assistant
-Settings → System → Logs
-
-# Docker
-docker-compose logs -f su-urunleri-bot
-
-# Dosyadan
-tail -f /share/su_urunleri_bot/logs/bot.log
-tail -f /share/su_urunleri_bot/logs/critical.log
-```
-
-### Metrikleri İzleme
-- Kullanıcı sayısı
-- Sorgu sayısı
-- Error oranı
-- Response time
-
-## 🔄 Güncellemeler
-
-### Yeni Versiyon Yükleme
-```bash
-# Docker
-docker-compose pull
-docker-compose up -d
-
-# Home Assistant
-Settings → System → Check for updates
-
-# Manuel
-git pull
-pip install -r requirements.txt
-# Bot'u yeniden başlat
-```
-
-## 🔐 Backup & Restore
-
-### Backup
-```bash
-# Database yedekle
-cp /share/su_urunleri_bot/su_urunleri_kolluk.db /backup/su_urunleri_kolluk.db.bak
-
-# Tüm verileri yedekle
-tar -czf su_urunleri_bot_backup.tar.gz /share/su_urunleri_bot/
-```
-
-### Restore
-```bash
-# Database'i geri yükle
-cp /backup/su_urunleri_kolluk.db.bak /share/su_urunleri_bot/su_urunleri_kolluk.db
-
-# Tümünü geri yükle
-tar -xzf su_urunleri_bot_backup.tar.gz -C /
-```
-
-## 🆘 Sorun Giderme
-
-### Bot Başlamıyor
-```bash
-# Logları kontrol et
-docker-compose logs su-urunleri-bot
-
-# Yapılandırmayı doğrula
-python -m bot.config
-
-# Tokeni kontrol et
-echo $TELEGRAM_TOKEN
-```
-
-### Veritabanı Hatası
-```bash
-# Veritabanı dosyasını kontrol et
-ls -la /share/su_urunleri_bot/
-
-# İzin problemleri
-chmod 755 /share/su_urunleri_bot/
-
-# Veritabanı optimize et
-sqlite3 /share/su_urunleri_bot/su_urunleri_kolluk.db "VACUUM;"
-```
-
-### Bağlantı Sorunları
-```bash
-# Telegram API erişimini kontrol et
-curl -I https://api.telegram.org
-
-# DNS sorunları
-nslookup api.telegram.org
-```
-
-## 📋 Deployment Kontrol Listesi
-
-- [ ] Telegram bot tokeni hazır
-- [ ] Admin ID'leri yapılandırıldı
-- [ ] Veritabanı başlatıldı
-- [ ] Log dizini oluşturuldu
-- [ ] Environment değişkenleri ayarlandı
-- [ ] Health check çalışıyor
-- [ ] Bot mesaj gönderiyor
-- [ ] Yönetici paneli erişilebilir
-- [ ] Backuplar yapılıyor
-- [ ] Monitoring aktif
-
-## 🔗 Kaynaklar
-
-- [Home Assistant Add-on Development](https://developers.home-assistant.io/docs/add-ons/)
-- [python-telegram-bot Dokümantasyonu](https://python-telegram-bot.readthedocs.io/)
-- [Docker Dokümantasyonu](https://docs.docker.com/)
-
----
-
-**Versiyon:** 5.0.0 | **Sürüm:** 2024
+- **Kurulum kodunu bulamıyorum:** Eklentiyi yeniden başlatın; etkin yönetici
+  yoksa kod her açılışta günlüğe yeniden yazılır.
+- **Şifremi unuttum:** Başka bir yönetici **Kişiler / Şifreler** ekranından
+  yeni şifre verebilir.
+- **Hukuki değerlendirme çalışmıyor:** Eklenti ayarlarında `gemini_api_key`
+  dolu olmalıdır; asıl hata eklenti günlüğüne yazılır.

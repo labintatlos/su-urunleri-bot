@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google" content="notranslate">
+<meta name="theme-color" content="#0b3a53">
+<title>Su Ürünleri Kolluk Asistanı</title>
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="static/style.css">
+<script src="static/app.js" defer></script>
+</head>
+<body>
+<div id="boot" class="boot"><span class="spinner"></span></div>
+
+<section id="auth" class="auth" hidden>
+  <div class="auth-card">
+    <div class="auth-brand">
+      <img src="static/icon.svg" alt="" class="auth-logo">
+      <div><h1>Su Ürünleri</h1><p>Kolluk Asistanı</p></div>
+    </div>
+
+    <form id="login-form" hidden>
+      <h2>Giriş yap</h2>
+      <p id="ingress-note" class="note" hidden>Home Assistant hesabınız bu sitedeki bir kişiyle henüz eşleşmedi. Bir kez site kullanıcı adı ve şifrenizle girin; buradan sonraki açılışlarda şifre sorulmaz.</p>
+      <label>Kullanıcı adı<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+      <label>Şifre<input name="password" type="password" autocomplete="current-password" required></label>
+      <label class="check"><input name="remember" type="checkbox" checked> Beni hatırla</label>
+      <p class="form-error" hidden></p>
+      <button type="submit" class="btn primary wide">Giriş</button>
+    </form>
+
+    <form id="setup-form" hidden>
+      <h2>İlk kurulum</h2>
+      <p class="note">Yönetici hesabını oluşturun. Kurulum kodu Home Assistant'ta <b>Ayarlar → Eklentiler → Su Ürünleri Denetim Asistanı → Günlük</b> sekmesinde yazar.</p>
+      <label>Kurulum kodu<input name="code" inputmode="numeric" autocomplete="one-time-code" required></label>
+      <label>Ad soyad<input name="display_name" autocomplete="name" required></label>
+      <label>Kullanıcı adı<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+      <label>Şifre <small>(en az 8 karakter)</small><input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+      <p class="form-error" hidden></p>
+      <button type="submit" class="btn primary wide">Yöneticiyi oluştur</button>
+    </form>
+  </div>
+</section>
+
+<div id="app" class="app" hidden>
+  <header class="topbar">
+    <button class="brand" id="home-btn" type="button" title="Ana Menü">
+      <img src="static/icon.svg" alt="" class="brand-logo">
+      <span class="brand-text"><b>Su Ürünleri</b><small>Kolluk Asistanı</small></span>
+    </button>
+    <div id="top-slot" class="top-slot">
+      <form id="composer" class="composer" autocomplete="off">
+        <textarea id="composer-input" rows="1" maxlength="4000" enterkeyhint="send" aria-label="Arama veya cevap"></textarea>
+        <button type="submit" class="send" aria-label="Gönder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 20.5 3.8c.7-.3 1.4.4 1.1 1.1L13.9 22.4c-.3.7-1.3.6-1.5-.1l-1.9-6.8-6.8-1.9c-.7-.2-.8-1.2-.1-1.5Z"/></svg></button>
+      </form>
+    </div>
+    <div class="account">
+      <button id="account-btn" class="account-btn" type="button" aria-haspopup="menu" aria-expanded="false"><span id="account-initial">•</span></button>
+      <div id="account-menu" class="menu" role="menu" hidden>
+        <div class="menu-head"><b id="account-name"></b><small id="account-username"></small></div>
+        <button type="button" role="menuitem" data-cmd="password">🔑 Şifremi değiştir</button>
+        <button type="button" role="menuitem" data-cmd="people" hidden>👥 Kişiler / Şifreler</button>
+        <button type="button" role="menuitem" data-cmd="logout">🚪 Çıkış yap</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <article id="screen" class="screen" aria-live="polite"></article>
+    <div id="inline-slot" class="inline-slot"></div>
+    <nav id="buttons" class="buttons" aria-label="İşlemler"></nav>
+  </main>
+</div>
+
+<dialog id="password-dialog" class="dialog">
+  <form id="password-form" method="dialog">
+    <h2>Şifremi değiştir</h2>
+    <label>Mevcut şifre<input name="current" type="password" autocomplete="current-password" required></label>
+    <label>Yeni şifre <small>(en az 8 karakter)</small><input name="new" type="password" autocomplete="new-password" minlength="8" required></label>
+    <label>Yeni şifre (tekrar)<input name="again" type="password" autocomplete="new-password" minlength="8" required></label>
+    <p class="note">Şifre değişince diğer cihazlardaki oturumlarınız kapanır.</p>
+    <p class="form-error" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn" data-close>Vazgeç</button>
+      <button type="submit" class="btn primary">Kaydet</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="people-dialog" class="dialog wide">
+  <div class="dialog-head">
+    <h2>Kişiler / Şifreler</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Kapat">✕</button>
+  </div>
+  <ul id="people-list" class="people"></ul>
+  <form id="person-form" class="person-form">
+    <h3>Yeni kişi ekle</h3>
+    <div class="grid2">
+      <label>Ad soyad<input name="display_name" required></label>
+      <label>Kullanıcı adı<input name="username" autocapitalize="none" spellcheck="false" required></label>
+      <label>Şifre <small>(en az 8 karakter)</small><input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+      <label class="check"><input name="is_admin" type="checkbox"> Yönetici</label>
+    </div>
+    <p class="form-error" hidden></p>
+    <button type="submit" class="btn primary">Kişiyi ekle</button>
+  </form>
+</dialog>
+
+<div id="busy" class="busy" hidden><div class="busy-card"><span class="spinner"></span><p id="busy-text">Yükleniyor…</p></div></div>
+<div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

@@ -1,10 +1,9 @@
 # Development and test tooling.
 # Not installed into the addon image; use locally with:
 #   pip install -r requirements-dev.txt
--r su_urunleri_bot/requirements.txt
+# The add-on itself has no runtime dependencies (standard library only).
 
 pytest>=7.4.0
-pytest-asyncio>=0.21.0
 pytest-cov>=4.1.0
 pytest-mock>=3.11.1
 

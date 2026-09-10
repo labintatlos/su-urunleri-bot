@@ -1,26 +1,28 @@
+"""Su Ürünleri Kolluk Asistanı — ekranlar ve akışlar.
+
+Eski Telegram botunun bütün ekranları buradadır; düğme verileri (callback) ve
+metin modları aynen korunur. Telegram yerine web.py her istekte bir Screen
+oluşturur, ilgili fonksiyonu çağırır ve ortaya çıkan ekranı tarayıcıya yollar.
+"""
+
 import html
 import json
 import logging
 import os
 import re
 import time
-import asyncio
 import urllib.error
 import urllib.request
 from datetime import datetime
+from pathlib import Path
+from types import SimpleNamespace
 from zoneinfo import ZoneInfo
+
+import accounts
+import db
 
 logger = logging.getLogger(__name__)
 
-from telegram import BotCommand, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.constants import ParseMode
-from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler, filters
-
-import db
-
-import json
-from pathlib import Path
-import os
 ASSET_DIR = Path('/app/data') if os.path.exists('/app/data') else Path(__file__).parent / 'data'
 with open(ASSET_DIR / 'ceza_rehberi_v2.json', 'r', encoding='utf-8') as f:
     CEZA_REHBERI = json.load(f)
@@ -29,78 +31,23 @@ with open(ASSET_DIR / 'tur_cizelgesi.json', 'r', encoding='utf-8') as f:
     TUR_CIZELGESI = json.load(f)
 
 
+class ParseMode:
+    HTML = 'HTML'
 
 
+
+# Yönetici panelinde gösterilen kişi adları; web.py hesabın görünen adıyla doldurur.
 USER_NAMES = {}
 
 
-def parse_ids(value):
-    if value is None:
-        return set()
-    raw = str(value).strip()
-    if not raw:
-        return set()
-    try:
-        parsed = json.loads(raw)
-        if isinstance(parsed, (int, str)):
-            parsed = [parsed]
-        if isinstance(parsed, list):
-            return {int(str(x).split(':', 1)[0]) for x in parsed if str(x).strip()}
-    except Exception:
-        pass
-    out = set()
-    for part in re.split(r'[,;\s]+', raw.strip('[]')):
-        part = part.strip().strip('"\'')
-        if not part:
-            continue
-        try:
-            out.add(int(part.split(':', 1)[0]))
-        except ValueError:
-            pass
-    return out
+class _AdminIds:
+    """`uid in ADMIN_IDS` denetimini sitedeki yönetici hesaplarına bağlar."""
+
+    def __contains__(self, uid):
+        return accounts.is_admin_uid(uid)
 
 
-def parse_allowed_users(raw_value):
-    user_ids = set()
-    if not raw_value:
-        return user_ids
-    entries = []
-    if isinstance(raw_value, list):
-        entries = raw_value
-    elif isinstance(raw_value, str):
-        raw_str = raw_value.strip()
-        try:
-            parsed = json.loads(raw_str)
-            if isinstance(parsed, list):
-                entries = parsed
-            else:
-                entries = [raw_str]
-        except Exception:
-            entries = [x.strip() for x in re.split(r'[,;\n]+', raw_str) if x.strip()]
-
-    for entry in entries:
-        entry_str = str(entry).strip()
-        if not entry_str:
-            continue
-        if ':' in entry_str:
-            parts = entry_str.split(':', 1)
-            uid_str = parts[0].strip()
-            name_str = parts[1].strip()
-            try:
-                uid = int(uid_str)
-                user_ids.add(uid)
-                if name_str:
-                    USER_NAMES[uid] = name_str
-            except ValueError:
-                pass
-        else:
-            try:
-                uid = int(entry_str)
-                user_ids.add(uid)
-            except ValueError:
-                pass
-    return user_ids
-
+ADMIN_IDS = _AdminIds()
 
 options = {}
 if os.path.exists('/data/options.json'):
@@ -116,9 +63,6 @@ elif os.path.exists('options.json'):
     except Exception:
         pass
 
-TOKEN = os.environ.get('TELEGRAM_TOKEN') or options.get('bot_token', '')
-ADMIN_IDS = parse_ids(os.environ.get('ADMIN_IDS') or options.get('admin_id', ''))
-ALLOWED_IDS = parse_allowed_users(os.environ.get('ALLOWED_USER_IDS') or options.get('allowed_users', ''))
 TZ = ZoneInfo(os.environ.get('TZ') or 'Europe/Istanbul')
 try:
     LIMIT = int(os.environ.get('RESULT_LIMIT') or options.get('result_limit', 8))
@@ -234,7 +178,7 @@ def money(value):
 
 
 def kb(rows):
-    return InlineKeyboardMarkup([[InlineKeyboardButton(title, callback_data=data) for title, data in row] for row in rows])
+    return [[{'text': title, 'data': data} for title, data in row] for row in rows]
 
 
 # ── Shared visual language ────────────────────────────────────────────────
@@ -463,17 +407,6 @@ def md_to_tg_html(text):
     return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', escaped, flags=re.S)
 
 
-def tg_chunks(html_text, limit=3500):
-    """Split for Telegram's 4096-char cap without ever cutting inside a tag."""
-    chunks = article_chunks(html_text, limit)
-    safe = []
-    for c in chunks:
-        if c.count('<b>') != c.count('</b>'):
-            c = re.sub(r'</?b>', '', c)
-        safe.append(c)
-    return safe
-
-
 # ── Gemini bağlam önbelleği ─────────────────────────────────────────────
 # The corpus prefix is ~75K tokens and never changes, so re-uploading it on
 # every question is the biggest cost in this feature, both in latency and in
@@ -639,9 +572,9 @@ def _ai_call_gemini_sync(scenario):
         raise AIError('Bu özellik şu anda kullanılamıyor.') from e
 
 
-async def ai_analyze(scenario):
+def ai_analyze(scenario):
     """Run the question against the full legal corpus. Returns (raw, html)."""
-    raw_text = await asyncio.to_thread(_ai_call_gemini_sync, scenario)
+    raw_text = _ai_call_gemini_sync(scenario)
     ordered_text = enforce_ai_section_order(raw_text)
     return ordered_text, md_to_tg_html(ordered_text)
 
@@ -669,130 +602,84 @@ def ai_rate_limit_mark(uid):
     _ai_last_request[uid] = time.monotonic()
 
 
-async def ai_show(context, chat_id, text, new=False, **kwargs):
-    """Edit the tracked bot message, or append a fresh one when new=True.
-
-    Multi-chunk answers must not all edit the same message id — only the
-    last edit would remain visible. The first chunk reuses the 'preparing…'
-    placeholder; every chunk after that is sent as a new message instead. The
-    message that gets superseded this way is queued in 'extra_msg_ids' so
-    cleanup_extra_messages() can remove it once the next unrelated action
-    starts, instead of leaving old chunks sitting in the chat forever.
-    """
-    last_id = context.user_data.get('last_bot_msg_id')
-    if not new and last_id:
-        try:
-            return await context.bot.edit_message_text(chat_id=chat_id, message_id=last_id, text=text, **kwargs)
-        except Exception:
-            pass
-    if new and last_id:
-        context.user_data.setdefault('extra_msg_ids', []).append(last_id)
-    new_msg = await context.bot.send_message(chat_id=chat_id, text=text, **kwargs)
-    context.user_data['last_bot_msg_id'] = new_msg.message_id
-    return new_msg
+# ── Web ekran adaptörü ──────────────────────────────────────────────────
+# Ekran fonksiyonları Telegram botundan taşındı ve aynı çağrı biçimini korur:
+# q.edit_message_text(...) ekranı değiştirir, q.message.reply_text(...) ekrana
+# yeni bir blok ekler, q.answer(..., show_alert=True) uyarı gösterir. web.py
+# her istek için bir Screen oluşturur ve sonucu tarayıcıya JSON olarak yollar.
 
 
-async def cleanup_extra_messages(context, chat_id):
-    """Delete any chat bubbles left behind by a prior multi-chunk answer.
+class Screen:
+    def __init__(self):
+        self.blocks = []
+        self.buttons = []
+        self.alert = None
+        self.touched = False
 
-    The bot otherwise keeps exactly one live message per user, edited in
-    place; a long free-text answer that had to spill into extra messages is
-    the one place several bubbles can pile up, so wipe them as soon as the
-    next, unrelated action starts.
-    """
-    ids = context.user_data.pop('extra_msg_ids', None)
-    if not ids:
-        return
-    for mid in ids:
-        try:
-            await context.bot.delete_message(chat_id=chat_id, message_id=mid)
-        except Exception:
-            pass
+    def replace(self, text, reply_markup=None):
+        self.blocks = [str(text)]
+        self.buttons = reply_markup or []
+        self.touched = True
 
-
-async def send_or_edit(update, context, text, force_new=False, **kwargs):
-    try:
-        await update.effective_message.delete()
-    except Exception:
-        pass
-
-    last_id = context.user_data.get('last_bot_msg_id')
-    chat_id = update.effective_chat.id
-
-    if last_id:
-        if force_new:
-            try:
-                await context.bot.delete_message(chat_id=chat_id, message_id=last_id)
-            except Exception:
-                pass
-        else:
-            try:
-                kwargs_edit = kwargs.copy()
-                if 'reply_markup' not in kwargs_edit: kwargs_edit['reply_markup'] = None
-                if 'parse_mode' not in kwargs_edit: kwargs_edit['parse_mode'] = None
-                new_msg = await context.bot.edit_message_text(
-                    text=text,
-                    chat_id=chat_id,
-                    message_id=last_id,
-                    **kwargs_edit
-                )
-                return new_msg
-            except Exception:
-                pass
-    
-    new_msg = await context.bot.send_message(chat_id=chat_id, text=text, **kwargs)
-    context.user_data['last_bot_msg_id'] = new_msg.message_id
-    return new_msg
-
-def allowed(user_id):
-    return user_id in ADMIN_IDS or user_id in ALLOWED_IDS
+    def append(self, text, reply_markup=None):
+        self.blocks.append(str(text))
+        if reply_markup is not None:
+            self.buttons = reply_markup
+        self.touched = True
 
 
-async def guard(update):
-    user = update.effective_user
-    if not user:
-        return False
-    if not allowed(user.id):
-        unauth_msg = (
-            "⛔ <b>Bu botu kullanmaya yetkiniz bulunmamaktadır.</b>\n\n"
-            "Yetki talep etmek için sistem yöneticisine aşağıdaki kimlik numaranızı iletin:\n"
-            f"🆔 <b>Sizin Telegram ID'niz:</b> <code>{user.id}</code>"
-        )
-        if update.callback_query:
-            await update.callback_query.answer(f'Yetkiniz yok! ID: {user.id}', show_alert=True)
-            try:
-                await send_or_edit(update, context, unauth_msg, parse_mode=ParseMode.HTML)
-            except Exception:
-                pass
-        else:
-            await send_or_edit(update, context, unauth_msg, parse_mode=ParseMode.HTML)
-
-        # Notify Admin(s)
-        now = datetime.now(TZ).strftime("%d.%m.%Y %H:%M:%S")
-        uname = f"@{user.username}" if user.username else "Yok"
-        admin_alert = (
-            "⚠️ <b>Yetkisiz Erişim Denemesi!</b>\n\n"
-            f"👤 <b>Ad Soyad:</b> {esc(user.full_name)}\n"
-            f"🆔 <b>ID:</b> <code>{user.id}</code>\n"
-            f"📛 <b>Kullanıcı Adı:</b> {esc(uname)}\n"
-            f"🕐 <b>Zaman:</b> {now}"
-        )
-        bot_app = update.get_bot() if hasattr(update, 'get_bot') else None
-        if bot_app:
-            for admin_id in ADMIN_IDS:
-                try:
-                    await bot_app.send_message(chat_id=admin_id, text=admin_alert, parse_mode=ParseMode.HTML)
-                except Exception:
-                    pass
-        return False
-
-    disp_name = USER_NAMES.get(user.id, user.first_name)
-    db.touch_user(user, custom_name=disp_name)
-    return True
+class WebContext:
+    def __init__(self, user_data, screen):
+        self.user_data = user_data
+        self.screen = screen
 
 
-# Users whose legacy reply keyboard has been cleared during this run.
-_REPLY_KB_CLEARED = set()
+class _WebMessage:
+    def __init__(self, screen, uid):
+        self._screen = screen
+        self.chat_id = uid
+        self.message_id = 0
+
+    def reply_text(self, text, parse_mode=None, reply_markup=None, **_):
+        self._screen.append(text, reply_markup)
+
+
+class WebQuery:
+    """Bir düğmeye basılması (eski callback query)."""
+
+    def __init__(self, screen, uid, data):
+        self.data = data
+        self.from_user = SimpleNamespace(id=uid)
+        self.message = _WebMessage(screen, uid)
+        self._screen = screen
+
+    def edit_message_text(self, text, parse_mode=None, reply_markup=None, **_):
+        self._screen.replace(text, reply_markup)
+
+    def answer(self, text=None, show_alert=False, **_):
+        if text:
+            self._screen.alert = str(text)
+
+
+class WebUpdate:
+    """Arama kutusuna yazılan metin (eski metin mesajı)."""
+
+    def __init__(self, uid, text):
+        self.effective_user = SimpleNamespace(id=uid)
+        self.effective_message = SimpleNamespace(text=text)
+        self.effective_chat = SimpleNamespace(id=uid)
+
+
+def ai_show(context, chat_id, text, new=False, **kwargs):
+    if new:
+        context.screen.append(text, kwargs.get('reply_markup'))
+    else:
+        context.screen.replace(text, kwargs.get('reply_markup'))
+
+
+def send_or_edit(update, context, text, force_new=False, **kwargs):
+    context.screen.replace(text, kwargs.get('reply_markup'))
+
 
 MAIN = [
     [('📋 Tekne Türü Kılavuzları', 'guide:menu'), ('🚨 Denetime Başla', 'audit:start')],
@@ -802,7 +689,7 @@ MAIN = [
 ]
 
 
-async def send_menu(target, user_id=None, edit=False, update=None, context=None, force_new=False):
+def send_menu(target, user_id=None, edit=False, update=None, context=None, force_new=False):
     text = (
         '<b>⚓ SU ÜRÜNLERİ KOLLUK ASİSTANI</b>\n\n'
         '🌊 <b>Deniz görev alanı</b>\n\n'
@@ -811,7 +698,7 @@ async def send_menu(target, user_id=None, edit=False, update=None, context=None,
         '📋 <b>Tekne Türü Kılavuzları</b> ile çıkacağınız tekneye özel kontrol föyünü açabilir, '
         'her maddeyi Uygun / Uygunsuz / Kontrol Edilmedi olarak işaretleyebilirsiniz.\n\n'
         '🚨 <b>Denetime Başla</b> ise bölgeden başlayıp faaliyet, gemi boyu, tarih, av aracı ve türe doğru adım adım ilerleyen yönlendirilmiş kontrolü başlatır.\n\n'
-        '💬 <b>Aramak için doğrudan yazın.</b> Tür, ceza veya mevzuat kelimesi yazmanız yeterli — '
+        '💬 <b>Aramak için üstteki arama kutusuna yazın.</b> Tür, ceza veya mevzuat kelimesi yazmanız yeterli — '
         'örn. <code>hamsi</code>, <code>ruhsatsız</code>, <code>BAGİS</code>.'
     )
     rows = list(MAIN)
@@ -825,78 +712,51 @@ async def send_menu(target, user_id=None, edit=False, update=None, context=None,
     if user_id in ADMIN_IDS:
         rows = rows + [[('🔐 Yönetici Paneli', 'admin:panel')]]
     if edit:
-        await target.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        target.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
     else:
         if update and context:
-            await send_or_edit(update, context, text, force_new=force_new, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+            send_or_edit(update, context, text, force_new=force_new, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
         else:
-            await target.reply_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+            target.reply_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await guard(update):
-        return
-    context.user_data.clear()
-    uid = update.effective_user.id
-    db.log(uid, 'start')
-
-    # Older versions sent a persistent reply keyboard; nothing does any more.
-    # Clearing it needs a throwaway message, so only do it once per user per
-    # run instead of flashing it on every /start.
-    if uid not in _REPLY_KB_CLEARED:
-        _REPLY_KB_CLEARED.add(uid)
-        try:
-            tmp = await send_or_edit(update, context, '⚓', reply_markup=ReplyKeyboardRemove())
-            await tmp.delete()
-        except Exception:
-            pass
-
-    await send_menu(update.effective_message, update.effective_user.id, update=update, context=context, force_new=True)
-
-
-async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await guard(update):
-        return
-    q = update.callback_query
-    await q.answer()
-    await cleanup_extra_messages(context, q.message.chat_id)
-    context.user_data['last_bot_msg_id'] = q.message.message_id
+def callback(q, context):
     data = q.data
     uid = q.from_user.id
 
     if data == 'menu':
         context.user_data.clear()
-        return await send_menu(q, uid, edit=True)
+        return send_menu(q, uid, edit=True)
 
 
     if data == 'guide:menu':
-        return await guide_menu(q, context)
+        return guide_menu(q, context)
     if data == 'guide:fromgear':
-        return await guide_from_gear(q, context)
+        return guide_from_gear(q, context)
     if data.startswith('guide:open:'):
-        return await guide_open(q, context, data.split(':', 2)[2])
+        return guide_open(q, context, data.split(':', 2)[2])
     if data.startswith('guide:view:'):
         _, _, key, page = data.split(':', 3)
-        return await guide_view(q, context, key, int(page))
+        return guide_view(q, context, key, int(page))
     if data.startswith('guide:refs:'):
-        return await guide_refs(q, context, data.split(':', 2)[2])
+        return guide_refs(q, context, data.split(':', 2)[2])
     if data.startswith('guide:start:'):
-        return await guide_start(q, context, data.split(':', 2)[2])
+        return guide_start(q, context, data.split(':', 2)[2])
     if data.startswith('guide:go:'):
-        return await guide_render(q, context, int(data.rsplit(':', 1)[1]))
+        return guide_render(q, context, int(data.rsplit(':', 1)[1]))
     if data.startswith('guide:ans:'):
         _, _, idx, ans = data.split(':', 3)
-        return await guide_answer(q, context, int(idx), ans)
+        return guide_answer(q, context, int(idx), ans)
     if data == 'guide:finish' or data == 'guide:result':
-        return await guide_finish(q, context)
+        return guide_finish(q, context)
     if data == 'guide:badmenu':
-        return await guide_bad_menu(q, context)
+        return guide_bad_menu(q, context)
     if data.startswith('guide:pen:'):
-        return await guide_penalty_search(q, context, int(data.rsplit(':', 1)[1]))
+        return guide_penalty_search(q, context, int(data.rsplit(':', 1)[1]))
     if data == 'guide:measure:start':
-        return await guide_measure_start(q, context)
+        return guide_measure_start(q, context)
     if data == 'guide:measure:skip':
-        return await guide_measure_skip(q, context)
+        return guide_measure_skip(q, context)
 
 
 
@@ -906,7 +766,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             rows.append([(f"{c['title']}", f"ceza:view:{c['id']}")])
         rows.append([('🔎 Kelimeyle Ceza Ara', 'mode:penalty')])
         rows.append([('🏠 Ana Menü', 'menu')])
-        return await q.edit_message_text('<b>📖 PRATİK CEZA REHBERİ</b>\n\nİncelemek istediğiniz başlığı seçin:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        return q.edit_message_text('<b>📖 PRATİK CEZA REHBERİ</b>\n\nİncelemek istediğiniz başlığı seçin:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if data.startswith('ceza:view:'):
         cid = data.split(':', 2)[2]
@@ -923,11 +783,10 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if rows:
                 rows.append([('🔙 Ceza Rehberi', 'ceza:menu')])
                 rows.append([('🏠 Ana Menü', 'menu')])
-                return await q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+                return q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
             else:
                 out = f"<b>{esc(c_main['title'])}</b>\n\n{c_main.get('content', '')}"
-                if len(out) > 4000: out = out[:4000] + "...(Devamı kesildi)"
-                return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Ceza Rehberi', 'ceza:menu')], [('🏠 Ana Menü', 'menu')]]))
+                return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Ceza Rehberi', 'ceza:menu')], [('🏠 Ana Menü', 'menu')]]))
 
     if data.startswith('ceza:sub:'):
         _, _, cid, sid = data.split(':')
@@ -942,11 +801,10 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 if rows:
                     rows.append([('🔙 Üst Başlık', f"ceza:view:{cid}")])
                     rows.append([('🏠 Ana Menü', 'menu')])
-                    return await q.edit_message_text(f"<b>{esc(s_sub['title'])}</b>\n\nLütfen bir ihlal türü seçin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+                    return q.edit_message_text(f"<b>{esc(s_sub['title'])}</b>\n\nLütfen bir ihlal türü seçin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
                 else:
                     out = f"<b>{esc(s_sub['title'])}</b>\n\n{s_sub.get('content', '')}"
-                    if len(out) > 4000: out = out[:4000] + "...(Devamı kesildi)"
-                    return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"ceza:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
+                    return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"ceza:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
 
     if data.startswith('ceza:item:'):
         _, _, cid, sid, iid = data.split(':')
@@ -969,12 +827,12 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     if k.lower() != 'ihlal':
                         out += f"▪️ <b>{esc(k)}:</b> {esc(v).replace('*', '')}\n"
                 
-                return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Geri', back_data)], [('🏠 Ana Menü', 'menu')]]))
+                return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Geri', back_data)], [('🏠 Ana Menü', 'menu')]]))
 
     if data == 'ai:audit':
-        return await ai_audit_preview(q, context)
+        return ai_audit_preview(q, context)
     if data == 'ai:audit:run':
-        return await ai_audit_run(q, context)
+        return ai_audit_run(q, context)
     if data == 'ai:start':
         context.user_data['mode'] = 'ai_analysis'
         text_ai = (
@@ -984,7 +842,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir</b> — sorunuzu göndermeden önce net ve eksiksiz yazın.\n\n'
             '📄 Yanıt yalnızca sisteme eklenen Markdown belgelerindeki bilgilere dayanır.'
         )
-        return await q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
+        return q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
     if data.startswith('mode:'):
         mode = data.split(':', 1)[1]
@@ -992,40 +850,40 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         prompts = {
             'penalty': '⚖️ İhlali/olayı yazın. Örnek: <code>BAGİS arızası</code>, <code>kalkan parakete</code>, <code>ruhsatsız gemi</code>, <code>nakil belgesi</code>.',
             'gear': '🎣 Av aracını veya yöntemi yazın. Örnek: <code>gırgır</code>, <code>dip trolü</code>, <code>algarna</code>, <code>ışık</code>.',
-            'place': '📍 Yer, il, koy, burun veya saha adını yazın. Koordinatla tarif edilen alanlarda bot kaynak hükmünü gösterir; geometrik sınırdan emin olmadığı yerde kendiliğinden ihlal kararı vermez.',
+            'place': '📍 Yer, il, koy, burun veya saha adını yazın. Koordinatla tarif edilen alanlarda sistem kaynak hükmünü gösterir; geometrik sınırdan emin olmadığı yerde kendiliğinden ihlal kararı vermez.',
             'lawsearch': '📚 Aranacak mevzuat kelimesini veya konuyu yazın. Örnek: <code>el koyma</code>, <code>ruhsat geri alma</code>, <code>gırgır</code>.',
         }
-        return await q.edit_message_text(prompts[mode], parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
+        return q.edit_message_text(prompts[mode], parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
     if data.startswith('src:'):
         key = data.split(':', 1)[1]
         if key == 'excel':
             context.user_data['mode'] = 'penalty'
-            return await q.edit_message_text('📊 <b>Ceza Excel tablosunda ara</b>\n\nİhlal, madde veya anahtar kelime yazın.', parse_mode=ParseMode.HTML, reply_markup=kb([[('🏠 Ana Menü', 'menu')]]))
+            return q.edit_message_text('📊 <b>Ceza Excel tablosunda ara</b>\n\nİhlal, madde veya anahtar kelime yazın.', parse_mode=ParseMode.HTML, reply_markup=kb([[('🏠 Ana Menü', 'menu')]]))
         context.user_data.update(mode='source_search', source=key)
-        return await q.edit_message_text(
+        return q.edit_message_text(
             f'📚 <b>{esc(SRC_LABEL.get(key, key))}</b>\n\nMadde numarası yazabilir (örn. <code>36</code>) veya konu arayabilirsiniz. İçsuya özgü maddeler varsayılan olarak gösterilmez.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('📑 Maddeleri Listele', f'srclist:{key}:0')], [('🏠 Menü', 'menu')]]),
         )
     if data.startswith('srclist:'):
         _, source, page = data.split(':')
-        return await show_source_list(q, source, int(page))
+        return show_source_list(q, source, int(page))
     if data.startswith('artp:'):
         _, source, article, page = data.split(':')
-        return await show_article(q, source, int(article), int(page))
+        return show_article(q, source, int(article), int(page))
     if data.startswith('art:'):
         _, source, article = data.split(':')
-        return await show_article(q, source, int(article), 0)
+        return show_article(q, source, int(article), 0)
 
 
     if data.startswith('rule:'):
-        return await show_rule(q, data.split(':', 1)[1])
+        return show_rule(q, data.split(':', 1)[1])
     if data.startswith('field:'):
-        return await show_field(q, data.split(':', 1)[1])
+        return show_field(q, data.split(':', 1)[1])
 
     if data == 'vessel:menu':
-        return await q.edit_message_text(
+        return q.edit_message_text(
             '🚤 <b>GEMİ / RUHSAT / BAGİS</b>',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([
@@ -1037,17 +895,17 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == 'admin:panel' or data.startswith('admin:stats:'):
         section = data.split(':', 2)[2] if data.startswith('admin:stats:') else 'main'
-        return await show_admin_panel(q, section)
+        return show_admin_panel(q, section)
 
     if data == 'gear:vis:menu':
-        return await show_gear_visual_menu(q)
+        return show_gear_visual_menu(q)
     if data.startswith('gear:vis:item:'):
-        return await show_gear_visual_item(q, data.split(':', 3)[3])
+        return show_gear_visual_item(q, data.split(':', 3)[3])
 
     if data == 'species:vis:menu':
-        return await show_species_visual_menu(q)
+        return show_species_visual_menu(q)
     if data.startswith('species:vis:item:'):
-        return await show_species_visual_item(q, data.split(':', 3)[3])
+        return show_species_visual_item(q, data.split(':', 3)[3])
 
 
     if data == 'turcizelge:menu':
@@ -1056,7 +914,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             rows.append([(f"{c['title']}", f"turcizelge:view:{c['id']}")])
         rows.append([('🔎 Detaylı Tür Arama / Görsel Rehber', 'species:menu')])
         rows.append([('🏠 Ana Menü', 'menu')])
-        return await q.edit_message_text('<b>📖 PRATİK TÜR ÇİZELGESİ</b>\n\nİncelemek istediğiniz başlığı seçin:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        return q.edit_message_text('<b>📖 PRATİK TÜR ÇİZELGESİ</b>\n\nİncelemek istediğiniz başlığı seçin:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if data.startswith('turcizelge:view:'):
         cid = data.split(':', 2)[2]
@@ -1071,7 +929,7 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 # If there are subcategories, show them as buttons. If there are items too, we should theoretically show them as text above or below, but we don't have such cases.
                 rows.append([('🔙 Çizelge Menüsü', 'turcizelge:menu')])
                 rows.append([('🏠 Ana Menü', 'menu')])
-                return await q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+                return q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
             else:
                 out = f"<b>{esc(c_main['title'])}</b>\n\n{c_main.get('content', '')}\n"
                 if c_main.get('items'):
@@ -1097,12 +955,12 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             curr += line + '\n'
                     if curr: chunks.append(curr)
                     
-                    await q.edit_message_text(chunks[0], parse_mode=ParseMode.HTML)
+                    q.edit_message_text(chunks[0], parse_mode=ParseMode.HTML)
                     for chunk in chunks[1:-1]:
-                        await q.message.reply_text(chunk, parse_mode=ParseMode.HTML)
-                    return await q.message.reply_text(chunks[-1], parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]))
+                        q.message.reply_text(chunk, parse_mode=ParseMode.HTML)
+                    return q.message.reply_text(chunks[-1], parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]))
                 else:
-                    return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]))
+                    return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]))
 
     if data.startswith('turcizelge:sub:'):
         _, _, cid, sid = data.split(':')
@@ -1135,15 +993,15 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             curr += line + '\n'
                     if curr: chunks.append(curr)
                     
-                    await q.edit_message_text(chunks[0], parse_mode=ParseMode.HTML)
+                    q.edit_message_text(chunks[0], parse_mode=ParseMode.HTML)
                     for chunk in chunks[1:-1]:
-                        await q.message.reply_text(chunk, parse_mode=ParseMode.HTML)
-                    return await q.message.reply_text(chunks[-1], parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
+                        q.message.reply_text(chunk, parse_mode=ParseMode.HTML)
+                    return q.message.reply_text(chunks[-1], parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
                 else:
-                    return await q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
+                    return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
 
     if data == 'species:menu':
-        return await q.edit_message_text(
+        return q.edit_message_text(
             '🐟 <b>TÜR / BOY / ZAMAN</b>\n\nHangi faaliyet?',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([
@@ -1157,40 +1015,40 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data.startswith('species:kind:'):
         kind = data.rsplit(':', 1)[1]
         context.user_data.update(mode='species_search', species_kind=kind)
-        return await q.edit_message_text('Tür adını yazın. Örnek: <code>kalkan</code>, <code>mavi yengeç</code>, <code>palamut</code>.', parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Tür Menüsü', 'species:menu')]]))
+        return q.edit_message_text('Tür adını yazın. Örnek: <code>kalkan</code>, <code>mavi yengeç</code>, <code>palamut</code>.', parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Tür Menüsü', 'species:menu')]]))
     if data.startswith('sp:'):
         _, kind, sid = data.split(':')
-        return await show_species(q, kind, int(sid), context)
+        return show_species(q, kind, int(sid), context)
 
     if data.startswith('pen:length:'):
         pid=int(data.rsplit(':',1)[1])
         context.user_data.update(mode='penalty_length',penalty_pid=pid)
-        return await q.edit_message_text('🚤 Gemi tam boyunu metre olarak yazın. Örnek: <code>17.4</code>',parse_mode=ParseMode.HTML,reply_markup=kb([[('↩️ Ceza Kartı',f'pen:{pid}')]]))
+        return q.edit_message_text('🚤 Gemi tam boyunu metre olarak yazın. Örnek: <code>17.4</code>',parse_mode=ParseMode.HTML,reply_markup=kb([[('↩️ Ceza Kartı',f'pen:{pid}')]]))
     if data.startswith('pen:'):
-        return await show_penalty(q, int(data.split(':', 1)[1]), context)
+        return show_penalty(q, int(data.split(':', 1)[1]), context)
     if data.startswith('raw:'):
         row = db.raw_row(int(data.split(':', 1)[1]))
         if not row:
-            return await q.answer('Excel satırı bulunamadı.', show_alert=True)
-        return await q.edit_message_text(
+            return q.answer('Excel satırı bulunamadı.', show_alert=True)
+        return q.edit_message_text(
             f'📊 <b>Excel satır {row["source_row"]}</b>\n\n<code>{esc(row["raw_text"])}</code>\n\n<i>Değerler yüklediğiniz Excel kaynağındaki haliyle gösterilir.</i>',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('↩️ Ana Menü', 'menu')]]),
         )
 
     if data == 'audit:start':
-        return await audit_start(q, context)
+        return audit_start(q, context)
     if data.startswith('audit:region:'):
         context.user_data['audit_region'] = data.rsplit(':', 1)[1]
-        return await audit_choose_activity(q, context)
+        return audit_choose_activity(q, context)
     if data.startswith('audit:activity:'):
         context.user_data['audit_activity'] = data.rsplit(':', 1)[1]
-        return await audit_choose_length(q, context)
+        return audit_choose_length(q, context)
     if data.startswith('audit:length:'):
         choice = data.rsplit(':', 1)[1]
         if choice == 'exact':
             context.user_data['mode'] = 'audit_length_exact'
-            return await q.edit_message_text(
+            return q.edit_message_text(
                 '🚤 <b>GEMİ / TEKNE TAM BOYU</b>\n\nTam boyu metre olarak yazın. Örnek: <code>17.4</code>',
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb([[('🏠 Ana Menü', 'menu')]])
@@ -1199,19 +1057,19 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data['audit_length_band'] = choice
         context.user_data['audit_length'] = rule_value
         context.user_data.pop('audit_length_exact', None)
-        return await audit_choose_date(q, context)
+        return audit_choose_date(q, context)
     if data == 'audit:datemenu':
-        return await audit_choose_date(q, context)
+        return audit_choose_date(q, context)
     if data == 'audit:subjectmenu':
-        return await audit_choose_subject(q, context)
+        return audit_choose_subject(q, context)
     if data == 'audit:gearmenu':
-        return await audit_choose_gear(q, context)
+        return audit_choose_gear(q, context)
     if data == 'audit:date:today':
         context.user_data['audit_date'] = datetime.now(TZ).date().isoformat()
-        return await audit_choose_subject(q, context)
+        return audit_choose_subject(q, context)
     if data == 'audit:date:other':
         context.user_data['mode'] = 'audit_date'
-        return await q.edit_message_text(
+        return q.edit_message_text(
             '📅 <b>OLAY / KONTROL TARİHİ</b>\n\nTarihi <code>GG.AA.YYYY</code> biçiminde yazın. Örnek: <code>20.05.2026</code>.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('📅 Bugünü Kullan', 'audit:date:today')], [('↩️ Tarih Seçimine Dön', 'audit:datemenu'), ('🏠 Ana Menü', 'menu')]])
@@ -1220,49 +1078,49 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         subject = data.rsplit(':', 1)[1]
         context.user_data['audit_subject'] = subject
         if subject == 'fishing':
-            return await audit_choose_gear(q, context)
+            return audit_choose_gear(q, context)
         if subject == 'species':
             context.user_data.update(mode='audit_species_search', species_kind=context.user_data.get('audit_activity','commercial'), guided_species=True)
-            return await q.edit_message_text(
+            return q.edit_message_text(
                 '🐟 <b>ÜRÜN / TÜR</b>\n\nKontrol edilen türün adını yazın. Örnek: <code>kalkan</code>, <code>palamut</code>, <code>hamsi</code>.',
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb([[('➡️ Tür belirtmeden devam', 'audit:guided:check')], [('🏠 Ana Menü', 'menu')]])
             )
-        return await audit_quick_start(q, context)
+        return audit_quick_start(q, context)
     if data.startswith('audit:gear:'):
         context.user_data['audit_gear'] = data.split(':', 2)[2]
         if context.user_data.get('guided_active'):
-            return await audit_after_gear(q, context)
-        return await audit_gear_result(q, context)
+            return audit_after_gear(q, context)
+        return audit_gear_result(q, context)
     if data == 'audit:guided:species':
         context.user_data.update(mode='audit_species_search', species_kind=context.user_data.get('audit_activity','commercial'), guided_species=True)
-        return await q.edit_message_text(
+        return q.edit_message_text(
             '🐟 <b>TÜRÜ YAZIN</b>\n\nTür adını yazın. Tür bilinmiyorsa tür belirtmeden devam edebilirsiniz.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('➡️ Tür belirtmeden devam', 'audit:guided:check')], [('🏠 Ana Menü', 'menu')]])
         )
     if data == 'audit:guided:check':
         context.user_data.pop('mode', None)
-        return await audit_quick_start(q, context)
+        return audit_quick_start(q, context)
     if data == 'audit:hub':
-        return await audit_hub_edit(q, context)
+        return audit_hub_edit(q, context)
     if data == 'classify:start':
-        return await amateur_classification_start(q, context)
+        return amateur_classification_start(q, context)
     if data.startswith('classify:ans:'):
         _, _, idx, ans = data.split(':', 3)
-        return await amateur_classification_answer(q, context, int(idx), ans)
+        return amateur_classification_answer(q, context, int(idx), ans)
     if data == 'audit:quick:start':
-        return await audit_quick_start(q, context)
+        return audit_quick_start(q, context)
     if data.startswith('audit:quick:ans:'):
         _, _, _, idx, ans = data.split(':', 4)
-        return await audit_quick_answer(q, context, int(idx), ans)
+        return audit_quick_answer(q, context, int(idx), ans)
 
     if data == 'insp:resume':
-        return await resume_draft(q, context)
+        return resume_draft(q, context)
     if data == 'insp:discard':
         db.drop_draft(uid)
         context.user_data.clear()
-        return await send_menu(q, uid, edit=True)
+        return send_menu(q, uid, edit=True)
 
 
 def article_chunks(text, limit=2450):
@@ -1282,7 +1140,7 @@ def article_chunks(text, limit=2450):
     return chunks or ['—']
 
 
-async def show_source_list(q, source, page=0):
+def show_source_list(q, source, page=0):
     rows_all=db.list_articles(source)
     per=8
     pages=max(1,(len(rows_all)+per-1)//per)
@@ -1294,15 +1152,15 @@ async def show_source_list(q, source, page=0):
     if page+1<pages: nav.append(('Sonraki ▶️',f'srclist:{source}:{page+1}'))
     if nav: rows.append(nav)
     rows.append([('🔎 Bu Kaynakta Ara',f'src:{source}'),])
-    await q.edit_message_text(
+    q.edit_message_text(
         f'📑 <b>{esc(SRC_LABEL.get(source,source))} — DENİZ/GENEL MADDELER</b>\n\nSayfa {page+1}/{pages}. İçsuya özgü maddeler bu listede gösterilmez.',
         parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def show_article(q, source, article, page=0, context=None):
+def show_article(q, source, article, page=0, context=None):
     row = db.get_article(source, article)
     if not row:
-        return await q.answer('Madde bulunamadı.', show_alert=True)
+        return q.answer('Madde bulunamadı.', show_alert=True)
     chunks=article_chunks(row['body'])
     page=max(0,min(page,len(chunks)-1))
     pages = str(row['page_start']) if row['page_start'] == row['page_end'] else f'{row["page_start"]}–{row["page_end"]}'
@@ -1319,20 +1177,20 @@ async def show_article(q, source, article, page=0, context=None):
     if context and context.user_data.get('guide_key'):
         rows.append([('🔙 Uygunsuzluk Listesine Dön', 'guide:badmenu')])
     rows.append([('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def show_field(q, category):
+def show_field(q, category):
     rules = db.search_rules(cat=category, limit=20)
     rows = [[(r['title'][:45], f'rule:{r["id"]}')] for r in rules]
     rows.append([('↩️ Ana Menü', 'menu')])
-    await q.edit_message_text(f'🛡️ <b>{esc(category)}</b>\n\nKontrol kartını seçin:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(f'🛡️ <b>{esc(category)}</b>\n\nKontrol kartını seçin:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def show_rule(q, rule_id):
+def show_rule(q, rule_id):
     row = db.get_rule(rule_id)
     if not row:
-        return await q.answer('Kontrol kartı bulunamadı.', show_alert=True)
+        return q.answer('Kontrol kartı bulunamadı.', show_alert=True)
     refs = json.loads(row['refs'])
     buttons, ref_text = [], []
     for ref in refs:
@@ -1341,7 +1199,7 @@ async def show_rule(q, rule_id):
         buttons.append((f'📚 {label} {ref["a"]}', f'art:{ref["s"]}:{ref["a"]}'))
     rows = [buttons[i:i + 2] for i in range(0, len(buttons), 2)]
     rows.append([('🔙 Geri', f"field:{row['cat']}"), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(
+    q.edit_message_text(
         f'🛡️ <b>{esc(row["title"])}</b>\n\n{esc(row["summary"])}\n\n<b>Dayanak:</b> {esc("; ".join(ref_text))}',
         parse_mode=ParseMode.HTML,
         reply_markup=kb(rows),
@@ -1479,7 +1337,7 @@ GEAR_VISUAL_GUIDE = {
 }
 
 
-async def show_species_visual_menu(q):
+def show_species_visual_menu(q):
     rows = []
     for key, item in SPECIES_VISUAL_GUIDE.items():
         rows.append([(f'🐟 {item["title"]}', f'species:vis:item:{key}')])
@@ -1488,13 +1346,13 @@ async def show_species_visual_menu(q):
         '🖼️ <b>GÖRSEL BALIK TEŞHİS VE AYRIM REHBERİ</b>\n\n'
         'Sahada sıkça karıştırılan türleri ve kritik boy kademelerini görsel tanı kriterleriyle inceleyin:\n'
     )
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def show_species_visual_item(q, key):
+def show_species_visual_item(q, key):
     item = SPECIES_VISUAL_GUIDE.get(key)
     if not item:
-        return await q.answer('Görsel kart bulunamadı.', show_alert=True)
+        return q.answer('Görsel kart bulunamadı.', show_alert=True)
     text = f'🖼️ <b>{esc(item["title"])}</b>\n'
     text += f'<b>Tür(ler):</b> {esc(item["species"])}\n'
     text += f'📏 <b>Ölçü Kriteri:</b> {esc(item["min_cm"])}\n\n'
@@ -1504,10 +1362,10 @@ async def show_species_visual_item(q, key):
     if item.get('photo_url'):
         text += f'\n<a href="{item["photo_url"]}">&#8205;</a><i>(Fotoğraf önizlemesi yukarıda görüntülenmektedir)</i>\n'
     rows = [[('↩️ Görsel Rehber', 'species:vis:menu'), ('🐟 Tür Menüsü', 'species:menu')]]
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def show_gear_visual_menu(q):
+def show_gear_visual_menu(q):
     rows = []
     for key, item in GEAR_VISUAL_GUIDE.items():
         rows.append([(f'{item["title"][:40]}', f'gear:vis:item:{key}')])
@@ -1516,18 +1374,18 @@ async def show_gear_visual_menu(q):
         '🚫 <b>YASAK AV ARAÇLARI GÖRSEL TESPİT REHBERİ</b>\n\n'
         'Sahada şüpheli veya yasaklı av donanımlarını tespit etmek için kılavuz kartlarını seçin:\n'
     )
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def show_gear_visual_item(q, key):
+def show_gear_visual_item(q, key):
     item = GEAR_VISUAL_GUIDE.get(key)
     if not item:
-        return await q.answer('Donanım kartı bulunamadı.', show_alert=True)
+        return q.answer('Donanım kartı bulunamadı.', show_alert=True)
     text = f'🚫 <b>{esc(item["title"])}</b>\n'
     text += f'⚠️ <b>Durum:</b> {esc(item["status"])}\n\n'
     text += f'{item["description"]}\n'
     rows = [[('↩️ Yasak Araçlar Listesi', 'gear:vis:menu'), ('🏠 Ana Menü', 'menu')]]
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 def in_date_range(today, span):
@@ -1538,10 +1396,10 @@ def in_date_range(today, span):
     return lo <= x <= hi if lo <= hi else (x >= lo or x <= hi)
 
 
-async def show_species(q, kind, sid, context=None):
+def show_species(q, kind, sid, context=None):
     row = db.get_species(kind, sid)
     if not row:
-        return await q.answer('Tür bulunamadı.', show_alert=True)
+        return q.answer('Tür bulunamadı.', show_alert=True)
     bans = json.loads(row['time_bans'])
     today = audit_date(context) if context is not None and context.user_data.get('guided_active') else datetime.now(TZ).date()
     closed = any(in_date_range(today, span) for span in bans)
@@ -1614,7 +1472,7 @@ async def show_species(q, kind, sid, context=None):
             rows.append([('🚨 Kontrole Dön', 'audit:hub'), ('⚖️ Yaptırım Ara', 'mode:penalty')])
     else:
         rows.append([('🖼️ Görsel Rehber', 'species:vis:menu'), ('↩️ Tür Menüsü', 'species:menu')])
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 def _first_article(value):
@@ -1636,10 +1494,10 @@ def _amount_for_length(amounts, length):
     return None, None
 
 
-async def show_penalty(q, pid, context):
+def show_penalty(q, pid, context):
     row = db.get_penalty(pid)
     if not row:
-        return await q.answer('Ceza kaydı bulunamadı.', show_alert=True)
+        return q.answer('Ceza kaydı bulunamadı.', show_alert=True)
     amounts = json.loads(row['amounts'] or '{}')
     text = f'⚖️ <b>{esc(row["violation"])}</b>\n'
     if row['option_text']:
@@ -1670,7 +1528,7 @@ async def show_penalty(q, pid, context):
         text += f'\n📝 {esc(row["notes"])}'
     text += (
         '\n\n⚠️ <i>Tutarlar ve Excel’deki el koyma/tekrar notları, yüklediğiniz ceza tablosundaki haliyle gösterilir. '
-        'Bot farklı katsayıları kendiliğinden üst üste çarpmaz. Somut olayın maddi unsurları ve asli mevzuat maddesi ayrıca kontrol edilmelidir.</i>'
+        'Sistem farklı katsayıları kendiliğinden üst üste çarpmaz. Somut olayın maddi unsurları ve asli mevzuat maddesi ayrıca kontrol edilmelidir.</i>'
     )
 
     source_buttons = []
@@ -1693,7 +1551,7 @@ async def show_penalty(q, pid, context):
         rows.append([('🚤 Gemi Boyuna Göre Göster',f'pen:length:{pid}')])
     rows.append([('📊 Excel Ham Satır', f'raw:{row["source_row"]}'), ('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
     rows.append([('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 def guide_ref_label(ref):
@@ -1711,7 +1569,7 @@ def guide_short(text, n=82):
     return s if len(s) <= n else s[:n-1].rstrip() + '…'
 
 
-async def guide_menu(q, context):
+def guide_menu(q, context):
     db.log(q.from_user.id, 'guide_menu')
     rows = []
     for i in range(0, len(GUIDE_LIST), 2):
@@ -1720,7 +1578,7 @@ async def guide_menu(q, context):
             line.append((f'🚤 {g["short_title"][:28]}', f'guide:open:{g["key"]}'))
         rows.append(line)
     rows.append([('🚨 Yönlendirilmiş Denetim', 'audit:start'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(
+    q.edit_message_text(
         '📋 <b>TEKNE TÜRÜNE GÖRE SAHA KILAVUZU</b>\n\n'
         'Kontrol edeceğiniz tekne/av yöntemi türünü seçin. Her föy yalnız o faaliyette sahada bakılması gereken '
         'belge, donanım, av aracı, yer-zaman ve ürün kontrollerini açar.\n\n'
@@ -1730,10 +1588,10 @@ async def guide_menu(q, context):
     )
 
 
-async def guide_open(q, context, key):
+def guide_open(q, context, key):
     g = GUIDES.get(key)
     if not g:
-        return await q.answer('Kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Kontrol föyü bulunamadı.', show_alert=True)
     context.user_data['guide_key'] = key
     measurements = ' · '.join(g.get('measure_fields') or [])
     text = (
@@ -1752,13 +1610,13 @@ async def guide_open(q, context, key):
         rows.append([('🚨 Denetime Dön', 'audit:hub'), ('↩️ Tekne Türleri', 'guide:menu')])
     else:
         rows.append([('↩️ Tekne Türleri', 'guide:menu'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def guide_view(q, context, key, page=0):
+def guide_view(q, context, key, page=0):
     g = GUIDES.get(key)
     if not g:
-        return await q.answer('Kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Kontrol föyü bulunamadı.', show_alert=True)
     context.user_data['guide_key'] = key
     per_page = 4
     total_pages = max(1, (len(g['rows']) + per_page - 1) // per_page)
@@ -1779,13 +1637,13 @@ async def guide_view(q, context, key, page=0):
         [('✅ İnteraktif Kontrolü Başlat', f'guide:start:{key}')],
         [('↩️ Föye Dön', f'guide:open:{key}')],
     ]
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def guide_refs(q, context, key):
+def guide_refs(q, context, key):
     g = GUIDES.get(key)
     if not g:
-        return await q.answer('Kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Kontrol föyü bulunamadı.', show_alert=True)
     rows = []
     buttons = []
     for source, article in g.get('refs') or []:
@@ -1794,7 +1652,7 @@ async def guide_refs(q, context, key):
     for i in range(0, len(buttons), 2):
         rows.append(buttons[i:i+2])
     rows.append([('↩️ Föye Dön', f'guide:open:{key}'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(
+    q.edit_message_text(
         f'📚 <b>{esc(g["short_title"])} — KAYNAK MADDELER</b>\n\n'
         'Föydeki kontrollerin dayandığı kaynak maddeler aşağıdadır. Somut uygunsuzlukta ilgili maddenin tam metni ve ceza tablosu birlikte doğrulanmalıdır.',
         parse_mode=ParseMode.HTML,
@@ -1802,26 +1660,26 @@ async def guide_refs(q, context, key):
     )
 
 
-async def guide_start(q, context, key):
+def guide_start(q, context, key):
     g = GUIDES.get(key)
     if not g:
-        return await q.answer('Kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Kontrol föyü bulunamadı.', show_alert=True)
     context.user_data['guide_key'] = key
     context.user_data['guide_answers'] = [None] * len(g['rows'])
     context.user_data['guide_measurements'] = {}
     context.user_data.pop('mode', None)
     db.log(q.from_user.id, 'guide_start', g['short_title'])
-    return await guide_render(q, context, 0)
+    return guide_render(q, context, 0)
 
 
-async def guide_render(q, context, idx):
+def guide_render(q, context, idx):
     g = guide_current(context)
     if not g:
-        return await q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
     if idx < 0:
         idx = 0
     if idx >= len(g['rows']):
-        return await guide_finish(q, context)
+        return guide_finish(q, context)
     item = g['rows'][idx]
     answers = context.user_data.get('guide_answers') or [None] * len(g['rows'])
     current = answers[idx] if idx < len(answers) else None
@@ -1849,13 +1707,13 @@ async def guide_render(q, context, idx):
     if nav:
         rows.append(nav)
     rows.append([('📊 Sonucu Gör / Bitir', 'guide:finish'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def guide_answer(q, context, idx, ans):
+def guide_answer(q, context, idx, ans):
     g = guide_current(context)
     if not g or ans not in {'ok','bad','skip'}:
-        return await q.answer('Kontrol oturumu bulunamadı.', show_alert=True)
+        return q.answer('Kontrol oturumu bulunamadı.', show_alert=True)
     answers = context.user_data.setdefault('guide_answers', [None] * len(g['rows']))
     while len(answers) < len(g['rows']):
         answers.append(None)
@@ -1864,8 +1722,8 @@ async def guide_answer(q, context, idx, ans):
     remember_draft(q, context, 'guide')
     next_idx = idx + 1
     if next_idx >= len(g['rows']):
-        return await guide_finish(q, context)
-    return await guide_render(q, context, next_idx)
+        return guide_finish(q, context)
+    return guide_render(q, context, next_idx)
 
 
 def guide_result_parts(context):
@@ -1903,24 +1761,24 @@ def remember_draft(q, context, kind):
         pass
 
 
-async def resume_draft(q, context):
+def resume_draft(q, context):
     """Reload the stored draft and drop the inspector back where they stopped."""
     row = db.open_draft(q.from_user.id)
     if not row:
-        return await q.answer('Yar\u0131da kalan denetim yok.', show_alert=True)
+        return q.answer('Yar\u0131da kalan denetim yok.', show_alert=True)
     context.user_data.clear()
     context.user_data.update(db.load_state(row))
     if row['kind'] == 'guide' and guide_current(context):
         answers = context.user_data.get('guide_answers') or []
         idx = next((i for i, a in enumerate(answers) if a is None), 0)
-        return await guide_render(q, context, idx)
-    return await audit_hub_edit(q, context)
+        return guide_render(q, context, idx)
+    return audit_hub_edit(q, context)
 
 
-async def guide_finish(q, context):
+def guide_finish(q, context):
     g, ok, bad, unchecked = guide_result_parts(context)
     if not g:
-        return await q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
     measurements = context.user_data.get('guide_measurements') or {}
     text = (
         f'📊 <b>{esc(g["short_title"])} — KONTROL SONUCU</b>\n\n'
@@ -1958,20 +1816,20 @@ async def guide_finish(q, context):
                              dict(context.user_data), '')
     except Exception:
         pass
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def guide_bad_menu(q, context):
+def guide_bad_menu(q, context):
     g, _, bad, _ = guide_result_parts(context)
     if not g:
-        return await q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
+        return q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
     if not bad:
-        return await q.answer('Uygunsuz işaretlenmiş kontrol yok.', show_alert=True)
+        return q.answer('Uygunsuz işaretlenmiş kontrol yok.', show_alert=True)
     rows = []
     for idx, item in bad:
         rows.append([(f'⚖️ {idx+1}. {guide_short(item["text"], 38)}', f'guide:pen:{idx}')])
     rows.append([('↩️ Sonuca Dön', 'guide:result'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(
+    q.edit_message_text(
         f'⚖️ <b>{esc(g["short_title"])} — UYGUNSUZLUKLAR</b>\n\n'
         'Ceza/yaptırım tablosunda kontrol etmek istediğiniz uygunsuzluğu seçin.',
         parse_mode=ParseMode.HTML,
@@ -1979,10 +1837,10 @@ async def guide_bad_menu(q, context):
     )
 
 
-async def guide_penalty_search(q, context, idx):
+def guide_penalty_search(q, context, idx):
     g, _, _, _ = guide_result_parts(context)
     if not g or idx < 0 or idx >= len(g['rows']):
-        return await q.answer('Kontrol maddesi bulunamadı.', show_alert=True)
+        return q.answer('Kontrol maddesi bulunamadı.', show_alert=True)
     item = g['rows'][idx]
     query = item.get('penalty_query') or g['short_title']
     results = db.search_penalties(query, LIMIT)
@@ -1996,7 +1854,7 @@ async def guide_penalty_search(q, context, idx):
         for r in db.search_raw(query, 4):
             rows.append([(f'📊 Excel satır {r["source_row"]}', f'raw:{r["source_row"]}')])
     rows.append([('📚 İlgili Madde', f'art:{item["ref"][0]}:{item["ref"][1]}'), ('↩️ Uygunsuzluklar', 'guide:badmenu')])
-    await q.edit_message_text(
+    q.edit_message_text(
         f'⚖️ <b>YAPTIRIM ARAMASI</b>\n\n'
         f'Kontrol maddesi: {esc(guide_short(item["text"], 150))}\n\n'
         f'Arama anahtarı: <code>{esc(query)}</code>\n'
@@ -2006,30 +1864,32 @@ async def guide_penalty_search(q, context, idx):
     )
 
 
-async def guide_measure_start(q, context):
+def guide_measure_start(q, context):
     g = guide_current(context)
     if not g:
-        return await q.answer('Önce bir tekne kontrol föyü seçin.', show_alert=True)
+        return q.answer('Önce bir tekne kontrol föyü seçin.', show_alert=True)
     context.user_data.setdefault('guide_measurements', {})
     context.user_data['guide_measure_idx'] = 0
     context.user_data['mode'] = 'guide_measure'
-    return await guide_measure_prompt_q(q, context)
+    return guide_measure_prompt_q(q, context)
 
 
-async def guide_measure_prompt_q(q, context):
+def guide_measure_prompt_q(q, context):
     g = guide_current(context)
     idx = int(context.user_data.get('guide_measure_idx', 0))
-    fields = g.get('measure_fields') if g else []
+    # Some guides define no measure_fields at all; the Telegram bot crashed here for them.
+    fields = (g.get('measure_fields') or []) if g else []
     if not g or idx >= len(fields):
         context.user_data.pop('mode', None)
-        return await q.edit_message_text(
-            '📐 Ölçüm/kayıt alanları tamamlandı.',
-            reply_markup=kb([[('📊 Kontrol Sonucunu Aç', 'guide:result'), ('↩️ Föye Dön', f'guide:open:{g["key"]}')]])
+        back = [('↩️ Föye Dön', f'guide:open:{g["key"]}')] if g else [('📋 Tekne Türü Kılavuzları', 'guide:menu')]
+        return q.edit_message_text(
+            '📐 Ölçüm/kayıt alanları tamamlandı.' if fields else '📐 Bu kontrol föyünde ölçüm/kayıt alanı tanımlı değil.',
+            reply_markup=kb([[('📊 Kontrol Sonucunu Aç', 'guide:result')] + back])
         )
     field = fields[idx]
     old = (context.user_data.get('guide_measurements') or {}).get(field)
     extra = f'\nMevcut değer: <b>{esc(old)}</b>' if old else ''
-    await q.edit_message_text(
+    q.edit_message_text(
         f'📐 <b>{esc(g["short_title"])} — ÖLÇÜM/KAYIT</b>\n\n'
         f'{idx+1}/{len(fields)} — <b>{esc(field)}</b>{extra}\n\n'
         'Değeri mesaj olarak yazın. Birim alan adında belirtilmemişse kısa açıklama da yazabilirsiniz.',
@@ -2038,30 +1898,30 @@ async def guide_measure_prompt_q(q, context):
     )
 
 
-async def guide_measure_skip(q, context):
+def guide_measure_skip(q, context):
     g = guide_current(context)
     if not g:
-        return await q.answer('Aktif föy bulunamadı.', show_alert=True)
+        return q.answer('Aktif föy bulunamadı.', show_alert=True)
     idx = int(context.user_data.get('guide_measure_idx', 0))
     fields = g.get('measure_fields') or []
     if idx < len(fields):
         context.user_data.setdefault('guide_measurements', {})[fields[idx]] = 'Kontrol edilmedi'
     context.user_data['guide_measure_idx'] = idx + 1
-    return await guide_measure_prompt_q(q, context)
+    return guide_measure_prompt_q(q, context)
 
 
-async def guide_from_gear(q, context):
+def guide_from_gear(q, context):
     if context.user_data.get('audit_activity') == 'amateur':
-        return await guide_open(q, context, '14_Amator_Tekne')
+        return guide_open(q, context, '14_Amator_Tekne')
     gear = context.user_data.get('audit_gear')
     keys = GUIDE_GEAR_MAP.get(gear, [])
     if not keys:
-        return await guide_menu(q, context)
+        return guide_menu(q, context)
     if len(keys) == 1:
-        return await guide_open(q, context, keys[0])
+        return guide_open(q, context, keys[0])
     rows = [[(f'🚤 {GUIDES[k]["short_title"][:35]}', f'guide:open:{k}')] for k in keys]
     rows.append([('↩️ Av Aracı Seçimine Dön', 'audit:gearmenu'), ('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(
+    q.edit_message_text(
         f'📋 <b>{esc(str(gear).title())} — HANGİ FAALİYET?</b>\n\n'
         'Bu av aracı birden fazla özel faaliyette kullanılabildiği için uygun kontrol föyünü seçin.',
         parse_mode=ParseMode.HTML,
@@ -2101,11 +1961,11 @@ def audit_step(context, n):
     return out + HR + '\n\n'
 
 
-async def audit_start(q, context):
+def audit_start(q, context):
     context.user_data.clear()
     context.user_data['guided_active'] = True
     db.log(q.from_user.id, 'audit_start')
-    await q.edit_message_text(
+    q.edit_message_text(
         audit_step(context, 1) +
         'Önce <b>deniz bölgesini</b> seçin. Sonraki sorular seçtiğiniz bölgeye göre daraltılacaktır.',
         parse_mode=ParseMode.HTML,
@@ -2119,8 +1979,8 @@ async def audit_start(q, context):
     )
 
 
-async def audit_choose_activity(q, context):
-    await q.edit_message_text(
+def audit_choose_activity(q, context):
+    q.edit_message_text(
         audit_step(context, 2) +
         'Kontrol edilen faaliyet hangi kapsamda?',
         parse_mode=ParseMode.HTML,
@@ -2131,8 +1991,8 @@ async def audit_choose_activity(q, context):
     )
 
 
-async def audit_choose_length(q, context):
-    await q.edit_message_text(
+def audit_choose_length(q, context):
+    q.edit_message_text(
         audit_step(context, 3) +
         'Gemi/tekne durumunu seçin. Boy grubu; BAGİS, donanım ve yaptırım değerlendirmesinde kullanılacaktır.',
         parse_mode=ParseMode.HTML,
@@ -2146,8 +2006,8 @@ async def audit_choose_length(q, context):
     )
 
 
-async def audit_choose_date(q, context):
-    await q.edit_message_text(
+def audit_choose_date(q, context):
+    q.edit_message_text(
         audit_step(context, 4) +
         'Olay veya kontrol tarihi nedir? Tarih; kapalı dönem ve tür zaman yasaklarının değerlendirilmesinde kullanılır.',
         parse_mode=ParseMode.HTML,
@@ -2158,7 +2018,7 @@ async def audit_choose_date(q, context):
     )
 
 
-async def audit_choose_subject(q, context):
+def audit_choose_subject(q, context):
     remember_draft(q, context, 'audit')
     activity = context.user_data.get('audit_activity')
     d = audit_date(context)
@@ -2183,10 +2043,10 @@ async def audit_choose_subject(q, context):
             [('📦 Satış / Nakil', 'audit:subject:transport'), ('🔎 Ticari Nitelik Kontrolü', 'classify:start')],
         ]
     rows += [[('↩️ Tarihi Değiştir', 'audit:datemenu'), ('🏠 Ana Menü', 'menu')]]
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def audit_choose_gear(q, context):
+def audit_choose_gear(q, context):
     activity = context.user_data.get('audit_activity')
     if activity == 'commercial':
         rows = [
@@ -2206,7 +2066,7 @@ async def audit_choose_gear(q, context):
             [('Diğer', 'audit:gear:diğer')],
         ]
     rows += [[('↩️ Konuyu Değiştir', 'audit:subjectmenu'), ('🏠 Ana Menü', 'menu')]]
-    await q.edit_message_text(
+    q.edit_message_text(
         audit_step(context, 6) +
         'Kullanılan veya kontrol edilen <b>av aracı / yöntemi</b> seçin.',
         parse_mode=ParseMode.HTML,
@@ -2214,14 +2074,14 @@ async def audit_choose_gear(q, context):
     )
 
 
-async def audit_after_gear(q, context):
+def audit_after_gear(q, context):
     remember_draft(q, context, 'audit')
     gear = context.user_data.get('audit_gear')
     flags = build_context_flags(context)
     warning = ''
     if flags:
         warning = '\n\n' + '\n'.join(f'🔴 {esc(x["tag"])}' for x in flags[:3])
-    await q.edit_message_text(
+    q.edit_message_text(
         audit_step(context, 7) +
         f'Kontrol edilen ürün/tür belli mi?{warning}',
         parse_mode=ParseMode.HTML,
@@ -2234,7 +2094,7 @@ async def audit_after_gear(q, context):
     )
 
 
-async def audit_hub_edit(q, context):
+def audit_hub_edit(q, context):
     remember_draft(q, context, 'audit')
     activity = context.user_data.get('audit_activity')
     gear = context.user_data.get('audit_gear')
@@ -2257,7 +2117,7 @@ async def audit_hub_edit(q, context):
     if activity == 'amateur':
         rows.append([('🔎 Amatör → Ticari Nitelik', 'classify:start')])
     rows += [[('🏠 Ana Menü', 'menu')]]
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 def _q(text, expected, ref, tag, *, procedure=False, penalty_query=None):
@@ -2401,18 +2261,18 @@ def build_quick_questions(context):
     return qs
 
 
-async def audit_quick_start(q, context):
+def audit_quick_start(q, context):
     questions = build_quick_questions(context)
     context.user_data['quick_questions'] = questions
     context.user_data['quick_answers'] = []
     context.user_data['context_flags'] = build_context_flags(context)
-    return await audit_quick_render(q, context, 0)
+    return audit_quick_render(q, context, 0)
 
 
-async def audit_quick_render(q, context, idx):
+def audit_quick_render(q, context, idx):
     qs = context.user_data.get('quick_questions') or []
     if idx >= len(qs):
-        return await audit_quick_finish(q, context)
+        return audit_quick_finish(q, context)
     item = qs[idx]
     subject = SUBJECT_LABEL.get(context.user_data.get('audit_subject'), 'Denetim')
     text = (
@@ -2423,22 +2283,22 @@ async def audit_quick_render(q, context, idx):
         f'{HR}\n'
         '<i>“Bilinmiyor” seçeneği ihlal kararı üretmez; kontrol edilmesi gereken eksik unsur olarak sonuçta gösterilir.</i>'
     )
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([
         [('✅ Evet', f'audit:quick:ans:{idx}:yes'), ('❌ Hayır', f'audit:quick:ans:{idx}:no')],
         [('❔ Bilinmiyor / Kontrol Edilmedi', f'audit:quick:ans:{idx}:unknown')],
         [('📚 İlgili Madde', f'art:{item["ref"][0]}:{item["ref"][1]}'), ('🏠 Ana Menü', 'menu')],
     ]))
 
 
-async def audit_quick_answer(q, context, idx, ans):
+def audit_quick_answer(q, context, idx, ans):
     qs = context.user_data.get('quick_questions') or []
     if idx >= len(qs):
-        return await q.answer('Kontrol oturumu bulunamadı.', show_alert=True)
+        return q.answer('Kontrol oturumu bulunamadı.', show_alert=True)
     answers = context.user_data.setdefault('quick_answers', [])
     while len(answers) <= idx:
         answers.append(None)
     answers[idx] = ans
-    return await audit_quick_render(q, context, idx + 1)
+    return audit_quick_render(q, context, idx + 1)
 
 
 def quick_result_parts(context):
@@ -2554,7 +2414,7 @@ def ai_scenario_from_context(context):
     return '\n\n'.join(parts)
 
 
-async def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_analysis'):
+def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_analysis'):
     """The legal-assessment pipeline, shared by the free-text question and the
     "bu denetimi değerlendir" button.
 
@@ -2565,7 +2425,7 @@ async def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_ana
     """
     wait_left = ai_rate_limit_remaining(uid)
     if wait_left > 0:
-        return await show_first(
+        return show_first(
             header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n'
             + badge('warn', 'Kotanız doldu', f'Lütfen {wait_left} saniye sonra tekrar deneyin.'),
             parse_mode=ParseMode.HTML,
@@ -2574,34 +2434,30 @@ async def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_ana
     ai_rate_limit_mark(uid)
 
     db.log(uid, log_action, scenario[:120])
-    await show_first(
+    show_first(
         header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Markdown belgeleri taranıyor, 20-45 sn sürebilir…'),
         parse_mode=ParseMode.HTML,
     )
     try:
-        _, html_text = await ai_analyze(scenario)
+        _, html_text = ai_analyze(scenario)
     except AIError as e:
         fail = (header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n'
                 + badge('stop', 'Tamamlanamadı', esc(str(e))))
-        return await ai_show(context, chat_id, fail, parse_mode=ParseMode.HTML,
+        return ai_show(context, chat_id, fail, parse_mode=ParseMode.HTML,
                              reply_markup=kb([[('🔁 Tekrar Dene', 'ai:start')],
                                               [('🏠 Ana Menü', 'menu')]]))
     body = header('⚖️', 'HUKUKİ DEĞERLENDİRME') + '\n' + HR + '\n\n' + html_text
-    chunks = tg_chunks(body)
     tail_rows = [[('🔁 Yeni Değerlendirme', 'ai:start'), ('🏠 Ana Menü', 'menu')]]
-    for i, chunk in enumerate(chunks):
-        last = i == len(chunks) - 1
-        await ai_show(context, chat_id, chunk, parse_mode=ParseMode.HTML, new=(i > 0),
-                      reply_markup=kb(tail_rows) if last else None)
+    ai_show(context, chat_id, body, parse_mode=ParseMode.HTML, reply_markup=kb(tail_rows))
 
 
-async def ai_audit_preview(q, context):
+def ai_audit_preview(q, context):
     """Show what would be sent for the current inspection, then let the
     inspector confirm. The preview matters because the assessment is
     rate-limited: it should be obvious what the one request will ask."""
     scenario = ai_scenario_from_context(context)
     if not scenario:
-        return await q.answer('Değerlendirilecek denetim bilgisi bulunamadı.', show_alert=True)
+        return q.answer('Değerlendirilecek denetim bilgisi bulunamadı.', show_alert=True)
     context.user_data['ai_audit_scenario'] = scenario
     preview = esc(scenario.split('\n\nYukarıdaki denetimi')[0])
     text = (
@@ -2611,7 +2467,7 @@ async def ai_audit_preview(q, context):
         + f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir.</b>\n\n'
         + '📄 Yanıt yalnızca sisteme eklenen Markdown belgelerindeki bilgilere dayanır.'
     )
-    return await q.edit_message_text(
+    return q.edit_message_text(
         text, parse_mode=ParseMode.HTML,
         reply_markup=kb([
             [('⚖️ Değerlendirmeyi Başlat', 'ai:audit:run')],
@@ -2620,20 +2476,20 @@ async def ai_audit_preview(q, context):
     )
 
 
-async def ai_audit_run(q, context):
+def ai_audit_run(q, context):
     scenario = context.user_data.get('ai_audit_scenario') or ai_scenario_from_context(context)
     if not scenario:
-        return await q.answer('Değerlendirilecek denetim bilgisi bulunamadı.', show_alert=True)
+        return q.answer('Değerlendirilecek denetim bilgisi bulunamadı.', show_alert=True)
     chat_id = q.message.chat_id
 
-    async def show_first(text, **kwargs):
-        return await ai_show(context, chat_id, text, **kwargs)
+    def show_first(text, **kwargs):
+        return ai_show(context, chat_id, text, **kwargs)
 
-    return await ai_run(context, chat_id, q.from_user.id, scenario, show_first,
+    return ai_run(context, chat_id, q.from_user.id, scenario, show_first,
                         log_action='ai_audit')
 
 
-async def audit_quick_finish(q, context):
+def audit_quick_finish(q, context):
     flags, possible, unknown, procedure = quick_result_parts(context)
 
     activity = context.user_data.get('audit_activity')
@@ -2691,7 +2547,7 @@ async def audit_quick_finish(q, context):
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Yeni Denetim', 'audit:start'), ('🏠 Ana Menü', 'menu')])
     db.log(q.from_user.id, 'guided_audit', ', '.join([x['tag'] for x in flags + possible]))
-    await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 CLASSIFICATION_QUESTIONS = [
@@ -2705,17 +2561,17 @@ CLASSIFICATION_QUESTIONS = [
 ]
 
 
-async def amateur_classification_start(q, context):
+def amateur_classification_start(q, context):
     if context.user_data.get('audit_activity') != 'amateur':
-        return await q.answer('Bu kontrol 6/2 Tebliğ kapsamındaki amatör faaliyet için kullanılır.', show_alert=True)
+        return q.answer('Bu kontrol 6/2 Tebliğ kapsamındaki amatör faaliyet için kullanılır.', show_alert=True)
     context.user_data['classify_answers'] = []
-    return await amateur_classification_render(q, context, 0)
+    return amateur_classification_render(q, context, 0)
 
 
-async def amateur_classification_render(q, context, idx):
+def amateur_classification_render(q, context, idx):
     if idx >= len(CLASSIFICATION_QUESTIONS):
-        return await amateur_classification_finish(q, context)
-    await q.edit_message_text(
+        return amateur_classification_finish(q, context)
+    q.edit_message_text(
         f'🔎 <b>AMATÖR → TİCARİ NİTELİK KONTROLÜ</b> — {idx+1}/{len(CLASSIFICATION_QUESTIONS)}\n\n'
         f'{esc(CLASSIFICATION_QUESTIONS[idx])}\n\n'
         '<i>6/2 Tebliğ Madde 19 esas alınır. Bir “Evet” yanıtı ticari nitelik değerlendirmesini tetikleyebilir.</i>',
@@ -2728,15 +2584,15 @@ async def amateur_classification_render(q, context, idx):
     )
 
 
-async def amateur_classification_answer(q, context, idx, ans):
+def amateur_classification_answer(q, context, idx, ans):
     answers=context.user_data.setdefault('classify_answers',[])
     while len(answers)<=idx:
         answers.append(None)
     answers[idx]=ans
-    return await amateur_classification_render(q, context, idx+1)
+    return amateur_classification_render(q, context, idx+1)
 
 
-async def amateur_classification_finish(q, context):
+def amateur_classification_finish(q, context):
     answers=context.user_data.get('classify_answers') or []
     yes=[i for i,a in enumerate(answers) if a=='yes']
     unknown=[i for i,a in enumerate(answers) if a in {None,'unknown'}]
@@ -2757,14 +2613,14 @@ async def amateur_classification_finish(q, context):
         text+='\n\n🟡 <b>Kontrol edilmemiş ölçütler:</b>\n'+''.join(f'• {esc(CLASSIFICATION_QUESTIONS[i])}\n' for i in unknown)
     text+='\n\n⚠️ <i>Yaptırım için olayın hangi bent kapsamında olduğuna göre Kanun/Excel ceza kartı ayrıca açılmalıdır.</i>'
     db.log(q.from_user.id,'amateur_classification',f'yes={len(yes)}, unknown={len(unknown)}')
-    await q.edit_message_text(text,parse_mode=ParseMode.HTML,reply_markup=kb([
+    q.edit_message_text(text,parse_mode=ParseMode.HTML,reply_markup=kb([
         [('📚 6/2 Md.19','art:62:19'),('⚖️ Yaptırım Ara','mode:penalty')],
         [('⚖️ Bu Denetimi Değerlendir', 'ai:audit')],
         [('🚨 Kontrole Dön','audit:hub'),('🏠 Ana Menü','menu')],
     ]))
 
 
-async def audit_gear_result(q, context):
+def audit_gear_result(q, context):
     gear = context.user_data['audit_gear']
     region = context.user_data.get('audit_region')
     activity = context.user_data.get('audit_activity')
@@ -2828,49 +2684,46 @@ async def audit_gear_result(q, context):
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🚨 Kontrole Dön','audit:hub'),('⚖️ Yaptırım Ara', 'mode:penalty')])
     rows.append([('🏠 Ana Menü', 'menu')])
-    await q.edit_message_text(text + '📚 İlgili kaynak maddeleri:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text + '📚 İlgili kaynak maddeleri:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
-async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await guard(update):
-        return
+def text_handler(update, context):
     uid = update.effective_user.id
     text = update.effective_message.text.strip()
     mode = context.user_data.get('mode')
-    await cleanup_extra_messages(context, update.effective_chat.id)
 
     if mode == 'ai_analysis':
         context.user_data.pop('mode', None)
 
-        async def show_first(body, **kwargs):
-            return await send_or_edit(update, context, body, **kwargs)
+        def show_first(body, **kwargs):
+            return send_or_edit(update, context, body, **kwargs)
 
-        await ai_run(context, update.effective_chat.id, uid, text, show_first)
+        ai_run(context, update.effective_chat.id, uid, text, show_first)
         return
 
     if mode == 'guide_measure':
         g = guide_current(context)
         if not g:
             context.user_data.pop('mode', None)
-            return await send_or_edit(update, context, 'Aktif kontrol föyü bulunamadı.', reply_markup=kb([[('📋 Tekne Türü Kılavuzları', 'guide:menu')]]))
+            return send_or_edit(update, context, 'Aktif kontrol föyü bulunamadı.', reply_markup=kb([[('📋 Tekne Türü Kılavuzları', 'guide:menu')]]))
         idx = int(context.user_data.get('guide_measure_idx', 0))
         fields = g.get('measure_fields') or []
         if idx >= len(fields):
             context.user_data.pop('mode', None)
-            return await send_or_edit(update, context, 'Ölçüm alanları tamamlandı.', reply_markup=kb([[('📊 Sonucu Aç', 'guide:result')]]))
+            return send_or_edit(update, context, 'Ölçüm alanları tamamlandı.', reply_markup=kb([[('📊 Sonucu Aç', 'guide:result')]]))
         field = fields[idx]
         context.user_data.setdefault('guide_measurements', {})[field] = text
         idx += 1
         context.user_data['guide_measure_idx'] = idx
         if idx >= len(fields):
             context.user_data.pop('mode', None)
-            return await send_or_edit(update, context, 
+            return send_or_edit(update, context, 
                 '📐 <b>Ölçüm/kayıt alanları kaydedildi.</b>',
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb([[('📊 Kontrol Sonucunu Aç', 'guide:result'), ('↩️ Föye Dön', f'guide:open:{g["key"]}')]])
             )
         next_field = fields[idx]
-        return await send_or_edit(update, context, 
+        return send_or_edit(update, context, 
             f'📐 {idx+1}/{len(fields)} — <b>{esc(next_field)}</b>\n\nDeğeri yazın.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('⏭️ Kontrol Edilmedi / Atla', 'guide:measure:skip')], [('📊 Sonuca Dön', 'guide:result')]])
@@ -2881,11 +2734,11 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             length=float(text.replace(',','.'))
             if length<0: raise ValueError
         except ValueError:
-            return await send_or_edit(update, context, 'Gemi boyunu sayı olarak yazın. Örnek: 17.4')
+            return send_or_edit(update, context, 'Gemi boyunu sayı olarak yazın. Örnek: 17.4')
         pid=context.user_data.get('penalty_pid')
         context.user_data['audit_length']=length
         context.user_data.pop('mode',None)
-        return await send_or_edit(update, context, f'🚤 Gemi boyu <b>{length:g} m</b> olarak kaydedildi. Ceza kartında Exceldeki uygun boy satırı öne çıkarılacak.',parse_mode=ParseMode.HTML,reply_markup=kb([[('⚖️ Ceza Kartını Aç',f'pen:{pid}')],[('🏠 Ana Menü','menu')]]))
+        return send_or_edit(update, context, f'🚤 Gemi boyu <b>{length:g} m</b> olarak kaydedildi. Ceza kartında Exceldeki uygun boy satırı öne çıkarılacak.',parse_mode=ParseMode.HTML,reply_markup=kb([[('⚖️ Ceza Kartını Aç',f'pen:{pid}')],[('🏠 Ana Menü','menu')]]))
 
     if mode == 'audit_length_exact':
         try:
@@ -2893,7 +2746,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if length < 0:
                 raise ValueError
         except ValueError:
-            return await send_or_edit(update, context, 'Gemi boyunu metre olarak sayı biçiminde yazın. Örnek: 17.4')
+            return send_or_edit(update, context, 'Gemi boyunu metre olarak sayı biçiminde yazın. Örnek: 17.4')
         context.user_data['audit_length_exact'] = length
         context.user_data['audit_length'] = length
         if length == 0:
@@ -2905,7 +2758,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             context.user_data['audit_length_band'] = 'ge22'
         context.user_data.pop('mode', None)
-        return await send_or_edit(update, context, 
+        return send_or_edit(update, context, 
             f'🚤 Tam boy <b>{length:g} m</b> olarak kaydedildi.\n\n4. adım: olay/kontrol tarihini seçin.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('📅 Bugün', 'audit:date:today'), ('🗓 Başka tarih', 'audit:date:other')], [('🏠 Ana Menü', 'menu')]])
@@ -2920,7 +2773,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except ValueError:
                 pass
         if parsed is None:
-            return await send_or_edit(update, context, 'Tarihi GG.AA.YYYY biçiminde yazın. Örnek: 20.05.2026')
+            return send_or_edit(update, context, 'Tarihi GG.AA.YYYY biçiminde yazın. Örnek: 20.05.2026')
         context.user_data['audit_date'] = parsed.isoformat()
         context.user_data.pop('mode', None)
         activity = context.user_data.get('audit_activity')
@@ -2933,7 +2786,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         elif activity == 'amateur':
             rows[1].append(('🔎 Ticari Nitelik Kontrolü', 'classify:start'))
         rows.append([('🏠 Ana Menü', 'menu')])
-        return await send_or_edit(update, context, 
+        return send_or_edit(update, context, 
             f'📅 Tarih <b>{parsed.strftime("%d.%m.%Y")}</b> olarak kaydedildi.\n\n5. adım: denetimin ana konusunu seçin.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb(rows)
@@ -2954,12 +2807,12 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'species_search', text)
-        return await send_or_edit(update, context, msg, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        return send_or_edit(update, context, msg, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode == 'source_search':
         source = context.user_data.get('source')
         if text.isdigit() and db.get_article(source, int(text)):
-            return await send_or_edit(update, context, 
+            return send_or_edit(update, context, 
                 f'📚 {SRC_LABEL.get(source, source)} Madde {text}',
                 reply_markup=kb([[('Maddeyi Aç', f'art:{source}:{text}')], [('↩️ Ana Menü', 'menu')]]),
             )
@@ -2967,7 +2820,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         rows = [[(f'Md.{r["article"]} {r["title"][:35]}', f'art:{source}:{r["article"]}')] for r in results]
         rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'source_search', text)
-        return await send_or_edit(update, context, f'📚 <b>{esc(text)}</b> — {len(results)} madde', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        return send_or_edit(update, context, f'📚 <b>{esc(text)}</b> — {len(results)} madde', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode == 'penalty':
         results = db.search_penalties(text, LIMIT)
@@ -2982,7 +2835,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 rows.append([(f'📊 Excel satır {r["source_row"]}', f'raw:{r["source_row"]}')])
         rows.append([('📚 Mevzuatta da Ara', 'mode:lawsearch'), ('↩️ Ana Menü', 'menu')])
         db.log(uid, 'penalty_search', text)
-        return await send_or_edit(update, context, 
+        return send_or_edit(update, context, 
             f'⚖️ <b>{esc(text)}</b> — {len(results)} yapılandırılmış yaptırım sonucu\n\n<i>İçsuya özgü ceza kayıtları filtrelenmiştir. Sonuç bulunmazsa Excel ham satır araması gösterilir.</i>',
             parse_mode=ParseMode.HTML,
             reply_markup=kb(rows),
@@ -2996,7 +2849,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             rows.append([(f'📚 {SRC_LABEL.get(r["source"], r["source"])} Md.{r["article"]} {r["title"][:22]}', f'art:{r["source"]}:{r["article"]}')])
         rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'legal_search', text)
-        return await send_or_edit(update, context, f'🔎 <b>{esc(text)}</b> — deniz/genel kaynak eşleşmeleri', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        return send_or_edit(update, context, f'🔎 <b>{esc(text)}</b> — deniz/genel kaynak eşleşmeleri', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode is None:
         # Doğal Dil / Genel Arama
@@ -3039,7 +2892,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 counts.append(f'📚 Mevzuat {len(results_articles)}')
             body = header('🔍', f'“{text}”', 'Karma arama sonuçları')
             body += '\n' + HR + '\n' + '  ·  '.join(counts)
-            return await send_or_edit(update, context,
+            return send_or_edit(update, context,
                 body,
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb(rows)
@@ -3054,7 +2907,7 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 '• Tür adını tek başına yazın — <code>lüfer</code>\n'
                 '• Aşağıdaki menülerden ilerleyin'
             )
-            return await send_or_edit(update, context,
+            return send_or_edit(update, context,
                 body,
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb([
@@ -3063,12 +2916,12 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 ])
             )
 
-    await send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
+    send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
 
 
-async def show_admin_panel(q, section='main'):
+def show_admin_panel(q, section='main'):
     if q.from_user.id not in ADMIN_IDS:
-        return await q.answer('Yönetici yetkisi gerekli.', show_alert=True)
+        return q.answer('Yönetici yetkisi gerekli.', show_alert=True)
     
     if section == 'main':
         users, count, rows = db.admin_stats()
@@ -3086,9 +2939,10 @@ async def show_admin_panel(q, section='main'):
         rows_kb = [
             [('📊 Denetim & Arama Dağılımı', 'admin:stats:vessels')],
             [('👥 Personel Faaliyetleri', 'admin:stats:users'), ('📋 Son 30 Log', 'admin:stats:logs')],
+            [('👤 Kişiler / Şifreler', 'web:people')],
             [('🏠 Ana Menü', 'menu')]
         ]
-        return await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
+        return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
     elif section == 'vessels':
         guides, searches = db.admin_audit_activity()
@@ -3108,7 +2962,7 @@ async def show_admin_panel(q, section='main'):
             text += '• <i>Henüz arama kaydı bulunmuyor.</i>\n'
             
         rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
-        return await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
+        return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
     elif section == 'users':
         user_rows = db.admin_user_activity()
@@ -3123,7 +2977,7 @@ async def show_admin_panel(q, section='main'):
             text += f'   🕒 Son Görülme: <i>{last_seen}</i>\n\n'
             
         rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
-        return await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
+        return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
     elif section == 'logs':
         _, _, rows = db.admin_stats()
@@ -3135,71 +2989,4 @@ async def show_admin_panel(q, section='main'):
             text += f'• <code>{time_str}</code> <b>{esc(dname)}</b> → {esc(r["action"])}{q_info}\n'
             
         rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
-        return await q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
-
-
-async def admin_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await guard(update):
-        return
-    if update.effective_user.id not in ADMIN_IDS:
-        return await send_or_edit(update, context, 'Yönetici yetkisi gerekli.')
-    users, count, rows = db.admin_stats()
-    text = (
-        f'🔐 <b>YÖNETİCİ VE DENETİM PANELİ</b>\n\n'
-        f'👥 <b>Kayıtlı Kullanıcı Sayısı:</b> {users}\n'
-        f'⚡ <b>Toplam İşlem & Sorgu:</b> {count}\n\n'
-        f'Detaylı istatistikleri ve logları görüntülemek için aşağıdaki menüyü kullanabilirsiniz:'
-    )
-    rows_kb = [
-        [InlineKeyboardButton('📊 Denetim & Arama Dağılımı', callback_data='admin:stats:vessels')],
-        [InlineKeyboardButton('👥 Personel Faaliyetleri', callback_data='admin:stats:users'), InlineKeyboardButton('📋 Son Loglar', callback_data='admin:stats:logs')],
-        [InlineKeyboardButton('🏠 Ana Menü', callback_data='menu')]
-    ]
-    await send_or_edit(update, context, text, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(rows_kb))
-
-
-async def id_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # Deliberately available even before whitelisting so an operator can send their own Telegram ID to the administrator.
-    await send_or_edit(update, context, f'🆔 Telegram kullanıcı ID’niz: <code>{update.effective_user.id}</code>', parse_mode=ParseMode.HTML)
-
-
-async def post_init(application):
-    """Populate Telegram's "/" command menu so the commands are discoverable."""
-    await application.bot.set_my_commands([
-        BotCommand('start', 'Ana menüyü aç'),
-        BotCommand('menu', 'Ana menüyü aç'),
-        BotCommand('id', 'Telegram ID’mi göster'),
-    ])
-
-
-
-async def error_handler(update, context):
-    import traceback
-    import logging
-    logger = logging.getLogger(__name__)
-    logger.error("Hata yakalandı: %s", context.error)
-    logger.error(traceback.format_exc())
-    try:
-        if update and update.effective_message:
-            await send_or_edit(update, context, 
-                '⚠️ Bir hata oluştu. Lütfen tekrar deneyin veya /menu ile ana menüye dönün.',
-            )
-    except Exception:
-        pass
-
-def main():
-    db.init_db()
-    app = Application.builder().token(TOKEN).post_init(post_init).build()
-    app.add_handler(CommandHandler('start', start))
-    app.add_handler(CommandHandler('menu', start))
-    app.add_handler(CommandHandler('admin', admin_cmd))
-    app.add_handler(CommandHandler('istatistik', admin_cmd))
-    app.add_handler(CommandHandler('id', id_cmd))
-    app.add_handler(CallbackQueryHandler(callback))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, text_handler))
-    app.add_error_handler(error_handler)
-    app.run_polling(drop_pending_updates=True)
-
-
-if __name__ == '__main__':
-    main()
+        return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))

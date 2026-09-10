@@ -1,6 +1,6 @@
 name: "Su Ürünleri Denetim Asistanı"
-description: "Deniz görev alanı su ürünleri denetimi rehberi - Telegram Bot"
-version: "5.9.4"
+description: "Deniz görev alanı su ürünleri denetimi rehberi — kullanıcı adı ve şifreyle açılan web sitesi"
+version: "6.0.0"
 slug: "su_urunleri_bot"
 url: "https://github.com/labintatlos/su-urunleri-bot"
 init: false
@@ -13,24 +13,34 @@ arch:
 startup: application
 boot: auto
 host_network: false
+
+# Ayni site Home Assistant yan menusunde de acilir; orada kimlik HA oturumundan
+# gelir. Ingress portu disariya acilmaz.
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:fish
+panel_title: Su Ürünleri
+
+# 8101 kullanici adi/sifreyle acilan web sitesidir ve Ingress basliklarina hic
+# guvenmez. Internete dogrudan duz HTTP olarak degil, KeenDNS gibi HTTPS veren
+# bir yolla acilmalidir.
+ports:
+  8101/tcp: 8101
+ports_description:
+  8101/tcp: Web sitesi (kullanıcı adı ve şifre). İnternete KeenDNS gibi HTTPS veren bir yolla açın.
+
+# Veritabani /share/su_urunleri_bot altinda durur; guncellemede silinmez.
 map:
   - share:rw
 
 options:
-  bot_token: ""
-  admin_id: ""
   gemini_api_key: ""
   gemini_model: "gemini-3.5-flash-lite"
-  allowed_users: []
   result_limit: 8
   timezone: "Europe/Istanbul"
 
 schema:
-  bot_token: str
-  admin_id: str?
-  gemini_api_key: str?
+  gemini_api_key: password?
   gemini_model: str?
-  allowed_users:
-    - str
   result_limit: int(1,20)
   timezone: str
