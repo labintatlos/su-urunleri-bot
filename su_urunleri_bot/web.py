@@ -175,6 +175,10 @@ class Handler(BaseHTTPRequestHandler):
                "base-uri 'none'; form-action 'self'; object-src 'none'")
         if not self.ingress:
             csp += "; frame-ancestors 'none'"
+            # Tarayıcı bunu yalnızca HTTPS'te dikkate alır (IP adreslerinde hiç
+            # uygulamaz): KeenDNS adresi bir kez https ile açılınca bir daha
+            # düz http ile açılmaz.
+            self.send_header('Strict-Transport-Security', 'max-age=31536000')
         self.send_header('Content-Security-Policy', csp)
         self.send_header('X-Content-Type-Options', 'nosniff')
         self.send_header('Referrer-Policy', 'same-origin')

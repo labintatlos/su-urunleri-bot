@@ -1,6 +1,16 @@
 'use strict';
 
 (() => {
+  // KeenDNS bulut tüneli http:// isteğini de siteye iletir ve sunucuya hangi
+  // şemayla gelindiğini bildirmez; bu yüzden yönlendirmeyi tarayıcı yapar.
+  // Ev ağındaki IP/.local adresleri ve Home Assistant paneli (çerçeve) hariç.
+  const host = location.hostname;
+  const localHost = host === 'localhost' || host.endsWith('.local') || !host.includes('.') || /^[\d.]+$|:/.test(host);
+  if (location.protocol === 'http:' && window.top === window.self && !localHost) {
+    location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
+    return;
+  }
+
   const $ = (selector, root = document) => root.querySelector(selector);
   const el = (tag, className, text) => {
     const node = document.createElement(tag);
