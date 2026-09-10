@@ -83,6 +83,8 @@ def init_db():
     CREATE TABLE IF NOT EXISTS query_log(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, action TEXT, query TEXT, created_at TEXT);
     CREATE TABLE IF NOT EXISTS activity_log(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, action TEXT, detail TEXT, created_at TEXT);
     CREATE INDEX IF NOT EXISTS idx_activity_log_created ON activity_log(id DESC);
+    CREATE TABLE IF NOT EXISTS issue_reports(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, message TEXT, status TEXT, created_at TEXT, resolved_at TEXT, resolved_by INTEGER);
+    CREATE INDEX IF NOT EXISTS idx_issue_reports_status ON issue_reports(status, id DESC);
     CREATE TABLE IF NOT EXISTS favorites(user_id INTEGER, item_type TEXT, item_id TEXT, created_at TEXT, PRIMARY KEY(user_id,item_type,item_id));
     CREATE TABLE IF NOT EXISTS inspections(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, kind TEXT, title TEXT, state TEXT, report TEXT, status TEXT, created_at TEXT, updated_at TEXT);
     CREATE INDEX IF NOT EXISTS idx_inspections_user ON inspections(user_id, status, updated_at);
@@ -161,6 +163,48 @@ def admin_activity(limit=30):
     ''', (int(limit),)).fetchall()
     c.close()
     return rows
+
+
+def create_issue_report(uid, message):
+    c = con()
+    cur = c.execute("INSERT INTO issue_reports(user_id,message,status,created_at) VALUES(?,?,'open',?)",
+                    (uid, message, datetime.now().isoformat(timespec='seconds')))
+    c.commit()
+    report_id = cur.lastrowid
+    c.close()
+    return report_id
+
+
+def open_issue_count():
+    c = con()
+    count = c.execute("SELECT COUNT(*) FROM issue_reports WHERE status='open'").fetchone()[0]
+    c.close()
+    return count
+
+
+def admin_issue_reports(limit=20):
+    c = con()
+    rows = c.execute('''
+        SELECT r.*, COALESCE(w.display_name, u.first_name, u.username, CAST(r.user_id AS TEXT)) AS display_name,
+               COALESCE(w.username, u.username, '') AS username
+        FROM issue_reports r
+        LEFT JOIN users u ON u.user_id=r.user_id
+        LEFT JOIN web_accounts w ON r.user_id=-w.id
+        WHERE r.status='open'
+        ORDER BY r.id DESC LIMIT ?
+    ''', (int(limit),)).fetchall()
+    c.close()
+    return rows
+
+
+def resolve_issue_report(report_id, admin_uid):
+    c = con()
+    cur = c.execute("UPDATE issue_reports SET status='resolved',resolved_at=?,resolved_by=? WHERE id=? AND status='open'",
+                    (datetime.now().isoformat(timespec='seconds'), admin_uid, int(report_id)))
+    c.commit()
+    changed = cur.rowcount > 0
+    c.close()
+    return changed
 
 
 def search_articles(query,limit=8,source=None,include_inland=False):

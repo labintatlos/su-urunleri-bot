@@ -105,5 +105,5 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 3 | Aydınlık / karanlık arayüz | ✅ 6.0.4 |
 | 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ✅ 6.0.5 |
 | 5 | Ana sayfada yönetici onaylı **Üye ol** sekmesi (ad, soyad, e-posta, telefon, statü, kullanıcı adı, şifre) ve **Şifremi unuttum** talebi | ✅ 6.0.6 |
-| 6 | Sayfada **Sorun bildir** butonu | ⏳ bekliyor |
+| 6 | Sayfada **Sorun bildir** butonu; yönetici açık bildirimleri görüp kapatabilsin | ✅ 6.0.7 |
 | 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ⏳ bekliyor |

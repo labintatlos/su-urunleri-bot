@@ -93,12 +93,14 @@ button, input, textarea, select { font: inherit; color: inherit; }
 form h2, .dialog h2 { margin: 6px 0 12px; font-size: 1.15rem; }
 label { display: block; margin: 0 0 12px; font-weight: 600; font-size: .92rem; }
 label small { font-weight: 400; color: var(--muted); }
-label input:not([type=checkbox]), label select {
+label input:not([type=checkbox]), label select, label textarea {
   display: block; width: 100%; margin-top: 5px; padding: 11px 12px;
   border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
   font-weight: 400; font-size: 16px;
 }
 label input:focus, label select:focus, .composer textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+label textarea { resize: vertical; min-height: 130px; }
+label textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
 label.check { display: flex; gap: 8px; align-items: center; font-weight: 500; }
 label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .note { color: var(--muted); font-size: .9rem; margin: 0 0 14px; }

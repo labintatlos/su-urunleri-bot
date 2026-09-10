@@ -33,6 +33,9 @@ Site ilk açılışta cihazın görünüm ayarını izler. Giriş ekranındaki v
 ### 👤 Üyelik ve Şifre Yenileme
 Giriş ekranındaki **Üye ol** sekmesinden ad, soyad, e-posta, telefon, statü, kullanıcı adı ve şifreyle başvuru yapılır. Hesap yönetici onayına kadar giriş yapamaz. **Şifremi unuttum** bağlantısıyla kullanıcı adı veya e-posta üzerinden talep oluşturulur; yönetici **Kişiler / Şifreler** ekranından yeni şifre vererek talebi kapatır.
 
+### 🛠 Sorun Bildirimi
+Hesap menüsündeki **Sorun bildir** düğmesiyle karşılaşılan problem yöneticiye iletilir. Yönetici panelinde açık bildirim sayısı, bildiren kişi, zaman ve açıklama görünür; çözülen bildirim tek düğmeyle kapatılır.
+
 ### 🔐 Yönetici Paneli ve Kişiler
 Kullanıcı istatistikleri, denetim ve arama dağılımı, hangi kişinin ne zaman hangi işlemi yaptığını gösteren son 30 işlem kaydı. Giriş/çıkış, düğme kullanımı, arama ve hesap yönetimi kaydedilir; parolalar kayda alınmaz. Yönetici **Kişiler / Şifreler** ekranından kişi ekler, şifre verir, yönetici yapar veya pasifleştirir. Herkes kendi şifresini sağ üstteki menüden değiştirebilir.
 
@@ -97,7 +100,8 @@ güncelledikten sonra bu sürümü artırmak gerekir.
 `prohibited_species`, `penalty_cards`, `raw_excel_rows`, `users`, `query_log`,
 `inspections`, `meta`, `web_accounts` (site kişileri ve üyelik onayı),
 `password_reset_requests` (şifre yenileme talepleri), `web_state` (kişinin
-kaldığı ekran ve akış durumu), `activity_log` (kullanıcı işlem kayıtları).
+kaldığı ekran ve akış durumu), `activity_log` (kullanıcı işlem kayıtları),
+`issue_reports` (açık ve çözülmüş sorun bildirimleri).
 
 ## 📚 Mevzuat Kaynakları
 

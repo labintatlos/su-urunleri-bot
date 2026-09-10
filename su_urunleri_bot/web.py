@@ -345,6 +345,13 @@ class Handler(BaseHTTPRequestHandler):
             updated = accounts.change_own_password(account, data.get('current'), data.get('new'))
             db.log_activity(uid, 'password_change')
             return self.send_json(200, {'ok': True}, cookies=[self.session_cookie(updated, True)])
+        if path == '/api/issues':
+            message = str(data.get('message') or '').strip()
+            if not 5 <= len(message) <= 2000:
+                raise ApiError(400, 'Sorunu 5-2000 karakter arasında açıklayın.')
+            report_id = db.create_issue_report(uid, message)
+            db.log_activity(uid, 'issue_report', f'Bildirim #{report_id}')
+            return self.send_json(200, {'ok': True})
         if path == '/api/people':
             self.require_account(admin=True)
             created = accounts.create_account(data.get('username'), data.get('display_name'),

@@ -896,6 +896,18 @@ def callback(q, context):
     if data == 'admin:panel' or data.startswith('admin:stats:'):
         section = data.split(':', 2)[2] if data.startswith('admin:stats:') else 'main'
         return show_admin_panel(q, section)
+    if data == 'admin:issues':
+        return show_admin_issues(q)
+    issue_match = re.fullmatch(r'admin:issue:resolve:(\d+)', data)
+    if issue_match:
+        if q.from_user.id not in ADMIN_IDS:
+            return q.answer('Yönetici yetkisi gerekli.', show_alert=True)
+        report_id = int(issue_match.group(1))
+        changed = db.resolve_issue_report(report_id, q.from_user.id)
+        if changed:
+            db.log_activity(q.from_user.id, 'issue_resolve', f'Bildirim #{report_id}')
+        q.answer('Bildirim çözüldü olarak işaretlendi.' if changed else 'Bildirim zaten kapatılmış.')
+        return show_admin_issues(q)
 
     if data == 'gear:vis:menu':
         return show_gear_visual_menu(q)
@@ -2930,11 +2942,33 @@ ACTIVITY_LABELS = {
     'person_update': 'Kişi bilgilerini değiştirdi',
     'registration': 'Üyelik başvurusu yaptı',
     'password_reset_request': 'Şifre yenileme talebi oluşturdu',
+    'issue_report': 'Sorun bildirdi',
+    'issue_resolve': 'Sorun bildirimini kapattı',
 }
 
 
 def activity_label(action):
     return esc(ACTIVITY_LABELS.get(action, action))
+
+
+def show_admin_issues(q):
+    if q.from_user.id not in ADMIN_IDS:
+        return q.answer('Yönetici yetkisi gerekli.', show_alert=True)
+    reports = db.admin_issue_reports()
+    text = '🛠 <b>AÇIK SORUN BİLDİRİMLERİ</b>\n\n'
+    rows = []
+    if not reports:
+        text += '<i>Açık sorun bildirimi yok.</i>\n'
+    for report in reports:
+        created = report['created_at'].replace('T', ' ')[:16]
+        username = f' (@{report["username"]})' if report['username'] else ''
+        text += (
+            f'<b>#{report["id"]} · {esc(report["display_name"])}{esc(username)}</b>\n'
+            f'<code>{created}</code>\n{esc(report["message"])}\n\n'
+        )
+        rows.append([('✅ Çözüldü olarak işaretle', f'admin:issue:resolve:{report["id"]}')])
+    rows.append([('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')])
+    return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 def show_admin_panel(q, section='main'):
@@ -2944,6 +2978,7 @@ def show_admin_panel(q, section='main'):
     if section == 'main':
         users = len(accounts.list_accounts())
         count = db.activity_count()
+        issue_count = db.open_issue_count()
         rows = db.admin_activity(8)
         text = (
             f'🔐 <b>YÖNETİCİ VE DENETİM PANELİ</b>\n\n'
@@ -2961,6 +2996,7 @@ def show_admin_panel(q, section='main'):
         rows_kb = [
             [('📊 Denetim & Arama Dağılımı', 'admin:stats:vessels')],
             [('👥 Personel Faaliyetleri', 'admin:stats:users'), ('📋 İşlem Kayıtları', 'admin:stats:logs')],
+            [(f'🛠 Sorun Bildirimleri ({issue_count})', 'admin:issues')],
             [('👤 Kişiler / Şifreler', 'web:people')],
             [('🏠 Ana Menü', 'menu')]
         ]

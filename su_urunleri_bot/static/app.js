@@ -28,6 +28,7 @@
     accountBtn: $('#account-btn'), accountMenu: $('#account-menu'),
     busy: $('#busy'), busyText: $('#busy-text'), toast: $('#toast'),
     passwordDialog: $('#password-dialog'), passwordForm: $('#password-form'),
+    issueDialog: $('#issue-dialog'), issueForm: $('#issue-form'),
     peopleDialog: $('#people-dialog'), peopleList: $('#people-list'), personForm: $('#person-form'),
   };
 
@@ -499,6 +500,12 @@
     toggleMenu(false);
     if (command.dataset.cmd === 'logout') logout();
     if (command.dataset.cmd === 'people') openPeople();
+    if (command.dataset.cmd === 'issue') {
+      ui.issueForm.reset();
+      formError(ui.issueForm, '');
+      ui.issueDialog.showModal();
+      setTimeout(() => $('textarea', ui.issueForm).focus(), 30);
+    }
     if (command.dataset.cmd === 'password') {
       ui.passwordForm.reset();
       formError(ui.passwordForm, '');
@@ -517,6 +524,15 @@
     submitForm(ui.passwordForm, 'api/password', async () => {
       ui.passwordDialog.close();
       toast('Şifreniz değiştirildi.');
+    });
+  });
+
+  ui.issueForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    submitForm(ui.issueForm, 'api/issues', async () => {
+      ui.issueDialog.close();
+      ui.issueForm.reset();
+      toast('Sorun bildiriminiz yöneticiye iletildi.');
     });
   });
 

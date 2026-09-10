@@ -108,6 +108,7 @@
       <button id="account-btn" class="account-btn" type="button" aria-haspopup="menu" aria-expanded="false"><span id="account-initial">•</span></button>
       <div id="account-menu" class="menu" role="menu" hidden>
         <div class="menu-head"><b id="account-name"></b><small id="account-username"></small></div>
+        <button type="button" role="menuitem" data-cmd="issue">🛠 Sorun bildir</button>
         <button type="button" role="menuitem" data-cmd="password">🔑 Şifremi değiştir</button>
         <button type="button" role="menuitem" data-cmd="people" hidden>👥 Kişiler / Şifreler</button>
         <button type="button" role="menuitem" data-cmd="logout">🚪 Çıkış yap</button>
@@ -133,6 +134,19 @@
     <div class="dialog-actions">
       <button type="button" class="btn" data-close>Vazgeç</button>
       <button type="submit" class="btn primary">Kaydet</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="issue-dialog" class="dialog">
+  <form id="issue-form" method="dialog">
+    <h2>Sorun bildir</h2>
+    <p class="note">Karşılaştığınız sorunu ve mümkünse hangi ekranda oluştuğunu açıklayın. Bildirim yönetici paneline iletilir.</p>
+    <label>Açıklama<textarea name="message" rows="6" minlength="5" maxlength="2000" required></textarea></label>
+    <p class="form-error" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn" data-close>Vazgeç</button>
+      <button type="submit" class="btn primary">Gönder</button>
     </div>
   </form>
 </dialog>

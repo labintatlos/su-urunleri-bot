@@ -160,19 +160,40 @@ def main():
         if s != 200:
             errors.append((('ACTIVITY_ACCOUNT', 'login'), s, logged_in))
 
+        issue_message = 'Duman testi sorun bildirimi'
+        s, reported = call('/api/issues', {'message': issue_message})
+        if s != 200:
+            errors.append((('ISSUE_REPORT', 'create'), s, reported))
+        s, issue_view = call('/api/action', {'data': 'admin:issues'})
+        if s != 200 or issue_message not in text_of(issue_view):
+            errors.append((('ISSUE_REPORT', 'admin_view'), s, issue_view))
+        resolve_data = next((button['data'] for row in issue_view.get('buttons', []) for button in row
+                             if button.get('data', '').startswith('admin:issue:resolve:')), None)
+        if not resolve_data:
+            errors.append((('ISSUE_REPORT', 'resolve_button'), 0, issue_view))
+        else:
+            s, resolved = call('/api/action', {'data': resolve_data})
+            if s != 200 or issue_message in text_of(resolved):
+                errors.append((('ISSUE_REPORT', 'resolve'), s, resolved))
+
         with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
             activity = dict(audit_db.execute(
                 'SELECT action, COUNT(*) FROM activity_log GROUP BY action').fetchall())
             activity_text = '\n'.join(row[0] or '' for row in audit_db.execute(
                 'SELECT detail FROM activity_log').fetchall())
+            issue_statuses = dict(audit_db.execute(
+                'SELECT status, COUNT(*) FROM issue_reports GROUP BY status').fetchall())
         print('activity log:', activity)
         for required in ('setup', 'login', 'logout', 'button', 'text', 'password_change',
-                         'person_create', 'person_update', 'registration', 'password_reset_request'):
+                         'person_create', 'person_update', 'registration', 'password_reset_request',
+                         'issue_report', 'issue_resolve'):
             if not activity.get(required):
                 errors.append((('ACTIVITY_LOG', required), 0, 'beklenen işlem kaydı yok'))
         if any(secret in activity_text for secret in (secret_a, secret_b, registration_password,
                                                        'AdayYeniSifre123!')):
             errors.append((('ACTIVITY_LOG', 'password'), 0, 'parola işlem kaydına yazılmış'))
+        if not issue_statuses.get('resolved'):
+            errors.append((('ISSUE_REPORT', 'database'), 0, issue_statuses))
         print('errors:', len(errors))
         for e in errors[:40]:
             print('  ', e)
