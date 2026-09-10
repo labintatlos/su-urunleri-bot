@@ -30,6 +30,9 @@ Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belge
 ### 🌗 Aydınlık / Karanlık Görünüm
 Site ilk açılışta cihazın görünüm ayarını izler. Giriş ekranındaki veya üst çubuktaki ay/güneş düğmesiyle görünüm değiştirilebilir; seçim aynı tarayıcıda korunur.
 
+### 👤 Üyelik ve Şifre Yenileme
+Giriş ekranındaki **Üye ol** sekmesinden ad, soyad, e-posta, telefon, statü, kullanıcı adı ve şifreyle başvuru yapılır. Hesap yönetici onayına kadar giriş yapamaz. **Şifremi unuttum** bağlantısıyla kullanıcı adı veya e-posta üzerinden talep oluşturulur; yönetici **Kişiler / Şifreler** ekranından yeni şifre vererek talebi kapatır.
+
 ### 🔐 Yönetici Paneli ve Kişiler
 Kullanıcı istatistikleri, denetim ve arama dağılımı, hangi kişinin ne zaman hangi işlemi yaptığını gösteren son 30 işlem kaydı. Giriş/çıkış, düğme kullanımı, arama ve hesap yönetimi kaydedilir; parolalar kayda alınmaz. Yönetici **Kişiler / Şifreler** ekranından kişi ekler, şifre verir, yönetici yapar veya pasifleştirir. Herkes kendi şifresini sağ üstteki menüden değiştirebilir.
 
@@ -92,7 +95,8 @@ güncelledikten sonra bu sürümü artırmak gerekir.
 
 `sources`, `articles`, `rules`, `commercial_species`, `amateur_species`,
 `prohibited_species`, `penalty_cards`, `raw_excel_rows`, `users`, `query_log`,
-`inspections`, `meta`, `web_accounts` (site kişileri), `web_state` (kişinin
+`inspections`, `meta`, `web_accounts` (site kişileri ve üyelik onayı),
+`password_reset_requests` (şifre yenileme talepleri), `web_state` (kişinin
 kaldığı ekran ve akış durumu), `activity_log` (kullanıcı işlem kayıtları).
 
 ## 📚 Mevzuat Kaynakları

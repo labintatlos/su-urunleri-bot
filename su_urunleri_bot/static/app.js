@@ -21,7 +21,8 @@
 
   const ui = {
     boot: $('#boot'), auth: $('#auth'), app: $('#app'),
-    loginForm: $('#login-form'), setupForm: $('#setup-form'), ingressNote: $('#ingress-note'),
+    authTabs: $('#auth-tabs'), loginForm: $('#login-form'), registerForm: $('#register-form'),
+    resetForm: $('#reset-form'), setupForm: $('#setup-form'), ingressNote: $('#ingress-note'),
     screen: $('#screen'), buttons: $('#buttons'), topSlot: $('#top-slot'), inlineSlot: $('#inline-slot'),
     composer: $('#composer'), input: $('#composer-input'),
     accountBtn: $('#account-btn'), accountMenu: $('#account-menu'),
@@ -282,14 +283,33 @@
     }
   }
 
+  function showAuthView(view) {
+    ui.loginForm.hidden = view !== 'login';
+    ui.registerForm.hidden = view !== 'register';
+    ui.resetForm.hidden = view !== 'reset';
+    for (const tab of ui.authTabs.querySelectorAll('[data-auth-view]')) {
+      const active = tab.dataset.authView === view;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', String(active));
+    }
+    ui.ingressNote.hidden = view !== 'login' || !session.ingress;
+    const first = $('input', view === 'login' ? ui.loginForm : view === 'register' ? ui.registerForm : ui.resetForm);
+    setTimeout(() => first.focus(), 30);
+  }
+
   function showAuth() {
     ui.app.hidden = true;
     ui.auth.hidden = false;
     ui.setupForm.hidden = !session.setup_required;
-    ui.loginForm.hidden = session.setup_required;
-    ui.ingressNote.hidden = !session.ingress;
-    const first = $('input', session.setup_required ? ui.setupForm : ui.loginForm);
-    setTimeout(() => first.focus(), 30);
+    ui.authTabs.hidden = session.setup_required;
+    if (session.setup_required) {
+      ui.loginForm.hidden = true;
+      ui.registerForm.hidden = true;
+      ui.resetForm.hidden = true;
+      setTimeout(() => $('input', ui.setupForm).focus(), 30);
+    } else {
+      showAuthView('login');
+    }
   }
 
   async function showApp() {
@@ -351,18 +371,26 @@
   }
 
   function personRow(person) {
-    const item = el('li', `person${person.is_active ? '' : ' inactive'}`);
+    const item = el('li', `person${person.approval_status === 'rejected' ? ' inactive' : ''}`);
     const head = el('div', 'person-head');
     const name = el('div', 'person-name');
     name.append(el('b', '', person.display_name), el('small', '', `@${person.username}`));
     const badges = el('div', 'badges');
     if (person.is_admin) badges.append(el('span', 'badge', 'Yönetici'));
-    if (!person.is_active) badges.append(el('span', 'badge muted', 'Pasif'));
+    if (person.approval_status === 'pending') badges.append(el('span', 'badge warning', 'Onay bekliyor'));
+    if (person.approval_status === 'rejected') badges.append(el('span', 'badge muted', 'Reddedildi'));
+    if (person.approval_status === 'approved' && !person.is_active) badges.append(el('span', 'badge muted', 'Pasif'));
+    if (person.reset_pending) badges.append(el('span', 'badge warning', 'Şifre talebi'));
     if (person.ha_linked) badges.append(el('span', 'badge muted', 'HA paneli bağlı'));
     head.append(name, badges);
 
-    const meta = el('div', 'person-meta', person.last_login
-      ? `Son giriş: ${person.last_login.replace('T', ' ').slice(0, 16)}` : 'Henüz giriş yapmadı');
+    const positionNames = { subay: 'Subay', astsubay: 'Astsubay', uzman: 'Uzman', memur: 'Memur' };
+    const info = [];
+    if (person.position) info.push(positionNames[person.position] || person.position);
+    if (person.email) info.push(person.email);
+    if (person.phone) info.push(person.phone);
+    info.push(person.last_login ? `Son giriş: ${person.last_login.replace('T', ' ').slice(0, 16)}` : 'Henüz giriş yapmadı');
+    const meta = el('div', 'person-meta', info.join(' · '));
 
     const actions = el('div', 'person-actions');
     const passwordBox = el('form', 'inline-password');
@@ -377,14 +405,24 @@
       updatePerson(person.id, { password: passwordInput.value }, `${person.display_name} için yeni şifre kaydedildi.`);
     });
 
-    actions.append(
-      personAction('🔑 Şifre ver', () => { passwordBox.hidden = !passwordBox.hidden; if (!passwordBox.hidden) passwordInput.focus(); }),
-      personAction(person.is_admin ? 'Yöneticiliği kaldır' : 'Yönetici yap',
-        () => updatePerson(person.id, { is_admin: !person.is_admin }, 'Yetki güncellendi.')),
-      personAction(person.is_active ? 'Pasif yap' : 'Etkinleştir',
-        () => updatePerson(person.id, { is_active: !person.is_active }, person.is_active ? 'Kişi pasif yapıldı.' : 'Kişi etkinleştirildi.'),
-        person.is_active ? 'danger' : ''),
-    );
+    if (person.approval_status !== 'approved') {
+      actions.append(personAction('✅ Üyeliği onayla',
+        () => updatePerson(person.id, { approval_status: 'approved' }, `${person.display_name} onaylandı.`), 'primary'));
+      if (person.approval_status === 'pending') {
+        actions.append(personAction('❌ Reddet',
+          () => updatePerson(person.id, { approval_status: 'rejected' }, `${person.display_name} reddedildi.`), 'danger'));
+      }
+    } else {
+      actions.append(
+        personAction(person.reset_pending ? '🔑 Talebi yanıtla' : '🔑 Şifre ver',
+          () => { passwordBox.hidden = !passwordBox.hidden; if (!passwordBox.hidden) passwordInput.focus(); }),
+        personAction(person.is_admin ? 'Yöneticiliği kaldır' : 'Yönetici yap',
+          () => updatePerson(person.id, { is_admin: !person.is_admin }, 'Yetki güncellendi.')),
+        personAction(person.is_active ? 'Pasif yap' : 'Etkinleştir',
+          () => updatePerson(person.id, { is_active: !person.is_active }, person.is_active ? 'Kişi pasif yapıldı.' : 'Kişi etkinleştirildi.'),
+          person.is_active ? 'danger' : ''),
+      );
+    }
     item.append(head, meta, actions, passwordBox);
     return item;
   }
@@ -409,9 +447,32 @@
     event.preventDefault();
     submitForm(ui.loginForm, 'api/login', start);
   });
+  ui.registerForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = formData(ui.registerForm);
+    if (data.password !== data.again) { formError(ui.registerForm, 'Şifreler aynı değil.'); return; }
+    submitForm(ui.registerForm, 'api/register', async () => {
+      ui.registerForm.reset();
+      showAuthView('login');
+      toast('Başvurunuz alındı. Yönetici onayından sonra giriş yapabilirsiniz.');
+    });
+  });
+  ui.resetForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    submitForm(ui.resetForm, 'api/password-reset', async () => {
+      ui.resetForm.reset();
+      showAuthView('login');
+      toast('Hesap eşleşirse şifre yenileme talebiniz yöneticiye iletildi.');
+    });
+  });
   ui.setupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     submitForm(ui.setupForm, 'api/setup', start);
+  });
+
+  ui.auth.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-auth-view]');
+    if (button && !session.setup_required) showAuthView(button.dataset.authView);
   });
 
   ui.composer.addEventListener('submit', (event) => { event.preventDefault(); sendText(); });

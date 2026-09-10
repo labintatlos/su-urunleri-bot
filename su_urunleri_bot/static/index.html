@@ -25,6 +25,11 @@
       <div><h1>Su Ürünleri</h1><p>Kolluk Asistanı</p></div>
     </div>
 
+    <div id="auth-tabs" class="auth-tabs" role="tablist" hidden>
+      <button type="button" role="tab" data-auth-view="login">Giriş yap</button>
+      <button type="button" role="tab" data-auth-view="register">Üye ol</button>
+    </div>
+
     <form id="login-form" hidden>
       <h2>Giriş yap</h2>
       <p id="ingress-note" class="note" hidden>Home Assistant hesabınız bu sitedeki bir kişiyle henüz eşleşmedi. Bir kez site kullanıcı adı ve şifrenizle girin; buradan sonraki açılışlarda şifre sorulmaz.</p>
@@ -33,6 +38,41 @@
       <label class="check"><input name="remember" type="checkbox" checked> Beni hatırla</label>
       <p class="form-error" hidden></p>
       <button type="submit" class="btn primary wide">Giriş</button>
+      <button type="button" class="text-button" data-auth-view="reset">Şifremi unuttum</button>
+    </form>
+
+    <form id="register-form" hidden>
+      <h2>Üyelik başvurusu</h2>
+      <p class="note">Hesabınız yönetici onayından sonra açılır.</p>
+      <div class="grid2 auth-grid">
+        <label>Ad<input name="first_name" autocomplete="given-name" maxlength="40" required></label>
+        <label>Soyad<input name="last_name" autocomplete="family-name" maxlength="40" required></label>
+      </div>
+      <label>E-posta<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label>Telefon<input name="phone" type="tel" autocomplete="tel" maxlength="24" required></label>
+      <label>Statü
+        <select name="position" required>
+          <option value="">Seçin</option>
+          <option value="subay">Subay</option>
+          <option value="astsubay">Astsubay</option>
+          <option value="uzman">Uzman</option>
+          <option value="memur">Memur</option>
+        </select>
+      </label>
+      <label>Kullanıcı adı<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="32" required></label>
+      <label>Şifre <small>(en az 8 karakter)</small><input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+      <label>Şifre (tekrar)<input name="again" type="password" autocomplete="new-password" minlength="8" required></label>
+      <p class="form-error" hidden></p>
+      <button type="submit" class="btn primary wide">Başvuruyu gönder</button>
+    </form>
+
+    <form id="reset-form" hidden>
+      <h2>Şifremi unuttum</h2>
+      <p class="note">Kullanıcı adınızı veya e-posta adresinizi yazın. Hesabınız bulunursa yöneticiye şifre yenileme talebi iletilir.</p>
+      <label>Kullanıcı adı veya e-posta<input name="identifier" autocomplete="username" maxlength="254" required></label>
+      <p class="form-error" hidden></p>
+      <button type="submit" class="btn primary wide">Talep gönder</button>
+      <button type="button" class="text-button" data-auth-view="login">Giriş ekranına dön</button>
     </form>
 
     <form id="setup-form" hidden>

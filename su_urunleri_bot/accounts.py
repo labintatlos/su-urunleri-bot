@@ -34,7 +34,9 @@ COOKIE_NAME = 'suurunleri_oturum'
 REMEMBER_SECONDS = 30 * 24 * 3600
 SHORT_SECONDS = 12 * 3600
 USERNAME_RE = re.compile(r'^[a-z0-9._]{3,32}$')
+EMAIL_RE = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 MIN_PASSWORD_LENGTH = 8
+POSITIONS = {'subay', 'astsubay', 'uzman', 'memur'}
 
 # Yalnız hatalı denemeler sayılır; doğru şifreyle giren kişi hiç yavaşlatılmaz.
 FAILED_LOGIN_LIMIT = 5
@@ -66,7 +68,31 @@ def init():
         last_login TEXT
     );
     CREATE TABLE IF NOT EXISTS web_state(user_id INTEGER PRIMARY KEY, data TEXT, screen TEXT, updated_at TEXT);
+    CREATE TABLE IF NOT EXISTS password_reset_requests(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        account_id INTEGER NOT NULL,
+        state TEXT NOT NULL DEFAULT 'pending',
+        created_at TEXT NOT NULL,
+        resolved_at TEXT,
+        resolved_by INTEGER
+    );
     ''')
+    columns = {row['name'] for row in c.execute('PRAGMA table_info(web_accounts)').fetchall()}
+    additions = {
+        'first_name': 'TEXT',
+        'last_name': 'TEXT',
+        'email': 'TEXT',
+        'phone': 'TEXT',
+        'position': 'TEXT',
+        'approval_status': "TEXT NOT NULL DEFAULT 'approved'",
+        'reviewed_at': 'TEXT',
+        'reviewed_by': 'INTEGER',
+    }
+    for name, definition in additions.items():
+        if name not in columns:
+            c.execute(f'ALTER TABLE web_accounts ADD COLUMN {name} {definition}')
+    c.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_web_accounts_email ON web_accounts(email COLLATE NOCASE) WHERE email IS NOT NULL AND email != ''")
+    c.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_password_reset_pending ON password_reset_requests(account_id) WHERE state='pending'")
     c.commit()
     c.close()
 
@@ -111,6 +137,7 @@ def uid_of(account):
 
 
 def public(account):
+    keys = set(account.keys())
     return {
         'id': account['id'],
         'username': account['username'],
@@ -119,19 +146,32 @@ def public(account):
         'is_active': bool(account['is_active']),
         'ha_linked': bool(account['ha_user']),
         'last_login': account['last_login'],
+        'first_name': account['first_name'] if 'first_name' in keys else None,
+        'last_name': account['last_name'] if 'last_name' in keys else None,
+        'email': account['email'] if 'email' in keys else None,
+        'phone': account['phone'] if 'phone' in keys else None,
+        'position': account['position'] if 'position' in keys else None,
+        'approval_status': account['approval_status'] if 'approval_status' in keys else 'approved',
+        'reset_pending': bool(account['reset_pending']) if 'reset_pending' in keys else False,
     }
 
 
 def get(account_id):
     c = db.con()
-    row = c.execute('SELECT * FROM web_accounts WHERE id=?', (int(account_id),)).fetchone()
+    row = c.execute('''SELECT w.*, EXISTS(
+        SELECT 1 FROM password_reset_requests r WHERE r.account_id=w.id AND r.state='pending'
+    ) AS reset_pending FROM web_accounts w WHERE w.id=?''', (int(account_id),)).fetchone()
     c.close()
     return row
 
 
 def list_accounts():
     c = db.con()
-    rows = c.execute('SELECT * FROM web_accounts ORDER BY is_active DESC, display_name COLLATE NOCASE').fetchall()
+    rows = c.execute('''SELECT w.*, EXISTS(
+        SELECT 1 FROM password_reset_requests r WHERE r.account_id=w.id AND r.state='pending'
+    ) AS reset_pending FROM web_accounts w
+    ORDER BY CASE w.approval_status WHEN 'pending' THEN 0 WHEN 'approved' THEN 1 ELSE 2 END,
+             w.is_active DESC, w.display_name COLLATE NOCASE''').fetchall()
     c.close()
     return rows
 
@@ -164,6 +204,35 @@ def _clean_display_name(name):
     return name
 
 
+def _clean_name(value, label):
+    value = ' '.join(str(value or '').split())
+    if not 1 <= len(value) <= 40:
+        raise AccountError(f'{label} 1-40 karakter olmalı.')
+    return value
+
+
+def _clean_email(value):
+    value = str(value or '').strip().lower()
+    if len(value) > 254 or not EMAIL_RE.fullmatch(value):
+        raise AccountError('Geçerli bir e-posta adresi yazın.')
+    return value
+
+
+def _clean_phone(value):
+    value = ' '.join(str(value or '').split())
+    digits = re.sub(r'\D', '', value)
+    if not 10 <= len(digits) <= 15 or len(value) > 24:
+        raise AccountError('Geçerli bir telefon numarası yazın.')
+    return value
+
+
+def _clean_position(value):
+    value = str(value or '').strip().lower()
+    if value not in POSITIONS:
+        raise AccountError('Geçerli bir statü seçin.')
+    return value
+
+
 def _check_password(password):
     if len(password or '') < MIN_PASSWORD_LENGTH:
         raise AccountError(f'Şifre en az {MIN_PASSWORD_LENGTH} karakter olmalı.')
@@ -188,7 +257,37 @@ def create_account(username, display_name, password, is_admin=False):
     return get(account_id)
 
 
-def update_account(account_id, acting, *, display_name=None, is_admin=None, is_active=None, password=None):
+def create_registration(username, first_name, last_name, email, phone, position, password):
+    """Yönetici onayına kadar giriş yapamayan üyelik başvurusu oluşturur."""
+    username = _clean_username(username)
+    first_name = _clean_name(first_name, 'Ad')
+    last_name = _clean_name(last_name, 'Soyad')
+    email = _clean_email(email)
+    phone = _clean_phone(phone)
+    position = _clean_position(position)
+    password_hash = hash_password(_check_password(password))
+    display_name = f'{first_name} {last_name}'
+    c = db.con()
+    try:
+        if c.execute('SELECT 1 FROM web_accounts WHERE username=?', (username,)).fetchone():
+            raise AccountError('Bu kullanıcı adı zaten kullanılıyor.')
+        if c.execute('SELECT 1 FROM web_accounts WHERE email=? COLLATE NOCASE', (email,)).fetchone():
+            raise AccountError('Bu e-posta adresi zaten kullanılıyor.')
+        cur = c.execute('''INSERT INTO web_accounts(
+            username,display_name,password_hash,is_admin,is_active,created_at,
+            first_name,last_name,email,phone,position,approval_status
+        ) VALUES(?,?,?,0,0,?,?,?,?,?,?,'pending')''',
+                        (username, display_name, password_hash, _now(), first_name, last_name,
+                         email, phone, position))
+        c.commit()
+        account_id = cur.lastrowid
+    finally:
+        c.close()
+    return get(account_id)
+
+
+def update_account(account_id, acting, *, display_name=None, is_admin=None, is_active=None,
+                   password=None, approval_status=None):
     """Yöneticinin bir kişide yaptığı değişiklik. Son yöneticinin yetkisi alınamaz."""
     row = get(account_id)
     if not row:
@@ -202,6 +301,13 @@ def update_account(account_id, acting, *, display_name=None, is_admin=None, is_a
         fields['is_admin'] = 1 if is_admin else 0
     if is_active is not None:
         fields['is_active'] = 1 if is_active else 0
+    if approval_status is not None:
+        if approval_status not in ('approved', 'rejected'):
+            raise AccountError('Geçersiz üyelik durumu.')
+        fields['approval_status'] = approval_status
+        fields['is_active'] = 1 if approval_status == 'approved' else 0
+        fields['reviewed_at'] = _now()
+        fields['reviewed_by'] = acting['id']
     loses_admin = row['is_admin'] and row['is_active'] and (
         fields.get('is_admin', 1) == 0 or fields.get('is_active', 1) == 0)
     if loses_admin:
@@ -216,6 +322,9 @@ def update_account(account_id, acting, *, display_name=None, is_admin=None, is_a
         c = db.con()
         c.execute('UPDATE web_accounts SET ' + ','.join(f'{k}=?' for k in fields) + ' WHERE id=?',
                   (*fields.values(), row['id']))
+        if password:
+            c.execute("UPDATE password_reset_requests SET state='resolved',resolved_at=?,resolved_by=? WHERE account_id=? AND state='pending'",
+                      (_now(), acting['id'], row['id']))
         c.commit()
         c.close()
     return get(row['id'])
@@ -237,9 +346,27 @@ def authenticate(username, password):
         # Yanıt süresinden hangi kullanıcı adlarının kayıtlı olduğu anlaşılmasın.
         verify_password(password or '', _dummy_hash())
         return None
-    if not verify_password(password or '', row['password_hash']) or not row['is_active']:
+    if (not verify_password(password or '', row['password_hash']) or not row['is_active']
+            or row['approval_status'] != 'approved'):
         return None
     return row
+
+
+def request_password_reset(identifier):
+    """Kullanıcı adı/e-posta eşleşse de eşleşmese de aynı sonucu verecek şekilde talep açar."""
+    identifier = str(identifier or '').strip().lower()
+    if not identifier or len(identifier) > 254:
+        return None
+    c = db.con()
+    row = c.execute('''SELECT * FROM web_accounts
+        WHERE is_active=1 AND approval_status='approved'
+          AND (username=? OR email=? COLLATE NOCASE)''', (identifier, identifier)).fetchone()
+    if row:
+        c.execute("INSERT OR IGNORE INTO password_reset_requests(account_id,state,created_at) VALUES(?,'pending',?)",
+                  (row['id'], _now()))
+        c.commit()
+    c.close()
+    return get(row['id']) if row else None
 
 
 def mark_login(account, ha_user=None):

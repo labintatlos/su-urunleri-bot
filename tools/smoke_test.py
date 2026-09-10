@@ -66,6 +66,46 @@ def main():
         print('setup', call('/api/setup', {'code': code, 'username': 'deneme', 'display_name': 'Deneme',
                                            'password': 'DenemeSifre123!'}))
 
+        # Üyelik başvurusu onaylanmadan giriş yapamamalı; onaydan sonra
+        # açılmalı. Şifre talebi yönetici listesine düşmeli ve yeni şifre
+        # verilince kapanmalı.
+        registration_password = 'BasvuruKaydaGirmemeli123!'
+        s, registered = call('/api/register', {
+            'first_name': 'Aday', 'last_name': 'Kişi', 'email': 'aday@example.com',
+            'phone': '0532 123 45 67', 'position': 'uzman', 'username': 'aday',
+            'password': registration_password,
+        })
+        if s != 200:
+            errors.append((('REGISTRATION', 'create'), s, registered))
+        s, people = call('/api/people')
+        candidate = next((p for p in people.get('people', []) if p['username'] == 'aday'), None)
+        if s != 200 or not candidate or candidate['approval_status'] != 'pending' or candidate['is_active']:
+            errors.append((('REGISTRATION', 'pending'), s, candidate or people))
+        if call('/api/login', {'username': 'aday', 'password': registration_password})[0] != 401:
+            errors.append((('REGISTRATION', 'blocked_login'), 0, 'onaysız hesap giriş yapabildi'))
+        if candidate:
+            s, approved = call(f'/api/people/{candidate["id"]}', {'approval_status': 'approved'})
+            if s != 200 or not approved['person']['is_active']:
+                errors.append((('REGISTRATION', 'approve'), s, approved))
+        if call('/api/login', {'username': 'aday', 'password': registration_password})[0] != 200:
+            errors.append((('REGISTRATION', 'approved_login'), 0, 'onaylı hesap giriş yapamadı'))
+        call('/api/logout', {})
+        call('/api/login', {'username': 'deneme', 'password': 'DenemeSifre123!', 'remember': False})
+        if call('/api/password-reset', {'identifier': 'aday@example.com'})[0] != 200:
+            errors.append((('PASSWORD_RESET', 'request'), 0, 'talep oluşturulamadı'))
+        if call('/api/password-reset', {'identifier': 'olmayan@example.com'})[0] != 200:
+            errors.append((('PASSWORD_RESET', 'generic'), 0, 'bilinmeyen hesap farklı yanıt verdi'))
+        _, people = call('/api/people')
+        candidate = next((p for p in people.get('people', []) if p['username'] == 'aday'), None)
+        if not candidate or not candidate['reset_pending']:
+            errors.append((('PASSWORD_RESET', 'visible'), 0, candidate or people))
+        elif call(f'/api/people/{candidate["id"]}', {'password': 'AdayYeniSifre123!'})[0] != 200:
+            errors.append((('PASSWORD_RESET', 'resolve'), 0, 'yeni şifre verilemedi'))
+        _, people = call('/api/people')
+        candidate = next((p for p in people.get('people', []) if p['username'] == 'aday'), None)
+        if not candidate or candidate['reset_pending']:
+            errors.append((('PASSWORD_RESET', 'closed'), 0, candidate or people))
+
         def replay(path):
             nonlocal presses
             status, view = 200, call('/api/action', {'data': 'menu'})[1]
@@ -127,10 +167,11 @@ def main():
                 'SELECT detail FROM activity_log').fetchall())
         print('activity log:', activity)
         for required in ('setup', 'login', 'logout', 'button', 'text', 'password_change',
-                         'person_create', 'person_update'):
+                         'person_create', 'person_update', 'registration', 'password_reset_request'):
             if not activity.get(required):
                 errors.append((('ACTIVITY_LOG', required), 0, 'beklenen işlem kaydı yok'))
-        if secret_a in activity_text or secret_b in activity_text:
+        if any(secret in activity_text for secret in (secret_a, secret_b, registration_password,
+                                                       'AdayYeniSifre123!')):
             errors.append((('ACTIVITY_LOG', 'password'), 0, 'parola işlem kaydına yazılmış'))
         print('errors:', len(errors))
         for e in errors[:40]:

@@ -2928,6 +2928,8 @@ ACTIVITY_LABELS = {
     'password_change': 'Kendi şifresini değiştirdi',
     'person_create': 'Kişi oluşturdu',
     'person_update': 'Kişi bilgilerini değiştirdi',
+    'registration': 'Üyelik başvurusu yaptı',
+    'password_reset_request': 'Şifre yenileme talebi oluşturdu',
 }
 
 
@@ -2940,7 +2942,7 @@ def show_admin_panel(q, section='main'):
         return q.answer('Yönetici yetkisi gerekli.', show_alert=True)
     
     if section == 'main':
-        users, _, _ = db.admin_stats()
+        users = len(accounts.list_accounts())
         count = db.activity_count()
         rows = db.admin_activity(8)
         text = (

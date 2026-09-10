@@ -311,6 +311,17 @@ class Handler(BaseHTTPRequestHandler):
             return self.login(data)
         if path == '/api/setup':
             return self.setup_admin(data)
+        if path == '/api/register':
+            account = accounts.create_registration(
+                data.get('username'), data.get('first_name'), data.get('last_name'),
+                data.get('email'), data.get('phone'), data.get('position'), data.get('password'))
+            db.log_activity(accounts.uid_of(account), 'registration', 'Yönetici onayı bekliyor')
+            return self.send_json(200, {'ok': True})
+        if path == '/api/password-reset':
+            account = accounts.request_password_reset(data.get('identifier'))
+            if account:
+                db.log_activity(accounts.uid_of(account), 'password_reset_request')
+            return self.send_json(200, {'ok': True})
         if path == '/api/logout':
             account = self.require_account()
             db.log_activity(accounts.uid_of(account), 'logout')
@@ -348,7 +359,8 @@ class Handler(BaseHTTPRequestHandler):
             updated = accounts.update_account(int(match.group(1)), acting,
                                               display_name=data.get('display_name'),
                                               is_admin=flag('is_admin'), is_active=flag('is_active'),
-                                              password=data.get('password') or None)
+                                              password=data.get('password') or None,
+                                              approval_status=data.get('approval_status'))
             changes = []
             if 'display_name' in data: changes.append('adını değiştirdi')
             if 'is_admin' in data:
@@ -356,6 +368,8 @@ class Handler(BaseHTTPRequestHandler):
             if 'is_active' in data:
                 changes.append('etkinleştirdi' if data['is_active'] else 'pasif yaptı')
             if data.get('password'): changes.append('şifresini yeniledi')
+            if data.get('approval_status') == 'approved': changes.append('üyeliğini onayladı')
+            if data.get('approval_status') == 'rejected': changes.append('üyeliğini reddetti')
             detail = f'{updated["display_name"]} (@{updated["username"]}): ' + ', '.join(changes)
             db.log_activity(uid, 'person_update', detail)
             return self.send_json(200, {'person': accounts.public(updated)})

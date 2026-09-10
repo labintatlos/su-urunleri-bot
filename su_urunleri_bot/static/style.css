@@ -50,7 +50,7 @@ body {
   font: 15.5px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
 }
 [hidden] { display: none !important; }
-button, input, textarea { font: inherit; color: inherit; }
+button, input, textarea, select { font: inherit; color: inherit; }
 
 /* ── Yükleniyor ─────────────────────────────────────────────────────── */
 .boot { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; color: var(--muted); }
@@ -86,15 +86,19 @@ button, input, textarea { font: inherit; color: inherit; }
 .auth-logo { width: 52px; height: 52px; }
 .auth-brand h1 { margin: 0; font-size: 1.35rem; line-height: 1.2; }
 .auth-brand p { margin: 0; color: var(--muted); }
+.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0 0 16px; padding: 4px; border-radius: 12px; background: var(--surface-2); }
+.auth-tabs button { min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: var(--muted); cursor: pointer; font-weight: 600; }
+.auth-tabs button.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+.text-button { display: block; margin: 10px auto 0; min-height: 36px; padding: 6px 10px; border: 0; background: transparent; color: var(--brand-2); cursor: pointer; font-weight: 600; }
 form h2, .dialog h2 { margin: 6px 0 12px; font-size: 1.15rem; }
 label { display: block; margin: 0 0 12px; font-weight: 600; font-size: .92rem; }
 label small { font-weight: 400; color: var(--muted); }
-label input:not([type=checkbox]) {
+label input:not([type=checkbox]), label select {
   display: block; width: 100%; margin-top: 5px; padding: 11px 12px;
   border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
   font-weight: 400; font-size: 16px;
 }
-label input:focus, .composer textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+label input:focus, label select:focus, .composer textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
 label.check { display: flex; gap: 8px; align-items: center; font-weight: 500; }
 label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .note { color: var(--muted); font-size: .9rem; margin: 0 0 14px; }
@@ -228,12 +232,15 @@ label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: flex-start; }
 .badge { font-size: .75rem; font-weight: 700; border-radius: 99px; padding: 2px 8px; background: var(--accent-soft); color: var(--accent); }
 .badge.muted { background: var(--neutral-soft); color: var(--muted); }
+.badge.warning { background: #fff1c7; color: #785500; }
+:root[data-theme="dark"] .badge.warning { background: #49370d; color: #ffd86a; }
 .person-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
 .inline-password { display: flex; gap: 6px; margin-top: 8px; }
 .inline-password input { flex: 1; min-width: 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: 16px; }
 .person-form { border-top: 1px solid var(--line); padding-top: 14px; }
 .person-form h3 { margin: 0 0 10px; font-size: 1rem; }
 .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); column-gap: 12px; }
+.auth-grid { grid-template-columns: 1fr 1fr; }
 .grid2 .check { align-self: end; margin-bottom: 20px; }
 
 /* ── Bekleme ve bildirim ────────────────────────────────────────────── */
