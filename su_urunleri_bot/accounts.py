@@ -43,6 +43,10 @@ FAILED_LOGIN_LIMIT = 5
 FAILED_LOGIN_WINDOW_SECONDS = 15 * 60
 
 _SCRYPT_N, _SCRYPT_R, _SCRYPT_P = 2 ** 14, 8, 1
+# Her scrypt hesabı ~16 MB bellek ister. Aynı anda gönderilen yüzlerce giriş
+# denemesi Home Assistant'ın da çalıştığı cihazın belleğini tüketmesin diye
+# eşzamanlı hesap sayısı sınırlıdır; tek tek girişte fark edilmez.
+_SCRYPT_SLOTS = threading.BoundedSemaphore(4)
 
 
 class AccountError(ValueError):
@@ -105,8 +109,9 @@ def _b64(raw):
 
 def hash_password(password):
     salt = secrets.token_bytes(16)
-    digest = hashlib.scrypt(password.encode('utf-8'), salt=salt, n=_SCRYPT_N,
-                            r=_SCRYPT_R, p=_SCRYPT_P, dklen=32)
+    with _SCRYPT_SLOTS:
+        digest = hashlib.scrypt(password.encode('utf-8'), salt=salt, n=_SCRYPT_N,
+                                r=_SCRYPT_R, p=_SCRYPT_P, dklen=32)
     return f'scrypt${_SCRYPT_N}${_SCRYPT_R}${_SCRYPT_P}${_b64(salt)}${_b64(digest)}'
 
 
@@ -118,8 +123,9 @@ def verify_password(password, stored):
         if scheme != 'scrypt':
             return False
         expected = base64.b64decode(digest)
-        actual = hashlib.scrypt(password.encode('utf-8'), salt=base64.b64decode(salt),
-                                n=int(n), r=int(r), p=int(p), dklen=len(expected))
+        with _SCRYPT_SLOTS:
+            actual = hashlib.scrypt(password.encode('utf-8'), salt=base64.b64decode(salt),
+                                    n=int(n), r=int(r), p=int(p), dklen=len(expected))
     except (ValueError, TypeError):
         return False
     return hmac.compare_digest(actual, expected)
@@ -477,24 +483,35 @@ def clear_setup_code():
 # ── Hatalı giriş sınırı ──────────────────────────────────────────────────
 
 class LoginThrottle:
+    # Süresi dolmuş kayıtlar yalnızca o anahtara bakılınca siliniyordu; her
+    # denemede farklı kullanıcı adı yazan biri sözlüğü sınırsız büyütebilirdi.
+    SWEEP_THRESHOLD = 10000
+
     def __init__(self):
         self._failures = {}
         self._lock = threading.Lock()
 
     def _recent(self, key, now):
-        attempts = self._failures.setdefault(key, deque())
+        attempts = self._failures.get(key)
+        if attempts is None:
+            return 0
         while attempts and now - attempts[0] > FAILED_LOGIN_WINDOW_SECONDS:
             attempts.popleft()
-        return attempts
+        if not attempts:
+            del self._failures[key]
+        return len(attempts)
 
     def is_blocked(self, key):
         with self._lock:
-            return len(self._recent(key, time.monotonic())) >= FAILED_LOGIN_LIMIT
+            return self._recent(key, time.monotonic()) >= FAILED_LOGIN_LIMIT
 
     def record_failure(self, key):
         with self._lock:
             now = time.monotonic()
-            self._recent(key, now).append(now)
+            if len(self._failures) >= self.SWEEP_THRESHOLD:
+                for old in list(self._failures):
+                    self._recent(old, now)
+            self._failures.setdefault(key, deque()).append(now)
 
     def clear(self, key):
         with self._lock:

@@ -90,6 +90,13 @@ genişliklerinde bakılmalıdır.
   - `http://` → `https://` yönlendirmesi sunucuda yapılamaz; `static/app.js`
     en başta alan adıyla `http://` açıldıysa sayfayı `https://`'e taşır ve
     8101 portu `Strict-Transport-Security` gönderir. Bu kod silinmemelidir.
+  - Oturum çerezinin `Secure` bayrağı bu yüzden `X-Forwarded-Proto`'ya değil,
+    tarayıcının POST isteğine eklediği `Origin` başlığına bakar (`https://` ise
+    eklenir). Ev ağında `http://` ile giriş bu sayede çalışmaya devam eder.
+- Sunucu bağlantıları 60 sn okuma/yazma zaman aşımıyla çalışır ve aynı anda en
+  fazla 4 scrypt hesabı yapılır (Pi'de bellek tüketmeye karşı). Hatalı giriş
+  kilidi ve **Üye ol** formu bilerek değiştirilmedi; kilit, dış istekler aynı
+  adresten geldiği için kullanıcı adına göre çalışır.
 - 8099 (Ingress) portu dışarı açılmaz; `X-Remote-User-Name` başlığına yalnızca
   Supervisor adresinden gelen istekte güvenilir.
 
@@ -106,8 +113,15 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ✅ 6.0.5 |
 | 5 | Ana sayfada yönetici onaylı **Üye ol** sekmesi (ad, soyad, e-posta, telefon, statü, kullanıcı adı, şifre) ve **Şifremi unuttum** talebi | ✅ 6.0.6 |
 | 6 | Sayfada **Sorun bildir** butonu; yönetici açık bildirimleri görüp kapatabilsin | ✅ 6.0.7 |
-| 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ⏳ bekliyor |
+| 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ✅ 6.0.9 tarama + site düzeltmeleri; modem/HA önerileri kullanıcı onayı bekliyor |
 
 Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.0.8).
 Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim
-pencereleri yenilendi. Güvenlik taraması sıradaki adımdır; henüz yapılmadı.
+pencereleri yenilendi.
+
+Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
+`Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız
+büyüyen kilit sözlüğü ve eşzamanlı scrypt bellek tüketimi düzeltildi. Modem ve
+Home Assistant bulguları ev ağına özel bilgi içerdiği için depoda değil,
+bu bilgisayardaki `yerel/GUVENLIK_TARAMASI.md` dosyasındadır; oradaki
+değişiklikler kullanıcı onayıyla tek tek yapılacak.

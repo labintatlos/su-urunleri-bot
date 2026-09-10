@@ -165,6 +165,10 @@ class Handler(BaseHTTPRequestHandler):
     sys_version = ''
     protocol_version = 'HTTP/1.1'
     ingress = False
+    # Yarım bırakılan veya hiç veri göndermeyen bağlantı bir iş parçacığını
+    # sonsuza dek tutmasın. Yalnızca istemciyle okuma/yazmayı sınırlar;
+    # sunucudaki uzun işlemler (hukuki değerlendirme) bu süreye girmez.
+    timeout = 60
 
     def log_message(self, fmt, *args):
         pass
@@ -231,22 +235,39 @@ class Handler(BaseHTTPRequestHandler):
         body = json.dumps(payload, ensure_ascii=False).encode('utf-8')
         self.send_body(status, body, 'application/json; charset=utf-8', cookies)
 
+    def cookie_flags(self):
+        flags = 'Path=/; HttpOnly; SameSite=Lax'
+        # KeenDNS tüneli X-Forwarded-Proto göndermez. Tarayıcının POST
+        # isteğine kendiliğinden eklediği Origin, sayfanın https ile açıldığını
+        # gösterir; o durumda çerez düz http üzerinden hiç gönderilmez.
+        origin = (self.headers.get('Origin') or '').lower()
+        if origin.startswith('https://') or (self.headers.get('X-Forwarded-Proto') or '').lower() == 'https':
+            flags += '; Secure'
+        return flags
+
     def session_cookie(self, account, remember):
         token, max_age = accounts.issue_token(account, remember)
-        parts = [f'{accounts.COOKIE_NAME}={token}', 'Path=/', 'HttpOnly', 'SameSite=Lax']
+        cookie = f'{accounts.COOKIE_NAME}={token}; {self.cookie_flags()}'
         if max_age:
-            parts.append(f'Max-Age={max_age}')
-        if (self.headers.get('X-Forwarded-Proto') or '').lower() == 'https':
-            parts.append('Secure')
-        return '; '.join(parts)
+            cookie += f'; Max-Age={max_age}'
+        return cookie
 
     def read_json(self):
         # Başka bir sitenin tarayıcı üzerinden istek atmasını (CSRF) engeller:
         # bu başlık ancak aynı kökenden çalışan betik tarafından eklenebilir.
         if self.headers.get('X-Requested-With') != 'SuUrunleri':
+            self.close_connection = True
             raise ApiError(403, 'Geçersiz istek.')
-        length = int(self.headers.get('Content-Length') or 0)
+        try:
+            length = int(self.headers.get('Content-Length') or 0)
+        except ValueError:
+            length = -1
+        # Negatif uzunluk okumayı bağlantı kapanana dek bekletiyordu.
+        if length < 0:
+            self.close_connection = True
+            raise ApiError(400, 'Geçersiz istek.')
         if length > MAX_BODY_BYTES:
+            self.close_connection = True
             raise ApiError(413, 'İstek çok büyük.')
         try:
             data = json.loads(self.rfile.read(length) or b'{}')
@@ -326,7 +347,7 @@ class Handler(BaseHTTPRequestHandler):
             account = self.require_account()
             db.log_activity(accounts.uid_of(account), 'logout')
             return self.send_json(200, {'ok': True}, cookies=[
-                f'{accounts.COOKIE_NAME}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax'])
+                f'{accounts.COOKIE_NAME}=; {self.cookie_flags()}; Max-Age=0'])
         account = self.require_account()
         uid = accounts.uid_of(account)
         if path == '/api/action':

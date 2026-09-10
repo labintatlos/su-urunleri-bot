@@ -16,3 +16,6 @@ su_urunleri_kolluk.db
 # Bu bilgisayara özel canlı sistem notları ve yardımcı betikler (adresler,
 # KeenDNS adı). Depo herkese açık olduğu için asla commit edilmez.
 yerel/
+
+# Claude Code yerel izin listesi (bu bilgisayara özel).
+.claude/settings.local.json
