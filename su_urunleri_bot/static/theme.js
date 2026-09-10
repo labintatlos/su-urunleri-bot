@@ -30,7 +30,7 @@
   function apply(theme) {
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
-    const color = theme === 'dark' ? '#0a2a3c' : '#0b3a53';
+    const color = '#102f3c';
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.content = color;
     updateButtons(theme);

@@ -108,7 +108,7 @@
   // kutu ekranın içine taşınır; aksi halde üst çubukta genel arama kutusudur.
   const SEARCH_PLACEHOLDER = 'Tür, ceza veya mevzuat ara… (örn. hamsi, ruhsatsız)';
   // Dar ekranda uzun ipucu iki satıra kırılıp üst çubuğu büyütüyordu.
-  const SHORT_SEARCH_PLACEHOLDER = 'Tür, ceza, madde ara…';
+  const SHORT_SEARCH_PLACEHOLDER = 'Ara…';
   const narrowScreen = window.matchMedia('(max-width: 640px)');
   const searchPlaceholder = () => (narrowScreen.matches ? SHORT_SEARCH_PLACEHOLDER : SEARCH_PLACEHOLDER);
   const MODE_PLACEHOLDER = {
@@ -150,6 +150,35 @@
   // ── Ekranı çiz ─────────────────────────────────────────────────────────
   const viewKey = (view) => JSON.stringify([view.blocks, view.buttons, view.mode || null]);
 
+  const HOME_TOOLS = {
+    'guide:menu': ['Kontrol föyleri', 'Tekne türüne özel maddeleri adım adım kontrol edin.', 'ship'],
+    'audit:start': ['Yönlendirilmiş kontrol', 'Bölge, faaliyet ve av bilgileriyle denetiminizi başlatın.', 'compass'],
+    'ceza:menu': ['İhlaller ve yaptırımlar', 'Ceza tutarlarına, işlemlere ve dayanak maddelerine ulaşın.', 'book'],
+    'turcizelge:menu': ['Tür bilgileri', 'Asgari boy, miktar ve zaman yasaklarını inceleyin.', 'fish'],
+    'vessel:menu': ['Gemi ve donanım', 'Ruhsat, belge ve izleme sistemi kontrollerini açın.', 'ship'],
+    'field:Kolluk İşlemi': ['Saha rehberi', 'Denetimde uygulanacak kolluk işlemlerini inceleyin.', 'clipboard'],
+    'ai:start': ['Olay değerlendirmesi', 'Olayı anlatın; ilgili mevzuatla birlikte değerlendirin.', 'scales'],
+    'admin:panel': ['Yönetim', 'Kullanıcılar, işlem kayıtları ve sorun bildirimleri.', 'shield'],
+  };
+  const ICON_PATHS = {
+    ship: 'M4 14l8 5 8-5-2 6H6l-2-6Zm3 1V8h10v7M10 8V4h4v4M2 22h20',
+    compass: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM16 8l-3 5-5 3 3-5 5-3Z',
+    book: 'M12 5v16M12 5C9 3 5 3 2 4v15c4-1 7 0 10 2 3-2 6-3 10-2V4c-3-1-7-1-10 1Z',
+    fish: 'M3 12c4-7 10-7 14-2l4-4v12l-4-4c-4 5-10 5-14-2ZM7 11v2',
+    clipboard: 'M9 5H5v17h14V5h-4M9 3h6v5H9V3Zm-1 9h8m-8 5h6',
+    scales: 'M12 3v18M7 21h10M3 7h18M6 7l-4 8h8L6 7Zm12 0-4 8h8l-4-8Z',
+    shield: 'M12 2l8 4v7c0 5-8 9-8 9s-8-4-8-9V6l8-4Zm-4 10 3 3 5-6',
+  };
+  function toolIcon(name) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    const path = document.createElementNS(svg.namespaceURI, 'path');
+    path.setAttribute('d', ICON_PATHS[name]);
+    svg.append(path);
+    return svg;
+  }
+
   // Sunucu metnindeki ━━━ ayırıcıları sabit uzunlukta olduğu için dar ekranda
   // alt satıra taşıyordu; ekran genişliğine uyan bir çizgiye çevrilir.
   function drawRules(root) {
@@ -169,6 +198,11 @@
   function render(view, { push = true, focus = true } = {}) {
     const changed = !current || viewKey(current) !== viewKey(view);
     current = { blocks: view.blocks || [], buttons: view.buttons || [], mode: view.mode || null };
+    const isHome = current.buttons.flat().some(button => button.data === 'audit:start')
+      && current.buttons.flat().some(button => button.data === 'ceza:menu');
+    $('.stage').classList.toggle('home-stage', isHome);
+    $('#tools-title').hidden = !isHome;
+    $('#page-context').textContent = isHome ? 'Ana sayfa' : 'Denetim çalışma alanı';
 
     ui.screen.replaceChildren();
     for (const block of current.blocks) {
@@ -185,6 +219,21 @@
       line.dataset.count = String(row.length);
       for (const button of row) {
         const node = el('button', `btn ${tone(button.text)}`.trim(), button.text);
+        node.dataset.action = button.data;
+        const tool = isHome && HOME_TOOLS[button.data];
+        if (tool) {
+          node.classList.add('tool-card');
+          if (button.data === 'audit:start') node.classList.add('featured');
+          const icon = el('span', 'tool-icon');
+          icon.append(toolIcon(tool[2]));
+          const copy = el('span', 'tool-copy');
+          copy.append(el('small', 'tool-category', tool[0]),
+            el('span', 'tool-name', button.text.replace(/^[^\p{L}\p{N}]+/u, '')),
+            el('span', 'tool-description', tool[1]));
+          const arrow = el('span', 'tool-arrow', '↗');
+          arrow.setAttribute('aria-hidden', 'true');
+          node.replaceChildren(icon, copy, arrow);
+        }
         node.type = 'button';
         node.addEventListener('click', () => press(button.data));
         line.append(node);

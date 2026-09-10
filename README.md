@@ -30,6 +30,9 @@ Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belge
 ### 🌗 Aydınlık / Karanlık Görünüm
 Site ilk açılışta cihazın görünüm ayarını izler. Giriş ekranındaki veya üst çubuktaki ay/güneş düğmesiyle görünüm değiştirilebilir; seçim aynı tarayıcıda korunur.
 
+### 🎨 Denizcilik Temalı Arayüz
+6.0.8 ile giriş ve üyelik ekranları, ana sayfa, rehberler ve yönetim pencereleri ortak lacivert/turkuaz görünüme kavuştu. Ana menü açıklamalı ve vektör simgeli işlem kartları sunar. Telefonlarda tek sütun, tablet ve bilgisayarlarda iki sütun kullanılır; dokunma hedefleri, klavye odağı ve azaltılmış hareket tercihi desteklenir. Görseller ve yazı tipleri için dış servis gerekmez.
+
 ### 👤 Üyelik ve Şifre Yenileme
 Giriş ekranındaki **Üye ol** sekmesinden ad, soyad, e-posta, telefon, statü, kullanıcı adı ve şifreyle başvuru yapılır. Hesap yönetici onayına kadar giriş yapamaz. **Şifremi unuttum** bağlantısıyla kullanıcı adı veya e-posta üzerinden talep oluşturulur; yönetici **Kişiler / Şifreler** ekranından yeni şifre vererek talebi kapatır.
 

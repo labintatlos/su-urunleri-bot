@@ -107,3 +107,7 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 5 | Ana sayfada yönetici onaylı **Üye ol** sekmesi (ad, soyad, e-posta, telefon, statü, kullanıcı adı, şifre) ve **Şifremi unuttum** talebi | ✅ 6.0.6 |
 | 6 | Sayfada **Sorun bildir** butonu; yönetici açık bildirimleri görüp kapatabilsin | ✅ 6.0.7 |
 | 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ⏳ bekliyor |
+
+Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.0.8).
+Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim
+pencereleri yenilendi. Güvenlik taraması sıradaki adımdır; henüz yapılmadı.

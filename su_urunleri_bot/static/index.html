@@ -4,17 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google" content="notranslate">
-<meta name="theme-color" content="#0b3a53">
+<meta name="theme-color" content="#102f3c">
 <title>Su Ürünleri Kolluk Asistanı</title>
 <link rel="icon" href="static/icon.svg" type="image/svg+xml">
 <script src="static/theme.js"></script>
 <link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="static/refresh.css">
 <script src="static/app.js" defer></script>
 </head>
 <body>
 <div id="boot" class="boot"><span class="spinner"></span></div>
 
 <section id="auth" class="auth" hidden>
+  <aside class="auth-intro">
+    <span class="eyebrow">SU ÜRÜNLERİ · DENİZ GÖREV ALANI</span>
+    <h2>Sahada doğru bilgi.<br>Her adımda rehberlik.</h2>
+    <p>Denetim, mevzuat ve tür bilgisi.<br>Göreviniz için gereken kaynaklar tek yerde.</p>
+    <div class="intro-features"><span>01 <b>Yönlendirilmiş denetim</b></span><span>02 <b>Mevzuat ve ceza rehberi</b></span><span>03 <b>Tür ve tekne kılavuzları</b></span></div>
+    <span class="intro-footer">SU ÜRÜNLERİ KOLLUK ASİSTANI</span>
+  </aside>
   <div class="auth-card">
     <button class="theme-toggle auth-theme-toggle" type="button" data-theme-toggle>
       <span class="theme-icon" aria-hidden="true">🌙</span>
@@ -31,13 +39,14 @@
     </div>
 
     <form id="login-form" hidden>
-      <h2>Giriş yap</h2>
+      <h2>Tekrar hoş geldiniz</h2>
+      <p class="note">Devam etmek için hesabınıza giriş yapın.</p>
       <p id="ingress-note" class="note" hidden>Home Assistant hesabınız bu sitedeki bir kişiyle henüz eşleşmedi. Bir kez site kullanıcı adı ve şifrenizle girin; buradan sonraki açılışlarda şifre sorulmaz.</p>
       <label>Kullanıcı adı<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
       <label>Şifre<input name="password" type="password" autocomplete="current-password" required></label>
       <label class="check"><input name="remember" type="checkbox" checked> Beni hatırla</label>
       <p class="form-error" hidden></p>
-      <button type="submit" class="btn primary wide">Giriş</button>
+      <button type="submit" class="btn primary wide">Giriş yap →</button>
       <button type="button" class="text-button" data-auth-view="reset">Şifremi unuttum</button>
     </form>
 
@@ -90,7 +99,7 @@
 
 <div id="app" class="app" hidden>
   <header class="topbar">
-    <button class="brand" id="home-btn" type="button" title="Ana Menü">
+    <button class="brand" id="home-btn" type="button" title="Ana Menü" aria-label="Ana menüye dön">
       <img src="static/icon.svg" alt="" class="brand-logo">
       <span class="brand-text"><b>Su Ürünleri</b><small>Kolluk Asistanı</small></span>
     </button>
@@ -105,7 +114,7 @@
         <span class="theme-icon" aria-hidden="true">🌙</span>
         <span class="theme-label">Karanlık görünüm</span>
       </button>
-      <button id="account-btn" class="account-btn" type="button" aria-haspopup="menu" aria-expanded="false"><span id="account-initial">•</span></button>
+      <button id="account-btn" class="account-btn" type="button" aria-label="Hesap menüsü" aria-haspopup="menu" aria-expanded="false"><span id="account-initial">•</span></button>
       <div id="account-menu" class="menu" role="menu" hidden>
         <div class="menu-head"><b id="account-name"></b><small id="account-username"></small></div>
         <button type="button" role="menuitem" data-cmd="issue">🛠 Sorun bildir</button>
@@ -117,9 +126,12 @@
   </header>
 
   <main class="stage">
+    <div class="page-heading"><span class="eyebrow">DENİZ GÖREV ALANI</span><span class="page-context" id="page-context">Denetim çalışma alanı</span></div>
     <article id="screen" class="screen" aria-live="polite"></article>
     <div id="inline-slot" class="inline-slot"></div>
+    <h2 id="tools-title" class="tools-title" hidden>Çalışma alanınız <span>Bir işlem seçerek başlayın</span></h2>
     <nav id="buttons" class="buttons" aria-label="İşlemler"></nav>
+    <footer class="stage-footer"><img src="static/icon.svg" alt="" width="22" height="22"><span>Su Ürünleri Kolluk Asistanı</span><span>Denetim · Mevzuat · Rehber</span></footer>
   </main>
 </div>
 

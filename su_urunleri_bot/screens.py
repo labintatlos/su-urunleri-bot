@@ -691,15 +691,11 @@ MAIN = [
 
 def send_menu(target, user_id=None, edit=False, update=None, context=None, force_new=False):
     text = (
-        '<b>⚓ SU ÜRÜNLERİ KOLLUK ASİSTANI</b>\n\n'
-        '🌊 <b>Deniz görev alanı</b>\n\n'
-        'Su ürünleri denetimlerinde mevzuat hükümlerinin değerlendirilmesi, ihlallerin tespiti '
-        've uygulanacak işlemlerin belirlenmesine yardımcı olur.\n\n'
-        '📋 <b>Tekne Türü Kılavuzları</b> ile çıkacağınız tekneye özel kontrol föyünü açabilir, '
-        'her maddeyi Uygun / Uygunsuz / Kontrol Edilmedi olarak işaretleyebilirsiniz.\n\n'
-        '🚨 <b>Denetime Başla</b> ise bölgeden başlayıp faaliyet, gemi boyu, tarih, av aracı ve türe doğru adım adım ilerleyen yönlendirilmiş kontrolü başlatır.\n\n'
-        '💬 <b>Aramak için üstteki arama kutusuna yazın.</b> Tür, ceza veya mevzuat kelimesi yazmanız yeterli — '
-        'örn. <code>hamsi</code>, <code>ruhsatsız</code>, <code>BAGİS</code>.'
+        '<b>Denetimde bilgi,\nkararlarınızda dayanak.</b>\n\n'
+        'Su ürünleri denetimi için kontrol föyleri, mevzuat ve tür rehberleri. '
+        'Görevinize uygun aracı aşağıdan seçin.\n\n'
+        'Üstteki arama alanında tür, ceza veya mevzuat arayın: '
+        '<code>hamsi</code>  <code>ruhsatsız</code>  <code>BAGİS</code>'
     )
     rows = list(MAIN)
     if user_id:
