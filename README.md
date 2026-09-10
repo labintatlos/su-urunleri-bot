@@ -27,6 +27,9 @@ Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belge
 ### 💬 Doğrudan Arama
 Üstteki arama kutusuna tür, ceza veya mevzuat kelimesi yazmak yeterlidir; tür, ceza ve madde sonuçları birlikte listelenir. Bir ekran cevap beklediğinde (tür adı, gemi boyu, tarih, olay metni) kutu o ekranın içine gelir.
 
+### 🌗 Aydınlık / Karanlık Görünüm
+Site ilk açılışta cihazın görünüm ayarını izler. Giriş ekranındaki veya üst çubuktaki ay/güneş düğmesiyle görünüm değiştirilebilir; seçim aynı tarayıcıda korunur.
+
 ### 🔐 Yönetici Paneli ve Kişiler
 Kullanıcı istatistikleri, denetim ve arama dağılımı, işlem kayıtları. Yönetici **Kişiler / Şifreler** ekranından kişi ekler, şifre verir, yönetici yapar veya pasifleştirir. Herkes kendi şifresini sağ üstteki menüden değiştirebilir.
 

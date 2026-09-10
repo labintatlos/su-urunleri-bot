@@ -20,8 +20,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+:root[data-theme="dark"] {
     --bg: #0c161d;
     --surface: #13212b;
     --surface-2: #182a36;
@@ -40,7 +39,6 @@
     --code-bg: #1d3140;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
     color-scheme: dark;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -70,9 +68,20 @@ button, input, textarea { font: inherit; color: inherit; }
   background: radial-gradient(1200px 500px at 50% -10%, var(--brand-2), transparent 70%), var(--bg);
 }
 .auth-card {
+  position: relative;
   width: 100%; max-width: 400px; background: var(--surface);
   border-radius: 20px; box-shadow: var(--shadow); padding: 28px 24px;
 }
+.theme-toggle {
+  min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface-2); color: var(--text); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+}
+.auth-theme-toggle {
+  position: absolute; top: 14px; right: 14px; min-height: 36px; padding: 6px 9px;
+  color: var(--muted); font-size: .82rem;
+}
+.auth-brand { padding-right: 122px; }
 .auth-brand { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
 .auth-logo { width: 52px; height: 52px; }
 .auth-brand h1 { margin: 0; font-size: 1.35rem; line-height: 1.2; }
@@ -134,7 +143,12 @@ label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .composer.multiline .send::after { content: "Değerlendir"; margin-left: 8px; font-weight: 600; }
 .composer.multiline .send { display: flex; justify-content: center; align-items: center; }
 
-.account { position: relative; flex: none; }
+.account { position: relative; flex: none; display: flex; align-items: center; gap: 8px; }
+.top-theme-toggle {
+  border-color: rgba(255, 255, 255, .35); background: rgba(255, 255, 255, .12);
+  color: #fff; border-radius: 50%;
+}
+.top-theme-toggle .theme-label { display: none; }
 .account-btn {
   width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
   border: 1px solid rgba(255, 255, 255, .35); background: rgba(255, 255, 255, .12); color: #fff; font-weight: 700;
@@ -252,6 +266,11 @@ label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
   .composer textarea { padding: 10px 12px; }
   .stage { padding-top: 12px; }
   .screen { padding: 16px; margin-bottom: 12px; }
+}
+
+@media (max-width: 380px) {
+  .auth-brand { padding-right: 46px; }
+  .auth-theme-toggle .theme-label { display: none; }
 }
 
 /* Geniş ekran: arama kutusu tam olarak içerik sütununun (780 - 2×16 px) üstünde. */

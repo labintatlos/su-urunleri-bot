@@ -7,6 +7,7 @@
 <meta name="theme-color" content="#0b3a53">
 <title>Su Ürünleri Kolluk Asistanı</title>
 <link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<script src="static/theme.js"></script>
 <link rel="stylesheet" href="static/style.css">
 <script src="static/app.js" defer></script>
 </head>
@@ -15,6 +16,10 @@
 
 <section id="auth" class="auth" hidden>
   <div class="auth-card">
+    <button class="theme-toggle auth-theme-toggle" type="button" data-theme-toggle>
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+      <span class="theme-label">Karanlık görünüm</span>
+    </button>
     <div class="auth-brand">
       <img src="static/icon.svg" alt="" class="auth-logo">
       <div><h1>Su Ürünleri</h1><p>Kolluk Asistanı</p></div>
@@ -56,6 +61,10 @@
       </form>
     </div>
     <div class="account">
+      <button class="theme-toggle top-theme-toggle" type="button" data-theme-toggle>
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+        <span class="theme-label">Karanlık görünüm</span>
+      </button>
       <button id="account-btn" class="account-btn" type="button" aria-haspopup="menu" aria-expanded="false"><span id="account-initial">•</span></button>
       <div id="account-menu" class="menu" role="menu" hidden>
         <div class="menu-head"><b id="account-name"></b><small id="account-username"></small></div>
