@@ -1,0 +1,109 @@
+# Bu depoda çalışan yapay zekâ asistanları için
+
+Bu dosya Claude Code, ChatGPT/Codex veya başka bir asistanın işi kaldığı yerden
+devralabilmesi için yazılmıştır. Kullanıcı Türkçe konuşur; arayüz metinleri ve
+kullanıcıya verilen cevaplar Türkçedir.
+
+## Proje
+
+Su Ürünleri Denetim Asistanı: deniz görev alanında su ürünleri denetimi için
+mevzuat, ceza ve tür rehberi. Home Assistant OS üzerinde (Raspberry Pi 5) bir
+eklenti olarak çalışan, kullanıcı adı ve şifreyle açılan bir web sitesidir.
+Eskiden Telegram botuydu; 6.0.0 ile tamamen web sitesine geçildi. Ekran
+mantığı ve düğme verileri Telegram botundan birebir taşındı.
+
+Mimari, dosya yapısı ve veritabanı tabloları için [README.md](README.md),
+dağıtım ve KeenDNS için [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Değişmez kurallar
+
+1. **Çalışan özellikler korunur.** Mevcut davranış gereksinimdir. Büyük yeniden
+   yazım yapılmaz; değişiklik küçük adımlarla yapılır ve her adım eskisiyle
+   karşılaştırılarak doğrulanır.
+2. **Çalıştırmadan "bitti" denmez.** Kod gerçekten çalıştırılmadan ve test
+   çıktısı görülmeden hiçbir iş "tamamlandı / test edildi" diye raporlanmaz.
+   Doğrulanamayan kısım açıkça söylenir.
+3. **Teslim = push + sürüm artışı.** Home Assistant güncellemeyi yalnızca
+   GitHub'daki `su_urunleri_bot/config.yaml` içindeki `version` alanından görür.
+   Her push'ta (yalnızca doküman değişse bile) sürüm artırılır, commit
+   `origin/master`'a gönderilir. Sürüm artmayan push kullanıcı için "hiç
+   yapılmamış iş" demektir.
+4. **Çalışma düzeni:** Kullanıcı istekleri sırasız verir; asistan sıralar,
+   her adımı bitirip pushlar ve bir sonraki adıma geçmeden onay bekler.
+5. **İstenmeyen mekanizma eklenmez.** (Örnek: tek kişilik özel bota eklenen hız
+   sınırlayıcı normal kullanımı bozmuştu.)
+6. **Depo herkese açıktır (public).** Şifre, API anahtarı, erişim anahtarı,
+   KeenDNS adresi, MAC adresi ve benzeri hiçbir özel bilgi commit edilmez.
+   Erişim bilgisi gerektiğinde kullanıcıdan `C:\Users\cemci\erisim_bilgileri.txt`
+   dosyasına yazması istenir (kullanıcının tercih ettiği yöntem; sohbete şifre
+   yazdırılmaz) ve iş bitince dosyayı silmesi önerilir.
+7. **Canlı sisteme bağlanarak çalışılır.** Home Assistant ve Keenetic modeme
+   doğrudan erişilir; dışa aktarılmış dosyalar üzerinden tahmin yürütülmez.
+8. Kullanıcıya zamir gerekiyorsa cinsiyet varsayılmaz.
+
+## Yerel notlar (depoda yok)
+
+Bu bilgisayarda depo klasöründeki `yerel/` dizini `.gitignore` ile dışarıda
+tutulur. Varsa önce onu okuyun:
+
+- `yerel/NOTLAR.md`: canlı sistemin adresleri, KeenDNS kayıtları, Home Assistant
+  güncelleme varlığı, bilinen API ayrıntıları.
+- `yerel/ops.py`: Keenetic RCI ve Home Assistant REST yardımcı betiği (bilgileri
+  `erisim_bilgileri.txt` dosyasından okur).
+- `yerel/ha_update.py`: eklenti mağazasını yenileyip güncellemeyi kurar ve canlı
+  siteyi kontrol eder.
+
+## Çalıştırma ve doğrulama
+
+Hiçbir paket gerekmez (Python 3.11+ standart kütüphanesi).
+
+```bash
+python tools/smoke_test.py
+```
+
+Betik `su_urunleri_bot/web.py`'yi geçici bir veritabanıyla gerçekten başlatır,
+kurulum koduyla ilk yöneticiyi oluşturur, giriş yapar ve ana menüden
+ulaşılabilen her düğmeye basar; metin bekleyen ekranlara örnek metin yazar.
+Beklenen çıktı `errors: 0`'dır ve çıkış kodu 0 olur. Günlükteki
+`GEMINI_API_KEY yapılandırılmamış` satırı yerel denemede normaldir.
+
+Arayüz değişikliklerinde ayrıca tarayıcıda telefon, tablet ve masaüstü
+genişliklerinde bakılmalıdır.
+
+## Dağıtım adımları
+
+1. Değişikliği yap, `python tools/smoke_test.py` çalıştır, `errors: 0` gör.
+2. `su_urunleri_bot/config.yaml` içindeki `version` değerini artır.
+3. Commit et ve `git push origin master`.
+4. Home Assistant'ta eklenti mağazasını yenile ve güncellemeyi kur
+   (`yerel/ha_update.py` bunu yapar; yoksa kullanıcıdan **Ayarlar → Eklentiler →
+   Eklenti Mağazası → ⋮ → Güncellemeleri kontrol et** istenir).
+5. Canlı sitede `/health` ve değişen davranışı kontrol et.
+
+## Bilinen kısıtlar
+
+- Site dışarıya Keenetic KeenDNS **bulut modu** ile açılır (modemin genel IP'si
+  yok). Bu tünel `X-Forwarded-For` / `X-Forwarded-Proto` iletmez ve `http://`
+  isteklerini de siteye geçirir:
+  - Her istek sunucuya modemin adresinden gelir; gerçek ziyaretçi IP'si
+    bilinemez. Hatalı giriş kilidi fiilen kullanıcı adına göre çalışır.
+  - `http://` → `https://` yönlendirmesi sunucuda yapılamaz; `static/app.js`
+    en başta alan adıyla `http://` açıldıysa sayfayı `https://`'e taşır ve
+    8101 portu `Strict-Transport-Security` gönderir. Bu kod silinmemelidir.
+- 8099 (Ingress) portu dışarı açılmaz; `X-Remote-User-Name` başlığına yalnızca
+  Supervisor adresinden gelen istekte güvenilir.
+
+## Yol haritası
+
+Kullanıcının istediği sırayla değil, bağımlılığa göre dizildi. Her adım ayrı
+push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
+
+| # | Adım | Durum |
+|---|------|-------|
+| 1 | Devir dokümanı (bu dosya), ortak tarama betiği | ✅ 6.0.2 |
+| 2 | Telefon / tablet / PC uyumluluğu | ⏳ bekliyor |
+| 3 | Aydınlık / karanlık arayüz | ⏳ bekliyor |
+| 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ⏳ bekliyor |
+| 5 | Ana sayfada **Üye ol** sekmesi: ad, soyad, e-posta, telefon, statü (subay, astsubay, uzman, memur). Yönetici onayı gerekip gerekmediği kullanıcıya sorulacak | ⏳ bekliyor |
+| 6 | Sayfada **Sorun bildir** butonu | ⏳ bekliyor |
+| 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ⏳ bekliyor |

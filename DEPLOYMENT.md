@@ -59,6 +59,17 @@ isteği ev ağındaki Raspberry Pi'ye iletir. Modemde port açmak gerekmez.
 Modemde 8101 portunu doğrudan düz HTTP olarak internete açmayın: şifre
 şifrelenmeden gider.
 
+### KeenDNS bulut modunun kısıtları
+
+Modemin genel IP'si yoksa KeenDNS "bulut" modunda çalışır. Bu modda:
+
+- `http://` ile yazılan adres de siteye ulaşır ve modemin "HTTPS'e yönlendir"
+  ayarı uygulanmaz. Site bu yüzden `http://` ile açılınca giriş formunu
+  göstermeden kendini `https://`'e taşır ve HSTS başlığı gönderir; bir kez
+  HTTPS ile girildikten sonra tarayıcı adresi bir daha düz HTTP ile açmaz.
+- Modem ziyaretçinin IP'sini iletmez; bütün istekler modemin adresinden gelmiş
+  görünür. Hatalı giriş kilidi bu yüzden kullanıcı adına göre çalışır.
+
 ## Kontrol
 
 | İstek | Beklenen |
