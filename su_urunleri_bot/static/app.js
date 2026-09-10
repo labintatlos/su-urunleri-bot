@@ -105,6 +105,10 @@
   // Ekran bir cevap beklediğinde (tür adı, gemi boyu, tarih, olay metni…)
   // kutu ekranın içine taşınır; aksi halde üst çubukta genel arama kutusudur.
   const SEARCH_PLACEHOLDER = 'Tür, ceza veya mevzuat ara… (örn. hamsi, ruhsatsız)';
+  // Dar ekranda uzun ipucu iki satıra kırılıp üst çubuğu büyütüyordu.
+  const SHORT_SEARCH_PLACEHOLDER = 'Tür, ceza, madde ara…';
+  const narrowScreen = window.matchMedia('(max-width: 640px)');
+  const searchPlaceholder = () => (narrowScreen.matches ? SHORT_SEARCH_PLACEHOLDER : SEARCH_PLACEHOLDER);
   const MODE_PLACEHOLDER = {
     ai_analysis: 'Olayı ayrıntılı yazın…',
     penalty: 'İhlali veya olayı yazın…',
@@ -125,7 +129,7 @@
     ui.composer.classList.toggle('inline', inline);
     ui.composer.classList.toggle('multiline', mode === 'ai_analysis');
     (inline ? ui.inlineSlot : ui.topSlot).append(ui.composer);
-    ui.input.placeholder = inline ? MODE_PLACEHOLDER[mode] : SEARCH_PLACEHOLDER;
+    ui.input.placeholder = inline ? MODE_PLACEHOLDER[mode] : searchPlaceholder();
     ui.input.inputMode = /length/.test(mode || '') ? 'decimal' : 'text';
     ui.input.rows = mode === 'ai_analysis' ? 6 : 1;
     ui.input.value = '';
@@ -135,12 +139,30 @@
 
   function autosize() {
     if (ui.composer.classList.contains('multiline')) { ui.input.style.height = ''; return; }
+    // Boş kutuda scrollHeight ipucu metnini de sayar; tek satır kalsın.
+    if (!ui.input.value) { ui.input.style.height = ''; return; }
     ui.input.style.height = 'auto';
     ui.input.style.height = `${Math.min(ui.input.scrollHeight, 160)}px`;
   }
 
   // ── Ekranı çiz ─────────────────────────────────────────────────────────
   const viewKey = (view) => JSON.stringify([view.blocks, view.buttons, view.mode || null]);
+
+  // Sunucu metnindeki ━━━ ayırıcıları sabit uzunlukta olduğu için dar ekranda
+  // alt satıra taşıyordu; ekran genişliğine uyan bir çizgiye çevrilir.
+  function drawRules(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) if (/━{6,}/.test(walker.currentNode.nodeValue)) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      const fragment = document.createDocumentFragment();
+      node.nodeValue.split(/━{6,}/).forEach((part, index) => {
+        if (index) fragment.append(el('span', 'rule'));
+        if (part) fragment.append(part);
+      });
+      node.replaceWith(fragment);
+    }
+  }
 
   function render(view, { push = true, focus = true } = {}) {
     const changed = !current || viewKey(current) !== viewKey(view);
@@ -150,6 +172,7 @@
     for (const block of current.blocks) {
       const div = el('div', 'block');
       div.append(sanitize(block));
+      drawRules(div);
       ui.screen.append(div);
     }
     ui.screen.hidden = current.blocks.length === 0;
@@ -403,6 +426,9 @@
   });
 
   $('#home-btn').addEventListener('click', () => press('menu'));
+  narrowScreen.addEventListener('change', () => {
+    if (!ui.composer.classList.contains('inline')) ui.input.placeholder = searchPlaceholder();
+  });
 
   ui.accountBtn.addEventListener('click', (event) => { event.stopPropagation(); toggleMenu(ui.accountMenu.hidden); });
   document.addEventListener('click', (event) => { if (!ui.accountMenu.contains(event.target)) toggleMenu(false); });

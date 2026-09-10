@@ -101,7 +101,7 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | # | Adım | Durum |
 |---|------|-------|
 | 1 | Devir dokümanı (bu dosya), ortak tarama betiği | ✅ 6.0.2 |
-| 2 | Telefon / tablet / PC uyumluluğu | ⏳ bekliyor |
+| 2 | Telefon / tablet / PC uyumluluğu (telefonda tek satır üst çubuk, 44 px dokunma hedefleri, çentik boşlukları, yatay telefon, ━━━ ayırıcıları) | ✅ 6.0.3 |
 | 3 | Aydınlık / karanlık arayüz | ⏳ bekliyor |
 | 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ⏳ bekliyor |
 | 5 | Ana sayfada **Üye ol** sekmesi: ad, soyad, e-posta, telefon, statü (subay, astsubay, uzman, memur). Yönetici onayı gerekip gerekmediği kullanıcıya sorulacak | ⏳ bekliyor |
