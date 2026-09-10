@@ -125,7 +125,12 @@ try:
 except ValueError:
     LIMIT = 8
 GEMINI_API_KEY = (os.environ.get('GEMINI_API_KEY') or options.get('gemini_api_key') or '').strip()
-GEMINI_MODEL = (os.environ.get('GEMINI_MODEL') or options.get('gemini_model') or 'gemini-3.6-flash').strip()
+GEMINI_MODEL = (os.environ.get('GEMINI_MODEL') or options.get('gemini_model') or 'gemini-3.5-flash-lite').strip()
+# Home Assistant keeps existing option values across addon updates. Migrate the
+# previous project default automatically so an installed 5.9.2 instance does
+# not continue using Gemini 3.6 Flash after this update.
+if GEMINI_MODEL == 'gemini-3.6-flash':
+    GEMINI_MODEL = 'gemini-3.5-flash-lite'
 
 SRC_LABEL = {
     'law': '1380 Kanun',
@@ -286,96 +291,63 @@ class AIError(Exception):
     """A Gemini call failed in a way the user should see a plain message for."""
 
 
-# Matches the sources the user's own Gemini Gem was given: kanun, yönetmelik
-# and the two avcılık tebliğleri, plus BAGİS since it governs a lot of the
-# same enforcement questions. Deliberately excludes 'kilavuz' (our own field
-# guide) so the model never treats our editorial notes as if they were law.
-AI_SOURCES = ['law', 'reg', '61', '62', 'bagis']
-
 AI_SYSTEM_INSTRUCTION = (
-    "Sen Türkiye'de deniz görev alanında çalışan su ürünleri kolluk personeli için bir "
-    "hukuki danışma asistanısın. Sana aşağıda 1380 sayılı Su Ürünleri Kanunu'nun, Su "
-    "Ürünleri Yönetmeliği'nin, 6/1 ve 6/2 numaralı avcılık tebliğlerinin ve BAGİS "
-    "Tebliği'nin TAM METNİ ile idari yaptırım (ceza) tablosunun tamamı veriliyor. Sana "
-    "bir soru veya olay anlatılacak.\n\n"
-    "KURALLAR:\n"
-    "- Sadece aşağıda verilen mevzuat metinlerine dayan; kendi genel bilgini veya tahminini "
-    "kullanma, hiçbir madde numarasını, tutarı veya hükmü UYDURMA.\n"
-    "- Cevabını doğrudan, akıcı bir metin olarak ver — sabit bir başlık şablonu veya "
-    "numaralı bölüm dayatması yok. Soru neyi gerektiriyorsa onu yaz: bazen tek bir madde "
-    "yeterlidir, bazen birden çok kaynağın (kanun/yönetmelik/tebliğ) karşılığını birlikte "
-    "vermek gerekir.\n"
-    "- İlgili her madde numarasını metnin içinde **kalın** ve kaynağıyla birlikte belirt "
-    "(örn. **6/1 Tebliğ Madde 50** veya **1380 sayılı Kanun Madde 36**).\n"
-    "- Somut bir ihlal varsa uygulanacak idari yaptırımı (ceza tutarı, el koyma, ruhsat "
-    "iptali vb.) tabloya dayanarak belirt.\n"
-    "- Verilen metinlerde soruya doğrudan karşılık gelen bir hüküm yoksa bunu açıkça söyle; "
-    "en yakın ilgili hükmü yine de belirtebilirsin ama bunun doğrudan karşılık olmadığını "
-    "yaz.\n"
-    "- HTML veya markdown başlık işareti (#) kullanma; sadece düz metin ve **kalın** kullan. "
-    "Kolluk personelinin sahada hızla okuyabileceği netlikte, gereksiz tekrar olmadan yaz."
+    "[GÖREV VE ROL]\n"
+    "Sen bir Sahil Güvenlik Personelisin. Temel görevin; kullanıcı tarafından yüklenen veya "
+    "sisteme eklenen belgelere dayalı olarak resmi, doğru ve kesin bilgileri aktarmaktır.\n\n"
+    "[ÜSLUP VE TON]\n"
+    "- Resmi ve Kesin: Ciddi, askeri/kurumsal disipline uygun, açık ve net bir dil kullan.\n"
+    "- Tarafsız ve Otoriter: Gereksiz yorumlardan, kişisel görüşlerden, duygusal ifadelerden "
+    "ve samimi hitaplardan kesinlikle kaçın.\n"
+    "- Doğrudan: Cümleleri uzatmadan, net bilgi ver.\n\n"
+    "[KURALLAR VE KISITLAMALAR]\n"
+    "- Ekli Belgelere Kesin Bağlılık: Yalnızca aşağıda verilen Markdown belgelerindeki "
+    "verilere sadık kal. Genel bilgini veya belge dışı başka bir kaynağı kullanma.\n"
+    "- Varsayım ve Uydurma Yasağı: Belgelerde yer almayan hiçbir bilgiyi türetme, tahmin "
+    "etme veya uydurma. Madde numarası, tarih, tutar, yaptırım ve hüküm ekleme.\n"
+    "- Eksik Bilgi Durumu: İstenen bilgi ekli belgelerde yer almıyorsa yalnızca şu ifadeyi "
+    "kullan: \"Verilen belgelerde bu hususla ilgili bir bilgi bulunmamaktadır.\"\n\n"
+    "[ÇIKTI FORMATI]\n"
+    "- Bütün yanıtları anlaşılır başlıklar ve madde işaretleri kullanarak yapılandır.\n"
+    "- Karmaşık paragraf blokları yerine liste formatını tercih et.\n"
+    "- Başlıkları **kalın**, maddeleri '- ' işaretiyle yaz. HTML kullanma."
 )
 
 
 _AI_CORPUS_CACHE = None
+AI_MARKDOWN_DIR = ASSET_DIR / 'markdown'
 
 
 def ai_full_corpus():
-    """The complete text of every source the model may reason over: every
-    article of the kanun/yönetmelik/tebliğler (no scope filtering — this is a
-    reference tool, not the sea-duty menus) plus the full idari yaptırım
-    table. Built once and cached; only ~300K characters (~75K tokens) total,
-    trivial for a model with a six-figure-token context window, so there is
-    no retrieval step here and nothing gets left out the way a top-K snippet
-    search inevitably would.
-    """
+    """Load the complete legal corpus directly from the packaged Markdown files."""
     global _AI_CORPUS_CACHE
     if _AI_CORPUS_CACHE is not None:
         return _AI_CORPUS_CACHE
+
+    markdown_files = sorted(AI_MARKDOWN_DIR.glob('*.md'), key=lambda path: path.name.casefold())
+    if not markdown_files:
+        logger.error('Hukuki değerlendirme için Markdown kaynağı bulunamadı: %s',
+                     AI_MARKDOWN_DIR)
+        raise AIError('Hukuki değerlendirme kaynakları bulunamadı.')
+
     parts = []
-    for src in AI_SOURCES:
-        for a in db.list_articles(src, include_inland=True):
-            label = SRC_LABEL.get(src, src)
-            body = (a['body'] or '').strip()
-            parts.append(f"[{label} — Madde {a['article']}] {a['title']}\n{body}")
-    parts.append('=== İDARİ YAPTIRIM (CEZA) TABLOSU ===')
-    conn = db.con()
-    try:
-        for p in conn.execute('SELECT * FROM penalty_cards ORDER BY source_row').fetchall():
-            bits = [f"İhlal: {p['violation']}"]
-            if p['option_text']:
-                bits.append(f"Seçenek: {p['option_text']}")
-            if p['law']:
-                bits.append(f"Kanun Md.{p['law']}")
-            if p['regulation']:
-                bits.append(f"Yönetmelik Md.{p['regulation']}")
-            if p['teblig']:
-                bits.append(f"Tebliğ Md.{p['teblig']}")
-            if p['art36']:
-                bits.append(f"1380 s.K. Md.36/{p['art36']}")
-            if p['base_ipc']:
-                bits.append(f"Taban ceza: {money(p['base_ipc'])}")
-            if p['product_seizure']:
-                bits.append(f"Ürüne el koyma: {p['product_seizure']}")
-            if p['means_seizure']:
-                bits.append(f"Av aracına el koyma: {p['means_seizure']}")
-            if p['license_action']:
-                bits.append(f"Ruhsat işlemi: {p['license_action']}")
-            parts.append('• ' + ' · '.join(bits))
-    finally:
-        conn.close()
+    for path in markdown_files:
+        document = path.read_text(encoding='utf-8').strip()
+        if document:
+            parts.append(f"=== BELGE: {path.name} ===\n{document}")
+
+    if not parts:
+        logger.error('Hukuki değerlendirme Markdown kaynakları boş: %s', AI_MARKDOWN_DIR)
+        raise AIError('Hukuki değerlendirme kaynakları boş.')
+
     _AI_CORPUS_CACHE = '\n\n'.join(parts)
+    logger.info('Hukuki değerlendirme için %s Markdown belgesi yüklendi.', len(parts))
     return _AI_CORPUS_CACHE
 
 
 def ai_prompt_prefix():
-    """The part of the prompt that is identical for every question: the
-    instruction block plus the whole corpus. Split out so it can be parked in
-    a Gemini context cache instead of being re-uploaded each time."""
-    return (
-        AI_SYSTEM_INSTRUCTION
-        + '\n\n=== MEVZUAT METİNLERİ VE CEZA TABLOSU ===\n' + ai_full_corpus()
-    )
+    """The document context shared by every question and stored in Gemini's cache."""
+    return '=== EKLİ MARKDOWN BELGELERİ ===\n' + ai_full_corpus()
 
 
 def ai_prompt_tail(scenario):
@@ -384,19 +356,15 @@ def ai_prompt_tail(scenario):
 
 
 def ai_build_prompt(scenario):
-    """The whole prompt as one blob, used whenever the context cache is not
-    available. Deliberately identical, character for character, to
-    prefix + tail: a cached run and an uncached run put exactly the same text
-    in front of the model, so the answer does not depend on which path ran.
-    """
+    """The document context and question used when explicit caching is unavailable."""
     return ai_prompt_prefix() + ai_prompt_tail(scenario)
 
 
 def md_to_tg_html(text):
-    """Turn **bold** markers into <b> after escaping everything else, so the
-    tags are always balanced — we insert them ourselves from matched pairs,
-    never trusting HTML the model might have written directly."""
+    """Convert the small Markdown subset requested from Gemini to safe Telegram HTML."""
     escaped = esc(text)
+    escaped = re.sub(r'(?m)^#{1,6}\s+(.+?)\s*#*\s*$', r'**\1**', escaped)
+    escaped = re.sub(r'(?m)^\s*[-*+]\s+', '• ', escaped)
     return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', escaped, flags=re.S)
 
 
@@ -468,6 +436,7 @@ def _ai_ensure_cache():
         'model': f'models/{GEMINI_MODEL}',
         'displayName': 'su-urunleri-mevzuat',
         'ttl': f'{AI_CACHE_TTL_SECONDS}s',
+        'systemInstruction': {'parts': [{'text': AI_SYSTEM_INSTRUCTION}]},
         'contents': [{'role': 'user', 'parts': [{'text': ai_prompt_prefix()}]}],
     }
     try:
@@ -567,6 +536,7 @@ def _ai_call_gemini_sync(scenario):
     try:
         return _ai_generate({
             'contents': [{'parts': [{'text': ai_build_prompt(scenario)}]}],
+            'systemInstruction': {'parts': [{'text': AI_SYSTEM_INSTRUCTION}]},
             'generationConfig': generation_config,
         })
     except _AIRequestRejected as e:
@@ -912,11 +882,11 @@ async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == 'ai:start':
         context.user_data['mode'] = 'ai_analysis'
         text_ai = (
-            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Kanun, Yönetmelik ve Tebliğ hükümlerine göre') + '\n' + HR + '\n\n'
+            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Ekli Markdown belgelerine göre') + '\n' + HR + '\n\n'
             'Olayı serbest metinle anlatın — ne yapıldığı, hangi av aracı, hangi belge/ruhsat durumu vb.\n\n'
             '<i>Örnek: Teknenin birincil av aracı algarna ama dip trolü ile avcılık yapıyor.</i>\n\n'
             f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir</b> — sorunuzu göndermeden önce net ve eksiksiz yazın.\n\n'
-            '⚠️ Değerlendirme nihai karar değildir; dayanak maddeler ayrıca teyit edilmelidir.'
+            '📄 Yanıt yalnızca sisteme eklenen Markdown belgelerindeki bilgilere dayanır.'
         )
         return await q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
@@ -2509,7 +2479,7 @@ async def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_ana
 
     db.log(uid, log_action, scenario[:120])
     await show_first(
-        header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Mevzuat taranıyor, 20-45 sn sürebilir…'),
+        header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Markdown belgeleri taranıyor, 20-45 sn sürebilir…'),
         parse_mode=ParseMode.HTML,
     )
     try:
@@ -2543,7 +2513,7 @@ async def ai_audit_preview(q, context):
         + '\n' + HR + '\n\n'
         + f'<code>{preview}</code>\n\n'
         + f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir.</b>\n\n'
-        + '⚠️ Değerlendirme nihai karar değildir; dayanak maddeler ayrıca teyit edilmelidir.'
+        + '📄 Yanıt yalnızca sisteme eklenen Markdown belgelerindeki bilgilere dayanır.'
     )
     return await q.edit_message_text(
         text, parse_mode=ParseMode.HTML,

@@ -22,7 +22,7 @@ Ticari (6/1) ve amatör (6/2) türler, asgari boy/ağırlık, alıkonulabilir mi
 Karıştırılan balık türleri için teşhis kartları ve yasak av araçlarının görsel tespiti.
 
 ### ⚖️ Hukuki Değerlendirme
-Olay serbest metinle anlatılır ve yüklü mevzuatın tam metni üzerinden değerlendirilir. Denetim sonucu ekranlarındaki **“Bu Denetimi Değerlendir”** düğmesi, o denetimde girilen bilgileri ve işaretlenen uygunsuzlukları otomatik olarak değerlendirmeye taşır.
+Olay serbest metinle anlatılır ve eklentiyle paketlenen Markdown mevzuat belgelerinin tam metni üzerinden Gemini 3.5 Flash-Lite ile değerlendirilir. Denetim sonucu ekranlarındaki **“Bu Denetimi Değerlendir”** düğmesi, o denetimde girilen bilgileri ve işaretlenen uygunsuzlukları otomatik olarak değerlendirmeye taşır.
 
 ### 💬 Doğrudan Arama
 Menüde gezmeden tür, ceza veya mevzuat kelimesi yazmak yeterlidir; tür, ceza ve madde sonuçları birlikte listelenir. Mevzuat maddelerine buradan ve her ekrandaki dayanak düğmelerinden ulaşılır; madde ekranından kaynağın tüm madde listesi açılabilir.
@@ -41,7 +41,7 @@ bot_token: "TELEGRAM_BOT_TOKEN"
 admin_id: "123456789"
 allowed_users: ["123456789"]
 gemini_api_key: ""          # Hukuki değerlendirme için (opsiyonel)
-gemini_model: "gemini-3.6-flash"
+gemini_model: "gemini-3.5-flash-lite"
 result_limit: 8
 timezone: "Europe/Istanbul"
 ```
@@ -77,6 +77,7 @@ su_urunleri_bot/
 ├── bot.py            # Botun tamamı: menüler, denetim akışları, arama, AI
 ├── db.py             # SQLite şeması, veri yükleme ve arama
 ├── data/             # Mevzuat, tür, ceza ve kılavuz verileri (JSON)
+│   ├── markdown/              # Hukuki Değerlendirme için tam metin kaynaklar
 │   ├── articles.json          # Kanun/yönetmelik/tebliğ maddeleri
 │   ├── penalty_cards.json     # İdari yaptırım tablosu
 │   ├── vessel_guides.json     # Tekne türü kontrol föyleri
@@ -86,8 +87,10 @@ su_urunleri_bot/
 └── run.sh            # Eklenti giriş noktası
 ```
 
-Veriler `data/` altındaki JSON dosyalarından SQLite’a yüklenir. `db.py` içindeki
-`DATASET` sürümü değiştiğinde veritabanı yeniden kurulur; veri dosyalarını
+Botun normal arama ve denetim verileri `data/` altındaki JSON dosyalarından
+SQLite’a yüklenir. Hukuki Değerlendirme ise `data/markdown/` içindeki bütün
+`.md` dosyalarını doğrudan ve tam metin olarak kullanır. `db.py` içindeki
+`DATASET` sürümü değiştiğinde veritabanı yeniden kurulur; JSON veri dosyalarını
 güncelledikten sonra bu sürümü artırmak gerekir.
 
 ## 📊 Veritabanı Tabloları
@@ -106,8 +109,8 @@ güncelledikten sonra bu sürümü artırmak gerekir.
 - İdari yaptırım (ceza) tablosu
 
 6/1 ve 6/2 tebliğleri **1/9/2024 – 31/8/2028** av dönemi için yayımlanmıştır.
-Dönem sonunda yenileriyle değiştirilirler; yeni metinler `data/` altındaki JSON
-dosyalarına işlenmeden bot eski hükümlerle cevap vermeye devam eder.
+Dönem sonunda yenileriyle değiştirilirler. Hukuki Değerlendirme kaynakları
+`su_urunleri_bot/data/markdown/` altında güncellenmelidir.
 
 ## ⚠️ Sorumluluk
 
