@@ -99,6 +99,48 @@ INLAND_AMATEUR_TIME = {
     'Turna': ['12-15/03-31'],
 }
 
+SPECIAL_TIME_TEXT = {
+    'Mavi yüzgeçli orkinos (çatal boy VEYA ağırlık)':
+        'Bölgeye göre: Akdeniz/Ege 1 Temmuz – 14 Mayıs; diğer alanlar 1 Temmuz – 25 Mayıs',
+}
+
+INLAND_COMMERCIAL_TIME_TEXT = {
+    'Alabalık (3 doğal tür)': '1 Ekim – 28 Şubat; bazı sularda dönem boyunca yasak',
+    'Fırat turnası': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'İnci kefali': 'Van Gölü havzasında 15 Nisan – 15 Temmuz',
+    'Kadife': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'Karabalık (*Clarias gariepinus*)': '1 Nisan – 30 Haziran',
+    'Karabalık (*Capoeta trutta*)': '1 Nisan – 30 Haziran',
+    'Kerevit': '15 Kasım – 15 Haziran',
+    'Kurbağa': 'Bölgeye göre değişir; Antalya ve Muğla’da dönem boyunca yasak',
+    'Maya': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'Sazan': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'Siraz': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'Sudak': '15 Mart – 30 Nisan ve bölgesel sazangiller yasağı; Eğirdir Gölü’nde dönem boyunca, '
+             'Beyşehir Gölü’nde paraketeyle dönem boyunca yasak',
+    'Şabut': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'Tatlısu kefali': 'Bölgesel sazangiller yasağı — bkz. 3.3',
+    'Tatlısu levreği': '15 Mart – 30 Nisan ve bölgesel sazangiller yasağı; Eğirdir Gölü’nde dönem boyunca, '
+                       'Beyşehir Gölü’nde paraketeyle dönem boyunca yasak',
+    'Turna': '15 Aralık – 31 Mart; Işıklı ve Karamık göllerinde ayrıca sazan yasağı döneminde',
+    'Yayın': 'Bölgesel sazangiller yasağı; Uluabat Gölü’nde dönem boyunca yasak',
+    'Yılan balığı': '1 Nisan – 30 Eylül',
+}
+
+INLAND_AMATEUR_TIME_TEXT = {
+    'Doğal alabalık (tüm türler)': '1 Ekim – 28 Şubat',
+    'Gökkuşağı alabalığı': 'Yok (orman içi sular hariç)',
+    'Kadife': 'Bölgesel — bkz. 3.4',
+    'Sazan': 'Bölgesel — bkz. 3.4',
+    'Siraz': 'Bölgesel — bkz. 3.4',
+    'Sudak': '15 Mart – 30 Nisan',
+    'Tatlısu kefali': 'Bölgesel; akarsularda (orman içi hariç) yok — bkz. 3.4',
+    'Tatlısu levreği': '15 Mart – 30 Nisan',
+    'Turna': '15 Aralık – 31 Mart',
+    'Yayın': 'Bölgesel — bkz. 3.4',
+    'Diğer türler': 'Bölgesel — bkz. 3.4',
+}
+
 
 def build_species():
     sea_tables = tables(GUIDE_03)
@@ -162,27 +204,74 @@ def item(title, details, index):
     return {'id': str(index), 'title': title, 'details': details}
 
 
+MONTHS = ('', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+          'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık')
+
+
+def display_number(value):
+    return f'{value:g}'.replace('.', ',')
+
+
+def display_bans(bans):
+    periods = []
+    for period in bans:
+        start, end = period.split('/')
+        sm, sd = map(int, start.split('-'))
+        em, ed = map(int, end.split('-'))
+        periods.append(f'{sd} {MONTHS[sm]} – {ed} {MONTHS[em]}')
+    return ', '.join(periods) if periods else '—'
+
+
 def species_detail(row, amateur=False):
-    details = {'Türkçe Adı': row['name']}
-    if row['min_cm'] is not None:
-        details['Asgari Boy'] = f"{row['min_cm']:g} cm"
-    if row['min_kg'] is not None:
-        details['Asgari Ağırlık'] = f"{row['min_kg']:g} kg"
+    if row['min_kg'] is None:
+        weight = '—'
+    elif row.get('scope') == 'inland':
+        weight = f"{display_number(row['min_kg'] * 1000)} gr"
+    else:
+        weight = f"{display_number(row['min_kg'])} kg"
+    details = {
+        'Türkçe Adı': display_name(row['name']),
+        'Asgari Boy': f"{display_number(row['min_cm'])} cm" if row['min_cm'] is not None else '—',
+        'Asgari Ağırlık': weight,
+    }
     if amateur:
         details['Alıkonulabilir Miktar'] = row['limit']
-    if row['time_bans']:
-        details['Zaman Yasağı'] = ', '.join(x.replace('/', ' – ') for x in row['time_bans'])
-    details['Kaynak'] = row['source_doc']
+    details['Zaman Yasağı'] = row.get('display_time') or SPECIAL_TIME_TEXT.get(row['name']) or display_bans(row['time_bans'])
     return details
 
 
-def table_items(table, prefix):
+DISPLAY_NAMES = {'Istakoz': 'İstakoz'}
+
+
+def display_name(name):
+    return DISPLAY_NAMES.get(name, name).replace('*', '')
+
+
+def table_items(table, prefix, rows=None):
     headers = table[0]
     values = []
-    for n, row in enumerate(table[1:]):
-        details = {headers[i]: value for i, value in enumerate(row) if i < len(headers)}
+    for n, row in enumerate(table[1:] if rows is None else rows):
+        details = {headers[i]: value.replace(' - ', ' – ') for i, value in enumerate(row)
+                   if i < len(headers) and headers[i].casefold() != 'kaynak'}
         values.append(item(row[0], details, f'{prefix}_{n}'))
     return values
+
+
+def amateur_inland_region_rows(inland_tables):
+    """Çizelge 6'daki kısaltılmış satırları ("Tatlısu kefali\\*", "(aynı türler)",
+    "Afyonkarahisar…Zonguldak") sazangiller tablosundaki tam il listeleriyle açar."""
+    carp, amateur = inland_tables[1], inland_tables[4]
+    species = amateur[1][0].replace('\\*', ' (akarsular hariç)')
+    rows = []
+    for n, row in enumerate(amateur[1:]):
+        row = list(row)
+        if n < len(carp) - 1:
+            region, period = carp[n + 1]
+            if row[2] != period or (n and row[0] != '(aynı türler)'):
+                raise ValueError('04 rehberindeki amatör içsu bölge satırları sazangiller tablosuyla eşleşmiyor')
+            row[:2] = [species, region]
+        rows.append(row)
+    return rows
 
 
 def build_species_guide(commercial, amateur, inland_tables):
@@ -191,37 +280,46 @@ def build_species_guide(commercial, amateur, inland_tables):
     sea_amateur = [x for x in amateur if x['scope'] == 'sea']
     inland_commercial = [x for x in commercial if x['scope'] == 'inland']
     inland_amateur = [x for x in amateur if x['scope'] == 'inland']
+    sea_other = {'name': 'Diğer türler', 'min_cm': None, 'min_kg': None, 'limit': '5 kg', 'time_bans': []}
+    inland_other = {'name': 'Diğer türler', 'min_cm': None, 'min_kg': None, 'limit': '5 kg', 'time_bans': [],
+                    'display_time': INLAND_AMATEUR_TIME_TEXT['Diğer türler']}
+    inland_commercial = [dict(row, display_time=INLAND_COMMERCIAL_TIME_TEXT.get(row['name']))
+                         for row in inland_commercial]
+    inland_amateur = [dict(row, display_time=INLAND_AMATEUR_TIME_TEXT.get(row['name'], 'Bölgesel — bkz. 3.4'))
+                      for row in inland_amateur]
 
     return [
         {
-            'id': '1', 'title': '1. Ticari Avcılık — Deniz Türleri', 'items': [],
+            'id': '1', 'title': '1. Ticari Avcılık', 'items': [],
             'sub': [
-                {'id': '1.1', 'title': '1.1 Avlanması Tamamen Yasak Türler',
-                 'items': [item(name, {'Türkçe Adı': name, 'Kapsam': 'Ticari avcılıkta tamamen yasak', 'Kaynak': GUIDE_03.name}, f'1.1_{i}') for i, name in enumerate(commercial_forbidden)]},
-                {'id': '1.2', 'title': '1.2 Asgari Boy ve Ağırlıklar',
-                 'items': [item(row['name'], species_detail(row), f'1.2_{i}') for i, row in enumerate(sea_commercial)]},
+                {'id': '1.1', 'title': '1.1 Bütün Sularda Avlanması Tamamen Yasak Türler',
+                 'items': [item(name, {'Türkçe Adı': name, 'Kapsam': 'Ticari avcılıkta tamamen yasak'}, f'1.1_{i}') for i, name in enumerate(commercial_forbidden)]},
+                {'id': '1.2', 'title': '1.2 Deniz Ürünleri Asgari Boy, Ağırlık ve Zaman Kuralları',
+                 'items': [item(display_name(row['name']), species_detail(row), f'1.2_{i}') for i, row in enumerate(sea_commercial)]},
             ], 'content': '', 'source_doc': GUIDE_03.name,
         },
         {
-            'id': '2', 'title': '2. Amatör Avcılık — Deniz Türleri', 'items': [],
+            'id': '2', 'title': '2. Amatör Avcılık', 'items': [],
             'sub': [
-                {'id': '2.1', 'title': '2.1 Avlanması Tamamen Yasak Türler',
-                 'items': [item(name, {'Türkçe Adı': name, 'Kapsam': 'Amatör avcılıkta tamamen yasak', 'Kaynak': GUIDE_03.name}, f'2.1_{i}') for i, name in enumerate(amateur_forbidden)]},
-                {'id': '2.2', 'title': '2.2 Boy, Miktar ve Zaman Kuralları',
-                 'items': [item(row['name'], species_detail(row, True), f'2.2_{i}') for i, row in enumerate(sea_amateur)]},
+                {'id': '2.1', 'title': '2.1 Bütün Sularda Avlanması Tamamen Yasak Türler',
+                 'items': [item(name, {'Türkçe Adı': name, 'Kapsam': 'Amatör avcılıkta tamamen yasak'}, f'2.1_{i}') for i, name in enumerate(amateur_forbidden)]},
+                {'id': '2.2', 'title': '2.2 Deniz Türleri Boy, Miktar ve Zaman Kuralları',
+                 'items': [item(display_name(row['name']), species_detail(row, True), f'2.2_{i}')
+                           for i, row in enumerate(sea_amateur + [sea_other])]},
             ], 'content': '', 'source_doc': GUIDE_03.name,
         },
         {
             'id': '3', 'title': '3. İçsu Türleri ve Bölgesel Zaman Yasakları', 'items': [],
             'sub': [
                 {'id': '3.1', 'title': '3.1 Ticari İçsu Asgari Boy/Ağırlık',
-                 'items': [item(row['name'], species_detail(row), f'3.1_{i}') for i, row in enumerate(inland_commercial)]},
+                 'items': [item(display_name(row['name']), species_detail(row), f'3.1_{i}') for i, row in enumerate(inland_commercial)]},
                 {'id': '3.2', 'title': '3.2 Amatör İçsu Boy/Miktar',
-                 'items': [item(row['name'], species_detail(row, True), f'3.2_{i}') for i, row in enumerate(inland_amateur)]},
+                 'items': [item(display_name(row['name']), species_detail(row, True), f'3.2_{i}')
+                           for i, row in enumerate(inland_amateur + [inland_other])]},
                 {'id': '3.3', 'title': '3.3 Ticari Sazangiller Bölgesel Zaman Yasakları',
                  'items': table_items(inland_tables[1], '3.3')},
                 {'id': '3.4', 'title': '3.4 Amatör İçsu Bölgesel Zaman Yasakları',
-                 'items': table_items(inland_tables[4], '3.4')},
+                 'items': table_items(inland_tables[4], '3.4', amateur_inland_region_rows(inland_tables))},
             ], 'content': '', 'source_doc': GUIDE_04.name,
         },
     ]

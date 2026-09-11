@@ -123,6 +123,13 @@ Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.
 Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim
 pencereleri yenilendi.
 
+Ara adım (6.0.17): Pratik Tür Çizelgesi düzeltildi. Kaynak sütunu kaldırıldı;
+her satır aynı sütunları taşır (`screens.items_table` sütunları ilk satırdan
+alır, eksik anahtar bütün sütunu gizler). "Diğer türler" satırları, okunur
+tarihler, içsu özel yasakları ve Çizelge 6'nın kısaltılmış bölge satırları
+`tools/rebuild_structured_data.py` içinde üretilir; `smoke_test.py` bunları
+denetler.
+
 Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
 `Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız
 büyüyen kilit sözlüğü ve eşzamanlı scrypt bellek tüketimi düzeltildi. Modem ve

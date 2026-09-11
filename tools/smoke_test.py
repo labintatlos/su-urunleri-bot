@@ -11,6 +11,7 @@ import http.cookiejar
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import subprocess
 import sys
@@ -72,6 +73,46 @@ def check_structured_data():
             stale.append(name)
     if stale:
         raise AssertionError('Yeni kaynaklara göre güncel olmayan JSON verileri: ' + ', '.join(stale))
+    species_guide = json.loads((ADDON / 'data' / 'tur_cizelgesi.json').read_text(encoding='utf-8'))
+    sections = {sub['id']: sub for group in species_guide for sub in group.get('sub', [])}
+    expected_columns = {
+        '1.1': {'Türkçe Adı', 'Kapsam'},
+        '1.2': {'Türkçe Adı', 'Asgari Boy', 'Asgari Ağırlık', 'Zaman Yasağı'},
+        '2.1': {'Türkçe Adı', 'Kapsam'},
+        '2.2': {'Türkçe Adı', 'Asgari Boy', 'Asgari Ağırlık', 'Alıkonulabilir Miktar', 'Zaman Yasağı'},
+        '3.1': {'Türkçe Adı', 'Asgari Boy', 'Asgari Ağırlık', 'Zaman Yasağı'},
+        '3.2': {'Türkçe Adı', 'Asgari Boy', 'Asgari Ağırlık', 'Alıkonulabilir Miktar', 'Zaman Yasağı'},
+    }
+    for section_id, columns in expected_columns.items():
+        items = sections[section_id]['items']
+        if not items or any(set(row['details']) != columns for row in items):
+            raise AssertionError(f'Tür çizelgesi {section_id} sütunları eksik veya tutarsız')
+    if any('Kaynak' in row['details'] for section in sections.values() for row in section['items']):
+        raise AssertionError('Pratik Tür Çizelgesinde Kaynak sütunu kalmış')
+    if not all(any(row['title'] == 'Diğer türler' for row in sections[sid]['items']) for sid in ('2.2', '3.2')):
+        raise AssertionError('Pratik Tür Çizelgesinde Diğer türler satırı eksik')
+    if any(re.search(r'\b\d{2}-\d{2}\b', str(row['details']))
+           for section in sections.values() for row in section['items']):
+        raise AssertionError('Pratik Tür Çizelgesinde teknik tarih biçimi kalmış')
+    ahtapot = next(row for row in sections['1.2']['items'] if row['title'] == 'Ahtapot')['details']
+    kurbaga = next(row for row in sections['3.1']['items'] if row['title'] == 'Kurbağa')['details']
+    yayin = next(row for row in sections['3.1']['items'] if row['title'] == 'Yayın')['details']
+    if (ahtapot['Asgari Boy'], ahtapot['Asgari Ağırlık'], ahtapot['Zaman Yasağı']) != (
+            '—', '0,75 kg', '15 Nisan – 31 Ekim'):
+        raise AssertionError('Ahtapot satırındaki boy/ağırlık/zaman değerleri hatalı')
+    if kurbaga['Asgari Ağırlık'] != '30 gr' or 'Antalya ve Muğla' not in kurbaga['Zaman Yasağı']:
+        raise AssertionError('Kurbağa satırındaki ağırlık veya bölgesel yasak hatalı')
+    if 'Uluabat Gölü’nde dönem boyunca yasak' not in yayin['Zaman Yasağı']:
+        raise AssertionError('Yayın türünün özel zaman yasağı eksik')
+    sudak = next(row for row in sections['3.1']['items'] if row['title'] == 'Sudak')['details']
+    if 'Eğirdir' not in sudak['Zaman Yasağı']:
+        raise AssertionError('Sudak türünün Eğirdir Gölü yasağı eksik')
+    if any(marker in str(row['details']) for row in sections['3.4']['items']
+           for marker in ('\\', '(aynı türler)', '…', 'Dosya 04')):
+        raise AssertionError('Amatör içsu bölgesel yasak tablosunda kısaltılmış veya bozuk satır kalmış')
+    if any('*' in row['title'] or row['title'] == 'Istakoz'
+           for section in sections.values() for row in section['items']):
+        raise AssertionError('Pratik Tür Çizelgesinde düzeltilmemiş tür adı kalmış')
     print('structured data: canonical source build verified')
 
 

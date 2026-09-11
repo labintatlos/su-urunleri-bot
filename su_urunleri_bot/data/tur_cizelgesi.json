@@ -1,20 +1,19 @@
 [
   {
     "id": "1",
-    "title": "1. Ticari Avcılık — Deniz Türleri",
+    "title": "1. Ticari Avcılık",
     "items": [],
     "sub": [
       {
         "id": "1.1",
-        "title": "1.1 Avlanması Tamamen Yasak Türler",
+        "title": "1.1 Bütün Sularda Avlanması Tamamen Yasak Türler",
         "items": [
           {
             "id": "1.1_0",
             "title": "Akdeniz foku",
             "details": {
               "Türkçe Adı": "Akdeniz foku",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -22,8 +21,7 @@
             "title": "Akdeniz mercanı",
             "details": {
               "Türkçe Adı": "Akdeniz mercanı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -31,8 +29,7 @@
             "title": "Altı yarıklı bozcamgöz",
             "details": {
               "Türkçe Adı": "Altı yarıklı bozcamgöz",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -40,8 +37,7 @@
             "title": "Batman bantlı çöpçü balığı",
             "details": {
               "Türkçe Adı": "Batman bantlı çöpçü balığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -49,8 +45,7 @@
             "title": "Beyaz çalı",
             "details": {
               "Türkçe Adı": "Beyaz çalı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -58,8 +53,7 @@
             "title": "Beyaz deniz dalı",
             "details": {
               "Türkçe Adı": "Beyaz deniz dalı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -67,8 +61,7 @@
             "title": "Beyaz yüzgeçli köpekbalığı",
             "details": {
               "Türkçe Adı": "Beyaz yüzgeçli köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -76,8 +69,7 @@
             "title": "Büyük beyaz köpekbalığı",
             "details": {
               "Türkçe Adı": "Büyük beyaz köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -85,8 +77,7 @@
             "title": "Büyük camgöz (güneşlenen)",
             "details": {
               "Türkçe Adı": "Büyük camgöz (güneşlenen)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -94,8 +85,7 @@
             "title": "Camgöz",
             "details": {
               "Türkçe Adı": "Camgöz",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -103,8 +93,7 @@
             "title": "Çekiç köpekbalığı",
             "details": {
               "Türkçe Adı": "Çekiç köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -112,8 +101,7 @@
             "title": "Çivili köpekbalığı",
             "details": {
               "Türkçe Adı": "Çivili köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -121,8 +109,7 @@
             "title": "Denizatı",
             "details": {
               "Türkçe Adı": "Denizatı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -130,8 +117,7 @@
             "title": "Deniz alası",
             "details": {
               "Türkçe Adı": "Deniz alası",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -139,8 +125,7 @@
             "title": "Deniz kaplumbağaları (4 tür)",
             "details": {
               "Türkçe Adı": "Deniz kaplumbağaları (4 tür)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -148,8 +133,7 @@
             "title": "Deniz çayırları (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz çayırları (2 tür)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -157,8 +141,7 @@
             "title": "Dikburun harharyas",
             "details": {
               "Türkçe Adı": "Dikburun harharyas",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -166,8 +149,7 @@
             "title": "Deniz kulağı (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz kulağı (2 tür)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -175,8 +157,7 @@
             "title": "Dikenli vatoz",
             "details": {
               "Türkçe Adı": "Dikenli vatoz",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -184,8 +165,7 @@
             "title": "Dikenli keler",
             "details": {
               "Türkçe Adı": "Dikenli keler",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -193,8 +173,7 @@
             "title": "Domuz köpekbalığı",
             "details": {
               "Türkçe Adı": "Domuz köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -202,8 +181,7 @@
             "title": "İpeksi köpekbalığı",
             "details": {
               "Türkçe Adı": "İpeksi köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -211,8 +189,7 @@
             "title": "İri gözlü sapan köpekbalığı",
             "details": {
               "Türkçe Adı": "İri gözlü sapan köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -220,8 +197,7 @@
             "title": "Kazıkkuyruk",
             "details": {
               "Türkçe Adı": "Kazıkkuyruk",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -229,8 +205,7 @@
             "title": "Keler",
             "details": {
               "Türkçe Adı": "Keler",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -238,8 +213,7 @@
             "title": "Kemane",
             "details": {
               "Türkçe Adı": "Kemane",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -247,8 +221,7 @@
             "title": "Kırmızı mercan",
             "details": {
               "Türkçe Adı": "Kırmızı mercan",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -256,8 +229,7 @@
             "title": "Kırmızı yıldız",
             "details": {
               "Türkçe Adı": "Kırmızı yıldız",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -265,8 +237,7 @@
             "title": "Kum köpekbalığı",
             "details": {
               "Türkçe Adı": "Kum köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -274,8 +245,7 @@
             "title": "Lekeli keler",
             "details": {
               "Türkçe Adı": "Lekeli keler",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -283,8 +253,7 @@
             "title": "Leopar sazanı",
             "details": {
               "Türkçe Adı": "Leopar sazanı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -292,8 +261,7 @@
             "title": "Mahmuzlu camgöz (2 tür)",
             "details": {
               "Türkçe Adı": "Mahmuzlu camgöz (2 tür)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -301,8 +269,7 @@
             "title": "Mantalar (3 tür)",
             "details": {
               "Türkçe Adı": "Mantalar (3 tür)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -310,8 +277,7 @@
             "title": "Mavi köpekbalığı",
             "details": {
               "Türkçe Adı": "Mavi köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -319,8 +285,7 @@
             "title": "Maya (yengeç)",
             "details": {
               "Türkçe Adı": "Maya (yengeç)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -328,8 +293,7 @@
             "title": "Mersin balıkları",
             "details": {
               "Türkçe Adı": "Mersin balıkları",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -337,8 +301,7 @@
             "title": "Mersin morinası",
             "details": {
               "Türkçe Adı": "Mersin morinası",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -346,8 +309,7 @@
             "title": "Minare",
             "details": {
               "Türkçe Adı": "Minare",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -355,8 +317,7 @@
             "title": "Mor deniz dalı",
             "details": {
               "Türkçe Adı": "Mor deniz dalı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -364,8 +325,7 @@
             "title": "Mühreler",
             "details": {
               "Türkçe Adı": "Mühreler",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -373,8 +333,7 @@
             "title": "Orfoz",
             "details": {
               "Türkçe Adı": "Orfoz",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -382,8 +341,7 @@
             "title": "Pina",
             "details": {
               "Türkçe Adı": "Pina",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -391,8 +349,7 @@
             "title": "Sapan köpekbalığı",
             "details": {
               "Türkçe Adı": "Sapan köpekbalığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -400,8 +357,7 @@
             "title": "Sarı deniz dalı",
             "details": {
               "Türkçe Adı": "Sarı deniz dalı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -409,8 +365,7 @@
             "title": "Sivriburun harharyas",
             "details": {
               "Türkçe Adı": "Sivriburun harharyas",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -418,8 +373,7 @@
             "title": "Siyah mercan",
             "details": {
               "Türkçe Adı": "Siyah mercan",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -427,8 +381,7 @@
             "title": "Uzun kemane",
             "details": {
               "Türkçe Adı": "Uzun kemane",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -436,8 +389,7 @@
             "title": "Yağ balığı",
             "details": {
               "Türkçe Adı": "Yağ balığı",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -445,8 +397,7 @@
             "title": "Yağlı balık",
             "details": {
               "Türkçe Adı": "Yağlı balık",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
           {
@@ -454,24 +405,23 @@
             "title": "Yunus ve Balinalar",
             "details": {
               "Türkçe Adı": "Yunus ve Balinalar",
-              "Kapsam": "Ticari avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           }
         ]
       },
       {
         "id": "1.2",
-        "title": "1.2 Asgari Boy ve Ağırlıklar",
+        "title": "1.2 Deniz Ürünleri Asgari Boy, Ağırlık ve Zaman Kuralları",
         "items": [
           {
             "id": "1.2_0",
             "title": "Ahtapot",
             "details": {
               "Türkçe Adı": "Ahtapot",
-              "Asgari Ağırlık": "0.75 kg",
-              "Zaman Yasağı": "04-15 – 10-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "0,75 kg",
+              "Zaman Yasağı": "15 Nisan – 31 Ekim"
             }
           },
           {
@@ -479,9 +429,9 @@
             "title": "Akivades",
             "details": {
               "Türkçe Adı": "Akivades",
-              "Asgari Boy": "2.4 cm",
-              "Zaman Yasağı": "04-15 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Boy": "2,4 cm",
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 31 Ağustos"
             }
           },
           {
@@ -490,8 +440,8 @@
             "details": {
               "Türkçe Adı": "Akya",
               "Asgari Boy": "40 cm",
-              "Zaman Yasağı": "04-15 – 05-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 15 Mayıs"
             }
           },
           {
@@ -500,7 +450,8 @@
             "details": {
               "Türkçe Adı": "Bakalyaro (Berlam)",
               "Asgari Boy": "20 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -509,7 +460,8 @@
             "details": {
               "Türkçe Adı": "Barbunya",
               "Asgari Boy": "12 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -518,7 +470,8 @@
             "details": {
               "Türkçe Adı": "Çipura",
               "Asgari Boy": "20 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -527,8 +480,8 @@
             "details": {
               "Türkçe Adı": "Deniz böceği",
               "Asgari Boy": "25 cm",
-              "Zaman Yasağı": "09-02 – 04-14",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "2 Eylül – 14 Nisan"
             }
           },
           {
@@ -536,8 +489,9 @@
             "title": "Dev Kırmızı Karides / Mavi-Kırmızı Karides",
             "details": {
               "Türkçe Adı": "Dev Kırmızı Karides / Mavi-Kırmızı Karides",
-              "Asgari Boy": "2.5 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Boy": "2,5 cm",
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -546,8 +500,8 @@
             "details": {
               "Türkçe Adı": "Dil",
               "Asgari Boy": "20 cm",
-              "Zaman Yasağı": "01-01 – 02-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Ocak – 15 Şubat"
             }
           },
           {
@@ -556,7 +510,8 @@
             "details": {
               "Türkçe Adı": "Eşkina",
               "Asgari Boy": "35 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -565,7 +520,8 @@
             "details": {
               "Türkçe Adı": "Hamsi",
               "Asgari Boy": "9 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -574,8 +530,8 @@
             "details": {
               "Türkçe Adı": "İstakoz",
               "Asgari Boy": "25 cm",
-              "Zaman Yasağı": "09-02 – 04-14",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "2 Eylül – 14 Nisan"
             }
           },
           {
@@ -584,7 +540,8 @@
             "details": {
               "Türkçe Adı": "İstavrit / İstavrit (Karagöz)",
               "Asgari Boy": "13 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -593,8 +550,8 @@
             "details": {
               "Türkçe Adı": "İstiridye",
               "Asgari Boy": "6 cm",
-              "Zaman Yasağı": "04-15 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 31 Ağustos"
             }
           },
           {
@@ -603,8 +560,8 @@
             "details": {
               "Türkçe Adı": "Kalkan",
               "Asgari Boy": "45 cm",
-              "Zaman Yasağı": "04-15 – 06-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 15 Haziran"
             }
           },
           {
@@ -613,7 +570,8 @@
             "details": {
               "Türkçe Adı": "Karagöz",
               "Asgari Boy": "18 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -622,7 +580,8 @@
             "details": {
               "Türkçe Adı": "Kefal (Amuderya)",
               "Asgari Boy": "35 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -631,7 +590,8 @@
             "details": {
               "Türkçe Adı": "Kefal (diğer: oedalechilus/chelon türleri)",
               "Asgari Boy": "20 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -640,7 +600,8 @@
             "details": {
               "Türkçe Adı": "Kefal (Has kefal)",
               "Asgari Boy": "30 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -649,7 +610,8 @@
             "details": {
               "Türkçe Adı": "Kefal (Sarıkulak)",
               "Asgari Boy": "30 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -658,8 +620,8 @@
             "details": {
               "Türkçe Adı": "Kılıç (çatal boy)",
               "Asgari Boy": "110 cm",
-              "Zaman Yasağı": "02-15 – 03-15, 10-01 – 11-30",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Şubat – 15 Mart, 1 Ekim – 30 Kasım"
             }
           },
           {
@@ -668,7 +630,8 @@
             "details": {
               "Türkçe Adı": "Kırlangıç",
               "Asgari Boy": "18 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -677,7 +640,8 @@
             "details": {
               "Türkçe Adı": "Kırma (Kırmızı) mercan",
               "Asgari Boy": "15 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -686,8 +650,8 @@
             "details": {
               "Türkçe Adı": "Kidonya",
               "Asgari Boy": "3 cm",
-              "Zaman Yasağı": "04-15 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 31 Ağustos"
             }
           },
           {
@@ -696,7 +660,8 @@
             "details": {
               "Türkçe Adı": "Kolyoz",
               "Asgari Boy": "18 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -704,9 +669,9 @@
             "title": "Kum şırlanı (Tellina)",
             "details": {
               "Türkçe Adı": "Kum şırlanı (Tellina)",
-              "Asgari Boy": "2.5 cm",
-              "Zaman Yasağı": "04-15 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Boy": "2,5 cm",
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 31 Ağustos"
             }
           },
           {
@@ -715,8 +680,8 @@
             "details": {
               "Türkçe Adı": "Lagos",
               "Asgari Boy": "50 cm",
-              "Zaman Yasağı": "06-01 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Haziran – 31 Ağustos"
             }
           },
           {
@@ -725,8 +690,8 @@
             "details": {
               "Türkçe Adı": "Lambuka",
               "Asgari Boy": "50 cm",
-              "Zaman Yasağı": "01-01 – 08-14",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Ocak – 14 Ağustos"
             }
           },
           {
@@ -735,7 +700,8 @@
             "details": {
               "Türkçe Adı": "Levrek",
               "Asgari Boy": "25 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -744,7 +710,8 @@
             "details": {
               "Türkçe Adı": "Lipsöz",
               "Asgari Boy": "15 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -753,7 +720,8 @@
             "details": {
               "Türkçe Adı": "Lüfer",
               "Asgari Boy": "18 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -762,8 +730,8 @@
             "details": {
               "Türkçe Adı": "Mavi yengeç",
               "Asgari Boy": "11 cm",
-              "Zaman Yasağı": "05-01 – 09-30",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Mayıs – 30 Eylül"
             }
           },
           {
@@ -773,7 +741,7 @@
               "Türkçe Adı": "Mavi yüzgeçli orkinos (çatal boy VEYA ağırlık)",
               "Asgari Boy": "115 cm",
               "Asgari Ağırlık": "30 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "Bölgeye göre: Akdeniz/Ege 1 Temmuz – 14 Mayıs; diğer alanlar 1 Temmuz – 25 Mayıs"
             }
           },
           {
@@ -782,7 +750,8 @@
             "details": {
               "Türkçe Adı": "Mezgit",
               "Asgari Boy": "13 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -790,9 +759,9 @@
             "title": "Midye (Beyaz kum midyesi)",
             "details": {
               "Türkçe Adı": "Midye (Beyaz kum midyesi)",
-              "Asgari Boy": "1.7 cm",
-              "Zaman Yasağı": "04-15 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Boy": "1,7 cm",
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 31 Ağustos"
             }
           },
           {
@@ -801,7 +770,8 @@
             "details": {
               "Türkçe Adı": "Minekop",
               "Asgari Boy": "45 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -810,7 +780,8 @@
             "details": {
               "Türkçe Adı": "Nil barbunyası",
               "Asgari Boy": "10 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -819,8 +790,8 @@
             "details": {
               "Türkçe Adı": "Palamut",
               "Asgari Boy": "25 cm",
-              "Zaman Yasağı": "04-01 – 08-14",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Nisan – 14 Ağustos"
             }
           },
           {
@@ -829,8 +800,8 @@
             "details": {
               "Türkçe Adı": "Pisi",
               "Asgari Boy": "20 cm",
-              "Zaman Yasağı": "01-01 – 02-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Ocak – 15 Şubat"
             }
           },
           {
@@ -839,7 +810,8 @@
             "details": {
               "Türkçe Adı": "Sardalya",
               "Asgari Boy": "11 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -848,7 +820,8 @@
             "details": {
               "Türkçe Adı": "Sargos",
               "Asgari Boy": "21 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -857,7 +830,8 @@
             "details": {
               "Türkçe Adı": "Sarıağız",
               "Asgari Boy": "25 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -866,8 +840,8 @@
             "details": {
               "Türkçe Adı": "Sarıkuyruk",
               "Asgari Boy": "30 cm",
-              "Zaman Yasağı": "04-15 – 05-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Nisan – 15 Mayıs"
             }
           },
           {
@@ -876,7 +850,8 @@
             "details": {
               "Türkçe Adı": "Sinagrit",
               "Asgari Boy": "35 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -885,7 +860,8 @@
             "details": {
               "Türkçe Adı": "Tekir",
               "Asgari Boy": "12 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -894,7 +870,8 @@
             "details": {
               "Türkçe Adı": "Uskumru",
               "Asgari Boy": "20 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -903,7 +880,8 @@
             "details": {
               "Türkçe Adı": "Yazılı orkinos",
               "Asgari Boy": "45 cm",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "—"
             }
           }
         ]
@@ -914,20 +892,19 @@
   },
   {
     "id": "2",
-    "title": "2. Amatör Avcılık — Deniz Türleri",
+    "title": "2. Amatör Avcılık",
     "items": [],
     "sub": [
       {
         "id": "2.1",
-        "title": "2.1 Avlanması Tamamen Yasak Türler",
+        "title": "2.1 Bütün Sularda Avlanması Tamamen Yasak Türler",
         "items": [
           {
             "id": "2.1_0",
             "title": "Akdeniz foku",
             "details": {
               "Türkçe Adı": "Akdeniz foku",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -935,8 +912,7 @@
             "title": "Akdeniz mercanı",
             "details": {
               "Türkçe Adı": "Akdeniz mercanı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -944,8 +920,7 @@
             "title": "Altı yarıklı bozcamgöz",
             "details": {
               "Türkçe Adı": "Altı yarıklı bozcamgöz",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -953,8 +928,7 @@
             "title": "Batman bantlı çöpçü balığı",
             "details": {
               "Türkçe Adı": "Batman bantlı çöpçü balığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -962,8 +936,7 @@
             "title": "Beyaz çalı",
             "details": {
               "Türkçe Adı": "Beyaz çalı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -971,8 +944,7 @@
             "title": "Beyaz deniz dalı",
             "details": {
               "Türkçe Adı": "Beyaz deniz dalı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -980,8 +952,7 @@
             "title": "Beyaz yüzgeçli köpekbalığı",
             "details": {
               "Türkçe Adı": "Beyaz yüzgeçli köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -989,8 +960,7 @@
             "title": "Büyük beyaz köpekbalığı",
             "details": {
               "Türkçe Adı": "Büyük beyaz köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -998,8 +968,7 @@
             "title": "Büyük camgöz (güneşlenen)",
             "details": {
               "Türkçe Adı": "Büyük camgöz (güneşlenen)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1007,8 +976,7 @@
             "title": "Camgöz",
             "details": {
               "Türkçe Adı": "Camgöz",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1016,8 +984,7 @@
             "title": "Çekiç köpekbalığı",
             "details": {
               "Türkçe Adı": "Çekiç köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1025,8 +992,7 @@
             "title": "Çivili köpekbalığı",
             "details": {
               "Türkçe Adı": "Çivili köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1034,8 +1000,7 @@
             "title": "Denizatı",
             "details": {
               "Türkçe Adı": "Denizatı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1043,8 +1008,7 @@
             "title": "Deniz alası",
             "details": {
               "Türkçe Adı": "Deniz alası",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1052,8 +1016,7 @@
             "title": "Deniz kaplumbağaları (4 tür)",
             "details": {
               "Türkçe Adı": "Deniz kaplumbağaları (4 tür)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1061,8 +1024,7 @@
             "title": "Deniz çayırları (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz çayırları (2 tür)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1070,8 +1032,7 @@
             "title": "Dikburun harharyas",
             "details": {
               "Türkçe Adı": "Dikburun harharyas",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1079,8 +1040,7 @@
             "title": "Deniz kulağı (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz kulağı (2 tür)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1088,8 +1048,7 @@
             "title": "Dikenli vatoz",
             "details": {
               "Türkçe Adı": "Dikenli vatoz",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1097,8 +1056,7 @@
             "title": "Dikenli keler",
             "details": {
               "Türkçe Adı": "Dikenli keler",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1106,8 +1064,7 @@
             "title": "Domuz köpekbalığı",
             "details": {
               "Türkçe Adı": "Domuz köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1115,8 +1072,7 @@
             "title": "İpeksi köpekbalığı",
             "details": {
               "Türkçe Adı": "İpeksi köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1124,8 +1080,7 @@
             "title": "İri gözlü sapan köpekbalığı",
             "details": {
               "Türkçe Adı": "İri gözlü sapan köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1133,8 +1088,7 @@
             "title": "Kazıkkuyruk",
             "details": {
               "Türkçe Adı": "Kazıkkuyruk",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1142,8 +1096,7 @@
             "title": "Keler",
             "details": {
               "Türkçe Adı": "Keler",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1151,8 +1104,7 @@
             "title": "Kemane",
             "details": {
               "Türkçe Adı": "Kemane",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1160,8 +1112,7 @@
             "title": "Kırmızı mercan",
             "details": {
               "Türkçe Adı": "Kırmızı mercan",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1169,8 +1120,7 @@
             "title": "Kırmızı yıldız",
             "details": {
               "Türkçe Adı": "Kırmızı yıldız",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1178,8 +1128,7 @@
             "title": "Kum köpekbalığı",
             "details": {
               "Türkçe Adı": "Kum köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1187,8 +1136,7 @@
             "title": "Lekeli keler",
             "details": {
               "Türkçe Adı": "Lekeli keler",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1196,8 +1144,7 @@
             "title": "Leopar sazanı",
             "details": {
               "Türkçe Adı": "Leopar sazanı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1205,8 +1152,7 @@
             "title": "Mahmuzlu camgöz (2 tür)",
             "details": {
               "Türkçe Adı": "Mahmuzlu camgöz (2 tür)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1214,8 +1160,7 @@
             "title": "Mantalar (3 tür)",
             "details": {
               "Türkçe Adı": "Mantalar (3 tür)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1223,8 +1168,7 @@
             "title": "Mavi köpekbalığı",
             "details": {
               "Türkçe Adı": "Mavi köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1232,8 +1176,7 @@
             "title": "Maya (yengeç)",
             "details": {
               "Türkçe Adı": "Maya (yengeç)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1241,8 +1184,7 @@
             "title": "Mersin balıkları",
             "details": {
               "Türkçe Adı": "Mersin balıkları",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1250,8 +1192,7 @@
             "title": "Mersin morinası",
             "details": {
               "Türkçe Adı": "Mersin morinası",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1259,8 +1200,7 @@
             "title": "Minare",
             "details": {
               "Türkçe Adı": "Minare",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1268,8 +1208,7 @@
             "title": "Mor deniz dalı",
             "details": {
               "Türkçe Adı": "Mor deniz dalı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1277,8 +1216,7 @@
             "title": "Mühreler",
             "details": {
               "Türkçe Adı": "Mühreler",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1286,8 +1224,7 @@
             "title": "Orfoz",
             "details": {
               "Türkçe Adı": "Orfoz",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1295,8 +1232,7 @@
             "title": "Pina",
             "details": {
               "Türkçe Adı": "Pina",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1304,8 +1240,7 @@
             "title": "Sapan köpekbalığı",
             "details": {
               "Türkçe Adı": "Sapan köpekbalığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1313,8 +1248,7 @@
             "title": "Sarı deniz dalı",
             "details": {
               "Türkçe Adı": "Sarı deniz dalı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1322,8 +1256,7 @@
             "title": "Sivriburun harharyas",
             "details": {
               "Türkçe Adı": "Sivriburun harharyas",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1331,8 +1264,7 @@
             "title": "Siyah mercan",
             "details": {
               "Türkçe Adı": "Siyah mercan",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1340,8 +1272,7 @@
             "title": "Uzun kemane",
             "details": {
               "Türkçe Adı": "Uzun kemane",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1349,8 +1280,7 @@
             "title": "Yağ balığı",
             "details": {
               "Türkçe Adı": "Yağ balığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1358,8 +1288,7 @@
             "title": "Yağlı balık",
             "details": {
               "Türkçe Adı": "Yağlı balık",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1367,8 +1296,7 @@
             "title": "Yunus ve Balinalar",
             "details": {
               "Türkçe Adı": "Yunus ve Balinalar",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1376,8 +1304,7 @@
             "title": "Alakır alası",
             "details": {
               "Türkçe Adı": "Alakır alası",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1385,8 +1312,7 @@
             "title": "Ticari deniz süngerleri",
             "details": {
               "Türkçe Adı": "Ticari deniz süngerleri",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
           {
@@ -1394,25 +1320,24 @@
             "title": "Yılan balığı",
             "details": {
               "Türkçe Adı": "Yılan balığı",
-              "Kapsam": "Amatör avcılıkta tamamen yasak",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           }
         ]
       },
       {
         "id": "2.2",
-        "title": "2.2 Boy, Miktar ve Zaman Kuralları",
+        "title": "2.2 Deniz Türleri Boy, Miktar ve Zaman Kuralları",
         "items": [
           {
             "id": "2.2_0",
             "title": "Ahtapot",
             "details": {
               "Türkçe Adı": "Ahtapot",
-              "Asgari Ağırlık": "0.75 kg",
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "0,75 kg",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "04-15 – 10-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Nisan – 31 Ekim"
             }
           },
           {
@@ -1421,9 +1346,9 @@
             "details": {
               "Türkçe Adı": "Akya",
               "Asgari Boy": "40 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "04-15 – 05-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Nisan – 15 Mayıs"
             }
           },
           {
@@ -1432,8 +1357,9 @@
             "details": {
               "Türkçe Adı": "Bakalyaro (Berlam)",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1442,8 +1368,9 @@
             "details": {
               "Türkçe Adı": "Barbunya",
               "Asgari Boy": "12 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1452,8 +1379,9 @@
             "details": {
               "Türkçe Adı": "Çipura",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1462,8 +1390,9 @@
             "details": {
               "Türkçe Adı": "Deniz böceği",
               "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1472,9 +1401,9 @@
             "details": {
               "Türkçe Adı": "Dil",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Zaman Yasağı": "01-01 – 02-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "1 Ocak – 15 Şubat"
             }
           },
           {
@@ -1483,8 +1412,9 @@
             "details": {
               "Türkçe Adı": "Eşkina",
               "Asgari Boy": "35 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "3 adet",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1493,18 +1423,20 @@
             "details": {
               "Türkçe Adı": "İstavrit",
               "Asgari Boy": "13 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
             "id": "2.2_9",
-            "title": "Istakoz",
+            "title": "İstakoz",
             "details": {
-              "Türkçe Adı": "Istakoz",
+              "Türkçe Adı": "İstakoz",
               "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1513,9 +1445,9 @@
             "details": {
               "Türkçe Adı": "Kalkan",
               "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "04-15 – 06-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Nisan – 15 Haziran"
             }
           },
           {
@@ -1524,8 +1456,9 @@
             "details": {
               "Türkçe Adı": "Karagöz",
               "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1534,8 +1467,9 @@
             "details": {
               "Türkçe Adı": "Kefal (Amuderya)",
               "Asgari Boy": "35 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1544,8 +1478,9 @@
             "details": {
               "Türkçe Adı": "Kefal (diğer)",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1554,8 +1489,9 @@
             "details": {
               "Türkçe Adı": "Kefal (Has kefal)",
               "Asgari Boy": "30 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1564,8 +1500,9 @@
             "details": {
               "Türkçe Adı": "Kefal (Sarıkulak)",
               "Asgari Boy": "30 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1574,9 +1511,9 @@
             "details": {
               "Türkçe Adı": "Kılıç (çatal boy)",
               "Asgari Boy": "110 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "02-15 – 03-15, 10-01 – 11-30",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Şubat – 15 Mart, 1 Ekim – 30 Kasım"
             }
           },
           {
@@ -1585,8 +1522,9 @@
             "details": {
               "Türkçe Adı": "Kırlangıç",
               "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1595,8 +1533,9 @@
             "details": {
               "Türkçe Adı": "Kırma (Kırmızı) mercan",
               "Asgari Boy": "15 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1605,8 +1544,9 @@
             "details": {
               "Türkçe Adı": "Kolyoz",
               "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1615,9 +1555,9 @@
             "details": {
               "Türkçe Adı": "Lagos",
               "Asgari Boy": "50 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "06-01 – 08-31",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "1 Haziran – 31 Ağustos"
             }
           },
           {
@@ -1626,8 +1566,9 @@
             "details": {
               "Türkçe Adı": "Lipsöz",
               "Asgari Boy": "15 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1636,9 +1577,9 @@
             "details": {
               "Türkçe Adı": "Lambuka",
               "Asgari Boy": "50 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "01-01 – 08-14",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "1 Ocak – 14 Ağustos"
             }
           },
           {
@@ -1647,8 +1588,9 @@
             "details": {
               "Türkçe Adı": "Levrek",
               "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1657,8 +1599,9 @@
             "details": {
               "Türkçe Adı": "Lüfer",
               "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1667,8 +1610,9 @@
             "details": {
               "Türkçe Adı": "Mavi yengeç",
               "Asgari Boy": "13 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1677,9 +1621,9 @@
             "details": {
               "Türkçe Adı": "Mavi yüzgeçli orkinos (çatal boy)",
               "Asgari Boy": "115 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "10-15 – 06-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Ekim – 15 Haziran"
             }
           },
           {
@@ -1688,8 +1632,9 @@
             "details": {
               "Türkçe Adı": "Mezgit",
               "Asgari Boy": "13 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1698,8 +1643,9 @@
             "details": {
               "Türkçe Adı": "Minekop",
               "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1708,9 +1654,9 @@
             "details": {
               "Türkçe Adı": "Palamut",
               "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Zaman Yasağı": "04-01 – 08-14",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "1 Nisan – 14 Ağustos"
             }
           },
           {
@@ -1719,8 +1665,9 @@
             "details": {
               "Türkçe Adı": "Pisi",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1729,8 +1676,9 @@
             "details": {
               "Türkçe Adı": "Sargos",
               "Asgari Boy": "21 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1739,8 +1687,9 @@
             "details": {
               "Türkçe Adı": "Sarıağız",
               "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1749,9 +1698,9 @@
             "details": {
               "Türkçe Adı": "Sarıkuyruk",
               "Asgari Boy": "30 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "04-15 – 05-15",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Nisan – 15 Mayıs"
             }
           },
           {
@@ -1760,8 +1709,9 @@
             "details": {
               "Türkçe Adı": "Sinagrit",
               "Asgari Boy": "35 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1770,8 +1720,9 @@
             "details": {
               "Türkçe Adı": "Tekir",
               "Asgari Boy": "12 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1780,8 +1731,9 @@
             "details": {
               "Türkçe Adı": "Uskumru",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
             }
           },
           {
@@ -1789,9 +1741,10 @@
             "title": "Uzun kanat orkinos (tulina)",
             "details": {
               "Türkçe Adı": "Uzun kanat orkinos (tulina)",
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Zaman Yasağı": "02-15 – 03-15, 10-01 – 11-30",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "15 Şubat – 15 Mart, 1 Ekim – 30 Kasım"
             }
           },
           {
@@ -1800,8 +1753,20 @@
             "details": {
               "Türkçe Adı": "Yazılı orkinos",
               "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "2 adet",
-              "Kaynak": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+              "Zaman Yasağı": "—"
+            }
+          },
+          {
+            "id": "2.2_39",
+            "title": "Diğer türler",
+            "details": {
+              "Türkçe Adı": "Diğer türler",
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "—",
+              "Alıkonulabilir Miktar": "5 kg",
+              "Zaman Yasağı": "—"
             }
           }
         ]
@@ -1825,7 +1790,8 @@
             "details": {
               "Türkçe Adı": "Alabalık (3 doğal tür)",
               "Asgari Boy": "25 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Ekim – 28 Şubat; bazı sularda dönem boyunca yasak"
             }
           },
           {
@@ -1834,7 +1800,8 @@
             "details": {
               "Türkçe Adı": "Fırat turnası",
               "Asgari Boy": "50 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
@@ -1843,7 +1810,8 @@
             "details": {
               "Türkçe Adı": "İnci kefali",
               "Asgari Boy": "18 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Van Gölü havzasında 15 Nisan – 15 Temmuz"
             }
           },
           {
@@ -1852,25 +1820,28 @@
             "details": {
               "Türkçe Adı": "Kadife",
               "Asgari Boy": "26 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
             "id": "3.1_4",
-            "title": "Karabalık (*Clarias gariepinus*)",
+            "title": "Karabalık (Clarias gariepinus)",
             "details": {
-              "Türkçe Adı": "Karabalık (*Clarias gariepinus*)",
+              "Türkçe Adı": "Karabalık (Clarias gariepinus)",
               "Asgari Boy": "35 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Nisan – 30 Haziran"
             }
           },
           {
             "id": "3.1_5",
-            "title": "Karabalık (*Capoeta trutta*)",
+            "title": "Karabalık (Capoeta trutta)",
             "details": {
-              "Türkçe Adı": "Karabalık (*Capoeta trutta*)",
+              "Türkçe Adı": "Karabalık (Capoeta trutta)",
               "Asgari Boy": "22 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Nisan – 30 Haziran"
             }
           },
           {
@@ -1879,7 +1850,8 @@
             "details": {
               "Türkçe Adı": "Kerevit",
               "Asgari Boy": "10 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Kasım – 15 Haziran"
             }
           },
           {
@@ -1887,8 +1859,9 @@
             "title": "Kurbağa",
             "details": {
               "Türkçe Adı": "Kurbağa",
-              "Asgari Ağırlık": "0.03 kg",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "30 gr",
+              "Zaman Yasağı": "Bölgeye göre değişir; Antalya ve Muğla’da dönem boyunca yasak"
             }
           },
           {
@@ -1897,7 +1870,8 @@
             "details": {
               "Türkçe Adı": "Maya",
               "Asgari Boy": "50 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
@@ -1906,7 +1880,8 @@
             "details": {
               "Türkçe Adı": "Sazan",
               "Asgari Boy": "40 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
@@ -1915,7 +1890,8 @@
             "details": {
               "Türkçe Adı": "Siraz",
               "Asgari Boy": "20 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
@@ -1924,7 +1900,8 @@
             "details": {
               "Türkçe Adı": "Sudak",
               "Asgari Boy": "26 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Mart – 30 Nisan ve bölgesel sazangiller yasağı; Eğirdir Gölü’nde dönem boyunca, Beyşehir Gölü’nde paraketeyle dönem boyunca yasak"
             }
           },
           {
@@ -1933,7 +1910,8 @@
             "details": {
               "Türkçe Adı": "Şabut",
               "Asgari Boy": "45 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
@@ -1942,7 +1920,8 @@
             "details": {
               "Türkçe Adı": "Tatlısu kefali",
               "Asgari Boy": "20 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı — bkz. 3.3"
             }
           },
           {
@@ -1951,7 +1930,8 @@
             "details": {
               "Türkçe Adı": "Tatlısu levreği",
               "Asgari Boy": "18 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Mart – 30 Nisan ve bölgesel sazangiller yasağı; Eğirdir Gölü’nde dönem boyunca, Beyşehir Gölü’nde paraketeyle dönem boyunca yasak"
             }
           },
           {
@@ -1960,7 +1940,8 @@
             "details": {
               "Türkçe Adı": "Turna",
               "Asgari Boy": "40 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "15 Aralık – 31 Mart; Işıklı ve Karamık göllerinde ayrıca sazan yasağı döneminde"
             }
           },
           {
@@ -1969,7 +1950,8 @@
             "details": {
               "Türkçe Adı": "Yayın",
               "Asgari Boy": "90 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "Bölgesel sazangiller yasağı; Uluabat Gölü’nde dönem boyunca yasak"
             }
           },
           {
@@ -1978,7 +1960,8 @@
             "details": {
               "Türkçe Adı": "Yılan balığı",
               "Asgari Boy": "50 cm",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Asgari Ağırlık": "—",
+              "Zaman Yasağı": "1 Nisan – 30 Eylül"
             }
           }
         ]
@@ -1993,9 +1976,9 @@
             "details": {
               "Türkçe Adı": "Doğal alabalık (tüm türler)",
               "Asgari Boy": "25 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "3 adet",
-              "Zaman Yasağı": "10-01 – 02-28",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "1 Ekim – 28 Şubat"
             }
           },
           {
@@ -2004,8 +1987,9 @@
             "details": {
               "Türkçe Adı": "Fırat turnası",
               "Asgari Boy": "50 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2013,8 +1997,10 @@
             "title": "Gökkuşağı alabalığı",
             "details": {
               "Türkçe Adı": "Gökkuşağı alabalığı",
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "10 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Yok (orman içi sular hariç)"
             }
           },
           {
@@ -2023,8 +2009,9 @@
             "details": {
               "Türkçe Adı": "İnci kefali",
               "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2033,8 +2020,9 @@
             "details": {
               "Türkçe Adı": "Kadife",
               "Asgari Boy": "26 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "10 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2043,8 +2031,9 @@
             "details": {
               "Türkçe Adı": "Karabalık",
               "Asgari Boy": "22 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "10 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2053,8 +2042,9 @@
             "details": {
               "Türkçe Adı": "Maya",
               "Asgari Boy": "50 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2063,8 +2053,9 @@
             "details": {
               "Türkçe Adı": "Sazan",
               "Asgari Boy": "40 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2073,8 +2064,9 @@
             "details": {
               "Türkçe Adı": "Siraz",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2083,9 +2075,9 @@
             "details": {
               "Türkçe Adı": "Sudak",
               "Asgari Boy": "26 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "10 adet",
-              "Zaman Yasağı": "03-15 – 04-30",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "15 Mart – 30 Nisan"
             }
           },
           {
@@ -2094,8 +2086,9 @@
             "details": {
               "Türkçe Adı": "Şabut",
               "Asgari Boy": "45 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           },
           {
@@ -2104,8 +2097,9 @@
             "details": {
               "Türkçe Adı": "Tatlısu kefali",
               "Asgari Boy": "20 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel; akarsularda (orman içi hariç) yok — bkz. 3.4"
             }
           },
           {
@@ -2114,9 +2108,9 @@
             "details": {
               "Türkçe Adı": "Tatlısu levreği",
               "Asgari Boy": "18 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Zaman Yasağı": "03-15 – 04-30",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "15 Mart – 30 Nisan"
             }
           },
           {
@@ -2125,9 +2119,9 @@
             "details": {
               "Türkçe Adı": "Turna",
               "Asgari Boy": "40 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 adet",
-              "Zaman Yasağı": "12-15 – 03-31",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "15 Aralık – 31 Mart"
             }
           },
           {
@@ -2136,8 +2130,20 @@
             "details": {
               "Türkçe Adı": "Yayın",
               "Asgari Boy": "90 cm",
+              "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "1 adet",
-              "Kaynak": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
+            }
+          },
+          {
+            "id": "3.2_15",
+            "title": "Diğer türler",
+            "details": {
+              "Türkçe Adı": "Diğer türler",
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "—",
+              "Alıkonulabilir Miktar": "5 kg",
+              "Zaman Yasağı": "Bölgesel — bkz. 3.4"
             }
           }
         ]
@@ -2151,7 +2157,7 @@
             "title": "Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla, Osmaniye",
             "details": {
               "Bölge (İller)": "Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla, Osmaniye",
-              "Yasak Dönem": "1 Mart - 31 Mayıs"
+              "Yasak Dönem": "1 Mart – 31 Mayıs"
             }
           },
           {
@@ -2159,7 +2165,7 @@
             "title": "Afyonkarahisar, Aksaray, Amasya, Ankara, Balıkesir, Bartın, Bilecik, Bolu, Burdur, Bursa, Çanakkale, Çankırı, Çorum, Düzce, Edirne, Eskişehir, Isparta, İstanbul, Karabük, Karaman, Kastamonu, Kırıkkale, Kırklareli, Kırşehir, Kocaeli, Konya, Kütahya, Nevşehir, Niğde, Sakarya, Tekirdağ, Uşak, Yalova, Zonguldak",
             "details": {
               "Bölge (İller)": "Afyonkarahisar, Aksaray, Amasya, Ankara, Balıkesir, Bartın, Bilecik, Bolu, Burdur, Bursa, Çanakkale, Çankırı, Çorum, Düzce, Edirne, Eskişehir, Isparta, İstanbul, Karabük, Karaman, Kastamonu, Kırıkkale, Kırklareli, Kırşehir, Kocaeli, Konya, Kütahya, Nevşehir, Niğde, Sakarya, Tekirdağ, Uşak, Yalova, Zonguldak",
-              "Yasak Dönem": "15 Mart - 15 Haziran"
+              "Yasak Dönem": "15 Mart – 15 Haziran"
             }
           },
           {
@@ -2167,7 +2173,7 @@
             "title": "Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat",
             "details": {
               "Bölge (İller)": "Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat",
-              "Yasak Dönem": "1 Nisan - 30 Haziran"
+              "Yasak Dönem": "1 Nisan – 30 Haziran"
             }
           },
           {
@@ -2175,7 +2181,7 @@
             "title": "Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van",
             "details": {
               "Bölge (İller)": "Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van",
-              "Yasak Dönem": "15 Mayıs - 15 Ağustos"
+              "Yasak Dönem": "15 Mayıs – 15 Ağustos"
             }
           }
         ]
@@ -2186,38 +2192,38 @@
         "items": [
           {
             "id": "3.4_0",
-            "title": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\\*, Diğer türler",
+            "title": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
             "details": {
-              "Türler": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\\*, Diğer türler",
+              "Türler": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
               "Bölge/İller": "Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla, Osmaniye",
-              "Yasak Dönem": "1 Mart - 31 Mayıs"
+              "Yasak Dönem": "1 Mart – 31 Mayıs"
             }
           },
           {
             "id": "3.4_1",
-            "title": "(aynı türler)",
+            "title": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
             "details": {
-              "Türler": "(aynı türler)",
-              "Bölge/İller": "Afyonkarahisar…Zonguldak (2. bölge grubu, Dosya 04 §4'teki liste ile aynı)",
-              "Yasak Dönem": "15 Mart - 15 Haziran"
+              "Türler": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
+              "Bölge/İller": "Afyonkarahisar, Aksaray, Amasya, Ankara, Balıkesir, Bartın, Bilecik, Bolu, Burdur, Bursa, Çanakkale, Çankırı, Çorum, Düzce, Edirne, Eskişehir, Isparta, İstanbul, Karabük, Karaman, Kastamonu, Kırıkkale, Kırklareli, Kırşehir, Kocaeli, Konya, Kütahya, Nevşehir, Niğde, Sakarya, Tekirdağ, Uşak, Yalova, Zonguldak",
+              "Yasak Dönem": "15 Mart – 15 Haziran"
             }
           },
           {
             "id": "3.4_2",
-            "title": "(aynı türler)",
+            "title": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
             "details": {
-              "Türler": "(aynı türler)",
-              "Bölge/İller": "Adıyaman…Yozgat (3. bölge grubu)",
-              "Yasak Dönem": "1 Nisan - 30 Haziran"
+              "Türler": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
+              "Bölge/İller": "Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat",
+              "Yasak Dönem": "1 Nisan – 30 Haziran"
             }
           },
           {
             "id": "3.4_3",
-            "title": "(aynı türler)",
+            "title": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
             "details": {
-              "Türler": "(aynı türler)",
+              "Türler": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
               "Bölge/İller": "Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van",
-              "Yasak Dönem": "15 Mayıs - 15 Ağustos"
+              "Yasak Dönem": "15 Mayıs – 15 Ağustos"
             }
           },
           {
@@ -2226,7 +2232,7 @@
             "details": {
               "Türler": "Doğal alabalık (tüm türler)",
               "Bölge/İller": "Tüm bölgeler",
-              "Yasak Dönem": "1 Ekim - 28 Şubat"
+              "Yasak Dönem": "1 Ekim – 28 Şubat"
             }
           },
           {
@@ -2244,7 +2250,7 @@
             "details": {
               "Türler": "Sudak",
               "Bölge/İller": "Tüm bölgeler",
-              "Yasak Dönem": "15 Mart - 30 Nisan"
+              "Yasak Dönem": "15 Mart – 30 Nisan"
             }
           },
           {
@@ -2253,7 +2259,7 @@
             "details": {
               "Türler": "Tatlısu levreği",
               "Bölge/İller": "Tüm bölgeler",
-              "Yasak Dönem": "15 Mart - 30 Nisan"
+              "Yasak Dönem": "15 Mart – 30 Nisan"
             }
           },
           {
@@ -2262,7 +2268,7 @@
             "details": {
               "Türler": "Turna",
               "Bölge/İller": "Tüm bölgeler",
-              "Yasak Dönem": "15 Aralık - 31 Mart"
+              "Yasak Dönem": "15 Aralık – 31 Mart"
             }
           },
           {
