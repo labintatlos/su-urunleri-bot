@@ -140,6 +140,9 @@ yok). Boğaz anahtarlarını içeren her kural zaten Marmara'yı da kapsıyordu;
 eski `istanbul`/`canakkale` değerleri `screens.MERGED_REGIONS` ile hem düğmede
 hem kayıtlı durum yüklenirken Marmara'ya çevrilir.
 
+Ara adım (6.0.21): Pratik Ceza Rehberi tablolarından da Kaynak sütunu
+kaldırıldı; `smoke_test.py` iki rehberde de Kaynak sütunu kalmadığını denetler.
+
 Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
 `Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız
 büyüyen kilit sözlüğü ve eşzamanlı scrypt bellek tüketimi düzeltildi. Modem ve

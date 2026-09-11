@@ -89,6 +89,11 @@ def check_structured_data():
             raise AssertionError(f'Tür çizelgesi {section_id} sütunları eksik veya tutarsız')
     if any('Kaynak' in row['details'] for section in sections.values() for row in section['items']):
         raise AssertionError('Pratik Tür Çizelgesinde Kaynak sütunu kalmış')
+    penalty_guide = json.loads((ADDON / 'data' / 'ceza_rehberi_v2.json').read_text(encoding='utf-8'))
+    penalty_rows = [row for group in penalty_guide
+                    for row in group['items'] + [r for sub in group.get('sub', []) for r in sub['items']]]
+    if not penalty_rows or any('Kaynak' in row['details'] for row in penalty_rows):
+        raise AssertionError('Pratik Ceza Rehberinde Kaynak sütunu kalmış')
     if not all(any(row['title'] == 'Diğer türler' for row in sections[sid]['items']) for sid in ('2.2', '3.2')):
         raise AssertionError('Pratik Tür Çizelgesinde Diğer türler satırı eksik')
     if any(re.search(r'\b\d{2}-\d{2}\b', str(row['details']))

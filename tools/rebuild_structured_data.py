@@ -403,7 +403,6 @@ def build_penalties():
                 details['Ruhsat İşlemi'] = card['license_action']
             if card.get('notes'):
                 details['Uyarı/Not'] = card['notes'].strip()
-            details['Kaynak'] = card['source_doc']
             entries.append(item(card.get('option') or card['violation'], details, f'{key}_{index}'))
         if entries:
             result.append({'id': key, 'title': title, 'items': entries, 'sub': [], 'content': '',
