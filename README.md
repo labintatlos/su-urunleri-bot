@@ -2,7 +2,7 @@
 
 **Web Sitesi** | **Home Assistant Eklentisi**
 
-Deniz görev alanında su ürünleri denetimlerinde mevzuat hükümlerinin değerlendirilmesine, ihlallerin tespitine ve uygulanacak işlemlerin belirlenmesine yardımcı olan web sitesi. Telefondan ve bilgisayardan kullanıcı adı ve şifreyle açılır; Telegram'a bağımlılığı yoktur. Home Assistant OS yalnızca sunucuyu çalıştıran makinedir.
+Deniz, içsu, dalyan/lagün ve tesislerde yürütülen su ürünleri denetimlerinde mevzuat hükümlerinin değerlendirilmesine, ihlallerin tespitine ve uygulanacak işlemlerin belirlenmesine yardımcı olan web sitesi. Telefondan ve bilgisayardan kullanıcı adı ve şifreyle açılır; Telegram'a bağımlılığı yoktur. Home Assistant OS yalnızca sunucuyu çalıştıran makinedir.
 
 ## 🌊 Özellikler
 

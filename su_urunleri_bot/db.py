@@ -222,7 +222,7 @@ def resolve_issue_report(report_id, admin_uid):
     return changed
 
 
-def search_articles(query,limit=8,source=None,include_inland=False):
+def search_articles(query,limit=8,source=None,include_inland=True):
     c=con(); cond=[]; args=[]
     if source: cond.append('source=?'); args.append(source)
     if not include_inland: cond.append("scope!='inland'")
@@ -235,7 +235,7 @@ def get_article(source,article):
     c=con(); r=c.execute('SELECT * FROM articles WHERE source=? AND article=?',(source,int(article))).fetchone(); c.close(); return r
 
 
-def list_articles(source,include_inland=False):
+def list_articles(source,include_inland=True):
     c=con();
     if include_inland:
         rows=c.execute('SELECT * FROM articles WHERE source=? ORDER BY article',(source,)).fetchall()
@@ -264,9 +264,14 @@ def get_rule(rid):
     c=con(); r=c.execute('SELECT * FROM rules WHERE id=?',(rid,)).fetchone(); c.close(); return r
 
 
-def search_species(query,kind='commercial',limit=10):
+def search_species(query,kind='commercial',limit=10,scope=None):
     table='commercial_species' if kind=='commercial' else 'amateur_species'
-    c=con(); rows=c.execute('SELECT * FROM '+table+' ORDER BY name').fetchall(); c.close()
+    c=con()
+    if scope:
+        rows=c.execute('SELECT * FROM '+table+' WHERE scope=? ORDER BY name',(scope,)).fetchall()
+    else:
+        rows=c.execute('SELECT * FROM '+table+' ORDER BY scope,name').fetchall()
+    c.close()
     return _rank_rows(rows,query,limit,('name',))
 
 
@@ -274,13 +279,18 @@ def get_species(kind,sid):
     table='commercial_species' if kind=='commercial' else 'amateur_species'; c=con(); r=c.execute(f'SELECT * FROM {table} WHERE id=?',(int(sid),)).fetchone(); c.close(); return r
 
 
-def search_prohibited(query,limit=10):
-    c=con(); rows=c.execute('SELECT * FROM prohibited_species ORDER BY name').fetchall(); c.close()
+def search_prohibited(query,limit=10,activity=None):
+    c=con()
+    if activity in {'commercial','amateur'}:
+        rows=c.execute(f'SELECT * FROM prohibited_species WHERE {activity}=1 ORDER BY name').fetchall()
+    else:
+        rows=c.execute('SELECT * FROM prohibited_species ORDER BY name').fetchall()
+    c.close()
     return _rank_rows(rows,query,limit,('name',))
 
 
 def search_penalties(query,limit=8):
-    c=con(); rows=c.execute("SELECT * FROM penalty_cards WHERE scope!='inland'").fetchall(); c.close()
+    c=con(); rows=c.execute('SELECT * FROM penalty_cards').fetchall(); c.close()
     ranked = _rank_rows(rows,query,limit*2,('violation','option_text'))
     # BAGIS cards are often operationally urgent; otherwise preserve relevance / Excel order.
     ranked.sort(key=lambda r: (0 if r['layout']=='bagis' and 'bagis' in _tokens(query) else 1,))
@@ -295,18 +305,8 @@ def raw_row(n):
     c=con(); r=c.execute('SELECT * FROM raw_excel_rows WHERE source_row=?',(int(n),)).fetchone(); c.close(); return r
 
 
-def _raw_is_inland(text):
-    n=' '+norm(text)+' '
-    if any(x in n for x in [' ic su ',' icsu ',' ic sular ',' baraj ',' golet ']):
-        return ' deniz ' not in n and ' marmara ' not in n and ' bogaz ' not in n
-    if any(x in n for x in [' akarsu ',' gol ',' hes ']):
-        return ' deniz ' not in n and ' mansap ' not in n
-    return False
-
-
 def search_raw(query,limit=8):
     c=con(); rows=c.execute('SELECT * FROM raw_excel_rows ORDER BY source_row').fetchall(); c.close()
-    rows=[r for r in rows if not _raw_is_inland(r['raw_text'])]
     return _rank_rows(rows,query,limit,('raw_text',))
 
 

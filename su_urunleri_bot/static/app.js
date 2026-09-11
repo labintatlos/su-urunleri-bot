@@ -160,6 +160,8 @@
     'turcizelge:menu': ['Tür bilgileri', 'Asgari boy, miktar ve zaman yasaklarını inceleyin.', 'fish'],
     'vessel:menu': ['Gemi ve donanım', 'Ruhsat, belge ve izleme sistemi kontrollerini açın.', 'ship'],
     'field:Kolluk İşlemi': ['Saha rehberi', 'Denetimde uygulanacak kolluk işlemlerini inceleyin.', 'clipboard'],
+    'field:İçsu/Dalyan': ['İçsu ve dalyan', 'Göl, baraj, akarsu, dalyan ve lagün kurallarını inceleyin.', 'waves'],
+    'field:Tesis/Sağlık': ['Tesis ve sağlık', 'İşleme, yetiştiricilik, hijyen, nakil ve çevre hükümlerini açın.', 'package'],
     'ai:start': ['Olay değerlendirmesi', 'Olayı anlatın; ilgili mevzuatla birlikte değerlendirin.', 'scales'],
     'admin:panel': ['Yönetim', 'Kullanıcılar, işlem kayıtları ve sorun bildirimleri.', 'shield'],
   };

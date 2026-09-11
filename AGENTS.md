@@ -6,8 +6,8 @@ kullanıcıya verilen cevaplar Türkçedir.
 
 ## Proje
 
-Su Ürünleri Denetim Asistanı: deniz görev alanında su ürünleri denetimi için
-mevzuat, ceza ve tür rehberi. Home Assistant OS üzerinde (Raspberry Pi 5) bir
+Su Ürünleri Denetim Asistanı: deniz, içsu, dalyan/lagün ve tesislerde yürütülen
+su ürünleri denetimleri için mevzuat, ceza ve tür rehberi. Home Assistant OS üzerinde (Raspberry Pi 5) bir
 eklenti olarak çalışan, kullanıcı adı ve şifreyle açılan bir web sitesidir.
 Eskiden Telegram botuydu; 6.0.0 ile tamamen web sitesine geçildi. Ekran
 mantığı ve düğme verileri Telegram botundan birebir taşındı.
@@ -117,7 +117,7 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ✅ 6.0.9 tarama + site düzeltmeleri; 6.0.10 üyelik başvuru sınırı; modem/HA önerileri kullanıcı onayıyla tek tek uygulanıyor |
 | 8 | Yeni Markdown klasörünü tek kaynak yap, eski kaynakları kaldır ve eklenti korpusunu eşle | ✅ 6.0.14 |
 | 9 | Ceza, tür, madde, saha kuralı ve tekne föyü JSON verilerini yeni kaynaklardan yeniden üret | ✅ 6.0.15 |
-| 10 | Ekran/denetim akışlarını yeni kaynak kapsamıyla eşleştir ve çapraz doğrula | ⏳ |
+| 10 | Ekran/denetim akışlarını yeni kaynak kapsamıyla eşleştir ve çapraz doğrula | ✅ 6.0.16 |
 
 Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.0.8).
 Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim

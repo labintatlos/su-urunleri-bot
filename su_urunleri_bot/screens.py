@@ -83,7 +83,6 @@ SRC_LABEL = {
     '62': '6/2 Amatör Tebliğ',
     'bagis': 'BAGİS Tebliği',
     'excel': 'Ceza Excel',
-    'kilavuz': 'Saha Kılavuzu',
 }
 
 
@@ -95,6 +94,16 @@ REGION_LABEL = {
     'ege': 'Ege Denizi',
     'akdeniz': 'Akdeniz',
     'international': 'Uluslararası / MEB',
+    'inland': 'İçsu (göl, baraj, akarsu)',
+    'lagoon': 'Dalyan / Lagün',
+    'facility': 'Tesis / Sağlık Denetimi',
+}
+
+ACTIVITY_SCOPE_LABEL = {
+    'commercial': 'Ticari avcılık',
+    'amateur': 'Amatör avcılık',
+    'processing': 'İşleme / değerlendirme tesisi',
+    'aquaculture': 'Yetiştiricilik / sağlık',
 }
 
 LENGTH_BANDS = {
@@ -109,6 +118,9 @@ SUBJECT_LABEL = {
     'vessel': 'Gemi / ruhsat / donanım',
     'species': 'Ürün / tür kontrolü',
     'transport': 'Nakil / satış kontrolü',
+    'facility': 'Tesis izin ve şartları',
+    'health': 'Ürün sağlığı ve kalite',
+    'environment': 'Atık / çevresel tedbir',
 }
 
 GUIDE_DATA_PATH = os.path.join(os.path.dirname(__file__), 'data', 'vessel_guides.json')
@@ -131,7 +143,19 @@ GUIDE_GEAR_MAP = {
     'denizkestanesi': ['17_Denizkestanesi', '18_Sunger'],
     'monofilament': ['15_Monofilament'],
     'turizm': ['19_Amator_Turizm'],
+    'serpme': ['20_Serpme_Ag'],
+    'sepet / pinter': ['21_Sepet_Pinter_Tuzak'],
+    'dalyan / lagün': ['22_Dalyan_Lagun'],
 }
+
+
+def audit_activity_label(context):
+    value = context.user_data.get('audit_activity')
+    return ACTIVITY_SCOPE_LABEL.get(value, value or 'Belirtilmedi')
+
+
+def audit_species_scope(context):
+    return 'inland' if context.user_data.get('audit_region') == 'inland' else 'sea'
 
 
 def audit_length_label(context):
@@ -264,7 +288,7 @@ class AIError(Exception):
 
 AI_SYSTEM_INSTRUCTION = (
     "[GÖREV VE ROL]\n"
-    "Sen bir Sahil Güvenlik Personelisin. Temel görevin; kullanıcı tarafından yüklenen veya "
+    "Sen bir su ürünleri denetim personelisin. Temel görevin; kullanıcı tarafından yüklenen veya "
     "sisteme eklenen belgelere dayalı olarak resmi, doğru ve kesin bilgileri aktarmaktır.\n\n"
     "[ÜSLUP VE TON]\n"
     "- Resmi ve Kesin: Ciddi, askeri/kurumsal disipline uygun, açık ve net bir dil kullan.\n"
@@ -717,6 +741,7 @@ MAIN = [
     [('📋 Tekne Türü Kılavuzları', 'guide:menu'), ('🚨 Denetime Başla', 'audit:start')],
     [('📖 Pratik Ceza Rehberi', 'ceza:menu'), ('📖 Pratik Tür Çizelgesi', 'turcizelge:menu')],
     [('🚢 Gemi / Ruhsat / BAGİS', 'vessel:menu'), ('🧾 Kolluk İşlem Rehberi', 'field:Kolluk İşlemi')],
+    [('🏞️ İçsu / Dalyan', 'field:İçsu/Dalyan'), ('🏭 Tesis / Sağlık', 'field:Tesis/Sağlık')],
     [('⚖️ Hukuki Değerlendirme', 'ai:start')],
 ]
 
@@ -724,7 +749,7 @@ MAIN = [
 def send_menu(target, user_id=None, edit=False, update=None, context=None, force_new=False):
     text = (
         '<b>Denetimde bilgi,\nkararlarınızda dayanak.</b>\n\n'
-        'Su ürünleri denetimi için kontrol föyleri, mevzuat ve tür rehberleri. '
+        'Deniz, içsu, dalyan/lagün ve tesislerde su ürünleri denetimi için kontrol föyleri, mevzuat ve tür rehberleri. '
         'Görevinize uygun aracı aşağıdan seçin.\n\n'
         'Üstteki arama alanında tür, ceza veya mevzuat arayın: '
         '<code>hamsi</code>  <code>ruhsatsız</code>  <code>BAGİS</code>'
@@ -861,7 +886,7 @@ def callback(q, context):
             return q.edit_message_text('📊 <b>Ceza Excel tablosunda ara</b>\n\nİhlal, madde veya anahtar kelime yazın.', parse_mode=ParseMode.HTML, reply_markup=kb([[('🏠 Ana Menü', 'menu')]]))
         context.user_data.update(mode='source_search', source=key)
         return q.edit_message_text(
-            f'📚 <b>{esc(SRC_LABEL.get(key, key))}</b>\n\nMadde numarası yazabilir (örn. <code>36</code>) veya konu arayabilirsiniz. İçsuya özgü maddeler varsayılan olarak gösterilmez.',
+            f'📚 <b>{esc(SRC_LABEL.get(key, key))}</b>\n\nMadde numarası yazabilir (örn. <code>36</code>) veya deniz, içsu, tesis ve sağlık konularında arama yapabilirsiniz.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('📑 Maddeleri Listele', f'srclist:{key}:0')], [('🏠 Menü', 'menu')]]),
         )
@@ -958,19 +983,27 @@ def callback(q, context):
 
     if data == 'species:menu':
         return q.edit_message_text(
-            '🐟 <b>TÜR / BOY / ZAMAN</b>\n\nHangi faaliyet?',
+            '🐟 <b>TÜR / BOY / ZAMAN</b>\n\nFaaliyet ve su alanını seçin.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([
-                [('🎣 Ticari (6/1)', 'species:kind:commercial'), ('🎣 Amatör (6/2)', 'species:kind:amateur')],
-                [('🎣 Tamamen yasak tür', 'species:kind:prohibited')],
+                [('🌊 Ticari Deniz', 'species:kind:commercial:sea'), ('🌊 Amatör Deniz', 'species:kind:amateur:sea')],
+                [('🏞️ Ticari İçsu', 'species:kind:commercial:inland'), ('🏞️ Amatör İçsu', 'species:kind:amateur:inland')],
+                [('🚫 Ticari Yasak Tür', 'species:kind:prohibited:commercial'), ('🚫 Amatör Yasak Tür', 'species:kind:prohibited:amateur')],
                 [('🔎 Görsel Balık Teşhis Rehberi', 'species:vis:menu')],
                 [('🔙 Geri', 'turcizelge:menu')],
                 [('🏠 Ana Menü', 'menu')],
             ]),
         )
     if data.startswith('species:kind:'):
-        kind = data.rsplit(':', 1)[1]
-        context.user_data.update(mode='species_search', species_kind=kind)
+        parts = data.split(':')
+        kind = parts[2]
+        qualifier = parts[3] if len(parts) > 3 else None
+        values = {'mode':'species_search', 'species_kind':kind}
+        if kind == 'prohibited':
+            values['prohibited_activity'] = qualifier
+        else:
+            values['species_scope'] = qualifier
+        context.user_data.update(values)
         return q.edit_message_text('Tür adını yazın. Örnek: <code>kalkan</code>, <code>mavi yengeç</code>, <code>palamut</code>.', parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Tür Menüsü', 'species:menu')]]))
     if data.startswith('sp:'):
         _, kind, sid = data.split(':')
@@ -996,9 +1029,26 @@ def callback(q, context):
         return audit_start(q, context)
     if data.startswith('audit:region:'):
         context.user_data['audit_region'] = data.rsplit(':', 1)[1]
+        if context.user_data['audit_region'] == 'inland':
+            context.user_data['mode'] = 'audit_location'
+            return q.edit_message_text(
+                '🏞️ <b>İÇSU KONUMU</b>\n\nİl ile göl, baraj, akarsu veya kaynak adını yazın. '
+                'Örnek: <code>Ankara — Mogan Gölü</code>.',
+                parse_mode=ParseMode.HTML,
+                reply_markup=kb([[('➡️ Konumu Sonra Belirt', 'audit:location:skip')], [('↩️ Alan Seçimine Dön', 'audit:start')]])
+            )
+        return audit_choose_activity(q, context)
+    if data == 'audit:location:skip':
+        context.user_data.pop('mode', None)
+        return audit_choose_activity(q, context)
+    if data == 'audit:activitymenu':
         return audit_choose_activity(q, context)
     if data.startswith('audit:activity:'):
         context.user_data['audit_activity'] = data.rsplit(':', 1)[1]
+        if context.user_data['audit_activity'] in {'processing', 'aquaculture'}:
+            context.user_data['audit_length_band'] = 'none'
+            context.user_data['audit_length'] = 0.0
+            return audit_choose_date(q, context)
         return audit_choose_length(q, context)
     if data.startswith('audit:length:'):
         choice = data.rsplit(':', 1)[1]
@@ -1036,9 +1086,10 @@ def callback(q, context):
         if subject == 'fishing':
             return audit_choose_gear(q, context)
         if subject == 'species':
-            context.user_data.update(mode='audit_species_search', species_kind=context.user_data.get('audit_activity','commercial'), guided_species=True)
+            context.user_data.update(mode='audit_species_search', species_kind=context.user_data.get('audit_activity','commercial'), species_scope=audit_species_scope(context), guided_species=True)
+            examples = 'sazan, yayın, inci kefali' if audit_species_scope(context) == 'inland' else 'kalkan, palamut, hamsi'
             return q.edit_message_text(
-                '🐟 <b>ÜRÜN / TÜR</b>\n\nKontrol edilen türün adını yazın. Örnek: <code>kalkan</code>, <code>palamut</code>, <code>hamsi</code>.',
+                f'🐟 <b>ÜRÜN / TÜR</b>\n\nKontrol edilen türün adını yazın. Örnek: <code>{examples}</code>.',
                 parse_mode=ParseMode.HTML,
                 reply_markup=kb([[('➡️ Tür belirtmeden devam', 'audit:guided:check')], [('🏠 Ana Menü', 'menu')]])
             )
@@ -1049,9 +1100,10 @@ def callback(q, context):
             return audit_after_gear(q, context)
         return audit_gear_result(q, context)
     if data == 'audit:guided:species':
-        context.user_data.update(mode='audit_species_search', species_kind=context.user_data.get('audit_activity','commercial'), guided_species=True)
+        context.user_data.update(mode='audit_species_search', species_kind=context.user_data.get('audit_activity','commercial'), species_scope=audit_species_scope(context), guided_species=True)
+        examples = 'sazan, yayın, inci kefali' if audit_species_scope(context) == 'inland' else 'kalkan, palamut, hamsi'
         return q.edit_message_text(
-            '🐟 <b>TÜRÜ YAZIN</b>\n\nTür adını yazın. Tür bilinmiyorsa tür belirtmeden devam edebilirsiniz.',
+            f'🐟 <b>TÜRÜ YAZIN</b>\n\nTür adını yazın (örnek: <code>{examples}</code>). Tür bilinmiyorsa tür belirtmeden devam edebilirsiniz.',
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('➡️ Tür belirtmeden devam', 'audit:guided:check')], [('🏠 Ana Menü', 'menu')]])
         )
@@ -1109,7 +1161,7 @@ def show_source_list(q, source, page=0):
     if nav: rows.append(nav)
     rows.append([('🔎 Bu Kaynakta Ara',f'src:{source}'),])
     q.edit_message_text(
-        f'📑 <b>{esc(SRC_LABEL.get(source,source))} — DENİZ/GENEL MADDELER</b>\n\nSayfa {page+1}/{pages}. İçsuya özgü maddeler bu listede gösterilmez.',
+        f'📑 <b>{esc(SRC_LABEL.get(source,source))} — TÜM MADDELER</b>\n\nSayfa {page+1}/{pages}. Deniz, içsu, tesis ve genel hükümler birlikte gösterilir.',
         parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
@@ -1394,6 +1446,13 @@ def show_species(q, kind, sid, context=None):
             'kontrol edilmelidir.',
         ) + '\n'
 
+    if row['scope'] == 'inland':
+        text += badge(
+            'warn', 'Bölgesel içsu kuralları ayrıca kontrol edilmeli',
+            'İçsu zaman yasakları ve bazı miktar şartları il, bölge veya su kaynağına göre değişebilir. '
+            'Denetim konumunu ilgili Tebliğ maddesindeki bölgesel çizelgeyle eşleştirin.',
+        ) + '\n'
+
     source = '61' if kind == 'commercial' else '62'
     article = row['article_size'] if kind == 'commercial' else row['article']
     rows = [[('📚 Boy/Miktar Kaynağı', f'art:{source}:{article}'), ('⚖️ Yaptırım Ara', 'mode:penalty')]]
@@ -1539,7 +1598,7 @@ def guide_menu(q, context):
         '📋 <b>TEKNE TÜRÜNE GÖRE SAHA KILAVUZU</b>\n\n'
         'Kontrol edeceğiniz tekne/av yöntemi türünü seçin. Her föy yalnız o faaliyette sahada bakılması gereken '
         'belge, donanım, av aracı, yer-zaman ve ürün kontrollerini açar.\n\n'
-        '<i>İçsulara özgü kontroller bu menüye alınmamıştır.</i>',
+        '<i>Deniz, içsu, dalyan/lagün ve amatör av araçlarına ait föyler birlikte gösterilir.</i>',
         parse_mode=ParseMode.HTML,
         reply_markup=kb(rows),
     )
@@ -1868,10 +1927,10 @@ def guide_measure_skip(q, context):
 
 
 def guide_from_gear(q, context):
-    if context.user_data.get('audit_activity') == 'amateur':
-        return guide_open(q, context, '14_Amator_Tekne')
     gear = context.user_data.get('audit_gear')
     keys = GUIDE_GEAR_MAP.get(gear, [])
+    if context.user_data.get('audit_activity') == 'amateur' and not keys:
+        return guide_open(q, context, '14_Amator_Tekne')
     if not keys:
         return guide_menu(q, context)
     if len(keys) == 1:
@@ -1894,9 +1953,11 @@ def audit_breadcrumb(context):
     d = context.user_data
     parts = []
     if d.get('audit_region'):
-        parts.append(f'\U0001f30a {esc(REGION_LABEL.get(d["audit_region"], d["audit_region"]))}')
+        parts.append(f'📍 {esc(REGION_LABEL.get(d["audit_region"], d["audit_region"]))}')
+    if d.get('audit_location'):
+        parts.append(f'🗺️ {esc(d["audit_location"])}')
     if d.get('audit_activity'):
-        line = '\u2693 ' + ('Ticari' if d['audit_activity'] == 'commercial' else 'Amat\u00f6r')
+        line = '⚓ ' + esc(audit_activity_label(context))
         if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
             line += f' \u00b7 {esc(audit_length_label(context))}'
         parts.append(line)
@@ -1924,27 +1985,33 @@ def audit_start(q, context):
     db.log(q.from_user.id, 'audit_start')
     q.edit_message_text(
         audit_step(context, 1) +
-        'Önce <b>deniz bölgesini</b> seçin. Sonraki sorular seçtiğiniz bölgeye göre daraltılacaktır.',
+        'Önce <b>denetim alanını</b> seçin. Sonraki sorular alanın mevzuat kapsamına göre daraltılacaktır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
             [('🌊 Karadeniz', 'audit:region:karadeniz'), ('🌊 Marmara', 'audit:region:marmara')],
             [('🌉 İstanbul Boğazı', 'audit:region:istanbul'), ('🌉 Çanakkale Boğazı', 'audit:region:canakkale')],
             [('🌊 Ege', 'audit:region:ege'), ('🌊 Akdeniz', 'audit:region:akdeniz')],
             [('🧭 Uluslararası / MEB', 'audit:region:international')],
+            [('🏞️ İçsu', 'audit:region:inland'), ('🪸 Dalyan / Lagün', 'audit:region:lagoon')],
+            [('🏭 İşleme / Yetiştiricilik Tesisi', 'audit:region:facility')],
             [('↩️ Ana Menü', 'menu')],
         ]),
     )
 
 
 def audit_choose_activity(q, context):
+    if context.user_data.get('audit_region') == 'facility':
+        choices = [
+            [('🏭 İşleme / Değerlendirme', 'audit:activity:processing')],
+            [('🧪 Yetiştiricilik / Ürün Sağlığı', 'audit:activity:aquaculture')],
+        ]
+    else:
+        choices = [[('🚤 Ticari avcılık', 'audit:activity:commercial'), ('🎣 Amatör avcılık', 'audit:activity:amateur')]]
     q.edit_message_text(
         audit_step(context, 2) +
         'Kontrol edilen faaliyet hangi kapsamda?',
         parse_mode=ParseMode.HTML,
-        reply_markup=kb([
-            [('🚤 Ticari avcılık', 'audit:activity:commercial'), ('🎣 Amatör avcılık', 'audit:activity:amateur')],
-            [('↩️ Bölgeyi Değiştir', 'audit:start'), ('🏠 Ana Menü', 'menu')],
-        ]),
+        reply_markup=kb(choices + [[('↩️ Alanı Değiştir', 'audit:start'), ('🏠 Ana Menü', 'menu')]]),
     )
 
 
@@ -1970,7 +2037,7 @@ def audit_choose_date(q, context):
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
             [('📅 Bugün', 'audit:date:today'), ('🗓 Başka tarih', 'audit:date:other')],
-            [('↩️ Gemi Boyunu Değiştir', f'audit:activity:{context.user_data.get("audit_activity")}'), ('🏠 Ana Menü', 'menu')],
+            [('↩️ Faaliyeti Değiştir', 'audit:activitymenu'), ('🏠 Ana Menü', 'menu')],
         ]),
     )
 
@@ -1978,7 +2045,6 @@ def audit_choose_date(q, context):
 def audit_choose_subject(q, context):
     remember_draft(q, context, 'audit')
     activity = context.user_data.get('audit_activity')
-    d = audit_date(context)
     text = (
         audit_step(context, 5) +
         '<b>Denetimin ana konusu nedir?</b> Bundan sonra yalnız ilgili ayrıntılar sorulacaktır.'
@@ -1994,10 +2060,15 @@ def audit_choose_subject(q, context):
                 [('🎣 Avcılık faaliyeti', 'audit:subject:fishing'), ('🐟 Ürün / Tür', 'audit:subject:species')],
                 [('📦 Nakil / Satış', 'audit:subject:transport')],
             ]
-    else:
+    elif activity == 'amateur':
         rows = [
             [('🎣 Avcılık faaliyeti', 'audit:subject:fishing'), ('🐟 Ürün / Tür', 'audit:subject:species')],
             [('📦 Satış / Nakil', 'audit:subject:transport'), ('🔎 Ticari Nitelik Kontrolü', 'classify:start')],
+        ]
+    else:
+        rows = [
+            [('🏭 Tesis İzin / Şartları', 'audit:subject:facility'), ('🧪 Sağlık / Kalite', 'audit:subject:health')],
+            [('📦 Ambalaj / Nakliye', 'audit:subject:transport'), ('🌱 Atık / Çevre', 'audit:subject:environment')],
         ]
     rows += [[('↩️ Tarihi Değiştir', 'audit:datemenu'), ('🏠 Ana Menü', 'menu')]]
     q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
@@ -2005,7 +2076,16 @@ def audit_choose_subject(q, context):
 
 def audit_choose_gear(q, context):
     activity = context.user_data.get('audit_activity')
-    if activity == 'commercial':
+    inland = context.user_data.get('audit_region') == 'inland'
+    lagoon = context.user_data.get('audit_region') == 'lagoon'
+    if activity == 'commercial' and inland:
+        rows = [
+            [('Uzatma ağı', 'audit:gear:uzatma ağı'), ('Parakete', 'audit:gear:parakete')],
+            [('Serpme ağ', 'audit:gear:serpme'), ('Sepet / Pinter', 'audit:gear:sepet / pinter')],
+            [('Gırgır', 'audit:gear:gırgır'), ('Trol', 'audit:gear:dip trolü')],
+            [('Iğrıp / Manyat', 'audit:gear:manyat'), ('Diğer', 'audit:gear:diğer')],
+        ]
+    elif activity == 'commercial':
         rows = [
             [('Gırgır', 'audit:gear:gırgır'), ('Dip trolü', 'audit:gear:dip trolü')],
             [('Ortasu trolü', 'audit:gear:ortasu trolü'), ('Algarna', 'audit:gear:algarna')],
@@ -2015,13 +2095,24 @@ def audit_choose_gear(q, context):
             [('Deniz Patlıcanı', 'audit:gear:deniz patlıcanı'), ('Sünger / Kestane', 'audit:gear:denizkestanesi')],
             [('Monofilament', 'audit:gear:monofilament'), ('Olta / Çapari / Diğer', 'audit:gear:diğer')],
         ]
+        if lagoon:
+            rows.insert(0, [('Dalyan / Lagün', 'audit:gear:dalyan / lagün')])
     else:
-        rows = [
-            [('Olta / Çapari', 'audit:gear:olta'), ('Yemlik uzatma ağı', 'audit:gear:yemlik uzatma ağı')],
-            [('Sualtı tüfeği / Dalma', 'audit:gear:dalma'), ('Parakete', 'audit:gear:parakete')],
-            [('Turizm (Ek-9)', 'audit:gear:turizm'), ('Tırıvırı / Paraşüt', 'audit:gear:tırıvırı')],
-            [('Diğer', 'audit:gear:diğer')],
-        ]
+        if inland:
+            rows = [
+                [('Olta / Çapari', 'audit:gear:olta'), ('Yemlik uzatma ağı', 'audit:gear:yemlik uzatma ağı')],
+                [('Tırıvırı / Ağ', 'audit:gear:tırıvırı'), ('Parakete', 'audit:gear:parakete')],
+                [('Sepet / Pinter', 'audit:gear:sepet / pinter'), ('Serpme ağ', 'audit:gear:serpme')],
+                [('Sualtı tüfeği / Zıpkın', 'audit:gear:dalma'), ('Diğer', 'audit:gear:diğer')],
+            ]
+        else:
+            rows = [
+                [('Olta / Çapari', 'audit:gear:olta'), ('Yemlik uzatma ağı', 'audit:gear:yemlik uzatma ağı')],
+                [('Sualtı tüfeği / Dalma', 'audit:gear:dalma'), ('Parakete', 'audit:gear:parakete')],
+                [('Turizm (Ek-9)', 'audit:gear:turizm'), ('Tırıvırı / Paraşüt', 'audit:gear:tırıvırı')],
+                [('Serpme ağ', 'audit:gear:serpme'), ('Sepet / Pinter', 'audit:gear:sepet / pinter')],
+                [('Diğer', 'audit:gear:diğer')],
+            ]
     rows += [[('↩️ Konuyu Değiştir', 'audit:subjectmenu'), ('🏠 Ana Menü', 'menu')]]
     q.edit_message_text(
         audit_step(context, 6) +
@@ -2033,7 +2124,6 @@ def audit_choose_gear(q, context):
 
 def audit_after_gear(q, context):
     remember_draft(q, context, 'audit')
-    gear = context.user_data.get('audit_gear')
     flags = build_context_flags(context)
     warning = ''
     if flags:
@@ -2059,11 +2149,14 @@ def audit_hub_edit(q, context):
     subject = context.user_data.get('audit_subject')
     text = (
         '🚨 <b>DENETİM BAĞLAMI</b>\n\n'
-        f'🌊 Bölge: <b>{esc(REGION_LABEL.get(context.user_data.get("audit_region"), "—"))}</b>\n'
-        f'⚓ Faaliyet: <b>{"Ticari" if activity == "commercial" else "Amatör"}</b>\n'
-        f'🚤 Gemi/Tekne: <b>{esc(audit_length_label(context))}</b>\n'
+        f'📍 Alan: <b>{esc(REGION_LABEL.get(context.user_data.get("audit_region"), "—"))}</b>\n'
+        f'⚓ Faaliyet: <b>{esc(audit_activity_label(context))}</b>\n'
         f'📅 Tarih: <b>{audit_date(context).strftime("%d.%m.%Y")}</b>\n'
     )
+    if activity in {'commercial', 'amateur'}:
+        text += f'🚤 Gemi/Tekne: <b>{esc(audit_length_label(context))}</b>\n'
+    if context.user_data.get('audit_location'):
+        text += f'🗺️ Konum: <b>{esc(context.user_data["audit_location"])}</b>\n'
     if subject:
         text += f'🎯 Konu: <b>{esc(SUBJECT_LABEL.get(subject, subject))}</b>\n'
     if gear:
@@ -2101,6 +2194,8 @@ def build_context_flags(context):
         flags.append({'tag': tag, 'ref': ref, 'penalty_query': penalty_query})
 
     if activity == 'commercial':
+        if region == 'inland' and gear in {'gırgır', 'dip trolü', 'ortasu trolü'}:
+            add('İçsularda trol ve gırgır ağı kullanımı tamamen yasaktır', ('61', 51), 'içsularda trol gırgır')
         if gear == 'ışık' and region in {'karadeniz', 'marmara', 'istanbul', 'canakkale'}:
             add('Seçilen bölgede ışıkla avcılık yasağı', ('61', 13), 'ışık ile avcılık')
         if gear in {'dip trolü', 'ortasu trolü'} and region in {'marmara', 'istanbul', 'canakkale'}:
@@ -2114,9 +2209,11 @@ def build_context_flags(context):
             if in_date_range(day, span):
                 add(f'{day.strftime("%d.%m.%Y")} tarihinde genel gırgır kapalı dönemi', ('61', 12), 'yasak zamanda gırgır ağları ile istihsal yapmak')
     elif activity == 'amateur':
-        if gear == 'parakete':
+        if region == 'inland' and gear in {'parakete', 'tırıvırı', 'sepet / pinter', 'serpme', 'dalma'}:
+            add('Seçilen av aracı amatör içsu avcılığında yasaktır', ('62', 12), 'amatör içsu av aracı')
+        elif gear == 'parakete':
             add('Denizlerde amatör avcılıkta parakete kullanımı', ('62', 16), 'amatör avcılık kurallarının ihlali')
-        if gear == 'tırıvırı':
+        if gear == 'tırıvırı' and region != 'inland':
             add('Tırıvırı / paraşüt kullanımı', ('62', 8), 'amatör avcılık kurallarının ihlali')
 
     sid = context.user_data.get('audit_species_id')
@@ -2126,7 +2223,8 @@ def build_context_flags(context):
         if row:
             bans = json.loads(row['time_bans'] or '[]')
             if bans and any(in_date_range(day, span) for span in bans):
-                ref = ('61', int(row['article_time'] or 17)) if skind == 'commercial' else ('62', 15)
+                ref = (('61', int(row['article_time'] or row['article_size'])) if skind == 'commercial'
+                       else ('62', int(row['article'])))
                 pq = 'yasak zamanda avcılık' if skind == 'commercial' else 'amatör avcılık kurallarının ihlali'
                 add(f'{row["name"]}: seçilen tarih zaman yasağına denk geliyor', ref, pq)
     return flags
@@ -2135,10 +2233,36 @@ def build_context_flags(context):
 def build_quick_questions(context):
     activity = context.user_data.get('audit_activity')
     subject = context.user_data.get('audit_subject') or 'fishing'
+    region = context.user_data.get('audit_region')
     length = audit_rule_length(context)
     gear = context.user_data.get('audit_gear')
     day = audit_date(context)
     qs = []
+
+    # Tesis/sağlık denetimleri gemi ve av aracı sorularından bağımsızdır.
+    if activity in {'processing', 'aquaculture'}:
+        if subject == 'facility':
+            qs += [
+                _q('Tesisin çalışma izni, üretim/işleme izni ve faaliyet kapsamı güncel ve yapılan işle uyumlu mu?', 'yes', ('reg', 25), 'Tesis izinleri'),
+                _q('Tesis, alet-ekipman ve personel için genel hijyen şartları sağlanıyor mu?', 'yes', ('reg', 26), 'Genel hijyen'),
+                _q('Yetkili kontrol görevlilerinin tesise, ürünlere ve ilgili belgelere erişimi sağlanıyor mu?', 'yes', ('reg', 33), 'Kontrole erişim'),
+            ]
+        elif subject == 'health':
+            qs += [
+                _q('Hastalık şüphesi, karantina ve bildirim yükümlülükleri yönünden gerekli tedbirler alınmış mı?', 'yes', ('reg', 21), 'Hastalık / karantina'),
+                _q('İthalat, ihracat veya sevke konu ürünlerde sağlık belgesi ve sağlık şartları uygun mu?', 'yes', ('reg', 22), 'Sağlık belgesi'),
+                _q('Damızlık, yumurta ve yavrular için gerekli belge ve sağlık şartları uygun mu?', 'yes', ('reg', 23), 'Damızlık belgesi'),
+                _q('Koruyucu veya tedavi edici maddeler izinli, kayıtlı ve kullanım şartlarına uygun mu?', 'yes', ('reg', 24), 'Koruyucu / tedavi edici maddeler'),
+            ]
+            if activity == 'processing':
+                qs.append(_q('İşleme, muhafaza ve ürün kabul süreçleri ürün güvenliği şartlarına uygun mu?', 'yes', ('reg', 27), 'İşleme ve ürün güvenliği'))
+        elif subject == 'transport':
+            qs.append(_q('Ürün; ambalajlama, etiketleme, muhafaza, soğuk zincir ve taşıma şartlarına uygun mu?', 'yes', ('reg', 32), 'Muhafaza / nakil şartları', penalty_query='nakil belgesi'))
+        elif subject == 'environment':
+            qs += [
+                _q('Tesisten alıcı ortama arıtılmamış atık, ölü ürün veya çevreye zarar verecek madde bırakılmıyor mu?', 'yes', ('reg', 11), 'Atık ve çevre koruma'),
+                _q('Atıkların uzaklaştırılması ve varsa arıtma sistemi kayıtlı, çalışır ve uygun durumda mı?', 'yes', ('reg', 12), 'Atık yönetimi'),
+            ]
 
     # Önce genel hukuki/gemi unsurları, sonra faaliyete özgü ayrıntılar.
     if activity == 'commercial' and subject == 'fishing':
@@ -2167,45 +2291,84 @@ def build_quick_questions(context):
 
     if subject == 'fishing':
         if activity == 'commercial':
-            qs += [
+            if region == 'inland':
+                qs += [
+                    _q('Avcılık, kiralanmış/izin verilmiş istihsal sahasında ve ruhsatlı araçlarla mı yapılıyor?', 'yes', ('61', 51), 'İçsu sahası / ruhsat'),
+                    _q('Avcılık yapılan içsu tamamen veya kısmen yasaklanan alanlar dışında mı?', 'yes', ('61', 35), 'Yasaklanan içsular'),
+                    _q('İl, tür ve bölge için ilan edilen zaman yasağına uyuluyor mu?', 'yes', ('61', 37), 'İçsu zaman yasağı'),
+                    _q('Kullanılan av aracının göz açıklığı, boyu, sayısı ve diğer teknik şartları içsu kurallarına uygun mu?', 'yes', ('61', 51), 'İçsu av aracı şartları'),
+                ]
+            elif region == 'lagoon':
+                qs += [
+                    _q('Dalyan açıklıkları toplam açıklığın en az %10’u ve her biri en az 3 metre olacak şekilde açık mı?', 'yes', ('61', 34), 'Dalyan açıklıkları'),
+                    _q('Dalyan kuzulukları, ışıkla avcılık, zıpkın ve yeni ağ kullanımına ilişkin özel şartlara uyuluyor mu?', 'yes', ('61', 34), 'Dalyan / lagün özel şartları'),
+                ]
+            else:
+                qs += [
                 _q('Seçilen av aracının yer, saha, mesafe, derinlik ve saat şartlarının tamamı uygun mu?', 'yes', ('61', 50), 'Yer / saha / mesafe / derinlik'),
                 _q('Yasak dönem nedeniyle gemide veya istihsal yerinde bulundurulması yasak bir av aracı bulunmuyor mu?', 'yes', ('61', 50), 'Yasak av aracı bulundurma'),
-            ]
-            if gear == 'gırgır':
+                ]
+            if region != 'inland' and gear == 'gırgır':
                 qs += [
                     _q('Gırgır için asgari su derinliği ve ağ derinliği şartları uygun mu?', 'yes', ('61', 12), 'Gırgır derinlik şartları', penalty_query='gırgır'),
                     _q('Gırgır ağı için gerekli Ağ Ölçüm Belgesi mevcut ve geçerli mi?', 'yes', ('61', 12), 'Ağ Ölçüm Belgesi', penalty_query='gırgır ağı ölçüm belgesi'),
                 ]
-            elif gear in {'dip trolü', 'ortasu trolü'}:
+            elif region != 'inland' and gear in {'dip trolü', 'ortasu trolü'}:
                 qs.append(_q('Trol faaliyeti saha, zaman, kıyı mesafesi/derinlik, ağ gözü ve diğer teknik şartlara uygun mu?', 'yes', ('61', 10 if gear == 'dip trolü' else 11), 'Trol teknik/saha şartları', penalty_query='trol'))
-            elif gear == 'ışık':
+            elif region != 'inland' and gear == 'ışık':
                 qs.append(_q('Işıkla avcılık izin, güç, derinlik, yetiştiricilik tesisi mesafesi ve diğer özel şartlara uygun mu?', 'yes', ('61', 13), 'Işıkla avcılık şartları', penalty_query='ışık ile avcılık'))
-            elif gear == 'algarna':
+            elif region != 'inland' and gear == 'algarna':
                 qs.append(_q('Algarna faaliyeti hedef tür, izin, saat, saha ve teknik ölçü şartlarına uygun mu?', 'yes', ('61', 14), 'Algarna şartları', penalty_query='algarna'))
-            elif gear == 'parakete':
+            elif region != 'inland' and gear == 'parakete':
                 qs.append(_q('Parakete işaretleme ve iğne şartları uygun mu; hedef tür kalkan ise parakete kullanılmıyor mu?', 'yes', ('61', 15), 'Parakete şartları', penalty_query='parakete'))
-            if gear in {'algarna', 'manyat', 'dreç', 'dalma'} and day >= datetime(2026, 9, 1, tzinfo=TZ).date():
+            if region != 'inland' and gear in {'algarna', 'manyat', 'dreç', 'dalma'} and day >= datetime(2026, 9, 1, tzinfo=TZ).date():
                 qs.append(_q('Bu faaliyet için 1 Eylül 2026 itibarıyla istenen gemi izleme/kayıt cihazı işler ve çalışır durumda mı?', 'yes', ('61', 50), 'İzleme / kayıt cihazı'))
-        else:
-            qs += [
-                _q('Kullanılan av aracı/yöntem denizlerde amatör avcılık için izin verilen araç ve yöntemlere uygun mu?', 'yes', ('62', 16), 'Amatör av aracı', penalty_query='amatör avcılık kurallarının ihlali'),
-                _q('Avcılık yapılan saha; yüzme alanı, yetiştiricilik tesisi ve diğer yer sınırlamalarına uygun mu?', 'yes', ('62', 17), 'Amatör yer yasağı', penalty_query='amatör avcılık kurallarının ihlali'),
-            ]
+        elif activity == 'amateur':
+            if region == 'inland':
+                qs += [
+                    _q('Olta sayısı, iğne sayısı, tekne boyu ve kullanılan diğer araçlar içsu amatör avcılık sınırlarına uygun mu?', 'yes', ('62', 12), 'İçsu amatör av aracı', penalty_query='amatör avcılık kurallarının ihlali'),
+                    _q('Avcılık yapılan içsu tamamen/kısmen yasaklanan alanların dışında ve bölgesel zaman yasağına uygun mu?', 'yes', ('62', 11), 'İçsu yer / zaman yasağı', penalty_query='amatör avcılık kurallarının ihlali'),
+                ]
+            else:
+                qs += [
+                    _q('Kullanılan av aracı/yöntem denizlerde amatör avcılık için izin verilen araç ve yöntemlere uygun mu?', 'yes', ('62', 16), 'Amatör av aracı', penalty_query='amatör avcılık kurallarının ihlali'),
+                    _q('Avcılık yapılan saha; yüzme alanı, yetiştiricilik tesisi ve diğer yer sınırlamalarına uygun mu?', 'yes', ('62', 17), 'Amatör yer yasağı', penalty_query='amatör avcılık kurallarının ihlali'),
+                ]
+                if region == 'lagoon':
+                    qs.append(_q('Dalyan/lagün açıklıkları ve özel avcılık sınırlamalarına uyuluyor mu?', 'yes', ('61', 34), 'Dalyan / lagün şartları'))
 
     if subject in {'fishing', 'species'}:
-        if activity == 'commercial':
+        if activity == 'commercial' and region == 'inland':
+            qs += [
+                _q('Avlanan/tespit edilen içsu ürününün asgari boy veya ağırlık şartı uygun mu?', 'yes', ('61', 38), 'İçsu ürün boy / ağırlık', penalty_query='yasak boyda su ürünü'),
+                _q('Türe özgü kota, adet, izin ve özel içsu avcılığı şartları uygun mu?', 'yes', ('61', 39), 'İçsu tür özel şartları'),
+            ]
+        elif activity == 'commercial':
             qs += [
                 _q('Avlanan/tespit edilen ürünün asgari boy veya ağırlık şartı uygun mu?', 'yes', ('61', 17), 'Ürün boy / ağırlık', penalty_query='yasak boyda su ürünü'),
                 _q('Türün kota, tolerans, izin ve varsa özel avcılık şartları uygun mu?', 'yes', ('61', 18), 'Kota / tolerans / özel izin'),
             ]
-        else:
+        elif activity == 'amateur' and region == 'inland':
+            qs += [
+                _q('Avlanan/tespit edilen içsu ürününün bölgesel asgari boy şartı uygun mu?', 'yes', ('62', 11), 'İçsu amatör asgari boy', penalty_query='amatör avcılık kurallarının ihlali'),
+                _q('Alıkonulan içsu ürünü miktarı bölgesel adet/kg sınırları içinde mi?', 'yes', ('62', 11), 'İçsu amatör miktar', penalty_query='amatör avcılık kurallarının ihlali'),
+            ]
+        elif activity == 'amateur':
             qs += [
                 _q('Avlanan/tespit edilen ürünün asgari boy şartı uygun mu?', 'yes', ('62', 15), 'Amatör asgari boy', penalty_query='amatör avcılık kurallarının ihlali'),
                 _q('Alıkonulan ürün miktarı adet/kg sınırları içinde mi?', 'yes', ('62', 15), 'Amatör alıkonulabilir miktar', penalty_query='amatör avcılık kurallarının ihlali'),
             ]
 
     if subject == 'transport':
-        if activity == 'commercial':
+        if activity in {'processing', 'aquaculture'}:
+            # Tesis nakil sorusu yukarıdaki tesis dalında eklendi.
+            pass
+        elif activity == 'commercial' and region == 'inland':
+            qs += [
+                _q('Canlı içsu ürünlerinin nakli, stoklanması ve başka su kaynağına bırakılması gerekli izin ve şartlara uygun mu?', 'yes', ('61', 51), 'İçsu canlı nakli / stoklama', penalty_query='nakil belgesi'),
+                _q('Ürün yasak tür, yasak boy, yasak zaman veya mevzuata aykırı avcılıktan elde edilmiş ürün niteliğinde değil mi?', 'yes', ('law', 25), 'Yasak ürünün nakli / satışı', penalty_query='nakleden satan'),
+            ]
+        elif activity == 'commercial':
             qs += [
                 _q('Nakil/Menşe veya somut sevk için gerekli diğer belge mevcut ve uygun mu?', 'yes', ('61', 46), 'Nakil / Menşe belgesi', penalty_query='nakil belgesi'),
                 _q('Ürün yasak tür, yasak boy, yasak zaman veya mevzuata aykırı avcılıktan elde edilmiş ürün niteliğinde değil mi?', 'yes', ('law', 25), 'Yasak ürünün nakli / satışı', penalty_query='nakleden satan'),
@@ -2293,9 +2456,10 @@ def ai_scenario_from_context(context):
 
     if d.get('audit_region'):
         facts.append('Bölge: ' + str(REGION_LABEL.get(d['audit_region'], d['audit_region'])))
+    if d.get('audit_location'):
+        facts.append('İl / su kaynağı / tesis: ' + str(d['audit_location']))
     if d.get('audit_activity'):
-        facts.append('Faaliyet: ' + ('Ticari amaçlı avcılık' if d['audit_activity'] == 'commercial'
-                                     else 'Amatör amaçlı avcılık'))
+        facts.append('Faaliyet: ' + audit_activity_label(context))
     if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
         facts.append('Gemi/tekne: ' + audit_length_label(context))
     if d.get('audit_date'):
@@ -2351,7 +2515,7 @@ def ai_scenario_from_context(context):
     if not facts and not findings:
         return None
 
-    parts = ['Deniz görev alanında yapılan bir su ürünleri denetimidir.']
+    parts = ['Deniz, içsu, dalyan/lagün veya tesis kapsamında yapılan bir su ürünleri denetimidir.']
     if facts:
         parts.append('DENETİM BİLGİLERİ\n' + '\n'.join('- ' + f for f in facts))
     if findings:
@@ -2457,12 +2621,15 @@ def audit_quick_finish(q, context):
     subject = context.user_data.get('audit_subject')
     text = (
         '🛡️ <b>DENETİM SONUCU</b>\n\n'
-        f'🌊 Bölge: <b>{esc(region)}</b>\n'
-        f'⚓ Faaliyet: <b>{"Ticari" if activity == "commercial" else "Amatör"}</b>\n'
-        f'🚤 Gemi/Tekne: <b>{esc(audit_length_label(context))}</b>\n'
+        f'🌊 Alan: <b>{esc(region)}</b>\n'
+        f'⚓ Faaliyet: <b>{esc(audit_activity_label(context))}</b>\n'
         f'📅 Tarih: <b>{d.strftime("%d.%m.%Y")}</b>\n'
         f'🎯 Konu: <b>{esc(SUBJECT_LABEL.get(subject, subject or "—"))}</b>\n'
     )
+    if context.user_data.get('audit_location'):
+        text += f'📍 İl / su kaynağı / tesis: <b>{esc(context.user_data["audit_location"])}</b>\n'
+    if activity in {'commercial', 'amateur'}:
+        text += f'🚤 Gemi/Tekne: <b>{esc(audit_length_label(context))}</b>\n'
     if gear:
         text += f'🎣 Av aracı: <b>{esc(gear)}</b>\n'
     if species:
@@ -2584,11 +2751,13 @@ def audit_gear_result(q, context):
     length = context.user_data.get('audit_length', 0)
     source = '61' if activity == 'commercial' else '62'
     results = db.search_articles(gear, 6, source=source)
-    text = f'🎣 <b>{esc(gear.title())} — KONTROL</b>\n\nBölge: {esc(region)} | Gemi: {length:g} m\n\n'
+    text = f'🎣 <b>{esc(gear.title())} — KONTROL</b>\n\nAlan: {esc(REGION_LABEL.get(region, region))} | Gemi: {length:g} m\n\n'
+    if activity == 'commercial' and region == 'inland' and gear in {'gırgır', 'dip trolü', 'ortasu trolü'}:
+        text += '🔴 <b>6/1 Md.51: içsularda trol ve gırgır ağlarının kullanılması yasaktır.</b>\n\n'
     if activity == 'commercial' and gear == 'ışık' and region in {'karadeniz', 'marmara', 'istanbul', 'canakkale'}:
         text += '🔴 <b>6/1 Md.13: seçilen bölgede ışıkla avcılık yasaktır.</b>\n\n'
     today = datetime.now(TZ).date()
-    if activity == 'commercial' and gear == 'gırgır':
+    if activity == 'commercial' and gear == 'gırgır' and region != 'inland':
         text += 'Kontrol başlıkları: yer yasağı, kapalı dönem, su derinliği, ağ derinliği ve Ağ Ölçüm Belgesi.\n'
         # 6/1 Md.12: Akdeniz 15 Nisan–15 Eylül; diğer denizler 15 Nisan–31 Ağustos.
         closed = ((today.month, today.day) >= (4,15) and (today.month, today.day) <= ((9,15) if region == 'akdeniz' else (8,31)))
@@ -2597,7 +2766,7 @@ def audit_gear_result(q, context):
         else:
             text += f'🟢 {today.strftime("%d.%m.%Y")}: genel gırgır kapalı dönemine denk gelmiyor; yer/derinlik ve diğer şartlar devam eder.\n'
         text += '\n'
-    if activity == 'commercial' and gear == 'dip trolü':
+    if activity == 'commercial' and gear == 'dip trolü' and region != 'inland':
         text += 'Kontrol başlıkları: tamamen yasak saha, kapalı dönem, kıyı mesafesi, ağ gözü/torba şartları ve yasak yerde ağ bulundurma. Bölgeye göre ayrıntı 6/1 Md.9–10’dan doğrulanmalıdır.\n\n'
     if activity == 'commercial' and gear == 'algarna':
         if region in {'ege','akdeniz'}:
@@ -2697,6 +2866,19 @@ def text_handler(update, context):
         context.user_data.pop('mode',None)
         return send_or_edit(update, context, f'🚤 Gemi boyu <b>{length:g} m</b> olarak kaydedildi. Ceza kartında Exceldeki uygun boy satırı öne çıkarılacak.',parse_mode=ParseMode.HTML,reply_markup=kb([[('⚖️ Ceza Kartını Aç',f'pen:{pid}')],[('🏠 Ana Menü','menu')]]))
 
+    if mode == 'audit_location':
+        context.user_data['audit_location'] = text[:160]
+        context.user_data.pop('mode', None)
+        return send_or_edit(
+            update, context,
+            f'🏞️ İçsu konumu <b>{esc(context.user_data["audit_location"])}</b> olarak kaydedildi.\n\nKontrol edilen faaliyet hangi kapsamda?',
+            parse_mode=ParseMode.HTML,
+            reply_markup=kb([
+                [('🚤 Ticari avcılık', 'audit:activity:commercial'), ('🎣 Amatör avcılık', 'audit:activity:amateur')],
+                [('↩️ Alanı Değiştir', 'audit:start'), ('🏠 Ana Menü', 'menu')],
+            ]),
+        )
+
     if mode == 'audit_length_exact':
         try:
             length = float(text.replace(',', '.'))
@@ -2734,14 +2916,20 @@ def text_handler(update, context):
         context.user_data['audit_date'] = parsed.isoformat()
         context.user_data.pop('mode', None)
         activity = context.user_data.get('audit_activity')
-        rows = [
-            [('🎣 Avcılık faaliyeti', 'audit:subject:fishing'), ('🐟 Ürün / Tür', 'audit:subject:species')],
-            [('📦 Nakil / Satış', 'audit:subject:transport')],
-        ]
-        if activity == 'commercial' and audit_rule_length(context) > 0:
-            rows[1].append(('🚤 Gemi / Ruhsat / Donanım', 'audit:subject:vessel'))
-        elif activity == 'amateur':
-            rows[1].append(('🔎 Ticari Nitelik Kontrolü', 'classify:start'))
+        if activity in {'processing', 'aquaculture'}:
+            rows = [
+                [('🏭 Tesis İzin / Şartları', 'audit:subject:facility'), ('🧪 Sağlık / Kalite', 'audit:subject:health')],
+                [('📦 Ambalaj / Nakliye', 'audit:subject:transport'), ('🌱 Atık / Çevre', 'audit:subject:environment')],
+            ]
+        else:
+            rows = [
+                [('🎣 Avcılık faaliyeti', 'audit:subject:fishing'), ('🐟 Ürün / Tür', 'audit:subject:species')],
+                [('📦 Nakil / Satış', 'audit:subject:transport')],
+            ]
+            if activity == 'commercial' and audit_rule_length(context) > 0:
+                rows[1].append(('🚤 Gemi / Ruhsat / Donanım', 'audit:subject:vessel'))
+            elif activity == 'amateur':
+                rows[1].append(('🔎 Ticari Nitelik Kontrolü', 'classify:start'))
         rows.append([('🏠 Ana Menü', 'menu')])
         return send_or_edit(update, context, 
             f'📅 Tarih <b>{parsed.strftime("%d.%m.%Y")}</b> olarak kaydedildi.\n\n5. adım: denetimin ana konusunu seçin.',
@@ -2752,13 +2940,17 @@ def text_handler(update, context):
     if mode in {'species_search', 'audit_species_search'}:
         kind = context.user_data.get('species_kind', 'commercial')
         if kind == 'prohibited':
-            results = db.search_prohibited(text, LIMIT)
+            activity = context.user_data.get('prohibited_activity')
+            results = db.search_prohibited(text, LIMIT, activity)
             rows = [[(r['name'][:45], f'art:{r["source"]}:{r["article"]}')] for r in results]
-            msg = '🚫 <b>Tamamen yasak tür araması</b>\n\n' + ('Eşleşme bulundu.' if results else 'Eşleşme bulunamadı. Türkçe tür adını değiştirerek deneyin.')
+            scope_label = ACTIVITY_SCOPE_LABEL.get(activity, 'Tüm faaliyetler')
+            msg = f'🚫 <b>{esc(scope_label)} — tamamen yasak tür araması</b>\n\n' + ('Eşleşme bulundu.' if results else 'Eşleşme bulunamadı. Türkçe tür adını değiştirerek deneyin.')
         else:
-            results = db.search_species(text, kind, LIMIT)
+            scope = context.user_data.get('species_scope')
+            results = db.search_species(text, kind, LIMIT, scope)
             rows = [[(r['name'][:45], f'sp:{kind}:{r["id"]}')] for r in results]
-            msg = f'🐟 <b>{esc(text)}</b> — {len(results)} sonuç'
+            water = {'sea':'Deniz', 'inland':'İçsu'}.get(scope, 'Tüm sular')
+            msg = f'🐟 <b>{esc(text)}</b> — {water} · {len(results)} sonuç'
         if mode == 'audit_species_search' and context.user_data.get('guided_active'):
             rows.append([('➡️ Tür belirtmeden devam', 'audit:guided:check'), ('🏠 Ana Menü', 'menu')])
         else:
@@ -2793,7 +2985,7 @@ def text_handler(update, context):
         rows.append([('📚 Mevzuatta da Ara', 'mode:lawsearch'), ('↩️ Ana Menü', 'menu')])
         db.log(uid, 'penalty_search', text)
         return send_or_edit(update, context, 
-            f'⚖️ <b>{esc(text)}</b> — {len(results)} yapılandırılmış yaptırım sonucu\n\n<i>İçsuya özgü ceza kayıtları filtrelenmiştir. Sonuç bulunmazsa Excel ham satır araması gösterilir.</i>',
+            f'⚖️ <b>{esc(text)}</b> — {len(results)} yapılandırılmış yaptırım sonucu\n\n<i>Deniz, içsu ve tesis kapsamındaki ceza kayıtları birlikte aranır. Sonuç bulunmazsa Excel ham satır araması gösterilir.</i>',
             parse_mode=ParseMode.HTML,
             reply_markup=kb(rows),
         )
@@ -2806,7 +2998,7 @@ def text_handler(update, context):
             rows.append([(f'📚 {SRC_LABEL.get(r["source"], r["source"])} Md.{r["article"]} {r["title"][:22]}', f'art:{r["source"]}:{r["article"]}')])
         rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'legal_search', text)
-        return send_or_edit(update, context, f'🔎 <b>{esc(text)}</b> — deniz/genel kaynak eşleşmeleri', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+        return send_or_edit(update, context, f'🔎 <b>{esc(text)}</b> — tüm kaynaklardaki eşleşmeler', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode is None:
         # Doğal Dil / Genel Arama

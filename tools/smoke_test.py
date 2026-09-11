@@ -189,6 +189,80 @@ def main():
                     break
             return status, view
 
+        def action(data):
+            nonlocal presses
+            presses += 1
+            return call('/api/action', {'data': data})
+
+        def answer_current_audit(view):
+            """Aktif hızlı kontrolü tüm maddelere Evet diyerek sonuç ekranına taşır."""
+            for _ in range(40):
+                next_data = next((button.get('data') for row in view.get('buttons', []) for button in row
+                                  if button.get('data', '').startswith('audit:quick:ans:')
+                                  and button.get('data', '').endswith(':yes')), None)
+                if not next_data:
+                    return view
+                status, view = action(next_data)
+                if status != 200:
+                    errors.append((('TARGETED_AUDIT', next_data), status, view))
+                    return view
+            errors.append((('TARGETED_AUDIT', 'loop'), 0, 'hızlı kontrol 40 soruda bitmedi'))
+            return view
+
+        # Yeni kaynak kapsamının yalnızca erişilebilir olması değil, doğru dala
+        # yönelmesi de doğrulanır: içsu, tesis ve faaliyet-bazlı yasak türler.
+        action('audit:start')
+        action('audit:region:inland')
+        s, view = call('/api/text', {'text': 'Ankara — Mogan Gölü'})
+        for data in ('audit:activity:commercial', 'audit:length:none', 'audit:date:today',
+                     'audit:subject:fishing', 'audit:gear:gırgır', 'audit:guided:check'):
+            s, view = action(data)
+        if s != 200:
+            errors.append((('TARGETED_AUDIT', 'inland_questions'), s, view))
+        inland_result = answer_current_audit(view)
+        if ('İçsularda trol ve gırgır ağı kullanımı tamamen yasaktır' not in text_of(inland_result)
+                or 'Mogan Gölü' not in text_of(inland_result)):
+            errors.append((('TARGETED_AUDIT', 'inland_result'), 0, inland_result))
+
+        action('audit:start')
+        for data in ('audit:region:facility', 'audit:activity:processing', 'audit:date:today',
+                     'audit:subject:facility'):
+            s, view = action(data)
+        if s != 200 or 'çalışma izni' not in text_of(view):
+            errors.append((('TARGETED_AUDIT', 'facility_questions'), s, view))
+        facility_result = answer_current_audit(view)
+        facility_text = text_of(facility_result)
+        if 'İşleme / değerlendirme tesisi' not in facility_text or 'Gemi/Tekne' in facility_text:
+            errors.append((('TARGETED_AUDIT', 'facility_result'), 0, facility_result))
+
+        action('menu')
+        action('species:menu')
+        action('species:kind:commercial:inland')
+        s, view = call('/api/text', {'text': 'yayın'})
+        species_data = next((button.get('data') for row in view.get('buttons', []) for button in row
+                             if button.get('data', '').startswith('sp:commercial:')), None)
+        if s != 200 or not species_data:
+            errors.append((('TARGETED_SPECIES', 'inland_search'), s, view))
+        else:
+            s, species_view = action(species_data)
+            if s != 200 or 'İçsu' not in text_of(species_view) or '90 cm' not in text_of(species_view):
+                errors.append((('TARGETED_SPECIES', 'inland_card'), s, species_view))
+
+        action('species:menu')
+        action('species:kind:prohibited:commercial')
+        _, commercial_forbidden = call('/api/text', {'text': 'yılan balığı'})
+        action('species:menu')
+        action('species:kind:prohibited:amateur')
+        _, amateur_forbidden = call('/api/text', {'text': 'yılan balığı'})
+        commercial_hits = [b for row in commercial_forbidden.get('buttons', []) for b in row
+                           if b.get('data', '').startswith('art:')]
+        amateur_hits = [b for row in amateur_forbidden.get('buttons', []) for b in row
+                        if b.get('data', '').startswith('art:')]
+        if commercial_hits or not amateur_hits:
+            errors.append((('TARGETED_SPECIES', 'activity_prohibition'), 0,
+                           {'commercial': commercial_forbidden, 'amateur': amateur_forbidden}))
+        print('targeted source-scope flows: verified')
+
         seen, stack = set(), [()]
         while stack and presses < MAX_PRESSES:
             path = stack.pop()
