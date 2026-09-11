@@ -115,7 +115,9 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 5 | Ana sayfada yönetici onaylı **Üye ol** sekmesi (ad, soyad, e-posta, telefon, statü, kullanıcı adı, şifre) ve **Şifremi unuttum** talebi | ✅ 6.0.6 |
 | 6 | Sayfada **Sorun bildir** butonu; yönetici açık bildirimleri görüp kapatabilsin | ✅ 6.0.7 |
 | 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ✅ 6.0.9 tarama + site düzeltmeleri; 6.0.10 üyelik başvuru sınırı; modem/HA önerileri kullanıcı onayıyla tek tek uygulanıyor |
-
+| 8 | Yeni Markdown klasörünü tek kaynak yap, eski kaynakları kaldır ve eklenti korpusunu eşle | ✅ 6.0.14 |
+| 9 | Ceza, tür, madde, saha kuralı ve tekne föyü JSON verilerini yeni kaynaklardan yeniden üret | ⏳ |
+| 10 | Ekran/denetim akışlarını yeni kaynak kapsamıyla eşleştir ve çapraz doğrula | ⏳ |
 Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.0.8).
 Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim
 pencereleri yenilendi.

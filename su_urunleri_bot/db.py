@@ -8,7 +8,7 @@ from pathlib import Path
 import os
 DB_PATH = Path('/share/su_urunleri_bot/su_urunleri_kolluk.db') if os.path.exists('/share') else Path('./su_urunleri_kolluk.db')
 ASSET = Path('/app/data') if os.path.exists('/app/data') else Path(__file__).parent / 'data'
-DATASET = 'v5'
+DATASET = 'v6'
 
 
 def norm(value):

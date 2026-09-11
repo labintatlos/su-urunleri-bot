@@ -81,7 +81,7 @@ su_urunleri_bot/
 ├── db.py             # SQLite şeması, veri yükleme ve arama
 ├── static/           # Arayüz (index.html, app.js, style.css)
 ├── data/             # Mevzuat, tür, ceza ve kılavuz verileri (JSON)
-│   ├── markdown/              # Hukuki Değerlendirme için tam metin kaynaklar
+│   ├── markdown/              # Yeni ana kaynak klasörünün paketlenmiş kopyası
 │   ├── articles.json          # Kanun/yönetmelik/tebliğ maddeleri
 │   ├── penalty_cards.json     # İdari yaptırım tablosu
 │   ├── vessel_guides.json     # Tekne türü kontrol föyleri
@@ -91,11 +91,15 @@ su_urunleri_bot/
 └── run.sh            # Eklenti giriş noktası
 ```
 
-Normal arama ve denetim verileri `data/` altındaki JSON dosyalarından SQLite'a
-yüklenir. Hukuki Değerlendirme ise `data/markdown/` içindeki bütün `.md`
-dosyalarını doğrudan ve tam metin olarak kullanır. `db.py` içindeki `DATASET`
-sürümü değiştiğinde veritabanı yeniden kurulur; JSON veri dosyalarını
-güncelledikten sonra bu sürümü artırmak gerekir.
+Depo kökündeki `SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` klasörü içerik için tek ana
+kaynaktır. Eklenti derleme bağlamına girebilmesi için bu klasördeki Markdown
+belgelerinin birebir kopyası `data/markdown/` altında paketlenir; duman testi iki
+klasörün dosya adlarını ve içeriklerini karşılaştırır. Normal arama ve denetim
+verileri `data/` altındaki JSON dosyalarından SQLite'a yüklenir. Hukuki
+Değerlendirme ise paketlenmiş Markdown belgelerinin tamamını doğrudan ve tam
+metin olarak kullanır. `db.py` içindeki `DATASET` sürümü değiştiğinde veritabanı
+yeniden kurulur; JSON veri dosyalarını güncelledikten sonra bu sürümü artırmak
+gerekir.
 
 ## 📊 Veritabanı Tabloları
 
@@ -106,18 +110,17 @@ güncelledikten sonra bu sürümü artırmak gerekir.
 kaldığı ekran ve akış durumu), `activity_log` (kullanıcı işlem kayıtları),
 `issue_reports` (açık ve çözülmüş sorun bildirimleri).
 
-## 📚 Mevzuat Kaynakları
+## 📚 Kaynaklar
 
-- 1380 sayılı Su Ürünleri Kanunu
-- Su Ürünleri Yönetmeliği
-- 6/1 Numaralı Ticari Amaçlı Su Ürünleri Avcılığı Tebliği (2024/20)
-- 6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığı Tebliği (2024/21)
-- Balıkçı Gemilerini İzleme Sistemi Tebliği (2021/26)
-- İdari yaptırım (ceza) tablosu
+`SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` altında 1380 sayılı Kanun, Su Ürünleri
+Yönetmeliği, 6/1 ve 6/2 numaralı Tebliğler, BAGİS Tebliği ile bunlardan konuya
+göre düzenlenen 00-07 rehberleri ve Excel'den doğrulanan 08 numaralı idari ceza
+uygulama tablosu bulunur. Klasördeki Excel dosyası ceza tablosunun ham kaynağıdır.
 
 6/1 ve 6/2 tebliğleri **1/9/2024 – 31/8/2028** av dönemi için yayımlanmıştır.
-Dönem sonunda yenileriyle değiştirilirler. Hukuki Değerlendirme kaynakları
-`su_urunleri_bot/data/markdown/` altında güncellenmelidir.
+Dönem sonunda yenileriyle değiştirilirler. Kaynak değişiklikleri önce ana kaynak
+klasöründe yapılmalı, sonra `su_urunleri_bot/data/markdown/` kopyası aynı içerikle
+güncellenmelidir.
 
 ## ⚠️ Sorumluluk
 

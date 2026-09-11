@@ -8,6 +8,7 @@ düğmeyi dener ve metin bekleyen ekranlara örnek metin yazar. Hata ekranı vey
 HTTP hatası görülürse listeler ve 1 ile çıkar.
 """
 import http.cookiejar
+import hashlib
 import json
 import os
 import sqlite3
@@ -19,7 +20,10 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-ADDON = Path(__file__).resolve().parent.parent / 'su_urunleri_bot'
+REPO = Path(__file__).resolve().parent.parent
+ADDON = REPO / 'su_urunleri_bot'
+CANONICAL_SOURCES = REPO / 'SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)'
+PACKAGED_MARKDOWN = ADDON / 'data' / 'markdown'
 WEB_PORT, INGRESS_PORT = 18101, 18099
 BASE = f'http://127.0.0.1:{WEB_PORT}'
 MAX_DEPTH, MAX_PRESSES = 5, 4000
@@ -27,6 +31,37 @@ ERROR_MARKERS = ('Bir hata oluştu', 'Sunucuda beklenmeyen')
 SAMPLE_TEXTS = ('levrek', '12')
 
 opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+
+
+def source_digest(path):
+    content = path.read_bytes()
+    if path.suffix.casefold() == '.md':
+        content = content.replace(b'\r\n', b'\n')
+    return hashlib.sha256(content).hexdigest()
+
+
+def check_source_integrity():
+    """Ana kaynak klasörü, paket kopyası ve kaynak manifesti birebir uyuşmalı."""
+    canonical = {p.name: p.read_bytes() for p in CANONICAL_SOURCES.glob('*.md')}
+    packaged = {p.name: p.read_bytes() for p in PACKAGED_MARKDOWN.glob('*.md')}
+    if not canonical:
+        raise AssertionError('Ana Markdown kaynak klasörü boş')
+    if canonical != packaged:
+        missing = sorted(canonical.keys() - packaged.keys())
+        extra = sorted(packaged.keys() - canonical.keys())
+        changed = sorted(name for name in canonical.keys() & packaged.keys()
+                         if canonical[name] != packaged[name])
+        raise AssertionError(f'Paket Markdown kopyası eşleşmiyor: eksik={missing}, fazla={extra}, farklı={changed}')
+
+    manifest = json.loads((ADDON / 'data' / 'sources.json').read_text(encoding='utf-8'))
+    for source in manifest:
+        path = REPO / source['filename']
+        if not path.is_file():
+            raise AssertionError(f'Manifest kaynağı bulunamadı: {source["filename"]}')
+        digest = source_digest(path)
+        if digest != source['sha256']:
+            raise AssertionError(f'Manifest özeti uyuşmuyor: {source["filename"]}')
+    print(f'sources {len(canonical)} Markdown + {len(manifest) - len(canonical)} diğer: verified')
 
 
 def call(path, body=None):
@@ -45,6 +80,7 @@ def text_of(view):
 
 
 def main():
+    check_source_integrity()
     work = Path(tempfile.mkdtemp(prefix='suurunleri_smoke_'))
     env = dict(os.environ, WEB_PORT=str(WEB_PORT), INGRESS_PORT=str(INGRESS_PORT), GEMINI_API_KEY='',
                PYTHONIOENCODING='utf-8', PYTHONDONTWRITEBYTECODE='1')

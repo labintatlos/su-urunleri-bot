@@ -274,6 +274,11 @@ AI_SYSTEM_INSTRUCTION = (
     "[KURALLAR VE KISITLAMALAR]\n"
     "- Ekli Belgelere Kesin Bağlılık: Yalnızca aşağıda verilen Markdown belgelerindeki "
     "verilere sadık kal. Genel bilgini veya belge dışı başka bir kaynağı kullanma.\n"
+    "- Kaynak Önceliği: Kanun, Yönetmelik ve Tebliğlerin tam metinleri hukuki hüküm için "
+    "birincil kaynaktır. 00-07 numaralı konu rehberlerini olayın ilgili hükümlerini bulmak "
+    "ve uygulama bağlamını görmek için; 08 numaralı doğrulanmış tabloyu güncel idari ceza "
+    "tutarları ve uygulama notları için kullan. Belgeler arasında açık bir uyuşmazlık veya "
+    "doğrulanamamış not varsa bunu kesin hüküm gibi sunma; belgedeki uyarıyı aynen koru.\n"
     "- Varsayım ve Uydurma Yasağı: Belgelerde yer almayan hiçbir bilgiyi türetme, tahmin "
     "etme veya uydurma. Madde numarası, tarih, tutar, yaptırım ve hüküm ekleme.\n"
     "- Eksik Bilgi Durumu: İstenen bilgi ekli belgelerde yer almıyorsa yalnızca şu ifadeyi "
@@ -323,7 +328,7 @@ AI_MARKDOWN_DIR = ASSET_DIR / 'markdown'
 
 
 def ai_full_corpus():
-    """Load the complete legal corpus directly from the packaged Markdown files."""
+    """Load the complete canonical corpus from the packaged Markdown mirror."""
     global _AI_CORPUS_CACHE
     if _AI_CORPUS_CACHE is not None:
         return _AI_CORPUS_CACHE

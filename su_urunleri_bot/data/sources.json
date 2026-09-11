@@ -1,58 +1,17 @@
 [
-  {
-    "key": "law",
-    "title": "1380 sayılı Su Ürünleri Kanunu",
-    "type": "Kanun",
-    "number": "1380",
-    "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md",
-    "sha256": ""
-  },
-  {
-    "key": "reg",
-    "title": "Su Ürünleri Yönetmeliği",
-    "type": "Yönetmelik",
-    "number": "",
-    "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/1380 SU ÜRÜNLERİ YÖNETMELİĞİ MARKDOWN.md",
-    "sha256": ""
-  },
-  {
-    "key": "61",
-    "title": "6/1 Ticari Amaçlı Su Ürünleri Avcılığı Tebliği",
-    "type": "Tebliğ",
-    "number": "2024/20",
-    "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/6-1 TİCARİ AMAÇLI SU ÜRÜNLERİ AVCILIĞININ DÜZENLENMESİ TEBLİĞİ MARKDOWN.md",
-    "sha256": ""
-  },
-  {
-    "key": "62",
-    "title": "6/2 Amatör Amaçlı Su Ürünleri Avcılığı Tebliği",
-    "type": "Tebliğ",
-    "number": "2024/21",
-    "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/6-2 AMATÖR AMAÇLI SU ÜRÜNLERİ AVCILIĞININ DÜZENLENMESİ TEBLİĞİ MARKDOWN.md",
-    "sha256": ""
-  },
-  {
-    "key": "bagis",
-    "title": "Balıkçı Gemilerini İzleme Sistemi Tebliği",
-    "type": "Tebliğ",
-    "number": "2021/26",
-    "filename": "SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/BALIKÇI GEMİLERİNİ İZLEME SİSTEMİ TEBLİĞİ MARKDOWN.md",
-    "sha256": ""
-  },
-  {
-    "key": "excel",
-    "title": "Su ürünleri cezaları — idari yaptırım tablosu",
-    "type": "Excel",
-    "number": "",
-    "filename": "Su ürünleri cezaları.xlsx",
-    "sha256": "1637d2e2196a34a4e63ea534a82c06ca996dd85cb2aa859c75e6181da8a48927"
-  },
-  {
-    "key": "kilavuz",
-    "title": "Saha Kontrol Kılavuzu 2026",
-    "type": "Kılavuz",
-    "number": "2026",
-    "filename": "TURKIYE_DENIZLERI_SU_URUNLERI_SAHA_KONTROL_KILAVUZU_2026.md",
-    "sha256": ""
-  }
+  {"key":"law","title":"1380 sayılı Su Ürünleri Kanunu","type":"Kanun","number":"1380","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md","sha256":"df6ef6985f9759f0d9cae801d489d299443153afb6bfc1b3742736179e4a7caa"},
+  {"key":"reg","title":"Su Ürünleri Yönetmeliği","type":"Yönetmelik","number":"","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/1380 SU ÜRÜNLERİ YÖNETMELİĞİ MARKDOWN.md","sha256":"fd3587da3051ea1e079960897fb989cc7ae46565f000375814f1bb7ff256ae5e"},
+  {"key":"61","title":"6/1 Ticari Amaçlı Su Ürünleri Avcılığı Tebliği","type":"Tebliğ","number":"2024/20","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/6-1 TİCARİ AMAÇLI SU ÜRÜNLERİ AVCILIĞININ DÜZENLENMESİ TEBLİĞİ MARKDOWN.md","sha256":"bc472b2835d530eb848f9901dff50eeaccc017a8f2239e154182c020d82cf2ae"},
+  {"key":"62","title":"6/2 Amatör Amaçlı Su Ürünleri Avcılığı Tebliği","type":"Tebliğ","number":"2024/21","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/6-2 AMATÖR AMAÇLI SU ÜRÜNLERİ AVCILIĞININ DÜZENLENMESİ TEBLİĞİ MARKDOWN.md","sha256":"82b2ffc0bb385ee65e0d7ea62f189875b1eb9dcfc5dcdb792ea736c553a1b342"},
+  {"key":"bagis","title":"Balıkçı Gemilerini İzleme Sistemi Tebliği","type":"Tebliğ","number":"2021/26","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/BALIKÇI GEMİLERİNİ İZLEME SİSTEMİ TEBLİĞİ MARKDOWN.md","sha256":"3211d535d9aea596350a82ce91f27bddd4de35e807292da6963f2a506919c9ae"},
+  {"key":"guide00","title":"İçindekiler ve Genel Esaslar","type":"Konu Rehberi","number":"00","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/00 İÇİNDEKİLER VE GENEL ESASLAR.md","sha256":"fc1896f5af9558cac407b945dfb9b5497cd35a3fd5bc3faff8026e713a0783f0"},
+  {"key":"guide01","title":"Tekne ve Av Aracı Türüne Göre Kurallar","type":"Konu Rehberi","number":"01","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/01 TEKNE VE AV ARACI TÜRÜNE GÖRE KURALLAR.md","sha256":"5c9b15ef4d5dc957aa78e9f2a10f02e2c872ac1803133da6e773881df96b8540"},
+  {"key":"guide02","title":"Bölgeye Göre Kurallar (Denizler)","type":"Konu Rehberi","number":"02","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/02 BÖLGEYE GÖRE KURALLAR (DENİZLER).md","sha256":"f77258c26fce100067c3639932c3de9f69b26271d3d81063ee301dda7513e581"},
+  {"key":"guide03","title":"Türlere Göre Av Yasakları, Boy-Ağırlık ve Kotalar","type":"Konu Rehberi","number":"03","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md","sha256":"9489e56be1e39eb5ceb2d8165c4b27d7b63a2335a8c44746b4aad5585ab28cc0"},
+  {"key":"guide04","title":"İçsular, Dalyan ve Lagünler","type":"Konu Rehberi","number":"04","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/04 İÇSULAR, DALYAN VE LAGÜNLER.md","sha256":"8cbe78fef8ae07bdf6ce3794192bcce4447836bf748de6197d784bde5d24b62f"},
+  {"key":"guide05","title":"Amatör Balıkçılık Kuralları","type":"Konu Rehberi","number":"05","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/05 AMATÖR BALIKÇILIK KURALLARI.md","sha256":"15feccfdb7ba2dcdd313030dc231d9a64dcd931df9613cef141995e9f22930fb"},
+  {"key":"guide06","title":"Ruhsat, İzin Belgeleri, Gemi İzleme Sistemi ve İdari Cezalar","type":"Konu Rehberi","number":"06","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/06 RUHSAT, İZİN BELGELERİ, GEMİ İZLEME SİSTEMİ VE İDARİ CEZALAR.md","sha256":"47407d21be3aa677615a645348503576967b7c6ddd99031885982abb980e5a8e"},
+  {"key":"guide07","title":"İşleme Tesisleri, Sağlık ve Kalite Kuralları","type":"Konu Rehberi","number":"07","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/07 İŞLEME TESİSLERİ, SAĞLIK VE KALİTE KURALLARI.md","sha256":"f044eed0ab5973192251f7e71021a3160e479f5f29b66d04e0036da21bde06c0"},
+  {"key":"guide08","title":"Güncel İdari Ceza Uygulama Tablosu","type":"Konu Rehberi","number":"08","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md","sha256":"980f0dd5ab781d444c9abd55ea04179adbdd37235a1501cb94441aba711a33ad"},
+  {"key":"excel","title":"Su ürünleri cezaları — idari yaptırım tablosu","type":"Excel","number":"","filename":"SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/Su ürünleri cezaları.xlsx","sha256":"1637d2e2196a34a4e63ea534a82c06ca996dd85cb2aa859c75e6181da8a48927"}
 ]
