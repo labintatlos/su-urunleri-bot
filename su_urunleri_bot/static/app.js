@@ -275,21 +275,36 @@
       const rows = [...table.tBodies[0].rows];
       const wrap = el('div', 'table-wrap');
       const scroll = el('div', 'table-scroll');
+      scroll.tabIndex = 0;
+      scroll.setAttribute('role', 'region');
+      scroll.setAttribute('aria-label', 'Rehber tablosu; diğer sütunlar için yatay kaydırın');
+      const toolbar = el('div', 'table-toolbar');
+      const count = el('span', 'table-count', `${rows.length} kayıt`);
+      count.setAttribute('role', 'status');
+      const hint = el('span', 'table-hint', 'Diğer sütunlar için yatay kaydırın ↔');
+      toolbar.append(count, hint);
+      wrap.append(toolbar);
+      const empty = el('p', 'table-empty', 'Eşleşen kayıt bulunamadı. Başka bir kelime deneyin.');
+      empty.hidden = true;
       table.replaceWith(wrap);
       scroll.append(table);
       if (rows.length >= TABLE_FILTER_MIN_ROWS) {
         const filter = el('input', 'table-filter');
         filter.type = 'search';
+        filter.setAttribute('aria-label', 'Tablodaki kayıtlarda ara');
         filter.placeholder = `${rows.length} satırda ara…`;
         filter.addEventListener('input', () => {
           const needle = filter.value.toLocaleLowerCase('tr').trim();
           for (const row of rows) {
             row.hidden = needle !== '' && !row.textContent.toLocaleLowerCase('tr').includes(needle);
           }
+          const visible = rows.filter(row => !row.hidden).length;
+          count.textContent = needle ? `${rows.length} kayıttan ${visible} sonuç` : `${rows.length} kayıt`;
+          empty.hidden = visible !== 0;
         });
         wrap.append(filter);
       }
-      wrap.append(scroll);
+      wrap.append(scroll, empty);
     }
   }
 

@@ -152,6 +152,11 @@ sitelerinde de kullanılıyor; üçü arasında ortak bir hareket dili kuruldu.
 temada ana sayfa, tablo ekranı, hesap menüsü ve bildirim görsel olarak
 doğrulandı (yerel; depoya eklenmedi).
 
+Ara adım (6.0.23): Denizcilik teması, ana menü kartları, giriş sekmeleri ve
+mobil boşluklar iyileştirildi. Rehber tablolarında dönüşümlü satır zeminleri,
+kayıt/sonuç sayısı, yatay kaydırma açıklaması, klavyeyle kaydırma odağı ve
+boş arama sonucu açıklaması eklendi. Denetim akışları ve kaynak veriler korundu.
+
 Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
 `Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız
 büyüyen kilit sözlüğü ve eşzamanlı scrypt bellek tüketimi düzeltildi. Modem ve

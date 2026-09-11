@@ -163,4 +163,69 @@ label input:not([type=checkbox]), label select, label textarea { background: var
   .stage-footer span:last-child { flex-basis: 100%; margin-left: 31px; }
   .dialog { padding: 22px; }
 }
+/* Daha belirgin içerik hiyerarşisi ve sahada okunabilir yüzeyler. */
+body { background: radial-gradient(ellipse at 50% 0, var(--accent-soft), transparent 650px), var(--bg); }
+.topbar { background: #102f3c; box-shadow: 0 4px 20px #071c3012; }
+.stage { padding-top: 32px; }
+.page-heading { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.page-context { padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.screen { box-shadow: 0 8px 28px #071c3006; }
+.home-stage .screen, .auth-intro { background: linear-gradient(120deg, #102f3c, #145565); }
+.home-stage .screen { border: 1px solid #40727c; }
+.home-stage .block { font-size: 15px; line-height: 1.8; font-weight: 400; }
+.home-stage .block > b:first-child { max-width: 600px; margin-bottom: 4px; }
+.home-stage .heading-icon { color: #88e0cd; }
+.tools-title { margin-top: 4px; margin-bottom: 18px; }
+.tool-card { min-height: 144px; border-radius: 16px; padding: 24px; transition: border-color .18s, background .18s, box-shadow .18s, transform .18s; }
+.tool-copy { gap: 7px; padding-right: 18px; }
+.tool-category { font-size: 11px; letter-spacing: .025em; }
+.tool-name { font-size: 18px; font-weight: 650; }
+.tool-description { font-size: 13px; }
+.tool-icon { width: 46px; height: 46px; border: 1px solid var(--line); }
+.tool-arrow { top: 23px; right: 16px; }
+.tool-card.featured { border-left: 4px solid var(--accent); box-shadow: none; }
+.featured .tool-icon { border-color: transparent; }
+.btn.nav { color: var(--text); }
+.screen:not(:empty) + .inline-slot { margin-top: 18px; }
+.block + .block { border-top-style: solid; padding-top: 22px; margin-top: 22px; }
+.table-wrap { white-space: normal; margin: 18px 0 8px; }
+.table-toolbar { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 10px; font-size: 12px; }
+.table-count { color: var(--accent); font-weight: 650; }
+.table-hint { color: var(--muted); }
+.table-filter { min-height: 46px; margin-bottom: 12px; }
+.table-scroll { scrollbar-color: var(--muted) var(--surface-2); scrollbar-width: auto; }
+.table-scroll:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.block th, .block td { padding: 13px 15px; line-height: 1.65; }
+.block thead th { background: var(--accent-soft); color: var(--text); border-bottom: 2px solid var(--line); }
+.block tbody tr:nth-child(even) { background: var(--surface-2); }
+.table-empty { padding: 18px; margin: 10px 0 0; border-radius: 10px; background: var(--surface-2); color: var(--muted); font-size: 14px; }
+.auth-card { box-shadow: 0 16px 48px #071c300a; }
+.auth-tabs button.active { background: var(--accent-soft); color: var(--text); box-shadow: none; }
+.auth-intro .intro-features span { padding-bottom: 15px; border-bottom: 1px solid #77bdbb38; }
+.menu button:focus-visible { background: var(--accent-soft); outline-offset: -3px; }
+@media (hover: hover) {
+  .tool-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px #071c3010; }
+  .block tbody tr:hover td { background: var(--accent-soft); }
+}
+@media (max-width: 760px) {
+  .tool-card { padding: 20px; }
+  .tool-name { font-size: 17px; }
+}
+@media (max-width: 640px) {
+  .stage { padding-top: 18px; }
+  .page-heading { gap: 8px; padding-bottom: 10px; }
+  .home-stage .screen { padding: 22px; margin-bottom: 24px; }
+  .home-stage .block { font-size: 13px; line-height: 1.7; }
+  .home-stage .block > b:first-child { font-size: 27px; }
+  .tool-card { min-height: 112px; padding: 18px; gap: 14px; }
+  .tool-copy { gap: 4px; }
+  .tool-icon { width: 40px; height: 40px; border-radius: 11px; }
+  .tool-arrow { top: 16px; right: 12px; }
+  .tool-description { font-size: 13px; line-height: 1.55; }
+  .auth { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .auth-card { padding: 24px; }
+  .auth-brand { padding-right: 0; }
+  .table-toolbar { font-size: 12px; }
+  .block th, .block td { padding: 11px 12px; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
