@@ -37,6 +37,9 @@ USERNAME_RE = re.compile(r'^[a-z0-9._]{3,32}$')
 EMAIL_RE = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 MIN_PASSWORD_LENGTH = 8
 POSITIONS = {'subay', 'astsubay', 'uzman', 'memur'}
+# Üye ol formu herkese açık; sahte başvurular yönetici listesini doldurmasın.
+# Yönetici onaylayıp reddettikçe yeniden başvuru alınır.
+MAX_PENDING_REGISTRATIONS = 20
 
 # Yalnız hatalı denemeler sayılır; doğru şifreyle giren kişi hiç yavaşlatılmaz.
 FAILED_LOGIN_LIMIT = 5
@@ -271,7 +274,13 @@ def create_registration(username, first_name, last_name, email, phone, position,
     email = _clean_email(email)
     phone = _clean_phone(phone)
     position = _clean_position(position)
-    password_hash = hash_password(_check_password(password))
+    _check_password(password)
+    c = db.con()
+    pending = c.execute("SELECT COUNT(*) FROM web_accounts WHERE approval_status='pending'").fetchone()[0]
+    c.close()
+    if pending >= MAX_PENDING_REGISTRATIONS:
+        raise AccountError('Şu anda yeni başvuru alınamıyor. Lütfen daha sonra tekrar deneyin.')
+    password_hash = hash_password(password)
     display_name = f'{first_name} {last_name}'
     c = db.con()
     try:

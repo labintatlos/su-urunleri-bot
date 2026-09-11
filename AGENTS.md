@@ -95,8 +95,9 @@ genişliklerinde bakılmalıdır.
     eklenir). Ev ağında `http://` ile giriş bu sayede çalışmaya devam eder.
 - Sunucu bağlantıları 60 sn okuma/yazma zaman aşımıyla çalışır ve aynı anda en
   fazla 4 scrypt hesabı yapılır (Pi'de bellek tüketmeye karşı). Hatalı giriş
-  kilidi ve **Üye ol** formu bilerek değiştirilmedi; kilit, dış istekler aynı
-  adresten geldiği için kullanıcı adına göre çalışır.
+  kilidi kullanıcının kararıyla olduğu gibi kaldı; kilit, dış istekler aynı
+  adresten geldiği için kullanıcı adına göre çalışır. **Üye ol** formu onay
+  bekleyen en fazla 20 başvuru kabul eder (6.0.10).
 - 8099 (Ingress) portu dışarı açılmaz; `X-Remote-User-Name` başlığına yalnızca
   Supervisor adresinden gelen istekte güvenilir.
 
@@ -113,7 +114,7 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 4 | Kullanıcı işlem kayıtları: hangi kişi ne yaptı, yönetici görebilsin | ✅ 6.0.5 |
 | 5 | Ana sayfada yönetici onaylı **Üye ol** sekmesi (ad, soyad, e-posta, telefon, statü, kullanıcı adı, şifre) ve **Şifremi unuttum** talebi | ✅ 6.0.6 |
 | 6 | Sayfada **Sorun bildir** butonu; yönetici açık bildirimleri görüp kapatabilsin | ✅ 6.0.7 |
-| 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ✅ 6.0.9 tarama + site düzeltmeleri; modem/HA önerileri kullanıcı onayı bekliyor |
+| 7 | Açık bulmaya yönelik kapsamlı güvenlik taraması: site, Home Assistant ve Keenetic modem dahil | ✅ 6.0.9 tarama + site düzeltmeleri; 6.0.10 üyelik başvuru sınırı; modem/HA önerileri kullanıcı onayıyla tek tek uygulanıyor |
 
 Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.0.8).
 Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim

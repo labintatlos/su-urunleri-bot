@@ -34,7 +34,8 @@ güncellense veya yeniden kurulsa da silinmez. Oturum imza anahtarı
 
 Kullanıcı adı 3-32 karakterdir (küçük harf, rakam, nokta, alt çizgi); şifre en
 az 8 karakterdir. Aynı kullanıcı adıyla 15 dakika içinde 5 hatalı deneme
-yapılırsa o ad bir süre için kilitlenir.
+yapılırsa o ad bir süre için kilitlenir. Onay bekleyen 20 üyelik başvurusu
+varken yeni başvuru alınmaz; yönetici onaylayıp reddettikçe yer açılır.
 
 ## KeenDNS ile HTTPS adres (Keenetic modem)
 
