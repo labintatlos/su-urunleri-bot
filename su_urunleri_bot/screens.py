@@ -2005,9 +2005,8 @@ def audit_start(q, context):
         reply_markup=kb([
             [('🌊 Karadeniz', 'audit:region:karadeniz'), ('🌊 Marmara Denizi', 'audit:region:marmara')],
             [('🌊 Ege', 'audit:region:ege'), ('🌊 Akdeniz', 'audit:region:akdeniz')],
-            [('🧭 Uluslararası / MEB', 'audit:region:international')],
-            [('🏞️ İçsu', 'audit:region:inland'), ('🪸 Dalyan / Lagün', 'audit:region:lagoon')],
-            [('🏭 İşleme / Yetiştiricilik Tesisi', 'audit:region:facility')],
+            [('🧭 Uluslararası / MEB', 'audit:region:international'), ('🏞️ İçsu', 'audit:region:inland')],
+            [('🪸 Dalyan / Lagün', 'audit:region:lagoon'), ('🏭 İşleme / Yetiştiricilik Tesisi', 'audit:region:facility')],
             [('↩️ Ana Menü', 'menu')],
         ]),
     )
