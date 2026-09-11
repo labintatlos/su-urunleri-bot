@@ -2,7 +2,7 @@ import json
 import re
 import sqlite3
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import os
@@ -339,6 +339,28 @@ def admin_audit_activity():
     ''').fetchall()
     c.close()
     return guides, searches
+
+
+def admin_daily_trend(days=7):
+    """Son `days` günün denetim/kılavuz başlatma ve arama sayıları, en eskiden
+    en yeniye sıralı. Hiç kaydı olmayan günler de 0 olarak döner ki yönetici
+    panelindeki basit çubuk grafiğin günleri boşluksuz ve karşılaştırılabilir
+    olsun. created_at sunucunun yerel saatiyle (datetime.now()) yazıldığı için
+    burada da SQLite'ın UTC date() işlevi yerine Python tarihi kullanılır."""
+    start = datetime.now().date() - timedelta(days=days - 1)
+    c = con()
+    rows = c.execute('''
+        SELECT substr(created_at,1,10) AS day,
+               SUM(CASE WHEN action LIKE 'guide:%' OR action LIKE 'audit:%' OR action='guide_start' THEN 1 ELSE 0 END) AS denetim,
+               SUM(CASE WHEN query != '' AND query IS NOT NULL THEN 1 ELSE 0 END) AS arama
+        FROM query_log
+        WHERE substr(created_at,1,10) >= ?
+        GROUP BY day
+    ''', (start.isoformat(),)).fetchall()
+    c.close()
+    by_day = {r['day']: (r['denetim'] or 0, r['arama'] or 0) for r in rows}
+    return [((start + timedelta(days=i)).isoformat(), *by_day.get((start + timedelta(days=i)).isoformat(), (0, 0)))
+            for i in range(days)]
 
 
 # ── Inspections ───────────────────────────────────────────────────────────

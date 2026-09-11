@@ -196,6 +196,16 @@ def progress_bar(current, total, width=10):
     return f'{"▰" * filled}{"▱" * (width - filled)}  {current}/{total}'
 
 
+def trend_bar(value, scale, width=12):
+    """Render '▰▰▰▱▱▱▱▱▱▱▱▱ 3' — a fixed-width block bar sized against the
+    largest value in a series, followed by the raw count. Used for the admin
+    panel's day-by-day trend table; wrap the result in <code> so the blocks
+    line up across rows (monospace)."""
+    scale = max(int(scale), 1)
+    filled = round(width * min(int(value), scale) / scale)
+    return f'{"▰" * filled}{"▱" * (width - filled)} {int(value)}'
+
+
 def header(icon, title, subtitle=None):
     """A consistent title block: icon + bold caps title, optional subtitle."""
     out = f'{icon} <b>{esc(title)}</b>'
@@ -2932,8 +2942,21 @@ def show_admin_panel(q, section='main'):
         return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
     elif section == 'vessels':
+        trend = db.admin_daily_trend(7)
+        scale = max(1, max(max(d, a) for _, d, a in trend))
+        trend_table = (
+            '<table><thead><tr><th>Tarih</th><th>Denetim</th><th>Arama</th></tr></thead><tbody>'
+            + ''.join(
+                f'<tr><td>{day[8:10]}.{day[5:7]}</td>'
+                f'<td><code>{esc(trend_bar(d, scale, width=5))}</code></td>'
+                f'<td><code>{esc(trend_bar(a, scale, width=5))}</code></td></tr>'
+                for day, d, a in trend
+            )
+            + '</tbody></table>'
+        )
         guides, searches = db.admin_audit_activity()
         text = '📊 <b>DENETİM VE SORGULAMA DAĞILIMI</b>\n\n'
+        text += '📈 <b>Son 7 Gün:</b>\n' + trend_table + '\n\n'
         text += '🚢 <b>En Çok Başlatılan Denetim / Kılavuzlar:</b>\n'
         if guides:
             for g in guides[:8]:
