@@ -86,11 +86,15 @@ SRC_LABEL = {
 }
 
 
+# İstanbul ve Çanakkale boğazları 6.0.19'dan beri ayrı bölge değil, Marmara
+# Denizi bölgesinin parçasıdır. Eski düğmelerden veya kayıtlı yarım
+# denetimlerden gelen değerler Marmara'ya çevrilir (bkz. web.run_screen).
+MERGED_REGIONS = {'istanbul': 'marmara', 'canakkale': 'marmara'}
+
+
 REGION_LABEL = {
     'karadeniz': 'Karadeniz',
     'marmara': 'Marmara Denizi',
-    'istanbul': 'İstanbul Boğazı',
-    'canakkale': 'Çanakkale Boğazı',
     'ege': 'Ege Denizi',
     'akdeniz': 'Akdeniz',
     'international': 'Uluslararası / MEB',
@@ -1038,7 +1042,8 @@ def callback(q, context):
     if data == 'audit:start':
         return audit_start(q, context)
     if data.startswith('audit:region:'):
-        context.user_data['audit_region'] = data.rsplit(':', 1)[1]
+        region = data.rsplit(':', 1)[1]
+        context.user_data['audit_region'] = MERGED_REGIONS.get(region, region)
         if context.user_data['audit_region'] == 'inland':
             context.user_data['mode'] = 'audit_location'
             return q.edit_message_text(
@@ -1998,8 +2003,7 @@ def audit_start(q, context):
         'Önce <b>denetim alanını</b> seçin. Sonraki sorular alanın mevzuat kapsamına göre daraltılacaktır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
-            [('🌊 Karadeniz', 'audit:region:karadeniz'), ('🌊 Marmara', 'audit:region:marmara')],
-            [('🌉 İstanbul Boğazı', 'audit:region:istanbul'), ('🌉 Çanakkale Boğazı', 'audit:region:canakkale')],
+            [('🌊 Karadeniz', 'audit:region:karadeniz'), ('🌊 Marmara Denizi', 'audit:region:marmara')],
             [('🌊 Ege', 'audit:region:ege'), ('🌊 Akdeniz', 'audit:region:akdeniz')],
             [('🧭 Uluslararası / MEB', 'audit:region:international')],
             [('🏞️ İçsu', 'audit:region:inland'), ('🪸 Dalyan / Lagün', 'audit:region:lagoon')],
@@ -2206,15 +2210,15 @@ def build_context_flags(context):
     if activity == 'commercial':
         if region == 'inland' and gear in {'gırgır', 'dip trolü', 'ortasu trolü'}:
             add('İçsularda trol ve gırgır ağı kullanımı tamamen yasaktır', ('61', 51), 'içsularda trol gırgır')
-        if gear == 'ışık' and region in {'karadeniz', 'marmara', 'istanbul', 'canakkale'}:
+        if gear == 'ışık' and region in {'karadeniz', 'marmara'}:
             add('Seçilen bölgede ışıkla avcılık yasağı', ('61', 13), 'ışık ile avcılık')
-        if gear in {'dip trolü', 'ortasu trolü'} and region in {'marmara', 'istanbul', 'canakkale'}:
+        if gear in {'dip trolü', 'ortasu trolü'} and region == 'marmara':
             add('Seçilen bölgede trol yasağı', ('61', 9), 'Marmara Denizi ve boğazlarda trol avcılığı')
         if gear == 'algarna' and region in {'ege', 'akdeniz'}:
             add('Seçilen bölgede algarna kullanımı yasağı', ('61', 14), 'algarna')
         if gear == 'gırgır' and 0 < length < 12:
             add('12 metreden küçük gemi ile gırgır avcılığı', ('61', 50), '12 metreden küçük tekne ile gırgır avcılığı')
-        if gear == 'gırgır' and region in {'karadeniz', 'marmara', 'istanbul', 'canakkale', 'ege', 'akdeniz'}:
+        if gear == 'gırgır' and region in {'karadeniz', 'marmara', 'ege', 'akdeniz'}:
             span = '04-15/09-15' if region == 'akdeniz' else '04-15/08-31'
             if in_date_range(day, span):
                 add(f'{day.strftime("%d.%m.%Y")} tarihinde genel gırgır kapalı dönemi', ('61', 12), 'yasak zamanda gırgır ağları ile istihsal yapmak')
@@ -2764,7 +2768,7 @@ def audit_gear_result(q, context):
     text = f'🎣 <b>{esc(gear.title())} — KONTROL</b>\n\nAlan: {esc(REGION_LABEL.get(region, region))} | Gemi: {length:g} m\n\n'
     if activity == 'commercial' and region == 'inland' and gear in {'gırgır', 'dip trolü', 'ortasu trolü'}:
         text += '🔴 <b>6/1 Md.51: içsularda trol ve gırgır ağlarının kullanılması yasaktır.</b>\n\n'
-    if activity == 'commercial' and gear == 'ışık' and region in {'karadeniz', 'marmara', 'istanbul', 'canakkale'}:
+    if activity == 'commercial' and gear == 'ışık' and region in {'karadeniz', 'marmara'}:
         text += '🔴 <b>6/1 Md.13: seçilen bölgede ışıkla avcılık yasaktır.</b>\n\n'
     today = datetime.now(TZ).date()
     if activity == 'commercial' and gear == 'gırgır' and region != 'inland':

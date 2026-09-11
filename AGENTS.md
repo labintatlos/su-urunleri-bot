@@ -134,6 +134,12 @@ Tekrar, Ruhsat İşlemi, Durum/Seçenek, Uyarı/Not gizli kalıyordu). Tablolard
 kelimeler bölünmez; `app.js` sütunlara metin uzunluğuna göre asgari genişlik
 verir, sığmayan tablo çerçevesinde yatay kayar.
 
+Ara adım (6.0.19): Denetime Başla'da İstanbul ve Çanakkale boğazları ayrı bölge
+değil, tek **Marmara Denizi** bölgesidir (kullanıcının kararıyla ara seçim
+yok). Boğaz anahtarlarını içeren her kural zaten Marmara'yı da kapsıyordu;
+eski `istanbul`/`canakkale` değerleri `screens.MERGED_REGIONS` ile hem düğmede
+hem kayıtlı durum yüklenirken Marmara'ya çevrilir.
+
 Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
 `Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız
 büyüyen kilit sözlüğü ve eşzamanlı scrypt bellek tüketimi düzeltildi. Modem ve

@@ -292,6 +292,22 @@ def main():
         if 'İşleme / değerlendirme tesisi' not in facility_text or 'Gemi/Tekne' in facility_text:
             errors.append((('TARGETED_AUDIT', 'facility_result'), 0, facility_result))
 
+        # Boğazlar ayrı bölge değildir: tek "Marmara Denizi" düğmesi vardır ve
+        # eski boğaz değeri (kayıtlı düğme) Marmara kurallarıyla sonuçlanır.
+        s, view = action('audit:start')
+        region_buttons = [button.get('data') for row in view.get('buttons', []) for button in row]
+        if ('audit:region:marmara' not in region_buttons
+                or any('istanbul' in b or 'canakkale' in b for b in region_buttons)
+                or 'Marmara Denizi' not in json.dumps(view.get('buttons'), ensure_ascii=False)):
+            errors.append((('TARGETED_AUDIT', 'marmara_region_buttons'), s, view))
+        for data in ('audit:region:istanbul', 'audit:activity:commercial', 'audit:length:none',
+                     'audit:date:today', 'audit:subject:fishing', 'audit:gear:dip trolü', 'audit:guided:check'):
+            s, view = action(data)
+        marmara_result = answer_current_audit(view)
+        if ('Seçilen bölgede trol yasağı' not in text_of(marmara_result)
+                or 'Marmara Denizi' not in text_of(marmara_result)):
+            errors.append((('TARGETED_AUDIT', 'marmara_result'), 0, marmara_result))
+
         action('menu')
         action('species:menu')
         action('species:kind:commercial:inland')

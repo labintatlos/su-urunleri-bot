@@ -99,6 +99,8 @@ def run_screen(account, handler, reuse_last=False):
     screens.USER_NAMES[uid] = account['display_name']
     with _user_lock(uid):
         data, last = load_state(uid)
+        if data.get('audit_region') in screens.MERGED_REGIONS:
+            data['audit_region'] = screens.MERGED_REGIONS[data['audit_region']]
         if reuse_last and last:
             return dict(last, mode=data.get('mode'), alert=None)
         screen = screens.Screen()
