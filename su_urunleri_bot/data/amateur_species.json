@@ -8,152 +8,184 @@
       "04-15/10-31"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Akya",
-    "min_cm": 40,
+    "min_cm": 40.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
       "04-15/05-15"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Bakalyaro (Berlam)",
-    "min_cm": 20,
+    "min_cm": 20.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Barbunya",
-    "min_cm": 12,
+    "min_cm": 12.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Çipura",
-    "min_cm": 20,
+    "min_cm": 20.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Deniz böceği",
-    "min_cm": 25,
+    "min_cm": 25.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Dil",
-    "min_cm": 20,
+    "min_cm": 20.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [
       "01-01/02-15"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Eşkina",
-    "min_cm": 35,
+    "min_cm": 35.0,
     "min_kg": null,
     "limit": "3 adet",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "İstavrit",
-    "min_cm": 13,
+    "min_cm": 13.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Istakoz",
-    "min_cm": 25,
+    "min_cm": 25.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kalkan",
-    "min_cm": 45,
+    "min_cm": 45.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
       "04-15/06-15"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Karagöz",
-    "min_cm": 18,
+    "min_cm": 18.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Kefal (Amuderya kefali)",
-    "min_cm": 35,
+    "name": "Kefal (Amuderya)",
+    "min_cm": 35.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Kefal (Diğer kefaller)",
-    "min_cm": 20,
+    "name": "Kefal (diğer)",
+    "min_cm": 20.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kefal (Has kefal)",
-    "min_cm": 30,
+    "min_cm": 30.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Kefal (Sarıkulak kefal)",
-    "min_cm": 30,
+    "name": "Kefal (Sarıkulak)",
+    "min_cm": 30.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Kılıç",
-    "min_cm": 110,
+    "name": "Kılıç (çatal boy)",
+    "min_cm": 110.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
@@ -161,197 +193,239 @@
       "10-01/11-30"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kırlangıç",
-    "min_cm": 18,
+    "min_cm": 18.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kırma (Kırmızı) mercan",
-    "min_cm": 15,
+    "min_cm": 15.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kolyoz",
-    "min_cm": 18,
+    "min_cm": 18.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Lagos",
-    "min_cm": 50,
+    "min_cm": 50.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
       "06-01/08-31"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Lipsöz",
-    "min_cm": 15,
+    "min_cm": 15.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Lambuka",
-    "min_cm": 50,
+    "min_cm": 50.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
       "01-01/08-14"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Levrek",
-    "min_cm": 25,
+    "min_cm": 25.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Lüfer",
-    "min_cm": 18,
+    "min_cm": 18.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mavi yengeç",
-    "min_cm": 13,
+    "min_cm": 13.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Mavi yüzgeçli orkinos",
-    "min_cm": 115,
+    "name": "Mavi yüzgeçli orkinos (çatal boy)",
+    "min_cm": 115.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
       "10-15/06-15"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mezgit",
-    "min_cm": 13,
+    "min_cm": 13.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Minekop (Kötek, Karakulak)",
-    "min_cm": 45,
+    "name": "Minekop",
+    "min_cm": 45.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Palamut",
-    "min_cm": 25,
+    "min_cm": 25.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [
       "04-01/08-14"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Pisi",
-    "min_cm": 20,
+    "min_cm": 20.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sargos",
-    "min_cm": 21,
+    "min_cm": 21.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sarıağız",
-    "min_cm": 25,
+    "min_cm": 25.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sarıkuyruk",
-    "min_cm": 30,
+    "min_cm": 30.0,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [
       "04-15/05-15"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sinagrit",
-    "min_cm": 35,
+    "min_cm": 35.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Tekir",
-    "min_cm": 12,
+    "min_cm": 12.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Uskumru",
-    "min_cm": 20,
+    "min_cm": 20.0,
     "min_kg": null,
-    "limit": "Toplam 5 kg (tüm türlerle birlikte)",
+    "limit": "5 kg",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Uzun kanat orkinos (tulina)",
@@ -363,15 +437,192 @@
       "10-01/11-30"
     ],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Yazılı orkinos",
-    "min_cm": 45,
+    "min_cm": 45.0,
     "min_kg": null,
     "limit": "2 adet",
     "time_bans": [],
     "source": "62",
-    "article": 15
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Doğal alabalık (tüm türler)",
+    "min_cm": 25.0,
+    "min_kg": null,
+    "limit": "3 adet",
+    "time_bans": [
+      "10-01/02-28"
+    ],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Fırat turnası",
+    "min_cm": 50.0,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Gökkuşağı alabalığı",
+    "min_cm": null,
+    "min_kg": null,
+    "limit": "10 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "İnci kefali",
+    "min_cm": 18.0,
+    "min_kg": null,
+    "limit": "5 kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Kadife",
+    "min_cm": 26.0,
+    "min_kg": null,
+    "limit": "10 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Karabalık",
+    "min_cm": 22.0,
+    "min_kg": null,
+    "limit": "10 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Maya",
+    "min_cm": 50.0,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Sazan",
+    "min_cm": 40.0,
+    "min_kg": null,
+    "limit": "5 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Siraz",
+    "min_cm": 20.0,
+    "min_kg": null,
+    "limit": "5 kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Sudak",
+    "min_cm": 26.0,
+    "min_kg": null,
+    "limit": "10 adet",
+    "time_bans": [
+      "03-15/04-30"
+    ],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Şabut",
+    "min_cm": 45.0,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Tatlısu kefali",
+    "min_cm": 20.0,
+    "min_kg": null,
+    "limit": "5 kg",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Tatlısu levreği",
+    "min_cm": 18.0,
+    "min_kg": null,
+    "limit": "5 kg",
+    "time_bans": [
+      "03-15/04-30"
+    ],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Turna",
+    "min_cm": 40.0,
+    "min_kg": null,
+    "limit": "5 adet",
+    "time_bans": [
+      "12-15/03-31"
+    ],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+  },
+  {
+    "name": "Yayın",
+    "min_cm": 90.0,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [],
+    "source": "62",
+    "article": 11,
+    "scope": "inland",
+    "source_doc": "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
   }
 ]

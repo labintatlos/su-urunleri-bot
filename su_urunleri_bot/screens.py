@@ -1359,7 +1359,8 @@ def show_species(q, kind, sid, context=None):
     bans = json.loads(row['time_bans'])
     today = audit_date(context) if context is not None and context.user_data.get('guided_active') else datetime.now(TZ).date()
     closed = any(in_date_range(today, span) for span in bans)
-    title = 'Ticari — 6/1' if kind == 'commercial' else 'Amatör — 6/2'
+    water = 'İçsu' if row['scope'] == 'inland' else 'Deniz'
+    title = f'{"Ticari — 6/1" if kind == "commercial" else "Amatör — 6/2"} · {water}'
     text = f'{header("🐟", row["name"], title)}\n{HR}\n'
     if row['min_cm'] is not None:
         text += field('Asgari boy', f'{row["min_cm"]:g} cm', '📏') + '\n'
@@ -1394,7 +1395,7 @@ def show_species(q, kind, sid, context=None):
         ) + '\n'
 
     source = '61' if kind == 'commercial' else '62'
-    article = 17 if kind == 'commercial' else 15
+    article = row['article_size'] if kind == 'commercial' else row['article']
     rows = [[('📚 Boy/Miktar Kaynağı', f'art:{source}:{article}'), ('⚖️ Yaptırım Ara', 'mode:penalty')]]
     
     # Check if a visual guide exists for this species
@@ -2752,7 +2753,7 @@ def text_handler(update, context):
         kind = context.user_data.get('species_kind', 'commercial')
         if kind == 'prohibited':
             results = db.search_prohibited(text, LIMIT)
-            rows = [[(r['name'][:45], 'art:61:16')] for r in results]
+            rows = [[(r['name'][:45], f'art:{r["source"]}:{r["article"]}')] for r in results]
             msg = '🚫 <b>Tamamen yasak tür araması</b>\n\n' + ('Eşleşme bulundu.' if results else 'Eşleşme bulunamadı. Türkçe tür adını değiştirerek deneyin.')
         else:
             results = db.search_species(text, kind, LIMIT)

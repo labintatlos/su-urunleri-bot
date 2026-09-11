@@ -17,7 +17,8 @@
     "layout": "simple_top",
     "id": 1,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 4,
@@ -37,7 +38,8 @@
     "layout": "simple_top",
     "id": 2,
     "scope": "inland",
-    "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 5,
@@ -57,7 +59,8 @@
     "layout": "simple_top",
     "id": 3,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 6,
@@ -77,7 +80,8 @@
     "layout": "simple_top",
     "id": 4,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 7,
@@ -97,7 +101,8 @@
     "layout": "simple_top",
     "id": 5,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 8,
@@ -117,7 +122,8 @@
     "layout": "simple_top",
     "id": 6,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 9,
@@ -137,7 +143,8 @@
     "layout": "simple_top",
     "id": 7,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 10,
@@ -157,7 +164,8 @@
     "layout": "simple_top",
     "id": 8,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 11,
@@ -177,7 +185,8 @@
     "layout": "simple_top",
     "id": 9,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 12,
@@ -197,7 +206,8 @@
     "layout": "simple_top",
     "id": 10,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 13,
@@ -217,7 +227,8 @@
     "layout": "simple_top",
     "id": 11,
     "scope": "sea_or_general",
-    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi"
+    "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 14,
@@ -237,7 +248,8 @@
     "layout": "simple_top",
     "id": 12,
     "scope": "sea_or_general",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 15,
@@ -257,7 +269,8 @@
     "layout": "simple_top",
     "id": 13,
     "scope": "inland",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 16,
@@ -277,7 +290,8 @@
     "layout": "simple_top",
     "id": 14,
     "scope": "sea_or_general",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 17,
@@ -297,7 +311,8 @@
     "layout": "simple_top",
     "id": 15,
     "scope": "sea_or_general",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 18,
@@ -317,7 +332,8 @@
     "layout": "simple_top",
     "id": 16,
     "scope": "inland",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 19,
@@ -337,7 +353,8 @@
     "layout": "simple_top",
     "id": 17,
     "scope": "sea_or_general",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 20,
@@ -357,7 +374,8 @@
     "layout": "simple_top",
     "id": 18,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 21,
@@ -377,7 +395,8 @@
     "layout": "simple_top",
     "id": 19,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 22,
@@ -397,7 +416,8 @@
     "layout": "simple_top",
     "id": 20,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 23,
@@ -417,7 +437,8 @@
     "layout": "simple_top",
     "id": 21,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 24,
@@ -437,7 +458,8 @@
     "layout": "simple_top",
     "id": 22,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 25,
@@ -457,7 +479,8 @@
     "layout": "simple_top",
     "id": 23,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 26,
@@ -477,7 +500,8 @@
     "layout": "simple_top",
     "id": 24,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 27,
@@ -497,7 +521,8 @@
     "layout": "simple_top",
     "id": 25,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 28,
@@ -517,7 +542,8 @@
     "layout": "simple_top",
     "id": 26,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 29,
@@ -537,7 +563,8 @@
     "layout": "simple_top",
     "id": 27,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 30,
@@ -557,7 +584,8 @@
     "layout": "simple_top",
     "id": 28,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 31,
@@ -577,7 +605,8 @@
     "layout": "simple_top",
     "id": 29,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 32,
@@ -597,7 +626,8 @@
     "layout": "simple_top",
     "id": 30,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 33,
@@ -617,7 +647,8 @@
     "layout": "simple_top",
     "id": 31,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 34,
@@ -637,7 +668,8 @@
     "layout": "simple_top",
     "id": 32,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 35,
@@ -657,7 +689,8 @@
     "layout": "simple_top",
     "id": 33,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 36,
@@ -677,7 +710,8 @@
     "layout": "simple_top",
     "id": 34,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 37,
@@ -697,7 +731,8 @@
     "layout": "simple_top",
     "id": 35,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 38,
@@ -717,7 +752,8 @@
     "layout": "simple_top",
     "id": 36,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 39,
@@ -737,7 +773,8 @@
     "layout": "simple_top",
     "id": 37,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 40,
@@ -757,7 +794,8 @@
     "layout": "simple_top",
     "id": 38,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 41,
@@ -777,7 +815,8 @@
     "layout": "simple_top",
     "id": 39,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 42,
@@ -797,7 +836,8 @@
     "layout": "simple_top",
     "id": 40,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 43,
@@ -817,7 +857,8 @@
     "layout": "simple_top",
     "id": 41,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 45,
@@ -837,7 +878,8 @@
     "layout": "simple_top",
     "id": 42,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 46,
@@ -857,7 +899,8 @@
     "layout": "simple_top",
     "id": 43,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 47,
@@ -877,7 +920,8 @@
     "layout": "simple_top",
     "id": 44,
     "scope": "sea_or_general",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 48,
@@ -897,7 +941,8 @@
     "layout": "simple_top",
     "id": 45,
     "scope": "sea_or_general",
-    "aliases": "amator avcilik"
+    "aliases": "amator avcilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 52,
@@ -917,7 +962,8 @@
     "layout": "block",
     "id": 46,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 61,
@@ -942,7 +988,8 @@
     "layout": "block",
     "id": 47,
     "scope": "sea_or_general",
-    "aliases": "ag agi cevirme derinlik girgir olcum purse seine"
+    "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 72,
@@ -967,7 +1014,8 @@
     "layout": "block",
     "id": 48,
     "scope": "sea_or_general",
-    "aliases": "ag agi cevirme derinlik girgir olcum purse seine"
+    "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 83,
@@ -992,7 +1040,8 @@
     "layout": "block",
     "id": 49,
     "scope": "sea_or_general",
-    "aliases": "45 ag belge cm fanyali izin kalkan kota parakete yasagi zaman"
+    "aliases": "45 ag belge cm fanyali izin kalkan kota parakete yasagi zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 94,
@@ -1017,7 +1066,8 @@
     "layout": "block",
     "id": 50,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz salyangozu"
+    "aliases": "algarna deniz salyangozu",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 105,
@@ -1042,7 +1092,8 @@
     "layout": "block",
     "id": 51,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 116,
@@ -1067,7 +1118,8 @@
     "layout": "block",
     "id": 52,
     "scope": "sea_or_general",
-    "aliases": "ag agi cevirme derinlik girgir olcum purse seine"
+    "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 127,
@@ -1092,7 +1144,8 @@
     "layout": "block",
     "id": 53,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 138,
@@ -1117,7 +1170,8 @@
     "layout": "block",
     "id": 54,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 149,
@@ -1142,7 +1196,8 @@
     "layout": "block",
     "id": 55,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 160,
@@ -1167,7 +1222,8 @@
     "layout": "block",
     "id": 56,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 171,
@@ -1192,7 +1248,8 @@
     "layout": "block",
     "id": 57,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 182,
@@ -1217,7 +1274,8 @@
     "layout": "block",
     "id": 58,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 193,
@@ -1239,7 +1297,8 @@
     "layout": "block",
     "id": 59,
     "scope": "sea_or_general",
-    "aliases": "ag agi cevirme derinlik girgir olcum purse seine"
+    "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 204,
@@ -1263,7 +1322,8 @@
     "layout": "block",
     "id": 60,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 215,
@@ -1287,7 +1347,8 @@
     "layout": "block",
     "id": 61,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 226,
@@ -1312,7 +1373,8 @@
     "layout": "block",
     "id": 62,
     "scope": "sea_or_general",
-    "aliases": "algarna deniz karides salyangozu surutme"
+    "aliases": "algarna deniz karides salyangozu surutme",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 237,
@@ -1337,7 +1399,8 @@
     "layout": "block",
     "id": 63,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 248,
@@ -1362,7 +1425,8 @@
     "layout": "block",
     "id": 64,
     "scope": "sea_or_general",
-    "aliases": "45 ag belge cm fanyali izin kalkan kota parakete yasagi zaman"
+    "aliases": "45 ag belge cm fanyali izin kalkan kota parakete yasagi zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 259,
@@ -1387,7 +1451,8 @@
     "layout": "block",
     "id": 65,
     "scope": "sea_or_general",
-    "aliases": "palamut torik yasagi zaman"
+    "aliases": "palamut torik yasagi zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 270,
@@ -1412,7 +1477,8 @@
     "layout": "block",
     "id": 66,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 281,
@@ -1437,7 +1503,8 @@
     "layout": "block",
     "id": 67,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 292,
@@ -1457,7 +1524,8 @@
     "layout": "block",
     "id": 68,
     "scope": "inland",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 303,
@@ -1482,7 +1550,8 @@
     "layout": "block",
     "id": 69,
     "scope": "sea_or_general",
-    "aliases": "avlanmasi korunan tur yasak"
+    "aliases": "avlanmasi korunan tur yasak",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 314,
@@ -1507,7 +1576,8 @@
     "layout": "block",
     "id": 70,
     "scope": "sea_or_general",
-    "aliases": "asgari boy kucuk tolerans"
+    "aliases": "asgari boy kucuk tolerans",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 325,
@@ -1532,7 +1602,8 @@
     "layout": "block",
     "id": 71,
     "scope": "sea_or_general",
-    "aliases": "aydinlatma isik lamba"
+    "aliases": "aydinlatma isik lamba",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 336,
@@ -1541,18 +1612,19 @@
     "law": "24-1/a",
     "regulation": "16/14",
     "teblig": "9-1",
-    "art36": "1",
+    "art36": "l",
     "base_ipc": 94811,
     "amounts": {},
     "product_seizure": "-",
     "means_seizure": "-",
     "repeat": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
     "license_action": null,
-    "notes": null,
+    "notes": " Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
     "layout": "block",
     "id": 72,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman"
+    "aliases": "dip mesafe ortasu saha trol yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 342,
@@ -1561,7 +1633,7 @@
     "law": "24-1/a",
     "regulation": "16/14",
     "teblig": "9",
-    "art36": "1",
+    "art36": "l",
     "base_ipc": 189630,
     "amounts": {
       "<12 m": 189630,
@@ -1572,11 +1644,12 @@
     "means_seizure": "(İstanbul ve Çanakkale Boğazların ile Marmara Denizinde) İstihsal vasıtaları zapt ve mülkiyeti kamuya geçirilir. Tekrarı halinde 1 yıldan 3 yıla kadar (5000-1000 gün adli para cezası) hapis cezası, su ürünleri ve istihsal vasıtalarına el konularak mülkiyeti kamuya geçirilir. (gemi dahil)",
     "repeat": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
     "license_action": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-    "notes": null,
+    "notes": " Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
     "layout": "block",
     "id": 73,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman"
+    "aliases": "dip mesafe ortasu saha trol yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 353,
@@ -1585,18 +1658,19 @@
     "law": "24/b",
     "regulation": "Ağlar 14\n\nYer, zaman vs. 16/14",
     "teblig": "10",
-    "art36": "1",
+    "art36": "l",
     "base_ipc": 23692,
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
     "repeat": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
     "license_action": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-    "notes": null,
+    "notes": " Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
     "layout": "block",
     "id": 74,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman"
+    "aliases": "dip mesafe ortasu saha trol yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 364,
@@ -1605,7 +1679,7 @@
     "law": "24/b",
     "regulation": "Ağlar 14\n\nYer, zaman vs. 16/14",
     "teblig": "10",
-    "art36": "1",
+    "art36": "l",
     "base_ipc": 66357,
     "amounts": {
       "<12 m": 66357,
@@ -1616,11 +1690,12 @@
     "means_seizure": "Evet (gemi hariç)",
     "repeat": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
     "license_action": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-    "notes": null,
+    "notes": " Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
     "layout": "block",
     "id": 75,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman"
+    "aliases": "dip mesafe ortasu saha trol yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 375,
@@ -1640,7 +1715,8 @@
     "layout": "block",
     "id": 76,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman"
+    "aliases": "dip mesafe ortasu saha trol yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 386,
@@ -1664,7 +1740,8 @@
     "layout": "block",
     "id": 77,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman"
+    "aliases": "dip mesafe ortasu saha trol yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 397,
@@ -1688,7 +1765,8 @@
     "layout": "block",
     "id": 78,
     "scope": "sea_or_general",
-    "aliases": "belge bilgi defteri e kayit seyir"
+    "aliases": "belge bilgi defteri e kayit seyir",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 405,
@@ -1708,7 +1786,8 @@
     "layout": "simple",
     "id": 79,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 406,
@@ -1728,7 +1807,8 @@
     "layout": "simple",
     "id": 80,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 407,
@@ -1748,7 +1828,8 @@
     "layout": "simple",
     "id": 81,
     "scope": "sea_or_general",
-    "aliases": "avlanmasi korunan tur yasak"
+    "aliases": "avlanmasi korunan tur yasak",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 408,
@@ -1757,18 +1838,19 @@
     "law": "29",
     "regulation": "16/9",
     "teblig": "49/18",
-    "art36": "m",
+    "art36": "o",
     "base_ipc": 8048,
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat bv. Zapt ve mülkiyeti kamuya geçirilir.",
     "repeat": null,
     "license_action": null,
-    "notes": null,
+    "notes": " Yeni 08 rehberi bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.",
     "layout": "simple",
     "id": 82,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 412,
@@ -1788,7 +1870,8 @@
     "layout": "shifted",
     "id": 83,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 413,
@@ -1808,7 +1891,8 @@
     "layout": "shifted",
     "id": 84,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 414,
@@ -1828,7 +1912,8 @@
     "layout": "shifted",
     "id": 85,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 415,
@@ -1848,7 +1933,8 @@
     "layout": "shifted",
     "id": 86,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 416,
@@ -1868,7 +1954,8 @@
     "layout": "shifted",
     "id": 87,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 417,
@@ -1888,7 +1975,8 @@
     "layout": "shifted",
     "id": 88,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 418,
@@ -1908,7 +1996,8 @@
     "layout": "shifted",
     "id": 89,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 419,
@@ -1928,7 +2017,8 @@
     "layout": "shifted",
     "id": 90,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 420,
@@ -1948,7 +2038,8 @@
     "layout": "shifted",
     "id": 91,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 421,
@@ -1968,7 +2059,8 @@
     "layout": "shifted",
     "id": 92,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 422,
@@ -1988,7 +2080,8 @@
     "layout": "shifted",
     "id": 93,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 423,
@@ -2008,7 +2101,8 @@
     "layout": "shifted",
     "id": 94,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 424,
@@ -2028,7 +2122,8 @@
     "layout": "shifted",
     "id": 95,
     "scope": "sea_or_general",
-    "aliases": "izin"
+    "aliases": "izin",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 430,
@@ -2053,7 +2148,8 @@
     "teblig_source": "bagis",
     "id": 96,
     "scope": "sea_or_general",
-    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem"
+    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 431,
@@ -2078,7 +2174,8 @@
     "teblig_source": "bagis",
     "id": 97,
     "scope": "sea_or_general",
-    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem"
+    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 432,
@@ -2103,7 +2200,8 @@
     "teblig_source": "bagis",
     "id": 98,
     "scope": "sea_or_general",
-    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem"
+    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 433,
@@ -2128,7 +2226,8 @@
     "teblig_source": "bagis",
     "id": 99,
     "scope": "sea_or_general",
-    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem"
+    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 434,
@@ -2153,7 +2252,8 @@
     "teblig_source": "bagis",
     "id": 100,
     "scope": "sea_or_general",
-    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem"
+    "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 438,
@@ -2173,7 +2273,8 @@
     "layout": "shifted_ipc_g",
     "id": 101,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 439,
@@ -2193,7 +2294,8 @@
     "layout": "shifted_ipc_g",
     "id": 102,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 440,
@@ -2213,7 +2315,8 @@
     "layout": "shifted_ipc_g",
     "id": 103,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 441,
@@ -2233,7 +2336,8 @@
     "layout": "shifted_ipc_g",
     "id": 104,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 442,
@@ -2253,7 +2357,8 @@
     "layout": "shifted_ipc_g",
     "id": 105,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 443,
@@ -2273,7 +2378,8 @@
     "layout": "shifted_ipc_g",
     "id": 106,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 444,
@@ -2293,7 +2399,8 @@
     "layout": "shifted_ipc_g",
     "id": 107,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 445,
@@ -2313,7 +2420,8 @@
     "layout": "shifted_ipc_g",
     "id": 108,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 446,
@@ -2333,7 +2441,8 @@
     "layout": "shifted_ipc_g",
     "id": 109,
     "scope": "sea_or_general",
-    "aliases": "belge izin kod plaka ruhsat tezkeresi"
+    "aliases": "belge izin kod plaka ruhsat tezkeresi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 447,
@@ -2353,7 +2462,8 @@
     "layout": "shifted_ipc_g",
     "id": 110,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 448,
@@ -2373,7 +2483,8 @@
     "layout": "shifted_ipc_g",
     "id": 111,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 449,
@@ -2393,7 +2504,8 @@
     "layout": "shifted_ipc_g",
     "id": 112,
     "scope": "sea_or_general",
-    "aliases": "belge belgesiz mense nakil sevk tasima"
+    "aliases": "belge belgesiz mense nakil sevk tasima",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 450,
@@ -2413,7 +2525,8 @@
     "layout": "shifted_ipc_g",
     "id": 113,
     "scope": "sea_or_general",
-    "aliases": "belge belgesiz mense nakil sevk tasima"
+    "aliases": "belge belgesiz mense nakil sevk tasima",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 454,
@@ -2433,7 +2546,8 @@
     "layout": "smallblock",
     "id": 114,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 460,
@@ -2457,7 +2571,8 @@
     "layout": "smallblock",
     "id": 115,
     "scope": "sea_or_general",
-    "aliases": "arizi av belge bilgi defteri disi e hedef kayit seyir tesadufi"
+    "aliases": "arizi av belge bilgi defteri disi e hedef kayit seyir tesadufi",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 469,
@@ -2482,7 +2597,8 @@
     "layout": "smallblock",
     "id": 116,
     "scope": "sea_or_general",
-    "aliases": "balik ciftligi mesafe tesis yetistiricilik"
+    "aliases": "balik ciftligi mesafe tesis yetistiricilik",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 478,
@@ -2502,7 +2618,8 @@
     "layout": "excel_external_ref",
     "id": 117,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 479,
@@ -2522,7 +2639,8 @@
     "layout": "excel_external_ref",
     "id": 118,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 480,
@@ -2542,7 +2660,8 @@
     "layout": "excel_external_ref",
     "id": 119,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 481,
@@ -2562,7 +2681,8 @@
     "layout": "excel_external_ref",
     "id": 120,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 482,
@@ -2582,7 +2702,8 @@
     "layout": "excel_external_ref",
     "id": 121,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 483,
@@ -2602,7 +2723,8 @@
     "layout": "excel_external_ref",
     "id": 122,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 484,
@@ -2622,7 +2744,8 @@
     "layout": "excel_external_ref",
     "id": 123,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 489,
@@ -2642,7 +2765,8 @@
     "layout": "excel_external_ref",
     "id": 124,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 490,
@@ -2662,7 +2786,8 @@
     "layout": "excel_external_ref",
     "id": 125,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 491,
@@ -2682,7 +2807,8 @@
     "layout": "excel_external_ref",
     "id": 126,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 492,
@@ -2702,7 +2828,8 @@
     "layout": "excel_external_ref",
     "id": 127,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 493,
@@ -2722,7 +2849,8 @@
     "layout": "excel_external_ref",
     "id": 128,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 494,
@@ -2742,7 +2870,8 @@
     "layout": "excel_external_ref",
     "id": 129,
     "scope": "sea_or_general",
-    "aliases": "barinak cekek liman yeri"
+    "aliases": "barinak cekek liman yeri",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 495,
@@ -2762,7 +2891,8 @@
     "layout": "excel_external_ref",
     "id": 130,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 496,
@@ -2782,7 +2912,8 @@
     "layout": "excel_external_ref",
     "id": 131,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 497,
@@ -2802,7 +2933,8 @@
     "layout": "excel_external_ref",
     "id": 132,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 498,
@@ -2822,7 +2954,8 @@
     "layout": "excel_external_ref",
     "id": 133,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 499,
@@ -2842,7 +2975,8 @@
     "layout": "excel_external_ref",
     "id": 134,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 500,
@@ -2862,7 +2996,8 @@
     "layout": "excel_external_ref",
     "id": 135,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 501,
@@ -2882,7 +3017,8 @@
     "layout": "excel_external_ref",
     "id": 136,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 502,
@@ -2902,7 +3038,8 @@
     "layout": "excel_external_ref",
     "id": 137,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 503,
@@ -2922,7 +3059,8 @@
     "layout": "excel_external_ref",
     "id": 138,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 504,
@@ -2942,7 +3080,8 @@
     "layout": "excel_external_ref",
     "id": 139,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 505,
@@ -2962,7 +3101,8 @@
     "layout": "excel_external_ref",
     "id": 140,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 506,
@@ -2982,7 +3122,8 @@
     "layout": "excel_external_ref",
     "id": 141,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 507,
@@ -3002,7 +3143,8 @@
     "layout": "excel_external_ref",
     "id": 142,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 508,
@@ -3022,7 +3164,8 @@
     "layout": "excel_external_ref",
     "id": 143,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 509,
@@ -3042,7 +3185,8 @@
     "layout": "excel_external_ref",
     "id": 144,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 510,
@@ -3062,7 +3206,8 @@
     "layout": "excel_external_ref",
     "id": 145,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 511,
@@ -3082,7 +3227,8 @@
     "layout": "excel_external_ref",
     "id": 146,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 512,
@@ -3102,7 +3248,8 @@
     "layout": "excel_external_ref",
     "id": 147,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 513,
@@ -3122,7 +3269,8 @@
     "layout": "excel_external_ref",
     "id": 148,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 514,
@@ -3142,7 +3290,8 @@
     "layout": "excel_external_ref",
     "id": 149,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 515,
@@ -3162,7 +3311,8 @@
     "layout": "excel_external_ref",
     "id": 150,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 516,
@@ -3182,7 +3332,8 @@
     "layout": "excel_external_ref",
     "id": 151,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 517,
@@ -3202,7 +3353,8 @@
     "layout": "excel_external_ref",
     "id": 152,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
     "source_row": 518,
@@ -3222,6 +3374,7 @@
     "layout": "excel_external_ref",
     "id": 153,
     "scope": "sea_or_general",
-    "aliases": ""
+    "aliases": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   }
 ]

@@ -16,7 +16,8 @@ Bölge → faaliyet → gemi boyu → tarih → konu → av aracı → tür sır
 İdari yaptırım tablosundan ihlal başlığına göre ceza kartları; tutar, ürüne/av aracına el koyma, ruhsat işlemi ve dayanak maddeleri.
 
 ### 📖 Pratik Tür Çizelgesi
-Ticari (6/1) ve amatör (6/2) türler, asgari boy/ağırlık, alıkonulabilir miktar ve zaman yasakları.
+Ticari (6/1) ve amatör (6/2) deniz/içsu türleri, asgari boy/ağırlık,
+alıkonulabilir miktar ve bölgesel zaman yasakları.
 
 ### 🖼️ Görsel Rehberler
 Karıştırılan balık türleri için teşhis kartları ve yasak av araçlarının görsel tespiti.
@@ -121,6 +122,14 @@ uygulama tablosu bulunur. Klasördeki Excel dosyası ceza tablosunun ham kaynağ
 Dönem sonunda yenileriyle değiştirilirler. Kaynak değişiklikleri önce ana kaynak
 klasöründe yapılmalı, sonra `su_urunleri_bot/data/markdown/` kopyası aynı içerikle
 güncellenmelidir.
+
+Yeni 03, 04 ve 08 numaralı rehberlerden tür, ceza, saha kuralı ve kontrol föyü
+verilerini yeniden üretmek ve sonucunu doğrulamak için:
+
+```bash
+python tools/rebuild_structured_data.py
+python tools/rebuild_structured_data.py --check
+```
 
 ## ⚠️ Sorumluluk
 

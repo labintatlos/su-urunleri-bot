@@ -8,7 +8,7 @@ from pathlib import Path
 import os
 DB_PATH = Path('/share/su_urunleri_bot/su_urunleri_kolluk.db') if os.path.exists('/share') else Path('./su_urunleri_kolluk.db')
 ASSET = Path('/app/data') if os.path.exists('/app/data') else Path(__file__).parent / 'data'
-DATASET = 'v6'
+DATASET = 'v7'
 
 
 def norm(value):
@@ -74,9 +74,9 @@ def init_db():
     CREATE TABLE IF NOT EXISTS sources(key TEXT PRIMARY KEY, title TEXT, type TEXT, number TEXT, filename TEXT, sha256 TEXT);
     CREATE TABLE IF NOT EXISTS articles(id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT, article INTEGER, title TEXT, body TEXT, page_start INTEGER, page_end INTEGER, scope TEXT, search_text TEXT);
     CREATE TABLE IF NOT EXISTS rules(id TEXT PRIMARY KEY, cat TEXT, title TEXT, summary TEXT, refs TEXT, search_text TEXT);
-    CREATE TABLE IF NOT EXISTS commercial_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, min_cm REAL, min_kg REAL, time_bans TEXT, article_time INTEGER, search_text TEXT);
-    CREATE TABLE IF NOT EXISTS amateur_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, min_cm REAL, min_kg REAL, limit_text TEXT, time_bans TEXT, search_text TEXT);
-    CREATE TABLE IF NOT EXISTS prohibited_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, search_text TEXT);
+    CREATE TABLE IF NOT EXISTS commercial_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, min_cm REAL, min_kg REAL, time_bans TEXT, article_size INTEGER, article_time INTEGER, scope TEXT, search_text TEXT);
+    CREATE TABLE IF NOT EXISTS amateur_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, min_cm REAL, min_kg REAL, limit_text TEXT, time_bans TEXT, article INTEGER, scope TEXT, search_text TEXT);
+    CREATE TABLE IF NOT EXISTS prohibited_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, commercial INTEGER, amateur INTEGER, source TEXT, article INTEGER, search_text TEXT);
     CREATE TABLE IF NOT EXISTS penalty_cards(id INTEGER PRIMARY KEY, source_row INTEGER, violation TEXT, option_text TEXT, law TEXT, regulation TEXT, teblig TEXT, art36 TEXT, base_ipc REAL, amounts TEXT, product_seizure TEXT, means_seizure TEXT, repeat_text TEXT, license_action TEXT, notes TEXT, scope TEXT, layout TEXT, teblig_source TEXT, search_text TEXT);
     CREATE TABLE IF NOT EXISTS raw_excel_rows(source_row INTEGER PRIMARY KEY, raw_text TEXT, search_text TEXT);
     CREATE TABLE IF NOT EXISTS users(user_id INTEGER PRIMARY KEY, username TEXT, first_name TEXT, last_seen TEXT);
@@ -89,6 +89,20 @@ def init_db():
     CREATE TABLE IF NOT EXISTS inspections(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, kind TEXT, title TEXT, state TEXT, report TEXT, status TEXT, created_at TEXT, updated_at TEXT);
     CREATE INDEX IF NOT EXISTS idx_inspections_user ON inspections(user_id, status, updated_at);
     ''')
+    existing_columns = {
+        table: {row[1] for row in q.execute(f'PRAGMA table_info({table})')}
+        for table in ('commercial_species', 'amateur_species', 'prohibited_species')
+    }
+    additions = {
+        'commercial_species': [('article_size', 'INTEGER'), ('scope', 'TEXT')],
+        'amateur_species': [('article', 'INTEGER'), ('scope', 'TEXT')],
+        'prohibited_species': [('commercial', 'INTEGER'), ('amateur', 'INTEGER'),
+                               ('source', 'TEXT'), ('article', 'INTEGER')],
+    }
+    for table, columns in additions.items():
+        for column, kind in columns:
+            if column not in existing_columns[table]:
+                q.execute(f'ALTER TABLE {table} ADD COLUMN {column} {kind}')
     old = q.execute("SELECT v FROM meta WHERE k='dataset'").fetchone()
     if not old or old[0] != DATASET:
         for table in ['sources','articles','rules','commercial_species','amateur_species','prohibited_species','penalty_cards','raw_excel_rows']:
@@ -103,13 +117,14 @@ def init_db():
         for r in json.loads((ASSET/'field_rules.json').read_text(encoding='utf-8')):
             q.execute('INSERT INTO rules VALUES(?,?,?,?,?,?)', (r['id'],r['cat'],r['title'],r['summary'],json.dumps(r['refs'],ensure_ascii=False),norm(r['cat']+' '+r['title']+' '+r['summary'])))
         for sp in json.loads((ASSET/'commercial_species.json').read_text(encoding='utf-8')):
-            q.execute('INSERT INTO commercial_species(name,min_cm,min_kg,time_bans,article_time,search_text) VALUES(?,?,?,?,?,?)',
-                      (sp['name'],sp['min_cm'],sp['min_kg'],json.dumps(sp['time_bans']),sp.get('article_time'),norm(sp['name'])))
+            q.execute('INSERT INTO commercial_species(name,min_cm,min_kg,time_bans,article_size,article_time,scope,search_text) VALUES(?,?,?,?,?,?,?,?)',
+                      (sp['name'],sp['min_cm'],sp['min_kg'],json.dumps(sp['time_bans']),sp.get('article_size',17),sp.get('article_time'),sp.get('scope','sea'),norm(sp['name'])))
         for sp in json.loads((ASSET/'amateur_species.json').read_text(encoding='utf-8')):
-            q.execute('INSERT INTO amateur_species(name,min_cm,min_kg,limit_text,time_bans,search_text) VALUES(?,?,?,?,?,?)',
-                      (sp['name'],sp['min_cm'],sp['min_kg'],sp['limit'],json.dumps(sp['time_bans']),norm(sp['name'])))
+            q.execute('INSERT INTO amateur_species(name,min_cm,min_kg,limit_text,time_bans,article,scope,search_text) VALUES(?,?,?,?,?,?,?,?)',
+                      (sp['name'],sp['min_cm'],sp['min_kg'],sp['limit'],json.dumps(sp['time_bans']),sp.get('article',15),sp.get('scope','sea'),norm(sp['name'])))
         for sp in json.loads((ASSET/'prohibited_species.json').read_text(encoding='utf-8')):
-            q.execute('INSERT INTO prohibited_species(name,search_text) VALUES(?,?)',(sp['name'],norm(sp['name'])))
+            q.execute('INSERT INTO prohibited_species(name,commercial,amateur,source,article,search_text) VALUES(?,?,?,?,?,?)',
+                      (sp['name'],int(sp.get('commercial',True)),int(sp.get('amateur',True)),sp.get('source','61'),sp.get('article',16),norm(sp['name'])))
         for pc in json.loads((ASSET/'penalty_cards.json').read_text(encoding='utf-8')):
             search = norm(' '.join(str(pc.get(k) or '') for k in ['violation','option','law','regulation','teblig','art36','notes','aliases']))
             q.execute('''INSERT INTO penalty_cards(id,source_row,violation,option_text,law,regulation,teblig,art36,base_ipc,amounts,product_seizure,means_seizure,repeat_text,license_action,notes,scope,layout,teblig_source,search_text)

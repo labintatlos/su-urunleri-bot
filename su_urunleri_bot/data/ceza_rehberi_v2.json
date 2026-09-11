@@ -1,1636 +1,2027 @@
 [
   {
-    "id": "1",
-    "title": "1. Ruhsat, Amatör Avcılık ve İzin İhlalleri",
+    "id": "a",
+    "title": "A) Ruhsat ve İzin Belgesi İhlalleri",
     "items": [
       {
-        "id": "1_0",
+        "id": "a_0",
         "title": "Ruhsat tezkeresini yeniletmeden ticari avcılık",
         "details": {
-          "İhlal": "Ruhsat tezkeresini yeniletmeden ticari avcılık",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Cezaları - KİŞİ",
+          "Durum/Seçenek": "Ruhsat tezkeresini yeniletmeden ticari avcılık",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "9.473 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet"
+          "El Koyma": "Ürün: Evet; vasıta: Evet",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_1",
-        "title": "Ruhsat tezkeresi almadan ticari avcılık - içsu (kişi)",
+        "id": "a_1",
+        "title": "Ruhsat tezkeresini almadan ticari avcılık (içsu)",
         "details": {
-          "İhlal": "Ruhsat tezkeresi almadan ticari avcılık - içsu (kişi)",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Cezaları - KİŞİ",
+          "Durum/Seçenek": "Ruhsat tezkeresini almadan ticari avcılık (içsu)",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "18.954 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet"
+          "El Koyma": "Ürün: Evet; vasıta: Evet",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_2",
-        "title": "Ruhsat tezkeresi almadan ticari avcılık - deniz (kişi)",
+        "id": "a_2",
+        "title": "Ruhsat tezkeresini almadan ticari avcılık (deniz)",
         "details": {
-          "İhlal": "Ruhsat tezkeresi almadan ticari avcılık - deniz (kişi)",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Cezaları - KİŞİ",
+          "Durum/Seçenek": "Ruhsat tezkeresini almadan ticari avcılık (deniz)",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "37.914 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet"
+          "El Koyma": "Ürün: Evet; vasıta: Evet",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_3",
-        "title": "Ruhsat tezkeresi almadan su ürünleri avcılığı - dalarak",
+        "id": "a_3",
+        "title": "Ruhsat tezkeresini almadan su ürünleri avcılık (dalarak)",
         "details": {
-          "İhlal": "Ruhsat tezkeresi almadan su ürünleri avcılığı - dalarak",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Cezaları - KİŞİ",
+          "Durum/Seçenek": "Ruhsat tezkeresini almadan su ürünleri avcılık (dalarak)",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet"
+          "El Koyma": "Ürün: Evet; vasıta: Evet",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_4",
-        "title": "Ruhsatsız gemi ile avcılık - 5 m altı",
+        "id": "a_4",
+        "title": "5 metre altı",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 5 m altı",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "5 metre altı",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_5",
-        "title": "Ruhsatsız gemi ile avcılık - 5 m dahil, 10 m altı",
+        "id": "a_5",
+        "title": "5m. Dahil\n10m.'den küçük",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 5 m dahil, 10 m altı",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "5m. Dahil\n10m.'den küçük",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "94.811 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_6",
-        "title": "Ruhsatsız gemi ile avcılık - 10 m dahil, 12 m altı",
+        "id": "a_6",
+        "title": "10 m. Dahil\n12 m.'den küçük",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 10 m dahil, 12 m altı",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "10 m. Dahil\n12 m.'den küçük",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "142.217 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_7",
-        "title": "Ruhsatsız gemi ile avcılık - 12 m dahil, 18 m altı",
+        "id": "a_7",
+        "title": "12 m. Dahil\n18m.'den küçük",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 12 m dahil, 18 m altı",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "12 m. Dahil\n18m.'den küçük",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "237.034 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_8",
-        "title": "Ruhsatsız gemi ile avcılık - 18 m dahil, 22 m altı",
+        "id": "a_8",
+        "title": "18 m. Dahil\n22 m.'den küçük",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 18 m dahil, 22 m altı",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "18 m. Dahil\n22 m.'den küçük",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "331.855 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_9",
-        "title": "Ruhsatsız gemi ile avcılık - 22 m dahil, 35 m altı",
+        "id": "a_9",
+        "title": "22 m. Dahil\n35 m.'den küçük",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 22 m dahil, 35 m altı",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "22 m. Dahil\n35 m.'den küçük",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "379.267 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_10",
-        "title": "Ruhsatsız gemi ile avcılık - 35 m ve üstü",
+        "id": "a_10",
+        "title": "35 m. ve üstü",
         "details": {
-          "İhlal": "Ruhsatsız gemi ile avcılık - 35 m ve üstü",
-          "Dayanak": "K.3 / Y.4 / 36-a",
+          "İhlal": "Ruhsat Tezkeresi Almadan\nSu Ürünleri Avcılığı - GEMİ",
+          "Durum/Seçenek": "35 m. ve üstü",
+          "Dayanak": "K.3 · Y.4 · 36/a",
           "İPC": "474.079 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet*"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_11",
-        "title": "Amatör avcılık ihlali - gemi kullanmamışsa",
+        "id": "a_11",
+        "title": "Gemi kullanmamışsa",
         "details": {
-          "İhlal": "Amatör avcılık ihlali - gemi kullanmamışsa",
-          "Dayanak": "K.3 / Y.6 / 36-a",
+          "İhlal": "Amatör Avcılık\nİhlali",
+          "Durum/Seçenek": "Gemi kullanmamışsa",
+          "Dayanak": "K.3 · Y.6 · 36/a",
           "İPC": "2.356 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_12",
-        "title": "Amatör avcılık ihlali - içsu, gemi kullanılmışsa",
+        "id": "a_12",
+        "title": "İç su (gemi kullanmışsa)",
         "details": {
-          "İhlal": "Amatör avcılık ihlali - içsu, gemi kullanılmışsa",
-          "Dayanak": "K.3 / Y.6 / 36-a",
+          "İhlal": "Amatör Avcılık\nİhlali",
+          "Durum/Seçenek": "İç su (gemi kullanmışsa)",
+          "Dayanak": "K.3 · Y.6 · 36/a",
           "İPC": "18.954 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_13",
-        "title": "Amatör avcılık ihlali - deniz, gemi kullanılmışsa",
+        "id": "a_13",
+        "title": "Deniz (gemi kullanmışsa)",
         "details": {
-          "İhlal": "Amatör avcılık ihlali - deniz, gemi kullanılmışsa",
-          "Dayanak": "K.3 / Y.6 / 36-a",
+          "İhlal": "Amatör Avcılık\nİhlali",
+          "Durum/Seçenek": "Deniz (gemi kullanmışsa)",
+          "Dayanak": "K.3 · Y.6 · 36/a",
           "İPC": "28.433 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_14",
-        "title": "Amatör avcılıkta birden fazla ihlal - gemi kullanmamışsa",
+        "id": "a_14",
+        "title": "Gemi kullanmamışsa",
         "details": {
-          "İhlal": "Amatör avcılıkta birden fazla ihlal - gemi kullanmamışsa",
-          "Dayanak": "K.3 / Y.6 / 36-a",
+          "İhlal": "Amatör Avcılık Birden\nFazla İhlali",
+          "Durum/Seçenek": "Gemi kullanmamışsa",
+          "Dayanak": "K.3 · Y.6 · 36/a",
           "İPC": "4.730 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_15",
-        "title": "Amatör avcılıkta birden fazla ihlal - içsu, gemi kullanılmışsa",
+        "id": "a_15",
+        "title": "İç su (gemi kullanmışsa)",
         "details": {
-          "İhlal": "Amatör avcılıkta birden fazla ihlal - içsu, gemi kullanılmışsa",
-          "Dayanak": "K.3 / Y.6 / 36-a",
+          "İhlal": "Amatör Avcılık Birden\nFazla İhlali",
+          "Durum/Seçenek": "İç su (gemi kullanmışsa)",
+          "Dayanak": "K.3 · Y.6 · 36/a",
           "İPC": "28.433 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_16",
-        "title": "Amatör avcılıkta birden fazla ihlal - deniz, gemi kullanılmışsa",
+        "id": "a_16",
+        "title": "Deniz (gemi kullanmışsa)",
         "details": {
-          "İhlal": "Amatör avcılıkta birden fazla ihlal - deniz, gemi kullanılmışsa",
-          "Dayanak": "K.3 / Y.6 / 36-a",
+          "İhlal": "Amatör Avcılık Birden\nFazla İhlali",
+          "Durum/Seçenek": "Deniz (gemi kullanmışsa)",
+          "Dayanak": "K.3 · Y.6 · 36/a",
           "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_17",
-        "title": "Av miktarı, bölge veya av aracına ilişkin alınan izne aykırı faaliyet - kişi",
+        "id": "a_17",
+        "title": "Kişi",
         "details": {
-          "İhlal": "Av miktarı, bölge veya av aracına ilişkin alınan izne aykırı faaliyet - kişi",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet",
+          "Durum/Seçenek": "Kişi",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_18",
-        "title": "İzne aykırı faaliyet - gemi 5 m altı",
+        "id": "a_18",
+        "title": "5 metre altı",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 5 m altı",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "5 metre altı",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_19",
-        "title": "İzne aykırı faaliyet - gemi 5 m dahil, 10 m altı",
+        "id": "a_19",
+        "title": "5m. Dahil\n10m.'den küçük",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 5 m dahil, 10 m altı",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "5m. Dahil\n10m.'den küçük",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "94.811 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_20",
-        "title": "İzne aykırı faaliyet - gemi 10 m dahil, 12 m altı",
+        "id": "a_20",
+        "title": "10 m. Dahil\n12 m.'den küçük",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 10 m dahil, 12 m altı",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "10 m. Dahil\n12 m.'den küçük",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "142.217 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_21",
-        "title": "İzne aykırı faaliyet - gemi 12 m dahil, 18 m altı",
+        "id": "a_21",
+        "title": "12 m. Dahil\n18m.'den küçük",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 12 m dahil, 18 m altı",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "12 m. Dahil\n18m.'den küçük",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "237.034 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_22",
-        "title": "İzne aykırı faaliyet - gemi 18 m dahil, 22 m altı",
+        "id": "a_22",
+        "title": "18 m. Dahil\n22 m.'den küçük",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 18 m dahil, 22 m altı",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "18 m. Dahil\n22 m.'den küçük",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "331.855 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_23",
-        "title": "İzne aykırı faaliyet - gemi 22 m dahil, 35 m altı",
+        "id": "a_23",
+        "title": "22 m. Dahil\n35 m.'den küçük",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 22 m dahil, 35 m altı",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "22 m. Dahil\n35 m.'den küçük",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "379.267 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_24",
-        "title": "İzne aykırı faaliyet - gemi 35 m ve üstü",
+        "id": "a_24",
+        "title": "35 m. ve üstü",
         "details": {
-          "İhlal": "İzne aykırı faaliyet - gemi 35 m ve üstü",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "Av Miktarı, Bölge ve Av Araçlarına ait alınan izinlere Aykırı Faaliyet - Gemi (kum midyesi av miktarı ve bölge ihlali, ortasu, algarna, hamsi avcılık, kum midyesi avcılık izin belgeleri vs.)",
+          "Durum/Seçenek": "35 m. ve üstü",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "474.079 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_25",
-        "title": "Ruhsat kod numarasının gemiye yazılmaması - 12 m altı",
+        "id": "a_25",
+        "title": "12 m.'den küçük",
         "details": {
-          "İhlal": "Ruhsat kod numarasının gemiye yazılmaması - 12 m altı",
-          "Dayanak": "K.3 / Y.5 / 36-a",
+          "İhlal": "Ruhsat Kod Numarasının Gemiye Yazılmaması",
+          "Durum/Seçenek": "12 m.'den küçük",
+          "Dayanak": "K.3 · Y.5 · 36/a",
           "İPC": "47.397 TL",
-          "El koyma": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_26",
-        "title": "Ruhsat kod numarasının gemiye yazılmaması - 12 m ve üstü",
+        "id": "a_26",
+        "title": "12 m. Ve üstü",
         "details": {
-          "İhlal": "Ruhsat kod numarasının gemiye yazılmaması - 12 m ve üstü",
-          "Dayanak": "K.3 / Y.5 / 36-a",
+          "İhlal": "Ruhsat Kod Numarasının Gemiye Yazılmaması",
+          "Durum/Seçenek": "12 m. Ve üstü",
+          "Dayanak": "K.3 · Y.5 · 36/a",
           "İPC": "94.811 TL",
-          "El koyma": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "1_27",
-        "title": "İzin veya ruhsat belgesini göstermeme (kişi/donatan vb.)",
+        "id": "a_27",
+        "title": "İzin ve ruhsat belgesini göstermeme (kişi-donatan vs.)",
         "details": {
-          "İhlal": "İzin veya ruhsat belgesini göstermeme (kişi/donatan vb.)",
-          "Dayanak": "K.3 / 36-a",
+          "İhlal": "İzin ve ruhsat belgesini göstermeme (kişi-donatan vs.)",
+          "Dayanak": "K.3 · Y.- · 36/a",
           "İPC": "9.473 TL",
-          "El koyma": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       }
     ],
     "sub": [],
-    "content": ""
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "2",
-    "title": "2. İstihsal Yerleri, Su Rejimi, Çevre ve Balık Geçitleri",
+    "id": "b",
+    "title": "B) İstihsal Hakkı Kiralama İhlalleri",
     "items": [
       {
-        "id": "2_0",
-        "title": "İstihsal yerlerinde değişiklik - içsu",
+        "id": "b_0",
+        "title": "Avcılığa ait güncel kayıtların tutulmaması veya bulundurulmaması",
         "details": {
-          "İhlal": "İstihsal yerlerinde değişiklik - içsu",
-          "Dayanak": "K.7 / Y.7 / 36-c",
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "Avcılığa ait güncel kayıtların tutulmaması veya bulundurulmaması",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
+          "İPC": "23.692 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "b_1",
+        "title": "İstihsal alanının şeklinin ve özelliğinin değiştirilmesi veya değiştirilmesine izin verilmesi",
+        "details": {
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "İstihsal alanının şeklinin ve özelliğinin değiştirilmesi veya değiştirilmesine izin verilmesi",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "94.811 TL",
-          "El koyma / özel işlem": "Ürün: Evet (kum, çakıl vb.); istihsal vasıtası: Hayır"
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "2_1",
-        "title": "İstihsal yerlerinde değişiklik - deniz",
+        "id": "b_2",
+        "title": "Kira süresi sonunda veya sözleşmenin feshi halinde kiralanan yerin istenilen şartlarda teslim edilmemesi",
         "details": {
-          "İhlal": "İstihsal yerlerinde değişiklik - deniz",
-          "Dayanak": "K.7 / Y.7 / 36-c",
-          "İPC": "189.630 TL",
-          "El koyma / özel işlem": "Ürün: Evet (kum, çakıl vb.); istihsal vasıtası: Hayır"
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "Kira süresi sonunda veya sözleşmenin feshi halinde kiralanan yerin istenilen şartlarda teslim edilmemesi",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
+          "İPC": "142.217 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "2_2",
+        "id": "b_3",
+        "title": "Kiralama teknik şartnamesinde belirtilen miktardan %10'a kadar fazla avcılık yaptırılması",
+        "details": {
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "Kiralama teknik şartnamesinde belirtilen miktardan %10'a kadar fazla avcılık yaptırılması",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
+          "İPC": "47.397 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "b_4",
+        "title": "Kiralama teknik şartnamesinde belirtilen miktardan %10 dahil %5*'ye kadar fazla avcılık yaptırılması",
+        "details": {
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "Kiralama teknik şartnamesinde belirtilen miktardan %10 dahil %5*'ye kadar fazla avcılık yaptırılması",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
+          "İPC": "94.811 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "b_5",
+        "title": "Kiralama teknik şartnamesinde belirtilen miktardan %50 dahil fazla avcılık yaptırılması",
+        "details": {
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "Kiralama teknik şartnamesinde belirtilen miktardan %50 dahil fazla avcılık yaptırılması",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
+          "İPC": "189.630 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "b_6",
+        "title": "Kiracıların kiralama haklarını başkalarına devretmesi",
+        "details": {
+          "İhlal": "İstihsal haklarını kiralayanların yönetmelikle belirlenen kurallara aykırı hareket etmesi",
+          "Durum/Seçenek": "Kiracıların kiralama haklarını başkalarına devretmesi",
+          "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
+          "İPC": "237.034 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "c",
+    "title": "C) İstihsal Yerinde Değişiklik",
+    "items": [
+      {
+        "id": "c_0",
+        "title": "İç su",
+        "details": {
+          "İhlal": "İstihsal yerlerinde değişiklik",
+          "Durum/Seçenek": "İç su",
+          "Dayanak": "K.7 · Y.7 · 36/c",
+          "İPC": "94.811 TL",
+          "El Koyma": "Ürün: Evet (kum, çakıl vs.); vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "c_1",
+        "title": "Deniz",
+        "details": {
+          "İhlal": "İstihsal yerlerinde değişiklik",
+          "Durum/Seçenek": "Deniz",
+          "Dayanak": "K.7 · Y.7 · 36/c",
+          "İPC": "189.630 TL",
+          "El Koyma": "Ürün: Evet (kum, çakıl vs.); vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "d",
+    "title": "D) Su Alımı ve Çevresel Tedbir İhlalleri",
+    "items": [
+      {
+        "id": "d_0",
         "title": "Akarsudan su alımlarında filtre vb. tedbirleri almama",
         "details": {
           "İhlal": "Akarsudan su alımlarında filtre vb. tedbirleri almama",
-          "Dayanak": "K.9 / Y.8 / 36-d",
+          "Dayanak": "K.9 · Y.8 · 36/d",
           "İPC": "47.397 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "2_3",
-        "title": "Akarsu üzerindeki yetiştiricilik tesisinin suyunu kesme/bırakmama",
+        "id": "d_1",
+        "title": "Akarsu üzerinde bulunan yetiştiricilik tesisinin suyunu kesme/bırakmama",
         "details": {
-          "İhlal": "Akarsu üzerindeki yetiştiricilik tesisinin suyunu kesme/bırakmama",
-          "Dayanak": "K.9 / 36-d",
+          "İhlal": "Akarsu üzerinde bulunan yetiştiricilik tesisinin suyunu kesme/bırakmama",
+          "Dayanak": "K.9 · Y.- · 36/d",
           "İPC": "237.034 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "2_4",
-        "title": "Akarsu ve göllerde su alımlarında gerekli tedbirleri almama",
+        "id": "d_2",
+        "title": "Akarsu, göllerde su alımlarında tedbirleri almama",
         "details": {
-          "İhlal": "Akarsu ve göllerde su alımlarında gerekli tedbirleri almama",
-          "Dayanak": "K.9 / Y.8 / 36-d",
+          "İhlal": "Akarsu, göllerde su alımlarında tedbirleri almama",
+          "Dayanak": "K.9 · Y.8 · 36/d",
           "İPC": "237.034 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "2_5",
+        "id": "d_3",
         "title": "HES'lerin can suyunu bırakmaması",
         "details": {
           "İhlal": "HES'lerin can suyunu bırakmaması",
-          "Dayanak": "K.9 / Y.8 / 36-d",
+          "Dayanak": "K.9 · Y.8 · 36/d",
           "İPC": "474.079 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_6",
-        "title": "Patlayıcı, öldürücü/uyuşturucu madde, elektroşok vb. ile avcılık",
-        "details": {
-          "İhlal": "Patlayıcı, öldürücü/uyuşturucu madde, elektroşok vb. ile avcılık",
-          "Dayanak": "K.19 / Y.9 / 36-g",
-          "İPC": "94.811 TL",
-          "El koyma / özel işlem": "Ürün: Evet; aykırılığa neden olan av aracı/eşya/alet/edevat/teçhizat zapt ve mülkiyeti kamuya geçirilir"
-        }
-      },
-      {
-        "id": "2_7",
-        "title": "Sulara zararlı madde dökülmesi - kişi",
-        "details": {
-          "İhlal": "Sulara zararlı madde dökülmesi - kişi",
-          "Dayanak": "K.20 / Y.11 / 36-h",
-          "İPC": "47.397 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_8",
-        "title": "Sulara zararlı madde dökülmesi - gıda/tarım işletmecisi",
-        "details": {
-          "İhlal": "Sulara zararlı madde dökülmesi - gıda/tarım işletmecisi",
-          "Dayanak": "K.20 / Y.11 / 36-h",
-          "İPC": "189.630 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_9",
-        "title": "Sulara zararlı madde dökülmesi - sanayi işletmecisi",
-        "details": {
-          "İhlal": "Sulara zararlı madde dökülmesi - sanayi işletmecisi",
-          "Dayanak": "K.20 / Y.11 / 36-h",
-          "İPC": "474.079 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_10",
-        "title": "Yabancıların su ürünleri istihsali yasağını ihlal",
-        "details": {
-          "İhlal": "Yabancıların su ürünleri istihsali yasağını ihlal",
-          "Dayanak": "K.21 / Y.5 / 36-i",
-          "İPC": "189.630 TL",
-          "El koyma / özel işlem": "Ürün: Evet; aykırılığa neden olan istihsal vasıtaları **gemi dahil** kamuya geçirilir"
-        }
-      },
-      {
-        "id": "2_11",
-        "title": "Akarsulara engel (ağ, bent, çit vb.) koyma",
-        "details": {
-          "İhlal": "Akarsulara engel (ağ, bent, çit vb.) koyma",
-          "Dayanak": "K.22 / Y.8 / 36-j",
-          "İPC": "16.106 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_12",
-        "title": "Balık geçidi yapmama",
-        "details": {
-          "İhlal": "Balık geçidi yapmama",
-          "Dayanak": "K.22-2 / Y.8 / 36-j",
-          "İPC": "2.370.440 TL",
-          "El koyma / özel işlem": "Hayır / Hayır; yaptırılması için 18 ay süre verilir, yaptırılmazsa İPC uygulanır"
-        }
-      },
-      {
-        "id": "2_13",
-        "title": "Balık geçidinin işlevsiz olması halinde gerekli tedbirleri almama",
-        "details": {
-          "İhlal": "Balık geçidinin işlevsiz olması halinde gerekli tedbirleri almama",
-          "Dayanak": "K.22-2 / Y.8 / 36-j",
-          "İPC": "1.896.350 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_14",
-        "title": "Balık geçidini çalıştırmama",
-        "details": {
-          "İhlal": "Balık geçidini çalıştırmama",
-          "Dayanak": "K.22-2 / Y.8 / 36-j",
-          "İPC": "474.079 TL",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "2_15",
-        "title": "Amatör avcılık kurallarının ihlali - kişi",
-        "details": {
-          "İhlal": "Amatör avcılık kurallarının ihlali - kişi",
-          "Dayanak": "K.23-a/b / Y.6 / 36-k",
-          "İPC": "4.730 TL",
-          "El koyma / özel işlem": "Ürün: Evet; istihsal vasıtası: Hayır"
-        }
-      },
-      {
-        "id": "2_16",
-        "title": "Amatör avcılık kurallarının ihlali - gemi",
-        "details": {
-          "İhlal": "Amatör avcılık kurallarının ihlali - gemi",
-          "Dayanak": "K.23-a/b / Y.6 / 36-k",
-          "İPC": "7.105 TL",
-          "El koyma / özel işlem": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       }
     ],
     "sub": [],
-    "content": ""
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "3",
-    "title": "3. Ticari Avcılık - Kanun 23 Kapsamındaki Başlıca İhlaller",
+    "id": "e",
+    "title": "E) İzinsiz Yetiştiricilik Tesisi ve Yönetmelik İhlalleri",
     "items": [
       {
-        "id": "3_0",
-        "title": "23 üncü maddeye aykırı faaliyet yapan kişi (tayfa)",
+        "id": "e_0",
+        "title": "Kuluçkahane (kapasitesi 1 milyondan az)",
         "details": {
-          "İhlal": "23 üncü maddeye aykırı faaliyet yapan kişi (tayfa)",
-          "Dayanak": "K.23-b / Y.16/14 / 36-k",
-          "İPC": "K-TAYFA: 16.106 TL",
-          "El koyma": "Hayır / Hayır"
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 1 milyondan az)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "94.811 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_1",
+        "id": "e_1",
+        "title": "Kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "284.449 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_2",
+        "title": "Kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "474.079 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_3",
+        "title": "Kuluçkahane (kapasitesi 10 milyon dahil ve fazlası)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 10 milyon dahil ve fazlası)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "948.169 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_4",
+        "title": "Büyüme tesisi (kapasitesi 50 ton/yıl'dan az)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 50 ton/yıl'dan az)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "94.811 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_5",
+        "title": "Büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "284.449 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_6",
+        "title": "Büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "474.079 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_7",
+        "title": "Büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası)",
+        "details": {
+          "İhlal": "İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası)",
+          "Dayanak": "K.13 · Y.- · T.- · 36/e",
+          "İPC": "948.169 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_8",
+        "title": "Kapasitesi kuluçkahanede 10 milyondan az - büyütmede 500 ton/yıl'dan az",
+        "details": {
+          "İhlal": "Teknik personel bulundurmama",
+          "Durum/Seçenek": "Kapasitesi kuluçkahanede 10 milyondan az - büyütmede 500 ton/yıl'dan az",
+          "Dayanak": "K.13 · Y.20 · T.- · 36/e",
+          "İPC": "331.855 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_9",
+        "title": "Kapasitesi kuluçkahanede 10 milyon dahil fazlası - büyütmede 500 ton/yıl dahil fazlası",
+        "details": {
+          "İhlal": "Teknik personel bulundurmama",
+          "Durum/Seçenek": "Kapasitesi kuluçkahanede 10 milyon dahil fazlası - büyütmede 500 ton/yıl dahil fazlası",
+          "Dayanak": "K.13 · Y.20 · T.- · 36/e",
+          "İPC": "474.079 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_10",
+        "title": "Kuluçkahane (kapasitesi 1 milyondan az)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 1 milyondan az)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "47.397 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_11",
+        "title": "Kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 1 milyon dahil - 5 milyondan az)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "189.630 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_12",
+        "title": "Kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 5 milyon dahil - 10 milyondan az)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "284.449 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_13",
+        "title": "Kuluçkahane (kapasitesi 10 milyon dahil ve fazlası)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Kuluçkahane (kapasitesi 10 milyon dahil ve fazlası)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "474.079 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_14",
+        "title": "Büyüme tesisi (kapasitesi 50 ton/yıl'dan az)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 50 ton/yıl'dan az)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "47.397 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_15",
+        "title": "Büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 50 ton/yıl dahil - 250 ton/yıldan az)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "189.630 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_16",
+        "title": "Büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 250 ton/yıl dahil - 500 ton/yıl'dan az)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "284.449 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_17",
+        "title": "Büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası)",
+        "details": {
+          "İhlal": "Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
+          "Durum/Seçenek": "Büyüme tesisi (kapasitesi 500 ton/yıl ve daha fazlası)",
+          "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
+          "İPC": "474.079 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_18",
+        "title": "Kiralanan su miktarı veya su alanından %10'a kadar fazla su yada su alanı kullanılması",
+        "details": {
+          "İhlal": "İstihsal Haklarını Kiralayanların Yönetmelikle Belirlenen Kurallara Aykırı Hareket Etmesi",
+          "Durum/Seçenek": "Kiralanan su miktarı veya su alanından %10'a kadar fazla su yada su alanı kullanılması",
+          "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
+          "İPC": "47.397 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_19",
+        "title": "Kiralanan su miktarı veya su alanından %10 dahil, %30'a kadar fazla su yada su alanı kullanılması",
+        "details": {
+          "İhlal": "İstihsal Haklarını Kiralayanların Yönetmelikle Belirlenen Kurallara Aykırı Hareket Etmesi",
+          "Durum/Seçenek": "Kiralanan su miktarı veya su alanından %10 dahil, %30'a kadar fazla su yada su alanı kullanılması",
+          "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
+          "İPC": "94.811 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_20",
+        "title": "Kiralanan su miktarı veya su alanından %30 dahil, %60'a kadar fazla su yada su alanı kullanılması",
+        "details": {
+          "İhlal": "İstihsal Haklarını Kiralayanların Yönetmelikle Belirlenen Kurallara Aykırı Hareket Etmesi",
+          "Durum/Seçenek": "Kiralanan su miktarı veya su alanından %30 dahil, %60'a kadar fazla su yada su alanı kullanılması",
+          "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
+          "İPC": "189.630 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "e_21",
+        "title": "Kiralanan su miktarı veya su alanından %60 dahil fazla su yada su alanı kullanılması",
+        "details": {
+          "İhlal": "İstihsal Haklarını Kiralayanların Yönetmelikle Belirlenen Kurallara Aykırı Hareket Etmesi",
+          "Durum/Seçenek": "Kiralanan su miktarı veya su alanından %60 dahil fazla su yada su alanı kullanılması",
+          "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
+          "İPC": "237.034 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "f",
+    "title": "F) Balıkçı Barınakları Mevzuatına Aykırılık",
+    "items": [
+      {
+        "id": "f_0",
+        "title": "Balıkçı barınaklarında bağlama planı yapılmaması",
+        "details": {
+          "İhlal": "Balıkçı barınakları mevzuatlarına aykırılık",
+          "Durum/Seçenek": "Balıkçı barınaklarında bağlama planı yapılmaması",
+          "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 9 · T.- · 36/f",
+          "İPC": "23.692 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "f_1",
+        "title": "Balıkçı barınaklarında ticari amaçla su ürünleri avcılığına izin verilmesi",
+        "details": {
+          "İhlal": "Balıkçı barınakları mevzuatlarına aykırılık",
+          "Durum/Seçenek": "Balıkçı barınaklarında ticari amaçla su ürünleri avcılığına izin verilmesi",
+          "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 9 · T.- · 36/f",
+          "İPC": "23.692 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "f_2",
+        "title": "Balıkçı barınaklarında mevzuata aykırı yapı yapılması",
+        "details": {
+          "İhlal": "Balıkçı barınakları mevzuatlarına aykırılık",
+          "Durum/Seçenek": "Balıkçı barınaklarında mevzuata aykırı yapı yapılması",
+          "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği 13,19 · T.- · 36/f",
+          "İPC": "237.034 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "f_3",
+        "title": "Balıkçı barınakları ile barınaklarda bulunan alt ve üst yapıların amaç dışı kullanılması veya kullandırılması",
+        "details": {
+          "İhlal": "Balıkçı barınakları mevzuatlarına aykırılık",
+          "Durum/Seçenek": "Balıkçı barınakları ile barınaklarda bulunan alt ve üst yapıların amaç dışı kullanılması veya kullandırılması",
+          "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği 13,19, 9 · T.- · 36/f",
+          "İPC": "142.217 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "f_4",
+        "title": "Kiralanan barınak ve barınaktaki üst yapıların kiralayanlar tarafından üçüncü şahıslara kiralanması, devredilmesi veya ortak alınması",
+        "details": {
+          "İhlal": "Balıkçı barınakları mevzuatlarına aykırılık",
+          "Durum/Seçenek": "Kiralanan barınak ve barınaktaki üst yapıların kiralayanlar tarafından üçüncü şahıslara kiralanması, devredilmesi veya ortak alınması",
+          "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 8, 9 · T.- · 36/f",
+          "İPC": "237.034 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "f_5",
+        "title": "Bakanlıkça belirtilen gemilerin barınaklardan yararlanmasına izin verilmemesi",
+        "details": {
+          "İhlal": "Balıkçı barınakları mevzuatlarına aykırılık",
+          "Durum/Seçenek": "Bakanlıkça belirtilen gemilerin barınaklardan yararlanmasına izin verilmemesi",
+          "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 8, 9, 4, 19 · T.- · 36/f",
+          "İPC": "142.217 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "g",
+    "title": "G) Patlayıcı/Zehirli Madde ile Avcılık",
+    "items": [
+      {
+        "id": "g_0",
+        "title": "Patlayıcı, öldürücü uyuşturucu, elektroşok vb ile avcılık",
+        "details": {
+          "İhlal": "Patlayıcı, öldürücü uyuşturucu, elektroşok vb ile avcılık",
+          "Dayanak": "K.19 · Y.9 · 36/g",
+          "İPC": "94.811 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "h",
+    "title": "H) Sulara Zararlı Madde Dökülmesi",
+    "items": [
+      {
+        "id": "h_0",
+        "title": "Kişi",
+        "details": {
+          "İhlal": "Sulara zararlı madde dökülmesi",
+          "Durum/Seçenek": "Kişi",
+          "Dayanak": "K.20 · Y.11 · 36/h",
+          "İPC": "47.397 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "h_1",
+        "title": "Gıda / Tarım İşletmecisi",
+        "details": {
+          "İhlal": "Sulara zararlı madde dökülmesi",
+          "Durum/Seçenek": "Gıda / Tarım İşletmecisi",
+          "Dayanak": "K.20 · Y.11 · 36/h",
+          "İPC": "189.630 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "h_2",
+        "title": "Sanayi İşletmecisi",
+        "details": {
+          "İhlal": "Sulara zararlı madde dökülmesi",
+          "Durum/Seçenek": "Sanayi İşletmecisi",
+          "Dayanak": "K.20 · Y.11 · 36/h",
+          "İPC": "474.079 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "i",
+    "title": "I) Yabancıların Su Ürünleri İstihsali Yasağı",
+    "items": [
+      {
+        "id": "i_0",
+        "title": "Yabancıların Su Ürünleri İstihsali Yasağı",
+        "details": {
+          "İhlal": "Yabancıların Su Ürünleri İstihsali Yasağı",
+          "Dayanak": "K.21 · Y.5 · 36/i",
+          "İPC": "189.630 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir (Gemi dahil)",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "j",
+    "title": "J) Akarsu Engelleme ve Balık Geçidi İhlalleri",
+    "items": [
+      {
+        "id": "j_0",
+        "title": "Akarsulara engel (ağ, bent, çit vs.) koyma",
+        "details": {
+          "İhlal": "Akarsulara engel (ağ, bent, çit vs.) koyma",
+          "Dayanak": "K.22 · Y.8 · 36/j",
+          "İPC": "16.106 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "j_1",
+        "title": "Yapmayanlara",
+        "details": {
+          "İhlal": "Balık Geçidi",
+          "Durum/Seçenek": "Yapmayanlara",
+          "Dayanak": "K.22-2 · Y.8 · 36/j",
+          "İPC": "2.370.440 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "j_2",
+        "title": "İşlevsiz olması durumunda gerekli tedbirleri almayanlara",
+        "details": {
+          "İhlal": "Balık Geçidi",
+          "Durum/Seçenek": "İşlevsiz olması durumunda gerekli tedbirleri almayanlara",
+          "Dayanak": "K.22-2 · Y.8 · 36/j",
+          "İPC": "1.896.350 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "j_3",
+        "title": "Çalıştırmayanlara",
+        "details": {
+          "İhlal": "Balık Geçidi",
+          "Durum/Seçenek": "Çalıştırmayanlara",
+          "Dayanak": "K.22-2 · Y.8 · 36/j",
+          "İPC": "474.079 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "k",
+    "title": "K) Ticari Avcılık Usul ve Esasına Aykırılık",
+    "items": [
+      {
+        "id": "k_0",
+        "title": "Kişi",
+        "details": {
+          "İhlal": "Amatör Avcılık Kurallarının İhlali",
+          "Durum/Seçenek": "Kişi",
+          "Dayanak": "K.23-a/b · Y.6 · 36/k",
+          "İPC": "4.730 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "k_1",
+        "title": "Gemi",
+        "details": {
+          "İhlal": "Amatör Avcılık Kurallarının İhlali",
+          "Durum/Seçenek": "Gemi",
+          "Dayanak": "K.23-a/b · Y.6 · 36/k",
+          "İPC": "7.105 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "k_2",
+        "title": "23 üncü madde hükümlerine aykırı faaliyet yapan kişi (Tayfa)",
+        "details": {
+          "İhlal": "23 üncü madde hükümlerine aykırı faaliyet yapan kişi (Tayfa)",
+          "Dayanak": "K.23-b · Y.16/14 · T.- · 36/k",
+          "İPC": "16.106 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "k_3",
         "title": "Yasak zamanda gırgır ağları ile istihsal yapmak",
         "details": {
           "İhlal": "Yasak zamanda gırgır ağları ile istihsal yapmak",
-          "Dayanak": "K.23-b / Y.16/14 / T.12 / 36-k",
-          "İPC": "K-STD; gırgır: 71.076 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "Dayanak": "K.23-b · Y.16/14 · T.12 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_2",
+        "id": "k_4",
         "title": "Gırgır ağı ölçüm belgesi olmaması",
         "details": {
           "İhlal": "Gırgır ağı ölçüm belgesi olmaması",
-          "Dayanak": "K.23-a / Y.14 / T.12/7 / 36-k",
-          "İPC": "K-STD; gırgır: 71.076 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "Dayanak": "K.23-a · Y.14 · T.12/7 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_3",
-        "title": "Paraketa ve fanyalı ağ ile kalkan avcılığı",
+        "id": "k_5",
+        "title": "Parekata ve fanyalı ağ ile kalkan avcılığı",
         "details": {
-          "İhlal": "Paraketa ve fanyalı ağ ile kalkan avcılığı",
-          "Dayanak": "K.23-a / Y.14 / T.21/1-d / 36-k",
-          "İPC": "K-STD; gırgır: 71.076 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Parekata ve fanyalı ağ ile kalkan avcılığı",
+          "Dayanak": "K.23-a · Y.14 · T.21 - 1-d · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_4",
-        "title": "Deniz salyangozu avcılığı - 05:00-20:00 kuralı ihlali",
+        "id": "k_6",
+        "title": "Salyangoz avcılığı (05:00-20:00)",
         "details": {
-          "İhlal": "Deniz salyangozu avcılığı - 05:00-20:00 kuralı ihlali",
-          "Dayanak": "K.23-b / Y.16/14 / T.29/1-ç / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Salyangoz avcılığı (05:00-20:00)",
+          "Dayanak": "K.23-b · Y.16/14 · T.29 / 1-ç · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_5",
+        "id": "k_7",
         "title": "Birden fazla algarna ile avlanma",
         "details": {
           "İhlal": "Birden fazla algarna ile avlanma",
-          "Dayanak": "K.23-a / Y.17/5 / T.29/1-c-(4) / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "Dayanak": "K.23-a · Y.17/5 · T.29 / 1-c-(4) · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_6",
-        "title": "90 kulaçtan daha derin gırgır ağı kullanma",
+        "id": "k_8",
+        "title": "90 kulaçtan daha derin gırgır ağı",
         "details": {
-          "İhlal": "90 kulaçtan daha derin gırgır ağı kullanma",
-          "Dayanak": "K.23-a / Y.14 / T.12/5 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "90 kulaçtan daha derin gırgır ağı",
+          "Dayanak": "K.23-a · Y.14 · T.12/5 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_7",
-        "title": "Derinlik yasağına (18-24 metreden sığda vb.) aykırı avcılık",
+        "id": "k_9",
+        "title": "Derinlik yasağına (18-24 metreden sığda vb) aykırı avcılık",
         "details": {
-          "İhlal": "Derinlik yasağına (18-24 metreden sığda vb.) aykırı avcılık",
-          "Dayanak": "K.23-b / Y.16/14 / T.12/6-a / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Derinlik yasağına (18-24 metreden sığda vb) aykırı avcılık",
+          "Dayanak": "K.23-b · Y.16/14 · T.12 / 6-a · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_8",
-        "title": "Yasak zamanda av aracını gemide/istihsal yerinde bulundurma",
+        "id": "k_10",
+        "title": "Yasak zamanda av aracını gemilerde/istihsal yerlerinde bulundurmak",
         "details": {
-          "İhlal": "Yasak zamanda av aracını gemide/istihsal yerinde bulundurma",
-          "Dayanak": "K.23-b / Y.16/7 / T.Deniz 50/10, İçsu 51/5 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (**3 tekrar sonunda**)"
+          "İhlal": "Yasak zamanda av aracını gemilerde/istihsal yerlerinde bulundurmak",
+          "Dayanak": "K.23-b · Y.16/7 · T.Deniz: 50/10\nİçsu: 51/5 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_9",
-        "title": "Tüp, nargile, zıpkın, sualtı tüfeği vb. ile balık avcılığı",
+        "id": "k_11",
+        "title": "Tüp, Nargile, Zıpkın, Su altı tüfeği vs. balık avcılık yapmak",
         "details": {
-          "İhlal": "Tüp, nargile, zıpkın, sualtı tüfeği vb. ile balık avcılığı",
-          "Dayanak": "K.23-a / Y.17/8 / T.49/11 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Tüp, Nargile, Zıpkın, Su altı tüfeği vs. balık avcılık yapmak",
+          "Dayanak": "K.23-a · Y.17/8 · T.49/11 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (3 tekrar sonunda)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_10",
-        "title": "Misina ağlarıyla avcılık kurallarını ihlal - deniz",
+        "id": "k_12",
+        "title": "Misina ağlarıyla avcılık kurallarını ihlal (Denizde)",
         "details": {
-          "İhlal": "Misina ağlarıyla avcılık kurallarını ihlal - deniz",
-          "Dayanak": "K.23-a / Y.14 / T.14/2-ç / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Misina ağlarıyla avcılık kurallarını ihlal (Denizde)",
+          "Dayanak": "K.23-a · Y.14 · T.14 / 2-ç · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_11",
-        "title": "Şamandıralara plaka yazılmaması / markasız av aracı",
+        "id": "k_13",
+        "title": "Şamandıralara plaka yazılmaması\n\nMarkasız av aracı",
         "details": {
-          "İhlal": "Şamandıralara plaka yazılmaması / markasız av aracı",
-          "Dayanak": "K.23-a / Y.15/3 ve 14 / T.49/2 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Şamandıralara plaka yazılmaması\n\nMarkasız av aracı",
+          "Dayanak": "K.23-a · Y.15/3 /  / 14 (markasız av aracı) · T.----\n\n49/2 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_12",
+        "id": "k_14",
         "title": "Manyat, ığrıp, trata, tarlakoz vb. sürütme ağları ile avcılık",
         "details": {
           "İhlal": "Manyat, ığrıp, trata, tarlakoz vb. sürütme ağları ile avcılık",
-          "Dayanak": "K.23-a / Y.14 / T.14/1 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "Dayanak": "K.23-a · Y.14 · T.14/1 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_13",
+        "id": "k_15",
         "title": "12 metreden küçük tekne ile gırgır avcılığı",
         "details": {
           "İhlal": "12 metreden küçük tekne ile gırgır avcılığı",
-          "Dayanak": "K.23-a / Y.13 / 36-k",
-          "İPC": "23.692 TL; gırgır avcılığında 3 kat = 71.076 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "Dayanak": "K.23-a · Y.13 · T.- · 36/k",
+          "İPC": "Gırgır: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_14",
-        "title": "İkinci av aracı bulundurma - 12 m ve üzeri tekneler",
+        "id": "k_16",
+        "title": "İkinci av aracı bulundurma (12 metre ve üzeri teknelerde)",
         "details": {
-          "İhlal": "İkinci av aracı bulundurma - 12 m ve üzeri tekneler",
-          "Dayanak": "K.23-a / Y.14 / T.50/11 / 36-k",
-          "İPC": "12-22 m: 47.384 TL; 22 m ve üzeri: 71.076 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "İkinci av aracı bulundurma (12 metre ve üzeri teknelerde)",
+          "Dayanak": "K.23-a · Y.14 · T.50/11 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_15",
+        "id": "k_17",
         "title": "Tırıvırı ile avcılık",
         "details": {
           "İhlal": "Tırıvırı ile avcılık",
-          "Dayanak": "K.23-a / Y.14 / T.49/13 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "Dayanak": "K.23-a · Y.14 · T.49/13 · 36/k",
+          "İPC": "<12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_16",
-        "title": "Zaman/yer yasağını ihlal - algarna ile deniz salyangozu",
+        "id": "k_18",
+        "title": "Zaman, yer yasağını ihlal (algarna ile deniz salyangoz avcılığı)",
         "details": {
-          "İhlal": "Zaman/yer yasağını ihlal - algarna ile deniz salyangozu",
-          "Dayanak": "K.23-b / Y.16/14 / T.29/c / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Zaman, yer yasağını ihlal (algarna ile deniz salyangoz avcılığı)",
+          "Dayanak": "K.23-b · Y.16/14 · T.29/c · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_17",
-        "title": "Zaman/yer yasağını ihlal - beyaz kum midyesi",
+        "id": "k_19",
+        "title": "Zaman, yer yasağını ihlal (beyaz kum midyesi)",
         "details": {
-          "İhlal": "Zaman/yer yasağını ihlal - beyaz kum midyesi",
-          "Dayanak": "K.23-b / Y.16/14 / T.28/1,9 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Zaman, yer yasağını ihlal (beyaz kum midyesi)",
+          "Dayanak": "K.23-b · Y.16/14 · T.28/1,9 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_18",
-        "title": "Kalkan avcılığı kuralları ihlali - zaman, av aracı, izin/belge vb.",
+        "id": "k_20",
+        "title": "Kalkan avcılığı kuralları ihlali (zaman, av aracı, izin belge vs.)",
         "details": {
-          "İhlal": "Kalkan avcılığı kuralları ihlali - zaman, av aracı, izin/belge vb.",
-          "Dayanak": "K.23-b / Y.16/14, 14, 15/4 / T.21/1-a / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Kalkan avcılığı kuralları ihlali (zaman, av aracı, izin belge vs.)",
+          "Dayanak": "K.23-b · Y.16/14 / 14 / 15/4 · T.21 / 1-a · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_19",
-        "title": "Palamut kuralları ihlali - zaman/av aracı",
+        "id": "k_21",
+        "title": "Palamut kuralları ihlali (zaman, av aracı)",
         "details": {
-          "İhlal": "Palamut kuralları ihlali - zaman/av aracı",
-          "Dayanak": "K.23-b / Y.16/14, 14 / T.20/1 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Palamut kuralları ihlali (zaman, av aracı)",
+          "Dayanak": "K.23-b · Y.16/14 / 14 · T.20/1 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_20",
-        "title": "Tebliğde belirlenen akarsuların denizle birleştiği noktadan (mansap) 500 m yarıçap içinde ticari avcılık",
+        "id": "k_22",
+        "title": "Tebliğ ile belirlenen akarsuların deniz ile birleştiği noktadan (mansap) 500 m. yarıçap içerisinde ticari avcılık",
         "details": {
-          "İhlal": "Tebliğde belirlenen akarsuların denizle birleştiği noktadan (mansap) 500 m yarıçap içinde ticari avcılık",
-          "Dayanak": "K.23-b / Y.17/6 / T.49/19 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Tebliğ ile belirlenen akarsuların deniz ile birleştiği noktadan (mansap) 500 m. yarıçap içerisinde ticari avcılık",
+          "Dayanak": "K.23-b · Y.17/6 · T.49/19 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_21",
-        "title": "Liman, barınak, barınma yeri veya çekek yerinde avcılık",
+        "id": "k_23",
+        "title": "Liman, barınak, barınma yeri, çekek yerince avcılık",
         "details": {
-          "İhlal": "Liman, barınak, barınma yeri veya çekek yerinde avcılık",
-          "Dayanak": "K.23-b / Y.16/14 / T.50/8 / 36-k",
-          "İPC": "K-STD",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Liman, barınak, barınma yeri, çekek yerince avcılık",
+          "Dayanak": "K.23-b · Y.16/14 · T.50/8 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_22",
-        "title": "Serpme ile ticari avcılık - içsu",
+        "id": "k_24",
+        "title": "Serpme ile ticari avcılık (iç su)",
         "details": {
-          "İhlal": "Serpme ile ticari avcılık - içsu",
-          "Dayanak": "K.23-b / Y.16/14 / T.6/2 Tebliğ 13-2 / 36-k",
+          "İhlal": "Serpme ile ticari avcılık (iç su)",
+          "Dayanak": "K.23-b · Y.16/14 · T.6/2 tebliğ\n13-2 · 36/k",
           "İPC": "23.692 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (**3 tekrar sonunda, gemi hariç**)"
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_23",
-        "title": "Avlanması yasak olan su ürünlerini (tür yasağı) avlama",
+        "id": "k_25",
+        "title": "Avlanması yasak olan su ürünlerini (tür yasağı) avlanma",
         "details": {
-          "İhlal": "Avlanması yasak olan su ürünlerini (tür yasağı) avlama",
-          "Dayanak": "K.23-b / Y.16/14 / T.16/1 / 36-k",
-          "İPC": "<12: 23.692; 12-22: 47.384; ≥22: 71.076 TL; **gırgır: 56.640 TL**",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (3 tekrar sonunda, gemi hariç)"
+          "İhlal": "Avlanması yasak olan su ürünlerini (tür yasağı) avlanma",
+          "Dayanak": "K.23-b · Y.16/14 · T.16/1 · 36/k",
+          "İPC": "Gırgır: 56.640 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (3 tekrar sonunda gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "3_24",
+        "id": "k_26",
         "title": "Yasak boyda su ürünü avlama",
         "details": {
           "İhlal": "Yasak boyda su ürünü avlama",
-          "Dayanak": "K.23-b / Y.16/14 / T.17/1 / 36-k",
-          "İPC": "<12: 23.692; 12-22: 47.384; ≥22: 71.076 TL; **gırgır: 56.640 TL**",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (3 tekrar sonunda, gemi hariç)"
+          "Dayanak": "K.23-b · Y.16/14 · T.17/1 · 36/k",
+          "İPC": "Gırgır: 56.640 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (3 tekrar sonunda gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
-      }
-    ],
-    "sub": [],
-    "content": ""
-  },
-  {
-    "id": "4",
-    "title": "4. Işık, Trol ve Orta Su Trolü İhlalleri",
-    "items": [
+      },
       {
-        "id": "4_0",
+        "id": "k_27",
         "title": "Işık ile avcılık",
         "details": {
           "İhlal": "Işık ile avcılık",
-          "Dayanak": "K.23-b / Y.16/14 / T.13 / 36-k",
-          "İPC": "<12: 474.079; 12-22: 948.158; ≥22: 1.422.237 TL; gırgır: 1.422.237 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Ürün: Evet; aykırılığa neden olan av aracı/eşya/alet/edevat/teçhizat zapt ve mülkiyeti kamuya geçirilir"
+          "Dayanak": "K.23-b · Y.16/14 · T.13 · 36/k",
+          "İPC": "Gırgır: 1.422.237 TL; <12 m: 474.079 TL; 12–<22 m: 948.158 TL; ≥22 m: 1.422.237 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edavat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir.",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "4_1",
-        "title": "İçsular, Marmara Denizi ve boğazlarda trol avcılığı - kişi",
+        "id": "k_28",
+        "title": "Orta su trolüne ilişkin yasakların ihlali (kişi-tayfa)",
         "details": {
-          "İhlal": "İçsular, Marmara Denizi ve boğazlarda trol avcılığı - kişi",
-          "Dayanak": "K.24-1/a / Y.16/14 / T.9-1 / 36-l",
-          "İPC": "94.811 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Ürün: -; istihsal vasıtası: -"
-        }
-      },
-      {
-        "id": "4_2",
-        "title": "İçsular, Marmara Denizi ve boğazlarda trol avcılığı - gemi donatanı/sahibi",
-        "details": {
-          "İhlal": "İçsular, Marmara Denizi ve boğazlarda trol avcılığı - gemi donatanı/sahibi",
-          "Dayanak": "K.24-1/a / Y.16/14 / T.9 / 36-l",
-          "İPC": "<12: 189.630; 12-22: 379.260; ≥22: 568.890 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Ürün: Evet; İstanbul ve Çanakkale Boğazları ile Marmara Denizinde istihsal vasıtaları kamuya geçirilir. Tekrarda 1-3 yıl hapis ve “5000-1000 gün adli para cezası” ifadesi yer alır; su ürünleri ve istihsal vasıtaları gemi dahil kamuya geçirilir."
-        }
-      },
-      {
-        "id": "4_3",
-        "title": "Dip trolüne ilişkin yasakların ihlali - kişi/tayfa",
-        "details": {
-          "İhlal": "Dip trolüne ilişkin yasakların ihlali - kişi/tayfa",
-          "Dayanak": "K.24/b / Y.Ağlar 14, yer-zaman vb. / T.10 / 36-l",
-          "İPC": "23.692 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "4_4",
-        "title": "Dip trolüne ilişkin yasakların ihlali - donatan/sahip",
-        "details": {
-          "İhlal": "Dip trolüne ilişkin yasakların ihlali - donatan/sahip",
-          "Dayanak": "K.24/b / Y.Ağlar 14, yer-zaman vb. / T.10 / 36-l",
-          "İPC": "<12: 66.357; 12-22: 132.714; ≥22: 199.071 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
-        }
-      },
-      {
-        "id": "4_5",
-        "title": "Orta su trolüne ilişkin yasakların ihlali - kişi/tayfa",
-        "details": {
-          "İhlal": "Orta su trolüne ilişkin yasakların ihlali - kişi/tayfa",
-          "Dayanak": "K.24/c / Y.Ağlar 14, yer-zaman vb. / T.11 / 36-k",
+          "İhlal": "Orta su trolüne ilişkin yasakların ihlali (kişi-tayfa)",
+          "Dayanak": "K.24/c · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.11 · 36/k",
           "İPC": "16.106 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Hayır / Hayır"
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "4_6",
-        "title": "Orta su trolüne ilişkin yasakların ihlali - donatan/sahip",
+        "id": "k_29",
+        "title": "Orta su trolüne ilişkin yasakların ihlali (donatan veya sahip)",
         "details": {
-          "İhlal": "Orta su trolüne ilişkin yasakların ihlali - donatan/sahip",
-          "Dayanak": "K.24/c / Y.Ağlar 14, yer-zaman vb. / T.11 / 36-k",
-          "İPC": "<12: 23.692; 12-22: 47.384; ≥22: 71.076 TL",
-          "Tekrar / ruhsat": "2 yıl içinde tekrar: 2 kat; ruhsat 1 ay / 3 ay / 3. kez iptal",
-          "El koyma / özel işlem": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "İhlal": "Orta su trolüne ilişkin yasakların ihlali (donatan veya sahip)",
+          "Dayanak": "K.24/c · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.11 · 36/k",
+          "İPC": "<12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "k_30",
+        "title": "Yetiştiricilik Tesislerine Mesafe Yasağına Uymama",
+        "details": {
+          "İhlal": "Yetiştiricilik Tesislerine Mesafe Yasağına Uymama",
+          "Dayanak": "K.23-b · Y.16/14 · T.49/15 · 36/k",
+          "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       }
     ],
     "sub": [],
-    "content": ""
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "5",
-    "title": "5. Kayıt, Satış, Nakil, İthalat-İhracat ve BAGİS",
+    "id": "l",
+    "title": "L) Trol Yasağı İhlalleri",
     "items": [
       {
-        "id": "5_0",
-        "title": "Bilgi/belge vermemek - seyir defteri",
+        "id": "l_0",
+        "title": "İç sular, Marmara Denizi ve boğazlarda trol avcılığı (kişiler)",
         "details": {
-          "İhlal": "Bilgi/belge vermemek - seyir defteri",
-          "Dayanak": "K.28 / Y.16/14 / T.48/10 / 36-n",
-          "İPC": "<12: 6.627; 12-22: 13.254; ≥22: 19.881 TL",
-          "El koyma": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "5_1",
-        "title": "Yasak su ürünlerinin satışı, nakli vb. - av sezonunda",
-        "details": {
-          "İhlal": "Yasak su ürünlerinin satışı, nakli vb. - av sezonunda",
-          "Dayanak": "K.25/1 / Y.16/14 / T.16-17 / 36-m",
-          "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
-        }
-      },
-      {
-        "id": "5_2",
-        "title": "Yasak su ürünlerinin satışı, nakli vb. - yasak zamanda",
-        "details": {
-          "İhlal": "Yasak su ürünlerinin satışı, nakli vb. - yasak zamanda",
-          "Dayanak": "K.25/1 / Y.16/2 ve 16/14 / T.16-17 veya 49/20 / 36-m",
-          "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
-        }
-      },
-      {
-        "id": "5_3",
-        "title": "Avlanması yasak su ürünlerinin imalatta/muhafaza/işlemede kullanılması",
-        "details": {
-          "İhlal": "Avlanması yasak su ürünlerinin imalatta/muhafaza/işlemede kullanılması",
-          "Dayanak": "K.25/1 / Y.16/14 / T.16,17,49/20 / 36-m",
+          "İhlal": "İç sular, Marmara Denizi ve boğazlarda trol avcılığı (kişiler)",
+          "Dayanak": "K.24-1/a · Y.16/14 · T.9-1 · 36/l",
           "İPC": "94.811 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
+          "El Koyma": "Ürün: -; vasıta: -",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_4",
-        "title": "Yasak vasıta/usullerle izinsiz ilmi-teknik çalışma",
+        "id": "l_1",
+        "title": "İç sular, Marmara Denizi ve boğazlarda trol avcılığı (gemi donatanı veya sahibi)",
         "details": {
-          "İhlal": "Yasak vasıta/usullerle izinsiz ilmi-teknik çalışma",
-          "Dayanak": "K.29 / Y.16/9 / T.49/18 / 36-m",
-          "İPC": "8.048 TL",
-          "El koyma": "Ürün: Hayır; aykırılığa neden olan av aracı/eşya/alet/edevat/teçhizat kamuya geçirilir"
+          "İhlal": "İç sular, Marmara Denizi ve boğazlarda trol avcılığı (gemi donatanı veya sahibi)",
+          "Dayanak": "K.24-1/a · Y.16/14 · T.9 · 36/l",
+          "İPC": "<12 m: 189.630 TL; 12–<22 m: 379.260 TL; ≥22 m: 568.890 TL",
+          "El Koyma": "Ürün: Evet; vasıta: (İstanbul ve Çanakkale Boğazların ile Marmara Denizinde) İstihsal vasıtaları zapt ve mülkiyeti kamuya geçirilir. Tekrarı halinde 1 yıldan 3 yıla kadar (5000-1000 gün adli para cezası) hapis cezası, su ürünleri ve istihsal vasıtalarına el konularak mülkiyeti kamuya geçirilir. (gemi dahil)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_5",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - deniz patlıcanı 500 g üzeri, 10 kg'a kadar",
+        "id": "l_2",
+        "title": "Dip trolüne ilişkin yasakların ihlali (kişi-tayfa)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - deniz patlıcanı 500 g üzeri, 10 kg'a kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Dip trolüne ilişkin yasakların ihlali (kişi-tayfa)",
+          "Dayanak": "K.24/b · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.10 · 36/l",
+          "İPC": "23.692 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "l_3",
+        "title": "Dip trolüne ilişkin yasakların ihlali (donatan veya sahip)",
+        "details": {
+          "İhlal": "Dip trolüne ilişkin yasakların ihlali (donatan veya sahip)",
+          "Dayanak": "K.24/b · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.10 · 36/l",
+          "İPC": "<12 m: 66.357 TL; 12–<22 m: 132.714 TL; ≥22 m: 199.071 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "m",
+    "title": "M) Yasak Ürün Ticareti ve İzinsiz İthalat/İhracat",
+    "items": [
+      {
+        "id": "m_0",
+        "title": "Yasak su ürünleirnin satışı, nakli vb. (av sezonunda)",
+        "details": {
+          "İhlal": "Yasak su ürünleirnin satışı, nakli vb. (av sezonunda)",
+          "Dayanak": "K.25/1 · Y.16/14 · T.16-17 · 36/m",
+          "İPC": "47.397 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "m_1",
+        "title": "Yasak su ürünleirnin satışı, nakli vb. (yasak zamanda)",
+        "details": {
+          "İhlal": "Yasak su ürünleirnin satışı, nakli vb. (yasak zamanda)",
+          "Dayanak": "K.25/1 · Y.16/2 / 16/14 · T.16-17 veya 49/20 · 36/m",
+          "İPC": "47.397 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "m_2",
+        "title": "Avlanması yasak olan su ürünlerinin imalatta kullanıması (muhafaza, işleme bv.)",
+        "details": {
+          "İhlal": "Avlanması yasak olan su ürünlerinin imalatta kullanıması (muhafaza, işleme bv.)",
+          "Dayanak": "K.25/1 · Y.16/14 · T.16\n17\n49/20 · 36/m",
+          "İPC": "94.811 TL",
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "m_3",
+        "title": "Deniz patlıcanı (500 ge'dan fazla 10 kg'a kadar)",
+        "details": {
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Deniz patlıcanı (500 ge'dan fazla 10 kg'a kadar)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "237.034 TL",
-          "El koyma": "Ürün: Evet; aykırılığa neden olan vasıtalar **araç dahil** kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_6",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - deniz patlıcanı 10 kg dahil, 100 kg'a kadar",
+        "id": "m_4",
+        "title": "Deniz patlıcanı (10 kg dahil 100 kg'a kadar)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - deniz patlıcanı 10 kg dahil, 100 kg'a kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Deniz patlıcanı (10 kg dahil 100 kg'a kadar)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "474.079 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_7",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - deniz patlıcanı 100 kg dahil ve fazla",
+        "id": "m_5",
+        "title": "Deniz patlıcanı (100 kg dahil ve daha fazlası)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - deniz patlıcanı 100 kg dahil ve fazla",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Deniz patlıcanı (100 kg dahil ve daha fazlası)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "948.169 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_8",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - çift kabuklu yumuşakça 2 kg üzeri, 100 kg'a kadar",
+        "id": "m_6",
+        "title": "Çift kabuklu yumuşakça (2 kg'dan fazla 100 kg kg'a kadar)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - çift kabuklu yumuşakça 2 kg üzeri, 100 kg'a kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Çift kabuklu yumuşakça (2 kg'dan fazla 100 kg kg'a kadar)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "94.811 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_9",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - çift kabuklu yumuşakça 100 kg dahil, 300 kg'a kadar",
+        "id": "m_7",
+        "title": "Çift kabuklu yumuşakça (100kg dahil 300 kg'a kadar)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - çift kabuklu yumuşakça 100 kg dahil, 300 kg'a kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Çift kabuklu yumuşakça (100kg dahil 300 kg'a kadar)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "284.449 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_10",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - çift kabuklu yumuşakça 300 kg dahil ve fazla",
+        "id": "m_8",
+        "title": "Çift kabuklu yumuşakça (300 kg dahil ve daha fazlası)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - çift kabuklu yumuşakça 300 kg dahil ve fazla",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Çift kabuklu yumuşakça (300 kg dahil ve daha fazlası)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "948.169 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_11",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - sülük 10 adetten fazla, 100 adede kadar",
+        "id": "m_9",
+        "title": "Sülük (10 adetten fazla 100 adete kadar)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - sülük 10 adetten fazla, 100 adede kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Sülük (10 adetten fazla 100 adete kadar)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "94.811 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_12",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - sülük 100 adet dahil ve fazla",
+        "id": "m_10",
+        "title": "Sülük (100 adet dahilve daha fazlası)",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - sülük 100 adet dahil ve fazla",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Sülük (100 adet dahilve daha fazlası)",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "474.079 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_13",
-        "title": "Su ürünlerini izinsiz yurt dışına çıkarma - endemik veya koruma altındaki türleri canlı olarak",
+        "id": "m_11",
+        "title": "Endemik veya koruma altındaki türleri canlı olarak",
         "details": {
-          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma - endemik veya koruma altındaki türleri canlı olarak",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerini izinsiz yurt dışına çıkarma",
+          "Durum/Seçenek": "Endemik veya koruma altındaki türleri canlı olarak",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "474.079 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_14",
-        "title": "Su ürünlerinin izinsiz yurt içine sokulması - 1000 adede kadar",
+        "id": "m_12",
+        "title": "1000 adete kadar",
         "details": {
-          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması - 1000 adede kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması",
+          "Durum/Seçenek": "1000 adete kadar",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "47.397 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_15",
-        "title": "Su ürünlerinin izinsiz yurt içine sokulması - 1000 dahil, 3000 adede kadar",
+        "id": "m_13",
+        "title": "1000 adet dahil 3000 adete kadar",
         "details": {
-          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması - 1000 dahil, 3000 adede kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması",
+          "Durum/Seçenek": "1000 adet dahil 3000 adete kadar",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "94.811 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_16",
-        "title": "Su ürünlerinin izinsiz yurt içine sokulması - 3000 dahil, 5000 adede kadar",
+        "id": "m_14",
+        "title": "3000 adet dahil 5000 adete kadar",
         "details": {
-          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması - 3000 dahil, 5000 adede kadar",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması",
+          "Durum/Seçenek": "3000 adet dahil 5000 adete kadar",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "142.217 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "5_17",
-        "title": "Su ürünlerinin izinsiz yurt içine sokulması - 5000 adet dahil ve fazla",
+        "id": "m_15",
+        "title": "5000 adet dahil ve daha fazlası",
         "details": {
-          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması - 5000 adet dahil ve fazla",
-          "Dayanak": "K.25-3 / 36-m",
+          "İhlal": "Su ürünlerinin izinsiz yurt içine sokulması",
+          "Durum/Seçenek": "5000 adet dahil ve daha fazlası",
+          "Dayanak": "K.25-3 · Y.- · 36/m",
           "İPC": "189.630 TL",
-          "El koyma": "Ürün: Evet; araç dahil istihsal vasıtası kamuya geçirilir"
-        }
-      }
-    ],
-    "sub": [
-      {
-        "id": "5.1",
-        "title": "5.1 BAGİS İhlalleri",
-        "items": [
-          {
-            "id": "5.1_0",
-            "title": "BAGİS’in afet vb. durumda işlevsiz olduğunu 15 gün içinde bildirmeme",
-            "details": {
-              "İhlal": "BAGİS’in afet vb. durumda işlevsiz olduğunu 15 gün içinde bildirmeme",
-              "Dayanak": "K.Ek-4 / Y.13 / BAGİS T.9/3 / 36-p",
-              "`<12 m`": "9.473",
-              "`12-22 m`": "15.098",
-              "`22 m ve üzeri`": "22.647"
-            }
-          },
-          {
-            "id": "5.1_1",
-            "title": "BAGİS arızasını 12 saat içinde bildirmeme",
-            "details": {
-              "İhlal": "BAGİS arızasını 12 saat içinde bildirmeme",
-              "Dayanak": "K.Ek-4 / Y.13 / BAGİS T.8/1 / 36-p",
-              "`<12 m`": "16.106",
-              "`12-22 m`": "32.212",
-              "`22 m ve üzeri`": "48.318"
-            }
-          },
-          {
-            "id": "5.1_2",
-            "title": "BAGİS cihazını 15 gün içinde teslim etmeme",
-            "details": {
-              "İhlal": "BAGİS cihazını 15 gün içinde teslim etmeme",
-              "Dayanak": "K.Ek-4 / Y.13 / BAGİS T.9/1 / 36-p",
-              "`<12 m`": "47.397",
-              "`12-22 m`": "94.397",
-              "`22 m ve üzeri`": "142.191"
-            }
-          },
-          {
-            "id": "5.1_3",
-            "title": "BAGİS cihazını takmama / çalıştırmama",
-            "details": {
-              "İhlal": "BAGİS cihazını takmama / çalıştırmama",
-              "Dayanak": "K.Ek-4 / Y.13 / BAGİS T.7/1 / 36-p",
-              "`<12 m`": "47.397",
-              "`12-22 m`": "94.397",
-              "`22 m ve üzeri`": "142.191"
-            }
-          },
-          {
-            "id": "5.1_4",
-            "title": "BAGİS arızası giderilmeden avcılık yapma",
-            "details": {
-              "İhlal": "BAGİS arızası giderilmeden avcılık yapma",
-              "Dayanak": "K.Ek-4 / Y.13 / BAGİS T.8/2 / 36-p",
-              "`<12 m`": "16.106",
-              "`12-22 m`": "32.212",
-              "`22 m ve üzeri`": "22.647"
-            }
-          }
-        ],
-        "content": ""
-      }
-    ],
-    "content": ""
-  },
-  {
-    "id": "6",
-    "title": "6. Karaya Çıkış, Uluslararası Sular, Balıklandırma ve Nakil Belgeleri",
-    "items": [
-      {
-        "id": "6_0",
-        "title": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak - <12 m",
-        "details": {
-          "İhlal": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak - <12 m",
-          "Dayanak": "K.Ek-5 / Y.16/15 / T.49/26 / 36-r",
-          "İPC": "9.473 TL",
-          "El koyma": "Belirtilmemiş"
+          "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
+          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "6_1",
-        "title": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak - 12-22 m",
-        "details": {
-          "İhlal": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak - 12-22 m",
-          "Dayanak": "K.Ek-5 / Y.16/15 / T.49/26 / 36-r",
-          "İPC": "28.433 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_2",
-        "title": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak - ≥22 m",
-        "details": {
-          "İhlal": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak - ≥22 m",
-          "Dayanak": "K.Ek-5 / Y.16/15 / T.49/26 / 36-r",
-          "İPC": "47.397 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_3",
-        "title": "Uluslararası sularda izinsiz avcılık - ruhsatlı gemi <12 m",
-        "details": {
-          "İhlal": "Uluslararası sularda izinsiz avcılık - ruhsatlı gemi <12 m",
-          "Dayanak": "K.Ek-7 / Y.18 / T.50/4 / 36-t",
-          "İPC": "94.811 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_4",
-        "title": "Uluslararası sularda izinsiz avcılık - ruhsatlı gemi 12-22 m",
-        "details": {
-          "İhlal": "Uluslararası sularda izinsiz avcılık - ruhsatlı gemi 12-22 m",
-          "Dayanak": "K.Ek-7 / Y.18 / T.50/4 / 36-t",
-          "İPC": "189.630 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_5",
-        "title": "Uluslararası sularda izinsiz avcılık - ruhsatlı gemi ≥22 m",
-        "details": {
-          "İhlal": "Uluslararası sularda izinsiz avcılık - ruhsatlı gemi ≥22 m",
-          "Dayanak": "K.Ek-7 / Y.18 / T.50/4 / 36-t",
-          "İPC": "284.449 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_6",
-        "title": "Uluslararası sularda izinsiz avcılık - ruhsatsız gemi <12 m",
-        "details": {
-          "İhlal": "Uluslararası sularda izinsiz avcılık - ruhsatsız gemi <12 m",
-          "Dayanak": "K.Ek-7 / Y.18 / T.50/4 / 36-t",
-          "İPC": "189.630 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_7",
-        "title": "Uluslararası sularda izinsiz avcılık - ruhsatsız gemi 12-22 m",
-        "details": {
-          "İhlal": "Uluslararası sularda izinsiz avcılık - ruhsatsız gemi 12-22 m",
-          "Dayanak": "K.Ek-7 / Y.18 / T.50/4 / 36-t",
-          "İPC": "379.267 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_8",
-        "title": "Uluslararası sularda izinsiz avcılık - ruhsatsız gemi ≥22 m",
-        "details": {
-          "İhlal": "Uluslararası sularda izinsiz avcılık - ruhsatsız gemi ≥22 m",
-          "Dayanak": "K.Ek-7 / Y.18 / T.50/4 / 36-t",
-          "İPC": "474.079 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_9",
-        "title": "İzinsiz balıklandırma - gerçek kişi",
-        "details": {
-          "İhlal": "İzinsiz balıklandırma - gerçek kişi",
-          "Dayanak": "K.Ek-6 / Y.16/10 / T.49/22 / 36-s",
-          "İPC": "94.811 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_10",
-        "title": "İzinsiz balıklandırma - tüzel kişi",
-        "details": {
-          "İhlal": "İzinsiz balıklandırma - tüzel kişi",
-          "Dayanak": "K.Ek-6 / Y.16/10 / T.49/22 / 36-s",
-          "İPC": "189.630 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_11",
-        "title": "Nakil belgesi bulundurmamak",
-        "details": {
-          "İhlal": "Nakil belgesi bulundurmamak",
-          "Dayanak": "K.Ek-5 / Y.16/15 / T.46 / 36-r",
-          "İPC": "18.954 TL",
-          "El koyma": "Belirtilmemiş"
-        }
-      },
-      {
-        "id": "6_12",
-        "title": "Nakil belgesini istenilen şekil ve zamanda göndermemek",
-        "details": {
-          "İhlal": "Nakil belgesini istenilen şekil ve zamanda göndermemek",
-          "Dayanak": "K.Ek-5 / Y.16/15 / T.46 / 36-r",
-          "İPC": "9.473 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Hayır"
-        }
-      },
-      {
-        "id": "6_13",
+        "id": "m_16",
         "title": "Kotaya tabi ürünün belgesiz nakli",
         "details": {
           "İhlal": "Kotaya tabi ürünün belgesiz nakli",
-          "Dayanak": "K.25 / Y.16/15 / T.46/4 / 36-m",
+          "Dayanak": "K.25 · Y.16/15 · T.46/4 · 36/m",
           "İPC": "47.397 TL",
-          "El koyma": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "6_14",
-        "title": "Hedef dışı türün E-Seyirde bildirilmemesi",
-        "details": {
-          "İhlal": "Hedef dışı türün E-Seyirde bildirilmemesi",
-          "Dayanak": "K.28 / Y.16/15 / T.18-b / 36-n",
-          "İPC": "<12: 6.627; 12-22: 13.254; ≥22: 19.881 TL",
-          "El koyma": "Hayır / Hayır"
-        }
-      },
-      {
-        "id": "6_15",
-        "title": "Yetiştiricilik tesislerine mesafe yasağına uymama",
-        "details": {
-          "İhlal": "Yetiştiricilik tesislerine mesafe yasağına uymama",
-          "Dayanak": "K.23-b / Y.16/14 / T.49/15 / 36-k",
-          "İPC": "<12: 23.692; 12-22: 47.384; ≥22: 71.076 TL",
-          "El koyma": "Ürün: Evet; istihsal vasıtası: Evet (gemi hariç)"
+          "El Koyma": "Ürün: Evet; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       }
     ],
     "sub": [],
-    "content": ""
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "7",
-    "title": "7. İstihsal Hakkı Kiralama İhlalleri",
+    "id": "n",
+    "title": "N) Bilgi/Belge ve Hedef Dışı Av Bildirim İhlalleri",
     "items": [
       {
-        "id": "7_0",
-        "title": "Avcılığa ait güncel kayıtların tutulmaması veya bulundurulmaması",
+        "id": "n_0",
+        "title": "Bilgi belge vermemek (seyir defteri)",
         "details": {
-          "İhlal": "Avcılığa ait güncel kayıtların tutulmaması veya bulundurulmaması",
-          "Dayanak": "K.4 / Su Ürünleri Üretiminde Kiralama Yön. 13/1 / 36-b",
-          "İPC": "23.692 TL"
+          "İhlal": "Bilgi belge vermemek (seyir defteri)",
+          "Dayanak": "K.28 · Y.16/14 · T.48/10 · 36/n",
+          "İPC": "<12 m: 6.627 TL; 12–<22 m: 13.254 TL; ≥22 m: 19.881 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       },
       {
-        "id": "7_1",
-        "title": "İstihsal alanının şeklinin/özelliğinin değiştirilmesi veya değiştirilmesine izin verilmesi",
+        "id": "n_1",
+        "title": "Hedef Dışı Türün E-Seyirde Bildirilmemesi",
         "details": {
-          "İhlal": "İstihsal alanının şeklinin/özelliğinin değiştirilmesi veya değiştirilmesine izin verilmesi",
-          "Dayanak": "K.4 / Kiralama Yön. 13/1 / 36-b",
-          "İPC": "94.811 TL"
-        }
-      },
-      {
-        "id": "7_2",
-        "title": "Kira sonunda veya sözleşme feshedildiğinde yerin istenilen şartlarda teslim edilmemesi",
-        "details": {
-          "İhlal": "Kira sonunda veya sözleşme feshedildiğinde yerin istenilen şartlarda teslim edilmemesi",
-          "Dayanak": "K.4 / Kiralama Yön. 13/1 / 36-b",
-          "İPC": "142.217 TL"
-        }
-      },
-      {
-        "id": "7_3",
-        "title": "Teknik şartnamedeki miktardan %10'a kadar fazla avcılık yaptırılması",
-        "details": {
-          "İhlal": "Teknik şartnamedeki miktardan %10'a kadar fazla avcılık yaptırılması",
-          "Dayanak": "K.4 / Kiralama Yön. 13/1 / 36-b",
-          "İPC": "47.397 TL"
-        }
-      },
-      {
-        "id": "7_4",
-        "title": "Teknik şartnamedeki miktardan %10 dahil %50'ye kadar fazla avcılık yaptırılması",
-        "details": {
-          "İhlal": "Teknik şartnamedeki miktardan %10 dahil %50'ye kadar fazla avcılık yaptırılması",
-          "Dayanak": "K.4 / Kiralama Yön. 13/1 / 36-b",
-          "İPC": "94.811 TL"
-        }
-      },
-      {
-        "id": "7_5",
-        "title": "Teknik şartnamedeki miktardan %50 dahil fazla avcılık yaptırılması",
-        "details": {
-          "İhlal": "Teknik şartnamedeki miktardan %50 dahil fazla avcılık yaptırılması",
-          "Dayanak": "K.4 / Kiralama Yön. 13/1 / 36-b",
-          "İPC": "189.630 TL"
-        }
-      },
-      {
-        "id": "7_6",
-        "title": "Kiracıların kiralama haklarını başkalarına devretmesi",
-        "details": {
-          "İhlal": "Kiracıların kiralama haklarını başkalarına devretmesi",
-          "Dayanak": "K.4 / Kiralama Yön. 13/1 / 36-b",
-          "İPC": "237.034 TL"
+          "İhlal": "Hedef Dışı Türün E-Seyirde Bildirilmemesi",
+          "Dayanak": "K.28 · Y.16/15 · T.18-b · 36/n",
+          "İPC": "<12 m: 6.627 TL; 12–<22 m: 13.254 TL; ≥22 m: 19.881 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Hayır",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       }
     ],
     "sub": [],
-    "content": ""
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "8",
-    "title": "8. Balıkçı Barınakları Mevzuatına Aykırılıklar",
+    "id": "o",
+    "title": "O) Bilimsel/Teknik Çalışma İzni İhlali",
     "items": [
       {
-        "id": "8_0",
-        "title": "Balıkçı barınaklarında bağlama planı yapılmaması",
+        "id": "o_0",
+        "title": "Yasak vasıta ve usullerle izinsiz ilmi teknik çalışma yapmak",
         "details": {
-          "İhlal": "Balıkçı barınaklarında bağlama planı yapılmaması",
-          "Dayanak": "K.17 / Balıkçı Barınakları Yön.9 / 36-f",
-          "İPC": "23.692 TL"
-        }
-      },
-      {
-        "id": "8_1",
-        "title": "Balıkçı barınaklarında ticari amaçla su ürünleri avcılığına izin verilmesi",
-        "details": {
-          "İhlal": "Balıkçı barınaklarında ticari amaçla su ürünleri avcılığına izin verilmesi",
-          "Dayanak": "K.17 / Balıkçı Barınakları Yön.9 / 36-f",
-          "İPC": "23.692 TL"
-        }
-      },
-      {
-        "id": "8_2",
-        "title": "Balıkçı barınaklarında mevzuata aykırı yapı yapılması",
-        "details": {
-          "İhlal": "Balıkçı barınaklarında mevzuata aykırı yapı yapılması",
-          "Dayanak": "K.17 / Balıkçı Barınakları Yön.13,19 / 36-f",
-          "İPC": "237.034 TL"
-        }
-      },
-      {
-        "id": "8_3",
-        "title": "Balıkçı barınağı ile alt/üst yapıların amaç dışı kullanılması veya kullandırılması",
-        "details": {
-          "İhlal": "Balıkçı barınağı ile alt/üst yapıların amaç dışı kullanılması veya kullandırılması",
-          "Dayanak": "K.17 / Balıkçı Barınakları Yön.13,19,9 / 36-f",
-          "İPC": "142.217 TL"
-        }
-      },
-      {
-        "id": "8_4",
-        "title": "Kiralanan barınak ve üst yapıların üçüncü şahıslara kiralanması, devredilmesi veya ortak alınması",
-        "details": {
-          "İhlal": "Kiralanan barınak ve üst yapıların üçüncü şahıslara kiralanması, devredilmesi veya ortak alınması",
-          "Dayanak": "K.17 / Balıkçı Barınakları Yön.8,9 / 36-f",
-          "İPC": "237.034 TL"
-        }
-      },
-      {
-        "id": "8_5",
-        "title": "Bakanlıkça belirtilen gemilerin barınaklardan yararlanmasına izin verilmemesi",
-        "details": {
-          "İhlal": "Bakanlıkça belirtilen gemilerin barınaklardan yararlanmasına izin verilmemesi",
-          "Dayanak": "K.17 / Balıkçı Barınakları Yön.8,9,4,19 / 36-f",
-          "İPC": "142.217 TL"
+          "İhlal": "Yasak vasıta ve usullerle izinsiz ilmi teknik çalışma yapmak",
+          "Dayanak": "K.29 · Y.16/9 · T.49/18 · 36/o",
+          "İPC": "8.048 TL",
+          "El Koyma": "Ürün: Hayır; vasıta: Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat bv. Zapt ve mülkiyeti kamuya geçirilir.",
+          "Uyarı/Not": "Yeni 08 rehberi bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
         }
       }
     ],
     "sub": [],
-    "content": ""
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "9",
-    "title": "9. Yetiştiricilik Tesisleri",
-    "items": [],
-    "sub": [
+    "id": "p",
+    "title": "P) BAGİS İhlalleri",
+    "items": [
       {
-        "id": "9.1",
-        "title": "9.1 İzinsiz Su Ürünleri Yetiştiricilik Tesisi Kurma",
-        "items": [
-          {
-            "id": "9.1_0",
-            "title": "Kuluçkahane - kapasite 1 milyondan az",
-            "details": {
-              "Kapasite": "Kuluçkahane - kapasite 1 milyondan az",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "94.811 TL"
-            }
-          },
-          {
-            "id": "9.1_1",
-            "title": "Kuluçkahane - 1 milyon dahil, 5 milyondan az",
-            "details": {
-              "Kapasite": "Kuluçkahane - 1 milyon dahil, 5 milyondan az",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "284.449 TL"
-            }
-          },
-          {
-            "id": "9.1_2",
-            "title": "Kuluçkahane - 5 milyon dahil, 10 milyondan az",
-            "details": {
-              "Kapasite": "Kuluçkahane - 5 milyon dahil, 10 milyondan az",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "474.079 TL"
-            }
-          },
-          {
-            "id": "9.1_3",
-            "title": "Kuluçkahane - 10 milyon dahil ve fazlası",
-            "details": {
-              "Kapasite": "Kuluçkahane - 10 milyon dahil ve fazlası",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "948.169 TL"
-            }
-          },
-          {
-            "id": "9.1_4",
-            "title": "Büyüme tesisi - 50 ton/yıl altı",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 50 ton/yıl altı",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "94.811 TL"
-            }
-          },
-          {
-            "id": "9.1_5",
-            "title": "Büyüme tesisi - 50 dahil, 250 ton/yıl altı",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 50 dahil, 250 ton/yıl altı",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "284.449 TL"
-            }
-          },
-          {
-            "id": "9.1_6",
-            "title": "Büyüme tesisi - 250 dahil, 500 ton/yıl altı",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 250 dahil, 500 ton/yıl altı",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "474.079 TL"
-            }
-          },
-          {
-            "id": "9.1_7",
-            "title": "Büyüme tesisi - 500 ton/yıl ve üzeri",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 500 ton/yıl ve üzeri",
-              "Dayanak": "K.13 / 36-e",
-              "İPC": "948.169 TL"
-            }
-          }
-        ],
-        "content": ""
+        "id": "p_0",
+        "title": "BAGİS'in afet vs. durumunda işlevsiz olduğunu 15 gün içinde bildirmeme",
+        "details": {
+          "İhlal": "BAGİS'in afet vs. durumunda işlevsiz olduğunu 15 gün içinde bildirmeme",
+          "Dayanak": "K.Ek madde - 4 · Y.13 · T.9/3 · 36/p",
+          "İPC": "<12 m: 9.473 TL; 12–<22 m: 15.098 TL; ≥22 m: 22.647 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
       },
       {
-        "id": "9.2",
-        "title": "9.2 Teknik Personel Bulundurmama",
-        "items": [
-          {
-            "id": "9.2_0",
-            "title": "Kuluçkahane <10 milyon / büyütme <500 ton-yıl",
-            "details": {
-              "Tesis kapasitesi": "Kuluçkahane <10 milyon / büyütme <500 ton-yıl",
-              "Dayanak": "K.13 / Y.20 / 36-e",
-              "İPC": "331.855 TL"
-            }
-          },
-          {
-            "id": "9.2_1",
-            "title": "Kuluçkahane ≥10 milyon / büyütme ≥500 ton-yıl",
-            "details": {
-              "Tesis kapasitesi": "Kuluçkahane ≥10 milyon / büyütme ≥500 ton-yıl",
-              "Dayanak": "K.13 / Y.20 / 36-e",
-              "İPC": "474.079 TL"
-            }
-          }
-        ],
-        "content": ""
+        "id": "p_1",
+        "title": "BAGİS arızasını bildirmeme (12 saat içinde)",
+        "details": {
+          "İhlal": "BAGİS arızasını bildirmeme (12 saat içinde)",
+          "Dayanak": "K.Ek madde - 4 · Y.13 · T.8/1 · 36/p",
+          "İPC": "<12 m: 16.106 TL; 12–<22 m: 32.212 TL; ≥22 m: 48.318 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
       },
       {
-        "id": "9.3",
-        "title": "9.3 Arıtma Sistemi Kurmama veya Çalıştırmama",
-        "items": [
-          {
-            "id": "9.3_0",
-            "title": "Kuluçkahane <5 milyon / büyütme <50 ton-yıl",
-            "details": {
-              "Tesis kapasitesi": "Kuluçkahane <5 milyon / büyütme <50 ton-yıl",
-              "Dayanak": "K.13 / Y.22 / 36 bendi: -",
-              "İPC": "47.397 TL"
-            }
-          },
-          {
-            "id": "9.3_1",
-            "title": "Kuluçkahane ≥5 milyon / büyütme ≥50 ton-yıl",
-            "details": {
-              "Tesis kapasitesi": "Kuluçkahane ≥5 milyon / büyütme ≥50 ton-yıl",
-              "Dayanak": "K.13 / Y.22 / 36 bendi: -",
-              "İPC": "474.079 TL"
-            }
-          }
-        ],
-        "content": ""
+        "id": "p_2",
+        "title": "BAGİS cihazını teslime etmeme (15 gün içinde)",
+        "details": {
+          "İhlal": "BAGİS cihazını teslime etmeme (15 gün içinde)",
+          "Dayanak": "K.Ek madde - 4 · Y.13 · T.9/1 · 36/p",
+          "İPC": "<12 m: 47.397 TL; 12–<22 m: 94.397 TL; ≥22 m: 142.191 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
       },
       {
-        "id": "9.4",
-        "title": "9.4 Su Ürünleri Yetiştiricilik Yönetmeliği Hükümlerine Aykırılık",
-        "items": [
-          {
-            "id": "9.4_0",
-            "title": "Kuluçkahane - kapasite 1 milyondan az",
-            "details": {
-              "Kapasite": "Kuluçkahane - kapasite 1 milyondan az",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "47.397 TL"
-            }
-          },
-          {
-            "id": "9.4_1",
-            "title": "Kuluçkahane - 1 milyon dahil, 5 milyondan az",
-            "details": {
-              "Kapasite": "Kuluçkahane - 1 milyon dahil, 5 milyondan az",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "189.630 TL"
-            }
-          },
-          {
-            "id": "9.4_2",
-            "title": "Kuluçkahane - 5 milyon dahil, 10 milyondan az",
-            "details": {
-              "Kapasite": "Kuluçkahane - 5 milyon dahil, 10 milyondan az",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "284.449 TL"
-            }
-          },
-          {
-            "id": "9.4_3",
-            "title": "Kuluçkahane - 10 milyon dahil ve fazlası",
-            "details": {
-              "Kapasite": "Kuluçkahane - 10 milyon dahil ve fazlası",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "474.079 TL"
-            }
-          },
-          {
-            "id": "9.4_4",
-            "title": "Büyüme tesisi - 50 ton/yıl altı",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 50 ton/yıl altı",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "47.397 TL"
-            }
-          },
-          {
-            "id": "9.4_5",
-            "title": "Büyüme tesisi - 50 dahil, 250 ton/yıl altı",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 50 dahil, 250 ton/yıl altı",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "189.630 TL"
-            }
-          },
-          {
-            "id": "9.4_6",
-            "title": "Büyüme tesisi - 250 dahil, 500 ton/yıl altı",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 250 dahil, 500 ton/yıl altı",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "284.449 TL"
-            }
-          },
-          {
-            "id": "9.4_7",
-            "title": "Büyüme tesisi - 500 ton/yıl ve üzeri",
-            "details": {
-              "Kapasite": "Büyüme tesisi - 500 ton/yıl ve üzeri",
-              "Dayanak": "K.13 / Yetiştiricilik Yön. uygun madde / 36-e",
-              "İPC": "474.079 TL"
-            }
-          }
-        ],
-        "content": ""
+        "id": "p_3",
+        "title": "BAGİS cihazını takmama, çalıştırmama",
+        "details": {
+          "İhlal": "BAGİS cihazını takmama, çalıştırmama",
+          "Dayanak": "K.Ek madde - 4 · Y.13 · T.7/1 · 36/p",
+          "İPC": "<12 m: 47.397 TL; 12–<22 m: 94.397 TL; ≥22 m: 142.191 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
       },
       {
-        "id": "9.5",
-        "title": "9.5 Kiralanan Su Miktarı / Su Alanının Aşılması",
-        "items": [
-          {
-            "id": "9.5_0",
-            "title": "%10'a kadar fazla su veya su alanı kullanılması",
-            "details": {
-              "İhlal": "%10'a kadar fazla su veya su alanı kullanılması",
-              "Dayanak": "K.13 / Su Ürünleri Üretiminde Kiralama Yön.13/3 / 36-e",
-              "İPC": "47.397 TL"
-            }
-          },
-          {
-            "id": "9.5_1",
-            "title": "%10 dahil, %30'a kadar fazla kullanılması",
-            "details": {
-              "İhlal": "%10 dahil, %30'a kadar fazla kullanılması",
-              "Dayanak": "K.13 / Kiralama Yön.13/3 / 36-e",
-              "İPC": "94.811 TL"
-            }
-          },
-          {
-            "id": "9.5_2",
-            "title": "%30 dahil, %60'a kadar fazla kullanılması",
-            "details": {
-              "İhlal": "%30 dahil, %60'a kadar fazla kullanılması",
-              "Dayanak": "K.13 / Kiralama Yön.13/3 / 36-e",
-              "İPC": "189.630 TL"
-            }
-          },
-          {
-            "id": "9.5_3",
-            "title": "%60 dahil fazla kullanılması",
-            "details": {
-              "İhlal": "%60 dahil fazla kullanılması",
-              "Dayanak": "K.13 / Kiralama Yön.13/3 / 36-e",
-              "İPC": "237.034 TL"
-            }
-          }
-        ],
-        "content": ""
+        "id": "p_4",
+        "title": "BAGİS arızası giderilmeden avcılık yapma",
+        "details": {
+          "İhlal": "BAGİS arızası giderilmeden avcılık yapma",
+          "Dayanak": "K.Ek madde - 4 · Y.13 · T.8/2 · 36/p",
+          "İPC": "<12 m: 16.106 TL; 12–<22 m: 32.212 TL; ≥22 m: 22.647 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
       }
     ],
-    "content": ""
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "10",
-    "title": "10. Saha İçin Hızlı Kontrol Sırası",
-    "items": [],
+    "id": "r",
+    "title": "R) Karaya Çıkış ve Nakil Belgesi İhlalleri",
+    "items": [
+      {
+        "id": "r_0",
+        "title": "Tam boyu 12 m'den küçük balıkçı gemileri",
+        "details": {
+          "İhlal": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak",
+          "Durum/Seçenek": "Tam boyu 12 m'den küçük balıkçı gemileri",
+          "Dayanak": "K.Ek madde - 5 · Y.16/15 · T.49/26 · 36/r",
+          "İPC": "9.473 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "r_1",
+        "title": "Tam boyu 12 m. dahil, 22 m'den küçük balıkçı tekneleri",
+        "details": {
+          "İhlal": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak",
+          "Durum/Seçenek": "Tam boyu 12 m. dahil, 22 m'den küçük balıkçı tekneleri",
+          "Dayanak": "K.Ek madde - 5 · Y.16/15 · T.49/26 · 36/r",
+          "İPC": "28.433 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "r_2",
+        "title": "Tam boyu 22m dahil ve daha büyük balıkçı gemileri",
+        "details": {
+          "İhlal": "İstihsal edilen ürünü karaya çıkış noktalarından boşaltmamak",
+          "Durum/Seçenek": "Tam boyu 22m dahil ve daha büyük balıkçı gemileri",
+          "Dayanak": "K.Ek madde - 5 · Y.16/15 · T.49/26 · 36/r",
+          "İPC": "47.397 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "r_3",
+        "title": "Nakil belgesi bulundurmamak",
+        "details": {
+          "İhlal": "Nakil belgesi bulundurmamak",
+          "Dayanak": "K.Ek madde - 5 · Y.16/15 · T.46 · 36/r",
+          "İPC": "18.954 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "r_4",
+        "title": "Nakil belgesini istenilen şekil ve zamanda göndermemek",
+        "details": {
+          "İhlal": "Nakil belgesini istenilen şekil ve zamanda göndermemek",
+          "Dayanak": "K.Ek madde - 5 · Y.16/15 · T.46 · 36/r",
+          "İPC": "9.473 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
     "sub": [],
-    "content": "▪️ <b>Ruhsatı kontrol et:</b> kişi ruhsatı, gemi ruhsatı, geçerlilik, ruhsat kodu/plaka.\n▪️ <b>İzinleri kontrol et:</b> av miktarı, bölge, av aracı ve özel izin belgeleri.\n▪️ <b>Av aracını kontrol et:</b> gırgır, trol, algarna, misina ağı, tırıvırı, sürütme ağı, ikinci av aracı, markalama/şamandıra.\n▪️ <b>Yer ve zamanı kontrol et:</b> yasak dönem, derinlik, mansap 500 m, liman/barınak/çekek yeri, yetiştiricilik tesisi mesafesi.\n▪️ <b>Ürünü kontrol et:</b> yasak tür, yasak boy, kalkan/palamut/kum midyesi/deniz salyangozu özel kuralları.\n▪️ <b>Kayıt ve bildirimleri kontrol et:</b> seyir defteri, E-Seyir, nakil belgesi, BAGİS.\n▪️ <b>El koymayı ayrı değerlendir:</b> ürün ile istihsal vasıtası için farklı sonuçlar vardır.\n▪️ <b>Tekrar durumunu sorgula:</b> ilgili satırlarda 2 yıl içinde tekrar cezanın iki katına ve ruhsatın geri alınmasına/iptaline yol açabilir."
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   },
   {
-    "id": "11",
-    "title": "11. Dikkat Gerektiren Değerler",
-    "items": [],
+    "id": "s",
+    "title": "S) İzinsiz Balıklandırma",
+    "items": [
+      {
+        "id": "s_0",
+        "title": "Gerçek kişi",
+        "details": {
+          "İhlal": "İzinsiz Balıklandırma Yapmak",
+          "Durum/Seçenek": "Gerçek kişi",
+          "Dayanak": "K.Ek madde - 6 · Y.16/10 · T.49/22 · 36/s",
+          "İPC": "94.811 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "s_1",
+        "title": "Tüzel kişi",
+        "details": {
+          "İhlal": "İzinsiz Balıklandırma Yapmak",
+          "Durum/Seçenek": "Tüzel kişi",
+          "Dayanak": "K.Ek madde - 6 · Y.16/10 · T.49/22 · 36/s",
+          "İPC": "189.630 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
     "sub": [],
-    "content": "▪️ <b>Yasak tür</b> ve <b>yasak boy</b> tablolarında gırgır için <b>56.640 TL</b>, 22 m ve üzeri tekne için <b>71.076 TL</b> değerleri yer almaktadır.\n▪️ BAGİS “arıza giderilmeden avcılık” satırında 22 m ve üzeri için <b>22.647 TL</b> yer almaktadır; bu değer 12-22 m için belirtilen <b>32.212 TL</b> tutarından düşüktür.\n▪️ BAGİS tablosunda bazı 12-22 m ve 22 m üzeri tutarlar <b>94.397 TL</b> ve <b>142.191 TL</b> olarak yazılmıştır; bunlar aynen aktarılmıştır.\n▪️ Trol avcılığına ilişkin özel yaptırım metninde <b>“5000-1000 gün adli para cezası”</b> ifadesi yer almaktadır.\n▪️ Belgenin PDF çıktısı yatay tablonun iki ayrı sayfa grubuna bölünmüş durumdadır. Bu rehberde karşılıklı sayfalar birleştirilerek ihlal, ceza ve el koyma bilgileri aynı satırda gösterilmiştir."
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "t",
+    "title": "T) Uluslararası Sularda İzinsiz Avcılık",
+    "items": [
+      {
+        "id": "t_0",
+        "title": "12 m'den küçük (ruhsatlı balıkçı gemisi)",
+        "details": {
+          "İhlal": "Uluslararası sularda izinsiz avcılık yapmak",
+          "Durum/Seçenek": "12 m'den küçük (ruhsatlı balıkçı gemisi)",
+          "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
+          "İPC": "94.811 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "t_1",
+        "title": "12 m dahil, 22 m'den küçük (ruhsatlı balıkçı gemisi)",
+        "details": {
+          "İhlal": "Uluslararası sularda izinsiz avcılık yapmak",
+          "Durum/Seçenek": "12 m dahil, 22 m'den küçük (ruhsatlı balıkçı gemisi)",
+          "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
+          "İPC": "189.630 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "t_2",
+        "title": "22 m dahil ve daha büyük (ruhsatlı balıkçı gemisi)",
+        "details": {
+          "İhlal": "Uluslararası sularda izinsiz avcılık yapmak",
+          "Durum/Seçenek": "22 m dahil ve daha büyük (ruhsatlı balıkçı gemisi)",
+          "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
+          "İPC": "284.449 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "t_3",
+        "title": "12 m'den küçük (ruhsatsız gemi)",
+        "details": {
+          "İhlal": "Uluslararası sularda izinsiz avcılık yapmak",
+          "Durum/Seçenek": "12 m'den küçük (ruhsatsız gemi)",
+          "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
+          "İPC": "189.630 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "t_4",
+        "title": "12 m dahil, 22 m'den küçük (ruhsatsız gemi)",
+        "details": {
+          "İhlal": "Uluslararası sularda izinsiz avcılık yapmak",
+          "Durum/Seçenek": "12 m dahil, 22 m'den küçük (ruhsatsız gemi)",
+          "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
+          "İPC": "379.267 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "t_5",
+        "title": "22 m dahil ve daha büyük (ruhsatsız gemi)",
+        "details": {
+          "İhlal": "Uluslararası sularda izinsiz avcılık yapmak",
+          "Durum/Seçenek": "22 m dahil ve daha büyük (ruhsatsız gemi)",
+          "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
+          "İPC": "474.079 TL",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+  },
+  {
+    "id": "-",
+    "title": "Diğer Excel Kayıtları",
+    "items": [
+      {
+        "id": "-_0",
+        "title": "Kapasitesi kuluçkahanede 5 milyondan az - büyütmede 50 ton/yıl'dan az",
+        "details": {
+          "İhlal": "Artıma sistemi kurmama veya çalıştırmama",
+          "Durum/Seçenek": "Kapasitesi kuluçkahanede 5 milyondan az - büyütmede 50 ton/yıl'dan az",
+          "Dayanak": "K.13 · Y.22 · T.- · 36/-",
+          "İPC": "47.397 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      },
+      {
+        "id": "-_1",
+        "title": "Kapasitesi kuluçkahanede 5 milyon dahil fazla - büyütmede 50 ton/yıl dahil fazla",
+        "details": {
+          "İhlal": "Artıma sistemi kurmama veya çalıştırmama",
+          "Durum/Seçenek": "Kapasitesi kuluçkahanede 5 milyon dahil fazla - büyütmede 50 ton/yıl dahil fazla",
+          "Dayanak": "K.13 · Y.22 · T.- · 36/-",
+          "İPC": "474.079 TL",
+          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Kaynak": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+        }
+      }
+    ],
+    "sub": [],
+    "content": "",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
   }
 ]

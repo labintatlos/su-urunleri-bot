@@ -1,227 +1,426 @@
 [
   {
     "name": "Akdeniz foku",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Akdeniz mercanı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Altı yarıklı bozcamgöz",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Batman bantlı çöpçü balığı",
+    "commercial": true,
+    "amateur": true,
+    "source": "61",
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Beyaz çalı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Beyaz deniz dalı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Beyaz yüzgeçli köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Büyük beyaz köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Büyük camgöz (güneşlenen) köpekbalığı",
+    "name": "Büyük camgöz (güneşlenen)",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Camgöz",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Çekiç köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Çivili köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Denizatı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Deniz kaplumbağaları",
+    "name": "Deniz alası",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Deniz çayırları",
+    "name": "Deniz kaplumbağaları (4 tür)",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Deniz çayırları (2 tür)",
+    "commercial": true,
+    "amateur": true,
+    "source": "61",
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Dikburun harharyas",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Deniz kulağı",
+    "name": "Deniz kulağı (2 tür)",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Dikenli vatoz",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Dikenli keler",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Domuz köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "İpeksi köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "İri gözlü sapan köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kazıkkuyruk",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Keler",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kemane",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kırmızı mercan",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kırmızı yıldız",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Kum köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Lekeli keler",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Mahmuzlu camgöz",
+    "name": "Leopar sazanı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Mantalar",
+    "name": "Mahmuzlu camgöz (2 tür)",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Mantalar (3 tür)",
+    "commercial": true,
+    "amateur": true,
+    "source": "61",
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mavi köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
-    "name": "Maya",
+    "name": "Maya (yengeç)",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mersin balıkları",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mersin morinası",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Minare",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mor deniz dalı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Mühreler",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Orfoz",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Pina",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sapan köpekbalığı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sarı deniz dalı",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Sivriburun harharyas",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Siyah mercan",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Uzun kemane",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Yağ balığı",
+    "commercial": true,
+    "amateur": true,
+    "source": "61",
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Yağlı balık",
+    "commercial": true,
+    "amateur": true,
+    "source": "61",
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
     "name": "Yunus ve Balinalar",
+    "commercial": true,
+    "amateur": true,
     "source": "61",
-    "article": 16
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Alakır alası",
+    "commercial": false,
+    "amateur": true,
+    "source": "62",
+    "article": 6,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Ticari deniz süngerleri",
+    "commercial": false,
+    "amateur": true,
+    "source": "62",
+    "article": 6,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Yılan balığı",
+    "commercial": false,
+    "amateur": true,
+    "source": "62",
+    "article": 6,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   }
 ]

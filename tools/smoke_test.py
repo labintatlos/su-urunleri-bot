@@ -64,6 +64,41 @@ def check_source_integrity():
     print(f'sources {len(canonical)} Markdown + {len(manifest) - len(canonical)} diğer: verified')
 
 
+def check_structured_data():
+    import rebuild_structured_data
+    stale = []
+    for name, value in rebuild_structured_data.build_outputs().items():
+        if (ADDON / 'data' / name).read_bytes() != rebuild_structured_data.dump(value):
+            stale.append(name)
+    if stale:
+        raise AssertionError('Yeni kaynaklara göre güncel olmayan JSON verileri: ' + ', '.join(stale))
+    print('structured data: canonical source build verified')
+
+
+def check_dataset_migration(work):
+    """6.0.14 ve öncesindeki tür tabloları yerinde yükseltilebilmeli."""
+    sys.path.insert(0, str(ADDON))
+    import db
+    migration_db = work / 'migration.db'
+    with sqlite3.connect(migration_db) as con:
+        con.executescript('''
+            CREATE TABLE meta(k TEXT PRIMARY KEY, v TEXT);
+            INSERT INTO meta VALUES('dataset', 'v6');
+            CREATE TABLE commercial_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, min_cm REAL, min_kg REAL, time_bans TEXT, article_time INTEGER, search_text TEXT);
+            CREATE TABLE amateur_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, min_cm REAL, min_kg REAL, limit_text TEXT, time_bans TEXT, search_text TEXT);
+            CREATE TABLE prohibited_species(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, search_text TEXT);
+        ''')
+    db.DB_PATH = migration_db
+    db.init_db()
+    with sqlite3.connect(migration_db) as con:
+        counts = [con.execute(f'SELECT COUNT(*) FROM {table}').fetchone()[0] for table in
+                  ('commercial_species', 'amateur_species', 'prohibited_species')]
+        dataset = con.execute("SELECT v FROM meta WHERE k='dataset'").fetchone()[0]
+    if dataset != db.DATASET or counts != [65, 54, 53]:
+        raise AssertionError(f'Veri kümesi geçişi başarısız: dataset={dataset}, counts={counts}')
+    print(f'dataset migration {dataset}: verified ({counts})')
+
+
 def call(path, body=None):
     req = urllib.request.Request(BASE + path, data=None if body is None else json.dumps(body).encode(),
                                  headers={'X-Requested-With': 'SuUrunleri', 'Content-Type': 'application/json'})
@@ -81,7 +116,9 @@ def text_of(view):
 
 def main():
     check_source_integrity()
+    check_structured_data()
     work = Path(tempfile.mkdtemp(prefix='suurunleri_smoke_'))
+    check_dataset_migration(work)
     env = dict(os.environ, WEB_PORT=str(WEB_PORT), INGRESS_PORT=str(INGRESS_PORT), GEMINI_API_KEY='',
                PYTHONIOENCODING='utf-8', PYTHONDONTWRITEBYTECODE='1')
     log_path = work / 'server.log'
