@@ -143,6 +143,15 @@ hem kayıtlı durum yüklenirken Marmara'ya çevrilir.
 Ara adım (6.0.21): Pratik Ceza Rehberi tablolarından da Kaynak sütunu
 kaldırıldı; `smoke_test.py` iki rehberde de Kaynak sütunu kalmadığını denetler.
 
+Ara adım (6.0.22): Kullanıcının isteğiyle görsel/arayüz cilası: ekran
+içeriği (`.block`, `.row`) her render'da yumuşak yükselerek belirir, bildirim
+ve bekleme katmanı animasyonlu açılır, düğmelerde masaüstünde ince bir hover
+gölgesi var (`refresh.css`). Aynı `rise` eğrisi Görev Maliyet ve Aile Bütçe
+sitelerinde de kullanılıyor; üçü arasında ortak bir hareket dili kuruldu.
+`yerel/visual_check.py` benzeri bir betikle telefon genişliğinde açık/koyu
+temada ana sayfa, tablo ekranı, hesap menüsü ve bildirim görsel olarak
+doğrulandı (yerel; depoya eklenmedi).
+
 Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
 `Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız
 büyüyen kilit sözlüğü ve eşzamanlı scrypt bellek tüketimi düzeltildi. Modem ve

@@ -103,6 +103,25 @@ label input:not([type=checkbox]), label select, label textarea { background: var
 .auth .note { font-size: 13px; }
 .auth .primary { margin-top: 5px; }
 .toast { border-radius: 12px; border: 1px solid #48626b; }
+/* ── Geçiş ve bildirim animasyonları ───────────────────────────────────
+   Ekranlar arası geçişte içerik yumuşak yükselerek belirir (app.js her
+   render'da .block ve .row öğelerini yeniden oluşturur, bu yüzden animasyon
+   her ekran değişiminde tekrar oynar). Görev Maliyet ve Aile Bütçe
+   sitelerindeki `rise` hareketiyle aynı eğri kullanılır. */
+@keyframes rise { from { opacity: 0; transform: translateY(9px); } }
+/* .toast yatayda transform: translateX(-50%) ile ortalanır; rise'ı olduğu
+   gibi kullanmak bu ofseti ezip başlangıç karesinde kaymaya yol açar. */
+@keyframes toast-rise { from { opacity: 0; transform: translate(-50%, 9px); } }
+@keyframes fade { from { opacity: 0; } }
+.screen .block, #buttons .row { animation: rise .3s cubic-bezier(.2, .8, .2, 1) both; }
+.toast { animation: toast-rise .22s cubic-bezier(.2, .8, .2, 1) both; }
+.busy { animation: fade .15s ease-out; }
+.busy-card { animation: rise .2s cubic-bezier(.2, .8, .2, 1) both; }
+@media (hover: hover) {
+  .btn:not(.tool-card):hover { box-shadow: 0 4px 14px rgba(16, 46, 56, .12); }
+  .btn.primary:hover, .btn.accent:hover { box-shadow: 0 4px 14px rgba(8, 126, 115, .3); }
+}
+
 @media (min-width: 1100px) { .topbar { grid-template-columns: minmax(200px, 1fr) minmax(0, 650px) minmax(130px, 1fr); gap: 28px; } }
 @media (max-width: 1000px) {
   .auth { gap: 28px; padding: 30px; }
