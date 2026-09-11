@@ -1,6 +1,6 @@
 name: "Su Ürünleri Denetim Asistanı"
 description: "Deniz görev alanı su ürünleri denetimi rehberi — kullanıcı adı ve şifreyle açılan web sitesi"
-version: "6.0.12"
+version: "6.0.13"
 slug: "su_urunleri_bot"
 url: "https://github.com/labintatlos/su-urunleri-bot"
 init: false

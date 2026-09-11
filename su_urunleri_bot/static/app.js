@@ -171,6 +171,27 @@
     clipboard: 'M9 5H5v17h14V5h-4M9 3h6v5H9V3Zm-1 9h8m-8 5h6',
     scales: 'M12 3v18M7 21h10M3 7h18M6 7l-4 8h8L6 7Zm12 0-4 8h8l-4-8Z',
     shield: 'M12 2l8 4v7c0 5-8 9-8 9s-8-4-8-9V6l8-4Zm-4 10 3 3 5-6',
+    // Ekran başlıklarında ve düğmelerde emoji yerine kullanılan ek simgeler
+    // (bkz. EMOJI_ICON / iconFor) — işletim sistemine göre değişmeyen tutarlı
+    // bir görünüm için; dış servise ihtiyaç duymaz.
+    home: 'M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10',
+    back: 'M19 12H5M11 18l-6-6 6-6',
+    arrowRight: 'M5 12h14M13 6l6 6-6 6',
+    check: 'M20 6 9 17l-5-5',
+    close: 'M18 6 6 18M6 6l12 12',
+    circle: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z',
+    rod: 'M4 20 18 6M17 5l2 2M9 15a3 3 0 1 1-4.24 4.24',
+    alert: 'M12 3 2 20h20L12 3ZM12 9v5M12 17h.01',
+    search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14ZM21 21l-4.3-4.3',
+    barChart: 'M4 20V10M10 20V4M16 20v-6M2 20h20',
+    waves: 'M2 12c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0M2 18c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0',
+    package: 'M21 8 12 3 3 8v8l9 5 9-5ZM3 8l9 5 9-5M12 13v8',
+    calendar: 'M4 8h16M6 4v4M18 4v4M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1Z',
+    lock: 'M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4',
+    repeat: 'M17 2l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3',
+    users: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
+    user: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z',
+    receipt: 'M6 2h9l3 3v17H6ZM15 2v3h3M9 8h3M9 12h6M9 16h6',
   };
   function toolIcon(name) {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -180,6 +201,32 @@
     path.setAttribute('d', ICON_PATHS[name]);
     svg.append(path);
     return svg;
+  }
+
+  // Ekranların ve düğmelerin başındaki emoji, tanınıyorsa yukarıdaki SVG
+  // simgeyle değiştirilir (metnin geri kalanı aynen kalır). Bir emoji burada
+  // yoksa dokunulmadan görünmeye devam eder — bu yüzden bütün emoji setini
+  // kapsamak zorunda değil, yalnızca en sık kullanılanları yeterli.
+  const EMOJI_ICON = {
+    '🏠': 'home', '↩️': 'back', '🔙': 'back', '⬅️': 'back', '◀️': 'back',
+    '➡️': 'arrowRight', '⏭️': 'arrowRight',
+    '✅': 'check', '❌': 'close', '⚪': 'circle',
+    '⚖️': 'scales', '🎣': 'rod', '🚨': 'alert', '🔎': 'search', '🔍': 'search',
+    '📊': 'barChart', '🐟': 'fish', '📋': 'clipboard',
+    '📖': 'book', '📚': 'book',
+    '🌊': 'waves',
+    '🚤': 'ship', '🚢': 'ship', '🛳': 'ship', '🧭': 'compass',
+    '📦': 'package', '📅': 'calendar', '🗓': 'calendar',
+    '🔐': 'lock', '🔁': 'repeat', '🔄': 'repeat',
+    '👥': 'users', '👤': 'user', '🧾': 'receipt',
+  };
+  function iconFor(text) {
+    for (const glyph of Object.keys(EMOJI_ICON)) {
+      if (text.startsWith(glyph)) {
+        return { name: EMOJI_ICON[glyph], rest: text.slice(glyph.length).replace(/^\s+/, '') };
+      }
+    }
+    return null;
   }
 
   // Sunucu metnindeki ━━━ ayırıcıları sabit uzunlukta olduğu için dar ekranda
@@ -227,6 +274,21 @@
     }
   }
 
+  // Bir bloğun en baştaki metnini (kalın başlığın içinde veya dışında olsun)
+  // tanınan bir emoji ile başlıyorsa SVG simgeyle değiştirir. Yalnızca bloğun
+  // İLK metin düğümüne bakar; içerideki madde işaretleri (✅/❌ vb.) etkilenmez.
+  function swapHeadingIcon(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const first = walker.nextNode();
+    if (!first || !first.nodeValue) return;
+    const match = iconFor(first.nodeValue);
+    if (!match) return;
+    const icon = el('span', 'heading-icon');
+    icon.append(toolIcon(match.name));
+    first.nodeValue = match.rest;
+    first.parentNode.insertBefore(icon, first);
+  }
+
   function render(view, { push = true, focus = true } = {}) {
     const changed = !current || viewKey(current) !== viewKey(view);
     current = { blocks: view.blocks || [], buttons: view.buttons || [], mode: view.mode || null };
@@ -242,6 +304,7 @@
       div.append(sanitize(block));
       drawRules(div);
       attachTableFilters(div);
+      swapHeadingIcon(div);
       ui.screen.append(div);
     }
     ui.screen.hidden = current.blocks.length === 0;
@@ -266,6 +329,13 @@
           const arrow = el('span', 'tool-arrow', '↗');
           arrow.setAttribute('aria-hidden', 'true');
           node.replaceChildren(icon, copy, arrow);
+        } else {
+          const match = iconFor(button.text);
+          if (match) {
+            const icon = el('span', 'btn-icon');
+            icon.append(toolIcon(match.name));
+            node.replaceChildren(icon, document.createTextNode(match.rest));
+          }
         }
         node.type = 'button';
         node.addEventListener('click', () => press(button.data));
