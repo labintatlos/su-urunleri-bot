@@ -255,12 +255,22 @@ def badge(state, title, detail=''):
 
 def items_table(items):
     """Ceza/tür çizelgesi öğelerini süzülebilir bir HTML tabloya çevirir.
-    Sütunlar ilk öğenin detay anahtarlarından gelir; kategori içindeki bütün
-    öğeler aynı anahtarları taşır. app.js tabloyu bulup büyükse üstüne bir
-    metin filtresi ekler (bkz. attachTableFilters)."""
+    Sütunlar bütün öğelerin detay anahtarlarının birleşimidir: ceza
+    kartlarının bir kısmında olan "Tekrar", "Ruhsat İşlemi" gibi alanlar ilk
+    satırda yok diye gizlenmez. Yeni anahtar, o öğede kendisinden önce gelen
+    anahtarın hemen arkasına yerleşir. app.js tabloyu bulup büyükse üstüne
+    bir metin filtresi ekler (bkz. attachTableFilters)."""
     if not items:
         return ''
-    columns = list(items[0].get('details', {}).keys())
+    columns = []
+    for it in items:
+        position = -1
+        for key in it.get('details', {}):
+            if key in columns:
+                position = columns.index(key)
+            else:
+                position += 1
+                columns.insert(position, key)
     head = ''.join(f'<th>{esc(c)}</th>' for c in columns)
     body = []
     for it in items:

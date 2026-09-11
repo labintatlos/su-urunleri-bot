@@ -207,13 +207,13 @@ label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 }
 .table-filter:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
 .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
-.block table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .92rem; }
-/* Sütunlar kaydırma yerine sarsın: dar telefon ekranında "İPC" veya
-   "El koyma" gibi sütunların kırpılıp ekran dışında kalması yerine
-   hücre içinde alt satıra geçmesi tercih edilir. table-layout: fixed
-   ile ilk sütun geniş, geri kalanı eşit paylaşılan dar sütunlar olur. */
-.block th, .block td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: normal; overflow-wrap: break-word; }
-.block th:first-child, .block td:first-child { width: 38%; }
+.block table { width: 100%; border-collapse: collapse; table-layout: auto; font-size: .92rem; }
+/* Kelimeler hücre içinde ortadan bölünmez ("Hazira n" gibi). Uzun metinli
+   sütunlara app.js metin uzunluğuna göre asgari genişlik verir (bkz.
+   sizeTableColumns); ekrana sığmayan tablo .table-scroll çerçevesi içinde
+   yatay kaydırılır, sayfanın kendisi taşmaz. */
+.block th, .block td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: normal; overflow-wrap: normal; word-break: normal; }
+.block th:first-child, .block td:first-child { min-width: 8rem; }
 .block thead th { background: var(--surface-2); font-weight: 700; position: sticky; top: 0; }
 .block tbody tr:last-child td { border-bottom: 0; }
 @media (hover: hover) { .block tbody tr:hover td { background: var(--surface-2); } }

@@ -116,6 +116,21 @@ def check_structured_data():
     print('structured data: canonical source build verified')
 
 
+def check_items_table():
+    """Ceza/tür tabloları yalnızca bazı satırlarda olan sütunları da göstermeli."""
+    sys.path.insert(0, str(ADDON))
+    import screens
+    groups = screens.CEZA_REHBERI + [sub for group in screens.TUR_CIZELGESI for sub in group.get('sub', [])]
+    for group in groups:
+        if not group.get('items'):
+            continue
+        headers = re.findall(r'<th>(.*?)</th>', screens.items_table(group['items']))
+        keys = {screens.esc(key) for row in group['items'] for key in row['details']}
+        if len(headers) != len(keys) or set(headers) != keys:
+            raise AssertionError(f"{group['title']} tablosunda gizli sütun var: {sorted(keys - set(headers))}")
+    print('items table: all columns visible')
+
+
 def check_dataset_migration(work):
     """6.0.14 ve öncesindeki tür tabloları yerinde yükseltilebilmeli."""
     sys.path.insert(0, str(ADDON))
@@ -158,6 +173,7 @@ def text_of(view):
 def main():
     check_source_integrity()
     check_structured_data()
+    check_items_table()
     work = Path(tempfile.mkdtemp(prefix='suurunleri_smoke_'))
     check_dataset_migration(work)
     env = dict(os.environ, WEB_PORT=str(WEB_PORT), INGRESS_PORT=str(INGRESS_PORT), GEMINI_API_KEY='',

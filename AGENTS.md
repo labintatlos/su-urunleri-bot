@@ -124,11 +124,15 @@ Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve y
 pencereleri yenilendi.
 
 Ara adım (6.0.17): Pratik Tür Çizelgesi düzeltildi. Kaynak sütunu kaldırıldı;
-her satır aynı sütunları taşır (`screens.items_table` sütunları ilk satırdan
-alır, eksik anahtar bütün sütunu gizler). "Diğer türler" satırları, okunur
-tarihler, içsu özel yasakları ve Çizelge 6'nın kısaltılmış bölge satırları
-`tools/rebuild_structured_data.py` içinde üretilir; `smoke_test.py` bunları
-denetler.
+"Diğer türler" satırları, okunur tarihler, içsu özel yasakları ve Çizelge 6'nın
+kısaltılmış bölge satırları `tools/rebuild_structured_data.py` içinde üretilir;
+`smoke_test.py` bunları denetler.
+
+Ara adım (6.0.18): `screens.items_table` sütunları ilk satırdan değil bütün
+satırların birleşiminden alır (Ceza Rehberi j/k/l/m gruplarında 47 kayıtta
+Tekrar, Ruhsat İşlemi, Durum/Seçenek, Uyarı/Not gizli kalıyordu). Tablolarda
+kelimeler bölünmez; `app.js` sütunlara metin uzunluğuna göre asgari genişlik
+verir, sığmayan tablo çerçevesinde yatay kayar.
 
 Güvenlik taraması (6.0.9): sitede çerez `Secure` bayrağı, bozuk
 `Content-Length` ile iş parçacığı kilitlenmesi, bağlantı zaman aşımı, sınırsız

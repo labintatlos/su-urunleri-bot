@@ -252,9 +252,26 @@
   // üstüne satırları metinle süzen bir arama kutusu eklenir.
   const TABLE_FILTER_MIN_ROWS = 8;
 
+  // Sütunlar kendi metinlerine göre genişler: hücrelerin çoğu (%75) en fazla
+  // ~4 satıra sığacak kadar asgari genişlik alır, kısa değerli sütunlar dar
+  // kalır. Sığmayan tablo çerçevesinde yatay kayar (bkz. style.css).
+  function sizeTableColumns(table) {
+    const head = table.tHead && table.tHead.rows[0];
+    if (!head) return;
+    const rows = [...table.tBodies[0].rows];
+    [...head.cells].forEach((th, index) => {
+      const lengths = rows.map(row => (row.cells[index] ? row.cells[index].textContent.trim().length : 0))
+        .sort((a, b) => a - b);
+      const typical = lengths[Math.floor(lengths.length * 0.75)] || 0;
+      const width = Math.min(Math.round(typical / 4), 30);
+      if (width > 8) th.style.minWidth = `${width}ch`;
+    });
+  }
+
   function attachTableFilters(root) {
     for (const table of [...root.querySelectorAll('table')]) {
       if (!table.tBodies[0]) continue;
+      sizeTableColumns(table);
       const rows = [...table.tBodies[0].rows];
       const wrap = el('div', 'table-wrap');
       const scroll = el('div', 'table-scroll');
