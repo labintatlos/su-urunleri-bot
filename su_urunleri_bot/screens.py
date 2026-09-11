@@ -219,6 +219,23 @@ def badge(state, title, detail=''):
     return out
 
 
+def items_table(items):
+    """Ceza/tür çizelgesi öğelerini süzülebilir bir HTML tabloya çevirir.
+    Sütunlar ilk öğenin detay anahtarlarından gelir; kategori içindeki bütün
+    öğeler aynı anahtarları taşır. app.js tabloyu bulup büyükse üstüne bir
+    metin filtresi ekler (bkz. attachTableFilters)."""
+    if not items:
+        return ''
+    columns = list(items[0].get('details', {}).keys())
+    head = ''.join(f'<th>{esc(c)}</th>' for c in columns)
+    body = []
+    for it in items:
+        details = it.get('details', {})
+        cells = ''.join(f'<td>{esc(details.get(c, "")).replace("*", "")}</td>' for c in columns)
+        body.append(f'<tr>{cells}</tr>')
+    return f'<table><thead><tr>{head}</tr></thead><tbody>{"".join(body)}</tbody></table>'
+
+
 def tally(answers):
     """Running counts for a checklist: '✅ 3 · ❌ 1 · ⚪ 2 · ⋯ 6'."""
     ok = sum(1 for a in answers if a == 'ok')
@@ -768,21 +785,19 @@ def callback(q, context):
         cid = data.split(':', 2)[2]
         c_main = next((c for c in CEZA_REHBERI if c['id'] == cid), None)
         if c_main:
-            rows = []
+            nav = [[('🔙 Ceza Rehberi', 'ceza:menu')], [('🏠 Ana Menü', 'menu')]]
+            parts = [f"<b>{esc(c_main['title'])}</b>"]
             if c_main.get('sub'):
-                for s in c_main['sub']:
-                    rows.append([(f"{s['title']}", f"ceza:sub:{c_main['id']}:{s['id']}")])
+                parts.append('Lütfen bir seçenek belirleyin:')
+                if c_main.get('items'):
+                    parts.append(items_table(c_main['items']))
+                rows = [[(s['title'], f"ceza:sub:{c_main['id']}:{s['id']}")] for s in c_main['sub']]
+                return q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb(rows + nav))
             if c_main.get('items'):
-                for it in c_main['items']:
-                    rows.append([(f"{it['title']}", f"ceza:item:{c_main['id']}:none:{it['id']}")])
-            
-            if rows:
-                rows.append([('🔙 Ceza Rehberi', 'ceza:menu')])
-                rows.append([('🏠 Ana Menü', 'menu')])
-                return q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
-            else:
-                out = f"<b>{esc(c_main['title'])}</b>\n\n{c_main.get('content', '')}"
-                return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Ceza Rehberi', 'ceza:menu')], [('🏠 Ana Menü', 'menu')]]))
+                parts.append(items_table(c_main['items']))
+            elif c_main.get('content'):
+                parts.append(c_main['content'])
+            return q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb(nav))
 
     if data.startswith('ceza:sub:'):
         _, _, cid, sid = data.split(':')
@@ -790,40 +805,13 @@ def callback(q, context):
         if c_main:
             s_sub = next((s for s in c_main['sub'] if s['id'] == sid), None)
             if s_sub:
-                rows = []
+                parts = [f"<b>{esc(s_sub['title'])}</b>"]
                 if s_sub.get('items'):
-                    for it in s_sub['items']:
-                        rows.append([(f"{it['title']}", f"ceza:item:{cid}:{sid}:{it['id']}")])
-                if rows:
-                    rows.append([('🔙 Üst Başlık', f"ceza:view:{cid}")])
-                    rows.append([('🏠 Ana Menü', 'menu')])
-                    return q.edit_message_text(f"<b>{esc(s_sub['title'])}</b>\n\nLütfen bir ihlal türü seçin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
-                else:
-                    out = f"<b>{esc(s_sub['title'])}</b>\n\n{s_sub.get('content', '')}"
-                    return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"ceza:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
-
-    if data.startswith('ceza:item:'):
-        _, _, cid, sid, iid = data.split(':')
-        c_main = next((c for c in CEZA_REHBERI if c['id'] == cid), None)
-        if c_main:
-            it = None
-            back_data = f"ceza:view:{cid}"
-            if sid != 'none':
-                s_sub = next((s for s in c_main['sub'] if s['id'] == sid), None)
-                if s_sub:
-                    it = next((i for i in s_sub['items'] if i['id'] == iid), None)
-                    back_data = f"ceza:sub:{cid}:{sid}"
-            else:
-                it = next((i for i in c_main['items'] if i['id'] == iid), None)
-                
-            if it:
-                out = f"<b>{esc(it['title'])}</b>\n"
-                out += "➖" * 15 + "\n"
-                for k, v in it['details'].items():
-                    if k.lower() != 'ihlal':
-                        out += f"▪️ <b>{esc(k)}:</b> {esc(v).replace('*', '')}\n"
-                
-                return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Geri', back_data)], [('🏠 Ana Menü', 'menu')]]))
+                    parts.append(items_table(s_sub['items']))
+                elif s_sub.get('content'):
+                    parts.append(s_sub['content'])
+                nav = [[('🔙 Üst Başlık', f"ceza:view:{cid}")], [('🏠 Ana Menü', 'menu')]]
+                return q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb(nav))
 
     if data == 'ai:audit':
         return ai_audit_preview(q, context)
@@ -928,47 +916,16 @@ def callback(q, context):
         cid = data.split(':', 2)[2]
         c_main = next((c for c in TUR_CIZELGESI if c['id'] == cid), None)
         if c_main:
-            rows = []
+            nav = [[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]
             if c_main.get('sub'):
-                for s in c_main['sub']:
-                    rows.append([(f"{s['title']}", f"turcizelge:sub:{c_main['id']}:{s['id']}")])
-            
-            if rows:
-                # If there are subcategories, show them as buttons. If there are items too, we should theoretically show them as text above or below, but we don't have such cases.
-                rows.append([('🔙 Çizelge Menüsü', 'turcizelge:menu')])
-                rows.append([('🏠 Ana Menü', 'menu')])
-                return q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows))
-            else:
-                out = f"<b>{esc(c_main['title'])}</b>\n\n{c_main.get('content', '')}\n"
-                if c_main.get('items'):
-                    for it in c_main['items']:
-                        d = it.get('details', {})
-                        t_adi = d.get('Türkçe Adı', '')
-                        l_adi = d.get('Latince Adı', '')
-                        line = f"▪️ <b>{esc(t_adi)}</b> ({esc(l_adi).replace('*', '')})"
-                        for k, v in d.items():
-                            if k not in ('Türkçe Adı', 'Latince Adı', 'Tür', 'Türü'):
-                                line += f" - <b>{esc(k)}:</b> {esc(v)}"
-                        out += line + "\n"
-
-                if len(out) > 4000:
-                    lines = out.split('\n')
-                    chunks = []
-                    curr = ""
-                    for line in lines:
-                        if len(curr) + len(line) > 3900:
-                            chunks.append(curr)
-                            curr = line + '\n'
-                        else:
-                            curr += line + '\n'
-                    if curr: chunks.append(curr)
-                    
-                    q.edit_message_text(chunks[0], parse_mode=ParseMode.HTML)
-                    for chunk in chunks[1:-1]:
-                        q.message.reply_text(chunk, parse_mode=ParseMode.HTML)
-                    return q.message.reply_text(chunks[-1], parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]))
-                else:
-                    return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Çizelge Menüsü', 'turcizelge:menu')], [('🏠 Ana Menü', 'menu')]]))
+                rows = [[(s['title'], f"turcizelge:sub:{c_main['id']}:{s['id']}")] for s in c_main['sub']]
+                return q.edit_message_text(f"<b>{esc(c_main['title'])}</b>\n\nLütfen bir seçenek belirleyin:", parse_mode=ParseMode.HTML, reply_markup=kb(rows + nav))
+            parts = [f"<b>{esc(c_main['title'])}</b>"]
+            if c_main.get('content'):
+                parts.append(c_main['content'])
+            if c_main.get('items'):
+                parts.append(items_table(c_main['items']))
+            return q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb(nav))
 
     if data.startswith('turcizelge:sub:'):
         _, _, cid, sid = data.split(':')
@@ -976,37 +933,13 @@ def callback(q, context):
         if c_main:
             s_sub = next((s for s in c_main['sub'] if s['id'] == sid), None)
             if s_sub:
-                out = f"<b>{esc(s_sub['title'])}</b>\n\n{s_sub.get('content', '')}\n"
+                parts = [f"<b>{esc(s_sub['title'])}</b>"]
+                if s_sub.get('content'):
+                    parts.append(s_sub['content'])
                 if s_sub.get('items'):
-                    for it in s_sub['items']:
-                        d = it.get('details', {})
-                        t_adi = d.get('Türkçe Adı', '')
-                        l_adi = d.get('Latince Adı', '')
-                        line = f"▪️ <b>{esc(t_adi)}</b> ({esc(l_adi).replace('*', '')})"
-                        for k, v in d.items():
-                            if k not in ('Türkçe Adı', 'Latince Adı', 'Tür', 'Türü'):
-                                line += f" - <b>{esc(k)}:</b> {esc(v)}"
-                        out += line + "\n"
-                
-                # Split output if too long
-                if len(out) > 4000:
-                    lines = out.split('\n')
-                    chunks = []
-                    curr = ""
-                    for line in lines:
-                        if len(curr) + len(line) > 3900:
-                            chunks.append(curr)
-                            curr = line + '\n'
-                        else:
-                            curr += line + '\n'
-                    if curr: chunks.append(curr)
-                    
-                    q.edit_message_text(chunks[0], parse_mode=ParseMode.HTML)
-                    for chunk in chunks[1:-1]:
-                        q.message.reply_text(chunk, parse_mode=ParseMode.HTML)
-                    return q.message.reply_text(chunks[-1], parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
-                else:
-                    return q.edit_message_text(out, parse_mode=ParseMode.HTML, reply_markup=kb([[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]))
+                    parts.append(items_table(s_sub['items']))
+                nav = [[('🔙 Üst Başlık', f"turcizelge:view:{cid}")], [('🏠 Ana Menü', 'menu')]]
+                return q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb(nav))
 
     if data == 'species:menu':
         return q.edit_message_text(

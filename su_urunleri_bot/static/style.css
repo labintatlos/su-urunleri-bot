@@ -193,6 +193,27 @@ label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .block .rule { display: inline-block; width: 100%; height: 0; border-top: 2px solid var(--line); vertical-align: middle; }
 .photo { display: block; max-width: 100%; max-height: 320px; border-radius: 10px; margin: 10px 0; }
 
+/* Ceza ve tür çizelgesi tabloları: yatayda kayan çerçeve, üstünde isteğe
+   bağlı metin filtresi (büyük kategorilerde app.js ekler). */
+.table-wrap { margin: 10px 0; }
+.table-filter {
+  display: block; width: 100%; margin: 0 0 8px; padding: 9px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
+  color: var(--text); font-size: 16px;
+}
+.table-filter:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.block table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .92rem; }
+/* Sütunlar kaydırma yerine sarsın: dar telefon ekranında "İPC" veya
+   "El koyma" gibi sütunların kırpılıp ekran dışında kalması yerine
+   hücre içinde alt satıra geçmesi tercih edilir. table-layout: fixed
+   ile ilk sütun geniş, geri kalanı eşit paylaşılan dar sütunlar olur. */
+.block th, .block td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: normal; overflow-wrap: break-word; }
+.block th:first-child, .block td:first-child { width: 38%; }
+.block thead th { background: var(--surface-2); font-weight: 700; position: sticky; top: 0; }
+.block tbody tr:last-child td { border-bottom: 0; }
+@media (hover: hover) { .block tbody tr:hover td { background: var(--surface-2); } }
+
 .buttons { display: flex; flex-direction: column; gap: 8px; }
 .row { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
 .btn {

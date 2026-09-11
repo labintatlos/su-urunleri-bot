@@ -61,7 +61,10 @@
   // Ekran metinleri sunucuda kaçışlanmış, yalnızca birkaç biçim etiketi
   // taşıyan HTML'dir. Yine de tarayıcıya yalnızca izin verilen etiketler
   // geçer; bağlantılar yeni sekmede açılır, boş fotoğraf bağlantısı resim olur.
-  const ALLOWED_TAGS = new Set(['B', 'STRONG', 'I', 'EM', 'U', 'S', 'CODE', 'PRE', 'A', 'BR']);
+  const ALLOWED_TAGS = new Set([
+    'B', 'STRONG', 'I', 'EM', 'U', 'S', 'CODE', 'PRE', 'A', 'BR',
+    'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD',
+  ]);
 
   function sanitize(html) {
     const template = document.createElement('template');
@@ -195,6 +198,35 @@
     }
   }
 
+  // Ceza ve tür çizelgesi ekranları büyük kategorileri artık düz metin
+  // yerine bir <table> olarak gönderir. Satır sayısı fazlaysa tablonun
+  // üstüne satırları metinle süzen bir arama kutusu eklenir.
+  const TABLE_FILTER_MIN_ROWS = 8;
+
+  function attachTableFilters(root) {
+    for (const table of [...root.querySelectorAll('table')]) {
+      if (!table.tBodies[0]) continue;
+      const rows = [...table.tBodies[0].rows];
+      const wrap = el('div', 'table-wrap');
+      const scroll = el('div', 'table-scroll');
+      table.replaceWith(wrap);
+      scroll.append(table);
+      if (rows.length >= TABLE_FILTER_MIN_ROWS) {
+        const filter = el('input', 'table-filter');
+        filter.type = 'search';
+        filter.placeholder = `${rows.length} satırda ara…`;
+        filter.addEventListener('input', () => {
+          const needle = filter.value.toLocaleLowerCase('tr').trim();
+          for (const row of rows) {
+            row.hidden = needle !== '' && !row.textContent.toLocaleLowerCase('tr').includes(needle);
+          }
+        });
+        wrap.append(filter);
+      }
+      wrap.append(scroll);
+    }
+  }
+
   function render(view, { push = true, focus = true } = {}) {
     const changed = !current || viewKey(current) !== viewKey(view);
     current = { blocks: view.blocks || [], buttons: view.buttons || [], mode: view.mode || null };
@@ -209,6 +241,7 @@
       const div = el('div', 'block');
       div.append(sanitize(block));
       drawRules(div);
+      attachTableFilters(div);
       ui.screen.append(div);
     }
     ui.screen.hidden = current.blocks.length === 0;
