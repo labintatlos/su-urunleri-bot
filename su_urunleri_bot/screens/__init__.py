@@ -1090,15 +1090,6 @@ def callback(q, context):
             return show_penalty(q, int(pid), context)
     if data.startswith('pen:'):
         return show_penalty(q, int(data.split(':', 1)[1]), context)
-    if data.startswith('raw:'):
-        row = db.raw_row(int(data.split(':', 1)[1]))
-        if not row:
-            return q.answer('Excel satırı bulunamadı.', show_alert=True)
-        return q.edit_message_text(
-            f'📊 <b>Excel satır {row["source_row"]}</b>\n\n<code>{esc(row["raw_text"])}</code>\n\n<i>Değerler yüklediğiniz Excel kaynağındaki haliyle gösterilir.</i>',
-            parse_mode=ParseMode.HTML,
-            reply_markup=kb([[('↩️ Ana Menü', 'menu')]]),
-        )
 
     if data == 'audit:start':
         return audit_start(q, context)
@@ -1655,10 +1646,7 @@ def show_penalty(q, pid, context):
     if any(k in amounts for k in ['<12 m','12–<22 m','≥22 m']):
         rows.append([('🚤 12 metre altı', f'pen:band:{pid}:lt12'), ('🚢 12–22 metre arası', f'pen:band:{pid}:12to22')])
         rows.append([('🛳 22 metre ve üstü', f'pen:band:{pid}:ge22')])
-    if row['source_row']:
-        rows.append([('📊 Excel Ham Satır', f'raw:{row["source_row"]}'), ('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
-    else:
-        rows.append([('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
+    rows.append([('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
     rows.append([('🏠 Ana Menü', 'menu')])
     q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
@@ -2290,9 +2278,6 @@ def guide_penalty_search(q, context, idx):
         if r['option_text']:
             label += ' / ' + r['option_text'][:12]
         rows.append([(f'⚖️ {label}', f'pen:{r["id"]}')])
-    if not rows:
-        for r in db.search_raw(query, 4):
-            rows.append([(f'📊 Excel satır {r["source_row"]}', f'raw:{r["source_row"]}')])
     rows.append([('📚 İlgili Madde', f'art:{item["ref"][0]}:{item["ref"][1]}'), ('↩️ Uygunsuzluklar', 'guide:badmenu')])
     q.edit_message_text(
         f'⚖️ <b>YAPTIRIM ARAMASI</b>\n\n'
@@ -3400,14 +3385,11 @@ def text_handler(update, context):
             if r["option_text"]:
                 label += ' / ' + r["option_text"][:13]
             rows.append([(f'⚖️ {label}', f'pen:{r["id"]}')])
-        if not rows:
-            for r in db.search_raw(text, 4):
-                rows.append([(f'📊 Excel satır {r["source_row"]}', f'raw:{r["source_row"]}')])
         rows.append([('📚 Mevzuatta da Ara', 'mode:lawsearch'), ('↩️ Ana Menü', 'menu')])
         db.log(uid, 'penalty_search', text)
         db.log_activity(uid, 'search', f'Ceza araması: {text} ({len(results)} sonuç)')
         return send_or_edit(update, context, 
-            f'⚖️ <b>{esc(text)}</b> — {len(results)} yapılandırılmış yaptırım sonucu\n\n<i>Deniz, içsu ve tesis kapsamındaki ceza kayıtları birlikte aranır. Sonuç bulunmazsa Excel ham satır araması gösterilir.</i>',
+            f'⚖️ <b>{esc(text)}</b> — {len(results)} yapılandırılmış yaptırım sonucu\n\n<i>Deniz, içsu ve tesis kapsamındaki ceza kayıtları birlikte aranır. Sonuç bulunmazsa farklı bir kelimeyle veya mevzuatta arayın.</i>',
             parse_mode=ParseMode.HTML,
             reply_markup=kb(rows),
         )

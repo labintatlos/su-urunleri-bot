@@ -1,5 +1,8 @@
 ﻿# Sürüm Notları
 
+## 6.0.36
+* **Arayüz:** "Excel Ham Satır" düğmesi her yerden kaldırıldı (ceza kartı, föy yaptırım araması ve ceza araması sonuçları).
+
 ## 6.0.35
 * **Gemi boyu:** Tam boy yazma seçeneği her yerden kaldırıldı (denetim adımı, ceza kartı, yaptırım özeti). Boy yalnız üç seçenekle belirlenir: 12 metre altı, 12–22 metre arası, 22 metre ve üstü. Gemisiz faaliyet için “Gemi/Tekne yok” seçeneği denetim adımında durur. Eski kayıtlardaki sayısal boy otomatik olarak gruba çevrilir.
 * **Ceza dosyası — Kanuna göre kalan düzeltmeler:** Işıkla avcılıkta Kanunda olmayan gırgır 3 katı tutarı kaldırıldı; trol yasak alanında (Kanun 24/a) Yönetmelik 41'de olmayan ruhsat geri alma kaldırıldı; tayfa/kişi satırlarında (ticari avcılık, orta su trolü, trol yasak alanı, dip trolü) Kanundaki ürün ve istihsal vasıtası el koyması yazıldı; tablo metinlerindeki yazım hataları ve “5000-1000 gün” ifadesi Kanundaki “5.000–10.000 gün” olarak düzeltildi.
