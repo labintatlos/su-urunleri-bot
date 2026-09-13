@@ -2201,6 +2201,7 @@
         "id": "saglama_0",
         "title": "Ruhsatsız ticari avcılık — kişi (3/1)",
         "details": {
+          "Hüküm": "Ruhsatsız ticari avcılık — kişi (3/1)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "1.000 TL–5.000 TL → 9.473 TL–47.397 TL",
           "Boy Çarpanı": "—",
@@ -2215,6 +2216,7 @@
         "id": "saglama_1",
         "title": "Ruhsatsız avcılık — gemi sahibi/donatan (3/1)",
         "details": {
+          "Hüküm": "Ruhsatsız avcılık — gemi sahibi/donatan (3/1)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "5.000 TL–50.000 TL → 47.397 TL–474.079 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2228,6 +2230,7 @@
         "id": "saglama_2",
         "title": "Amatör avcılık usul ve esaslarına aykırılık — kişi (3/2)",
         "details": {
+          "Hüküm": "Amatör avcılık usul ve esaslarına aykırılık — kişi (3/2)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "250 TL–500 TL → 2.356 TL–4.730 TL",
           "Boy Çarpanı": "—",
@@ -2241,6 +2244,7 @@
         "id": "saglama_3",
         "title": "Amatör avcılık usul ve esaslarına aykırılık — gemi (3/2)",
         "details": {
+          "Hüküm": "Amatör avcılık usul ve esaslarına aykırılık — gemi (3/2)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "500 TL–5.000 TL → 4.730 TL–47.397 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2254,6 +2258,7 @@
         "id": "saglama_4",
         "title": "Ticari avcılık usul ve esaslarına (izin) aykırılık — kişi (3/2)",
         "details": {
+          "Hüküm": "Ticari avcılık usul ve esaslarına (izin) aykırılık — kişi (3/2)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "5.000 TL–50.000 TL → 47.397 TL–474.079 TL",
           "Boy Çarpanı": "—",
@@ -2267,6 +2272,7 @@
         "id": "saglama_5",
         "title": "Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2)",
         "details": {
+          "Hüküm": "Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "5.000 TL–50.000 TL → 47.397 TL–474.079 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2280,6 +2286,7 @@
         "id": "saglama_6",
         "title": "İzin ve ruhsat tezkeresini talepte göstermeme (3/3)",
         "details": {
+          "Hüküm": "İzin ve ruhsat tezkeresini talepte göstermeme (3/3)",
           "Kanun Bendi": "36/a",
           "Kanun Tutarı": "1.000 TL taban → 9.473 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2293,6 +2300,7 @@
         "id": "saglama_7",
         "title": "İstihsal hakkı kiralama kurallarına aykırılık (Md.4)",
         "details": {
+          "Hüküm": "İstihsal hakkı kiralama kurallarına aykırılık (Md.4)",
           "Kanun Bendi": "36/b",
           "Kanun Tutarı": "2.500 TL–25.000 TL → 23.692 TL–237.034 TL",
           "Boy Çarpanı": "—",
@@ -2307,6 +2315,7 @@
         "id": "saglama_8",
         "title": "İstihsal yerlerinde izinsiz değişiklik — içsu (Md.7)",
         "details": {
+          "Hüküm": "İstihsal yerlerinde izinsiz değişiklik — içsu (Md.7)",
           "Kanun Bendi": "36/c",
           "Kanun Tutarı": "10.000 TL taban → 94.811 TL",
           "Boy Çarpanı": "—",
@@ -2321,6 +2330,7 @@
         "id": "saglama_9",
         "title": "İstihsal yerlerinde izinsiz değişiklik — deniz (Md.7)",
         "details": {
+          "Hüküm": "İstihsal yerlerinde izinsiz değişiklik — deniz (Md.7)",
           "Kanun Bendi": "36/c",
           "Kanun Tutarı": "20.000 TL taban → 189.630 TL",
           "Boy Çarpanı": "—",
@@ -2335,6 +2345,7 @@
         "id": "saglama_10",
         "title": "Sulama/enerji amaçlı su kullanımında tedbir almama (Md.9)",
         "details": {
+          "Hüküm": "Sulama/enerji amaçlı su kullanımında tedbir almama (Md.9)",
           "Kanun Bendi": "36/d",
           "Kanun Tutarı": "5.000 TL–50.000 TL → 47.397 TL–474.079 TL",
           "Boy Çarpanı": "—",
@@ -2348,6 +2359,7 @@
         "id": "saglama_11",
         "title": "Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi",
         "details": {
+          "Hüküm": "Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi",
           "Kanun Bendi": "36/e",
           "Kanun Tutarı": "10.000 TL–100.000 TL → 94.811 TL–948.169 TL",
           "Boy Çarpanı": "—",
@@ -2361,6 +2373,7 @@
         "id": "saglama_12",
         "title": "Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık",
         "details": {
+          "Hüküm": "Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık",
           "Kanun Bendi": "36/e",
           "Kanun Tutarı": "5.000 TL–50.000 TL → 47.397 TL–474.079 TL",
           "Boy Çarpanı": "—",
@@ -2374,6 +2387,7 @@
         "id": "saglama_13",
         "title": "Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık",
         "details": {
+          "Hüküm": "Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık",
           "Kanun Bendi": "36/f",
           "Kanun Tutarı": "2.500 TL–25.000 TL → 23.692 TL–237.034 TL",
           "Boy Çarpanı": "—",
@@ -2387,6 +2401,7 @@
         "id": "saglama_14",
         "title": "Patlayıcı, zehirli madde, elektrik vb. ile avcılık (Md.19)",
         "details": {
+          "Hüküm": "Patlayıcı, zehirli madde, elektrik vb. ile avcılık (Md.19)",
           "Kanun Bendi": "36/g",
           "Kanun Tutarı": "10.000 TL taban → 94.811 TL",
           "Boy Çarpanı": "—",
@@ -2401,6 +2416,7 @@
         "id": "saglama_15",
         "title": "Sulara zararlı madde dökülmesi — kişi (Md.20)",
         "details": {
+          "Hüküm": "Sulara zararlı madde dökülmesi — kişi (Md.20)",
           "Kanun Bendi": "36/h",
           "Kanun Tutarı": "5.000 TL taban → 47.397 TL",
           "Boy Çarpanı": "—",
@@ -2414,6 +2430,7 @@
         "id": "saglama_16",
         "title": "Sulara zararlı madde dökülmesi — fabrika/imalathane/atölye (Md.20)",
         "details": {
+          "Hüküm": "Sulara zararlı madde dökülmesi — fabrika/imalathane/atölye (Md.20)",
           "Kanun Bendi": "36/h",
           "Kanun Tutarı": "5.000 TL–50.000 TL → 47.397 TL–474.079 TL",
           "Boy Çarpanı": "—",
@@ -2428,6 +2445,7 @@
         "id": "saglama_17",
         "title": "Yabancıların karasuları/içsularda avcılığı (Md.21/1)",
         "details": {
+          "Hüküm": "Yabancıların karasuları/içsularda avcılığı (Md.21/1)",
           "Kanun Bendi": "36/i",
           "Kanun Tutarı": "20.000 TL taban → 189.630 TL",
           "Boy Çarpanı": "—",
@@ -2442,6 +2460,7 @@
         "id": "saglama_18",
         "title": "Akarsularda izinsiz engel (ağ, bent, çit) (Md.22/1)",
         "details": {
+          "Hüküm": "Akarsularda izinsiz engel (ağ, bent, çit) (Md.22/1)",
           "Kanun Bendi": "36/j",
           "Kanun Tutarı": "1.700 TL taban → 16.106 TL",
           "Boy Çarpanı": "—",
@@ -2456,6 +2475,7 @@
         "id": "saglama_19",
         "title": "Balık geçidi yapmama / istenen tedbiri almama (Md.22/2)",
         "details": {
+          "Hüküm": "Balık geçidi yapmama / istenen tedbiri almama (Md.22/2)",
           "Kanun Bendi": "36/j",
           "Kanun Tutarı": "100.000 TL–250.000 TL → 948.169 TL–2.370.440 TL",
           "Boy Çarpanı": "—",
@@ -2469,6 +2489,7 @@
         "id": "saglama_20",
         "title": "Balık geçidini çalıştırmama, taşıma yapmama, tedbirleri yerine getirmeme (Md.22/2)",
         "details": {
+          "Hüküm": "Balık geçidini çalıştırmama, taşıma yapmama, tedbirleri yerine getirmeme (Md.22/2)",
           "Kanun Bendi": "36/j",
           "Kanun Tutarı": "50.000 TL taban → 474.079 TL",
           "Boy Çarpanı": "—",
@@ -2482,6 +2503,7 @@
         "id": "saglama_21",
         "title": "Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23)",
         "details": {
+          "Hüküm": "Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23)",
           "Kanun Bendi": "36/k",
           "Kanun Tutarı": "1.700 TL taban → 16.106 TL",
           "Boy Çarpanı": "—",
@@ -2495,6 +2517,7 @@
         "id": "saglama_22",
         "title": "Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23)",
         "details": {
+          "Hüküm": "Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23)",
           "Kanun Bendi": "36/k",
           "Kanun Tutarı": "2.500 TL taban → 23.692 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3 · gırgır ×3",
@@ -2509,6 +2532,7 @@
         "id": "saglama_23",
         "title": "Işıkla avlanma / ışık donanımı bulundurma (İçsu, Karadeniz, Marmara) (Md.23)",
         "details": {
+          "Hüküm": "Işıkla avlanma / ışık donanımı bulundurma (İçsu, Karadeniz, Marmara) (Md.23)",
           "Kanun Bendi": "36/k",
           "Kanun Tutarı": "50.000 TL taban → 474.079 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2523,6 +2547,7 @@
         "id": "saglama_24",
         "title": "Amatör avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23)",
         "details": {
+          "Hüküm": "Amatör avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23)",
           "Kanun Bendi": "36/k",
           "Kanun Tutarı": "500 TL taban → 4.730 TL",
           "Boy Çarpanı": "—",
@@ -2537,6 +2562,7 @@
         "id": "saglama_25",
         "title": "Amatör avcılık yönetmelik hükümlerine aykırılık — gemi (Md.23)",
         "details": {
+          "Hüküm": "Amatör avcılık yönetmelik hükümlerine aykırılık — gemi (Md.23)",
           "Kanun Bendi": "36/k",
           "Kanun Tutarı": "750 TL taban → 7.105 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2550,6 +2576,7 @@
         "id": "saglama_26",
         "title": "İçsu, Marmara ve boğazlarda trol — kişi (Md.24/a)",
         "details": {
+          "Hüküm": "İçsu, Marmara ve boğazlarda trol — kişi (Md.24/a)",
           "Kanun Bendi": "36/l",
           "Kanun Tutarı": "10.000 TL taban → 94.811 TL",
           "Boy Çarpanı": "—",
@@ -2563,6 +2590,7 @@
         "id": "saglama_27",
         "title": "İçsu, Marmara ve boğazlarda trol — gemi sahibi/donatan (Md.24/a)",
         "details": {
+          "Hüküm": "İçsu, Marmara ve boğazlarda trol — gemi sahibi/donatan (Md.24/a)",
           "Kanun Bendi": "36/l",
           "Kanun Tutarı": "20.000 TL taban → 189.630 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2577,6 +2605,7 @@
         "id": "saglama_28",
         "title": "Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — kişi (Md.24/b)",
         "details": {
+          "Hüküm": "Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — kişi (Md.24/b)",
           "Kanun Bendi": "36/l",
           "Kanun Tutarı": "7.000 TL taban → 66.357 TL",
           "Boy Çarpanı": "—",
@@ -2591,6 +2620,7 @@
         "id": "saglama_29",
         "title": "Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — gemi (Md.24/b)",
         "details": {
+          "Hüküm": "Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — gemi (Md.24/b)",
           "Kanun Bendi": "36/l",
           "Kanun Tutarı": "7.000 TL taban → 66.357 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2604,6 +2634,7 @@
         "id": "saglama_30",
         "title": "Yasak su ürününü nakletme veya satma (Md.23–25)",
         "details": {
+          "Hüküm": "Yasak su ürününü nakletme veya satma (Md.23–25)",
           "Kanun Bendi": "36/m",
           "Kanun Tutarı": "5.000 TL taban → 47.397 TL",
           "Boy Çarpanı": "—",
@@ -2617,6 +2648,7 @@
         "id": "saglama_31",
         "title": "Yasak su ürününü imalatta kullanma, işleme, muhafaza, ihraç (Md.23–25)",
         "details": {
+          "Hüküm": "Yasak su ürününü imalatta kullanma, işleme, muhafaza, ihraç (Md.23–25)",
           "Kanun Bendi": "36/m",
           "Kanun Tutarı": "10.000 TL taban → 94.811 TL",
           "Boy Çarpanı": "—",
@@ -2631,6 +2663,7 @@
         "id": "saglama_32",
         "title": "Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3)",
         "details": {
+          "Hüküm": "Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3)",
           "Kanun Bendi": "36/m",
           "Kanun Tutarı": "5.000 TL–100.000 TL → 47.397 TL–948.169 TL",
           "Boy Çarpanı": "—",
@@ -2645,6 +2678,7 @@
         "id": "saglama_33",
         "title": "Bilgi ve belgeleri zamanında ve doğru vermeme (Md.28)",
         "details": {
+          "Hüküm": "Bilgi ve belgeleri zamanında ve doğru vermeme (Md.28)",
           "Kanun Bendi": "36/n",
           "Kanun Tutarı": "700 TL taban → 6.627 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2658,6 +2692,7 @@
         "id": "saglama_34",
         "title": "İzinsiz yasak vasıta/usulle ilmi-teknik çalışma (Md.29)",
         "details": {
+          "Hüküm": "İzinsiz yasak vasıta/usulle ilmi-teknik çalışma (Md.29)",
           "Kanun Bendi": "36/o",
           "Kanun Tutarı": "850 TL taban → 8.048 TL",
           "Boy Çarpanı": "—",
@@ -2672,6 +2707,7 @@
         "id": "saglama_35",
         "title": "İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4)",
         "details": {
+          "Hüküm": "İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4)",
           "Kanun Bendi": "36/p",
           "Kanun Tutarı": "1.000 TL–5.000 TL → 9.473 TL–47.397 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2686,6 +2722,7 @@
         "id": "saglama_36",
         "title": "İzleme sistemi yükümlülüğü — yetiştiricilik tesisi (Ek Md.4)",
         "details": {
+          "Hüküm": "İzleme sistemi yükümlülüğü — yetiştiricilik tesisi (Ek Md.4)",
           "Kanun Bendi": "36/p",
           "Kanun Tutarı": "5.000 TL–25.000 TL → 47.397 TL–237.034 TL",
           "Boy Çarpanı": "—",
@@ -2700,6 +2737,7 @@
         "id": "saglama_37",
         "title": "Karaya çıkış noktası dışında boşaltma — gemi (Ek Md.5)",
         "details": {
+          "Hüküm": "Karaya çıkış noktası dışında boşaltma — gemi (Ek Md.5)",
           "Kanun Bendi": "36/r",
           "Kanun Tutarı": "1.000 TL–5.000 TL → 9.473 TL–47.397 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2713,6 +2751,7 @@
         "id": "saglama_38",
         "title": "Nakil belgesi yükümlülüklerine aykırılık (Ek Md.5)",
         "details": {
+          "Hüküm": "Nakil belgesi yükümlülüklerine aykırılık (Ek Md.5)",
           "Kanun Bendi": "36/r",
           "Kanun Tutarı": "1.000 TL–5.000 TL → 9.473 TL–47.397 TL",
           "Boy Çarpanı": "—",
@@ -2727,6 +2766,7 @@
         "id": "saglama_39",
         "title": "İzinsiz balıklandırma — gerçek kişi (Ek Md.6)",
         "details": {
+          "Hüküm": "İzinsiz balıklandırma — gerçek kişi (Ek Md.6)",
           "Kanun Bendi": "36/s",
           "Kanun Tutarı": "10.000 TL taban → 94.811 TL",
           "Boy Çarpanı": "—",
@@ -2740,6 +2780,7 @@
         "id": "saglama_40",
         "title": "İzinsiz balıklandırma — tüzel kişi (Ek Md.6)",
         "details": {
+          "Hüküm": "İzinsiz balıklandırma — tüzel kişi (Ek Md.6)",
           "Kanun Bendi": "36/s",
           "Kanun Tutarı": "20.000 TL taban → 189.630 TL",
           "Boy Çarpanı": "—",
@@ -2753,6 +2794,7 @@
         "id": "saglama_41",
         "title": "Başka ülke suları/uluslararası sularda şartlara aykırı avcılık — ruhsatlı gemi (Ek Md.7)",
         "details": {
+          "Hüküm": "Başka ülke suları/uluslararası sularda şartlara aykırı avcılık — ruhsatlı gemi (Ek Md.7)",
           "Kanun Bendi": "36/t",
           "Kanun Tutarı": "10.000 TL–30.000 TL → 94.811 TL–284.449 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2766,6 +2808,7 @@
         "id": "saglama_42",
         "title": "Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7)",
         "details": {
+          "Hüküm": "Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7)",
           "Kanun Bendi": "36/t",
           "Kanun Tutarı": "20.000 TL–50.000 TL → 189.630 TL–474.079 TL",
           "Boy Çarpanı": "12–22 m ×2, ≥22 m ×3",
@@ -2779,6 +2822,7 @@
         "id": "saglama_43",
         "title": "Ruhsat tezkeresi geçici geri alınmış gemiyle avcılık (Kanun 36 son fıkralar)",
         "details": {
+          "Hüküm": "Ruhsat tezkeresi geçici geri alınmış gemiyle avcılık (Kanun 36 son fıkralar)",
           "Kanun Bendi": "36/genel",
           "Kanun Tutarı": "Ayrı idari para cezası yok",
           "Boy Çarpanı": "—",

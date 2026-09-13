@@ -1,5 +1,8 @@
 ﻿# Sürüm Notları
 
+## 6.0.34
+* **Düzeltme:** Ceza Rehberindeki "Kanun 36 Sağlaması" tablosunda hükmün adı görünmüyordu (yalnızca bent yazıyordu); ilk sütun olarak "Hüküm" eklendi.
+
 ## 6.0.33
 * **Ceza dosyası sağlaması:** Kanun 36'nın 44 hükmü (a–t bentleri ve son fıkralar) Kanun metninde birebir doğrulanarak her ceza kartına bağlandı. Her kartta bent, taban tutarın güncel karşılığı veya kanun aralığı, 12–22 m ×2 / ≥22 m ×3 boy çarpanı, gırgır 3 katı, tekrar (2 kat, özel tekrar, adli yaptırım), ruhsat geri alma, el koyma, Yönetmelik/Tebliğ madde-fıkra atfının varlığı ve konusu, Excel ham satırı sağlanır (`tools/verify_penalties.py`). Duman testi ve veri üretimi sağlama hatasında durur.
 * **Kanuna göre düzeltilenler (08 tablosundaki değer kartta saklanır):** Yasak tür/boy gırgır tutarı 56.640 → 71.076 TL; dip trolü kişi cezası 23.692 → 66.357 TL (36/l); BAGİS işlevsizlik bildirmeme 12–22 m 18.946 TL, ≥22 m 28.419 TL; BAGİS takmama/teslim etmeme 12–22 m 94.794 TL; arıza giderilmeden avcılık ≥22 m 48.318 TL; uluslararası sularda ruhsatsız ≥22 m gemi 568.890 TL (kanuni asgari); arıtma kalemleri 36/e; seyir defteri atfı 6/1 Tebliğ 49/9; amatör gemi ve içsu serpme kalemlerine boy kademeleri.

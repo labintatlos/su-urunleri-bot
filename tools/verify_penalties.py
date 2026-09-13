@@ -582,7 +582,8 @@ def provision_rows(cards):
                  else '✅ Uyumlu')
         repeat = {'double': '2 yıl içinde 2 kat', 'criminal': 'Tekrarında adli yaptırım (hapis)',
                   'own': p.get('repeat_text', ''), 'none': 'Genel artırım yok'}[p['repeat']]
-        details = {'Kanun Bendi': f'36/{p["bent"]}', 'Kanun Tutarı': amount_text(p),
+        # items_table satır başlığını göstermez; hüküm adı ayrı sütundur.
+        details = {'Hüküm': p['label'], 'Kanun Bendi': f'36/{p["bent"]}', 'Kanun Tutarı': amount_text(p),
                    'Boy Çarpanı': ('12–22 m ×2, ≥22 m ×3' + (' · gırgır ×3' if p.get('purse') else '')) if p.get('vessel') else '—',
                    'Tekrar': repeat, 'Ruhsat': 'Geri alma / iptal' if p.get('license') else '—',
                    'Kartlar': ', '.join(str(c['id']) for c in group), 'Sağlama': state}
