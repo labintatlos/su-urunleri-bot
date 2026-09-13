@@ -123,9 +123,6 @@
     gear: 'Av aracını veya yöntemi yazın…',
     place: 'Yer, il, koy veya saha adını yazın…',
     lawsearch: 'Aranacak kelimeyi yazın…',
-    audit_length_exact: 'Gemi boyu (metre) — örn. 17.4',
-    penalty_length: 'Gemi boyu (metre) — örn. 17.4',
-    sanction_length: 'Gemi boyu (metre) — örn. 17.4',
     audit_date: 'GG.AA.YYYY — örn. 20.05.2026',
     guide_measure: 'Değeri yazın…',
   };

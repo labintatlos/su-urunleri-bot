@@ -118,9 +118,9 @@ ACTIVITY_SCOPE_LABEL = {
 
 LENGTH_BANDS = {
     'none': ('Gemi/Tekne yok', 0.0),
-    'lt12': ('12 metreden küçük', 11.0),
-    '12to22': ('12 m – 22 m altı', 17.0),
-    'ge22': ('22 m ve üzeri', 22.0),
+    'lt12': ('12 metre altı', 11.0),
+    '12to22': ('12–22 metre arası', 17.0),
+    'ge22': ('22 metre ve üstü', 22.0),
 }
 
 SUBJECT_LABEL = {
@@ -180,22 +180,29 @@ def audit_species_scope(context):
     return 'inland' if context.user_data.get('audit_region') == 'inland' else 'sea'
 
 
-def audit_length_label(context):
-    exact = context.user_data.get('audit_length_exact')
-    if exact is not None:
-        return f'{exact:g} m'
-    band = context.user_data.get('audit_length_band')
+def length_band_of(length):
+    """Eski kayıtlardaki sayısal boyu üç boy grubundan birine çevirir."""
+    if length is None:
+        return None
+    length = float(length)
+    return 'none' if length <= 0 else 'lt12' if length < 12 else '12to22' if length < 22 else 'ge22'
+
+
+def audit_length_band(context):
+    d = context.user_data
+    band = d.get('audit_length_band')
     if band in LENGTH_BANDS:
-        return LENGTH_BANDS[band][0]
-    length = context.user_data.get('audit_length')
-    return f'{length:g} m' if length is not None else 'Belirtilmedi'
+        return band
+    return length_band_of(d.get('audit_length_exact', d.get('audit_length')))
+
+
+def audit_length_label(context):
+    band = audit_length_band(context)
+    return LENGTH_BANDS[band][0] if band else 'Belirtilmedi'
 
 
 def audit_rule_length(context):
-    exact = context.user_data.get('audit_length_exact')
-    if exact is not None:
-        return float(exact)
-    band = context.user_data.get('audit_length_band')
+    band = audit_length_band(context)
     if band in LENGTH_BANDS:
         return float(LENGTH_BANDS[band][1])
     return float(context.user_data.get('audit_length') or 0)
@@ -844,8 +851,13 @@ def callback(q, context):
     if data in ('sanction:guide', 'sanction:audit'):
         context.user_data.pop('mode', None)
         return show_sanction_summary(q, context, data.split(':')[1])
-    if data in ('sanction:length:guide', 'sanction:length:audit'):
-        return sanction_length_prompt(q, context, data.rsplit(':', 1)[1])
+    if data.startswith('sanction:band:'):
+        _, _, source, band = (data.split(':') + [''])[:4]
+        if source in ('guide', 'audit') and band in SANCTION_BANDS:
+            context.user_data['audit_length_band'] = band
+            context.user_data['audit_length'] = LENGTH_BANDS[band][1]
+            context.user_data.pop('audit_length_exact', None)
+            return show_sanction_summary(q, context, source)
     if data == 'audit:result':
         # Özetten sonuca dönmek denetimi yeniden sonuçlandırmak değildir; kayda yazılmaz.
         return audit_quick_finish(q, context, record=False)
@@ -1069,10 +1081,13 @@ def callback(q, context):
         _, kind, sid = data.split(':')
         return show_species(q, kind, int(sid), context)
 
-    if data.startswith('pen:length:'):
-        pid=int(data.rsplit(':',1)[1])
-        context.user_data.update(mode='penalty_length',penalty_pid=pid)
-        return q.edit_message_text('🚤 Gemi tam boyunu metre olarak yazın. Örnek: <code>17.4</code>',parse_mode=ParseMode.HTML,reply_markup=kb([[('↩️ Ceza Kartı',f'pen:{pid}')]]))
+    if data.startswith('pen:band:'):
+        _, _, pid, band = (data.split(':') + [''])[:4]
+        if band in SANCTION_BANDS and pid.isdigit():
+            context.user_data['audit_length_band'] = band
+            context.user_data['audit_length'] = LENGTH_BANDS[band][1]
+            context.user_data.pop('audit_length_exact', None)
+            return show_penalty(q, int(pid), context)
     if data.startswith('pen:'):
         return show_penalty(q, int(data.split(':', 1)[1]), context)
     if data.startswith('raw:'):
@@ -1113,13 +1128,8 @@ def callback(q, context):
         return audit_choose_length(q, context)
     if data.startswith('audit:length:'):
         choice = data.rsplit(':', 1)[1]
-        if choice == 'exact':
-            context.user_data['mode'] = 'audit_length_exact'
-            return q.edit_message_text(
-                '🚤 <b>GEMİ / TEKNE TAM BOYU</b>\n\nTam boyu metre olarak yazın. Örnek: <code>17.4</code>',
-                parse_mode=ParseMode.HTML,
-                reply_markup=kb([[('🏠 Ana Menü', 'menu')]])
-            )
+        if choice not in LENGTH_BANDS:
+            return audit_choose_length(q, context)
         _, rule_value = LENGTH_BANDS[choice]
         context.user_data['audit_length_band'] = choice
         context.user_data['audit_length'] = rule_value
@@ -1599,7 +1609,7 @@ def show_penalty(q, pid, context):
         text += '💰 <b>Excel’deki özel tutarlar:</b>\n'
         for label, amount in amounts.items():
             text += f'• {esc(label)} → <b>{money(amount)}</b>\n'
-        has_length_context = any(k in context.user_data for k in ('audit_length', 'audit_length_band', 'audit_length_exact'))
+        has_length_context = audit_length_band(context) in SANCTION_BANDS
         length = audit_rule_length(context) if has_length_context else None
         lab, selected = _amount_for_length(amounts, length)
         if selected is not None:
@@ -1643,8 +1653,12 @@ def show_penalty(q, pid, context):
     for i in range(0, len(source_buttons), 2):
         rows.append(source_buttons[i:i+2])
     if any(k in amounts for k in ['<12 m','12–<22 m','≥22 m']):
-        rows.append([('🚤 Gemi Boyuna Göre Göster',f'pen:length:{pid}')])
-    rows.append([('📊 Excel Ham Satır', f'raw:{row["source_row"]}'), ('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
+        rows.append([('🚤 12 metre altı', f'pen:band:{pid}:lt12'), ('🚢 12–22 metre arası', f'pen:band:{pid}:12to22')])
+        rows.append([('🛳 22 metre ve üstü', f'pen:band:{pid}:ge22')])
+    if row['source_row']:
+        rows.append([('📊 Excel Ham Satır', f'raw:{row["source_row"]}'), ('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
+    else:
+        rows.append([('🧾 Kolluk İşlemi', 'field:Kolluk İşlemi')])
     rows.append([('🏠 Ana Menü', 'menu')])
     q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
@@ -2059,15 +2073,7 @@ SANCTION_BANDS = {'lt12': (0.0, 12.0), '12to22': (12.0, 22.0), 'ge22': (22.0, No
 
 def sanction_range(context):
     """(alt, üst) boy aralığı ve etiketi; tam boy bilinirse alt = üst."""
-    d = context.user_data
-    for key in ('sanction_length', 'audit_length_exact'):
-        try:
-            value = float(d.get(key))
-        except (TypeError, ValueError):
-            continue
-        if value > 0:
-            return (value, value), f'{value:g} m'
-    band = d.get('audit_length_band')
+    band = audit_length_band(context)
     if band in SANCTION_BANDS:
         return SANCTION_BANDS[band], LENGTH_BANDS[band][0]
     return None, 'Belirtilmedi — bütün boy kademeleri gösteriliyor'
@@ -2231,7 +2237,8 @@ def render_sanction_summary(context, source):
                  'tekrar durumu, maddi unsurlar ve tutarın geçerli yılı somut olayda doğrulanmalıdır; bu özet nihai '
                  'yaptırım kararı değildir. Kalemler aynı olaya birlikte uygulanmayabileceğinden toplam tutar gösterilmez.</i>')
     back = ('↩️ Kontrol Sonucuna Dön', 'guide:result') if source == 'guide' else ('↩️ Denetim Sonucuna Dön', 'audit:result')
-    rows = [[('🚤 Gemi Boyunu Gir / Değiştir', f'sanction:length:{source}')],
+    rows = [[('🚤 12 metre altı', f'sanction:band:{source}:lt12'), ('🚢 12–22 metre arası', f'sanction:band:{source}:12to22')],
+            [('🛳 22 metre ve üstü', f'sanction:band:{source}:ge22')],
             [('🧾 Kontrol Çizelgesi', 'guide:sheet' if source == 'guide' else 'audit:sheet')],
             [back, ('🏠 Ana Menü', 'menu')]]
     return '\n\n'.join(parts), rows
@@ -2244,16 +2251,6 @@ def show_sanction_summary(q, context, source):
         return q.answer('Önce duruma özel kontrolü tamamlayın.', show_alert=True)
     text, rows = render_sanction_summary(context, source)
     return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
-
-
-def sanction_length_prompt(q, context, source):
-    context.user_data.update(mode='sanction_length', sanction_source=source)
-    return q.edit_message_text(
-        '🚤 <b>GEMİ / TEKNE TAM BOYU</b>\n\nYaptırım özetinde boya göre kademeli tutarların seçilmesi için '
-        'tam boyu metre olarak yazın. Örnek: <code>17.4</code>',
-        parse_mode=ParseMode.HTML,
-        reply_markup=kb([[('↩️ Yaptırım Özeti', f'sanction:{source}')]]),
-    )
 
 
 def sanction_sheet_block(context, source):
@@ -2386,7 +2383,7 @@ def audit_breadcrumb(context):
         parts.append(f'🗺️ {esc(d["audit_location"])}')
     if d.get('audit_activity'):
         line = '⚓ ' + esc(audit_activity_label(context))
-        if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
+        if audit_length_band(context):
             line += f' \u00b7 {esc(audit_length_label(context))}'
         parts.append(line)
     if d.get('audit_date'):
@@ -2448,10 +2445,9 @@ def audit_choose_length(q, context):
         'Gemi/tekne durumunu seçin. Boy grubu; BAGİS, donanım ve yaptırım değerlendirmesinde kullanılacaktır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb([
+            [('🚤 12 metre altı', 'audit:length:lt12'), ('🚢 12–22 metre arası', 'audit:length:12to22')],
+            [('🛳 22 metre ve üstü', 'audit:length:ge22')],
             [('⚓ Gemi/Tekne yok', 'audit:length:none')],
-            [('🚤 12 m altı', 'audit:length:lt12'), ('🚢 12–22 m altı', 'audit:length:12to22')],
-            [('🛳 22 m ve üzeri', 'audit:length:ge22')],
-            [('✍️ Tam boyu yaz', 'audit:length:exact')],
             [('↩️ Faaliyeti Değiştir', f'audit:region:{context.user_data.get("audit_region")}'), ('🏠 Ana Menü', 'menu')],
         ]),
     )
@@ -2901,7 +2897,7 @@ def ai_scenario_from_context(context):
         facts.append('İl / su kaynağı / tesis: ' + str(d['audit_location']))
     if d.get('audit_activity'):
         facts.append('Faaliyet: ' + audit_activity_label(context))
-    if d.get('audit_length_exact') is not None or d.get('audit_length_band') or d.get('audit_length') is not None:
+    if audit_length_band(context):
         facts.append('Gemi/tekne: ' + audit_length_label(context))
     if d.get('audit_date'):
         facts.append('Kontrol tarihi: ' + audit_date(context).strftime('%d.%m.%Y'))
@@ -3205,10 +3201,9 @@ def audit_gear_result(q, context):
     gear = context.user_data['audit_gear']
     region = context.user_data.get('audit_region')
     activity = context.user_data.get('audit_activity')
-    length = context.user_data.get('audit_length', 0)
     source = '61' if activity == 'commercial' else '62'
     results = db.search_articles(gear, 6, source=source)
-    text = f'🎣 <b>{esc(gear.title())} — KONTROL</b>\n\nAlan: {esc(REGION_LABEL.get(region, region))} | Gemi: {length:g} m\n\n'
+    text = f'🎣 <b>{esc(gear.title())} — KONTROL</b>\n\nAlan: {esc(REGION_LABEL.get(region, region))} | Gemi: {esc(audit_length_label(context))}\n\n'
     if activity == 'commercial' and region == 'inland' and gear in {'gırgır', 'dip trolü', 'ortasu trolü'}:
         text += '🔴 <b>6/1 Md.51: içsularda trol ve gırgır ağlarının kullanılması yasaktır.</b>\n\n'
     if activity == 'commercial' and gear == 'ışık' and region in {'karadeniz', 'marmara'}:
@@ -3312,31 +3307,6 @@ def text_handler(update, context):
             reply_markup=kb([[('⏭️ Kontrol Edilmedi / Atla', 'guide:measure:skip')], [('📊 Sonuca Dön', 'guide:result')]])
         )
 
-    if mode == 'sanction_length':
-        source = context.user_data.get('sanction_source') or 'guide'
-        try:
-            length = float(text.replace(',', '.'))
-            if length <= 0:
-                raise ValueError
-        except ValueError:
-            return send_or_edit(update, context, 'Gemi boyunu metre olarak sayı biçiminde yazın. Örnek: <code>17.4</code>',
-                                parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Yaptırım Özeti', f'sanction:{source}')]]))
-        context.user_data['sanction_length'] = length
-        context.user_data.pop('mode', None)
-        body, rows = render_sanction_summary(context, source)
-        return send_or_edit(update, context, body, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
-
-    if mode == 'penalty_length':
-        try:
-            length=float(text.replace(',','.'))
-            if length<0: raise ValueError
-        except ValueError:
-            return send_or_edit(update, context, 'Gemi boyunu sayı olarak yazın. Örnek: 17.4')
-        pid=context.user_data.get('penalty_pid')
-        context.user_data['audit_length']=length
-        context.user_data.pop('mode',None)
-        return send_or_edit(update, context, f'🚤 Gemi boyu <b>{length:g} m</b> olarak kaydedildi. Ceza kartında Exceldeki uygun boy satırı öne çıkarılacak.',parse_mode=ParseMode.HTML,reply_markup=kb([[('⚖️ Ceza Kartını Aç',f'pen:{pid}')],[('🏠 Ana Menü','menu')]]))
-
     if mode == 'audit_location':
         context.user_data['audit_location'] = text[:160]
         context.user_data.pop('mode', None)
@@ -3348,30 +3318,6 @@ def text_handler(update, context):
                 [('🚤 Ticari avcılık', 'audit:activity:commercial'), ('🎣 Amatör avcılık', 'audit:activity:amateur')],
                 [('↩️ Alanı Değiştir', 'audit:start'), ('🏠 Ana Menü', 'menu')],
             ]),
-        )
-
-    if mode == 'audit_length_exact':
-        try:
-            length = float(text.replace(',', '.'))
-            if length < 0:
-                raise ValueError
-        except ValueError:
-            return send_or_edit(update, context, 'Gemi boyunu metre olarak sayı biçiminde yazın. Örnek: 17.4')
-        context.user_data['audit_length_exact'] = length
-        context.user_data['audit_length'] = length
-        if length == 0:
-            context.user_data['audit_length_band'] = 'none'
-        elif length < 12:
-            context.user_data['audit_length_band'] = 'lt12'
-        elif length < 22:
-            context.user_data['audit_length_band'] = '12to22'
-        else:
-            context.user_data['audit_length_band'] = 'ge22'
-        context.user_data.pop('mode', None)
-        return send_or_edit(update, context, 
-            f'🚤 Tam boy <b>{length:g} m</b> olarak kaydedildi.\n\n4. adım: olay/kontrol tarihini seçin.',
-            parse_mode=ParseMode.HTML,
-            reply_markup=kb([[('📅 Bugün', 'audit:date:today'), ('🗓 Başka tarih', 'audit:date:other')], [('🏠 Ana Menü', 'menu')]])
         )
 
     if mode == 'audit_date':

@@ -249,7 +249,32 @@ CORRECTIONS = [
      'Kanun 36 boy çarpanı amatör avcılıkta kullanılan geminin sahibine de uygulanır: 7.105 TL; ×2 = 14.210 TL; ×3 = 21.315 TL.'),
     (68, 'amounts', None, {}, dict(K_TIER_AMOUNTS),
      'Kanun 36/k gemi sahibi tutarı boy çarpanıyla: 23.692 / 47.384 / 71.076 TL (diğer 36/k kalemleriyle aynı).'),
+    (71, 'amounts', 'Gırgır', 1422237, None,
+     'Kanun 36/k ışık paragrafı gırgır gemisi için 3 katı öngörmez (3 katı yalnız birinci paragraftadır); gırgır gemisine de boyuna göre tutar uygulanır.'),
+    (73, 'license_action', None, '1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu)', None,
+     'Kanun 36/l birinci paragraf ve Yönetmelik 41 trol yasak alanı (Kanun 24/a) ihlalinde ruhsat geri almayı öngörmez; tekrarında adli yaptırım uygulanır.'),
+    (46, 'product_seizure', None, 'Hayır', 'Evet', 'Kanun 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır.'),
+    (46, 'means_seizure', None, 'Hayır', 'Evet (gemi hariç)',
+     'Kanun 36/k: bölge, zaman veya av aracı vasıflarına aykırılıkta ve tekrarında gemi hariç istihsal vasıtalarına el konur.'),
+    (76, 'product_seizure', None, 'Hayır', 'Evet', 'Kanun 24/c ve 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır.'),
+    (76, 'means_seizure', None, 'Hayır', 'Evet (gemi hariç)',
+     'Kanun 36/k: bölge, zaman veya av aracı vasıflarına aykırılıkta ve tekrarında gemi hariç istihsal vasıtalarına el konur.'),
+    (72, 'product_seizure', None, '-', 'Evet', 'Kanun 36/l: istihsal olunan su ürünlerine el konulur.'),
+    (72, 'means_seizure', None, '-', 'Evet (istihsal vasıtaları)', 'Kanun 36/l: istihsal vasıtalarına el konularak mülkiyetin kamuya geçirilmesine karar verilir.'),
+    (74, 'product_seizure', None, 'Hayır', 'Evet', 'Kanun 36/l ikinci paragraf: istihsal olunan su ürünlerine el konulur.'),
+    (74, 'means_seizure', None, 'Hayır', 'Evet (gemi hariç)',
+     'Kanun 36/l: bölge, zaman veya vasıf aykırılığında ve tekrarında gemi hariç istihsal vasıtalarına el konur.'),
 ]
+
+# 08 tablosundaki yazım hataları ve Kanunla çelişen ifadeler (tüm metin alanlarında).
+TEXT_FIXES = [
+    ('ürünleirnin', 'ürünlerinin'), ('kullanıması', 'kullanılması'), ('alet,edavat', 'alet, edevat'),
+    ('edavat', 'edevat'), ('teçhizat bv.', 'teçhizat vb.'), ('vb.zapt', 'vb. zapt'), ('Zapt ve', 'zapt ve'),
+    ('Artıma sistemi', 'Arıtma sistemi'), ('teslime etmeme', 'teslim etmeme'), ('dahilve', 'dahil ve'),
+    ("100 kg kg'a", "100 kg'a"), ('Parekata', 'Parakete'), ('Boğazların ile', 'Boğazları ile'),
+    ('(5000-1000 gün adli para cezası)', '(5.000–10.000 gün adli para cezası)'),
+]
+TEXT_FIELDS = ('violation', 'option', 'product_seizure', 'means_seizure', 'notes', 'repeat', 'license_action')
 
 ALIASES = {
     43: 'tasima gecit tedbir calistirmama',
@@ -340,13 +365,22 @@ def apply(cards):
         original = card.setdefault('excel_original', {})
         label = f'{field}.{key}' if key else field
         original[label] = old
-        if key:
+        if key and new is None:
+            card.setdefault(field, {}).pop(key, None)
+        elif key:
             card.setdefault(field, {})[key] = new
         else:
             card[field] = copy.deepcopy(new)
         fixes = card.setdefault('law_corrections', [])
         if reason not in fixes:
             fixes.append(reason)
+    for card in cards:
+        for field in TEXT_FIELDS:
+            value = card.get(field)
+            if isinstance(value, str):
+                for wrong, right in TEXT_FIXES:
+                    value = value.replace(wrong, right)
+                card[field] = value
     for card_id, extra in ALIASES.items():
         words = set((by_id[card_id].get('aliases') or '').split()) | set(extra.split())
         by_id[card_id]['aliases'] = ' '.join(sorted(words))
@@ -419,7 +453,7 @@ def verify(cards):
     for card in cards:
         cid = card['id']
         pid = CARD_PROVISION.get(cid)
-        warnings, fails = [], []
+        warnings, fails, infos = [], [], []
         if not pid:
             errors.append(f'kart {cid}: Kanun 36 hükmüne bağlanmamış')
             continue
@@ -529,7 +563,7 @@ def verify(cards):
                 if ('reg', number) not in articles:
                     fails.append(f'Yönetmelik atfı yok: Md.{number}')
         elif regulation:
-            warnings.append('Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı.')
+            infos.append('Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı.')
         # 5. Excel satırı
         if card.get('origin') != 'kanun' and card.get('layout') != 'block':
             original = card.get('excel_original', {})
@@ -550,11 +584,12 @@ def verify(cards):
         if p.get('purse'):
             text.append('gırgır gemisinde 3 katı')
         for cid_label, old in (card.get('excel_original') or {}).items():
-            text.append(f'08 tablosundaki değer: {cid_label} = {tl(old) if isinstance(old, int) else (old or "boş")}')
+            shown = tl(old) if isinstance(old, int) else (old or 'boş') if not isinstance(old, dict) else 'boş'
+            text.append(f'08 tablosundaki değer: {cid_label} = {shown}')
         text += card.get('law_corrections') or []
         if p.get('note'):
             text.append(p['note'])
-        text += sorted(set(warnings))
+        text += sorted(set(warnings)) + infos
         card['law_check'] = {'status': status, 'provision': pid, 'text': ' · '.join(text)}
         errors += [f'kart {cid}: {f}' for f in fails]
 

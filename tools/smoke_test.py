@@ -191,7 +191,7 @@ def check_sanction_coverage():
     import screens
     links = screens.PENALTY_LINKS
     problems = []
-    ranges = [None, (0.0, 12.0), (12.0, 22.0), (22.0, None), (4.0, 4.0), (11.0, 11.0), (17.0, 17.0), (30.0, 30.0)]
+    ranges = [None, (0.0, 12.0), (12.0, 22.0), (22.0, None)]
     for name, profile in links['profiles'].items():
         if profile['kind'] == 'none':
             continue
@@ -218,7 +218,7 @@ def check_sanction_coverage():
     flags = [{'tag': key, 'ref': ('61', 50), 'key': key} for key in links['flags']]
     context = SimpleNamespace(user_data={'quick_questions': questions, 'quick_answers': ['no'] * len(questions),
                                          'context_flags': flags, 'audit_region': 'marmara',
-                                         'audit_gear': 'gırgır', 'audit_length_exact': 17.0})
+                                         'audit_gear': 'gırgır', 'audit_length_band': '12to22'})
     findings, _ = screens.sanction_findings(context, 'audit')
     if len(findings) != len(questions) + len(flags) or not screens.sanction_sheet_block(context, 'audit'):
         problems.append('denetim soruları/uyarıları')
@@ -476,9 +476,11 @@ def main():
                 or '474.079 TL' not in sanction_text or 'Gırgır gemisi: 71.076 TL' not in sanction_text
                 or 'Yasak zamanda gırgır' not in sanction_text):
             errors.append((('SANCTION', 'guide_unknown_length'), s, sanction_text[:400]))
-        action('sanction:length:guide')
-        s, sanction = call('/api/text', {'text': '17'})
+        s, sanction = action('sanction:band:guide:12to22')
         sanction_text = text_of(sanction)
+        buttons = json.dumps(sanction.get('buttons', []), ensure_ascii=False)
+        if ('Boyunu Gir' in buttons or not all(label in buttons for label in ('12 metre altı', '12–22 metre arası', '22 metre ve üstü'))):
+            errors.append((('SANCTION', 'length_buttons'), s, buttons[:300]))
         if (s != 200 or '237.034 TL' not in sanction_text or '474.079 TL' in sanction_text
                 or '47.384 TL (12–&lt;22 m)' not in sanction_text):
             errors.append((('SANCTION', 'guide_length_17'), s, sanction_text[:400]))

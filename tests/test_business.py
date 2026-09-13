@@ -28,14 +28,18 @@ class TestScreensBusinessLogic(unittest.TestCase):
         self.assertEqual(res, '✅ 2  ·  ❌ 1  ·  ⚪ 1  ·  ⋯ 1')
 
     def test_audit_rule_length(self):
+        # Boy yalnız üç grupla seçilir; eski kayıtlardaki sayısal boy gruba çevrilir.
         ctx1 = DummyContext({'audit_length_exact': 15})
-        self.assertEqual(audit_rule_length(ctx1), 15.0)
+        self.assertEqual(audit_rule_length(ctx1), 17.0)
 
         ctx2 = DummyContext({'audit_length_band': '12to22'})
         self.assertEqual(audit_rule_length(ctx2), 17.0)
 
         ctx3 = DummyContext({'audit_length': 25})
-        self.assertEqual(audit_rule_length(ctx3), 25.0)
+        self.assertEqual(audit_rule_length(ctx3), 22.0)
+
+        ctx4 = DummyContext({'audit_length_band': 'lt12'})
+        self.assertEqual(audit_rule_length(ctx4), 11.0)
 
 if __name__ == '__main__':
     unittest.main()
