@@ -1098,5 +1098,233 @@
         "a": 33
       }
     ]
+  },
+  {
+    "id": "evidence_checklist",
+    "cat": "Kolluk İşlemi",
+    "title": "Delil ve tutanak kontrol listesi",
+    "summary": "Tespit en az iki kişilik kontrol ekibince yapılır. Mümkün olduğunda fotoğraf/video; tekne adı, ruhsat kodu/plakası, av aracı, ürün ve ölçümün aynı karede görüleceği şekilde çekilir. Mevki/koordinat ve saat (GPS, radar veya BAGİS ekranı), sahile mesafe ve su derinliği kaydedilir. Ölçümler (ağ gözü, boy/ağırlık, derinlik, mesafe) ve kullanılan ölçüm aracı tutanağa yazılır. Numune gerekiyorsa usulüne uygun alınır, etiketlenir, mühürlenir ve Bakanlık laboratuvarına gönderilir. Fotoğraf, kamera veya numune fiilen imkânsızsa suç tespit tutanağı yeterlidir; tutanak ve İdari Para Cezası Kararı mümkün olduğunca olay yerinde düzenlenip muhataba tebliğ edilir.",
+    "refs": [
+      {
+        "s": "reg",
+        "a": 36
+      },
+      {
+        "s": "reg",
+        "a": 37
+      },
+      {
+        "s": "reg",
+        "a": 40
+      }
+    ]
+  },
+  {
+    "id": "penalty_multipliers",
+    "cat": "Kolluk İşlemi",
+    "title": "Gemi boyu, gırgır ve tekrar katsayıları",
+    "summary": "Kanun 36’daki idari para cezaları tam boyu 12 m (dahil) ile 22 m arası gemiler için iki katı, 22 m ve üzeri gemiler için üç katı uygulanır. 36/k kapsamındaki aykırılık gırgır gemisiyle işlenmişse gemi sahip/donatanına ceza üç katı uygulanır. Tekrar, tespit tarihinden itibaren iki yıl içinde aynı kabahatin yeniden işlenmesidir; tekrarında (b), (e), (f) bentleri ile (j) bendinin ikinci paragrafı hariç cezalar iki katı uygulanır. Katsayıların birlikte hesaplanması ceza kartındaki güncel tutar ve Kanun metniyle ayrıca doğrulanmalıdır.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 36
+      }
+    ]
+  },
+  {
+    "id": "suspended_license",
+    "cat": "Kolluk İşlemi",
+    "title": "Ruhsatı geri alınmış veya askıdaki gemi",
+    "summary": "Ruhsat tezkeresine geçici süreyle el konulan balıkçı gemisi bu süre içinde avcılık yaparsa gemiye av araçları ve donanımıyla birlikte el konularak mülkiyetin kamuya geçirilmesine karar verilir; bu gemilerin Bakanlıkça verilen tüm izin ve ruhsatları iptal edilmiş sayılır. Ruhsatı askıya alınmış gemide tespit edilen aykırılıklarda idari yaptırımlar askıya alınma dikkate alınmadan uygulanır.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 36
+      },
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "criminal_repeat",
+    "cat": "Kolluk İşlemi",
+    "title": "Adli sevk gerektiren tekrar halleri",
+    "summary": "İçsular, Marmara Denizi, İstanbul ve Çanakkale boğazlarında trolle istihsal fiilinin iki yıl içinde tekrarı halinde gemi sahip/donatanına bir yıldan üç yıla kadar hapis ve adli para cezası öngörülür (Kanun 36/l). Su ürünlerinin izinsiz yurt dışına çıkarılması veya canlı olarak yurt içine sokulması fiilinin iki yıl içinde tekrarında da hapis ve adli para cezası öngörülür (Kanun 36/m, Md.25/3). Her iki halde de su ürünleri ile istihsal (ve 36/m’de nakil) vasıtalarına el konularak müsaderesine hükmolunur; fiil adli suç niteliği taşıdığından işlem adli makamlarla birlikte yürütülür.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 36
+      },
+      {
+        "s": "law",
+        "a": 24
+      },
+      {
+        "s": "law",
+        "a": 25
+      }
+    ]
+  },
+  {
+    "id": "research_permit",
+    "cat": "Av Aracı",
+    "title": "Bilimsel araştırma ve yasak vasıta izni",
+    "summary": "Bilimsel ve teknik etüt/araştırma amacıyla dip trolü, elektrik cereyanı, elektroşok veya diğer yasak vasıta ve usulleri kullanacaklar ile istihsal sahalarında üretim ve ıslah çalışması yapacaklar önceden Bakanlık izni almak zorundadır. İzin belirli yer ve süre için verilir; bu çalışmalardan elde edilen ürün satılamaz. Aykırılık Kanun 36/o kapsamındadır.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 29
+      },
+      {
+        "s": "reg",
+        "a": 16
+      },
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "sonar_marmara",
+    "cat": "Av Aracı",
+    "title": "Marmara’da düşük frekanslı sonar",
+    "summary": "Marmara Denizi’nde avcılıkta frekans çıkışı 20 kHz (dahil) ve daha düşük sonar kullanılması yasaktır. İstanbul veya Çanakkale Boğazı’ndan Marmara’ya giren bu tip sonarlı tekneler sonarlarını il müdürlüğüne mühürletmek, çıkışta başvurarak açtırmak zorundadır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      }
+    ]
+  },
+  {
+    "id": "coastal_drag_nets",
+    "cat": "Av Aracı",
+    "title": "Kıyı sürütme ağları (ığrıp, trata, tarlakoz, manyat)",
+    "summary": "Bütün karasularında ığrıp, trata, tarlakoz, manyat ve benzeri kıyı sürütme ağlarıyla avcılık ile bu ağları ve kullanmaya yarayan donanımı balıkçı gemisinde bulundurmak yasaktır; Marmara karides avcılığındaki manyat istisnası Tebliğ şartlarıyla sınırlıdır. İçsularda Bakanlık izni olmadan gümüş balığı avcılığı dışında ığrıp ve manyat kullanılamaz.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 14
+      },
+      {
+        "s": "61",
+        "a": 51
+      }
+    ]
+  },
+  {
+    "id": "unlicensed_vessel_gear",
+    "cat": "Gemi/Ruhsat",
+    "title": "Ruhsatsız gemide ticari av aracı",
+    "summary": "Ruhsat tezkeresi sahibi kişiler yalnızca ruhsatlı balıkçı gemilerinde avcılık yapabilir. Su ürünleri avcılığı için ruhsat tezkeresi düzenlenmemiş gemilerde ticari avcılıkta kullanılan av araçları ve bunların donanım, alet ve ekipmanı bulundurulamaz. Balıkçı yardımcı gemisi avcılık yapamaz ve av ekipmanı taşıyamaz.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 49
+      },
+      {
+        "s": "law",
+        "a": 3
+      }
+    ]
+  },
+  {
+    "id": "foreign_fishers",
+    "cat": "Gemi/Ruhsat",
+    "title": "Yabancıların avcılığı",
+    "summary": "Türk vatandaşı olmayan kişilerin avcılık yapmak üzere karasularına veya içsulara girmesi ve avcılık yapması yasaktır (Kanun 36/i). İstisnalar: 6/2 Tebliğ kurallarına uyan yabancı turist amatör balıkçılar ve Bakanlık izniyle etüt/araştırmada çalışanlar. Türkiye’de ikamet eden, resmî misafir veya geçici görevli yabancılar Misafir Amatör Balıkçı Belgesi ile; yabancı turistler teknede turizm izinli işletme vasıtasıyla veya il/ilçe müdürlüğünden alınan avlanma fişiyle avlanabilir; denizlerde kıyıdan ve yarışmalarda belge aranmaz.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 21
+      },
+      {
+        "s": "62",
+        "a": 5
+      }
+    ]
+  },
+  {
+    "id": "international_waters",
+    "cat": "Yer/Saha",
+    "title": "MEB, uluslararası sular ve diğer ülke suları",
+    "summary": "Başka ülkenin karasularında veya münhasır ekonomik bölgesinde avcılık Bakanlık iznine tabidir; anlaşma kapsamında avlanan ürün izinde gösterilen limandan çıkarılır. Bakanlıkça ayrı düzenleme ilan edilmedikçe karasuları için getirilen kurallar bitişik uluslararası sularda ve MEB’de de aynen uygulanır. Uluslararası sularda avlanacak gemiler yasak yer ve zamanlardan geçerken Bakanlık esaslarına uyar. Başka ülke sularında şartlara aykırı ticari avcılık Kanun Ek Madde 7 ve 36/t kapsamındadır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 50
+      },
+      {
+        "s": "reg",
+        "a": 18
+      }
+    ]
+  },
+  {
+    "id": "bluefin_tuna",
+    "cat": "Ürün/Tür",
+    "title": "Mavi yüzgeçli orkinos",
+    "summary": "Avcılık ICCAT kotası ve Bakanlık yönetim planı çerçevesinde, gemiye verilen kota dahilinde yapılır; av, taşıma, destek ve yardımcı gemiler Ek-2 İzin Belgesi alır ve yalnız bir faaliyet için izinlidir. Akdeniz/Ege karasuları ve bitişik uluslararası sularda 1 Temmuz–14 Mayıs, diğer alanlarda 1 Temmuz–25 Mayıs arası avcılık yasaktır. Uçak, helikopter veya İHA kullanılamaz. eBCD olmadan gemide bulundurma, kafeste taşıma, satış, nakil ve besi tesisinde bulundurma yasaktır. Bu türleri avlayan 12 m ve üzeri gemiler IMO numarası almak zorundadır.",
+    "refs": [
+      {
+        "s": "61",
+        "a": 22
+      },
+      {
+        "s": "61",
+        "a": 49
+      },
+      {
+        "s": "61",
+        "a": 18
+      }
+    ]
+  },
+  {
+    "id": "live_export_permit",
+    "cat": "Nakil/Satış",
+    "title": "Yurt dışına çıkarma ve canlı ithal izni",
+    "summary": "Kaynakların korunması için su ürünlerinin yurt dışına çıkarılması ve canlı olarak yurt içine sokulması izne tabidir. Aykırılıkta ürün, istihsal ve nakil vasıtalarına el konulur; iki yıl içinde tekrarı adli suç oluşturur (Kanun 36/m). Yasak dönem öncesi stoklanan ürünün yasak dönemde ihracatı için stok tespitini yapan il/ilçe müdürlüğünden ihracat izni gerekir.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 25
+      },
+      {
+        "s": "law",
+        "a": 36
+      },
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
+  },
+  {
+    "id": "aquaculture_site",
+    "cat": "Tesis/Sağlık",
+    "title": "Balık çiftliği saha kontrolü",
+    "summary": "Yetiştiricilik tesisi Bakanlık izniyle kurulur (izinsiz tesis Kanun 36/e). Denizde ve içsuda sabit kurulan kafes ve istihsal vasıtalarına gündüz flama, gece ışıklı flama veya benzeri işaret konulur. Damızlık, yumurta, larva ve yavru nakli ile sulara bırakma Bakanlık iznine bağlıdır. Tesis sınırına 100 m’den (Karadeniz’de Türk somonu tesislerinde 15 Haziran–31 Ağustos arası 50 m) yakın avcılık yapılamaz; kafeslere 300 m’den yakın ışık yakılamaz. Kafes kapasitesi, koordinat ve teknik personel şartları Su Ürünleri Yetiştiriciliği Yönetmeliği ve tesis izniyle karşılaştırılır; bu yönetmeliğin tam metni sistem kaynaklarında yoktur.",
+    "refs": [
+      {
+        "s": "law",
+        "a": 13
+      },
+      {
+        "s": "reg",
+        "a": 15
+      },
+      {
+        "s": "reg",
+        "a": 16
+      },
+      {
+        "s": "61",
+        "a": 49
+      }
+    ]
   }
 ]

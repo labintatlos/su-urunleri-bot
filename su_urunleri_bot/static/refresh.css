@@ -229,3 +229,16 @@ body { background: radial-gradient(ellipse at 50% 0, var(--accent-soft), transpa
   .block th, .block td { padding: 11px 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* Kontrol çizelgesi yazdırma (6.0.27): yalnızca ekran içeriği basılır;
+   üst çubuk, düğmeler ve tablo arama araçları gizlenir. */
+@media print {
+  .topbar, #buttons, .page-heading, #inline-slot, #tools-title,
+  .table-toolbar, .table-filter, .toast, .busy { display: none !important; }
+  body, .app, .stage, .screen { background: #fff !important; color: #000 !important; box-shadow: none !important; }
+  .screen .block { animation: none !important; }
+  .table-scroll { overflow: visible !important; border-color: #999; }
+  .block table { font-size: 10pt; }
+  .block th, .block td { border: 1px solid #999; }
+  .block thead th { position: static; }
+}

@@ -92,10 +92,13 @@ su_urunleri_bot/
 └── run.sh            # Eklenti giriş noktası
 ```
 
-Depo kökündeki `SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` klasörü içerik için tek ana
-kaynaktır. Eklenti derleme bağlamına girebilmesi için bu klasördeki Markdown
-belgelerinin birebir kopyası `data/markdown/` altında paketlenir; duman testi iki
-klasörün dosya adlarını ve içeriklerini karşılaştırır. Normal arama ve denetim
+`SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` klasörü içerik için tek ana kaynaktır, ancak
+6.0.27'den beri **depoda tutulmaz** (`.gitignore`); yalnızca geliştirme
+bilgisayarında durur ve kurum içi yayınlar gibi paketlenmeyen belgeler de
+içerebilir. Eklentinin çalışması için gereken, `data/sources.json` manifestinde
+listelenen Markdown belgelerinin birebir kopyası `data/markdown/` altında
+paketlenir. Duman testi paket kopyasını manifest özetleriyle, ana klasör varsa
+onu da doğrular ve paket kopyasında kısıtlı yayın işareti bulunmadığını denetler. Normal arama ve denetim
 verileri `data/` altındaki JSON dosyalarından SQLite'a yüklenir. Hukuki
 Değerlendirme ise paketlenmiş Markdown belgelerinin tamamını doğrudan ve tam
 metin olarak kullanır. `db.py` içindeki `DATASET` sürümü değiştiğinde veritabanı
@@ -115,8 +118,11 @@ kaldığı ekran ve akış durumu), `activity_log` (kullanıcı işlem kayıtlar
 
 `SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` altında 1380 sayılı Kanun, Su Ürünleri
 Yönetmeliği, 6/1 ve 6/2 numaralı Tebliğler, BAGİS Tebliği ile bunlardan konuya
-göre düzenlenen 00-07 rehberleri ve Excel'den doğrulanan 08 numaralı idari ceza
-uygulama tablosu bulunur. Klasördeki Excel dosyası ceza tablosunun ham kaynağıdır.
+göre düzenlenen 00-07 rehberleri, Excel'den doğrulanan 08 numaralı idari ceza
+uygulama tablosu ve güncel mevzuattan derlenen 09 numaralı saha uygulama esasları
+ile kontrol listeleri bulunur. Klasördeki Excel dosyası ceza tablosunun ham
+kaynağıdır. Kontrol föyleri ve 09 belgesi kurum içi kontrol listesi yayınlarıyla
+çapraz doğrulanmıştır; bu yayınların kendisi depoya ve pakete girmez.
 
 6/1 ve 6/2 tebliğleri **1/9/2024 – 31/8/2028** av dönemi için yayımlanmıştır.
 Dönem sonunda yenileriyle değiştirilirler. Kaynak değişiklikleri önce ana kaynak

@@ -152,6 +152,18 @@ GUIDE_GEAR_MAP = {
     'dalyan / lagün': ['22_Dalyan_Lagun'],
 }
 
+# Av aracından bağımsız olarak denetim alanı veya faaliyetine göre önerilen föyler.
+AUDIT_RELATED_GUIDES = {
+    'international': ['24_Uluslararasi_Sular', '23_Yabanci_Uyruk', '25_Orkinos_Kilic'],
+    'aquaculture': ['26_Balik_Ciftligi'],
+}
+
+
+def related_guide_keys(context):
+    d = context.user_data
+    keys = AUDIT_RELATED_GUIDES.get(d.get('audit_region'), []) + AUDIT_RELATED_GUIDES.get(d.get('audit_activity'), [])
+    return [key for key in keys if key in GUIDES]
+
 
 def audit_activity_label(context):
     value = context.user_data.get('audit_activity')
@@ -315,7 +327,9 @@ AI_SYSTEM_INSTRUCTION = (
     "- Kaynak Önceliği: Kanun, Yönetmelik ve Tebliğlerin tam metinleri hukuki hüküm için "
     "birincil kaynaktır. 00-07 numaralı konu rehberlerini olayın ilgili hükümlerini bulmak "
     "ve uygulama bağlamını görmek için; 08 numaralı doğrulanmış tabloyu güncel idari ceza "
-    "tutarları ve uygulama notları için kullan. Belgeler arasında açık bir uyuşmazlık veya "
+    "tutarları ve uygulama notları için kullan. 09 numaralı saha uygulama esaslarını yalnızca "
+    "kontrol sırası, delillendirme ve belge düzenleme gibi usul hususları için kullan; hüküm, "
+    "yasak ve tutar bakımından Kanun, Yönetmelik, Tebliğ ve 08 esastır. Belgeler arasında açık bir uyuşmazlık veya "
     "doğrulanamamış not varsa bunu kesin hüküm gibi sunma; belgedeki uyarıyı aynen koru.\n"
     "- Varsayım ve Uydurma Yasağı: Belgelerde yer almayan hiçbir bilgiyi türetme, tahmin "
     "etme veya uydurma. Madde numarası, tarih, tutar, yaptırım ve hüküm ekleme.\n"
@@ -818,6 +832,10 @@ def callback(q, context):
         return guide_finish(q, context)
     if data == 'guide:badmenu':
         return guide_bad_menu(q, context)
+    if data == 'guide:sheet':
+        return guide_sheet(q, context)
+    if data == 'audit:sheet':
+        return audit_sheet(q, context)
     if data.startswith('guide:pen:'):
         return guide_penalty_search(q, context, int(data.rsplit(':', 1)[1]))
     if data == 'guide:measure:start':
@@ -1831,7 +1849,7 @@ def guide_finish(q, context):
             if field in measurements:
                 text += f'• {esc(field)}: <b>{esc(measurements[field])}</b>\n'
     text += '\n⚠️ <i>“Uygunsuz” işareti nihai yaptırım kararı değildir. İlgili kaynak maddesi ile ceza tablosundaki maddi unsurlar ayrıca doğrulanmalıdır.</i>'
-    rows = [[('📐 Ölçüm / Kayıt Gir', 'guide:measure:start')]]
+    rows = [[('📐 Ölçüm / Kayıt Gir', 'guide:measure:start'), ('🧾 Kontrol Çizelgesi', 'guide:sheet')]]
     if bad:
         rows.append([('⚖️ Uygunsuzluk → Yaptırım', 'guide:badmenu')])
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
@@ -1866,6 +1884,106 @@ def guide_bad_menu(q, context):
         parse_mode=ParseMode.HTML,
         reply_markup=kb(rows),
     )
+
+
+# Kontrol çizelgesi: denetimin yazdırılabilir kaydı. Sahada elle doldurulan
+# işlem alanları boş bırakılır; resmi karar ve tutanak formlarının yerine geçmez.
+SHEET_RECORD_FIELDS = (
+    'Kontrol edilen gemi / kişi / tesis',
+    'Tespit edilen mevzuata aykırı husus',
+    'Yapılan yasal işlem ve sevk edilen makam',
+    'İdari para cezası tutarı (TL) / karar no',
+    'Tutanak no ve tarihi',
+    'Kontrol ekibi (en az iki kişi) — ad soyad / imza',
+    'Kontrol edilen — ad soyad / imza',
+)
+
+
+def sheet_header(title, context):
+    d = context.user_data
+    lines = [header('🧾', 'KONTROL ÇİZELGESİ', title), '',
+             field('Kontrol tarihi', audit_date(context).strftime('%d.%m.%Y'))]
+    if d.get('audit_region'):
+        lines.append(field('Alan', REGION_LABEL.get(d['audit_region'], d['audit_region'])))
+    if d.get('audit_location'):
+        lines.append(field('İl / su kaynağı / tesis', d['audit_location']))
+    if d.get('audit_activity'):
+        lines.append(field('Faaliyet', audit_activity_label(context)))
+        if d['audit_activity'] in {'commercial', 'amateur'}:
+            lines.append(field('Gemi / tekne', audit_length_label(context)))
+    if d.get('audit_gear'):
+        lines.append(field('Av aracı', d['audit_gear']))
+    if d.get('audit_species_name'):
+        lines.append(field('Tür', d['audit_species_name']))
+    return '\n'.join(lines)
+
+
+def sheet_record_block():
+    rows = [{'details': {'Kayıt': name, 'Bilgi': ''}} for name in SHEET_RECORD_FIELDS]
+    return ('<b>İŞLEM KAYDI</b>\n'
+            '<i>Sahada doldurulur. Çizelge denetim kaydıdır; İdari Para Cezası Kararı, Tutanak ve '
+            'Tebligat ile Zapt Etme (El Koyma) Tutanağının yerine geçmez.</i>\n' + items_table(rows))
+
+
+SHEET_BUTTONS = [('🖨️ Yazdır / PDF Kaydet', 'web:print')]
+
+
+def guide_sheet(q, context):
+    g, _, _, _ = guide_result_parts(context)
+    if not g:
+        return q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
+    answers = context.user_data.get('guide_answers') or []
+    result_label = {'ok': '✅ Uygun', 'bad': '❌ Uygunsuz', 'skip': '⚪ Kontrol edilmedi'}
+    items = []
+    for idx, item in enumerate(g['rows']):
+        ans = answers[idx] if idx < len(answers) else None
+        items.append({'details': {'No': str(idx + 1), 'Kontrol Edilecek Husus': item['text'],
+                                  'Dayanak': guide_ref_label(item['ref']),
+                                  'Sonuç': result_label.get(ans, '— İşaretlenmedi')}})
+    parts = [sheet_header(g['title'], context), items_table(items)]
+    measurements = context.user_data.get('guide_measurements') or {}
+    measure_rows = [{'details': {'Ölçüm / Kayıt': name, 'Değer': measurements.get(name, '')}}
+                    for name in g.get('measure_fields') or []]
+    if measure_rows:
+        parts.append('<b>ÖLÇÜM / KAYIT</b>\n' + items_table(measure_rows))
+    parts.append(sheet_record_block())
+    db.log(q.from_user.id, 'control_sheet', g['short_title'])
+    q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb([
+        SHEET_BUTTONS,
+        [('↩️ Kontrol Sonucuna Dön', 'guide:result'), ('🏠 Ana Menü', 'menu')],
+    ]))
+
+
+def audit_sheet(q, context):
+    qs = context.user_data.get('quick_questions') or []
+    if not qs:
+        return q.answer('Önce duruma özel kontrolü tamamlayın.', show_alert=True)
+    flags = context.user_data.get('context_flags') or build_context_flags(context)
+    answers = context.user_data.get('quick_answers') or []
+    answer_label = {'yes': 'Evet', 'no': 'Hayır', 'unknown': 'Bilinmiyor'}
+    items = []
+    for i, item in enumerate(qs):
+        ans = answers[i] if i < len(answers) else 'unknown'
+        if ans == 'unknown':
+            result = '⚪ Kontrol edilmedi'
+        elif ans != item['expected']:
+            result = '🧾 Delil / işlem eksiği' if item.get('procedure') else '❌ Olası aykırılık'
+        else:
+            result = '✅ Uygun'
+        items.append({'details': {'No': str(i + 1), 'Kontrol Edilecek Husus': item['q'],
+                                  'Dayanak': guide_ref_label(item['ref']),
+                                  'Cevap': answer_label.get(ans, '—'), 'Sonuç': result}})
+    subject = SUBJECT_LABEL.get(context.user_data.get('audit_subject'), 'Denetim')
+    parts = [sheet_header(f'Duruma özel denetim — {subject}', context)]
+    if flags:
+        parts.append('<b>SEÇİLEN BİLGİLERDEN ÇIKAN MEVZUAT UYARILARI</b>\n' + '\n'.join(
+            f'• {esc(x["tag"])} ({esc(guide_ref_label(x["ref"]))})' for x in flags))
+    parts += [items_table(items), sheet_record_block()]
+    db.log(q.from_user.id, 'control_sheet', subject)
+    q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb([
+        SHEET_BUTTONS,
+        [('↩️ Denetim Özeti', 'audit:hub'), ('🏠 Ana Menü', 'menu')],
+    ]))
 
 
 def guide_penalty_search(q, context, idx):
@@ -1946,6 +2064,7 @@ def guide_from_gear(q, context):
     keys = GUIDE_GEAR_MAP.get(gear, [])
     if context.user_data.get('audit_activity') == 'amateur' and not keys:
         return guide_open(q, context, '14_Amator_Tekne')
+    keys = keys or related_guide_keys(context)
     if not keys:
         return guide_menu(q, context)
     if len(keys) == 1:
@@ -2260,6 +2379,11 @@ def build_quick_questions(context):
                 _q('Tesis, alet-ekipman ve personel için genel hijyen şartları sağlanıyor mu?', 'yes', ('reg', 26), 'Genel hijyen'),
                 _q('Yetkili kontrol görevlilerinin tesise, ürünlere ve ilgili belgelere erişimi sağlanıyor mu?', 'yes', ('reg', 33), 'Kontrole erişim'),
             ]
+            if activity == 'aquaculture':
+                qs += [
+                    _q('Yetiştiricilik tesisi Bakanlık izniyle ve izin/proje kapsamındaki alan ve kapasitede mi faaliyet gösteriyor?', 'yes', ('law', 13), 'Yetiştiricilik izni / kapasite', penalty_query='yetiştiricilik'),
+                    _q('Sabit kurulu kafes ve istihsal vasıtalarında gündüz flama, gece ışıklı flama veya benzeri işaret var mı?', 'yes', ('reg', 15), 'Kafes işaretlemesi'),
+                ]
         elif subject == 'health':
             qs += [
                 _q('Hastalık şüphesi, karantina ve bildirim yükümlülükleri yönünden gerekli tedbirler alınmış mı?', 'yes', ('reg', 21), 'Hastalık / karantina'),
@@ -2321,6 +2445,11 @@ def build_quick_questions(context):
                 _q('Seçilen av aracının yer, saha, mesafe, derinlik ve saat şartlarının tamamı uygun mu?', 'yes', ('61', 50), 'Yer / saha / mesafe / derinlik'),
                 _q('Yasak dönem nedeniyle gemide veya istihsal yerinde bulundurulması yasak bir av aracı bulunmuyor mu?', 'yes', ('61', 50), 'Yasak av aracı bulundurma'),
                 ]
+                if region == 'international':
+                    qs += [
+                        _q('Başka ülkenin karasularında veya münhasır ekonomik bölgesinde avcılık için Bakanlık izni var mı; izinli bölge dışına çıkılmamış ve ürün izinde gösterilen limandan mı çıkarılıyor?', 'yes', ('61', 50), 'MEB / diğer ülke suları izni', penalty_query='uluslararası'),
+                        _q('Avcılık yapanlar arasında, istisna kapsamı dışında Türk vatandaşı olmayan kişi bulunmuyor mu?', 'yes', ('law', 21), 'Yabancıların avcılık yasağı', penalty_query='yabancı'),
+                    ]
             if region != 'inland' and gear == 'gırgır':
                 qs += [
                     _q('Gırgır için asgari su derinliği ve ağ derinliği şartları uygun mu?', 'yes', ('61', 12), 'Gırgır derinlik şartları', penalty_query='gırgır'),
@@ -2676,11 +2805,14 @@ def audit_quick_finish(q, context):
         rows.append([(f'📚 {item["tag"][:34]}', f'art:{src}:{art}')])
         if len(rows) >= 6:
             break
+    for key in related_guide_keys(context):
+        rows.append([(f'📋 {GUIDES[key]["short_title"]} Föyü', f'guide:open:{key}')])
     if flags or possible:
         rows.append([('⚖️ İhlal → Yaptırım', 'mode:penalty')])
     else:
         if activity == 'amateur':
             rows.append([('🔎 Amatör → Ticari Nitelik', 'classify:start')])
+    rows.append([('🧾 Kontrol Çizelgesi', 'audit:sheet')])
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Yeni Denetim', 'audit:start'), ('🏠 Ana Menü', 'menu')])
     db.log(q.from_user.id, 'guided_audit', ', '.join([x['tag'] for x in flags + possible]))

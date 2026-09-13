@@ -13,6 +13,12 @@ options.json
 # (db.py init_db) and holds real usage: users, query_log, inspections.
 su_urunleri_kolluk.db
 
+# Ana kaynak klasörü (mevzuat, rehberler, Excel ve kurum içi yayınlar) yalnızca
+# bu bilgisayarda tutulur; depo herkese açık olduğu için commit edilmez.
+# Uygulamanın çalışması için gereken kamuya açık Markdown kopyası
+# su_urunleri_bot/data/markdown/ altında paketlenir.
+SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/
+
 # Bu bilgisayara özel canlı sistem notları ve yardımcı betikler (adresler,
 # KeenDNS adı). Depo herkese açık olduğu için asla commit edilmez.
 yerel/

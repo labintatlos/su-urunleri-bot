@@ -465,6 +465,8 @@
 
   function press(data) {
     if (data === 'web:people') { openPeople(); return; }
+    // Kontrol çizelgesi: tarayıcının yazdır / PDF olarak kaydet penceresi.
+    if (data === 'web:print') { window.print(); return; }
     request(() => api('POST', 'api/action', { data }), data === 'ai:audit:run');
   }
 

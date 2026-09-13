@@ -166,6 +166,33 @@
           12
         ],
         "penalty_query": "gırgır"
+      },
+      {
+        "no": 19,
+        "text": "Marmara Denizi’nde frekans çıkışı 20 kHz (dahil) ve daha düşük sonar kullanılmıyor mu; boğazlardan Marmara’ya giren bu tip sonarlı gemide sonar il müdürlüğünce mühürlü mü?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 20,
+        "text": "Mavi yüzgeçli orkinos avcılığı yapılıyorsa Ek-2 İzin Belgesi, gemi kotası, yasak dönem ve eBCD şartları Orkinos/Kılıç föyünden ayrıca kontrol edildi mi?",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "gırgır"
+      },
+      {
+        "no": 21,
+        "text": "Aykırılık gırgır gemisi kullanılarak işlendiyse gemi sahip/donatanına ceza üç katı olarak hesaplandı mı? (Kanun 36/k)",
+        "ref": [
+          "law",
+          36
+        ],
+        "penalty_query": "gırgır"
       }
     ],
     "measure_fields": [
@@ -223,6 +250,10 @@
       [
         "law",
         36
+      ],
+      [
+        "61",
+        22
       ]
     ],
     "source_docs": [
@@ -391,6 +422,24 @@
           10
         ],
         "penalty_query": "dip trolü"
+      },
+      {
+        "no": 18,
+        "text": "Bilimsel/teknik araştırma gerekçesiyle dip trolü veya başka yasak vasıta kullanılıyorsa Bakanlık izni, izinli yer ve süre belgelendi mi? (Elde edilen ürün satılamaz.)",
+        "ref": [
+          "law",
+          29
+        ],
+        "penalty_query": "dip trolü"
+      },
+      {
+        "no": 19,
+        "text": "İçsular, Marmara ve boğazlarda trolle istihsal iki yıl içinde tekrarlanmışsa adli suç (Kanun 36/l) yönünden işlem değerlendirildi mi?",
+        "ref": [
+          "law",
+          36
+        ],
+        "penalty_query": "Marmara Denizi ve boğazlarda trol avcılığı"
       }
     ],
     "measure_fields": [
@@ -448,6 +497,10 @@
       [
         "law",
         36
+      ],
+      [
+        "law",
+        29
       ]
     ],
     "source_docs": [
@@ -614,6 +667,15 @@
         "ref": [
           "61",
           11
+        ],
+        "penalty_query": "orta su trolü"
+      },
+      {
+        "no": 18,
+        "text": "Ortasu trolü dip trolü olarak kullanılmıyor mu? (Ağın dipte çekilmesi, dip balığı veya dip izleri yönünden kontrol et.)",
+        "ref": [
+          "law",
+          24
         ],
         "penalty_query": "orta su trolü"
       }
@@ -850,6 +912,15 @@
           14
         ],
         "penalty_query": "ağ göz açıklığı"
+      },
+      {
+        "no": 19,
+        "text": "Gemide ığrıp, trata, tarlakoz, manyat gibi kıyı sürütme ağı veya bunları kullanmaya yarayan donanım bulunmuyor mu? (Marmara karides manyatı istisnası saklı.)",
+        "ref": [
+          "61",
+          14
+        ],
+        "penalty_query": "ığrıp"
       }
     ],
     "measure_fields": [
@@ -1047,6 +1118,24 @@
         "ref": [
           "61",
           50
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 16,
+        "text": "Kılıç/tulina avcılığı sırasında gemide dip trolü ağı, kapıları, ırgatı veya dip balıkları bulunmuyor ve drift-net kullanılmıyor mu?",
+        "ref": [
+          "61",
+          25
+        ],
+        "penalty_query": "parakete"
+      },
+      {
+        "no": 17,
+        "text": "Mavi yüzgeçli orkinos, kılıç, yazılı orkinos, gobene veya tulina avlayan 12 m ve üzeri gemide IMO numarası var mı?",
+        "ref": [
+          "61",
+          49
         ],
         "penalty_query": "parakete"
       }
@@ -1903,6 +1992,24 @@
         "ref": [
           "61",
           50
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 18,
+        "text": "Akivades veya kidonya toplanıyorsa 15 Nisan-31 Ağustos yasağı ile Saros yasak alanına uyuluyor ve elek göz açıklığı akivadeste en az 24 mm, kidonyada en az 30 mm mi?",
+        "ref": [
+          "61",
+          28
+        ],
+        "penalty_query": "beyaz kum midyesi"
+      },
+      {
+        "no": 19,
+        "text": "Çift kabuklu istihsali, izleme sonucu ürün alımına kapatılmış veya izleme programı uygulanmayan bir alanda yapılmıyor mu?",
+        "ref": [
+          "61",
+          28
         ],
         "penalty_query": "beyaz kum midyesi"
       }
@@ -2789,6 +2896,24 @@
           19
         ],
         "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 12,
+        "text": "Avlanan kişi yabancı uyruklu ise: Türkiye’de ikamet eden/resmî misafir/geçici görevli için Misafir Amatör Balıkçı Belgesi; teknede avlanan yabancı turist için turizm izinli işletme veya il/ilçe avlanma fişi var mı? (Kıyıdan ve yarışmada belge aranmaz.)",
+        "ref": [
+          "62",
+          5
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 13,
+        "text": "Teknede ticari avcılıkta kullanılan ağ/av aracı veya bunlara ait donanım bulunuyor mu? Ruhsatsız gemide bulundurulamaz; Md.19 ticari nitelik ölçütleri ayrıca değerlendirilir.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
       }
     ],
     "measure_fields": [
@@ -2838,6 +2963,14 @@
       [
         "law",
         36
+      ],
+      [
+        "62",
+        5
+      ],
+      [
+        "61",
+        49
       ]
     ],
     "source_docs": [
@@ -3116,8 +3249,8 @@
         "no": 1,
         "text": "Geminin Ulaştırma Bakanlığından alınmış 'Turistik Amaçlı Olta Balıkçılığı Gemisi' cinsli Denize Elverişlilik Belgesi var mı?",
         "ref": [
-          "62",
-          15
+          "61",
+          48
         ],
         "penalty_query": "denize elverişlilik"
       },
@@ -3125,8 +3258,8 @@
         "no": 2,
         "text": "Geminin İl Müdürlüğünden alınmış, 2 yıl geçerli Ek-9 'Ticari Amaçlı Amatör Balıkçılık Turizm İzin Belgesi' var mı?",
         "ref": [
-          "62",
-          15
+          "61",
+          48
         ],
         "penalty_query": "ek-9"
       },
@@ -3134,8 +3267,8 @@
         "no": 3,
         "text": "Bağlama kütüğü deniz olan gemi denizde mi faaliyet gösteriyor? (İçsu gemisi denizde yapamaz)",
         "ref": [
-          "62",
-          15
+          "61",
+          48
         ],
         "penalty_query": "yer yasağı"
       },
@@ -3143,8 +3276,8 @@
         "no": 4,
         "text": "1 Eylül 2026'dan itibaren Bakanlıkça istenen gemi izleme/kayıt cihazı takılı ve işler durumda mı?",
         "ref": [
-          "62",
-          15
+          "61",
+          50
         ],
         "penalty_query": "gemi izleme"
       },
@@ -3152,8 +3285,8 @@
         "no": 5,
         "text": "Gemideki amatör avcıların av araçları, boy/sayı limitleri 6/2 Amatör kurallarına uygun mu? (Uygun değilse Ek-9 sahibi de sorumludur)",
         "ref": [
-          "62",
-          15
+          "61",
+          48
         ],
         "penalty_query": "amatör limit"
       }
@@ -3351,6 +3484,541 @@
     ],
     "source_docs": [
       "04 İÇSULAR, DALYAN VE LAGÜNLER.md"
+    ]
+  },
+  {
+    "key": "23_Yabanci_Uyruk",
+    "short_title": "Yabancı Uyruk/Bayrak",
+    "title": "YABANCI UYRUKLU KİŞİ VE YABANCI BAYRAKLI GEMİ — SAHA KONTROL FÖYÜ",
+    "subtitle": "Karasuları ve içsularda yabancıların avcılık yasağı, istisnalar ve amatör belgeler",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Avcılık yapan kişiler Türk vatandaşı mı? Türk vatandaşı olmayanların avcılık amacıyla karasularına veya içsulara girmesi ve avcılık yapması yasaktır.",
+        "ref": [
+          "law",
+          21
+        ],
+        "penalty_query": "yabancı"
+      },
+      {
+        "no": 2,
+        "text": "Yabancı kişi varsa istisna belgelendi mi: 6/2 Tebliğ kurallarına uyan yabancı turist amatör balıkçı mı, yoksa Bakanlık izniyle etüt/araştırmada mı çalışıyor?",
+        "ref": [
+          "law",
+          21
+        ],
+        "penalty_query": "yabancı"
+      },
+      {
+        "no": 3,
+        "text": "Türkiye’de devamlı ikamet eden, resmî misafir veya geçici görevli yabancı ise il müdürlüğünce verilen, 2 yıl geçerli Misafir Amatör Balıkçı Belgesi var mı?",
+        "ref": [
+          "62",
+          5
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 4,
+        "text": "Yabancı turist denizde tekneyle (içsuda kıyıdan veya tekneyle) avlanıyorsa turizm izinli işletme vasıtasıyla mı ya da il/ilçe müdürlüğünden alınmış avlanma fişiyle mi avlanıyor? (Denizde kıyıdan, yarışmada ve rekreasyonel kiralık sahada belge aranmaz.)",
+        "ref": [
+          "62",
+          5
+        ],
+        "penalty_query": "amatör avcılık kurallarının ihlali"
+      },
+      {
+        "no": 5,
+        "text": "Bilimsel/teknik araştırma gemisiyse Bakanlık izni, izinli yer, süre ve vasıta belgelendi mi; elde edilen ürün satılmıyor mu?",
+        "ref": [
+          "law",
+          29
+        ],
+        "penalty_query": "bilgi belge"
+      },
+      {
+        "no": 6,
+        "text": "Başka ülke bayraklı gemi, Türkiye mavi yüzgeçli orkinos kotasındaki faaliyet için kiralanmış mı? (Yasaktır.)",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "yabancı"
+      },
+      {
+        "no": 7,
+        "text": "Tespit edilen su ürünleri ile istihsal vasıtaları el koyma ve mülkiyetin kamuya geçirilmesi için tutanakla kayda alındı mı? (Kanun 36/i)",
+        "ref": [
+          "law",
+          36
+        ],
+        "penalty_query": "yabancı"
+      }
+    ],
+    "measure_fields": [
+      "Bayrak / bağlama limanı",
+      "Kaptan ve avlananların uyruğu",
+      "Belge / izin / fiş no",
+      "Mevki / koordinat"
+    ],
+    "refs": [
+      [
+        "law",
+        21
+      ],
+      [
+        "62",
+        5
+      ],
+      [
+        "law",
+        29
+      ],
+      [
+        "61",
+        22
+      ],
+      [
+        "law",
+        36
+      ]
+    ],
+    "source_docs": [
+      "06 RUHSAT, İZİN BELGELERİ, GEMİ İZLEME SİSTEMİ VE İDARİ CEZALAR.md"
+    ]
+  },
+  {
+    "key": "24_Uluslararasi_Sular",
+    "short_title": "Uluslararası Sular/MEB",
+    "title": "ULUSLARARASI SULAR, MEB VE DİĞER ÜLKE SULARI — SAHA KONTROL FÖYÜ",
+    "subtitle": "İzin, izinli bölge, bitişik sularda karasuları kuralları ve karaya çıkış",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Başka ülkenin karasularında veya münhasır ekonomik bölgesinde avcılık yapıldıysa Bakanlıktan alınmış izin mevcut mu?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "uluslararası"
+      },
+      {
+        "no": 2,
+        "text": "İzin belgesinde gösterilen bölge/koordinat dışına çıkılmış mı? BAGİS veya seyir kayıtlarından teyit edildi mi?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "uluslararası"
+      },
+      {
+        "no": 3,
+        "text": "Anlaşma kapsamında diğer ülke karasularında avlanan ürün, izinde gösterilen limandan mı karaya çıkarılıyor?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "uluslararası"
+      },
+      {
+        "no": 4,
+        "text": "Bitişik uluslararası sularda ve MEB’de, Bakanlıkça ayrı düzenleme ilan edilmemişse karasularındaki yer, zaman, av aracı ve boy kuralları aynen uygulandı mı?",
+        "ref": [
+          "61",
+          50
+        ],
+        "penalty_query": "uluslararası"
+      },
+      {
+        "no": 5,
+        "text": "MEB ve uluslararası sular için Bakanlıkça ilan edilen tür, miktar, zaman ve av aracı esaslarına uyuluyor mu?",
+        "ref": [
+          "reg",
+          18
+        ],
+        "penalty_query": "uluslararası"
+      },
+      {
+        "no": 6,
+        "text": "Uluslararası sulara gidip gelirken yasak yer/zamandan geçişte Bakanlık esasları ve il müdürlüğü geçiş izni şartları sağlandı mı; av araçları toplanmış durumda mı?",
+        "ref": [
+          "reg",
+          18
+        ],
+        "penalty_query": "uluslararası"
+      },
+      {
+        "no": 7,
+        "text": "12 m ve üzeri gemide BAGİS takılı, çalışır ve konum gönderiyor mu?",
+        "ref": [
+          "bagis",
+          5
+        ],
+        "penalty_query": "BAGİS"
+      },
+      {
+        "no": 8,
+        "text": "Karaya çıkarılan ürün için Nakil/Menşe Belgesi uygun mu? Mevzuata aykırı elde edilen ürün için belge düzenlenemez.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "nakil belgesi"
+      },
+      {
+        "no": 9,
+        "text": "Avcılık yapanlar arasında, istisna kapsamı dışında Türk vatandaşı olmayan kişi bulunuyor mu? (Yabancı Uyruk föyü)",
+        "ref": [
+          "law",
+          21
+        ],
+        "penalty_query": "yabancı"
+      }
+    ],
+    "measure_fields": [
+      "Bayrak / ruhsat no",
+      "İzin belgesi no ve izinli bölge",
+      "Son BAGİS konumu",
+      "Karaya çıkış limanı"
+    ],
+    "refs": [
+      [
+        "61",
+        50
+      ],
+      [
+        "reg",
+        18
+      ],
+      [
+        "bagis",
+        5
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "law",
+        21
+      ]
+    ],
+    "source_docs": [
+      "02 BÖLGEYE GÖRE KURALLAR (DENİZLER).md",
+      "06 RUHSAT, İZİN BELGELERİ, GEMİ İZLEME SİSTEMİ VE İDARİ CEZALAR.md"
+    ]
+  },
+  {
+    "key": "25_Orkinos_Kilic",
+    "short_title": "Orkinos/Kılıç",
+    "title": "MAVİ YÜZGEÇLİ ORKİNOS, KILIÇ VE TULİNA — SAHA KONTROL FÖYÜ",
+    "subtitle": "Kota, izin, dönem, eBCD, IMO numarası ve av donanımı kontrolü",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Mavi yüzgeçli orkinos faaliyetindeki av, taşıma, destek veya yardımcı gemi için Ek-2 İzin Belgesi var mı; gemi yalnız bir faaliyet için mi izinli?",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 2,
+        "text": "Avcılık gemiye verilen kota dahilinde mi; kota dolmuş veya avcılık sona ermiş mi?",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 3,
+        "text": "Tarih mavi yüzgeçli orkinos yasak dönemi dışında mı? Akdeniz/Ege karasuları ve bitişik uluslararası sularda 1 Temmuz–14 Mayıs, diğer alanlarda 1 Temmuz–25 Mayıs yasaktır.",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 4,
+        "text": "Avcılıkta uçak, helikopter veya insansız hava aracı kullanılmıyor mu?",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 5,
+        "text": "Gemide, çekilen kafeste, satışta, nakilde veya besi tesisinde bulunan mavi yüzgeçli orkinos ve ürünleri (iç organ ve yumurta hariç) için eBCD mevcut mu?",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 6,
+        "text": "Türk ruhsatlı gemi başka ülke kotası için kiraya verilmemiş, yabancı bayraklı gemi Türkiye kotası için kiralanmamış mı?",
+        "ref": [
+          "61",
+          22
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 7,
+        "text": "Mavi yüzgeçli orkinos, kılıç, yazılı orkinos, gobene veya tulina avlayan 12 m ve üzeri gemide IMO numarası var mı?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 8,
+        "text": "Mavi yüzgeçli orkinos asgari 115 cm / 30 kg şartına uyuyor mu? 8–30 kg veya 75–115 cm bireylerde adet üzerinden en fazla %5 istisna uygulanır.",
+        "ref": [
+          "61",
+          17
+        ],
+        "penalty_query": "yasak boyda su ürünü"
+      },
+      {
+        "no": 9,
+        "text": "Hedef dışı mavi yüzgeçli orkinos yakalandıysa karaya çıkışta il/ilçe müdürlüğünce tespit ve eBCD düzenlemesi yapıldı mı?",
+        "ref": [
+          "61",
+          18
+        ],
+        "penalty_query": "hedef dışı"
+      },
+      {
+        "no": 10,
+        "text": "Kılıç/tulina 15 Şubat–15 Mart ve 1 Ekim–30 Kasım arasında avlanmamış, gemide bulundurulmamış, aktarılmamış ve karaya çıkarılmamış mı?",
+        "ref": [
+          "61",
+          25
+        ],
+        "penalty_query": "yasak zamanda avcılık"
+      },
+      {
+        "no": 11,
+        "text": "Kılıç/tulina avcılığı için önceki yıl 31 Aralık’a kadar alınmış Ek-2 İzin Belgesi var mı; ürün belirlenen karaya çıkış noktasından mı çıkarılıyor?",
+        "ref": [
+          "61",
+          25
+        ],
+        "penalty_query": "karaya çıkış noktası"
+      },
+      {
+        "no": 12,
+        "text": "Kılıç/tulina avcılığı sırasında gemide dip trolü ağı, kapıları, ırgatı veya dip balıkları yok ve drift-net kullanılmıyor mu?",
+        "ref": [
+          "61",
+          25
+        ],
+        "penalty_query": "ticari avcılık"
+      },
+      {
+        "no": 13,
+        "text": "Kılıç/tulina paraketesinde dairesel iğne ağız açıklığı en az 2,8 cm mi; çapraz boyunlu iğnede açı en fazla 10° mi?",
+        "ref": [
+          "61",
+          15
+        ],
+        "penalty_query": "parakete"
+      }
+    ],
+    "measure_fields": [
+      "eBCD no",
+      "Ek-2 izin no",
+      "Kota / avlanan miktar",
+      "IMO no",
+      "Birey boy (cm) / ağırlık (kg)"
+    ],
+    "refs": [
+      [
+        "61",
+        22
+      ],
+      [
+        "61",
+        25
+      ],
+      [
+        "61",
+        49
+      ],
+      [
+        "61",
+        17
+      ],
+      [
+        "61",
+        18
+      ],
+      [
+        "61",
+        15
+      ]
+    ],
+    "source_docs": [
+      "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md",
+      "06 RUHSAT, İZİN BELGELERİ, GEMİ İZLEME SİSTEMİ VE İDARİ CEZALAR.md"
+    ]
+  },
+  {
+    "key": "26_Balik_Ciftligi",
+    "short_title": "Balık Çiftliği",
+    "title": "BALIK ÇİFTLİĞİ (DENİZ / İÇSU YETİŞTİRİCİLİK) — SAHA KONTROL FÖYÜ",
+    "subtitle": "İzin, işaretleme, yavru/damızlık, sağlık, atık ve çevresindeki avcılık",
+    "rows": [
+      {
+        "no": 1,
+        "text": "Tesis Bakanlıktan alınmış yetiştiricilik izniyle mi kurulmuş ve işletiliyor? (İzinsiz tesis Kanun 36/e)",
+        "ref": [
+          "law",
+          13
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 2,
+        "text": "Faaliyet izin/proje kapsamındaki alan (koordinat), kafes sayısı ve kapasiteyle uyumlu mu? Ayrıntılı ölçütler Su Ürünleri Yetiştiriciliği Yönetmeliği ve tesis izniyle karşılaştırılır; il müdürlüğü kaydıyla teyit edilir.",
+        "ref": [
+          "law",
+          13
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 3,
+        "text": "Sabit kurulu kafes ve istihsal vasıtalarında gündüz flama, gece ışıklı flama veya benzeri işaret var mı?",
+        "ref": [
+          "reg",
+          15
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 4,
+        "text": "Damızlık, yumurta, larva ve yavru nakli, stoklanması ve sulara bırakılması Bakanlık izinli mi; kiralama kesinleşmeden yavru stoklanmamış mı?",
+        "ref": [
+          "reg",
+          16
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 5,
+        "text": "Damızlık, yumurta ve yavrular için gerekli damızlık belgesi mevcut mu?",
+        "ref": [
+          "reg",
+          23
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 6,
+        "text": "Hastalık şüphesinde bildirim yapılmış ve karantina tedbirlerine uyulmuş mu?",
+        "ref": [
+          "reg",
+          21
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 7,
+        "text": "Koruyucu ve tedavi edici maddeler izinli, kayıtlı ve kullanım şartlarına uygun mu?",
+        "ref": [
+          "reg",
+          24
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 8,
+        "text": "Alıcı ortama arıtılmamış atık, ölü balık veya zararlı madde bırakılmıyor mu?",
+        "ref": [
+          "reg",
+          11
+        ],
+        "penalty_query": "zararlı madde"
+      },
+      {
+        "no": 9,
+        "text": "Satılan/nakledilen yetiştiricilik ürünü belgeli mi? Belgelendiği sürece boy, zaman ve yer yasaklarına tabi değildir; nakilde Nakil/Menşe şartları aranır.",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "nakil belgesi"
+      },
+      {
+        "no": 10,
+        "text": "Tesis sınırına 100 m’den (Karadeniz Türk somonu tesislerinde 15 Haziran–31 Ağustos 50 m) yakın avcılık yapılmıyor ve kafeslere 300 m’den yakın ışık yakılmıyor mu?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yetiştiricilik"
+      },
+      {
+        "no": 11,
+        "text": "Kafes hasarı veya kaçış sonrası yasak zaman/yerde istihsal vasıtası kullanılıyorsa Bakanlık izni ve izin süresi belgelendi mi?",
+        "ref": [
+          "61",
+          49
+        ],
+        "penalty_query": "yetiştiricilik"
+      }
+    ],
+    "measure_fields": [
+      "İzin / proje no",
+      "Kafes sayısı",
+      "Tesis koordinatları",
+      "Hasar / kaçış bilgisi"
+    ],
+    "refs": [
+      [
+        "law",
+        13
+      ],
+      [
+        "reg",
+        15
+      ],
+      [
+        "reg",
+        16
+      ],
+      [
+        "reg",
+        21
+      ],
+      [
+        "reg",
+        23
+      ],
+      [
+        "reg",
+        24
+      ],
+      [
+        "reg",
+        11
+      ],
+      [
+        "61",
+        49
+      ]
+    ],
+    "source_docs": [
+      "07 İŞLEME TESİSLERİ, SAĞLIK VE KALİTE KURALLARI.md"
     ]
   }
 ]

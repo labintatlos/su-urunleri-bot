@@ -37,6 +37,11 @@ dağıtım ve KeenDNS için [DEPLOYMENT.md](DEPLOYMENT.md).
    Erişim bilgisi gerektiğinde kullanıcıdan `C:\Users\cemci\erisim_bilgileri.txt`
    dosyasına yazması istenir (kullanıcının tercih ettiği yöntem; sohbete şifre
    yazdırılmaz) ve iş bitince dosyayı silmesi önerilir.
+   `SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` klasörü (6.0.27'den beri) depoda değildir;
+   içindeki kurum içi yayınlar ("HİZMETE ÖZEL" dahil) hiçbir biçimde commit
+   edilmez, `data/markdown/` kopyasına da konmaz. Bu yayınlardan yalnızca güncel
+   mevzuatla doğrulanmış, kendi ifademizle yazılmış kontrol maddeleri alınır;
+   `smoke_test.py` paket kopyasında kısıtlı yayın işareti arar.
 7. **Canlı sisteme bağlanarak çalışılır.** Home Assistant ve Keenetic modeme
    doğrudan erişilir; dışa aktarılmış dosyalar üzerinden tahmin yürütülmez.
 8. Kullanıcıya zamir gerekiyorsa cinsiyet varsayılmaz.
@@ -118,6 +123,18 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 8 | Yeni Markdown klasörünü tek kaynak yap, eski kaynakları kaldır ve eklenti korpusunu eşle | ✅ 6.0.14 |
 | 9 | Ceza, tür, madde, saha kuralı ve tekne föyü JSON verilerini yeni kaynaklardan yeniden üret | ✅ 6.0.15 |
 | 10 | Ekran/denetim akışlarını yeni kaynak kapsamıyla eşleştir ve çapraz doğrula | ✅ 6.0.16 |
+| 11 | Kaynak klasörünün tamamını depo dışına al (`.gitignore`); test ve veri üretimi klasör yokken paket kopyasıyla çalışsın | ✅ 6.0.27 |
+| 12 | Kurum içi kontrol listesi ve görev esasları yayınlarını güncel mevzuatla karşılaştır (rapor yalnızca `yerel/`) | ✅ 6.0.27 |
+| 13 | Doğrulanan maddeleri mevcut föylere ekle; yabancı uyruk, uluslararası sular/MEB, orkinos/kılıç ve balık çiftliği föyleri | ✅ 6.0.27 |
+| 14 | Kolluk İşlem Rehberine delil/tutanak, ceza katsayıları, askıdaki ruhsat ve adli sevk kartları | ✅ 6.0.27 |
+| 15 | Föy ve duruma özel denetim sonunda yazdırılabilir **Kontrol Çizelgesi** | ✅ 6.0.27 |
+| 16 | Hukuki değerlendirme korpusuna 09 Saha Uygulama Esasları belgesi | ✅ 6.0.27 |
+
+Adım 11–16 kullanıcının isteğiyle tek push olarak teslim edildi (6.0.27).
+Kullanıcı kararları: site hem Sahil Güvenlik hem il müdürlüğü denetçileri
+içindir; kaynaklar arasında **en güncel mevzuat esas alınır**, eski yayında olup
+güncel metinde bulunmayan husus sisteme alınmaz, güncel metinde olup eski yayında
+bulunmayan husus geçerli kabul edilir.
 
 Ara adım: Kullanıcının isteğiyle kapsamlı arayüz yenilemesi yapıldı (6.0.8).
 Giriş/üyelik, açıklamalı ana menü kartları, ortak denizcilik teması ve yönetim

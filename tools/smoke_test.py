@@ -41,28 +41,47 @@ def source_digest(path):
     return hashlib.sha256(content).hexdigest()
 
 
-def check_source_integrity():
-    """Ana kaynak klasörü, paket kopyası ve kaynak manifesti birebir uyuşmalı."""
-    canonical = {p.name: p.read_bytes() for p in CANONICAL_SOURCES.glob('*.md')}
-    packaged = {p.name: p.read_bytes() for p in PACKAGED_MARKDOWN.glob('*.md')}
-    if not canonical:
-        raise AssertionError('Ana Markdown kaynak klasörü boş')
-    if canonical != packaged:
-        missing = sorted(canonical.keys() - packaged.keys())
-        extra = sorted(packaged.keys() - canonical.keys())
-        changed = sorted(name for name in canonical.keys() & packaged.keys()
-                         if canonical[name] != packaged[name])
-        raise AssertionError(f'Paket Markdown kopyası eşleşmiyor: eksik={missing}, fazla={extra}, farklı={changed}')
+# Depo herkese açıktır: paketlenen Markdown kopyasına kurum içi sınıflandırmalı
+# bir yayın girmemelidir.
+RESTRICTED_MARKERS = ('HİZMETE ÖZEL', 'Hizmete Özel', 'hizmete özel', 'KİŞİYE ÖZEL', 'SGYY 164', 'SGD 205')
 
+
+def check_source_integrity():
+    """Paket kopyası manifestle birebir uyuşmalı.
+
+    Ana kaynak klasörü depoda değil, yalnızca geliştirme bilgisayarında durur ve
+    manifestte olmayan yerel belgeler (kurum içi yayınlar) içerebilir. Klasör
+    varsa manifestteki her kaynak orada da doğrulanır; yoksa (GitHub Actions)
+    yalnızca paket kopyası doğrulanır ve paketlenmeyen Excel atlanır."""
     manifest = json.loads((ADDON / 'data' / 'sources.json').read_text(encoding='utf-8'))
+    packaged = {p.name: p for p in PACKAGED_MARKDOWN.glob('*.md')}
+    listed = {Path(source['filename']).name for source in manifest}
+    stray = sorted(set(packaged) - listed)
+    if stray:
+        raise AssertionError(f'Manifestte olmayan paket Markdown dosyası: {stray}')
+    for name, path in packaged.items():
+        text = path.read_text(encoding='utf-8')
+        found = [marker for marker in RESTRICTED_MARKERS if marker in text]
+        if found:
+            raise AssertionError(f'Paket Markdown dosyasında kısıtlı yayın işareti var: {name} {found}')
+
+    canonical_present = CANONICAL_SOURCES.is_dir()
+    checked = 0
     for source in manifest:
-        path = REPO / source['filename']
-        if not path.is_file():
-            raise AssertionError(f'Manifest kaynağı bulunamadı: {source["filename"]}')
-        digest = source_digest(path)
-        if digest != source['sha256']:
-            raise AssertionError(f'Manifest özeti uyuşmuyor: {source["filename"]}')
-    print(f'sources {len(canonical)} Markdown + {len(manifest) - len(canonical)} diğer: verified')
+        name = Path(source['filename']).name
+        paths = [REPO / source['filename']] if canonical_present else []
+        if name.endswith('.md'):
+            if name not in packaged:
+                raise AssertionError(f'Manifest Markdown kaynağı paket kopyasında yok: {name}')
+            paths.append(packaged[name])
+        for path in paths:
+            if not path.is_file():
+                raise AssertionError(f'Manifest kaynağı bulunamadı: {source["filename"]}')
+            if source_digest(path) != source['sha256']:
+                raise AssertionError(f'Manifest özeti uyuşmuyor: {path}')
+            checked += 1
+    where = 'ana klasör + paket kopyası' if canonical_present else 'paket kopyası (ana klasör depoda yok)'
+    print(f'sources {len(packaged)} Markdown, {checked} dosya özeti ({where}): verified')
 
 
 def check_structured_data():
@@ -312,6 +331,49 @@ def main():
         if ('Seçilen bölgede trol yasağı' not in text_of(marmara_result)
                 or 'Marmara Denizi' not in text_of(marmara_result)):
             errors.append((('TARGETED_AUDIT', 'marmara_result'), 0, marmara_result))
+
+        # 6.0.27: uluslararası sularda duruma özel sorular ve ilgili föy
+        # önerileri çıkmalı; iki sonuç ekranından da kontrol çizelgesi
+        # açılabilmeli.
+        action('audit:start')
+        for data in ('audit:region:international', 'audit:activity:commercial', 'audit:length:12to22',
+                     'audit:date:today', 'audit:subject:fishing', 'audit:gear:gırgır', 'audit:guided:check'):
+            s, view = action(data)
+        intl_result = answer_current_audit(view)
+        intl_buttons = [button.get('data') for row in intl_result.get('buttons', []) for button in row]
+        if ('guide:open:24_Uluslararasi_Sular' not in intl_buttons or 'audit:sheet' not in intl_buttons
+                or 'guide:open:25_Orkinos_Kilic' not in intl_buttons):
+            errors.append((('TARGETED_AUDIT', 'international_result'), 0, intl_buttons))
+        s, sheet = action('audit:sheet')
+        sheet_text = text_of(sheet)
+        if (s != 200 or 'KONTROL ÇİZELGESİ' not in sheet_text or '<table>' not in sheet_text
+                or 'münhasır ekonomik bölgesinde' not in sheet_text or 'Tutanak no' not in sheet_text):
+            errors.append((('CONTROL_SHEET', 'audit'), s, sheet_text[:300]))
+
+        s, view = action('guide:start:25_Orkinos_Kilic')
+        for _ in range(30):
+            answer = next((button['data'] for row in view.get('buttons', []) for button in row
+                           if button.get('data', '').startswith('guide:ans:')
+                           and button['data'].endswith(':ok')), None)
+            if not answer:
+                break
+            s, view = action(answer)
+        if 'guide:sheet' not in [b.get('data') for row in view.get('buttons', []) for b in row]:
+            errors.append((('CONTROL_SHEET', 'guide_result_button'), s, view))
+        s, sheet = action('guide:sheet')
+        sheet_text = text_of(sheet)
+        if (s != 200 or 'KONTROL ÇİZELGESİ' not in sheet_text or 'eBCD' not in sheet_text
+                or '✅ Uygun' not in sheet_text or 'ÖLÇÜM / KAYIT' not in sheet_text):
+            errors.append((('CONTROL_SHEET', 'guide'), s, sheet_text[:300]))
+        guide_keys = {guide['key'] for guide in json.loads(
+            (ADDON / 'data' / 'vessel_guides.json').read_text(encoding='utf-8'))}
+        missing_guides = {'23_Yabanci_Uyruk', '24_Uluslararasi_Sular', '25_Orkinos_Kilic',
+                          '26_Balik_Ciftligi'} - guide_keys
+        if missing_guides:
+            errors.append((('GUIDES', 'new_guides'), 0, sorted(missing_guides)))
+        s, view = action('field:Kolluk İşlemi')
+        if s != 200 or not any(b.get('data') == 'rule:evidence_checklist' for row in view.get('buttons', []) for b in row):
+            errors.append((('FIELD_RULES', 'evidence_checklist'), s, view))
 
         action('menu')
         action('species:menu')
