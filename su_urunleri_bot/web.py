@@ -41,6 +41,7 @@ STATIC_TYPES = {
     '.js': 'application/javascript; charset=utf-8',
     '.css': 'text/css; charset=utf-8',
     '.svg': 'image/svg+xml',
+    '.json': 'application/manifest+json; charset=utf-8',
 }
 SUPERVISOR_IP = os.environ.get('INGRESS_TRUSTED_IP', '172.30.32.2')
 MAX_BODY_BYTES = 64 * 1024
@@ -309,6 +310,8 @@ class Handler(BaseHTTPRequestHandler):
     def route_get(self, path):
         if path in ('/', '/index.html'):
             return self.send_static('index.html')
+        if path == '/sw.js':
+            return self.send_static('sw.js')
         if path.startswith('/static/'):
             return self.send_static(path[len('/static/'):])
         if path == '/health':

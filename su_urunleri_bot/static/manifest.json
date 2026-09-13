@@ -1,0 +1,17 @@
+{
+  "name": "Su Ürünleri Kolluk Asistanı",
+  "short_name": "Su Ürünleri",
+  "description": "Sahada doğru bilgi. Her adımda rehberlik.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#102f3c",
+  "theme_color": "#102f3c",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

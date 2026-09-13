@@ -293,14 +293,18 @@
         filter.type = 'search';
         filter.setAttribute('aria-label', 'Tablodaki kayıtlarda ara');
         filter.placeholder = `${rows.length} satırda ara…`;
-        filter.addEventListener('input', () => {
-          const needle = filter.value.toLocaleLowerCase('tr').trim();
-          for (const row of rows) {
+        filter.addEventListener('input', (e) => {
+          const wrapNode = e.target.closest('.table-wrap');
+          const currentRows = [...wrapNode.querySelectorAll('tbody tr')];
+          const needle = e.target.value.toLocaleLowerCase('tr').trim();
+          for (const row of currentRows) {
             row.hidden = needle !== '' && !row.textContent.toLocaleLowerCase('tr').includes(needle);
           }
-          const visible = rows.filter(row => !row.hidden).length;
-          count.textContent = needle ? `${rows.length} kayıttan ${visible} sonuç` : `${rows.length} kayıt`;
-          empty.hidden = visible !== 0;
+          const visible = currentRows.filter(row => !row.hidden).length;
+          const countNode = wrapNode.querySelector('.table-count');
+          const emptyNode = wrapNode.querySelector('.table-empty');
+          if (countNode) countNode.textContent = needle ? `${currentRows.length} kayıttan ${visible} sonuç` : `${currentRows.length} kayıt`;
+          if (emptyNode) emptyNode.hidden = visible !== 0;
         });
         wrap.append(filter);
       }
@@ -323,6 +327,45 @@
     first.parentNode.insertBefore(icon, first);
   }
 
+  function syncAttributes(target, source) {
+    if (target.nodeType !== Node.ELEMENT_NODE || source.nodeType !== Node.ELEMENT_NODE) return;
+    for (const attr of [...target.attributes]) {
+      if (!source.hasAttribute(attr.name)) target.removeAttribute(attr.name);
+    }
+    for (const attr of [...source.attributes]) {
+      if (target.getAttribute(attr.name) !== attr.value) {
+        target.setAttribute(attr.name, attr.value);
+      }
+    }
+  }
+
+  function domDiff(target, source) {
+    if (target.nodeType !== source.nodeType || target.tagName !== source.tagName) {
+      target.replaceWith(source);
+      return;
+    }
+    if (target.nodeType === Node.TEXT_NODE) {
+      if (target.nodeValue !== source.nodeValue) target.nodeValue = source.nodeValue;
+      return;
+    }
+    if (target.nodeType === Node.ELEMENT_NODE) {
+      syncAttributes(target, source);
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) {
+        if (target.value !== source.value && document.activeElement !== target) {
+          target.value = source.value;
+        }
+      }
+    }
+    const tChildren = [...target.childNodes];
+    const sChildren = [...source.childNodes];
+    const max = Math.max(tChildren.length, sChildren.length);
+    for (let i = 0; i < max; i++) {
+      if (i >= tChildren.length) target.append(sChildren[i]);
+      else if (i >= sChildren.length) tChildren[i].remove();
+      else domDiff(tChildren[i], sChildren[i]);
+    }
+  }
+
   function render(view, { push = true, focus = true } = {}) {
     const changed = !current || viewKey(current) !== viewKey(view);
     current = { blocks: view.blocks || [], buttons: view.buttons || [], mode: view.mode || null };
@@ -332,18 +375,21 @@
     $('#tools-title').hidden = !isHome;
     $('#page-context').textContent = isHome ? 'Ana sayfa' : 'Denetim çalışma alanı';
 
-    ui.screen.replaceChildren();
+    const newScreen = el('article', ui.screen.className);
+    newScreen.id = ui.screen.id;
     for (const block of current.blocks) {
       const div = el('div', 'block');
       div.append(sanitize(block));
       drawRules(div);
       attachTableFilters(div);
       swapHeadingIcon(div);
-      ui.screen.append(div);
+      newScreen.append(div);
     }
+    domDiff(ui.screen, newScreen);
     ui.screen.hidden = current.blocks.length === 0;
 
-    ui.buttons.replaceChildren();
+    const newButtons = el('nav', ui.buttons.className);
+    newButtons.id = ui.buttons.id;
     for (const row of current.buttons) {
       const line = el('div', 'row');
       line.dataset.count = String(row.length);
@@ -372,11 +418,12 @@
           }
         }
         node.type = 'button';
-        node.addEventListener('click', () => press(button.data));
+        node.addEventListener('click', (e) => press(e.currentTarget.dataset.action));
         line.append(node);
       }
-      ui.buttons.append(line);
+      newButtons.append(line);
     }
+    domDiff(ui.buttons, newButtons);
 
     placeComposer(current.mode, focus);
     if (push && changed) history.pushState({ view: current }, '');
