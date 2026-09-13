@@ -23,7 +23,7 @@ import db
 
 logger = logging.getLogger(__name__)
 
-ASSET_DIR = Path('/app/data') if os.path.exists('/app/data') else Path(__file__).parent / 'data'
+ASSET_DIR = Path('/app/data') if os.path.exists('/app/data') else Path(__file__).parent.parent / 'data'
 with open(ASSET_DIR / 'ceza_rehberi_v2.json', 'r', encoding='utf-8') as f:
     CEZA_REHBERI = json.load(f)
 
@@ -127,7 +127,7 @@ SUBJECT_LABEL = {
     'environment': 'Atık / çevresel tedbir',
 }
 
-GUIDE_DATA_PATH = os.path.join(os.path.dirname(__file__), 'data', 'vessel_guides.json')
+GUIDE_DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'vessel_guides.json')
 with open(GUIDE_DATA_PATH, 'r', encoding='utf-8') as _guide_file:
     GUIDE_LIST = json.load(_guide_file)
 GUIDES = {g['key']: g for g in GUIDE_LIST}
