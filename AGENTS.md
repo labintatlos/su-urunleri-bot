@@ -134,6 +134,13 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 15 | Föy ve duruma özel denetim sonunda yazdırılabilir **Kontrol Çizelgesi** | ✅ 6.0.27 |
 | 16 | Hukuki değerlendirme korpusuna 09 Saha Uygulama Esasları belgesi | ✅ 6.0.27 |
 
+Ara adım (6.0.30): Kullanıcının isteğiyle yönetici paneli ve işlem geçmişi
+yenilendi. Önemsiz gezinme (düğme basışı, her metin) **kaydedilmez**; olaylar
+`db.ACTIVITY_EVENTS` içinde kategori ve önem düzeyiyle tanımlıdır ve ekranların
+kendisinde `db.log_activity` ile yazılır. Yeni bir anlamlı olay eklenirken önce
+bu sözlüğe eklenmeli; `smoke_test.py` kategorisiz kayıt ve `button`/`text`
+kaydı kalmadığını denetler.
+
 Adım 11–16 kullanıcının isteğiyle tek push olarak teslim edildi (6.0.27).
 Kullanıcı kararları: site hem Sahil Güvenlik hem il müdürlüğü denetçileri
 içindir; kaynaklar arasında **en güncel mevzuat esas alınır**, eski yayında olup

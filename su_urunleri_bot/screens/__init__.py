@@ -828,8 +828,11 @@ def callback(q, context):
     if data.startswith('guide:ans:'):
         _, _, idx, ans = data.split(':', 3)
         return guide_answer(q, context, int(idx), ans)
-    if data == 'guide:finish' or data == 'guide:result':
+    if data == 'guide:finish':
         return guide_finish(q, context)
+    if data == 'guide:result':
+        # Sonuca geri dönmek föyü yeniden tamamlamak değildir; kayda yazılmaz.
+        return guide_finish(q, context, record=False)
     if data == 'guide:badmenu':
         return guide_bad_menu(q, context)
     if data == 'guide:sheet':
@@ -954,6 +957,17 @@ def callback(q, context):
         return show_admin_panel(q, section)
     if data == 'admin:issues':
         return show_admin_issues(q)
+    if data == 'admin:users':
+        return show_admin_staff(q)
+    person_match = re.fullmatch(r'admin:person:(\d+)', data)
+    if person_match:
+        return show_admin_person(q, int(person_match.group(1)))
+    log_match = re.fullmatch(r'admin:log:([a-z]+):(all|\d+):(\d+)', data)
+    if log_match:
+        person = None if log_match.group(2) == 'all' else int(log_match.group(2))
+        return show_admin_log(q, log_match.group(1), person, int(log_match.group(3)))
+    if data in ('admin:purge:ask', 'admin:purge:yes'):
+        return show_admin_purge(q, confirm=data.endswith(':yes'))
     issue_match = re.fullmatch(r'admin:issue:resolve:(\d+)', data)
     if issue_match:
         if q.from_user.id not in ADMIN_IDS:
@@ -1157,8 +1171,14 @@ def callback(q, context):
         return audit_quick_answer(q, context, int(idx), ans)
 
     if data == 'insp:resume':
+        draft = db.open_draft(uid)
+        if draft:
+            db.log_activity(uid, 'draft_resume', draft['title'])
         return resume_draft(q, context)
     if data == 'insp:discard':
+        draft = db.open_draft(uid)
+        if draft:
+            db.log_activity(uid, 'draft_discard', draft['title'])
         db.drop_draft(uid)
         context.user_data.clear()
         return send_menu(q, uid, edit=True)
@@ -1718,6 +1738,7 @@ def guide_start(q, context, key):
     context.user_data['guide_measurements'] = {}
     context.user_data.pop('mode', None)
     db.log(q.from_user.id, 'guide_start', g['short_title'])
+    db.log_activity(q.from_user.id, 'guide_start', g['short_title'])
     return guide_render(q, context, 0)
 
 
@@ -1824,7 +1845,7 @@ def resume_draft(q, context):
     return audit_hub_edit(q, context)
 
 
-def guide_finish(q, context):
+def guide_finish(q, context, record=True):
     g, ok, bad, unchecked = guide_result_parts(context)
     if not g:
         return q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
@@ -1858,7 +1879,11 @@ def guide_finish(q, context):
         rows.append([('🚨 Denetime Dön', 'audit:hub'), ('🏠 Ana Menü', 'menu')])
     else:
         rows.append([('↩️ Föye Dön', f'guide:open:{g["key"]}'), ('🏠 Ana Menü', 'menu')])
-    db.log(q.from_user.id, 'guide_finish', f'{g["short_title"]}: bad={len(bad)}, unchecked={len(unchecked)}')
+    if record:
+        db.log(q.from_user.id, 'guide_finish', f'{g["short_title"]}: bad={len(bad)}, unchecked={len(unchecked)}')
+        db.log_activity(q.from_user.id, 'guide_finish',
+                        f'{g["short_title"]} — {len(ok)} uygun, {len(bad)} uygunsuz, {len(unchecked)} kontrol edilmedi',
+                        level='uyari' if bad else None)
     try:
         # Closes the open draft so the "yarıda kalan denetim" prompt clears.
         db.finish_inspection(q.from_user.id, 'guide', inspection_title(context, 'guide'),
@@ -1948,6 +1973,7 @@ def guide_sheet(q, context):
         parts.append('<b>ÖLÇÜM / KAYIT</b>\n' + items_table(measure_rows))
     parts.append(sheet_record_block())
     db.log(q.from_user.id, 'control_sheet', g['short_title'])
+    db.log_activity(q.from_user.id, 'control_sheet', f'Föy: {g["short_title"]}')
     q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb([
         SHEET_BUTTONS,
         [('↩️ Kontrol Sonucuna Dön', 'guide:result'), ('🏠 Ana Menü', 'menu')],
@@ -1980,6 +2006,8 @@ def audit_sheet(q, context):
             f'• {esc(x["tag"])} ({esc(guide_ref_label(x["ref"]))})' for x in flags))
     parts += [items_table(items), sheet_record_block()]
     db.log(q.from_user.id, 'control_sheet', subject)
+    region = REGION_LABEL.get(context.user_data.get('audit_region'), '—')
+    db.log_activity(q.from_user.id, 'control_sheet', f'Duruma özel denetim: {region} · {subject}')
     q.edit_message_text('\n\n'.join(parts), parse_mode=ParseMode.HTML, reply_markup=kb([
         SHEET_BUTTONS,
         [('↩️ Denetim Özeti', 'audit:hub'), ('🏠 Ana Menü', 'menu')],
@@ -2117,6 +2145,7 @@ def audit_start(q, context):
     context.user_data.clear()
     context.user_data['guided_active'] = True
     db.log(q.from_user.id, 'audit_start')
+    db.log_activity(q.from_user.id, 'audit_start')
     q.edit_message_text(
         audit_step(context, 1) +
         'Önce <b>denetim alanını</b> seçin. Sonraki sorular alanın mevzuat kapsamına göre daraltılacaktır.',
@@ -2697,6 +2726,8 @@ def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_analysis'
     ai_rate_limit_mark(uid)
 
     db.log(uid, log_action, scenario[:120])
+    origin = 'Denetim bilgilerinden' if log_action == 'ai_audit' else 'Serbest metin'
+    db.log_activity(uid, 'ai_assessment', f'{origin}: {scenario[:180]}')
     show_first(
         header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Markdown belgeleri taranıyor, 20-45 sn sürebilir…'),
         parse_mode=ParseMode.HTML,
@@ -2816,6 +2847,11 @@ def audit_quick_finish(q, context):
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Yeni Denetim', 'audit:start'), ('🏠 Ana Menü', 'menu')])
     db.log(q.from_user.id, 'guided_audit', ', '.join([x['tag'] for x in flags + possible]))
+    findings = len(flags) + len(possible)
+    db.log_activity(q.from_user.id, 'audit_result',
+                    f'{region} · {audit_activity_label(context)}' + (f' · {gear}' if gear else '')
+                    + f' — {findings} olası aykırılık/uyarı, {len(unknown)} kontrol edilmedi',
+                    level='uyari' if findings else None)
     q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
@@ -2882,6 +2918,9 @@ def amateur_classification_finish(q, context):
         text+='\n\n🟡 <b>Kontrol edilmemiş ölçütler:</b>\n'+''.join(f'• {esc(CLASSIFICATION_QUESTIONS[i])}\n' for i in unknown)
     text+='\n\n⚠️ <i>Yaptırım için olayın hangi bent kapsamında olduğuna göre Kanun/Excel ceza kartı ayrıca açılmalıdır.</i>'
     db.log(q.from_user.id,'amateur_classification',f'yes={len(yes)}, unknown={len(unknown)}')
+    db.log_activity(q.from_user.id, 'amateur_classification',
+                    f'{len(yes)} ticari nitelik ölçütü gerçekleşti, {len(unknown)} bilinmiyor',
+                    level='uyari' if yes else None)
     q.edit_message_text(text,parse_mode=ParseMode.HTML,reply_markup=kb([
         [('📚 6/2 Md.19','art:62:19'),('⚖️ Yaptırım Ara','mode:penalty')],
         [('⚖️ Bu Denetimi Değerlendir', 'ai:audit')],
@@ -3101,6 +3140,9 @@ def text_handler(update, context):
         else:
             rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'species_search', text)
+        search_label = ('Denetimde tür araması' if mode == 'audit_species_search'
+                        else 'Yasak tür araması' if kind == 'prohibited' else 'Tür araması')
+        db.log_activity(uid, 'search', f'{search_label}: {text} ({len(results)} sonuç)')
         return send_or_edit(update, context, msg, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode == 'source_search':
@@ -3114,6 +3156,7 @@ def text_handler(update, context):
         rows = [[(f'Md.{r["article"]} {r["title"][:35]}', f'art:{source}:{r["article"]}')] for r in results]
         rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'source_search', text)
+        db.log_activity(uid, 'search', f'Mevzuat araması ({SRC_LABEL.get(source, source)}): {text} ({len(results)} sonuç)')
         return send_or_edit(update, context, f'📚 <b>{esc(text)}</b> — {len(results)} madde', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode == 'penalty':
@@ -3129,6 +3172,7 @@ def text_handler(update, context):
                 rows.append([(f'📊 Excel satır {r["source_row"]}', f'raw:{r["source_row"]}')])
         rows.append([('📚 Mevzuatta da Ara', 'mode:lawsearch'), ('↩️ Ana Menü', 'menu')])
         db.log(uid, 'penalty_search', text)
+        db.log_activity(uid, 'search', f'Ceza araması: {text} ({len(results)} sonuç)')
         return send_or_edit(update, context, 
             f'⚖️ <b>{esc(text)}</b> — {len(results)} yapılandırılmış yaptırım sonucu\n\n<i>Deniz, içsu ve tesis kapsamındaki ceza kayıtları birlikte aranır. Sonuç bulunmazsa Excel ham satır araması gösterilir.</i>',
             parse_mode=ParseMode.HTML,
@@ -3143,6 +3187,8 @@ def text_handler(update, context):
             rows.append([(f'📚 {SRC_LABEL.get(r["source"], r["source"])} Md.{r["article"]} {r["title"][:22]}', f'art:{r["source"]}:{r["article"]}')])
         rows.append([('↩️ Ana Menü', 'menu')])
         db.log(uid, 'legal_search', text)
+        search_label = {'gear': 'Av aracı araması', 'place': 'Yer araması'}.get(mode, 'Mevzuat araması')
+        db.log_activity(uid, 'search', f'{search_label}: {text} ({len(articles) + len(rules)} sonuç)')
         return send_or_edit(update, context, f'🔎 <b>{esc(text)}</b> — tüm kaynaklardaki eşleşmeler', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode is None:
@@ -3176,6 +3222,7 @@ def text_handler(update, context):
         if rows:
             rows.append([('🏠 Ana Menü', 'menu')])
             db.log(uid, 'general_search', text)
+            db.log_activity(uid, 'search', f'Genel arama: {text} ({len(rows) - 1} sonuç)')
             counts = []
             n_species = len(results_species_com) + len(results_species_ama)
             if n_species:
@@ -3213,24 +3260,185 @@ def text_handler(update, context):
     send_or_edit(update, context, 'Bir işlem seçin:', reply_markup=kb(MAIN))
 
 
-ACTIVITY_LABELS = {
-    'setup': 'İlk yönetici hesabını oluşturdu',
-    'login': 'Giriş yaptı',
-    'logout': 'Çıkış yaptı',
-    'button': 'Düğmeye bastı',
-    'text': 'Metin gönderdi',
-    'password_change': 'Kendi şifresini değiştirdi',
-    'person_create': 'Kişi oluşturdu',
-    'person_update': 'Kişi bilgilerini değiştirdi',
-    'registration': 'Üyelik başvurusu yaptı',
-    'password_reset_request': 'Şifre yenileme talebi oluşturdu',
-    'issue_report': 'Sorun bildirdi',
-    'issue_resolve': 'Sorun bildirimini kapattı',
-}
+# ── Yönetici paneli ───────────────────────────────────────────────────────
+# Olay adları, kategorileri ve önem düzeyleri db.ACTIVITY_EVENTS'te tanımlıdır.
+
+ADMIN_LOG_PAGE_SIZE = 25
+ADMIN_LEVEL_MARK = {'bilgi': '', 'uyari': '🟡 ', 'kritik': '🔴 '}
+ADMIN_LOG_FILTERS = (
+    ('all', 'Tümü'), ('denetim', 'Denetim'), ('arama', 'Arama'),
+    ('hukuki', 'Hukuki'), ('guvenlik', 'Güvenlik'), ('oturum', 'Oturum'),
+    ('yonetim', 'Yönetim'), ('destek', 'Destek'), ('eski', 'Eski kayıtlar'),
+)
 
 
 def activity_label(action):
-    return esc(ACTIVITY_LABELS.get(action, action))
+    return esc(db.ACTIVITY_EVENTS.get(action, (None, None, action))[2])
+
+
+def _admin_time(value):
+    value = str(value or '')
+    return f'{value[8:10]}.{value[5:7]}.{value[:4]} {value[11:16]}' if len(value) >= 16 else ''
+
+
+def _admin_person_label(row):
+    return row['display_name'] + (f' (@{row["username"]})' if row['username'] else '')
+
+
+def _admin_status(row):
+    if row['approval_status'] == 'pending':
+        return 'Onay bekliyor'
+    if row['approval_status'] == 'rejected':
+        return 'Reddedildi'
+    if not row['is_active']:
+        return 'Pasif'
+    return 'Yönetici' if row['is_admin'] else 'Kullanıcı'
+
+
+def _activity_items(rows, show_person=True):
+    items = []
+    for row in rows:
+        details = {'Zaman': _admin_time(row['created_at'])}
+        if show_person:
+            details['Kişi'] = _admin_person_label(row)
+        details['Kategori'] = db.ACTIVITY_CATEGORIES.get(row['category'], row['category'])
+        details['İşlem'] = ADMIN_LEVEL_MARK.get(row['level'], '') + db.ACTIVITY_EVENTS.get(
+            row['action'], (None, None, row['action']))[2]
+        details['Ayrıntı'] = row['detail'] or '—'
+        items.append({'details': details})
+    return items
+
+
+def _is_admin(q):
+    if q.from_user.id in ADMIN_IDS:
+        return True
+    q.answer('Yönetici yetkisi gerekli.', show_alert=True)
+    return False
+
+
+def show_admin_log(q, category='all', person_id=None, page=0):
+    if not _is_admin(q):
+        return
+    filters = dict(ADMIN_LOG_FILTERS)
+    category = category if category in filters else 'all'
+    person = accounts.get(person_id) if person_id else None
+    if person_id and not person:
+        return q.answer('Kişi bulunamadı.', show_alert=True)
+    uid = accounts.uid_of(person) if person else None
+    _, total = db.activity_page(category, uid, 1, 0)
+    pages = max(1, -(-total // ADMIN_LOG_PAGE_SIZE))
+    page = max(0, min(int(page), pages - 1))
+    rows, total = db.activity_page(category, uid, ADMIN_LOG_PAGE_SIZE, page * ADMIN_LOG_PAGE_SIZE)
+    scope = 'Tüm önemli işlemler' if category == 'all' else filters[category]
+    subtitle = scope + (f' · {person["display_name"]} (@{person["username"]})' if person else '')
+    text = header('📋', 'İŞLEM GEÇMİŞİ', subtitle) + '\n' + HR + '\n\n'
+    text += f'<b>{total}</b> kayıt · sayfa {page + 1}/{pages} · 🟡 uyarı, 🔴 kritik\n\n'
+    if category == 'eski':
+        text += ('<i>6.0.30 öncesinde her düğme basışı ve yazılan metin kaydediliyordu. Bu satırlar '
+                 'önemli işlem sayılmaz, özet ve istatistiklere girmez; aşağıdan temizlenebilir.</i>\n\n')
+    text += items_table(_activity_items(rows, show_person=person is None)) if rows else '<i>Bu süzgeçte kayıt yok.</i>'
+
+    who = str(person['id']) if person else 'all'
+    buttons = [(('• ' if key == category else '') + label, f'admin:log:{key}:{who}:0')
+               for key, label in ADMIN_LOG_FILTERS]
+    kb_rows = [buttons[i:i + 3] for i in range(0, len(buttons), 3)]
+    nav = []
+    if page > 0:
+        nav.append(('⬅️ Önceki', f'admin:log:{category}:{who}:{page - 1}'))
+    if page < pages - 1:
+        nav.append(('Sonraki ➡️', f'admin:log:{category}:{who}:{page + 1}'))
+    if nav:
+        kb_rows.append(nav)
+    if person:
+        kb_rows.append([('👤 Kişi Özeti', f'admin:person:{person["id"]}'), ('📋 Tüm Kişiler', f'admin:log:{category}:all:0')])
+    if category == 'eski' and total:
+        kb_rows.append([('🗑 Eski Kayıtları Temizle', 'admin:purge:ask')])
+    kb_rows.append([('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')])
+    return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(kb_rows))
+
+
+def show_admin_staff(q):
+    if not _is_admin(q):
+        return
+    staff = db.staff_activity(7)
+    items = [{'details': {
+        'Kişi': _admin_person_label(row),
+        'Durum': _admin_status(row),
+        'Son giriş': _admin_time(row['last_login']) or '—',
+        'Denetim (7 gün)': str(row['inspections'] or 0),
+        'Bulgulu sonuç (7 gün)': str(row['findings'] or 0),
+        'Arama (7 gün)': str(row['searches'] or 0),
+        'Son önemli işlem': _admin_time(row['last_event']) or '—',
+    }} for row in staff]
+    text = (header('👥', 'PERSONEL', 'Son 7 günün etkinliği; ayrıntı için kişiyi seçin') + '\n' + HR + '\n\n'
+            + (items_table(items) if items else '<i>Kayıtlı kişi yok.</i>'))
+    buttons = [(f'👤 {row["display_name"][:24]}', f'admin:person:{row["id"]}') for row in staff[:40]]
+    kb_rows = [buttons[i:i + 2] for i in range(0, len(buttons), 2)]
+    kb_rows += [[('👤 Kişiler / Şifreler', 'web:people')],
+                [('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
+    return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(kb_rows))
+
+
+def show_admin_person(q, account_id):
+    if not _is_admin(q):
+        return
+    person = accounts.get(account_id)
+    if not person:
+        return q.answer('Kişi bulunamadı.', show_alert=True)
+    uid = accounts.uid_of(person)
+    counts = db.person_activity_counts(uid)
+
+    def total(*actions, warn=False):
+        return sum(counts.get(action, (0, 0))[1 if warn else 0] for action in actions)
+
+    keys = set(person.keys())
+    lines = [
+        field('Kullanıcı adı', '@' + person['username']),
+        field('Durum', _admin_status(person)),
+        field('Görev / statü', (person['position'] if 'position' in keys else None) or '—'),
+        field('Hesap açılışı', _admin_time(person['created_at']) or '—'),
+        field('Son giriş', _admin_time(person['last_login']) or '—'),
+    ]
+    stats = [
+        ('Başlatılan denetim / föy', total('audit_start', 'guide_start')),
+        ('Sonuçlanan denetim / föy', total('audit_result', 'guide_finish')),
+        ('Bulgu içeren sonuç', total('audit_result', 'guide_finish', warn=True)),
+        ('Kontrol çizelgesi', total('control_sheet')),
+        ('Hukuki değerlendirme', total('ai_assessment')),
+        ('Arama', total('search')),
+        ('Hatalı giriş / kilitlenme', total('login_failed', 'login_blocked')),
+    ]
+    recent, event_total = db.activity_page('all', uid, 10, 0)
+    text = (header('👤', person['display_name'], 'Kişi özeti') + '\n' + HR + '\n\n'
+            + '\n'.join(lines) + '\n\n<b>TÜM ZAMANLAR</b>\n'
+            + items_table([{'details': {'Gösterge': name, 'Adet': str(value)}} for name, value in stats])
+            + f'\n\n<b>SON İŞLEMLER</b> ({event_total} önemli kayıt)\n'
+            + (items_table(_activity_items(recent, show_person=False)) if recent else '<i>Henüz kayıt yok.</i>'))
+    return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([
+        [('📋 Tüm Geçmişi', f'admin:log:all:{person["id"]}:0'), ('🛡️ Güvenlik Kayıtları', f'admin:log:guvenlik:{person["id"]}:0')],
+        [('👥 Personel', 'admin:users'), ('👤 Kişiler / Şifreler', 'web:people')],
+        [('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')],
+    ]))
+
+
+def show_admin_purge(q, confirm=False):
+    if not _is_admin(q):
+        return
+    if confirm:
+        removed = db.purge_legacy_activity()
+        if removed:
+            db.log_activity(q.from_user.id, 'log_purge', f'{removed} eski gezinme kaydı silindi')
+        q.answer(f'{removed} eski gezinme kaydı silindi.')
+        return show_admin_log(q, 'all')
+    legacy = db.activity_summary(1)['legacy']
+    text = (header('🗑', 'ESKİ KAYITLARI TEMİZLE') + '\n' + HR + '\n\n'
+            + f'<b>{legacy}</b> eski gezinme kaydı (düğme basışı ve yazılan metin) kalıcı olarak silinecek.\n\n'
+            + 'Giriş/çıkış, güvenlik, kişi yönetimi, denetim, arama, hukuki değerlendirme ve sorun '
+            + 'bildirimi kayıtlarına dokunulmaz. Temizleme işleminin kendisi işlem geçmişine yazılır.')
+    return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb([
+        [('🗑 Evet, temizle', 'admin:purge:yes')],
+        [('↩️ Vazgeç', 'admin:log:eski:all:0')],
+    ]))
 
 
 def show_admin_issues(q):
@@ -3257,30 +3465,63 @@ def show_admin_panel(q, section='main'):
     if q.from_user.id not in ADMIN_IDS:
         return q.answer('Yönetici yetkisi gerekli.', show_alert=True)
     
+    if section == 'users':
+        return show_admin_staff(q)
+    if section == 'logs':
+        return show_admin_log(q, 'all')
+
     if section == 'main':
-        users = len(accounts.list_accounts())
-        count = db.activity_count()
+        people = accounts.list_accounts()
+        pending = sum(1 for p in people if p['approval_status'] == 'pending')
+        resets = sum(1 for p in people if p['reset_pending'])
+        active_accounts = sum(1 for p in people if p['is_active'] and p['approval_status'] == 'approved')
         issue_count = db.open_issue_count()
-        rows = db.admin_activity(8)
+        summary = db.activity_summary(7)
+
+        def count(period, *actions, warn=False):
+            return sum(summary[period].get(action, (0, 0))[1 if warn else 0] for action in actions)
+
+        attention = []
+        if pending:
+            attention.append(f'👤 <b>{pending}</b> üyelik başvurusu onay bekliyor')
+        if resets:
+            attention.append(f'🔑 <b>{resets}</b> şifre yenileme talebi bekliyor')
+        if issue_count:
+            attention.append(f'🛠 <b>{issue_count}</b> açık sorun bildirimi var')
+        if summary['failed_24h']:
+            attention.append(f'🛡️ Son 24 saatte <b>{summary["failed_24h"]}</b> hatalı giriş / kilitlenme kaydı')
+        kpis = [
+            ('Etkin kişi', summary['active_today'], summary['active_week']),
+            ('Başlatılan denetim / föy', count('today', 'audit_start', 'guide_start'), count('week', 'audit_start', 'guide_start')),
+            ('Sonuçlanan denetim / föy', count('today', 'audit_result', 'guide_finish'), count('week', 'audit_result', 'guide_finish')),
+            ('Bulgu içeren sonuç', count('today', 'audit_result', 'guide_finish', warn=True),
+             count('week', 'audit_result', 'guide_finish', warn=True)),
+            ('Kontrol çizelgesi', count('today', 'control_sheet'), count('week', 'control_sheet')),
+            ('Hukuki değerlendirme', count('today', 'ai_assessment'), count('week', 'ai_assessment')),
+            ('Arama', count('today', 'search'), count('week', 'search')),
+        ]
+        recent = db.admin_activity(7)
         text = (
-            f'🔐 <b>YÖNETİCİ VE DENETİM PANELİ</b>\n\n'
-            f'👥 <b>Kayıtlı Kullanıcı Sayısı:</b> {users}\n'
-            f'⚡ <b>Toplam Kullanıcı İşlemi:</b> {count}\n\n'
-            f'<b>Son Yapılan İşlemler:</b>\n'
+            header('🔐', 'YÖNETİCİ PANELİ', f'{active_accounts} etkin hesap · {len(people)} kayıtlı hesap')
+            + '\n' + HR + '\n\n<b>DİKKAT GEREKTİRENLER</b>\n'
+            + ('\n'.join(attention) if attention else '🟢 Bekleyen onay, şifre talebi, açık sorun veya hatalı giriş yok.')
+            + '\n\n<b>ÖZET</b>\n'
+            + items_table([{'details': {'Gösterge': name, 'Bugün': str(today), 'Son 7 gün': str(week)}}
+                           for name, today, week in kpis])
+            + '\n\n<b>SON ÖNEMLİ İŞLEMLER</b>\n'
+            + (items_table(_activity_items(recent)) if recent else '<i>Henüz önemli işlem kaydı yok.</i>')
         )
-        for r in rows:
-            dname = r['display_name']
-            time_str = r['created_at'].split('T')[-1] if 'T' in str(r['created_at']) else str(r['created_at'])
-            label = activity_label(r['action'])
-            detail = f': {esc(r["detail"])}' if r['detail'] else ''
-            text += f'• <code>{time_str[:8]}</code> <b>{esc(dname)}</b> · {label}{detail}\n'
-        
-        rows_kb = [
-            [('📊 Denetim & Arama Dağılımı', 'admin:stats:vessels')],
-            [('👥 Personel Faaliyetleri', 'admin:stats:users'), ('📋 İşlem Kayıtları', 'admin:stats:logs')],
-            [(f'🛠 Sorun Bildirimleri ({issue_count})', 'admin:issues')],
-            [('👤 Kişiler / Şifreler', 'web:people')],
-            [('🏠 Ana Menü', 'menu')]
+        if summary['legacy']:
+            text += (f'\n\n<i>{summary["legacy"]} eski gezinme kaydı (düğme basışı) özet dışında tutuluyor; '
+                     'İşlem Geçmişi → Eski kayıtlar bölümünden temizlenebilir.</i>')
+        rows_kb = []
+        if pending or resets:
+            rows_kb.append([(f'👤 Onay ve Şifre Talepleri ({pending + resets})', 'web:people')])
+        rows_kb += [
+            [('📋 İşlem Geçmişi', 'admin:log:all:all:0'), ('👥 Personel', 'admin:users')],
+            [('🛡️ Güvenlik Kayıtları', 'admin:log:guvenlik:all:0'), (f'🛠 Sorun Bildirimleri ({issue_count})', 'admin:issues')],
+            [('📊 Kullanım İstatistikleri', 'admin:stats:vessels'), ('👤 Kişiler / Şifreler', 'web:people')],
+            [('🏠 Ana Menü', 'menu')],
         ]
         return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
@@ -3317,31 +3558,3 @@ def show_admin_panel(q, section='main'):
         rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
         return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
 
-    elif section == 'users':
-        user_rows = db.admin_user_activity()
-        text = '👥 <b>PERSONEL / KULLANICI FAALİYETLERİ</b>\n\n'
-        for u in user_rows:
-            uid = u['user_id']
-            dname = USER_NAMES.get(uid, u['first_name'] or u['username'] or str(uid))
-            uname = f'(@{u["username"]})' if u['username'] else ''
-            last_seen = u['last_seen'].replace('T', ' ')[:16] if u['last_seen'] else '—'
-            text += f'👤 <b>{esc(dname)}</b> {esc(uname)}\n'
-            text += f'   🆔 <code>{uid}</code> | ⚡ Toplam İşlem: <b>{u["query_count"]}</b>\n'
-            text += f'   🕒 Son Görülme: <i>{last_seen}</i>\n\n'
-            
-        rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
-        return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))
-
-    elif section == 'logs':
-        rows = db.admin_activity(30)
-        text = '📋 <b>SON 30 KULLANICI İŞLEMİ</b>\n\n'
-        for r in rows:
-            dname = r['display_name']
-            time_str = r['created_at'].replace('T', ' ')[5:19] if r['created_at'] else ''
-            detail = f' — <i>{esc(r["detail"])}</i>' if r['detail'] else ''
-            text += f'• <code>{time_str}</code> <b>{esc(dname)}</b> → {activity_label(r["action"])}{detail}\n'
-        if not rows:
-            text += '<i>Henüz kullanıcı işlemi kaydedilmedi.</i>\n'
-            
-        rows_kb = [[('↩️ Yönetici Paneli', 'admin:panel'), ('🏠 Ana Menü', 'menu')]]
-        return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows_kb))

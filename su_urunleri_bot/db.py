@@ -103,6 +103,17 @@ def init_db():
         for column, kind in columns:
             if column not in existing_columns[table]:
                 q.execute(f'ALTER TABLE {table} ADD COLUMN {column} {kind}')
+    # 6.0.30: işlem geçmişi kategori ve önem düzeyiyle tutulur; eski satırlar
+    # eylem adına göre sınıflandırılır (düğme/metin satırları "eski" kalır).
+    activity_columns = {row[1] for row in q.execute('PRAGMA table_info(activity_log)')}
+    for column in ('category', 'level'):
+        if column not in activity_columns:
+            q.execute(f'ALTER TABLE activity_log ADD COLUMN {column} TEXT')
+    q.execute('CREATE INDEX IF NOT EXISTS idx_activity_log_user ON activity_log(user_id, id DESC)')
+    q.execute('CREATE INDEX IF NOT EXISTS idx_activity_log_category ON activity_log(category, id DESC)')
+    for action, (category, level, _label) in ACTIVITY_EVENTS.items():
+        q.execute('UPDATE activity_log SET category=?, level=? WHERE action=? AND category IS NULL',
+                  (category, level, action))
     old = q.execute("SELECT v FROM meta WHERE k='dataset'").fetchone()
     if not old or old[0] != DATASET:
         for table in ['sources','articles','rules','commercial_species','amateur_species','prohibited_species','penalty_cards','raw_excel_rows']:
@@ -146,38 +157,182 @@ def log(uid,action,query=''):
     c=con(); c.execute('INSERT INTO query_log(user_id,action,query,created_at) VALUES(?,?,?,?)',(uid,action,query,datetime.now().isoformat(timespec='seconds'))); c.commit(); c.close()
 
 
-def log_activity(uid, action, detail=''):
-    """Web kullanıcısının güvenli denetim kaydı; parola ve oturum verisi almaz."""
+# ── İşlem geçmişi ─────────────────────────────────────────────────────────
+# Yalnızca iz bırakması gereken olaylar kaydedilir: oturum ve güvenlik, hesap
+# yönetimi, denetim adımları, aramalar, hukuki değerlendirme ve destek.
+# Ekranlar arası gezinme (geri, ana menü, sayfa değiştirme, cevap düğmeleri)
+# 6.0.30'dan beri kaydedilmez; önceki 'button'/'text' satırları "eski"
+# kategorisinde durur ve yönetici panelinden temizlenebilir.
+ACTIVITY_CATEGORIES = {
+    'denetim': 'Denetim',
+    'arama': 'Arama',
+    'hukuki': 'Hukuki değerlendirme',
+    'oturum': 'Oturum',
+    'guvenlik': 'Güvenlik',
+    'yonetim': 'Yönetim',
+    'destek': 'Destek',
+    'eski': 'Eski gezinme kaydı',
+}
+ACTIVITY_LEVELS = ('bilgi', 'uyari', 'kritik')
+# eylem: (kategori, varsayılan önem düzeyi, yönetici panelindeki açıklama)
+ACTIVITY_EVENTS = {
+    'setup': ('yonetim', 'kritik', 'İlk yönetici hesabını oluşturdu'),
+    'login': ('oturum', 'bilgi', 'Giriş yaptı'),
+    'logout': ('oturum', 'bilgi', 'Çıkış yaptı'),
+    'login_failed': ('guvenlik', 'uyari', 'Hatalı şifreyle giriş denendi'),
+    'login_blocked': ('guvenlik', 'kritik', 'Giriş geçici olarak kilitlendi'),
+    'password_change': ('guvenlik', 'uyari', 'Kendi şifresini değiştirdi'),
+    'password_reset_request': ('guvenlik', 'uyari', 'Şifre yenileme talebi oluşturdu'),
+    'registration': ('yonetim', 'uyari', 'Üyelik başvurusu yaptı'),
+    'person_create': ('yonetim', 'kritik', 'Kişi oluşturdu'),
+    'person_update': ('yonetim', 'kritik', 'Kişi bilgilerini değiştirdi'),
+    'log_purge': ('yonetim', 'kritik', 'Eski gezinme kayıtlarını temizledi'),
+    'issue_report': ('destek', 'uyari', 'Sorun bildirdi'),
+    'issue_resolve': ('destek', 'bilgi', 'Sorun bildirimini kapattı'),
+    'audit_start': ('denetim', 'bilgi', 'Yönlendirilmiş denetim başlattı'),
+    'audit_result': ('denetim', 'bilgi', 'Denetimi sonuçlandırdı'),
+    'guide_start': ('denetim', 'bilgi', 'Kontrol föyü başlattı'),
+    'guide_finish': ('denetim', 'bilgi', 'Kontrol föyünü tamamladı'),
+    'control_sheet': ('denetim', 'bilgi', 'Kontrol çizelgesi oluşturdu'),
+    'amateur_classification': ('denetim', 'bilgi', 'Ticari nitelik kontrolü yaptı'),
+    'draft_resume': ('denetim', 'bilgi', 'Yarım kalan denetime devam etti'),
+    'draft_discard': ('denetim', 'uyari', 'Yarım kalan denetimi sildi'),
+    'search': ('arama', 'bilgi', 'Arama yaptı'),
+    'ai_assessment': ('hukuki', 'bilgi', 'Hukuki değerlendirme istedi'),
+    'button': ('eski', 'bilgi', 'Düğmeye bastı'),
+    'text': ('eski', 'bilgi', 'Metin gönderdi'),
+}
+
+
+def log_activity(uid, action, detail='', level=None):
+    """Web kullanıcısının güvenli işlem kaydı; parola ve oturum verisi almaz."""
+    action = str(action)[:40]
+    category, default_level, _label = ACTIVITY_EVENTS.get(action, ('yonetim', 'bilgi', action))
+    level = level if level in ACTIVITY_LEVELS else default_level
     detail = ' '.join(str(detail or '').split())[:240]
     c = con()
-    c.execute('INSERT INTO activity_log(user_id,action,detail,created_at) VALUES(?,?,?,?)',
-              (uid, str(action)[:40], detail, datetime.now().isoformat(timespec='seconds')))
+    c.execute('INSERT INTO activity_log(user_id,action,detail,created_at,category,level) VALUES(?,?,?,?,?,?)',
+              (uid, action, detail, datetime.now().isoformat(timespec='seconds'), category, level))
     c.commit()
     c.close()
 
 
+def web_account_uid(username):
+    """Hatalı giriş kaydı için: kullanıcı adı var olan bir hesaba aitse o hesabın kimliği."""
+    c = con()
+    row = c.execute('SELECT id FROM web_accounts WHERE username=?', (str(username or '').strip().lower(),)).fetchone()
+    c.close()
+    return -int(row['id']) if row else None
+
+
 def activity_count():
     c = con()
-    count = c.execute('SELECT COUNT(*) FROM activity_log').fetchone()[0]
+    count = c.execute("SELECT COUNT(*) FROM activity_log WHERE COALESCE(category,'eski') != 'eski'").fetchone()[0]
     c.close()
     return count
 
 
+_ACTIVITY_SELECT = '''
+    SELECT a.id, a.user_id, a.action, a.detail, a.created_at,
+           COALESCE(a.category, 'eski') AS category, COALESCE(a.level, 'bilgi') AS level,
+           COALESCE(w.display_name, u.first_name, u.username, CAST(a.user_id AS TEXT)) AS display_name,
+           COALESCE(w.username, u.username, '') AS username
+    FROM activity_log a
+    LEFT JOIN users u ON u.user_id = a.user_id
+    LEFT JOIN web_accounts w ON a.user_id = -w.id'''
+
+
+def activity_page(category='all', user_id=None, limit=25, offset=0):
+    """Süzülmüş işlem geçmişi sayfası ve toplam kayıt sayısı. 'all' eski gezinme kayıtlarını içermez."""
+    where, args = [], []
+    if category in (None, 'all'):
+        where.append("COALESCE(a.category,'eski') != 'eski'")
+    else:
+        where.append("COALESCE(a.category,'eski') = ?")
+        args.append(category)
+    if user_id is not None:
+        where.append('a.user_id = ?')
+        args.append(int(user_id))
+    clause = ' WHERE ' + ' AND '.join(where)
+    c = con()
+    total = c.execute('SELECT COUNT(*) FROM activity_log a' + clause, args).fetchone()[0]
+    rows = c.execute(_ACTIVITY_SELECT + clause + ' ORDER BY a.id DESC LIMIT ? OFFSET ?',
+                     args + [int(limit), int(offset)]).fetchall()
+    c.close()
+    return rows, total
+
+
 def admin_activity(limit=30):
-    """En yeni web işlemleri ve kalıcı hesap adı; eski Telegram kimlikleri de desteklenir."""
+    """En yeni önemli web işlemleri (eski gezinme kayıtları hariç)."""
+    return activity_page('all', limit=limit)[0]
+
+
+def activity_summary(days=7):
+    """Yönetici özeti: bugün ve son `days` gün için eylem sayıları, uyarı düzeyindeki
+    kayıtlar, etkin kişi sayıları ve son 24 saatteki hatalı giriş denemeleri."""
+    now = datetime.now()
+    today = now.date().isoformat()
+    since = (now.date() - timedelta(days=days - 1)).isoformat()
+    day_ago = (now - timedelta(hours=24)).isoformat(timespec='seconds')
+    c = con()
+
+    def counts(start):
+        return {row['action']: (row['n'], row['warn'] or 0) for row in c.execute(
+            "SELECT action, COUNT(*) AS n, SUM(CASE WHEN level IN ('uyari','kritik') THEN 1 ELSE 0 END) AS warn "
+            'FROM activity_log WHERE created_at >= ? GROUP BY action', (start,))}
+
+    def active(start):
+        return c.execute('SELECT COUNT(DISTINCT user_id) FROM activity_log WHERE created_at >= ? AND user_id < 0',
+                         (start,)).fetchone()[0]
+
+    summary = {
+        'today': counts(today), 'week': counts(since),
+        'active_today': active(today), 'active_week': active(since),
+        'failed_24h': c.execute("SELECT COUNT(*) FROM activity_log WHERE action IN ('login_failed','login_blocked') "
+                                'AND created_at >= ?', (day_ago,)).fetchone()[0],
+        'legacy': c.execute("SELECT COUNT(*) FROM activity_log WHERE COALESCE(category,'eski')='eski'").fetchone()[0],
+    }
+    c.close()
+    return summary
+
+
+def staff_activity(days=7):
+    """Her site hesabı için son `days` gündeki denetim, bulgu ve arama sayıları ile son önemli işlem zamanı."""
+    since = (datetime.now().date() - timedelta(days=days - 1)).isoformat()
     c = con()
     rows = c.execute('''
-        SELECT a.user_id, a.action, a.detail, a.created_at,
-               COALESCE(w.display_name, u.first_name, u.username, CAST(a.user_id AS TEXT)) AS display_name,
-               COALESCE(w.username, u.username, '') AS username
-        FROM activity_log a
-        LEFT JOIN users u ON u.user_id = a.user_id
-        LEFT JOIN web_accounts w ON a.user_id = -w.id
-        ORDER BY a.id DESC
-        LIMIT ?
-    ''', (int(limit),)).fetchall()
+        SELECT w.id, w.username, w.display_name, w.is_admin, w.is_active, w.approval_status, w.last_login,
+               SUM(CASE WHEN a.action IN ('audit_start','guide_start') AND a.created_at >= ? THEN 1 ELSE 0 END) AS inspections,
+               SUM(CASE WHEN a.action IN ('audit_result','guide_finish') AND a.level IN ('uyari','kritik')
+                        AND a.created_at >= ? THEN 1 ELSE 0 END) AS findings,
+               SUM(CASE WHEN a.action = 'search' AND a.created_at >= ? THEN 1 ELSE 0 END) AS searches,
+               MAX(CASE WHEN COALESCE(a.category,'eski') != 'eski' THEN a.created_at END) AS last_event
+        FROM web_accounts w
+        LEFT JOIN activity_log a ON a.user_id = -w.id
+        GROUP BY w.id
+        ORDER BY w.is_active DESC, last_event DESC, w.display_name COLLATE NOCASE
+    ''', (since, since, since)).fetchall()
     c.close()
     return rows
+
+
+def person_activity_counts(uid):
+    """Bir kişinin tüm zamanlardaki eylem sayıları: {eylem: (adet, uyarı düzeyindeki adet)}."""
+    c = con()
+    rows = {row['action']: (row['n'], row['warn'] or 0) for row in c.execute(
+        "SELECT action, COUNT(*) AS n, SUM(CASE WHEN level IN ('uyari','kritik') THEN 1 ELSE 0 END) AS warn "
+        'FROM activity_log WHERE user_id = ? GROUP BY action', (int(uid),))}
+    c.close()
+    return rows
+
+
+def purge_legacy_activity():
+    """Eski düğme/metin gezinme kayıtlarını siler; önemli olay kayıtlarına dokunmaz."""
+    c = con()
+    removed = c.execute("DELETE FROM activity_log WHERE COALESCE(category,'eski') = 'eski'").rowcount
+    c.commit()
+    c.close()
+    return removed
 
 
 def create_issue_report(uid, message):
@@ -347,7 +502,7 @@ def admin_audit_activity():
     searches=c.execute('''
         SELECT query, COUNT(*) as count
         FROM query_log
-        WHERE query != '' AND query IS NOT NULL
+        WHERE action LIKE '%search' AND query != '' AND query IS NOT NULL
         GROUP BY query
         ORDER BY count DESC
         LIMIT 10

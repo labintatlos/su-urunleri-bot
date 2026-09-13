@@ -463,6 +463,29 @@ def main():
             if s != 200 or issue_message in text_of(resolved):
                 errors.append((('ISSUE_REPORT', 'resolve'), s, resolved))
 
+        # 6.0.30 yönetici paneli: özet, süzgeçli işlem geçmişi, personel,
+        # kişi özeti ve eski kayıt temizleme ekranları hatasız açılmalı.
+        admin_screens = {
+            'admin:panel': 'DİKKAT GEREKTİRENLER',
+            'admin:log:all:all:0': 'İŞLEM GEÇMİŞİ',
+            'admin:log:denetim:all:0': 'Denetim',
+            'admin:log:arama:all:0': 'Arama yaptı',
+            'admin:log:guvenlik:all:0': 'Hatalı şifreyle giriş denendi',
+            'admin:users': 'PERSONEL',
+            'admin:purge:ask': 'ESKİ KAYITLARI TEMİZLE',
+        }
+        for data, expected in admin_screens.items():
+            s, admin_view = action(data)
+            admin_text = text_of(admin_view)
+            if s != 200 or expected not in admin_text or any(m in admin_text for m in ERROR_MARKERS):
+                errors.append((('ADMIN_PANEL', data), s, admin_text[:300]))
+        _, people = call('/api/people')
+        candidate = next((p for p in people.get('people', []) if p['username'] == 'aday'), None)
+        if candidate:
+            s, person_view = action(f'admin:person:{candidate["id"]}')
+            if s != 200 or 'Hatalı giriş' not in text_of(person_view):
+                errors.append((('ADMIN_PANEL', 'person'), s, text_of(person_view)[:300]))
+
         with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
             activity = dict(audit_db.execute(
                 'SELECT action, COUNT(*) FROM activity_log GROUP BY action').fetchall())
@@ -471,11 +494,21 @@ def main():
             issue_statuses = dict(audit_db.execute(
                 'SELECT status, COUNT(*) FROM issue_reports GROUP BY status').fetchall())
         print('activity log:', activity)
-        for required in ('setup', 'login', 'logout', 'button', 'text', 'password_change',
+        for required in ('setup', 'login', 'logout', 'password_change', 'login_failed',
                          'person_create', 'person_update', 'registration', 'password_reset_request',
-                         'issue_report', 'issue_resolve'):
+                         'issue_report', 'issue_resolve', 'audit_start', 'audit_result', 'guide_start',
+                         'guide_finish', 'control_sheet', 'search'):
             if not activity.get(required):
                 errors.append((('ACTIVITY_LOG', required), 0, 'beklenen işlem kaydı yok'))
+        # Gezinme (düğme basışı, yazılan her metin) artık kaydedilmez.
+        for noise in ('button', 'text'):
+            if activity.get(noise):
+                errors.append((('ACTIVITY_LOG', f'no_{noise}'), 0, f'{activity[noise]} gezinme kaydı yazılmış'))
+        with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
+            uncategorized = audit_db.execute(
+                'SELECT COUNT(*) FROM activity_log WHERE category IS NULL OR level IS NULL').fetchone()[0]
+        if uncategorized:
+            errors.append((('ACTIVITY_LOG', 'category'), 0, f'{uncategorized} kategorisiz kayıt'))
         if any(secret in activity_text for secret in (secret_a, secret_b, registration_password,
                                                        'AdayYeniSifre123!')):
             errors.append((('ACTIVITY_LOG', 'password'), 0, 'parola işlem kaydına yazılmış'))

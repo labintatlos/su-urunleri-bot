@@ -142,36 +142,9 @@ def type_text(text):
     return lambda screen, context, uid: screens.text_handler(screens.WebUpdate(uid, text), context)
 
 
-def _button_label(uid, data):
-    """Kayıtta iç callback kodu yerine kullanıcının gördüğü düğme metnini kullanır."""
-    _, view = load_state(uid)
-    for row in (view or {}).get('buttons', []):
-        for button in row:
-            if button.get('data') == data:
-                return button.get('text') or data
-    return 'Ana Menü' if data == 'menu' else data
-
-
-TEXT_ACTIONS = {
-    'ai_analysis': 'Hukuki değerlendirme',
-    'penalty': 'Ceza araması',
-    'species_search': 'Tür araması',
-    'audit_species_search': 'Denetimde tür araması',
-    'source_search': 'Mevzuat araması',
-    'gear': 'Av aracı araması',
-    'place': 'Yer bilgisi',
-    'lawsearch': 'Kanun araması',
-    'audit_length_exact': 'Gemi boyu',
-    'penalty_length': 'Gemi boyu',
-    'audit_date': 'Denetim tarihi',
-    'guide_measure': 'Ölçüm değeri',
-}
-
-
-def _text_detail(uid, text):
-    data, _ = load_state(uid)
-    label = TEXT_ACTIONS.get(data.get('mode'), 'Genel arama')
-    return f'{label}: {text}'
+# İşlem geçmişine düğme basışları ve yazılan her metin yazılmaz (6.0.30).
+# Denetim, föy, çizelge, arama ve hukuki değerlendirme gibi anlamlı olaylar
+# ekranların kendisinde (screens) db.log_activity ile kaydedilir.
 
 
 # ── HTTP ─────────────────────────────────────────────────────────────────
@@ -370,13 +343,11 @@ class Handler(BaseHTTPRequestHandler):
             value = data.get('data')
             if not isinstance(value, str) or not value or len(value) > 256:
                 raise ApiError(400, 'Geçersiz düğme.')
-            db.log_activity(uid, 'button', _button_label(uid, value))
             return self.send_json(200, run_screen(account, press(value)))
         if path == '/api/text':
             text = str(data.get('text') or '').strip()
             if not text:
                 raise ApiError(400, 'Bir şey yazın.')
-            db.log_activity(uid, 'text', _text_detail(uid, text[:MAX_TEXT_LENGTH]))
             return self.send_json(200, run_screen(account, type_text(text[:MAX_TEXT_LENGTH])))
         if path == '/api/password':
             updated = accounts.change_own_password(account, data.get('current'), data.get('new'))
@@ -428,6 +399,13 @@ class Handler(BaseHTTPRequestHandler):
         if not account:
             throttle.record_failure(key)
             logger.warning('Başarısız giriş denemesi: kullanıcı=%s adres=%s', username[:40], self.client_ip())
+            # Yalnızca var olan hesaplara yönelik denemeler kaydedilir; rastgele
+            # kullanıcı adlarıyla işlem geçmişi doldurulamaz.
+            target = db.web_account_uid(username)
+            if target is not None:
+                db.log_activity(target, 'login_failed', f'@{username[:40]}')
+                if throttle.is_blocked(key):
+                    db.log_activity(target, 'login_blocked', f'@{username[:40]} · 15 dakika')
             raise ApiError(401, 'Kullanıcı adı veya şifre hatalı.')
         throttle.clear(key)
         accounts.mark_login(account, ha_user=self.ha_user())
