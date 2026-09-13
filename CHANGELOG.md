@@ -1,5 +1,10 @@
 ﻿# Sürüm Notları
 
+## 6.0.32
+* **Yaptırım özeti:** Kontrol föyü ve duruma özel denetim sonucunda "⚖️ Yaptırım Özeti" düğmesi. Uygunsuz işaretlenen her madde, olası aykırılık ve otomatik mevzuat uyarısı için 08 numaralı güncel ceza tablosundaki kalem, Kanun 36 bendi ve Kanun/Yönetmelik/Tebliğ dayanağı, muhatap (kişi / gemi sahibi), gemi boyuna göre idari para cezası, gırgır gemisi tutarı, el koyma ve tekrar/ruhsat işlemi gösterilir. Boy bilinmiyorsa girilebilir. Toplam tutar bilinçli olarak gösterilmez. Usul maddeleri ve tabloda karşılığı olmayan hükümler açıkça belirtilir, tahmini tutar üretilmez.
+* **Kaynak entegrasyonu:** 313 föy maddesi, 59 denetim sorusu ve 11 otomatik uyarı `tools/build_penalty_links.py` ile ceza kartlarına bağlandı (`data/penalty_links.json`). Sağlama: kart ve bent uyumu, boy kademeleri, 36/k tutar tutarlılığı ve her maddenin dayanağının kart madde alanlarıyla eşleşmesi; eşleşmeyen 19 durum gerekçeleriyle kayıtlıdır. Duman testi her profil, boy ve gırgır kombinasyonunu ve her maddeyi ayrıca işler.
+* **Kontrol çizelgesi:** Bulgu varsa "Yaptırım ön bilgisi" bölümü eklenir.
+
 ## 6.0.31
 * **Arayüz:** Her sayfanın alt bilgisine ve giriş ekranına sade bir geliştirici imzası eklendi: "Geliştirici: Aykut Cem CİVELEK". Masaüstünde giriş ekranının sol panelinde, telefonda giriş kartının altında görünür.
 

@@ -129,6 +129,10 @@ Dönem sonunda yenileriyle değiştirilirler. Kaynak değişiklikleri önce ana 
 klasöründe yapılmalı, sonra `su_urunleri_bot/data/markdown/` kopyası aynı içerikle
 güncellenmelidir.
 
+Kontrol maddelerinin güncel ceza tablosuna bağlanması (Yaptırım Özeti)
+`data/penalty_links.json` dosyasındadır ve `python tools/build_penalty_links.py`
+ile sağlanarak üretilir (`--check` güncelliği doğrular).
+
 Yeni 03, 04 ve 08 numaralı rehberlerden tür, ceza, saha kuralı ve kontrol föyü
 verilerini yeniden üretmek ve sonucunu doğrulamak için:
 

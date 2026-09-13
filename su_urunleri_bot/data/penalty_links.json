@@ -1,0 +1,1842 @@
+{
+  "profiles": {
+    "ruhsat_kisi": {
+      "kind": "cards",
+      "bent": "a",
+      "cards": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "label": "Ruhsat tezkeresi olmadan ticari avcılık — kişi",
+      "note": "Yeniletmeden, içsuda, denizde veya dalarak avcılık durumuna uyan satır uygulanır."
+    },
+    "ruhsat_gemi": {
+      "kind": "cards",
+      "bent": "a",
+      "cards": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "label": "Ruhsat tezkeresi olmadan avcılık — gemi",
+      "note": "Gırgır, ortasu/dip trolü, algarna veya dalarak avcılıkta gemi dahil tüm istihsal vasıtalarına el konur."
+    },
+    "ruhsat_goster": {
+      "kind": "cards",
+      "bent": "a",
+      "cards": [
+        28
+      ],
+      "label": "İzin ve ruhsat belgesini talepte göstermeme"
+    },
+    "plaka": {
+      "kind": "cards",
+      "bent": "a",
+      "cards": [
+        26,
+        27
+      ],
+      "label": "Ruhsat kod numarasının gemiye yazılmaması"
+    },
+    "izin": {
+      "kind": "cards",
+      "bent": "a",
+      "cards": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "label": "Av miktarı, bölge ve av aracına ait izne aykırı faaliyet",
+      "note": "Ek-2 izin belgesi, kota veya izinli bölge dışına çıkılması gibi izin koşullarına aykırılıklarda kişi ve gemi için ayrı uygulanır."
+    },
+    "k_genel": {
+      "kind": "k_general",
+      "bent": "k",
+      "cards": [
+        46
+      ],
+      "label": "Ticari avcılık usul ve esaslarına aykırılık (Kanun 23, 36/k)",
+      "note": "Bu hüküm için tabloda ayrı satır yoktur; Kanun 36/k genel tutarları gösterilir. Aykırılık gırgır gemisiyle işlenmişse gemi sahibine 3 kat uygulanır; ruhsat 1 ay / 3 ay geri alınır, tekrarında iptal edilir."
+    },
+    "girgir_zaman": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        47
+      ],
+      "label": "Yasak zamanda gırgır ağları ile istihsal yapmak"
+    },
+    "girgir_olcum": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        48
+      ],
+      "label": "Gırgır ağı ölçüm belgesi olmaması"
+    },
+    "kalkan_parakete": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        49
+      ],
+      "label": "Parekata ve fanyalı ağ ile kalkan avcılığı"
+    },
+    "salyangoz_saat": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        50
+      ],
+      "label": "Salyangoz avcılığı (05:00-20:00)"
+    },
+    "algarna_birden": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        51
+      ],
+      "label": "Birden fazla algarna ile avlanma"
+    },
+    "girgir_derin": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        52
+      ],
+      "label": "90 kulaçtan daha derin gırgır ağı"
+    },
+    "derinlik": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        53
+      ],
+      "label": "Derinlik yasağına (18-24 metreden sığda vb) aykırı avcılık"
+    },
+    "yasak_donem_arac": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        54
+      ],
+      "label": "Yasak zamanda av aracını gemilerde/istihsal yerlerinde bulundurmak"
+    },
+    "tup_zipkin": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        55
+      ],
+      "label": "Tüp, Nargile, Zıpkın, Su altı tüfeği vs. balık avcılık yapmak"
+    },
+    "misina": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        56
+      ],
+      "label": "Misina ağlarıyla avcılık kurallarını ihlal (Denizde)"
+    },
+    "markasiz": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        57
+      ],
+      "label": "Şamandıralara plaka yazılmaması\n\nMarkasız av aracı"
+    },
+    "kiyi_surutme": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        58
+      ],
+      "label": "Manyat, ığrıp, trata, tarlakoz vb. sürütme ağları ile avcılık"
+    },
+    "girgir_12m": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        59
+      ],
+      "label": "12 metreden küçük tekne ile gırgır avcılığı"
+    },
+    "ikinci_arac": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        60
+      ],
+      "label": "İkinci av aracı bulundurma (12 metre ve üzeri teknelerde)"
+    },
+    "tirivri": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        61
+      ],
+      "label": "Tırıvırı ile avcılık"
+    },
+    "salyangoz_zaman_yer": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        62
+      ],
+      "label": "Zaman, yer yasağını ihlal (algarna ile deniz salyangoz avcılığı)"
+    },
+    "kum_midyesi": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        63
+      ],
+      "label": "Zaman, yer yasağını ihlal (beyaz kum midyesi)"
+    },
+    "kalkan": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        64
+      ],
+      "label": "Kalkan avcılığı kuralları ihlali (zaman, av aracı, izin belge vs.)"
+    },
+    "mansap": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        66
+      ],
+      "label": "Tebliğ ile belirlenen akarsuların deniz ile birleştiği noktadan (mansap) 500 m. yarıçap içerisinde ticari avcılık"
+    },
+    "liman": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        67
+      ],
+      "label": "Liman, barınak, barınma yeri, çekek yerince avcılık"
+    },
+    "serpme_icsu": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        68
+      ],
+      "label": "Serpme ile ticari avcılık (iç su)"
+    },
+    "yasak_tur": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        69
+      ],
+      "label": "Avlanması yasak olan su ürünlerini (tür yasağı) avlanma"
+    },
+    "yasak_boy": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        70
+      ],
+      "label": "Yasak boyda su ürünü avlama"
+    },
+    "isik": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        71
+      ],
+      "note": "Bu yüksek tutar içsular, Karadeniz, Marmara ve boğazlarda ağlarla avlanma amaçlı ışık kullanımı veya donanımı içindir; izinli bölgelerdeki ışık şartlarına aykırılıkta 36/k genel tutarı uygulanır.",
+      "label": "Işık ile avcılık"
+    },
+    "yetistiricilik_mesafe": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        116
+      ],
+      "label": "Yetiştiricilik Tesislerine Mesafe Yasağına Uymama"
+    },
+    "amator": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        44,
+        45
+      ],
+      "label": "Amatör avcılık kurallarının ihlali"
+    },
+    "ortasu": {
+      "kind": "cards",
+      "bent": "k",
+      "cards": [
+        76,
+        77
+      ],
+      "label": "Ortasu trolüne ilişkin yasakların ihlali"
+    },
+    "trol_marmara": {
+      "kind": "cards",
+      "bent": "l",
+      "cards": [
+        72,
+        73
+      ],
+      "label": "İçsular, Marmara ve boğazlarda trol",
+      "note": "İki yıl içinde tekrarında gemi sahip/donatanına hapis ve adli para cezası öngörülür (Kanun 36/l)."
+    },
+    "dip_trol": {
+      "kind": "cards",
+      "bent": "l",
+      "cards": [
+        74,
+        75
+      ],
+      "label": "Dip trolüne ilişkin yasakların ihlali"
+    },
+    "seyir": {
+      "kind": "cards",
+      "bent": "n",
+      "cards": [
+        78
+      ],
+      "label": "Bilgi belge vermemek (seyir defteri)"
+    },
+    "hedef_disi": {
+      "kind": "cards",
+      "bent": "n",
+      "cards": [
+        115
+      ],
+      "label": "Hedef Dışı Türün E-Seyirde Bildirilmemesi"
+    },
+    "yasak_urun": {
+      "kind": "cards",
+      "bent": "m",
+      "cards": [
+        79,
+        80,
+        81
+      ],
+      "label": "Yasak su ürününün satışı, nakli, işlenmesi"
+    },
+    "kota_nakil": {
+      "kind": "cards",
+      "bent": "m",
+      "cards": [
+        114
+      ],
+      "label": "Kotaya tabi ürünün belgesiz nakli"
+    },
+    "ilmi": {
+      "kind": "cards",
+      "bent": "o",
+      "cards": [
+        82
+      ],
+      "label": "Yasak vasıta ve usullerle izinsiz ilmi teknik çalışma yapmak"
+    },
+    "bagis_takma": {
+      "kind": "cards",
+      "bent": "p",
+      "cards": [
+        99
+      ],
+      "label": "BAGİS cihazını takmama, çalıştırmama"
+    },
+    "bagis_ariza": {
+      "kind": "cards",
+      "bent": "p",
+      "cards": [
+        97,
+        100
+      ],
+      "label": "BAGİS arıza bildirimi ve arızalıyken avcılık"
+    },
+    "karaya_cikis": {
+      "kind": "cards",
+      "bent": "r",
+      "cards": [
+        101,
+        102,
+        103
+      ],
+      "label": "Ürünü karaya çıkış noktasından boşaltmamak"
+    },
+    "nakil": {
+      "kind": "cards",
+      "bent": "r",
+      "cards": [
+        112,
+        113
+      ],
+      "label": "Nakil/Menşe belgesi ihlalleri"
+    },
+    "uluslararasi": {
+      "kind": "cards",
+      "bent": "t",
+      "cards": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "label": "Uluslararası sular / başka ülke sularında izinsiz avcılık",
+      "note": "Ruhsatlı ve ruhsatsız gemi için ayrı kademeler vardır."
+    },
+    "patlayici": {
+      "kind": "cards",
+      "bent": "g",
+      "cards": [
+        35
+      ],
+      "label": "Patlayıcı, öldürücü uyuşturucu, elektroşok vb ile avcılık"
+    },
+    "zararli": {
+      "kind": "cards",
+      "bent": "h",
+      "cards": [
+        36,
+        37,
+        38
+      ],
+      "label": "Sulara zararlı madde dökülmesi"
+    },
+    "yabanci": {
+      "kind": "cards",
+      "bent": "i",
+      "cards": [
+        39
+      ],
+      "label": "Yabancıların Su Ürünleri İstihsali Yasağı"
+    },
+    "balik_landirma": {
+      "kind": "cards",
+      "bent": "s",
+      "cards": [
+        110,
+        111
+      ],
+      "label": "İzinsiz balıklandırma"
+    },
+    "yetistiricilik_izinsiz": {
+      "kind": "cards",
+      "bent": "e",
+      "cards": [
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "label": "İzinsiz yetiştiricilik tesisi",
+      "note": "Tutar tesis türü ve kapasitesine göre seçilir."
+    },
+    "yetistiricilik_yon": {
+      "kind": "cards",
+      "bent": "e",
+      "cards": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "label": "Yetiştiricilik yönetmeliği hükümlerine aykırılık",
+      "note": "Tutar tesis türü ve kapasitesine göre seçilir; dayanak alt yönetmelik sistem kaynaklarında yoktur."
+    },
+    "aritma": {
+      "kind": "cards",
+      "bent": "-",
+      "cards": [
+        140,
+        141
+      ],
+      "label": "Arıtma sistemi kurmama veya çalıştırmama"
+    },
+    "yok_usul": {
+      "kind": "none",
+      "label": "Usul / delil maddesi",
+      "note": "Bu maddenin eksikliği tek başına idari para cezası gerektirmez; tespit ve işlem eksiği olarak giderilir."
+    },
+    "yok_tablo": {
+      "kind": "none",
+      "label": "Güncel ceza tablosunda karşılığı yok",
+      "note": "Bu hüküm için 08 numaralı tabloda ayrı kalem bulunmuyor. Uygulanacak Kanun 36 bendi somut olaya göre belirlenmeli; sistem tahmini tutar göstermez."
+    }
+  },
+  "guides": {
+    "01_Girgir:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "02_Dip_Trolu:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "03_Ortasu_Trolu:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "04_Uzatma_Agi:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "05_Parakete:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "06_Algarna_Karides:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "07_Manyat_Karides:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "08_Algarna_Deniz_Salyangozu:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "10_Dalma_Yontemi:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "11_Isik_Teknesi:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "12_Alamana_Voli:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "01_Girgir:2": [
+      "ruhsat_kisi"
+    ],
+    "02_Dip_Trolu:2": [
+      "ruhsat_kisi"
+    ],
+    "03_Ortasu_Trolu:2": [
+      "ruhsat_kisi"
+    ],
+    "04_Uzatma_Agi:2": [
+      "ruhsat_kisi"
+    ],
+    "05_Parakete:2": [
+      "ruhsat_kisi"
+    ],
+    "06_Algarna_Karides:2": [
+      "ruhsat_kisi"
+    ],
+    "07_Manyat_Karides:2": [
+      "ruhsat_kisi"
+    ],
+    "08_Algarna_Deniz_Salyangozu:2": [
+      "ruhsat_kisi"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:2": [
+      "ruhsat_kisi"
+    ],
+    "10_Dalma_Yontemi:2": [
+      "ruhsat_kisi"
+    ],
+    "11_Isik_Teknesi:2": [
+      "ruhsat_kisi"
+    ],
+    "12_Alamana_Voli:2": [
+      "ruhsat_kisi"
+    ],
+    "01_Girgir:3": [
+      "markasiz"
+    ],
+    "02_Dip_Trolu:3": [
+      "markasiz"
+    ],
+    "03_Ortasu_Trolu:3": [
+      "markasiz"
+    ],
+    "04_Uzatma_Agi:3": [
+      "markasiz"
+    ],
+    "05_Parakete:3": [
+      "markasiz"
+    ],
+    "06_Algarna_Karides:3": [
+      "markasiz"
+    ],
+    "07_Manyat_Karides:3": [
+      "markasiz"
+    ],
+    "08_Algarna_Deniz_Salyangozu:3": [
+      "markasiz"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:3": [
+      "markasiz"
+    ],
+    "10_Dalma_Yontemi:3": [
+      "markasiz"
+    ],
+    "11_Isik_Teknesi:3": [
+      "markasiz"
+    ],
+    "12_Alamana_Voli:3": [
+      "markasiz"
+    ],
+    "01_Girgir:4": [
+      "ikinci_arac"
+    ],
+    "02_Dip_Trolu:4": [
+      "ikinci_arac"
+    ],
+    "03_Ortasu_Trolu:4": [
+      "ikinci_arac"
+    ],
+    "04_Uzatma_Agi:4": [
+      "ikinci_arac"
+    ],
+    "05_Parakete:4": [
+      "ikinci_arac"
+    ],
+    "06_Algarna_Karides:4": [
+      "ikinci_arac"
+    ],
+    "07_Manyat_Karides:4": [
+      "ikinci_arac"
+    ],
+    "08_Algarna_Deniz_Salyangozu:4": [
+      "ikinci_arac"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:4": [
+      "ikinci_arac"
+    ],
+    "10_Dalma_Yontemi:4": [
+      "ikinci_arac"
+    ],
+    "11_Isik_Teknesi:4": [
+      "ikinci_arac"
+    ],
+    "12_Alamana_Voli:4": [
+      "ikinci_arac"
+    ],
+    "01_Girgir:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "02_Dip_Trolu:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "03_Ortasu_Trolu:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "04_Uzatma_Agi:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "05_Parakete:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "06_Algarna_Karides:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "07_Manyat_Karides:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "08_Algarna_Deniz_Salyangozu:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "10_Dalma_Yontemi:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "12_Alamana_Voli:5": [
+      "bagis_takma",
+      "seyir"
+    ],
+    "01_Girgir:6": [
+      "yok_tablo"
+    ],
+    "02_Dip_Trolu:6": [
+      "yok_tablo"
+    ],
+    "03_Ortasu_Trolu:6": [
+      "yok_tablo"
+    ],
+    "04_Uzatma_Agi:6": [
+      "yok_tablo"
+    ],
+    "05_Parakete:6": [
+      "yok_tablo"
+    ],
+    "06_Algarna_Karides:6": [
+      "yok_tablo"
+    ],
+    "07_Manyat_Karides:6": [
+      "yok_tablo"
+    ],
+    "08_Algarna_Deniz_Salyangozu:6": [
+      "yok_tablo"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:6": [
+      "yok_tablo"
+    ],
+    "10_Dalma_Yontemi:6": [
+      "yok_tablo"
+    ],
+    "12_Alamana_Voli:6": [
+      "yok_tablo"
+    ],
+    "01_Girgir:7": [
+      "patlayici"
+    ],
+    "02_Dip_Trolu:7": [
+      "patlayici"
+    ],
+    "03_Ortasu_Trolu:7": [
+      "patlayici"
+    ],
+    "04_Uzatma_Agi:7": [
+      "patlayici"
+    ],
+    "05_Parakete:7": [
+      "patlayici"
+    ],
+    "06_Algarna_Karides:7": [
+      "patlayici"
+    ],
+    "07_Manyat_Karides:7": [
+      "patlayici"
+    ],
+    "08_Algarna_Deniz_Salyangozu:7": [
+      "patlayici"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:7": [
+      "patlayici"
+    ],
+    "10_Dalma_Yontemi:7": [
+      "patlayici"
+    ],
+    "12_Alamana_Voli:7": [
+      "patlayici"
+    ],
+    "01_Girgir:8": [
+      "girgir_olcum"
+    ],
+    "01_Girgir:9": [
+      "girgir_derin"
+    ],
+    "01_Girgir:10": [
+      "girgir_zaman"
+    ],
+    "01_Girgir:11": [
+      "k_genel",
+      "derinlik"
+    ],
+    "01_Girgir:12": [
+      "derinlik"
+    ],
+    "01_Girgir:13": [
+      "izin",
+      "karaya_cikis",
+      "k_genel"
+    ],
+    "01_Girgir:14": [
+      "isik",
+      "izin",
+      "k_genel"
+    ],
+    "01_Girgir:15": [
+      "k_genel"
+    ],
+    "01_Girgir:16": [
+      "k_genel"
+    ],
+    "01_Girgir:17": [
+      "yasak_donem_arac",
+      "k_genel"
+    ],
+    "01_Girgir:18": [
+      "k_genel"
+    ],
+    "01_Girgir:19": [
+      "k_genel"
+    ],
+    "01_Girgir:20": [
+      "izin",
+      "k_genel"
+    ],
+    "01_Girgir:21": [
+      "yok_usul"
+    ],
+    "02_Dip_Trolu:8": [
+      "trol_marmara"
+    ],
+    "02_Dip_Trolu:9": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:10": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:11": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:12": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:13": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:14": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:15": [
+      "k_genel"
+    ],
+    "02_Dip_Trolu:16": [
+      "dip_trol"
+    ],
+    "02_Dip_Trolu:17": [
+      "yasak_donem_arac"
+    ],
+    "02_Dip_Trolu:18": [
+      "ilmi"
+    ],
+    "02_Dip_Trolu:19": [
+      "trol_marmara"
+    ],
+    "03_Ortasu_Trolu:8": [
+      "ortasu",
+      "trol_marmara"
+    ],
+    "03_Ortasu_Trolu:9": [
+      "ortasu"
+    ],
+    "03_Ortasu_Trolu:10": [
+      "izin"
+    ],
+    "03_Ortasu_Trolu:11": [
+      "ortasu"
+    ],
+    "03_Ortasu_Trolu:12": [
+      "ortasu"
+    ],
+    "03_Ortasu_Trolu:13": [
+      "ortasu"
+    ],
+    "03_Ortasu_Trolu:14": [
+      "karaya_cikis"
+    ],
+    "03_Ortasu_Trolu:15": [
+      "izin",
+      "karaya_cikis"
+    ],
+    "03_Ortasu_Trolu:16": [
+      "k_genel"
+    ],
+    "03_Ortasu_Trolu:17": [
+      "yasak_donem_arac"
+    ],
+    "03_Ortasu_Trolu:18": [
+      "dip_trol"
+    ],
+    "04_Uzatma_Agi:8": [
+      "k_genel"
+    ],
+    "04_Uzatma_Agi:9": [
+      "k_genel"
+    ],
+    "04_Uzatma_Agi:10": [
+      "k_genel"
+    ],
+    "04_Uzatma_Agi:11": [
+      "misina"
+    ],
+    "04_Uzatma_Agi:12": [
+      "misina",
+      "izin"
+    ],
+    "04_Uzatma_Agi:13": [
+      "k_genel"
+    ],
+    "04_Uzatma_Agi:14": [
+      "kalkan"
+    ],
+    "04_Uzatma_Agi:15": [
+      "kalkan_parakete"
+    ],
+    "04_Uzatma_Agi:16": [
+      "izin"
+    ],
+    "04_Uzatma_Agi:17": [
+      "yasak_boy",
+      "hedef_disi",
+      "k_genel"
+    ],
+    "04_Uzatma_Agi:18": [
+      "k_genel"
+    ],
+    "04_Uzatma_Agi:19": [
+      "kiyi_surutme"
+    ],
+    "05_Parakete:8": [
+      "k_genel"
+    ],
+    "05_Parakete:9": [
+      "k_genel"
+    ],
+    "05_Parakete:10": [
+      "k_genel"
+    ],
+    "05_Parakete:11": [
+      "kalkan_parakete"
+    ],
+    "05_Parakete:12": [
+      "izin",
+      "karaya_cikis",
+      "k_genel"
+    ],
+    "05_Parakete:13": [
+      "yasak_boy",
+      "k_genel"
+    ],
+    "05_Parakete:14": [
+      "hedef_disi",
+      "nakil"
+    ],
+    "05_Parakete:15": [
+      "liman",
+      "yetistiricilik_mesafe",
+      "k_genel"
+    ],
+    "12_Alamana_Voli:15": [
+      "liman",
+      "yetistiricilik_mesafe",
+      "k_genel"
+    ],
+    "05_Parakete:16": [
+      "k_genel"
+    ],
+    "05_Parakete:17": [
+      "yok_tablo"
+    ],
+    "25_Orkinos_Kilic:7": [
+      "yok_tablo"
+    ],
+    "06_Algarna_Karides:8": [
+      "k_genel"
+    ],
+    "06_Algarna_Karides:9": [
+      "k_genel"
+    ],
+    "07_Manyat_Karides:9": [
+      "k_genel"
+    ],
+    "06_Algarna_Karides:10": [
+      "k_genel"
+    ],
+    "06_Algarna_Karides:11": [
+      "izin"
+    ],
+    "06_Algarna_Karides:12": [
+      "k_genel",
+      "karaya_cikis"
+    ],
+    "06_Algarna_Karides:13": [
+      "k_genel"
+    ],
+    "06_Algarna_Karides:14": [
+      "k_genel"
+    ],
+    "06_Algarna_Karides:15": [
+      "k_genel"
+    ],
+    "06_Algarna_Karides:16": [
+      "hedef_disi",
+      "k_genel"
+    ],
+    "06_Algarna_Karides:17": [
+      "yok_tablo",
+      "k_genel"
+    ],
+    "07_Manyat_Karides:8": [
+      "kiyi_surutme"
+    ],
+    "07_Manyat_Karides:10": [
+      "k_genel"
+    ],
+    "07_Manyat_Karides:11": [
+      "izin"
+    ],
+    "07_Manyat_Karides:12": [
+      "k_genel"
+    ],
+    "07_Manyat_Karides:13": [
+      "karaya_cikis"
+    ],
+    "07_Manyat_Karides:14": [
+      "k_genel"
+    ],
+    "07_Manyat_Karides:15": [
+      "hedef_disi",
+      "nakil"
+    ],
+    "07_Manyat_Karides:16": [
+      "yok_tablo"
+    ],
+    "08_Algarna_Deniz_Salyangozu:17": [
+      "yok_tablo"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:17": [
+      "yok_tablo"
+    ],
+    "07_Manyat_Karides:17": [
+      "kiyi_surutme"
+    ],
+    "08_Algarna_Deniz_Salyangozu:8": [
+      "salyangoz_zaman_yer"
+    ],
+    "08_Algarna_Deniz_Salyangozu:9": [
+      "salyangoz_zaman_yer"
+    ],
+    "08_Algarna_Deniz_Salyangozu:10": [
+      "salyangoz_zaman_yer"
+    ],
+    "08_Algarna_Deniz_Salyangozu:11": [
+      "k_genel"
+    ],
+    "08_Algarna_Deniz_Salyangozu:12": [
+      "salyangoz_zaman_yer"
+    ],
+    "08_Algarna_Deniz_Salyangozu:13": [
+      "algarna_birden"
+    ],
+    "08_Algarna_Deniz_Salyangozu:14": [
+      "salyangoz_zaman_yer"
+    ],
+    "08_Algarna_Deniz_Salyangozu:15": [
+      "izin",
+      "salyangoz_saat"
+    ],
+    "08_Algarna_Deniz_Salyangozu:16": [
+      "k_genel"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:8": [
+      "kum_midyesi"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:9": [
+      "kum_midyesi"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:10": [
+      "izin"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:11": [
+      "izin"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:12": [
+      "seyir"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:13": [
+      "karaya_cikis"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:14": [
+      "k_genel"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:15": [
+      "k_genel"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:16": [
+      "kum_midyesi",
+      "algarna_birden"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:18": [
+      "k_genel"
+    ],
+    "09_Drec_Beyaz_Kum_Midyesi:19": [
+      "k_genel"
+    ],
+    "10_Dalma_Yontemi:8": [
+      "tup_zipkin"
+    ],
+    "10_Dalma_Yontemi:9": [
+      "yok_tablo"
+    ],
+    "10_Dalma_Yontemi:10": [
+      "k_genel"
+    ],
+    "10_Dalma_Yontemi:11": [
+      "izin"
+    ],
+    "10_Dalma_Yontemi:12": [
+      "k_genel"
+    ],
+    "10_Dalma_Yontemi:13": [
+      "k_genel"
+    ],
+    "10_Dalma_Yontemi:14": [
+      "izin",
+      "karaya_cikis",
+      "nakil"
+    ],
+    "10_Dalma_Yontemi:15": [
+      "izin",
+      "nakil",
+      "k_genel"
+    ],
+    "10_Dalma_Yontemi:16": [
+      "izin",
+      "k_genel"
+    ],
+    "10_Dalma_Yontemi:17": [
+      "yok_tablo"
+    ],
+    "11_Isik_Teknesi:5": [
+      "isik"
+    ],
+    "11_Isik_Teknesi:6": [
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:7": [
+      "isik"
+    ],
+    "11_Isik_Teknesi:8": [
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:9": [
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:10": [
+      "izin"
+    ],
+    "11_Isik_Teknesi:11": [
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:12": [
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:13": [
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:14": [
+      "isik",
+      "k_genel"
+    ],
+    "11_Isik_Teknesi:15": [
+      "izin"
+    ],
+    "12_Alamana_Voli:8": [
+      "k_genel"
+    ],
+    "12_Alamana_Voli:9": [
+      "k_genel"
+    ],
+    "12_Alamana_Voli:10": [
+      "k_genel"
+    ],
+    "12_Alamana_Voli:11": [
+      "k_genel"
+    ],
+    "12_Alamana_Voli:12": [
+      "izin",
+      "karaya_cikis"
+    ],
+    "12_Alamana_Voli:13": [
+      "yasak_boy",
+      "k_genel"
+    ],
+    "12_Alamana_Voli:14": [
+      "ikinci_arac"
+    ],
+    "13_Balikci_Yardimci_Gemisi:1": [
+      "ruhsat_gemi",
+      "plaka"
+    ],
+    "13_Balikci_Yardimci_Gemisi:2": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:3": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:4": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:5": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:6": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:7": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:8": [
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:9": [
+      "isik",
+      "k_genel"
+    ],
+    "13_Balikci_Yardimci_Gemisi:10": [
+      "yasak_urun",
+      "nakil",
+      "karaya_cikis"
+    ],
+    "14_Amator_Tekne:1": [
+      "amator"
+    ],
+    "14_Amator_Tekne:2": [
+      "amator"
+    ],
+    "14_Amator_Tekne:3": [
+      "amator",
+      "patlayici"
+    ],
+    "14_Amator_Tekne:4": [
+      "amator"
+    ],
+    "14_Amator_Tekne:5": [
+      "amator"
+    ],
+    "14_Amator_Tekne:6": [
+      "amator"
+    ],
+    "14_Amator_Tekne:7": [
+      "amator"
+    ],
+    "14_Amator_Tekne:8": [
+      "amator"
+    ],
+    "14_Amator_Tekne:9": [
+      "amator"
+    ],
+    "14_Amator_Tekne:10": [
+      "amator"
+    ],
+    "14_Amator_Tekne:11": [
+      "k_genel"
+    ],
+    "14_Amator_Tekne:12": [
+      "amator"
+    ],
+    "14_Amator_Tekne:13": [
+      "k_genel"
+    ],
+    "15_Monofilament:1": [
+      "misina"
+    ],
+    "15_Monofilament:2": [
+      "misina"
+    ],
+    "15_Monofilament:3": [
+      "misina"
+    ],
+    "15_Monofilament:4": [
+      "izin"
+    ],
+    "16_Deniz_Patlicani:1": [
+      "k_genel"
+    ],
+    "16_Deniz_Patlicani:2": [
+      "izin"
+    ],
+    "16_Deniz_Patlicani:3": [
+      "k_genel"
+    ],
+    "16_Deniz_Patlicani:4": [
+      "k_genel"
+    ],
+    "16_Deniz_Patlicani:5": [
+      "k_genel"
+    ],
+    "16_Deniz_Patlicani:6": [
+      "k_genel"
+    ],
+    "16_Deniz_Patlicani:7": [
+      "k_genel"
+    ],
+    "16_Deniz_Patlicani:8": [
+      "izin",
+      "karaya_cikis"
+    ],
+    "16_Deniz_Patlicani:9": [
+      "nakil"
+    ],
+    "17_Denizkestanesi:1": [
+      "k_genel"
+    ],
+    "17_Denizkestanesi:2": [
+      "izin"
+    ],
+    "17_Denizkestanesi:3": [
+      "k_genel"
+    ],
+    "17_Denizkestanesi:4": [
+      "k_genel"
+    ],
+    "17_Denizkestanesi:5": [
+      "nakil"
+    ],
+    "18_Sunger:1": [
+      "k_genel"
+    ],
+    "18_Sunger:2": [
+      "k_genel"
+    ],
+    "18_Sunger:3": [
+      "izin"
+    ],
+    "18_Sunger:4": [
+      "k_genel"
+    ],
+    "19_Amator_Turizm:1": [
+      "yok_tablo"
+    ],
+    "19_Amator_Turizm:2": [
+      "yok_tablo"
+    ],
+    "19_Amator_Turizm:3": [
+      "yok_tablo"
+    ],
+    "19_Amator_Turizm:4": [
+      "yok_tablo"
+    ],
+    "19_Amator_Turizm:5": [
+      "amator"
+    ],
+    "20_Serpme_Ag:1": [
+      "k_genel",
+      "serpme_icsu"
+    ],
+    "20_Serpme_Ag:2": [
+      "amator"
+    ],
+    "20_Serpme_Ag:3": [
+      "amator"
+    ],
+    "20_Serpme_Ag:4": [
+      "markasiz"
+    ],
+    "21_Sepet_Pinter_Tuzak:1": [
+      "k_genel"
+    ],
+    "21_Sepet_Pinter_Tuzak:2": [
+      "amator"
+    ],
+    "21_Sepet_Pinter_Tuzak:3": [
+      "amator"
+    ],
+    "22_Dalyan_Lagun:1": [
+      "k_genel"
+    ],
+    "22_Dalyan_Lagun:2": [
+      "k_genel"
+    ],
+    "22_Dalyan_Lagun:3": [
+      "k_genel"
+    ],
+    "22_Dalyan_Lagun:4": [
+      "k_genel"
+    ],
+    "22_Dalyan_Lagun:5": [
+      "k_genel"
+    ],
+    "23_Yabanci_Uyruk:1": [
+      "yabanci"
+    ],
+    "23_Yabanci_Uyruk:2": [
+      "yabanci"
+    ],
+    "23_Yabanci_Uyruk:3": [
+      "amator"
+    ],
+    "23_Yabanci_Uyruk:4": [
+      "amator"
+    ],
+    "23_Yabanci_Uyruk:5": [
+      "ilmi"
+    ],
+    "23_Yabanci_Uyruk:6": [
+      "k_genel"
+    ],
+    "23_Yabanci_Uyruk:7": [
+      "yok_usul"
+    ],
+    "24_Uluslararasi_Sular:1": [
+      "uluslararasi"
+    ],
+    "24_Uluslararasi_Sular:2": [
+      "uluslararasi"
+    ],
+    "24_Uluslararasi_Sular:3": [
+      "uluslararasi"
+    ],
+    "24_Uluslararasi_Sular:4": [
+      "k_genel"
+    ],
+    "24_Uluslararasi_Sular:5": [
+      "uluslararasi"
+    ],
+    "24_Uluslararasi_Sular:6": [
+      "yasak_donem_arac"
+    ],
+    "24_Uluslararasi_Sular:7": [
+      "bagis_takma"
+    ],
+    "24_Uluslararasi_Sular:8": [
+      "nakil",
+      "yasak_urun"
+    ],
+    "24_Uluslararasi_Sular:9": [
+      "yabanci"
+    ],
+    "25_Orkinos_Kilic:1": [
+      "izin"
+    ],
+    "25_Orkinos_Kilic:2": [
+      "izin"
+    ],
+    "25_Orkinos_Kilic:3": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:4": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:5": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:6": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:8": [
+      "yasak_boy"
+    ],
+    "25_Orkinos_Kilic:9": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:10": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:11": [
+      "izin",
+      "karaya_cikis"
+    ],
+    "25_Orkinos_Kilic:12": [
+      "k_genel"
+    ],
+    "25_Orkinos_Kilic:13": [
+      "k_genel"
+    ],
+    "26_Balik_Ciftligi:1": [
+      "yetistiricilik_izinsiz"
+    ],
+    "26_Balik_Ciftligi:2": [
+      "yetistiricilik_yon"
+    ],
+    "26_Balik_Ciftligi:3": [
+      "yok_tablo"
+    ],
+    "26_Balik_Ciftligi:4": [
+      "balik_landirma"
+    ],
+    "26_Balik_Ciftligi:5": [
+      "yok_tablo"
+    ],
+    "26_Balik_Ciftligi:6": [
+      "yok_tablo"
+    ],
+    "26_Balik_Ciftligi:7": [
+      "yok_tablo"
+    ],
+    "26_Balik_Ciftligi:8": [
+      "zararli",
+      "aritma"
+    ],
+    "26_Balik_Ciftligi:9": [
+      "nakil"
+    ],
+    "26_Balik_Ciftligi:10": [
+      "yetistiricilik_mesafe",
+      "k_genel"
+    ],
+    "26_Balik_Ciftligi:11": [
+      "k_genel"
+    ]
+  },
+  "questions": {
+    "12 m altı özel donanım": [
+      "k_genel"
+    ],
+    "22 m+ zorunlu donanım": [
+      "yok_tablo"
+    ],
+    "Algarna şartları": [
+      "k_genel",
+      "salyangoz_zaman_yer",
+      "salyangoz_saat",
+      "algarna_birden"
+    ],
+    "Amatör alıkonulabilir miktar": [
+      "amator"
+    ],
+    "Amatör asgari boy": [
+      "amator"
+    ],
+    "Amatör av aracı": [
+      "amator"
+    ],
+    "Amatör yer yasağı": [
+      "amator"
+    ],
+    "Amatör ürün satışı / canlı nakli": [
+      "amator"
+    ],
+    "Atık ve çevre koruma": [
+      "zararli"
+    ],
+    "Atık yönetimi": [
+      "aritma"
+    ],
+    "Av aracı markalama": [
+      "markasiz"
+    ],
+    "Ağ Ölçüm Belgesi": [
+      "girgir_olcum"
+    ],
+    "BAGİS": [
+      "bagis_takma",
+      "bagis_ariza"
+    ],
+    "Birincil av aracı": [
+      "ikinci_arac"
+    ],
+    "Dalyan / lagün özel şartları": [
+      "k_genel"
+    ],
+    "Dalyan / lagün şartları": [
+      "k_genel"
+    ],
+    "Dalyan açıklıkları": [
+      "k_genel"
+    ],
+    "Damızlık belgesi": [
+      "yok_tablo"
+    ],
+    "Delillendirme": [
+      "yok_usul"
+    ],
+    "E-seyir": [
+      "seyir"
+    ],
+    "Gemi ruhsatı / izin": [
+      "ruhsat_gemi",
+      "ruhsat_goster"
+    ],
+    "Genel hijyen": [
+      "yok_tablo"
+    ],
+    "Gırgır derinlik şartları": [
+      "derinlik",
+      "girgir_derin"
+    ],
+    "Hastalık / karantina": [
+      "yok_tablo"
+    ],
+    "Işıkla avcılık şartları": [
+      "isik",
+      "k_genel"
+    ],
+    "Kafes işaretlemesi": [
+      "yok_tablo"
+    ],
+    "Karaya çıkış noktası": [
+      "karaya_cikis"
+    ],
+    "Kişi / faaliyet ruhsatı": [
+      "ruhsat_kisi",
+      "ruhsat_goster"
+    ],
+    "Kontrole erişim": [
+      "yok_tablo"
+    ],
+    "Koruyucu / tedavi edici maddeler": [
+      "yok_tablo"
+    ],
+    "Kota / tolerans / özel izin": [
+      "izin",
+      "k_genel"
+    ],
+    "MEB / diğer ülke suları izni": [
+      "uluslararasi"
+    ],
+    "Muhafaza / nakil şartları": [
+      "yok_tablo"
+    ],
+    "Nakil / Menşe belgesi": [
+      "nakil",
+      "kota_nakil"
+    ],
+    "Parakete şartları": [
+      "k_genel",
+      "kalkan_parakete"
+    ],
+    "Personel ruhsatı": [
+      "ruhsat_kisi"
+    ],
+    "Ruhsat kodu / plaka": [
+      "plaka"
+    ],
+    "Sağlık belgesi": [
+      "yok_tablo"
+    ],
+    "Tesis izinleri": [
+      "yok_tablo"
+    ],
+    "Trol teknik/saha şartları": [
+      "dip_trol",
+      "ortasu"
+    ],
+    "Yabancıların avcılık yasağı": [
+      "yabanci"
+    ],
+    "Yasak av aracı bulundurma": [
+      "yasak_donem_arac"
+    ],
+    "Yasak ürünün nakli / satışı": [
+      "yasak_urun"
+    ],
+    "Yasaklanan içsular": [
+      "k_genel"
+    ],
+    "Yer / saha / mesafe / derinlik": [
+      "k_genel",
+      "liman",
+      "yetistiricilik_mesafe",
+      "mansap"
+    ],
+    "Yetiştiricilik izni / kapasite": [
+      "yetistiricilik_izinsiz",
+      "yetistiricilik_yon"
+    ],
+    "Ürün boy / ağırlık": [
+      "yasak_boy"
+    ],
+    "İzleme / kayıt cihazı": [
+      "yok_tablo"
+    ],
+    "İçsu amatör asgari boy": [
+      "amator"
+    ],
+    "İçsu amatör av aracı": [
+      "amator"
+    ],
+    "İçsu amatör miktar": [
+      "amator"
+    ],
+    "İçsu av aracı şartları": [
+      "k_genel"
+    ],
+    "İçsu canlı nakli / stoklama": [
+      "k_genel"
+    ],
+    "İçsu sahası / ruhsat": [
+      "ruhsat_kisi",
+      "ruhsat_gemi",
+      "k_genel"
+    ],
+    "İçsu tür özel şartları": [
+      "k_genel"
+    ],
+    "İçsu yer / zaman yasağı": [
+      "amator"
+    ],
+    "İçsu zaman yasağı": [
+      "k_genel"
+    ],
+    "İçsu ürün boy / ağırlık": [
+      "yasak_boy"
+    ],
+    "İşleme ve ürün güvenliği": [
+      "yok_tablo"
+    ]
+  },
+  "flags": {
+    "inland_trawl_purse": [
+      "trol_marmara",
+      "k_genel"
+    ],
+    "light_zone": [
+      "isik"
+    ],
+    "marmara_trawl": [
+      "trol_marmara"
+    ],
+    "algarna_zone": [
+      "k_genel"
+    ],
+    "purse_under12": [
+      "girgir_12m"
+    ],
+    "purse_closed": [
+      "girgir_zaman"
+    ],
+    "amateur_inland_gear": [
+      "amator"
+    ],
+    "amateur_longline": [
+      "amator"
+    ],
+    "amateur_tirivri": [
+      "amator"
+    ],
+    "species_time_commercial": [
+      "k_genel"
+    ],
+    "species_time_amateur": [
+      "amator"
+    ]
+  },
+  "tiers": {
+    "5": [
+      0,
+      5
+    ],
+    "6": [
+      5,
+      10
+    ],
+    "7": [
+      10,
+      12
+    ],
+    "8": [
+      12,
+      18
+    ],
+    "9": [
+      18,
+      22
+    ],
+    "10": [
+      22,
+      35
+    ],
+    "11": [
+      35,
+      null
+    ],
+    "19": [
+      0,
+      5
+    ],
+    "20": [
+      5,
+      10
+    ],
+    "21": [
+      10,
+      12
+    ],
+    "22": [
+      12,
+      18
+    ],
+    "23": [
+      18,
+      22
+    ],
+    "24": [
+      22,
+      35
+    ],
+    "25": [
+      35,
+      null
+    ],
+    "26": [
+      0,
+      12
+    ],
+    "27": [
+      12,
+      null
+    ],
+    "101": [
+      0,
+      12
+    ],
+    "102": [
+      12,
+      22
+    ],
+    "103": [
+      22,
+      null
+    ],
+    "104": [
+      0,
+      12
+    ],
+    "105": [
+      12,
+      22
+    ],
+    "106": [
+      22,
+      null
+    ],
+    "107": [
+      0,
+      12
+    ],
+    "108": [
+      12,
+      22
+    ],
+    "109": [
+      22,
+      null
+    ]
+  },
+  "k_general": {
+    "person_card": 46,
+    "vessel_amounts": {
+      "<12 m": 23692,
+      "12–<22 m": 47384,
+      "≥22 m": 71076
+    },
+    "purse_seine_amount": 71076
+  }
+}

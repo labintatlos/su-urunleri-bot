@@ -134,6 +134,15 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 15 | Föy ve duruma özel denetim sonunda yazdırılabilir **Kontrol Çizelgesi** | ✅ 6.0.27 |
 | 16 | Hukuki değerlendirme korpusuna 09 Saha Uygulama Esasları belgesi | ✅ 6.0.27 |
 
+Ara adım (6.0.32): Kullanıcının isteğiyle **Yaptırım Özeti** eklendi. Her föy
+maddesi, denetim sorusu (etiketiyle) ve otomatik uyarı (`build_context_flags`
+içindeki `key=`) `tools/build_penalty_links.py` ile ceza kartlarına bağlanır ve
+`data/penalty_links.json` üretilir. Föy maddesi, soru veya uyarı eklendiğinde ya
+da ceza tablosu değiştiğinde bu betik çalıştırılmalıdır; sağlama hatası varsa
+dosya yazılmaz, `smoke_test.py` güncelliği ve tam kapsamı denetler. Tahmini tutar
+üretilmez, katsayılar kendiliğinden çarpılmaz, toplam gösterilmez. Sağlama
+raporu yerelde `yerel/YAPTIRIM_ESLESTIRME_RAPORU.md`.
+
 Ara adım (6.0.30): Kullanıcının isteğiyle yönetici paneli ve işlem geçmişi
 yenilendi. Önemsiz gezinme (düğme basışı, her metin) **kaydedilmez**; olaylar
 `db.ACTIVITY_EVENTS` içinde kategori ve önem düzeyiyle tanımlıdır ve ekranların

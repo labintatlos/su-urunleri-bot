@@ -138,6 +138,14 @@ def check_structured_data():
            for section in sections.values() for row in section['items']):
         raise AssertionError('Pratik Tür Çizelgesinde düzeltilmemiş tür adı kalmış')
     print('structured data: canonical source build verified')
+    import build_penalty_links
+    links, link_errors = build_penalty_links.build(write_report=False)
+    if link_errors:
+        raise AssertionError('Yaptırım eşleştirmesi sağlaması başarısız: ' + '; '.join(link_errors[:5]))
+    if (ADDON / 'data' / 'penalty_links.json').read_bytes() != build_penalty_links.dump(links):
+        raise AssertionError('penalty_links.json güncel değil: python tools/build_penalty_links.py')
+    print(f'penalty links: {len(links["guides"])} föy maddesi, {len(links["questions"])} soru, '
+          f'{len(links["flags"])} uyarı eşleştirmesi verified')
 
 
 def check_items_table():
@@ -153,6 +161,52 @@ def check_items_table():
         if len(headers) != len(keys) or set(headers) != keys:
             raise AssertionError(f"{group['title']} tablosunda gizli sütun var: {sorted(keys - set(headers))}")
     print('items table: all columns visible')
+
+
+def check_sanction_coverage():
+    """Her yaptırım profili her boy/gırgır durumunda satır üretmeli; her föy maddesi,
+    denetim sorusu ve otomatik uyarı yaptırım özetinde ve çizelgede hatasız işlenmeli."""
+    sys.path.insert(0, str(ADDON))
+    from types import SimpleNamespace
+    import screens
+    links = screens.PENALTY_LINKS
+    problems = []
+    ranges = [None, (0.0, 12.0), (12.0, 22.0), (22.0, None), (4.0, 4.0), (11.0, 11.0), (17.0, 17.0), (30.0, 30.0)]
+    for name, profile in links['profiles'].items():
+        if profile['kind'] == 'none':
+            continue
+        for rng in ranges:
+            for purse_seine in (False, True):
+                rows = screens.sanction_profile_rows(name, rng, purse_seine)
+                if not rows or any('None' in str(row) or row['İdari para cezası'] in ('', '—') for row in rows):
+                    problems.append(f'{name} {rng} gırgır={purse_seine}')
+    for guide in screens.GUIDE_LIST:
+        missing = [row['no'] for row in guide['rows'] if f'{guide["key"]}:{row["no"]}' not in links['guides']]
+        if missing:
+            problems.append(f'{guide["key"]} eşleşmeyen: {missing}')
+        for band in (None, 'lt12', '12to22', 'ge22'):
+            data = {'guide_key': guide['key'], 'guide_answers': ['bad'] * len(guide['rows'])}
+            if band:
+                data['audit_length_band'] = band
+            context = SimpleNamespace(user_data=data)
+            findings, _ = screens.sanction_findings(context, 'guide')
+            text, _ = screens.render_sanction_summary(context, 'guide')
+            if len(findings) != len(guide['rows']) or 'YAPTIRIM ÖZETİ' not in text \
+                    or not screens.sanction_sheet_block(context, 'guide'):
+                problems.append(f'{guide["key"]} {band}')
+    questions = [{'q': tag, 'expected': 'yes', 'ref': ('61', 50), 'tag': tag} for tag in links['questions']]
+    flags = [{'tag': key, 'ref': ('61', 50), 'key': key} for key in links['flags']]
+    context = SimpleNamespace(user_data={'quick_questions': questions, 'quick_answers': ['no'] * len(questions),
+                                         'context_flags': flags, 'audit_region': 'marmara',
+                                         'audit_gear': 'gırgır', 'audit_length_exact': 17.0})
+    findings, _ = screens.sanction_findings(context, 'audit')
+    if len(findings) != len(questions) + len(flags) or not screens.sanction_sheet_block(context, 'audit'):
+        problems.append('denetim soruları/uyarıları')
+    screens.render_sanction_summary(context, 'audit')
+    if problems:
+        raise AssertionError('Yaptırım özeti kapsam hatası: ' + '; '.join(problems[:10]))
+    print(f'sanction coverage: {len(links["profiles"])} profil × {len(ranges)} boy × gırgır, '
+          f'{len(links["guides"])} föy maddesi, {len(questions)} soru, {len(flags)} uyarı verified')
 
 
 def check_dataset_migration(work):
@@ -198,6 +252,7 @@ def main():
     check_source_integrity()
     check_structured_data()
     check_items_table()
+    check_sanction_coverage()
     work = Path(tempfile.mkdtemp(prefix='suurunleri_smoke_'))
     check_dataset_migration(work)
     env = dict(os.environ, WEB_PORT=str(WEB_PORT), INGRESS_PORT=str(INGRESS_PORT), GEMINI_API_KEY='',
@@ -374,6 +429,42 @@ def main():
         s, view = action('field:Kolluk İşlemi')
         if s != 200 or not any(b.get('data') == 'rule:evidence_checklist' for row in view.get('buttons', []) for b in row):
             errors.append((('FIELD_RULES', 'evidence_checklist'), s, view))
+
+        # 6.0.32 yaptırım özeti: Marmara trol uyarısı Kanun 36/l kartına, gırgır
+        # föyündeki ruhsat ve av dönemi uygunsuzlukları ilgili kartlara ve boya göre
+        # doğru kademeye bağlanmalı; çizelgede ön bilgi bölümü çıkmalı.
+        action('audit:start')
+        for data in ('audit:region:marmara', 'audit:activity:commercial', 'audit:length:none',
+                     'audit:date:today', 'audit:subject:fishing', 'audit:gear:dip trolü', 'audit:guided:check'):
+            s, view = action(data)
+        answer_current_audit(view)
+        s, sanction = action('sanction:audit')
+        sanction_text = text_of(sanction)
+        if (s != 200 or 'YAPTIRIM ÖZETİ' not in sanction_text or 'İçsular, Marmara ve boğazlarda trol' not in sanction_text
+                or '189.630 TL' not in sanction_text):
+            errors.append((('SANCTION', 'audit_marmara'), s, sanction_text[:400]))
+        action('menu')  # önceki denetimin boy bilgisi föye taşınmasın
+        action('guide:start:01_Girgir')
+        action('guide:ans:0:bad')
+        for idx in range(1, 9):
+            action(f'guide:ans:{idx}:ok')
+        action('guide:ans:9:bad')
+        action('guide:finish')
+        s, sanction = action('sanction:guide')
+        sanction_text = text_of(sanction)
+        if (s != 200 or 'Ruhsat tezkeresi olmadan avcılık — gemi' not in sanction_text
+                or '474.079 TL' not in sanction_text or 'Gırgır gemisi: 71.076 TL' not in sanction_text
+                or 'Yasak zamanda gırgır' not in sanction_text):
+            errors.append((('SANCTION', 'guide_unknown_length'), s, sanction_text[:400]))
+        action('sanction:length:guide')
+        s, sanction = call('/api/text', {'text': '17'})
+        sanction_text = text_of(sanction)
+        if (s != 200 or '237.034 TL' not in sanction_text or '474.079 TL' in sanction_text
+                or '47.384 TL (12–&lt;22 m)' not in sanction_text):
+            errors.append((('SANCTION', 'guide_length_17'), s, sanction_text[:400]))
+        s, sheet = action('guide:sheet')
+        if s != 200 or 'YAPTIRIM ÖN BİLGİSİ' not in text_of(sheet):
+            errors.append((('SANCTION', 'sheet_block'), s, text_of(sheet)[:300]))
 
         action('menu')
         action('species:menu')

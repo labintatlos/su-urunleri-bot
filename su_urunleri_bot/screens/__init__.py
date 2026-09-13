@@ -30,6 +30,12 @@ with open(ASSET_DIR / 'ceza_rehberi_v2.json', 'r', encoding='utf-8') as f:
 with open(ASSET_DIR / 'tur_cizelgesi.json', 'r', encoding='utf-8') as f:
     TUR_CIZELGESI = json.load(f)
 
+# Kontrol maddesi → güncel ceza tablosu eşleştirmesi (tools/build_penalty_links.py üretir ve sağlar).
+with open(ASSET_DIR / 'penalty_links.json', 'r', encoding='utf-8') as f:
+    PENALTY_LINKS = json.load(f)
+with open(ASSET_DIR / 'penalty_cards.json', 'r', encoding='utf-8') as f:
+    PENALTY_CARDS = {card['id']: card for card in json.load(f)}
+
 
 class ParseMode:
     HTML = 'HTML'
@@ -835,6 +841,14 @@ def callback(q, context):
         return guide_finish(q, context, record=False)
     if data == 'guide:badmenu':
         return guide_bad_menu(q, context)
+    if data in ('sanction:guide', 'sanction:audit'):
+        context.user_data.pop('mode', None)
+        return show_sanction_summary(q, context, data.split(':')[1])
+    if data in ('sanction:length:guide', 'sanction:length:audit'):
+        return sanction_length_prompt(q, context, data.rsplit(':', 1)[1])
+    if data == 'audit:result':
+        # Özetten sonuca dönmek denetimi yeniden sonuçlandırmak değildir; kayda yazılmaz.
+        return audit_quick_finish(q, context, record=False)
     if data == 'guide:sheet':
         return guide_sheet(q, context)
     if data == 'audit:sheet':
@@ -1737,6 +1751,7 @@ def guide_start(q, context, key):
     context.user_data['guide_answers'] = [None] * len(g['rows'])
     context.user_data['guide_measurements'] = {}
     context.user_data.pop('mode', None)
+    context.user_data.pop('sanction_length', None)
     db.log(q.from_user.id, 'guide_start', g['short_title'])
     db.log_activity(q.from_user.id, 'guide_start', g['short_title'])
     return guide_render(q, context, 0)
@@ -1872,7 +1887,7 @@ def guide_finish(q, context, record=True):
     text += '\n⚠️ <i>“Uygunsuz” işareti nihai yaptırım kararı değildir. İlgili kaynak maddesi ile ceza tablosundaki maddi unsurlar ayrıca doğrulanmalıdır.</i>'
     rows = [[('📐 Ölçüm / Kayıt Gir', 'guide:measure:start'), ('🧾 Kontrol Çizelgesi', 'guide:sheet')]]
     if bad:
-        rows.append([('⚖️ Uygunsuzluk → Yaptırım', 'guide:badmenu')])
+        rows.append([('⚖️ Yaptırım Özeti', 'sanction:guide'), ('🔎 Ceza Tablosunda Ara', 'guide:badmenu')])
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Aynı Föyü Yenile', f'guide:start:{g["key"]}')])
     if context.user_data.get('guided_active'):
@@ -1971,6 +1986,9 @@ def guide_sheet(q, context):
                     for name in g.get('measure_fields') or []]
     if measure_rows:
         parts.append('<b>ÖLÇÜM / KAYIT</b>\n' + items_table(measure_rows))
+    sanction = sanction_sheet_block(context, 'guide')
+    if sanction:
+        parts.append(sanction)
     parts.append(sheet_record_block())
     db.log(q.from_user.id, 'control_sheet', g['short_title'])
     db.log_activity(q.from_user.id, 'control_sheet', f'Föy: {g["short_title"]}')
@@ -2004,7 +2022,11 @@ def audit_sheet(q, context):
     if flags:
         parts.append('<b>SEÇİLEN BİLGİLERDEN ÇIKAN MEVZUAT UYARILARI</b>\n' + '\n'.join(
             f'• {esc(x["tag"])} ({esc(guide_ref_label(x["ref"]))})' for x in flags))
-    parts += [items_table(items), sheet_record_block()]
+    parts.append(items_table(items))
+    sanction = sanction_sheet_block(context, 'audit')
+    if sanction:
+        parts.append(sanction)
+    parts.append(sheet_record_block())
     db.log(q.from_user.id, 'control_sheet', subject)
     region = REGION_LABEL.get(context.user_data.get('audit_region'), '—')
     db.log_activity(q.from_user.id, 'control_sheet', f'Duruma özel denetim: {region} · {subject}')
@@ -2012,6 +2034,229 @@ def audit_sheet(q, context):
         SHEET_BUTTONS,
         [('↩️ Denetim Özeti', 'audit:hub'), ('🏠 Ana Menü', 'menu')],
     ]))
+
+
+# ── Yaptırım özeti ────────────────────────────────────────────────────────
+# Kontrol sonucundaki uygunsuzlukları data/penalty_links.json eşleştirmesiyle
+# 08 numaralı güncel idari ceza tablosunun kartlarına bağlar. Eşleştirme ve
+# sağlaması tools/build_penalty_links.py'dedir; burada yalnızca gösterilir.
+# Sistem katsayıları üst üste çarpmaz ve toplam tutar hesaplamaz.
+
+SANCTION_BANDS = {'lt12': (0.0, 12.0), '12to22': (12.0, 22.0), 'ge22': (22.0, None)}
+
+
+def sanction_range(context):
+    """(alt, üst) boy aralığı ve etiketi; tam boy bilinirse alt = üst."""
+    d = context.user_data
+    for key in ('sanction_length', 'audit_length_exact'):
+        try:
+            value = float(d.get(key))
+        except (TypeError, ValueError):
+            continue
+        if value > 0:
+            return (value, value), f'{value:g} m'
+    band = d.get('audit_length_band')
+    if band in SANCTION_BANDS:
+        return SANCTION_BANDS[band], LENGTH_BANDS[band][0]
+    return None, 'Belirtilmedi — bütün boy kademeleri gösteriliyor'
+
+
+def _tier_matches(low, high, rng):
+    if rng is None:
+        return True
+    start, end = rng
+    upper = float('inf') if high is None else high
+    if start == end:
+        return low <= start < upper
+    return low < (float('inf') if end is None else end) and upper > start
+
+
+def _amount_key(rng):
+    if rng is None:
+        return None
+    start, end = rng
+    top = float('inf') if end is None else end
+    if top <= 12 or (start == end and start < 12):
+        return '<12 m'
+    if start >= 12 and (top <= 22 or (start == end and start < 22)):
+        return '12–<22 m'
+    if start >= 22:
+        return '≥22 m'
+    return None
+
+
+def _sanction_amount(card, rng, purse_seine):
+    amounts = card.get('amounts') or {}
+    if not amounts:
+        return money(card.get('base_ipc'))
+    key = _amount_key(rng)
+    parts = []
+    if key and key in amounts:
+        parts.append(f'{money(amounts[key])} ({key})')
+    elif key:
+        parts.append(f'{money(card.get("base_ipc"))} (tabloda {key} için ayrı tutar yok)')
+    else:
+        parts += [f'{label}: {money(value)}' for label, value in amounts.items() if label != 'Gırgır']
+    if 'Gırgır' in amounts and (purse_seine or not key):
+        parts.append(f'Gırgır gemisi: {money(amounts["Gırgır"])}')
+    return '; '.join(parts)
+
+
+def _sanction_basis(card):
+    parts = [f'Kanun 36/{card.get("art36") or "-"}']
+    for label, key in (('K.', 'law'), ('Y.', 'regulation'), ('T.', 'teblig')):
+        value = ' '.join(str(card.get(key) or '').split())
+        if value and value not in {'-', '----', 'None'}:
+            parts.append(f'{label} {value}')
+    return ' · '.join(parts)
+
+
+def _sanction_seizure(card):
+    parts = []
+    if card.get('product_seizure'):
+        parts.append(f'Ürün: {card["product_seizure"]}')
+    if card.get('means_seizure'):
+        parts.append(f'Vasıta: {card["means_seizure"]}')
+    return ' · '.join(parts) or '—'
+
+
+def sanction_profile_rows(name, rng, purse_seine):
+    profile = PENALTY_LINKS['profiles'][name]
+    if profile['kind'] == 'k_general':
+        general = PENALTY_LINKS['k_general']
+        person = PENALTY_CARDS[general['person_card']]
+        vessel = dict(general['vessel_amounts'])
+        if general.get('purse_seine_amount'):
+            vessel['Gırgır'] = general['purse_seine_amount']
+        licence = person.get('license_action') or '—'
+        return [
+            {'Muhatap / durum': 'Aykırılığı yapan kişi (tayfa)', 'Dayanak': 'Kanun 36/k · K. 23',
+             'İdari para cezası': money(person.get('base_ipc')), 'El koyma': 'Ürün: Evet', 'Tekrar / ruhsat': licence},
+            {'Muhatap / durum': 'Gemi sahibi / donatan', 'Dayanak': 'Kanun 36/k · K. 23',
+             'İdari para cezası': _sanction_amount({'amounts': vessel, 'base_ipc': vessel['<12 m']}, rng, purse_seine),
+             'El koyma': 'Ürün: Evet · Vasıta: Evet (gemi hariç)', 'Tekrar / ruhsat': licence},
+        ]
+    rows = []
+    for card_id in profile.get('cards', []):
+        card = PENALTY_CARDS[card_id]
+        tier = PENALTY_LINKS['tiers'].get(str(card_id))
+        if tier and not _tier_matches(tier[0], tier[1], rng):
+            continue
+        situation = card['violation'] + (f' — {card["option"]}' if card.get('option') else '')
+        follow_up = ' · '.join(x for x in (card.get('repeat'), card.get('license_action')) if x)
+        rows.append({'Muhatap / durum': situation, 'Dayanak': _sanction_basis(card),
+                     'İdari para cezası': _sanction_amount(card, rng, purse_seine),
+                     'El koyma': _sanction_seizure(card), 'Tekrar / ruhsat': follow_up or '—'})
+    return rows
+
+
+def sanction_findings(context, source):
+    """[(tespit metni, kontrol dayanağı, [profil])] ve özete alınmayan (kontrol edilmemiş) madde sayısı."""
+    findings = []
+    if source == 'guide':
+        g, _ok, bad, unchecked = guide_result_parts(context)
+        if not g:
+            return findings, 0
+        for _idx, item in bad:
+            profiles = PENALTY_LINKS['guides'].get(f'{g["key"]}:{item["no"]}', ['yok_tablo'])
+            findings.append((item['text'], item['ref'], profiles))
+        return findings, len(unchecked)
+    flags, possible, unknown, procedure = quick_result_parts(context)
+    for flag in flags:
+        findings.append((flag['tag'], flag['ref'], PENALTY_LINKS['flags'].get(flag.get('key') or '', ['yok_tablo'])))
+    for item in possible + procedure:
+        findings.append((item['q'], item['ref'], PENALTY_LINKS['questions'].get(item['tag'], ['yok_tablo'])))
+    return findings, len(unknown)
+
+
+def sanction_is_purse_seine(context, source):
+    if context.user_data.get('audit_gear') == 'gırgır':
+        return True
+    g = guide_current(context) if source == 'guide' else None
+    return bool(g and g['key'] == '01_Girgir')
+
+
+def render_sanction_summary(context, source):
+    findings, unchecked = sanction_findings(context, source)
+    rng, length_label = sanction_range(context)
+    purse_seine = sanction_is_purse_seine(context, source)
+    if source == 'guide':
+        g = guide_current(context)
+        subtitle = g['short_title'] if g else 'Kontrol föyü'
+    else:
+        subtitle = f'Duruma özel denetim — {REGION_LABEL.get(context.user_data.get("audit_region"), "—")}'
+    intro = header('⚖️', 'YAPTIRIM ÖZETİ', subtitle) + '\n' + HR + '\n\n' + field('Gemi / tekne boyu', length_label)
+    if purse_seine:
+        intro += '\n' + field('Av aracı', 'Gırgır — gırgır gemisi tutarları ayrıca gösterilir')
+    parts = [intro]
+    if not findings:
+        parts.append('🟢 Uygunsuz işaretlenmiş veya olası aykırılık olarak sonuçlanmış madde yok.')
+    for number, (text, ref, profiles) in enumerate(findings, 1):
+        block = [f'<b>{number}. {esc(text)}</b>\n<i>Kontrol dayanağı: {esc(guide_ref_label(ref))}</i>']
+        for name in profiles:
+            profile = PENALTY_LINKS['profiles'][name]
+            line = f'▸ <b>{esc(profile["label"])}</b>'
+            if profile.get('note'):
+                line += f'\n<i>{esc(profile["note"])}</i>'
+            if profile['kind'] != 'none':
+                rows = sanction_profile_rows(name, rng, purse_seine)
+                line += '\n' + (items_table([{'details': row} for row in rows]) if rows
+                                else '<i>Girilen boya uyan satır yok.</i>')
+            block.append(line)
+        parts.append('\n\n'.join(block))
+    if unchecked:
+        parts.append(f'<i>{unchecked} madde kontrol edilmediği için özete alınmadı.</i>')
+    parts.append('⚠️ <i>Tutarlar 08 numaralı güncel idari ceza uygulama tablosundandır. Muhatap (kişi / gemi sahibi), '
+                 'tekrar durumu, maddi unsurlar ve tutarın geçerli yılı somut olayda doğrulanmalıdır; bu özet nihai '
+                 'yaptırım kararı değildir. Kalemler aynı olaya birlikte uygulanmayabileceğinden toplam tutar gösterilmez.</i>')
+    back = ('↩️ Kontrol Sonucuna Dön', 'guide:result') if source == 'guide' else ('↩️ Denetim Sonucuna Dön', 'audit:result')
+    rows = [[('🚤 Gemi Boyunu Gir / Değiştir', f'sanction:length:{source}')],
+            [('🧾 Kontrol Çizelgesi', 'guide:sheet' if source == 'guide' else 'audit:sheet')],
+            [back, ('🏠 Ana Menü', 'menu')]]
+    return '\n\n'.join(parts), rows
+
+
+def show_sanction_summary(q, context, source):
+    if source == 'guide' and not guide_current(context):
+        return q.answer('Aktif kontrol föyü bulunamadı.', show_alert=True)
+    if source == 'audit' and not context.user_data.get('quick_questions'):
+        return q.answer('Önce duruma özel kontrolü tamamlayın.', show_alert=True)
+    text, rows = render_sanction_summary(context, source)
+    return q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+
+
+def sanction_length_prompt(q, context, source):
+    context.user_data.update(mode='sanction_length', sanction_source=source)
+    return q.edit_message_text(
+        '🚤 <b>GEMİ / TEKNE TAM BOYU</b>\n\nYaptırım özetinde boya göre kademeli tutarların seçilmesi için '
+        'tam boyu metre olarak yazın. Örnek: <code>17.4</code>',
+        parse_mode=ParseMode.HTML,
+        reply_markup=kb([[('↩️ Yaptırım Özeti', f'sanction:{source}')]]),
+    )
+
+
+def sanction_sheet_block(context, source):
+    """Kontrol çizelgesi için kısa yaptırım ön bilgisi tablosu; bulgu yoksa boş metin."""
+    findings, _ = sanction_findings(context, source)
+    if not findings:
+        return ''
+    rng, length_label = sanction_range(context)
+    purse_seine = sanction_is_purse_seine(context, source)
+    items = []
+    for text, _ref, profiles in findings:
+        for name in profiles:
+            profile = PENALTY_LINKS['profiles'][name]
+            if profile['kind'] == 'none':
+                basis, amount = '—', 'Tabloda tutar yok'
+            else:
+                basis = f'Kanun 36/{profile.get("bent", "-")}'
+                amount = ' | '.join(f'{row["Muhatap / durum"]}: {row["İdari para cezası"]}'
+                                    for row in sanction_profile_rows(name, rng, purse_seine)) or '—'
+            items.append({'details': {'Tespit': guide_short(text, 90), 'Olası yaptırım': profile['label'],
+                                      'Dayanak': basis, 'İPC (tablo)': amount}})
+    return ('<b>YAPTIRIM ÖN BİLGİSİ</b>\n'
+            f'<i>Gemi boyu: {esc(length_label)}. 08 numaralı güncel ceza tablosundan; nihai karar değildir, '
+            'toplam tutar gösterilmez.</i>\n' + items_table(items))
 
 
 def guide_penalty_search(q, context, idx):
@@ -2348,34 +2593,35 @@ def build_context_flags(context):
     day = audit_date(context)
     flags = []
 
-    def add(tag, ref, penalty_query=None):
-        key = (tag, ref)
-        if any((x['tag'], x['ref']) == key for x in flags):
+    def add(tag, ref, penalty_query=None, key=None):
+        # key: data/penalty_links.json içindeki yaptırım eşleştirmesinin sabit anahtarı.
+        ident = (tag, ref)
+        if any((x['tag'], x['ref']) == ident for x in flags):
             return
-        flags.append({'tag': tag, 'ref': ref, 'penalty_query': penalty_query})
+        flags.append({'tag': tag, 'ref': ref, 'penalty_query': penalty_query, 'key': key})
 
     if activity == 'commercial':
         if region == 'inland' and gear in {'gırgır', 'dip trolü', 'ortasu trolü'}:
-            add('İçsularda trol ve gırgır ağı kullanımı tamamen yasaktır', ('61', 51), 'içsularda trol gırgır')
+            add('İçsularda trol ve gırgır ağı kullanımı tamamen yasaktır', ('61', 51), 'içsularda trol gırgır', key='inland_trawl_purse')
         if gear == 'ışık' and region in {'karadeniz', 'marmara'}:
-            add('Seçilen bölgede ışıkla avcılık yasağı', ('61', 13), 'ışık ile avcılık')
+            add('Seçilen bölgede ışıkla avcılık yasağı', ('61', 13), 'ışık ile avcılık', key='light_zone')
         if gear in {'dip trolü', 'ortasu trolü'} and region == 'marmara':
-            add('Seçilen bölgede trol yasağı', ('61', 9), 'Marmara Denizi ve boğazlarda trol avcılığı')
+            add('Seçilen bölgede trol yasağı', ('61', 9), 'Marmara Denizi ve boğazlarda trol avcılığı', key='marmara_trawl')
         if gear == 'algarna' and region in {'ege', 'akdeniz'}:
-            add('Seçilen bölgede algarna kullanımı yasağı', ('61', 14), 'algarna')
+            add('Seçilen bölgede algarna kullanımı yasağı', ('61', 14), 'algarna', key='algarna_zone')
         if gear == 'gırgır' and 0 < length < 12:
-            add('12 metreden küçük gemi ile gırgır avcılığı', ('61', 50), '12 metreden küçük tekne ile gırgır avcılığı')
+            add('12 metreden küçük gemi ile gırgır avcılığı', ('61', 50), '12 metreden küçük tekne ile gırgır avcılığı', key='purse_under12')
         if gear == 'gırgır' and region in {'karadeniz', 'marmara', 'ege', 'akdeniz'}:
             span = '04-15/09-15' if region == 'akdeniz' else '04-15/08-31'
             if in_date_range(day, span):
-                add(f'{day.strftime("%d.%m.%Y")} tarihinde genel gırgır kapalı dönemi', ('61', 12), 'yasak zamanda gırgır ağları ile istihsal yapmak')
+                add(f'{day.strftime("%d.%m.%Y")} tarihinde genel gırgır kapalı dönemi', ('61', 12), 'yasak zamanda gırgır ağları ile istihsal yapmak', key='purse_closed')
     elif activity == 'amateur':
         if region == 'inland' and gear in {'parakete', 'tırıvırı', 'sepet / pinter', 'serpme', 'dalma'}:
-            add('Seçilen av aracı amatör içsu avcılığında yasaktır', ('62', 12), 'amatör içsu av aracı')
+            add('Seçilen av aracı amatör içsu avcılığında yasaktır', ('62', 12), 'amatör içsu av aracı', key='amateur_inland_gear')
         elif gear == 'parakete':
-            add('Denizlerde amatör avcılıkta parakete kullanımı', ('62', 16), 'amatör avcılık kurallarının ihlali')
+            add('Denizlerde amatör avcılıkta parakete kullanımı', ('62', 16), 'amatör avcılık kurallarının ihlali', key='amateur_longline')
         if gear == 'tırıvırı' and region != 'inland':
-            add('Tırıvırı / paraşüt kullanımı', ('62', 8), 'amatör avcılık kurallarının ihlali')
+            add('Tırıvırı / paraşüt kullanımı', ('62', 8), 'amatör avcılık kurallarının ihlali', key='amateur_tirivri')
 
     sid = context.user_data.get('audit_species_id')
     skind = context.user_data.get('audit_species_kind')
@@ -2387,7 +2633,10 @@ def build_context_flags(context):
                 ref = (('61', int(row['article_time'] or row['article_size'])) if skind == 'commercial'
                        else ('62', int(row['article'])))
                 pq = 'yasak zamanda avcılık' if skind == 'commercial' else 'amatör avcılık kurallarının ihlali'
-                add(f'{row["name"]}: seçilen tarih zaman yasağına denk geliyor', ref, pq)
+                if skind == 'commercial':
+                    add(f'{row["name"]}: seçilen tarih zaman yasağına denk geliyor', ref, pq, key='species_time_commercial')
+                else:
+                    add(f'{row["name"]}: seçilen tarih zaman yasağına denk geliyor', ref, pq, key='species_time_amateur')
     return flags
 
 
@@ -2783,7 +3032,7 @@ def ai_audit_run(q, context):
                         log_action='ai_audit')
 
 
-def audit_quick_finish(q, context):
+def audit_quick_finish(q, context, record=True):
     flags, possible, unknown, procedure = quick_result_parts(context)
 
     activity = context.user_data.get('audit_activity')
@@ -2838,20 +3087,23 @@ def audit_quick_finish(q, context):
             break
     for key in related_guide_keys(context):
         rows.append([(f'📋 {GUIDES[key]["short_title"]} Föyü', f'guide:open:{key}')])
+    if flags or possible or procedure:
+        rows.append([('⚖️ Yaptırım Özeti', 'sanction:audit')])
     if flags or possible:
-        rows.append([('⚖️ İhlal → Yaptırım', 'mode:penalty')])
+        rows.append([('🔎 Ceza Tablosunda Ara', 'mode:penalty')])
     else:
         if activity == 'amateur':
             rows.append([('🔎 Amatör → Ticari Nitelik', 'classify:start')])
     rows.append([('🧾 Kontrol Çizelgesi', 'audit:sheet')])
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🔄 Yeni Denetim', 'audit:start'), ('🏠 Ana Menü', 'menu')])
-    db.log(q.from_user.id, 'guided_audit', ', '.join([x['tag'] for x in flags + possible]))
-    findings = len(flags) + len(possible)
-    db.log_activity(q.from_user.id, 'audit_result',
-                    f'{region} · {audit_activity_label(context)}' + (f' · {gear}' if gear else '')
-                    + f' — {findings} olası aykırılık/uyarı, {len(unknown)} kontrol edilmedi',
-                    level='uyari' if findings else None)
+    if record:
+        db.log(q.from_user.id, 'guided_audit', ', '.join([x['tag'] for x in flags + possible]))
+        findings = len(flags) + len(possible)
+        db.log_activity(q.from_user.id, 'audit_result',
+                        f'{region} · {audit_activity_label(context)}' + (f' · {gear}' if gear else '')
+                        + f' — {findings} olası aykırılık/uyarı, {len(unknown)} kontrol edilmedi',
+                        level='uyari' if findings else None)
     q.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
@@ -3038,6 +3290,20 @@ def text_handler(update, context):
             parse_mode=ParseMode.HTML,
             reply_markup=kb([[('⏭️ Kontrol Edilmedi / Atla', 'guide:measure:skip')], [('📊 Sonuca Dön', 'guide:result')]])
         )
+
+    if mode == 'sanction_length':
+        source = context.user_data.get('sanction_source') or 'guide'
+        try:
+            length = float(text.replace(',', '.'))
+            if length <= 0:
+                raise ValueError
+        except ValueError:
+            return send_or_edit(update, context, 'Gemi boyunu metre olarak sayı biçiminde yazın. Örnek: <code>17.4</code>',
+                                parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Yaptırım Özeti', f'sanction:{source}')]]))
+        context.user_data['sanction_length'] = length
+        context.user_data.pop('mode', None)
+        body, rows = render_sanction_summary(context, source)
+        return send_or_edit(update, context, body, parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
     if mode == 'penalty_length':
         try:
