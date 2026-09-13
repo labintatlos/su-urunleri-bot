@@ -44,7 +44,7 @@ PROFILES = {
     'ruhsat_gemi': {'kind': 'cards', 'bent': 'a', 'cards': [5, 6, 7, 8, 9, 10, 11],
                     'label': 'Ruhsat tezkeresi olmadan avcılık — gemi',
                     'note': 'Gırgır, ortasu/dip trolü, algarna veya dalarak avcılıkta gemi dahil tüm istihsal vasıtalarına el konur.'},
-    'ruhsat_goster': {'kind': 'cards', 'bent': 'a', 'cards': [28], 'label': 'İzin ve ruhsat belgesini talepte göstermeme'},
+    'ruhsat_goster': {'kind': 'cards', 'bent': 'a', 'cards': [28, 154], 'label': 'İzin ve ruhsat belgesini talepte göstermeme'},
     'plaka': {'kind': 'cards', 'bent': 'a', 'cards': [26, 27], 'label': 'Ruhsat kod numarasının gemiye yazılmaması'},
     'izin': {'kind': 'cards', 'bent': 'a', 'cards': [18, 19, 20, 21, 22, 23, 24, 25],
              'label': 'Av miktarı, bölge ve av aracına ait izne aykırı faaliyet',
@@ -85,7 +85,7 @@ PROFILES = {
     'dip_trol': {'kind': 'cards', 'bent': 'l', 'cards': [74, 75], 'label': 'Dip trolüne ilişkin yasakların ihlali'},
     'seyir': {'kind': 'cards', 'bent': 'n', 'cards': [78]},
     'hedef_disi': {'kind': 'cards', 'bent': 'n', 'cards': [115]},
-    'yasak_urun': {'kind': 'cards', 'bent': 'm', 'cards': [79, 80, 81], 'label': 'Yasak su ürününün satışı, nakli, işlenmesi'},
+    'yasak_urun': {'kind': 'cards', 'bent': 'm', 'cards': [79, 80, 81, 155], 'label': 'Yasak su ürününün satışı, nakli, işlenmesi'},
     'kota_nakil': {'kind': 'cards', 'bent': 'm', 'cards': [114]},
     'ilmi': {'kind': 'cards', 'bent': 'o', 'cards': [82]},
     'bagis_takma': {'kind': 'cards', 'bent': 'p', 'cards': [99]},
@@ -104,7 +104,7 @@ PROFILES = {
     'yetistiricilik_yon': {'kind': 'cards', 'bent': 'e', 'cards': [142, 143, 144, 145, 146, 147, 148, 149],
                            'label': 'Yetiştiricilik yönetmeliği hükümlerine aykırılık',
                            'note': 'Tutar tesis türü ve kapasitesine göre seçilir; dayanak alt yönetmelik sistem kaynaklarında yoktur.'},
-    'aritma': {'kind': 'cards', 'bent': '-', 'cards': [140, 141], 'label': 'Arıtma sistemi kurmama veya çalıştırmama'},
+    'aritma': {'kind': 'cards', 'bent': 'e', 'cards': [140, 141], 'label': 'Arıtma sistemi kurmama veya çalıştırmama'},
     'yok_usul': {'kind': 'none', 'label': 'Usul / delil maddesi',
                  'note': 'Bu maddenin eksikliği tek başına idari para cezası gerektirmez; tespit ve işlem eksiği olarak giderilir.'},
     'yok_tablo': {'kind': 'none', 'label': 'Güncel ceza tablosunda karşılığı yok',
@@ -459,7 +459,8 @@ ACCEPTED_BASIS = {
     ('61', 50, 'kum_midyesi'): 'Beyaz kum midyesi açık saha segmentleri Tebliğ 50’de ilan edilir; yer/zaman ihlali kartı Tebliğ 28 dayanaklıdır.',
     ('61', 50, 'nakil'): 'Yardımcı gemide taşınan ürünün nakil belgesi; kart Tebliğ 46 dayanaklıdır.',
     ('61', 29, 'nakil'): 'Deniz patlıcanı / denizkestanesi için Tebliğ 29’daki Nakil/Menşe zorunluluğu; kart Tebliğ 46 dayanaklıdır.',
-    ('reg', 12, 'aritma'): 'Atıkların zararsız hale getirilmesi (Yön. 12); tesis arıtma kalemi yetiştiricilik mevzuatındaki arıtma hükmüne dayanır.',
+    ('61', 48, 'amator'): 'Turizm amaçlı olta balıkçılığında (6/1 Md.48) katılımcıların amatör kural aykırılığı 36/k amatör kalemindedir; ticari/amatör ayrımı 6/2 Tebliğ Md.19’a göre yapılır.',
+    ('reg', 12, 'aritma'):'Atıkların zararsız hale getirilmesi (Yön. 12); tesis arıtma kalemi yetiştiricilik mevzuatındaki arıtma hükmüne dayanır.',
     ('61', 38, 'yasak_boy'): 'İçsu asgari boy/ağırlık Tebliğ 38’dedir; yasak boy kalemi deniz için Tebliğ 17’ye atıf yapar, kalem aynıdır.',
 }
 
@@ -537,7 +538,7 @@ def build(write_report=True):
             errors.append(f'kart {card_id} kademe {low}-{high} seçenek metninde yok: {text}')
     for card in cards.values():
         amounts = card.get('amounts') or {}
-        if card.get('art36') == 'k' and all(t in amounts for t in K_TIERS) and card['id'] not in {71}:
+        if card.get('art36') == 'k' and all(t in amounts for t in K_TIERS) and card['id'] not in {71, 45}:  # ışık 50.000 TL; 45 amatör gemi
             if any(amounts[t] != k_amounts[t] for t in K_TIERS):
                 errors.append(f'kart {card["id"]} 36/k gemi kademeleri genel tutardan farklı')
 

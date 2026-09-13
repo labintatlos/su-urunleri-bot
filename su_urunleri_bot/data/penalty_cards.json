@@ -11,14 +11,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Evet",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 1,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız ticari avcılık — kişi (3/1): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Ruhsatsız elde edilen ürüne el konur. Gırgır, orta su/dip trolü, algarna veya dalarak avcılıkta istihsal vasıtalarına; diğer araçlarda ilk tespitte gemi hariç, tekrarında gemi dahil el konur."
+    }
   },
   {
     "source_row": 4,
@@ -32,14 +37,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Evet",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 2,
     "scope": "inland",
     "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız ticari avcılık — kişi (3/1): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Ruhsatsız elde edilen ürüne el konur. Gırgır, orta su/dip trolü, algarna veya dalarak avcılıkta istihsal vasıtalarına; diğer araçlarda ilk tespitte gemi hariç, tekrarında gemi dahil el konur."
+    }
   },
   {
     "source_row": 5,
@@ -53,14 +63,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Evet",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 3,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız ticari avcılık — kişi (3/1): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Ruhsatsız elde edilen ürüne el konur. Gırgır, orta su/dip trolü, algarna veya dalarak avcılıkta istihsal vasıtalarına; diğer araçlarda ilk tespitte gemi hariç, tekrarında gemi dahil el konur."
+    }
   },
   {
     "source_row": 6,
@@ -74,14 +89,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Evet",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 4,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız ticari avcılık — kişi (3/1): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Ruhsatsız elde edilen ürüne el konur. Gırgır, orta su/dip trolü, algarna veya dalarak avcılıkta istihsal vasıtalarına; diğer araçlarda ilk tespitte gemi hariç, tekrarında gemi dahil el konur."
+    }
   },
   {
     "source_row": 7,
@@ -95,14 +115,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 5,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 8,
@@ -116,14 +141,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 6,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 9,
@@ -137,14 +167,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 7,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 10,
@@ -158,14 +193,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 8,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 11,
@@ -179,14 +219,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 9,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 12,
@@ -200,14 +245,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 10,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 13,
@@ -221,14 +271,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. Gırgır, orta su trolü, dip trolü, algarna veya dalarak su ürünleri avcılığında gemi dahil tüm istihsal vasıtalarına el konur.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 11,
     "scope": "sea_or_general",
     "aliases": "belge gemi izin kod plaka ruhsat ruhsatsiz tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ruhsatsız avcılık — gemi sahibi/donatan (3/1): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 14,
@@ -242,14 +297,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 12,
     "scope": "sea_or_general",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_amator_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Amatör avcılık usul ve esaslarına aykırılık — kişi (3/2): 250 TL–500 TL → 2.356 TL–4.730 TL"
+    }
   },
   {
     "source_row": 15,
@@ -263,14 +323,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 13,
     "scope": "inland",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_amator_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Amatör avcılık usul ve esaslarına aykırılık — gemi (3/2): 500 TL–5.000 TL → 4.730 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 16,
@@ -284,14 +349,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 14,
     "scope": "sea_or_general",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_amator_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Amatör avcılık usul ve esaslarına aykırılık — gemi (3/2): 500 TL–5.000 TL → 4.730 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 17,
@@ -305,14 +375,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 15,
     "scope": "sea_or_general",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_amator_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Amatör avcılık usul ve esaslarına aykırılık — kişi (3/2): 250 TL–500 TL → 2.356 TL–4.730 TL"
+    }
   },
   {
     "source_row": 18,
@@ -326,14 +401,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 16,
     "scope": "inland",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_amator_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Amatör avcılık usul ve esaslarına aykırılık — gemi (3/2): 500 TL–5.000 TL → 4.730 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 19,
@@ -347,14 +427,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 17,
     "scope": "sea_or_general",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_amator_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Amatör avcılık usul ve esaslarına aykırılık — gemi (3/2): 500 TL–5.000 TL → 4.730 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 20,
@@ -368,14 +453,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 18,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — kişi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 21,
@@ -389,14 +479,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 19,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 22,
@@ -410,14 +505,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 20,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 23,
@@ -431,14 +531,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 21,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 24,
@@ -452,14 +557,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 22,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 25,
@@ -473,14 +583,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 23,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 26,
@@ -494,14 +609,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 24,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 27,
@@ -515,14 +635,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 25,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 28,
@@ -536,14 +661,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 26,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 29,
@@ -557,14 +687,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 27,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a2_ticari_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/a — Ticari avcılık usul ve esaslarına (izin) aykırılık — gemi (3/2): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 30,
@@ -578,14 +713,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 28,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "a3",
+      "text": "✅ Kanuna uygun · Kanun 36/a — İzin ve ruhsat tezkeresini talepte göstermeme (3/3): 1.000 TL taban → 9.473 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 31,
@@ -599,14 +739,19 @@
     "amounts": {},
     "product_seizure": "Evet (kum, çakıl vs.)",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 29,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "c_icsu",
+      "text": "✅ Kanuna uygun · Kanun 36/c — İstihsal yerlerinde izinsiz değişiklik — içsu (Md.7): 10.000 TL taban → 94.811 TL · Çıkarılan kum, çakıl, taş vb. maddelere el konulur; mümkünse istihsal yeri masrafı faile ait olmak üzere eski haline döndürülür."
+    }
   },
   {
     "source_row": 32,
@@ -620,14 +765,19 @@
     "amounts": {},
     "product_seizure": "Evet (kum, çakıl vs.)",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 30,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "c_deniz",
+      "text": "✅ Kanuna uygun · Kanun 36/c — İstihsal yerlerinde izinsiz değişiklik — deniz (Md.7): 20.000 TL taban → 189.630 TL · Çıkarılan kum, çakıl, taş vb. maddelere el konulur; mümkünse istihsal yeri masrafı faile ait olmak üzere eski haline döndürülür."
+    }
   },
   {
     "source_row": 33,
@@ -641,14 +791,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 31,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "d",
+      "text": "✅ Kanuna uygun · Kanun 36/d — Sulama/enerji amaçlı su kullanımında tedbir almama (Md.9): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 34,
@@ -662,14 +817,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 32,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "d",
+      "text": "✅ Kanuna uygun · Kanun 36/d — Sulama/enerji amaçlı su kullanımında tedbir almama (Md.9): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 35,
@@ -683,14 +843,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 33,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "d",
+      "text": "✅ Kanuna uygun · Kanun 36/d — Sulama/enerji amaçlı su kullanımında tedbir almama (Md.9): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 36,
@@ -704,14 +869,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 34,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "d",
+      "text": "✅ Kanuna uygun · Kanun 36/d — Sulama/enerji amaçlı su kullanımında tedbir almama (Md.9): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 37,
@@ -725,14 +895,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 35,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "g",
+      "text": "✅ Kanuna uygun · Kanun 36/g — Patlayıcı, zehirli madde, elektrik vb. ile avcılık (Md.19): 10.000 TL taban → 94.811 TL · Ürün ile aykırılığa neden olan eşya, alet, edevat ve teçhizata el konulur."
+    }
   },
   {
     "source_row": 38,
@@ -746,14 +921,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 36,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "h_kisi",
+      "text": "✅ Kanuna uygun · Kanun 36/h — Sulara zararlı madde dökülmesi — kişi (Md.20): 5.000 TL taban → 47.397 TL"
+    }
   },
   {
     "source_row": 39,
@@ -767,14 +947,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 37,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "h_tesis",
+      "text": "✅ Kanuna uygun · Kanun 36/h — Sulara zararlı madde dökülmesi — fabrika/imalathane/atölye (Md.20): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Aykırılık belirlenen sürede giderilmezse faaliyet durdurulur ve tesis masrafı sahibine ait olmak üzere zararsız hale getirilir."
+    }
   },
   {
     "source_row": 40,
@@ -788,14 +973,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 38,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "h_tesis",
+      "text": "✅ Kanuna uygun · Kanun 36/h — Sulara zararlı madde dökülmesi — fabrika/imalathane/atölye (Md.20): 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Aykırılık belirlenen sürede giderilmezse faaliyet durdurulur ve tesis masrafı sahibine ait olmak üzere zararsız hale getirilir."
+    }
   },
   {
     "source_row": 41,
@@ -809,14 +999,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir (Gemi dahil)",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 39,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "i",
+      "text": "✅ Kanuna uygun · Kanun 36/i — Yabancıların karasuları/içsularda avcılığı (Md.21/1): 20.000 TL taban → 189.630 TL · Ürün ve istihsal vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 42,
@@ -830,14 +1025,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 40,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "j1",
+      "text": "✅ Kanuna uygun · Kanun 36/j — Akarsularda izinsiz engel (ağ, bent, çit) (Md.22/1): 1.700 TL taban → 16.106 TL · Faaliyet durdurulur; engeller masrafı faile ait olmak üzere kaldırılır."
+    }
   },
   {
     "source_row": 43,
@@ -851,14 +1051,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Aykırılığın giderilmesi için 18 ayı geçmeyen süre verilir; müteakip kontrollerde giderilmemişse bir önceki cezanın 2 katı uygulanır. Genel tekrar artırımı uygulanmaz (Kanun 36/j ikinci paragraf).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 41,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "j2_gecit",
+      "text": "✅ Kanuna uygun · Kanun 36/j — Balık geçidi yapmama / istenen tedbiri almama (Md.22/2): 100.000 TL–250.000 TL → 948.169 TL–2.370.440 TL"
+    }
   },
   {
     "source_row": 45,
@@ -872,14 +1077,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Aykırılığın giderilmesi için 18 ayı geçmeyen süre verilir; müteakip kontrollerde giderilmemişse bir önceki cezanın 2 katı uygulanır. Genel tekrar artırımı uygulanmaz (Kanun 36/j ikinci paragraf).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 42,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "j2_gecit",
+      "text": "✅ Kanuna uygun · Kanun 36/j — Balık geçidi yapmama / istenen tedbiri almama (Md.22/2): 100.000 TL–250.000 TL → 948.169 TL–2.370.440 TL"
+    }
   },
   {
     "source_row": 46,
@@ -893,14 +1103,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Genel tekrar artırımı uygulanmaz (Kanun 36/j ikinci paragraf).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 43,
     "scope": "inland",
-    "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "aliases": "calistirmama gecit tasima tedbir",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "j2_calistirma",
+      "text": "✅ Kanuna uygun · Kanun 36/j — Balık geçidini çalıştırmama, taşıma yapmama, tedbirleri yerine getirmeme (Md.22/2): 50.000 TL taban → 474.079 TL"
+    }
   },
   {
     "source_row": 47,
@@ -908,20 +1123,31 @@
     "option": "Kişi",
     "law": "23-a/b",
     "regulation": "6",
-    "teblig": null,
+    "teblig": "6/2 Tebliğ 19/3",
     "art36": "k",
     "base_ipc": 4730,
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 44,
     "scope": "sea_or_general",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "teblig": null
+    },
+    "law_corrections": [
+      "Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "k3_amator_kisi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Amatör avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 500 TL taban → 4.730 TL · 08 tablosundaki değer: teblig = boş · Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir. · Ürüne ve gemi hariç kullanımı yasak vasıtalara el konur; tekrarında gemi hariç tüm istihsal vasıtalarına. Ticari/amatör ayrımı 6/2 Tebliğ Md.19’a göre yapılır."
+    }
   },
   {
     "source_row": 48,
@@ -929,20 +1155,37 @@
     "option": "Gemi",
     "law": "23-a/b",
     "regulation": "6",
-    "teblig": null,
+    "teblig": "6/2 Tebliğ 19/3",
     "art36": "k",
     "base_ipc": 7105,
-    "amounts": {},
+    "amounts": {
+      "<12 m": 7105,
+      "12–<22 m": 14210,
+      "≥22 m": 21315
+    },
     "product_seizure": "Evet",
     "means_seizure": "Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple_top",
     "id": 45,
     "scope": "sea_or_general",
     "aliases": "amator avcilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "teblig": null,
+      "amounts": {}
+    },
+    "law_corrections": [
+      "Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir.",
+      "Kanun 36 boy çarpanı amatör avcılıkta kullanılan geminin sahibine de uygulanır: 7.105 TL; ×2 = 14.210 TL; ×3 = 21.315 TL."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "k3_amator_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Amatör avcılık yönetmelik hükümlerine aykırılık — gemi (Md.23): 750 TL taban → 7.105 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: teblig = boş · 08 tablosundaki değer: amounts = boş · Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir. · Kanun 36 boy çarpanı amatör avcılıkta kullanılan geminin sahibine de uygulanır: 7.105 TL; ×2 = 14.210 TL; ×3 = 21.315 TL."
+    }
   },
   {
     "source_row": 52,
@@ -963,7 +1206,12 @@
     "id": 46,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "k1_kisi",
+      "text": "⚠️ Uygulama notu · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 1.700 TL taban → 16.106 TL · Kanun el koymayı fiile bağlar; bu satırda ürüne el koyma “Hayır/—” yazılı. Aynı olayın gemi/donatan satırıyla birlikte değerlendirilmelidir."
+    }
   },
   {
     "source_row": 61,
@@ -989,7 +1237,12 @@
     "id": 47,
     "scope": "sea_or_general",
     "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 72,
@@ -1015,7 +1268,12 @@
     "id": 48,
     "scope": "sea_or_general",
     "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 83,
@@ -1041,7 +1299,12 @@
     "id": 49,
     "scope": "sea_or_general",
     "aliases": "45 ag belge cm fanyali izin kalkan kota parakete yasagi zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 94,
@@ -1067,7 +1330,12 @@
     "id": 50,
     "scope": "sea_or_general",
     "aliases": "algarna deniz salyangozu",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 105,
@@ -1093,7 +1361,12 @@
     "id": 51,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 116,
@@ -1119,7 +1392,12 @@
     "id": 52,
     "scope": "sea_or_general",
     "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 127,
@@ -1145,7 +1423,12 @@
     "id": 53,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 138,
@@ -1171,7 +1454,12 @@
     "id": 54,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 149,
@@ -1197,7 +1485,12 @@
     "id": 55,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 160,
@@ -1223,7 +1516,12 @@
     "id": 56,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 171,
@@ -1249,7 +1547,12 @@
     "id": 57,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 182,
@@ -1275,7 +1578,12 @@
     "id": 58,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 193,
@@ -1298,7 +1606,12 @@
     "id": 59,
     "scope": "sea_or_general",
     "aliases": "ag agi cevirme derinlik girgir olcum purse seine",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 204,
@@ -1323,7 +1636,12 @@
     "id": 60,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 215,
@@ -1348,7 +1666,12 @@
     "id": 61,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 226,
@@ -1374,7 +1697,12 @@
     "id": 62,
     "scope": "sea_or_general",
     "aliases": "algarna deniz karides salyangozu surutme",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 237,
@@ -1400,7 +1728,12 @@
     "id": 63,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 248,
@@ -1426,7 +1759,12 @@
     "id": 64,
     "scope": "sea_or_general",
     "aliases": "45 ag belge cm fanyali izin kalkan kota parakete yasagi zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 259,
@@ -1452,7 +1790,12 @@
     "id": 65,
     "scope": "sea_or_general",
     "aliases": "palamut torik yasagi zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 270,
@@ -1478,7 +1821,12 @@
     "id": 66,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 281,
@@ -1504,7 +1852,12 @@
     "id": 67,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 292,
@@ -1515,7 +1868,11 @@
     "teblig": "6/2 tebliğ\n13-2",
     "art36": "k",
     "base_ipc": 23692,
-    "amounts": {},
+    "amounts": {
+      "<12 m": 23692,
+      "12–<22 m": 47384,
+      "≥22 m": 71076
+    },
     "product_seizure": "Evet",
     "means_seizure": "Evet (gemi hariç)",
     "repeat": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
@@ -1525,7 +1882,18 @@
     "id": 68,
     "scope": "inland",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts": {}
+    },
+    "law_corrections": [
+      "Kanun 36/k gemi sahibi tutarı boy çarpanıyla: 23.692 / 47.384 / 71.076 TL (diğer 36/k kalemleriyle aynı)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "k1_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · 08 tablosundaki değer: amounts = boş · Kanun 36/k gemi sahibi tutarı boy çarpanıyla: 23.692 / 47.384 / 71.076 TL (diğer 36/k kalemleriyle aynı). · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 303,
@@ -1537,7 +1905,7 @@
     "art36": "k",
     "base_ipc": 23692,
     "amounts": {
-      "Gırgır": 56640,
+      "Gırgır": 71076,
       "<12 m": 23692,
       "12–<22 m": 47384,
       "≥22 m": 71076
@@ -1551,7 +1919,18 @@
     "id": 69,
     "scope": "sea_or_general",
     "aliases": "avlanmasi korunan tur yasak",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts.Gırgır": 56640
+    },
+    "law_corrections": [
+      "Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "k1_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · 08 tablosundaki değer: amounts.Gırgır = 56.640 TL · Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler. · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 314,
@@ -1563,7 +1942,7 @@
     "art36": "k",
     "base_ipc": 23692,
     "amounts": {
-      "Gırgır": 56640,
+      "Gırgır": 71076,
       "<12 m": 23692,
       "12–<22 m": 47384,
       "≥22 m": 71076
@@ -1577,7 +1956,18 @@
     "id": 70,
     "scope": "sea_or_general",
     "aliases": "asgari boy kucuk tolerans",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts.Gırgır": 56640
+    },
+    "law_corrections": [
+      "Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "k1_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · 08 tablosundaki değer: amounts.Gırgır = 56.640 TL · Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler. · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 325,
@@ -1602,8 +1992,13 @@
     "layout": "block",
     "id": 71,
     "scope": "sea_or_general",
-    "aliases": "aydinlatma isik lamba",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "aliases": "aydinlatma bulundurma donanimi isik jenerator lamba",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "k2_isik",
+      "text": "⚠️ Uygulama notu · Kanun 36/k — Işıkla avlanma / ışık donanımı bulundurma (İçsu, Karadeniz, Marmara) (Md.23): 50.000 TL taban → 474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ürüne ve gemi hariç avcılık amacıyla ışık sağlayan her türlü su vasıtası ve edevata el konur. · Kanun bu hükümde gırgır 3 katı öngörmez; tablo gırgır için 1.422.237 TL yazar (≥22 m tutarı)."
+    }
   },
   {
     "source_row": 336,
@@ -1624,7 +2019,12 @@
     "id": 72,
     "scope": "sea_or_general",
     "aliases": "dip mesafe ortasu saha trol yasak zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "l1_kisi",
+      "text": "⚠️ Uygulama notu · Kanun 36/l — İçsu, Marmara ve boğazlarda trol — kişi (Md.24/a): 10.000 TL taban → 94.811 TL · Kanun el koymayı fiile bağlar; bu satırda ürüne el koyma “Hayır/—” yazılı. Aynı olayın gemi/donatan satırıyla birlikte değerlendirilmelidir."
+    }
   },
   {
     "source_row": 342,
@@ -1642,14 +2042,19 @@
     },
     "product_seizure": "Evet",
     "means_seizure": "(İstanbul ve Çanakkale Boğazların ile Marmara Denizinde) İstihsal vasıtaları zapt ve mülkiyeti kamuya geçirilir. Tekrarı halinde 1 yıldan 3 yıla kadar (5000-1000 gün adli para cezası) hapis cezası, su ürünleri ve istihsal vasıtalarına el konularak mülkiyeti kamuya geçirilir. (gemi dahil)",
-    "repeat": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
+    "repeat": "Fiilin 2 yıl içinde tekrarında gemi sahibi/donatana 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün ve istihsal vasıtaları müsadere edilir (Kanun 36/l). Adli makamlara bildirilir.",
     "license_action": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
     "notes": " Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
     "layout": "block",
     "id": 73,
     "scope": "sea_or_general",
     "aliases": "dip mesafe ortasu saha trol yasak zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "l1_gemi",
+      "text": "⚠️ Uygulama notu · Kanun 36/l — İçsu, Marmara ve boğazlarda trol — gemi sahibi/donatan (Md.24/a): 20.000 TL taban → 189.630 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ürün ve istihsal vasıtalarına (gemi dahil) el konur. · Kanun bu bentte ruhsat geri almayı saymaz; Yönetmelik 41 yalnızca Kanun 23/a–b ve 24/b ihlallerini sayar. Tablodaki ruhsat işlemi idari uygulamadır."
+    }
   },
   {
     "source_row": 353,
@@ -1659,7 +2064,7 @@
     "regulation": "Ağlar 14\n\nYer, zaman vs. 16/14",
     "teblig": "10",
     "art36": "l",
-    "base_ipc": 23692,
+    "base_ipc": 66357,
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
@@ -1669,8 +2074,19 @@
     "layout": "block",
     "id": 74,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "aliases": "acikligi agi bordaya dip goz kombine kucuk mesafe olarak ortasu saha trol trolu trolunu yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "base_ipc": 23692
+    },
+    "law_corrections": [
+      "Kanun 36/l ikinci paragraf dip trolü yasaklarına aykırı hareket edenlere ve gemi sahibine aynı 7.000 TL’yi öngörür (66.357 TL); tablo 36/k gemi tutarını yazmıştı."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "l2_kisi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — kişi (Md.24/b): 7.000 TL taban → 66.357 TL · 08 tablosundaki değer: base_ipc = 23.692 TL · Kanun 36/l ikinci paragraf dip trolü yasaklarına aykırı hareket edenlere ve gemi sahibine aynı 7.000 TL’yi öngörür (66.357 TL); tablo 36/k gemi tutarını yazmıştı. · Yasak yer/zamanda dip trol ağı denizde veya bordada bulunması, küçük göz açıklıklı dip trolü bulundurma, orta su/kombine trolü dip trolü olarak kullanma da bu cezaya tabidir. · Kanun el koymayı fiile bağlar; bu satırda ürüne el koyma “Hayır/—” yazılı. Aynı olayın gemi/donatan satırıyla birlikte değerlendirilmelidir."
+    }
   },
   {
     "source_row": 364,
@@ -1694,8 +2110,13 @@
     "layout": "block",
     "id": 75,
     "scope": "sea_or_general",
-    "aliases": "dip mesafe ortasu saha trol yasak zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "aliases": "acikligi agi bordaya dip goz kombine kucuk mesafe olarak ortasu saha trol trolu trolunu yasak zaman",
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "l2_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/l — Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — gemi (Md.24/b): 7.000 TL taban → 66.357 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 375,
@@ -1716,7 +2137,12 @@
     "id": 76,
     "scope": "sea_or_general",
     "aliases": "dip mesafe ortasu saha trol yasak zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "k1_kisi",
+      "text": "⚠️ Uygulama notu · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 1.700 TL taban → 16.106 TL · Kanun el koymayı fiile bağlar; bu satırda ürüne el koyma “Hayır/—” yazılı. Aynı olayın gemi/donatan satırıyla birlikte değerlendirilmelidir."
+    }
   },
   {
     "source_row": 386,
@@ -1741,7 +2167,12 @@
     "id": 77,
     "scope": "sea_or_general",
     "aliases": "dip mesafe ortasu saha trol yasak zaman",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 397,
@@ -1749,7 +2180,7 @@
     "option": null,
     "law": "28",
     "regulation": "16/14",
-    "teblig": "48/10",
+    "teblig": "49/9",
     "art36": "n",
     "base_ipc": 6627,
     "amounts": {
@@ -1766,7 +2197,18 @@
     "id": 78,
     "scope": "sea_or_general",
     "aliases": "belge bilgi defteri e kayit seyir",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "teblig": "48/10"
+    },
+    "law_corrections": [
+      "E-seyir defteri yükümlülüğü güncel 6/1 Tebliğde Md.49/9’dadır; 48/10 eski tebliğin numarasıdır (güncel Md.48 turizm faaliyetidir)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "n",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/n — Bilgi ve belgeleri zamanında ve doğru vermeme (Md.28): 700 TL taban → 6.627 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: teblig = 48/10 · E-seyir defteri yükümlülüğü güncel 6/1 Tebliğde Md.49/9’dadır; 48/10 eski tebliğin numarasıdır (güncel Md.48 turizm faaliyetidir)."
+    }
   },
   {
     "source_row": 405,
@@ -1780,14 +2222,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple",
     "id": 79,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m1_nakil",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Yasak su ürününü nakletme veya satma (Md.23–25): 5.000 TL taban → 47.397 TL"
+    }
   },
   {
     "source_row": 406,
@@ -1801,14 +2248,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple",
     "id": 80,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m1_nakil",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Yasak su ürününü nakletme veya satma (Md.23–25): 5.000 TL taban → 47.397 TL"
+    }
   },
   {
     "source_row": 407,
@@ -1822,14 +2274,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "simple",
     "id": 81,
     "scope": "sea_or_general",
     "aliases": "avlanmasi korunan tur yasak",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m1_imalat",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Yasak su ürününü imalatta kullanma, işleme, muhafaza, ihraç (Md.23–25): 10.000 TL taban → 94.811 TL · Ürüne ve yapılan imalata el konulur."
+    }
   },
   {
     "source_row": 408,
@@ -1843,14 +2300,19 @@
     "amounts": {},
     "product_seizure": "Hayır",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat bv. Zapt ve mülkiyeti kamuya geçirilir.",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": " Yeni 08 rehberi bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.",
     "layout": "simple",
     "id": 82,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "o",
+      "text": "✅ Kanuna uygun · Kanun 36/o — İzinsiz yasak vasıta/usulle ilmi-teknik çalışma (Md.29): 850 TL taban → 8.048 TL · Kabahat konusu yasak vasıtalara el konulur."
+    }
   },
   {
     "source_row": 412,
@@ -1864,14 +2326,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 83,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 413,
@@ -1885,14 +2352,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 84,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 414,
@@ -1906,14 +2378,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 85,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 415,
@@ -1927,14 +2404,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 86,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 416,
@@ -1948,14 +2430,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 87,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 417,
@@ -1969,14 +2456,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 88,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 418,
@@ -1990,14 +2482,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 89,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 419,
@@ -2011,14 +2508,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 90,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 420,
@@ -2032,14 +2534,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 91,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 421,
@@ -2053,14 +2560,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 92,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 422,
@@ -2074,14 +2586,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 93,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 423,
@@ -2095,14 +2612,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 94,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 424,
@@ -2116,14 +2638,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Aykırılığa neden olan av aracı, eşya, alet,edavat, teçhizat vb.zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
-    "repeat": null,
+    "repeat": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
     "license_action": null,
     "notes": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
     "layout": "shifted",
     "id": 95,
     "scope": "sea_or_general",
     "aliases": "izin",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m3",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
+    }
   },
   {
     "source_row": 430,
@@ -2136,12 +2663,12 @@
     "base_ipc": 9473,
     "amounts": {
       "<12 m": 9473,
-      "12–<22 m": 15098,
-      "≥22 m": 22647
+      "12–<22 m": 18946,
+      "≥22 m": 28419
     },
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "bagis",
@@ -2149,7 +2676,20 @@
     "id": 96,
     "scope": "sea_or_general",
     "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts.12–<22 m": 15098,
+      "amounts.≥22 m": 22647
+    },
+    "law_corrections": [
+      "Kanun 36/p asgari 1.000 TL (9.473 TL) × 2 = 18.946 TL; tablo değeri kanuni asgarinin altındaydı.",
+      "Kanun 36/p asgari 1.000 TL (9.473 TL) × 3 = 28.419 TL; tablo değeri kanuni asgarinin altındaydı."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "p_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.12–<22 m = 15.098 TL · 08 tablosundaki değer: amounts.≥22 m = 22.647 TL · Kanun 36/p asgari 1.000 TL (9.473 TL) × 2 = 18.946 TL; tablo değeri kanuni asgarinin altındaydı. · Kanun 36/p asgari 1.000 TL (9.473 TL) × 3 = 28.419 TL; tablo değeri kanuni asgarinin altındaydı. · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+    }
   },
   {
     "source_row": 431,
@@ -2167,7 +2707,7 @@
     },
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "bagis",
@@ -2175,7 +2715,12 @@
     "id": 97,
     "scope": "sea_or_general",
     "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "p_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+    }
   },
   {
     "source_row": 432,
@@ -2188,12 +2733,12 @@
     "base_ipc": 47397,
     "amounts": {
       "<12 m": 47397,
-      "12–<22 m": 94397,
+      "12–<22 m": 94794,
       "≥22 m": 142191
     },
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "bagis",
@@ -2201,7 +2746,18 @@
     "id": 98,
     "scope": "sea_or_general",
     "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts.12–<22 m": 94397
+    },
+    "law_corrections": [
+      "Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "p_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.12–<22 m = 94.397 TL · Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+    }
   },
   {
     "source_row": 433,
@@ -2214,12 +2770,12 @@
     "base_ipc": 47397,
     "amounts": {
       "<12 m": 47397,
-      "12–<22 m": 94397,
+      "12–<22 m": 94794,
       "≥22 m": 142191
     },
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "bagis",
@@ -2227,7 +2783,18 @@
     "id": 99,
     "scope": "sea_or_general",
     "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts.12–<22 m": 94397
+    },
+    "law_corrections": [
+      "Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "p_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.12–<22 m = 94.397 TL · Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+    }
   },
   {
     "source_row": 434,
@@ -2241,11 +2808,11 @@
     "amounts": {
       "<12 m": 16106,
       "12–<22 m": 32212,
-      "≥22 m": 22647
+      "≥22 m": 48318
     },
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "bagis",
@@ -2253,7 +2820,18 @@
     "id": 100,
     "scope": "sea_or_general",
     "aliases": "ariza bagis bildirim cihaz gemi gps izleme sistem",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "amounts.≥22 m": 22647
+    },
+    "law_corrections": [
+      "Boy çarpanı: 16.106 × 3 = 48.318 TL; tablo değeri 12–22 m tutarından da düşüktü (08 belgesi de işaretler)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "p_gemi",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.≥22 m = 22.647 TL · Boy çarpanı: 16.106 × 3 = 48.318 TL; tablo değeri 12–22 m tutarından da düşüktü (08 belgesi de işaretler). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+    }
   },
   {
     "source_row": 438,
@@ -2267,14 +2845,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 101,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "r_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/r — Karaya çıkış noktası dışında boşaltma — gemi (Ek Md.5): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 439,
@@ -2288,14 +2871,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 102,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "r_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/r — Karaya çıkış noktası dışında boşaltma — gemi (Ek Md.5): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 440,
@@ -2309,14 +2897,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 103,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "r_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/r — Karaya çıkış noktası dışında boşaltma — gemi (Ek Md.5): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 441,
@@ -2330,14 +2923,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 104,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "t_ruhsatli",
+      "text": "✅ Kanuna uygun · Kanun 36/t — Başka ülke suları/uluslararası sularda şartlara aykırı avcılık — ruhsatlı gemi (Ek Md.7): 10.000 TL–30.000 TL → 94.811 TL–284.449 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 442,
@@ -2351,14 +2949,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 105,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "t_ruhsatli",
+      "text": "✅ Kanuna uygun · Kanun 36/t — Başka ülke suları/uluslararası sularda şartlara aykırı avcılık — ruhsatlı gemi (Ek Md.7): 10.000 TL–30.000 TL → 94.811 TL–284.449 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 443,
@@ -2372,14 +2975,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 106,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "t_ruhsatli",
+      "text": "✅ Kanuna uygun · Kanun 36/t — Başka ülke suları/uluslararası sularda şartlara aykırı avcılık — ruhsatlı gemi (Ek Md.7): 10.000 TL–30.000 TL → 94.811 TL–284.449 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 444,
@@ -2393,14 +3001,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 107,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "t_ruhsatsiz",
+      "text": "✅ Kanuna uygun · Kanun 36/t — Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7): 20.000 TL–50.000 TL → 189.630 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 445,
@@ -2414,14 +3027,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 108,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "t_ruhsatsiz",
+      "text": "✅ Kanuna uygun · Kanun 36/t — Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7): 20.000 TL–50.000 TL → 189.630 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 446,
@@ -2431,18 +3049,29 @@
     "regulation": "18",
     "teblig": "50/4",
     "art36": "t",
-    "base_ipc": 474079,
+    "base_ipc": 568890,
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 109,
     "scope": "sea_or_general",
     "aliases": "belge izin kod plaka ruhsat tezkeresi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "base_ipc": 474079
+    },
+    "law_corrections": [
+      "Kanun 36/t ruhsatsız gemi asgari 20.000 TL (189.630 TL) × 3 (≥22 m) = 568.890 TL; tablo değeri kanuni asgarinin altındaydı. Kart 107–108 ile aynı “asgari × boy çarpanı” yöntemi."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "t_ruhsatsiz",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/t — Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7): 20.000 TL–50.000 TL → 189.630 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: base_ipc = 474.079 TL · Kanun 36/t ruhsatsız gemi asgari 20.000 TL (189.630 TL) × 3 (≥22 m) = 568.890 TL; tablo değeri kanuni asgarinin altındaydı. Kart 107–108 ile aynı “asgari × boy çarpanı” yöntemi."
+    }
   },
   {
     "source_row": 447,
@@ -2456,14 +3085,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 110,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "s_gercek",
+      "text": "✅ Kanuna uygun · Kanun 36/s — İzinsiz balıklandırma — gerçek kişi (Ek Md.6): 10.000 TL taban → 94.811 TL"
+    }
   },
   {
     "source_row": 448,
@@ -2477,14 +3111,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 111,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "s_tuzel",
+      "text": "✅ Kanuna uygun · Kanun 36/s — İzinsiz balıklandırma — tüzel kişi (Ek Md.6): 20.000 TL taban → 189.630 TL"
+    }
   },
   {
     "source_row": 449,
@@ -2498,14 +3137,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 112,
     "scope": "sea_or_general",
     "aliases": "belge belgesiz mense nakil sevk tasima",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "r_nakil",
+      "text": "✅ Kanuna uygun · Kanun 36/r — Nakil belgesi yükümlülüklerine aykırılık (Ek Md.5): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Kotaya tabi, izleme programındaki ve kiralık alanlardan elde edilen türlerde belgesiz ürün yasadışı kabul edilir ve 36/m uygulanır (6/1 Tebliğ 46/4)."
+    }
   },
   {
     "source_row": 450,
@@ -2519,14 +3163,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "shifted_ipc_g",
     "id": 113,
     "scope": "sea_or_general",
     "aliases": "belge belgesiz mense nakil sevk tasima",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "r_nakil",
+      "text": "✅ Kanuna uygun · Kanun 36/r — Nakil belgesi yükümlülüklerine aykırılık (Ek Md.5): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Kotaya tabi, izleme programındaki ve kiralık alanlardan elde edilen türlerde belgesiz ürün yasadışı kabul edilir ve 36/m uygulanır (6/1 Tebliğ 46/4)."
+    }
   },
   {
     "source_row": 454,
@@ -2540,14 +3189,19 @@
     "amounts": {},
     "product_seizure": "Evet",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "smallblock",
     "id": 114,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "m1_nakil",
+      "text": "✅ Kanuna uygun · Kanun 36/m — Yasak su ürününü nakletme veya satma (Md.23–25): 5.000 TL taban → 47.397 TL"
+    }
   },
   {
     "source_row": 460,
@@ -2565,14 +3219,19 @@
     },
     "product_seizure": "Hayır",
     "means_seizure": "Hayır",
-    "repeat": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
     "license_action": null,
     "notes": null,
     "layout": "smallblock",
     "id": 115,
     "scope": "sea_or_general",
     "aliases": "arizi av belge bilgi defteri disi e hedef kayit seyir tesadufi",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "n",
+      "text": "✅ Kanuna uygun · Kanun 36/n — Bilgi ve belgeleri zamanında ve doğru vermeme (Md.28): 700 TL taban → 6.627 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
   },
   {
     "source_row": 469,
@@ -2591,14 +3250,19 @@
     },
     "product_seizure": "Evet",
     "means_seizure": "Evet (gemi hariç)",
-    "repeat": null,
-    "license_action": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
+    "license_action": "Ruhsat tezkeresi 1. tespitte 1 ay, 2. tespitte 3 ay geri alınır; tekrarında iptal edilir ve gemi hariç istihsal vasıtalarına el konur (Kanun 36/k–l, Yönetmelik 41).",
     "notes": null,
     "layout": "smallblock",
     "id": 116,
     "scope": "sea_or_general",
     "aliases": "balik ciftligi mesafe tesis yetistiricilik",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "k1_gemi",
+      "text": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+    }
   },
   {
     "source_row": 478,
@@ -2612,14 +3276,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 117,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 479,
@@ -2633,14 +3302,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 118,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 480,
@@ -2654,14 +3328,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 119,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 481,
@@ -2675,14 +3354,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 120,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 482,
@@ -2696,14 +3380,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 121,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 483,
@@ -2717,14 +3406,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 122,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 484,
@@ -2738,14 +3432,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 123,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "b",
+      "text": "⚠️ Uygulama notu · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 489,
@@ -2759,14 +3458,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 124,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "f",
+      "text": "⚠️ Uygulama notu · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 490,
@@ -2780,14 +3484,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 125,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "f",
+      "text": "⚠️ Uygulama notu · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 491,
@@ -2801,14 +3510,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 126,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "f",
+      "text": "⚠️ Uygulama notu · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 492,
@@ -2822,14 +3536,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 127,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "f",
+      "text": "⚠️ Uygulama notu · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 493,
@@ -2843,14 +3562,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 128,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "f",
+      "text": "⚠️ Uygulama notu · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 494,
@@ -2864,14 +3588,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 129,
     "scope": "sea_or_general",
     "aliases": "barinak cekek liman yeri",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "f",
+      "text": "⚠️ Uygulama notu · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 495,
@@ -2885,14 +3614,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 130,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 496,
@@ -2906,14 +3640,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 131,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 497,
@@ -2927,14 +3666,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 132,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 498,
@@ -2948,14 +3692,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 133,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 499,
@@ -2969,14 +3718,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 134,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 500,
@@ -2990,14 +3744,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 135,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 501,
@@ -3011,14 +3770,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 136,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 502,
@@ -3032,14 +3796,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 137,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e1",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
+    }
   },
   {
     "source_row": 503,
@@ -3053,14 +3822,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 138,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e2",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 504,
@@ -3074,14 +3848,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 139,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyumlu",
+      "provision": "e2",
+      "text": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
+    }
   },
   {
     "source_row": 505,
@@ -3090,19 +3869,30 @@
     "law": "13",
     "regulation": "22",
     "teblig": "-",
-    "art36": "-",
+    "art36": "e",
     "base_ipc": 47397,
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 140,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "art36": "-"
+    },
+    "law_corrections": [
+      "Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "e2",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · 08 tablosundaki değer: art36 = - · Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
+    }
   },
   {
     "source_row": 506,
@@ -3111,19 +3901,30 @@
     "law": "13",
     "regulation": "22",
     "teblig": "-",
-    "art36": "-",
+    "art36": "e",
     "base_ipc": 474079,
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 141,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "excel_original": {
+      "art36": "-"
+    },
+    "law_corrections": [
+      "Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
+    ],
+    "law_check": {
+      "status": "duzeltildi",
+      "provision": "e2",
+      "text": "🛠️ Kanuna göre düzeltildi · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · 08 tablosundaki değer: art36 = - · Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
+    }
   },
   {
     "source_row": 507,
@@ -3137,14 +3938,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 142,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 508,
@@ -3158,14 +3964,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 143,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 509,
@@ -3179,14 +3990,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 144,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 510,
@@ -3200,14 +4016,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 145,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 511,
@@ -3221,14 +4042,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 146,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 512,
@@ -3242,14 +4068,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 147,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 513,
@@ -3263,14 +4094,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 148,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 514,
@@ -3284,14 +4120,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 149,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 515,
@@ -3305,14 +4146,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 150,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 516,
@@ -3326,14 +4172,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 151,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 517,
@@ -3347,14 +4198,19 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 152,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
   },
   {
     "source_row": 518,
@@ -3368,13 +4224,135 @@
     "amounts": {},
     "product_seizure": null,
     "means_seizure": null,
-    "repeat": null,
+    "repeat": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
     "license_action": null,
     "notes": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
     "layout": "excel_external_ref",
     "id": 153,
     "scope": "sea_or_general",
     "aliases": "",
-    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md"
+    "source_doc": "08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md",
+    "law_check": {
+      "status": "uyari",
+      "provision": "e2",
+      "text": "⚠️ Uygulama notu · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+    }
+  },
+  {
+    "source_row": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
+    "license_action": null,
+    "notes": null,
+    "layout": "kanun",
+    "scope": "sea_or_general",
+    "source_doc": "1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md",
+    "origin": "kanun",
+    "id": 154,
+    "violation": "İzin ve ruhsat belgesini göstermeme — gemi sahibi/donatan",
+    "option": "Boy kademeli (Kanun 36 boy çarpanı)",
+    "law": "3",
+    "regulation": "4",
+    "teblig": null,
+    "art36": "a",
+    "base_ipc": 9473,
+    "amounts": {
+      "<12 m": 9473,
+      "12–<22 m": 18946,
+      "≥22 m": 28419
+    },
+    "product_seizure": "Hayır",
+    "means_seizure": "Hayır",
+    "aliases": "belge izin ruhsat tezkeresi gostermeme donatan gemi sahibi",
+    "law_check": {
+      "status": "eklendi",
+      "provision": "a3",
+      "text": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/a — İzin ve ruhsat tezkeresini talepte göstermeme (3/3): 1.000 TL taban → 9.473 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+    }
+  },
+  {
+    "source_row": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
+    "license_action": null,
+    "notes": null,
+    "layout": "kanun",
+    "scope": "sea_or_general",
+    "source_doc": "1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md",
+    "origin": "kanun",
+    "id": 155,
+    "violation": "Yasak su ürününü işleme, muhafaza etme veya ihraç etme",
+    "option": null,
+    "law": "23-24, 25/1",
+    "regulation": "16",
+    "teblig": "49/20",
+    "art36": "m",
+    "base_ipc": 94811,
+    "amounts": {},
+    "product_seizure": "Evet (ürün ve yapılan imalat)",
+    "means_seizure": "Hayır",
+    "aliases": "isleme muhafaza ihrac depo soguk hava yasak urun",
+    "law_check": {
+      "status": "eklendi",
+      "provision": "m1_imalat",
+      "text": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/m — Yasak su ürününü imalatta kullanma, işleme, muhafaza, ihraç (Md.23–25): 10.000 TL taban → 94.811 TL · Ürüne ve yapılan imalata el konulur."
+    }
+  },
+  {
+    "source_row": null,
+    "repeat": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
+    "license_action": null,
+    "notes": null,
+    "layout": "kanun",
+    "scope": "sea_or_general",
+    "source_doc": "1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md",
+    "origin": "kanun",
+    "id": 156,
+    "violation": "Yetiştiricilik tesisinde istenen izleme sistem ve cihazlarını bulundurmama veya işler durumda tutmama",
+    "option": "Tesis sahibi",
+    "law": "Ek madde - 4",
+    "regulation": null,
+    "teblig": null,
+    "art36": "p",
+    "base_ipc": 47397,
+    "amount_range": [
+      47397,
+      237034
+    ],
+    "amounts": {},
+    "product_seizure": null,
+    "means_seizure": null,
+    "aliases": "yetistiricilik tesis balik ciftligi izleme kamera cihaz sistem kayit",
+    "law_check": {
+      "status": "eklendi",
+      "provision": "p_tesis",
+      "text": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/p — İzleme sistemi yükümlülüğü — yetiştiricilik tesisi (Ek Md.4): 5.000 TL–25.000 TL → 47.397 TL–237.034 TL · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+    }
+  },
+  {
+    "source_row": null,
+    "repeat": null,
+    "license_action": null,
+    "notes": null,
+    "layout": "kanun",
+    "scope": "sea_or_general",
+    "source_doc": "1380 SU ÜRÜNLERİ KANUNU MARKDOWN.md",
+    "origin": "kanun",
+    "id": 157,
+    "violation": "Ruhsat tezkeresi geçici geri alınmış (askıdaki) gemiyle avcılık",
+    "option": null,
+    "law": "36 (son fıkralar)",
+    "regulation": "41",
+    "teblig": "49/5",
+    "art36": "genel",
+    "base_ipc": null,
+    "amounts": {},
+    "amount_note": "Bu hükümde ayrı idari para cezası yoktur; avcılıkta tespit edilen aykırılığın bendine göre ceza, askıya alma dikkate alınmaksızın ayrıca uygulanır (6/1 Tebliğ 49/5).",
+    "product_seizure": null,
+    "means_seizure": "Gemiye, avlanma araçları ve donanımıyla birlikte el konularak mülkiyetin kamuya geçirilmesine karar verilir.",
+    "aliases": "askida askiya alinmis geri alinmis ruhsat tezkeresi el konulan gemi",
+    "law_check": {
+      "status": "eklendi",
+      "provision": "askida",
+      "text": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/genel — Ruhsat tezkeresi geçici geri alınmış gemiyle avcılık (Kanun 36 son fıkralar): Ayrı idari para cezası yok · Gemiye avlanma araçları ve donanımıyla birlikte el konulur; kamuya geçirilen geminin tüm izin ve ruhsatları iptal edilmiş sayılır."
+    }
   }
 ]

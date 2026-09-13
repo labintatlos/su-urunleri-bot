@@ -349,6 +349,7 @@ PENALTY_TITLES = {
     'r': 'R) Karaya Çıkış ve Nakil Belgesi İhlalleri',
     's': 'S) İzinsiz Balıklandırma',
     't': 'T) Uluslararası Sularda İzinsiz Avcılık',
+    'genel': 'Genel Hükümler (Kanun 36 Son Fıkralar)',
     '-': 'Diğer Excel Kayıtları',
 }
 
@@ -373,6 +374,14 @@ def build_penalties():
                 card['notes'] = ((card.get('notes') or '') + ' ' + note).strip()
         card['source_doc'] = '08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md'
 
+    # Kanun 36, Yönetmelik ve Tebliğlerle sağlama; tablo hataları gerekçeli
+    # düzeltilir, tabloda olmayan hükümler Kanundan eklenir (tools/verify_penalties.py).
+    import verify_penalties
+    cards = verify_penalties.apply(cards)
+    law_errors = verify_penalties.verify(cards)
+    if law_errors:
+        raise ValueError('Ceza sağlaması başarısız: ' + '; '.join(law_errors))
+
     grouped = {key: [] for key in PENALTY_TITLES}
     for card in cards:
         key = card.get('art36') or '-'
@@ -395,10 +404,14 @@ def build_penalties():
             refs.append('36/' + key)
             details['Dayanak'] = ' · '.join(refs)
             amounts = card.get('amounts') or {}
-            if amounts:
+            if card.get('amount_range'):
+                details['İPC'] = ' – '.join(tr_money(x) for x in card['amount_range']) + ' (Kanun aralığı)'
+            elif amounts:
                 details['İPC'] = '; '.join(f'{label}: {tr_money(amount)}' for label, amount in amounts.items())
             elif card.get('base_ipc') is not None:
                 details['İPC'] = tr_money(card['base_ipc'])
+            elif card.get('amount_note'):
+                details['İPC'] = card['amount_note']
             if card.get('product_seizure') or card.get('means_seizure'):
                 details['El Koyma'] = f"Ürün: {card.get('product_seizure') or '-'}; vasıta: {card.get('means_seizure') or '-'}"
             if card.get('repeat'):
@@ -407,10 +420,16 @@ def build_penalties():
                 details['Ruhsat İşlemi'] = card['license_action']
             if card.get('notes'):
                 details['Uyarı/Not'] = card['notes'].strip()
+            if card.get('law_check'):
+                details['Kanun Sağlaması'] = card['law_check']['text']
             entries.append(item(card.get('option') or card['violation'], details, f'{key}_{index}'))
         if entries:
             result.append({'id': key, 'title': title, 'items': entries, 'sub': [], 'content': '',
                            'source_doc': cards[0]['source_doc']})
+    result.append({'id': 'saglama', 'title': '✅ Kanun 36 Sağlaması (Tüm Hükümler)',
+                   'items': [item(label, details, f'saglama_{index}')
+                             for index, (label, details) in enumerate(verify_penalties.provision_rows(cards))],
+                   'sub': [], 'content': '', 'source_doc': verify_penalties.LAW_SOURCE})
     return cards, result
 
 
@@ -556,7 +575,7 @@ def build_outputs():
     missing_refs = sorted(set(refs) - valid_articles)
     if missing_refs:
         raise ValueError(f'Yapılandırılmış veride karşılığı olmayan madde bağlantısı: {missing_refs}')
-    represented_cards = sum(len(group['items']) for group in penalty_guide)
+    represented_cards = sum(len(group['items']) for group in penalty_guide if group['id'] != 'saglama')
     if represented_cards != len(cards):
         raise ValueError(f'Ceza rehberinde {len(cards) - represented_cards} kart eksik')
     return outputs

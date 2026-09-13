@@ -133,6 +133,7 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 14 | Kolluk İşlem Rehberine delil/tutanak, ceza katsayıları, askıdaki ruhsat ve adli sevk kartları | ✅ 6.0.27 |
 | 15 | Föy ve duruma özel denetim sonunda yazdırılabilir **Kontrol Çizelgesi** | ✅ 6.0.27 |
 | 16 | Hukuki değerlendirme korpusuna 09 Saha Uygulama Esasları belgesi | ✅ 6.0.27 |
+| 17 | Ceza dosyasının Kanun 36 / Yönetmelik / Tebliğ sağlaması, düzeltmeler ve eksik hükümler (`tools/verify_penalties.py`) | ✅ 6.0.33 |
 
 Ara adım (6.0.32): Kullanıcının isteğiyle **Yaptırım Özeti** eklendi. Her föy
 maddesi, denetim sorusu (etiketiyle) ve otomatik uyarı (`build_context_flags`

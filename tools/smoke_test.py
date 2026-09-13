@@ -146,6 +146,26 @@ def check_structured_data():
         raise AssertionError('penalty_links.json güncel değil: python tools/build_penalty_links.py')
     print(f'penalty links: {len(links["guides"])} föy maddesi, {len(links["questions"])} soru, '
           f'{len(links["flags"])} uyarı eşleştirmesi verified')
+    import verify_penalties
+    cards = json.loads((ADDON / 'data' / 'penalty_cards.json').read_text(encoding='utf-8'))
+    fresh = verify_penalties.apply(json.loads(json.dumps(cards)))
+    law_errors = verify_penalties.verify(fresh)
+    if law_errors:
+        raise AssertionError('Ceza dosyası Kanun sağlaması başarısız: ' + '; '.join(law_errors[:5]))
+    if fresh != cards:
+        raise AssertionError('penalty_cards.json Kanun sağlamasıyla güncel değil: python tools/rebuild_structured_data.py')
+    by_id = {card['id']: card for card in cards}
+    expected = [(69, 'Gırgır', 71076), (70, 'Gırgır', 71076), (96, '≥22 m', 28419), (98, '12–<22 m', 94794),
+                (100, '≥22 m', 48318), (45, '≥22 m', 21315)]
+    if (any(by_id[cid]['amounts'].get(key) != value for cid, key, value in expected)
+            or by_id[74]['base_ipc'] != 66357 or by_id[109]['base_ipc'] != 568890 or by_id[140]['art36'] != 'e'
+            or not {154, 155, 156, 157} <= set(by_id) or by_id[78]['teblig'] != '49/9'
+            or 'hapis' not in by_id[73]['repeat'] or any('law_check' not in card for card in cards)):
+        raise AssertionError('Ceza dosyası Kanun düzeltmeleri veya eklenen hükümler eksik')
+    saglama = next((group for group in penalty_guide if group['id'] == 'saglama'), None)
+    if not saglama or len(saglama['items']) != len(verify_penalties.LAW36):
+        raise AssertionError('Ceza Rehberinde Kanun 36 Sağlaması başlığı eksik')
+    print(f'penalty law check: {len(cards)} kart, {len(verify_penalties.LAW36)} Kanun 36 hükmü verified')
 
 
 def check_items_table():

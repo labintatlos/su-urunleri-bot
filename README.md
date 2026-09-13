@@ -133,6 +133,13 @@ Kontrol maddelerinin güncel ceza tablosuna bağlanması (Yaptırım Özeti)
 `data/penalty_links.json` dosyasındadır ve `python tools/build_penalty_links.py`
 ile sağlanarak üretilir (`--check` güncelliği doğrular).
 
+Ceza kartlarının Kanun 36, Yönetmelik ve Tebliğlerle sağlaması
+`tools/verify_penalties.py` içindedir ve `rebuild_structured_data.py` tarafından
+her üretimde çalıştırılır. 08 tablosunda Kanuna aykırı bulunan değerler
+gerekçesiyle düzeltilir (eski değer kartın `excel_original` alanında durur),
+tabloda olmayan hükümler Kanundan eklenir (`origin: kanun`). Her kartın sonucu
+`law_check` alanında ve Ceza Rehberindeki "Kanun 36 Sağlaması" başlığındadır.
+
 Yeni 03, 04 ve 08 numaralı rehberlerden tür, ceza, saha kuralı ve kontrol föyü
 verilerini yeniden üretmek ve sonucunu doğrulamak için:
 

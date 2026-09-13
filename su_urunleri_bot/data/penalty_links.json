@@ -31,7 +31,8 @@
       "kind": "cards",
       "bent": "a",
       "cards": [
-        28
+        28,
+        154
       ],
       "label": "İzin ve ruhsat belgesini talepte göstermeme"
     },
@@ -329,7 +330,8 @@
       "cards": [
         79,
         80,
-        81
+        81,
+        155
       ],
       "label": "Yasak su ürününün satışı, nakli, işlenmesi"
     },
@@ -468,7 +470,7 @@
     },
     "aritma": {
       "kind": "cards",
-      "bent": "-",
+      "bent": "e",
       "cards": [
         140,
         141

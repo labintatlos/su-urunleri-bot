@@ -1585,7 +1585,16 @@ def show_penalty(q, pid, context):
     text = f'⚖️ <b>{esc(row["violation"])}</b>\n'
     if row['option_text']:
         text += f'<b>Seçenek:</b> {esc(row["option_text"])}\n'
-    text += f'\n💰 <b>Temel/tekil Excel tutarı: {money(row["base_ipc"])}</b>\n'
+    card = PENALTY_CARDS.get(row['id'], {})
+    if card.get('amount_range'):
+        low, high = card['amount_range']
+        text += f'\n💰 <b>Kanun aralığı: {money(low)} – {money(high)}</b>\n'
+    elif row['base_ipc'] is None:
+        text += f'\n💰 <b>{esc(card.get("amount_note") or "Tutar belirtilmemiş")}</b>\n'
+    elif card.get('origin') == 'kanun':
+        text += f'\n💰 <b>Kanundan hesaplanan tutar: {money(row["base_ipc"])}</b>\n'
+    else:
+        text += f'\n💰 <b>Temel/tekil Excel tutarı: {money(row["base_ipc"])}</b>\n'
     if amounts:
         text += '💰 <b>Excel’deki özel tutarlar:</b>\n'
         for label, amount in amounts.items():
@@ -1601,7 +1610,8 @@ def show_penalty(q, pid, context):
         f'\n📜 Kanun: {esc(row["law"])} | Yönetmelik: {esc(row["regulation"])} | Tebliğ: {esc(row["teblig"])} | 36. md: {esc(row["art36"])}\n'
         f'🐟 Ürüne el koyma: {esc(row["product_seizure"])}\n'
         f'🪢 İstihsal vasıtası: {esc(row["means_seizure"])}\n'
-        f'📊 <b>Excel kaynak satırı: {row["source_row"]}</b>'
+        + (f'📊 <b>Excel kaynak satırı: {row["source_row"]}</b>' if row['source_row']
+           else '📊 <b>Kaynak: Kanun 36 — 08 tablosunda ayrı kalem yok</b>')
     )
     if row['repeat_text']:
         text += f'\n🔁 {esc(row["repeat_text"])}'
@@ -1609,8 +1619,10 @@ def show_penalty(q, pid, context):
         text += f'\n📄 {esc(row["license_action"])}'
     if row['notes']:
         text += f'\n📝 {esc(row["notes"])}'
+    if card.get('law_check'):
+        text += f'\n\n⚖️ <b>Mevzuat sağlaması:</b> {esc(card["law_check"]["text"])}'
     text += (
-        '\n\n⚠️ <i>Tutarlar ve Excel’deki el koyma/tekrar notları, yüklediğiniz ceza tablosundaki haliyle gösterilir. '
+        '\n\n⚠️ <i>Tutarlar 08 numaralı ceza tablosundandır ve Kanun 36 ile sağlanmıştır; Kanuna aykırı bulunan değerler gerekçesiyle düzeltilmiş, tabloda olmayan hükümler Kanundan eklenmiştir. '
         'Sistem farklı katsayıları kendiliğinden üst üste çarpmaz. Somut olayın maddi unsurları ve asli mevzuat maddesi ayrıca kontrol edilmelidir.</i>'
     )
 
@@ -2087,8 +2099,11 @@ def _amount_key(rng):
 
 def _sanction_amount(card, rng, purse_seine):
     amounts = card.get('amounts') or {}
+    if card.get('amount_range'):
+        low, high = card['amount_range']
+        return f'{money(low)} – {money(high)} (Kanun aralığı)'
     if not amounts:
-        return money(card.get('base_ipc'))
+        return money(card.get('base_ipc')) if card.get('base_ipc') is not None else card.get('amount_note') or '—'
     key = _amount_key(rng)
     parts = []
     if key and key in amounts:
@@ -2144,8 +2159,13 @@ def sanction_profile_rows(name, rng, purse_seine):
             continue
         situation = card['violation'] + (f' — {card["option"]}' if card.get('option') else '')
         follow_up = ' · '.join(x for x in (card.get('repeat'), card.get('license_action')) if x)
+        amount = _sanction_amount(card, rng, purse_seine)
+        if any(key.startswith(('amounts', 'base_ipc')) for key in card.get('excel_original', {})):
+            amount += ' · 🛠️ Kanun 36’ya göre düzeltildi'
+        elif card.get('origin') == 'kanun':
+            amount += ' · ➕ Kanundan eklendi'
         rows.append({'Muhatap / durum': situation, 'Dayanak': _sanction_basis(card),
-                     'İdari para cezası': _sanction_amount(card, rng, purse_seine),
+                     'İdari para cezası': amount,
                      'El koyma': _sanction_seizure(card), 'Tekrar / ruhsat': follow_up or '—'})
     return rows
 
@@ -2206,7 +2226,8 @@ def render_sanction_summary(context, source):
         parts.append('\n\n'.join(block))
     if unchecked:
         parts.append(f'<i>{unchecked} madde kontrol edilmediği için özete alınmadı.</i>')
-    parts.append('⚠️ <i>Tutarlar 08 numaralı güncel idari ceza uygulama tablosundandır. Muhatap (kişi / gemi sahibi), '
+    parts.append('⚠️ <i>Tutarlar 08 numaralı güncel idari ceza uygulama tablosundandır ve Kanun 36 ile sağlanmıştır; '
+                 'Kanuna aykırı bulunan tablo değerleri gerekçesiyle düzeltilmiştir. Muhatap (kişi / gemi sahibi), '
                  'tekrar durumu, maddi unsurlar ve tutarın geçerli yılı somut olayda doğrulanmalıdır; bu özet nihai '
                  'yaptırım kararı değildir. Kalemler aynı olaya birlikte uygulanmayabileceğinden toplam tutar gösterilmez.</i>')
     back = ('↩️ Kontrol Sonucuna Dön', 'guide:result') if source == 'guide' else ('↩️ Denetim Sonucuna Dön', 'audit:result')
