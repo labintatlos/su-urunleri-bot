@@ -1,5 +1,9 @@
 ﻿# Sürüm Notları
 
+## 6.0.28
+* **Canlı kontrol:** `/health` yanıtı eklenti sürümünü de bildirir; canlı kurulumun doğrulanması için kullanılır.
+* **Geliştirme:** Proje becerisi `canli-kontrol` (`.claude/skills/`) ve dağıtım adımlarına canlı doğrulama eklendi; betik ve erişim bilgileri yalnızca yerel bilgisayarda durur.
+
 ## 6.0.27
 * **Kaynaklar:** `SU ÜRÜNLERİ KAYNAKLAR (MARKDOWN)/` klasörü depodan çıkarıldı; test ve veri üretimi klasör yokken paket kopyasıyla çalışır, paket kopyasında kısıtlı yayın işareti denetlenir.
 * **Föyler:** Kontrol listesi yayınlarıyla çapraz doğrulanan 13 madde mevcut föylere eklendi (sonar, IMO, kıyı sürütme ağları, akivades/kidonya eleği, yabancı amatör belgeleri vb.); turizm föyünün madde bağlantıları 6/1 Md.48'e düzeltildi.

@@ -83,7 +83,11 @@ genişliklerinde bakılmalıdır.
 4. Home Assistant'ta eklenti mağazasını yenile ve güncellemeyi kur
    (`yerel/ha_update.py` bunu yapar; yoksa kullanıcıdan **Ayarlar → Eklentiler →
    Eklenti Mağazası → ⋮ → Güncellemeleri kontrol et** istenir).
-5. Canlı sitede `/health` ve değişen davranışı kontrol et.
+5. Canlı sistemi `python yerel/canli_kontrol.py` ile doğrula (6.0.28): HA kurulu
+   sürüm, `/health` sürümü, güvenlik başlıkları, konsol hataları ve —
+   `SITE_KULLANICI`/`SITE_SIFRE` varsa — oturumlu föy/denetim/çizelge akışları.
+   Ayrıntı: `.claude/skills/canli-kontrol/SKILL.md`. Elle keşif için
+   `playwright-cli` (npm `@playwright/cli`) kuruludur.
 
 ## Bilinen kısıtlar
 

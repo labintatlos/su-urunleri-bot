@@ -48,6 +48,19 @@ MAX_BODY_BYTES = 64 * 1024
 MAX_TEXT_LENGTH = 4000
 ERROR_TEXT = '⚠️ Bir hata oluştu. Lütfen tekrar deneyin veya Ana Menü ile başa dönün.'
 
+
+def _app_version():
+    """/health yanıtında gösterilen eklenti sürümü (canlı kurulumu doğrulamak için)."""
+    try:
+        text = (Path(__file__).parent / 'config.yaml').read_text(encoding='utf-8')
+    except OSError:
+        return None
+    match = re.search(r'^version:\s*"([^"]+)"', text, re.M)
+    return match.group(1) if match else None
+
+
+APP_VERSION = _app_version()
+
 throttle = accounts.LoginThrottle()
 _user_locks = defaultdict(threading.Lock)
 _user_locks_guard = threading.Lock()
@@ -315,7 +328,7 @@ class Handler(BaseHTTPRequestHandler):
         if path.startswith('/static/'):
             return self.send_static(path[len('/static/'):])
         if path == '/health':
-            return self.send_json(200, {'status': 'ok'})
+            return self.send_json(200, {'status': 'ok', 'version': APP_VERSION})
         if path == '/api/session':
             account, via = self.identity()
             return self.send_json(200, {
