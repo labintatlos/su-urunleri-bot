@@ -323,8 +323,6 @@ class Handler(BaseHTTPRequestHandler):
     def route_get(self, path):
         if path in ('/', '/index.html'):
             return self.send_static('index.html')
-        if path == '/sw.js':
-            return self.send_static('sw.js')
         if path.startswith('/static/'):
             return self.send_static(path[len('/static/'):])
         if path == '/health':

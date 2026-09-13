@@ -12,15 +12,6 @@
 <link rel="stylesheet" href="static/style.css">
 <link rel="stylesheet" href="static/refresh.css">
 <script src="static/app.js" defer></script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch((error) => {
-        console.error('ServiceWorker registration failed:', error);
-      });
-    });
-  }
-</script>
 </head>
 <body>
 <div id="boot" class="boot"><span class="spinner"></span></div>

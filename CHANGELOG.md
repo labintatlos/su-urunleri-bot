@@ -1,5 +1,8 @@
 ﻿# Sürüm Notları
 
+## 6.0.29
+* **Düzeltme:** Hiç çalışmayan service worker kaydı kaldırıldı. Kayıt sayfaya gömülü betik olduğu için sitenin güvenlik politikası (CSP) tarafından her açılışta engelleniyor ve konsola hata düşüyordu. Site her ekran için sunucuya ihtiyaç duyduğundan çevrimdışı önbellek gerçek bir kullanım sağlamıyor, Home Assistant panelinin alt yolunda da yanlış adrese gidiyordu. Ana ekrana ekleme (manifest) korunur.
+
 ## 6.0.28
 * **Canlı kontrol:** `/health` yanıtı eklenti sürümünü de bildirir; canlı kurulumun doğrulanması için kullanılır.
 * **Geliştirme:** Proje becerisi `canli-kontrol` (`.claude/skills/`) ve dağıtım adımlarına canlı doğrulama eklendi; betik ve erişim bilgileri yalnızca yerel bilgisayarda durur.
