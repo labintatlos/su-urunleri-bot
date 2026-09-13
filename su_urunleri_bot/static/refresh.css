@@ -89,6 +89,11 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outlin
 .intro-features { display: grid; gap: 18px; margin-top: 36px; font-size: 12px; color: #84d7c5; z-index: 1; }
 .intro-features b { color: #e4eeee; margin-left: 14px; font-weight: 500; }
 .intro-footer { font-size: 10px; letter-spacing: .14em; margin-top: 65px; color: #a7c6ce; }
+/* Geliştirici imzası: alt bilginin sağında ve giriş ekranında; göze batmadan fark edilir. */
+.intro-developer { position: relative; z-index: 1; margin-top: 8px; font-size: 10px; letter-spacing: .14em; color: #84d7c5; }
+.stage-footer .developer b { font-weight: 650; color: var(--brand-2); }
+.auth-developer { display: none; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; font-size: 11px; color: var(--muted); }
+.auth-developer b { font-weight: 650; color: var(--brand-2); }
 .auth-card { max-width: 450px; padding: 34px; border: 1px solid var(--line); border-radius: 22px; }
 .auth-brand { padding-right: 44px; margin: 24px 0 32px; gap: 12px; }
 .auth-brand h1 { font-size: 24px; letter-spacing: -.04em; }
@@ -132,6 +137,7 @@ label input:not([type=checkbox]), label select, label textarea { background: var
   .auth { grid-template-columns: 1fr; padding: 28px max(20px, env(safe-area-inset-right)) 28px max(20px, env(safe-area-inset-left)); gap: 24px; }
   .auth-intro { display: none; }
   .auth-card { padding: 28px; }
+  .auth-developer { display: block; }
   .home-stage .buttons { gap: 10px; }
   .tool-card { padding: 18px; gap: 12px; }
   .tool-name { font-size: 15px; }

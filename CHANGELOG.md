@@ -1,5 +1,8 @@
 ﻿# Sürüm Notları
 
+## 6.0.31
+* **Arayüz:** Her sayfanın alt bilgisine ve giriş ekranına sade bir geliştirici imzası eklendi: "Geliştirici: Aykut Cem CİVELEK". Masaüstünde giriş ekranının sol panelinde, telefonda giriş kartının altında görünür.
+
 ## 6.0.30
 * **İşlem geçmişi:** Düğme basışları (geri, ana menü, sayfa, cevaplar) ve yazılan her metin artık kaydedilmez. Yalnızca anlamlı olaylar tutulur: giriş/çıkış, var olan hesaba hatalı giriş ve kilitlenme, şifre ve kişi işlemleri, denetim başlatma/sonuç (bulgu sayısıyla), föy başlatma/tamamlama (uygunsuzluk sayısıyla), kontrol çizelgesi, arama (sonuç sayısıyla), hukuki değerlendirme, yarım denetim, sorun bildirimi. Her kayıt kategori (Denetim, Arama, Hukuki, Oturum, Güvenlik, Yönetim, Destek) ve önem düzeyiyle (bilgi, uyarı, kritik) saklanır; eski kayıtlar otomatik sınıflandırılır.
 * **Yönetici paneli:** Dikkat gerektirenler (onay bekleyen üyelik, şifre talebi, açık sorun, hatalı giriş), bugün/7 gün özet tablosu, son önemli işlemler; kategori ve kişi süzgeçli, sayfalı işlem geçmişi; personel tablosu (son giriş, 7 günlük denetim, bulgu ve arama sayıları); kişi özeti; eski gezinme kayıtlarını onayla temizleme.
