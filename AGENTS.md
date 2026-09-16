@@ -135,6 +135,15 @@ push ve kullanıcı onayıyla ilerler. Durumu adım bitince burada güncelleyin.
 | 16 | Hukuki değerlendirme korpusuna 09 Saha Uygulama Esasları belgesi | ✅ 6.0.27 |
 | 17 | Ceza dosyasının Kanun 36 / Yönetmelik / Tebliğ sağlaması, düzeltmeler ve eksik hükümler (`tools/verify_penalties.py`) | ✅ 6.0.33 |
 
+Ara adım (6.0.40): Saha odaklı arayüz yenilendi. Ana sayfa `home-overview`
+ve `app.js` içindeki `HOME_GROUPS` ile denetim araçları, saha rehberleri ve
+değerlendirme/yönetim bölümlerine ayrılır; sunucudan gelen bilinmeyen yeni
+düğmeler de gösterilir. `refresh.css` açık/koyu tema ve duyarlı yerleşimi taşır.
+Sunucudaki 10 karakterlik adım göstergeleri tarayıcıda erişilebilir `progress`
+öğesine çevrilir; soru ve cevap verileri değişmez. Statik dosya bağlantılarındaki
+`?v=` değeri, birlikte değişen HTML/JS/CSS'in eski önbellekle karışmasını önler;
+bu dosyalar birlikte değiştiğinde yeni sürümle güncellenmelidir.
+
 Ara adım (6.0.32): Kullanıcının isteğiyle **Yaptırım Özeti** eklendi. Her föy
 maddesi, denetim sorusu (etiketiyle) ve otomatik uyarı (`build_context_flags`
 içindeki `key=`) `tools/build_penalty_links.py` ile ceza kartlarına bağlanır ve

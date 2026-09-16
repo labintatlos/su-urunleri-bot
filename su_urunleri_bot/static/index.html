@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google" content="notranslate">
-<meta name="theme-color" content="#102f3c">
-<title>Su Ürünleri Kolluk Asistanı</title>
+<meta name="theme-color" content="#ffffff">
+<title>Su Ürünleri Denetim Asistanı</title>
 <link rel="icon" href="static/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="static/manifest.json">
-<script src="static/theme.js"></script>
-<link rel="stylesheet" href="static/style.css">
-<link rel="stylesheet" href="static/refresh.css">
-<script src="static/app.js" defer></script>
+<script src="static/theme.js?v=6.0.40"></script>
+<link rel="stylesheet" href="static/style.css?v=6.0.40">
+<link rel="stylesheet" href="static/refresh.css?v=6.0.40">
+<script src="static/app.js?v=6.0.40" defer></script>
 </head>
 <body>
 <div id="boot" class="boot"><span class="spinner"></span></div>
@@ -19,10 +19,10 @@
 <section id="auth" class="auth" hidden>
   <aside class="auth-intro">
     <span class="eyebrow">SU ÜRÜNLERİ · DENETİM ASİSTANI</span>
-    <h2>Sahada doğru bilgi.<br>Her adımda rehberlik.</h2>
-    <p>Denetim, mevzuat ve tür bilgisi.<br>Göreviniz için gereken kaynaklar tek yerde.</p>
-    <div class="intro-features"><span>01 <b>Yönlendirilmiş denetim</b></span><span>02 <b>Mevzuat ve ceza rehberi</b></span><span>03 <b>Tür ve tekne kılavuzları</b></span></div>
-    <span class="intro-footer">SU ÜRÜNLERİ KOLLUK ASİSTANI</span>
+    <h2>Denetimin her<br>adımında yanınızda.</h2>
+    <p>Denizden içsuya, tekneden tesise.<br>Sahada ihtiyaç duyduğunuz kontrol föyleri,<br>mevzuat ve tür bilgileri tek çalışma alanında.</p>
+    <div class="intro-features"><span>01 <b>Denetim alanını ve faaliyeti seçin</b></span><span>02 <b>Kontrol maddelerini adım adım izleyin</b></span><span>03 <b>Sonuçları ve dayanakları inceleyin</b></span></div>
+    <span class="intro-footer">SU ÜRÜNLERİ DENETİM ASİSTANI</span>
     <span class="intro-developer">GELİŞTİRİCİ · AYKUT CEM CİVELEK</span>
   </aside>
   <div class="auth-card">
@@ -32,7 +32,7 @@
     </button>
     <div class="auth-brand">
       <img src="static/icon.svg" alt="" class="auth-logo">
-      <div><h1>Su Ürünleri</h1><p>Kolluk Asistanı</p></div>
+      <div><h1>Su Ürünleri</h1><p>Denetim Asistanı</p></div>
     </div>
 
     <div id="auth-tabs" class="auth-tabs" role="tablist" hidden>
@@ -41,8 +41,8 @@
     </div>
 
     <form id="login-form" hidden>
-      <h2>Tekrar hoş geldiniz</h2>
-      <p class="note">Devam etmek için hesabınıza giriş yapın.</p>
+      <h2>Çalışma alanınıza giriş yapın</h2>
+      <p class="note">Denetim araçları ve saha rehberleri için hesabınızı kullanın.</p>
       <p id="ingress-note" class="note" hidden>Home Assistant hesabınız bu sitedeki bir kişiyle henüz eşleşmedi. Bir kez site kullanıcı adı ve şifrenizle girin; buradan sonraki açılışlarda şifre sorulmaz.</p>
       <label>Kullanıcı adı<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
       <label>Şifre<input name="password" type="password" autocomplete="current-password" required></label>
@@ -104,7 +104,7 @@
   <header class="topbar">
     <button class="brand" id="home-btn" type="button" title="Ana Menü" aria-label="Ana menüye dön">
       <img src="static/icon.svg" alt="" class="brand-logo">
-      <span class="brand-text"><b>Su Ürünleri</b><small>Kolluk Asistanı</small></span>
+      <span class="brand-text"><b>Su Ürünleri</b><small>Denetim Asistanı</small></span>
     </button>
     <div id="top-slot" class="top-slot">
       <form id="composer" class="composer" autocomplete="off">
@@ -130,12 +130,23 @@
   </header>
 
   <main class="stage">
-    <div class="page-heading"><span class="eyebrow">SU ÜRÜNLERİ DENETİMİ</span><span class="page-context" id="page-context">Denetim çalışma alanı</span></div>
+    <div class="page-heading"><span class="eyebrow">SAHA ÇALIŞMA ALANI</span><button type="button" class="context-home" id="context-home" hidden>← Ana sayfa</button><span class="page-context" id="page-context">Ana sayfa</span></div>
+    <section id="home-overview" class="home-overview" aria-labelledby="workspace-title" hidden>
+      <div class="home-intro">
+        <span class="eyebrow">DENİZ · İÇSU · DALYAN · TESİS</span>
+        <h1 id="workspace-title">Denetim için hazır.</h1>
+        <p>Kontrole başlayın veya ihtiyaç duyduğunuz saha rehberine ulaşın.</p>
+        <div id="home-search-examples" class="search-examples" aria-label="Hızlı arama örnekleri"><span>Hızlı ara</span><button type="button" data-query="hamsi">Hamsi ↗</button><button type="button" data-query="ruhsatsız">Ruhsatsız ↗</button><button type="button" data-query="BAGİS">BAGİS ↗</button></div>
+      </div>
+      <svg class="chart-mark" viewBox="0 0 260 160" fill="none" aria-hidden="true" focusable="false">
+        <g stroke="currentColor" opacity=".2"><path d="M0 40h260M0 80h260M0 120h260M40 0v160M80 0v160M120 0v160M160 0v160M200 0v160M240 0v160"/><circle cx="178" cy="79" r="64"/><circle cx="178" cy="79" r="46"/><path d="M0 142c38-44 61 5 94-27s28-76 72-65 44-26 94-31M0 155c45-42 65 0 100-26s24-70 67-61 42-29 93-29"/></g>
+        <g stroke="currentColor" stroke-width="1.5"><path d="m165 92 9-43 9 17 20 8-38 18Z"/><path d="m165 92 18-26M178 7v13M178 138v13M106 79h13M237 79h13"/><path d="M30 113c13-19 26-2 41-18s14-33 36-35" stroke-dasharray="3 6"/><circle cx="30" cy="113" r="4"/><circle cx="108" cy="60" r="4"/></g>
+      </svg>
+    </section>
     <article id="screen" class="screen" aria-live="polite"></article>
     <div id="inline-slot" class="inline-slot"></div>
-    <h2 id="tools-title" class="tools-title" hidden>Çalışma alanınız <span>Bir işlem seçerek başlayın</span></h2>
     <nav id="buttons" class="buttons" aria-label="İşlemler"></nav>
-    <footer class="stage-footer"><img src="static/icon.svg" alt="" width="22" height="22"><span>Su Ürünleri Kolluk Asistanı</span><span class="developer">Geliştirici: <b>Aykut Cem CİVELEK</b></span></footer>
+    <footer class="stage-footer"><img src="static/icon.svg" alt="" width="22" height="22"><span>Su Ürünleri Denetim Asistanı</span><span class="developer">Geliştirici: <b>Aykut Cem CİVELEK</b></span></footer>
   </main>
 </div>
 

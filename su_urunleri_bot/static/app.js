@@ -127,6 +127,7 @@
     place: 'Yer, il, koy veya saha adını yazın…',
     lawsearch: 'Aranacak kelimeyi yazın…',
     audit_date: 'GG.AA.YYYY — örn. 20.05.2026',
+    audit_location: 'Yer, il, koy veya saha adını yazın…',
     guide_measure: 'Değeri yazın…',
   };
 
@@ -136,6 +137,10 @@
     ui.composer.classList.toggle('multiline', mode === 'ai_analysis');
     (inline ? ui.inlineSlot : ui.topSlot).append(ui.composer);
     ui.input.placeholder = inline ? MODE_PLACEHOLDER[mode] : searchPlaceholder();
+    ui.input.setAttribute('aria-label', inline ? MODE_PLACEHOLDER[mode] : 'Tür, ceza veya mevzuat ara');
+    const send = ui.composer.querySelector('.send');
+    send.setAttribute('aria-label', inline ? 'Cevabı gönder' : 'Ara');
+    send.replaceChildren(toolIcon(inline ? 'arrowRight' : 'search'));
     ui.input.inputMode = /length/.test(mode || '') ? 'decimal' : 'text';
     ui.input.rows = mode === 'ai_analysis' ? 6 : 1;
     ui.input.value = '';
@@ -155,8 +160,8 @@
   const viewKey = (view) => JSON.stringify([view.blocks, view.buttons, view.mode || null]);
 
   const HOME_TOOLS = {
-    'guide:menu': ['Kontrol föyleri', 'Tekne türüne özel maddeleri adım adım kontrol edin.', 'ship'],
-    'audit:start': ['Yönlendirilmiş kontrol', 'Bölge, faaliyet ve av bilgileriyle denetiminizi başlatın.', 'compass'],
+    'guide:menu': ['TEKNEYE ÖZEL KONTROL', 'Tekne veya av yöntemini seçin, kontrol föyünü açın.', 'ship'],
+    'audit:start': ['ADIM ADIM DENETİM', 'Alanı ve faaliyeti seçin. Duruma uygun sorularla ilerleyin.', 'compass'],
     'ceza:menu': ['İhlaller ve yaptırımlar', 'Ceza tutarlarına, işlemlere ve dayanak maddelerine ulaşın.', 'book'],
     'turcizelge:menu': ['Tür bilgileri', 'Asgari boy, miktar ve zaman yasaklarını inceleyin.', 'fish'],
     'vessel:menu': ['Gemi ve donanım', 'Ruhsat, belge ve izleme sistemi kontrollerini açın.', 'ship'],
@@ -166,6 +171,107 @@
     'ai:start': ['Olay değerlendirmesi', 'Olayı anlatın; ilgili mevzuatla birlikte değerlendirin.', 'scales'],
     'admin:panel': ['Yönetim', 'Kullanıcılar, işlem kayıtları ve sorun bildirimleri.', 'shield'],
   };
+
+  const HOME_GROUPS = [
+    ['task-section', 'Denetim araçları', 'Görevinize uygun başlangıcı seçin.', ['audit:start', 'guide:menu']],
+    ['reference-section', 'Saha rehberleri', 'Kontrol sırasında ihtiyaç duyduğunuz bilgiler.',
+      ['ceza:menu', 'turcizelge:menu', 'vessel:menu', 'field:Kolluk İşlemi', 'field:İçsu/Dalyan', 'field:Tesis/Sağlık']],
+    ['support-section', 'Değerlendirme ve yönetim', '', ['ai:start', 'admin:panel']],
+  ];
+
+  function actionButton(button, isHome) {
+    const node = el('button', `btn ${tone(button.text)}`.trim(), button.text);
+    node.type = 'button';
+    node.dataset.action = button.data;
+    const tool = isHome && HOME_TOOLS[button.data];
+    if (tool) {
+      node.classList.add('tool-card');
+      if (button.data === 'audit:start') node.classList.add('featured');
+      if (button.data === 'guide:menu') node.classList.add('guide-card');
+      const icon = el('span', 'tool-icon');
+      icon.append(toolIcon(tool[2]));
+      const copy = el('span', 'tool-copy');
+      copy.append(el('small', 'tool-category', tool[0]),
+        el('span', 'tool-name', button.text.replace(/^[^\p{L}\p{N}]+/u, '')),
+        el('span', 'tool-description', tool[1]));
+      const arrow = el('span', 'tool-arrow', '→');
+      arrow.setAttribute('aria-hidden', 'true');
+      node.replaceChildren(icon, copy, arrow);
+    } else {
+      const match = iconFor(button.text);
+      if (match) {
+        const icon = el('span', 'btn-icon');
+        icon.append(toolIcon(match.name));
+        node.replaceChildren(icon, document.createTextNode(match.rest));
+      }
+    }
+    // domDiff düğmeyi yeniden kullanabilir: callback daima güncel veri özniteliğinden okunur.
+    node.addEventListener('click', (event) => press(event.currentTarget.dataset.action));
+    return node;
+  }
+
+  function homeButtons(nav, rows) {
+    const buttons = rows.flat();
+    const used = new Set();
+    const drafts = buttons.filter(button => ['insp:resume', 'insp:discard'].includes(button.data));
+    if (drafts.length) {
+      const section = el('section', 'resume-section');
+      const heading = el('h2', '', 'Yarım kalan denetiminiz var');
+      heading.id = 'resume-title';
+      section.setAttribute('aria-labelledby', heading.id);
+      const actions = el('div', 'resume-actions');
+      for (const button of drafts) {
+        const node = actionButton(button, false);
+        node.classList.add(button.data === 'insp:resume' ? 'resume-button' : 'discard-button');
+        actions.append(node);
+        used.add(button.data);
+      }
+      section.append(heading, actions);
+      nav.append(section);
+    }
+    for (const [className, title, description, keys] of HOME_GROUPS) {
+      const items = keys.map(key => buttons.find(button => button.data === key)).filter(Boolean);
+      if (!items.length) continue;
+      const section = el('section', `tool-section ${className}`);
+      const heading = el('div', 'section-heading');
+      const h2 = el('h2', '', className === 'support-section' && items.length === 1 ? 'Olay değerlendirmesi' : title);
+      h2.id = `${className}-title`;
+      section.setAttribute('aria-labelledby', h2.id);
+      heading.append(h2);
+      if (description) heading.append(el('p', '', description));
+      const grid = el('div', 'tool-grid');
+      for (const button of items) {
+        grid.append(actionButton(button, true));
+        used.add(button.data);
+      }
+      section.append(heading, grid);
+      nav.append(section);
+    }
+    // Sunucunun ileride eklediği bir işlem, gruplamada tanımlı olmasa da kaybolmaz.
+    for (const button of buttons.filter(button => !used.has(button.data))) nav.append(actionButton(button, true));
+  }
+
+  function drawProgress(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const text of nodes) {
+      if (text.parentElement.closest('table, code, pre')) continue;
+      const match = /[▰▱]{10}\s+(\d+)\/(\d+)/.exec(text.nodeValue);
+      if (!match) continue;
+      const value = Number(match[1]), total = Number(match[2]);
+      if (!total || value > total) continue;
+      const meter = el('div', 'screen-progress');
+      const label = `Adım ${value} / ${total}`;
+      const bar = el('progress');
+      bar.max = total;
+      bar.value = value;
+      bar.setAttribute('aria-label', label);
+      meter.append(el('span', 'progress-label', label), bar);
+      text.replaceWith(document.createTextNode(text.nodeValue.slice(0, match.index).replace(/\n$/, '')),
+        meter, document.createTextNode(text.nodeValue.slice(match.index + match[0].length).replace(/^\n/, '')));
+    }
+  }
   const ICON_PATHS = {
     ship: 'M4 14l8 5 8-5-2 6H6l-2-6Zm3 1V8h10v7M10 8V4h4v4M2 22h20',
     compass: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM16 8l-3 5-5 3 3-5 5-3Z',
@@ -269,6 +375,15 @@
     });
   }
 
+  const tableResizeObserver = new ResizeObserver(entries => {
+    for (const { target } of entries) {
+      const overflowing = target.scrollWidth > target.clientWidth + 1;
+      const hint = target.closest('.table-wrap')?.querySelector('.table-hint');
+      if (hint) hint.hidden = !overflowing;
+      target.setAttribute('aria-label', overflowing ? 'Rehber tablosu; diğer sütunlar için yatay kaydırın' : 'Rehber tablosu');
+    }
+  });
+
   function attachTableFilters(root) {
     for (const table of [...root.querySelectorAll('table')]) {
       if (!table.tBodies[0]) continue;
@@ -335,7 +450,17 @@
     }
     for (const attr of [...source.attributes]) {
       if (target.getAttribute(attr.name) !== attr.value) {
-        target.setAttribute(attr.name, attr.value);
+        if (attr.name === 'style') {
+          // Sütun genişlikleri güvenilir JS tarafından hesaplanır. style
+          // özniteliğini metin olarak kopyalamak CSP'ye takılır; DOM stil
+          // özelliklerini eşitlemek güvenlik politikasını korur.
+          for (const property of [...target.style]) {
+            if (!source.style.getPropertyValue(property)) target.style.removeProperty(property);
+          }
+          for (const property of [...source.style]) {
+            target.style.setProperty(property, source.style.getPropertyValue(property), source.style.getPropertyPriority(property));
+          }
+        } else target.setAttribute(attr.name, attr.value);
       }
     }
   }
@@ -373,54 +498,46 @@
     const isHome = current.buttons.flat().some(button => button.data === 'audit:start')
       && current.buttons.flat().some(button => button.data === 'ceza:menu');
     $('.stage').classList.toggle('home-stage', isHome);
-    $('#tools-title').hidden = !isHome;
-    $('#page-context').textContent = isHome ? 'Ana sayfa' : 'Denetim çalışma alanı';
+    $('#home-overview').hidden = !isHome;
+    $('#context-home').hidden = isHome;
 
     const newScreen = el('article', ui.screen.className);
     newScreen.id = ui.screen.id;
+    newScreen.setAttribute('aria-live', 'polite');
     for (const block of current.blocks) {
       const div = el('div', 'block');
       div.append(sanitize(block));
       drawRules(div);
       attachTableFilters(div);
       swapHeadingIcon(div);
+      drawProgress(div);
       newScreen.append(div);
     }
+    const title = newScreen.querySelector('.block > b, .block > strong');
+    if (title) {
+      title.setAttribute('role', 'heading');
+      title.setAttribute('aria-level', '1');
+    }
+    const context = isHome ? 'Ana sayfa' : title?.textContent.replace(/^[^\p{L}\p{N}]+/u, '').trim() || 'Denetim çalışma alanı';
+    $('#page-context').textContent = context;
+    $('#page-context').title = context;
+    $('.stage').classList.toggle('reading-stage', !isHome && Boolean(newScreen.querySelector('table')));
+    tableResizeObserver.disconnect();
     domDiff(ui.screen, newScreen);
-    ui.screen.hidden = current.blocks.length === 0;
+    ui.screen.hidden = isHome || current.blocks.length === 0;
+    for (const scroll of ui.screen.querySelectorAll('.table-scroll')) tableResizeObserver.observe(scroll);
 
     const newButtons = el('nav', ui.buttons.className);
     newButtons.id = ui.buttons.id;
-    for (const row of current.buttons) {
+    newButtons.setAttribute('aria-label', 'İşlemler');
+    if (isHome) homeButtons(newButtons, current.buttons);
+    else for (const row of current.buttons) {
       const line = el('div', 'row');
       line.dataset.count = String(row.length);
+      if (row.every(button => /^(guide:ans:|audit:quick:ans:)/.test(button.data))) line.classList.add('answer-row');
+      if (row.every(button => tone(button.text) === 'nav')) line.classList.add('navigation-row');
       for (const button of row) {
-        const node = el('button', `btn ${tone(button.text)}`.trim(), button.text);
-        node.dataset.action = button.data;
-        const tool = isHome && HOME_TOOLS[button.data];
-        if (tool) {
-          node.classList.add('tool-card');
-          if (button.data === 'audit:start') node.classList.add('featured');
-          const icon = el('span', 'tool-icon');
-          icon.append(toolIcon(tool[2]));
-          const copy = el('span', 'tool-copy');
-          copy.append(el('small', 'tool-category', tool[0]),
-            el('span', 'tool-name', button.text.replace(/^[^\p{L}\p{N}]+/u, '')),
-            el('span', 'tool-description', tool[1]));
-          const arrow = el('span', 'tool-arrow', '↗');
-          arrow.setAttribute('aria-hidden', 'true');
-          node.replaceChildren(icon, copy, arrow);
-        } else {
-          const match = iconFor(button.text);
-          if (match) {
-            const icon = el('span', 'btn-icon');
-            icon.append(toolIcon(match.name));
-            node.replaceChildren(icon, document.createTextNode(match.rest));
-          }
-        }
-        node.type = 'button';
-        node.addEventListener('click', (e) => press(e.currentTarget.dataset.action));
-        line.append(node);
+        line.append(actionButton(button, false));
       }
       newButtons.append(line);
     }
@@ -794,6 +911,19 @@
   });
 
   $('#home-btn').addEventListener('click', () => press('menu'));
+  $('#context-home').addEventListener('click', () => press('menu'));
+  $('#home-search-examples').addEventListener('click', (event) => {
+    const button = event.target.closest('[data-query]');
+    if (!button || busy) return;
+    const text = button.dataset.query;
+    ui.input.value = text;
+    // Tarayıcı Geri ile ana sayfaya dönmüş olabilir; sunucuda bekleyen bir
+    // denetim cevabı olsa da bu kontrol her zaman genel arama yapmalıdır.
+    request(async () => {
+      await api('POST', 'api/action', { data: 'menu' });
+      return api('POST', 'api/text', { text });
+    });
+  });
   narrowScreen.addEventListener('change', () => {
     if (!ui.composer.classList.contains('inline')) ui.input.placeholder = searchPlaceholder();
   });

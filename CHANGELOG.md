@@ -1,5 +1,12 @@
 ﻿# Sürüm Notları
 
+## 6.0.40
+* **Saha çalışma alanı:** Denetime Başla ve tekne kontrol föyleri öne alındı; ceza, tür ve saha rehberleri gruplandı. Yarım kalan denetimler ayrı bir bölümde, hızlı arama örnekleri tek dokunuşla açılır.
+* **Görünüm:** Giriş, üst çubuk, kartlar ve tablolar açık/koyu temada yenilendi. Telefon, tablet ve masaüstüne göre düzenlenen daha sıkı rehber kartları ve geniş tablo alanı.
+* **Denetim ekranları:** Adım sayısını gösteren erişilebilir ilerleme çubuğu, ekran başlığına göre konum bilgisi, belirgin yanıt ve gezinme düğmeleri. İçsu konumu giriş alanı sorunun yanında gösterilir.
+* **Uyumluluk:** Ekranların erişilebilirlik etiketleri yenilemede korunur. Hızlı arama, tarayıcıyla geri dönüldüğünde de arama yapar; arayüz dosyaları sürüm bilgisiyle yüklenir.
+* **Tablolar ve çıktı:** Tablo geçişlerinde sütun genişliklerinin CSP tarafından engellenmesi düzeltildi. Koyu temada da kontrol çizelgeleri açık zemin ve siyah metinle yazdırılır.
+
 ## 6.0.36
 * **Arayüz:** "Excel Ham Satır" düğmesi her yerden kaldırıldı (ceza kartı, föy yaptırım araması ve ceza araması sonuçları).
 
@@ -53,4 +60,3 @@
 * **Offline:** Çevrimdışı (offline) kullanım için PWA Service Worker eklendi.
 * **Sunucu:** Asenkron syncio HTTP sunucusuna geçildi.
 * **CI/CD:** Otomatik test altyapısı (GitHub Actions) kuruldu.
-

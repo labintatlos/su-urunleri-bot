@@ -1,11 +1,11 @@
 {
-  "name": "Su Ürünleri Kolluk Asistanı",
+  "name": "Su Ürünleri Denetim Asistanı",
   "short_name": "Su Ürünleri",
-  "description": "Sahada doğru bilgi. Her adımda rehberlik.",
+  "description": "Su ürünleri denetimi, kontrol föyleri, mevzuat ve tür rehberleri.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#102f3c",
-  "theme_color": "#102f3c",
+  "background_color": "#f4f5f1",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "icon.svg",
