@@ -94,6 +94,8 @@ def init():
         'approval_status': "TEXT NOT NULL DEFAULT 'approved'",
         'reviewed_at': 'TEXT',
         'reviewed_by': 'INTEGER',
+        # Test/kontrol hesabının işlemleri işlem geçmişine yazılmaz (6.0.39).
+        'is_test': 'INTEGER NOT NULL DEFAULT 0',
     }
     for name, definition in additions.items():
         if name not in columns:
@@ -162,6 +164,7 @@ def public(account):
         'position': account['position'] if 'position' in keys else None,
         'approval_status': account['approval_status'] if 'approval_status' in keys else 'approved',
         'reset_pending': bool(account['reset_pending']) if 'reset_pending' in keys else False,
+        'is_test': bool(account['is_test']) if 'is_test' in keys else False,
     }
 
 
@@ -302,7 +305,7 @@ def create_registration(username, first_name, last_name, email, phone, position,
 
 
 def update_account(account_id, acting, *, display_name=None, is_admin=None, is_active=None,
-                   password=None, approval_status=None):
+                   password=None, approval_status=None, is_test=None):
     """Yöneticinin bir kişide yaptığı değişiklik. Son yöneticinin yetkisi alınamaz."""
     row = get(account_id)
     if not row:
@@ -316,6 +319,8 @@ def update_account(account_id, acting, *, display_name=None, is_admin=None, is_a
         fields['is_admin'] = 1 if is_admin else 0
     if is_active is not None:
         fields['is_active'] = 1 if is_active else 0
+    if is_test is not None:
+        fields['is_test'] = 1 if is_test else 0
     if approval_status is not None:
         if approval_status not in ('approved', 'rejected'):
             raise AccountError('Geçersiz üyelik durumu.')
@@ -437,14 +442,18 @@ def _sign(payload):
 
 def issue_token(account, remember):
     lifetime = REMEMBER_SECONDS if remember else SHORT_SECONDS
-    payload = f'{account["id"]}.{int(time.time() + lifetime)}.{_fingerprint(account["password_hash"])}'
+    # Her girişe özel rastgele değer: aynı saniyede açılan iki oturum da ayrı
+    # belirteç alır. Site içi bildirimin "3 oturum" sayacı buna dayanır (6.0.39).
+    nonce = secrets.token_hex(4)
+    payload = f'{account["id"]}.{int(time.time() + lifetime)}.{_fingerprint(account["password_hash"])}.{nonce}'
     return f'{payload}.{_sign(payload)}', (lifetime if remember else None)
 
 
 def account_from_token(token):
     try:
         payload, signature = str(token).rsplit('.', 1)
-        account_id, expires, fingerprint = payload.split('.')
+        # 6.0.39 öncesi çerezlerde rastgele değer yoktur; onlar da geçerli kalır.
+        account_id, expires, fingerprint = payload.split('.')[:3]
         account_id, expires = int(account_id), int(expires)
     except ValueError:
         return None

@@ -155,6 +155,23 @@ python tools/rebuild_structured_data.py
 python tools/rebuild_structured_data.py --check
 ```
 
+## 📢 Site içi bildirimler
+
+Yönetici, hesap menüsündeki **Bildirim gönder** ile bütün kullanıcılara site içi
+bildirim yazabilir. Bir bildirim her kişiye **en fazla üç ayrı oturumda**
+gösterilir: kullanıcı kapatır, sonraki oturumda yeniden görür, üçüncüden sonra
+bir daha çıkmaz. Sayaç oturum çerezine bakar; sayfanın yenilenmesi yeni oturum
+sayılmaz (`db.pending_notices`). Yönetici bir bildirimi listeden **Yayından
+kaldır** ile durdurabilir. 16/9/2026 tarihli tebliğ değişikliklerinin duyurusu
+`db.SEED_NOTICES` ile açılışta eklenir.
+
+## 🧪 Test hesabı
+
+Kişiler penceresindeki **Test hesabı yap** düğmesi bir hesabı kontrol hesabı
+olarak işaretler: o hesabın işlemleri işlem geçmişine hiç yazılmaz ve işaretleme
+anında eski kayıtları silinir (`db.is_test_uid`, `db.purge_user_activity`).
+Canlı kontrol betiğinin kullandığı hesap bu şekilde işaretlenmelidir.
+
 ## ⚠️ Sorumluluk
 
 Site bir karar destek aracıdır. Ürettiği hiçbir sonuç nihai yaptırım kararı

@@ -16,6 +16,7 @@ yenilense veya eklenti yeniden başlasa da kalınan yerden devam edilir.
 Yalnızca standart kütüphane kullanılır.
 """
 
+import hashlib
 import json
 import logging
 import os
@@ -186,6 +187,17 @@ class Handler(BaseHTTPRequestHandler):
         account = accounts.account_from_token(token) if token else None
         return (account, 'cookie') if account else (None, None)
 
+    def session_key(self):
+        """Bildirim sayacı için oturum kimliği.
+
+        Oturum çerezi her girişte yeniden imzalanır; aynı oturumda sayfa
+        yenilense de değişmez. Home Assistant panelinde çerez yoktur, orada
+        kişi ve gün birlikte oturum sayılır."""
+        token = self.cookie(accounts.COOKIE_NAME)
+        if token:
+            return hashlib.sha256(token.encode('utf-8')).hexdigest()[:32]
+        return 'ingress:' + datetime.now().strftime('%Y-%m-%d')
+
     def require_account(self, admin=False):
         account, _ = self.identity()
         if not account:
@@ -313,6 +325,17 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/people':
             self.require_account(admin=True)
             return self.send_json(200, {'people': [accounts.public(r) for r in accounts.list_accounts()]})
+        if path == '/api/notices':
+            account = self.require_account()
+            notices = db.pending_notices(accounts.uid_of(account), self.session_key())
+            return self.send_json(200, {'notices': notices})
+        if path == '/api/notices/list':
+            self.require_account(admin=True)
+            return self.send_json(200, {'notices': [{
+                'id': row['id'], 'title': row['title'], 'message': row['message'],
+                'created_at': row['created_at'], 'author': row['author'],
+                'active': bool(row['active']), 'seen_people': row['seen_people'],
+            } for row in db.admin_notices()]})
         raise ApiError(404, 'Sayfa bulunamadı.')
 
     def route_post(self, path):
@@ -360,6 +383,23 @@ class Handler(BaseHTTPRequestHandler):
             report_id = db.create_issue_report(uid, message)
             db.log_activity(uid, 'issue_report', f'Bildirim #{report_id}')
             return self.send_json(200, {'ok': True})
+        if path == '/api/notices':
+            self.require_account(admin=True)
+            title = str(data.get('title') or '').strip()
+            message = str(data.get('message') or '').strip()
+            if not 3 <= len(title) <= 80:
+                raise ApiError(400, 'Başlığı 3-80 karakter arasında yazın.')
+            if not 5 <= len(message) <= 1000:
+                raise ApiError(400, 'Bildirimi 5-1000 karakter arasında yazın.')
+            notice_id = db.create_notice(title, message, uid)
+            db.log_activity(uid, 'notice_create', f'#{notice_id} {title}')
+            return self.send_json(200, {'ok': True})
+        match = re.fullmatch(r'/api/notices/(\d+)/stop', path)
+        if match:
+            self.require_account(admin=True)
+            db.stop_notice(int(match.group(1)))
+            db.log_activity(uid, 'notice_stop', f'#{match.group(1)}')
+            return self.send_json(200, {'ok': True})
         if path == '/api/people':
             self.require_account(admin=True)
             created = accounts.create_account(data.get('username'), data.get('display_name'),
@@ -375,7 +415,8 @@ class Handler(BaseHTTPRequestHandler):
                                               display_name=data.get('display_name'),
                                               is_admin=flag('is_admin'), is_active=flag('is_active'),
                                               password=data.get('password') or None,
-                                              approval_status=data.get('approval_status'))
+                                              approval_status=data.get('approval_status'),
+                                              is_test=flag('is_test'))
             changes = []
             if 'display_name' in data: changes.append('adını değiştirdi')
             if 'is_admin' in data:
@@ -385,6 +426,12 @@ class Handler(BaseHTTPRequestHandler):
             if data.get('password'): changes.append('şifresini yeniledi')
             if data.get('approval_status') == 'approved': changes.append('üyeliğini onayladı')
             if data.get('approval_status') == 'rejected': changes.append('üyeliğini reddetti')
+            if 'is_test' in data:
+                if data['is_test']:
+                    removed = db.purge_user_activity(accounts.uid_of(updated))
+                    changes.append(f'test hesabı yaptı ({removed} eski kayıt silindi)')
+                else:
+                    changes.append('test hesabı işaretini kaldırdı')
             detail = f'{updated["display_name"]} (@{updated["username"]}): ' + ', '.join(changes)
             db.log_activity(uid, 'person_update', detail)
             return self.send_json(200, {'person': accounts.public(updated)})
@@ -450,6 +497,7 @@ class PublicHandler(Handler):
 def main():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s: %(message)s')
     db.init_db()
+    db.seed_notices()
     accounts.init()
     accounts.announce_setup_code()
     ingress_port = int(os.environ.get('INGRESS_PORT', '8099'))

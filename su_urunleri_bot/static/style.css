@@ -332,3 +332,9 @@ label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
 @media (max-height: 480px) and (orientation: landscape) {
   .topbar { position: static; }
 }
+
+/* Site içi bildirim penceresi (6.0.39): kısa metin, tek eylem. */
+.dialog.notice { max-width: 420px; }
+.dialog.notice h2 { margin-bottom: 10px; }
+.notice-message { margin: 0 0 12px; line-height: 1.55; white-space: pre-wrap; }
+#notice-list { margin-top: 18px; }

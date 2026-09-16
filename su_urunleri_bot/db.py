@@ -85,6 +85,8 @@ def init_db():
     CREATE INDEX IF NOT EXISTS idx_activity_log_created ON activity_log(id DESC);
     CREATE TABLE IF NOT EXISTS issue_reports(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, message TEXT, status TEXT, created_at TEXT, resolved_at TEXT, resolved_by INTEGER);
     CREATE INDEX IF NOT EXISTS idx_issue_reports_status ON issue_reports(status, id DESC);
+    CREATE TABLE IF NOT EXISTS notices(id INTEGER PRIMARY KEY AUTOINCREMENT, code TEXT UNIQUE, title TEXT, message TEXT, created_by INTEGER, created_at TEXT, active INTEGER DEFAULT 1);
+    CREATE TABLE IF NOT EXISTS notice_views(notice_id INTEGER, user_id INTEGER, shown INTEGER DEFAULT 0, last_session TEXT, updated_at TEXT, PRIMARY KEY(notice_id, user_id));
     CREATE TABLE IF NOT EXISTS favorites(user_id INTEGER, item_type TEXT, item_id TEXT, created_at TEXT, PRIMARY KEY(user_id,item_type,item_id));
     CREATE TABLE IF NOT EXISTS inspections(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, kind TEXT, title TEXT, state TEXT, report TEXT, status TEXT, created_at TEXT, updated_at TEXT);
     CREATE INDEX IF NOT EXISTS idx_inspections_user ON inspections(user_id, status, updated_at);
@@ -187,6 +189,8 @@ ACTIVITY_EVENTS = {
     'person_create': ('yonetim', 'kritik', 'Kişi oluşturdu'),
     'person_update': ('yonetim', 'kritik', 'Kişi bilgilerini değiştirdi'),
     'log_purge': ('yonetim', 'kritik', 'Eski gezinme kayıtlarını temizledi'),
+    'notice_create': ('yonetim', 'kritik', 'Site içi bildirim gönderdi'),
+    'notice_stop': ('yonetim', 'uyari', 'Site içi bildirimi durdurdu'),
     'issue_report': ('destek', 'uyari', 'Sorun bildirdi'),
     'issue_resolve': ('destek', 'bilgi', 'Sorun bildirimini kapattı'),
     'audit_start': ('denetim', 'bilgi', 'Yönlendirilmiş denetim başlattı'),
@@ -204,8 +208,34 @@ ACTIVITY_EVENTS = {
 }
 
 
+def is_test_uid(uid):
+    """Test/kontrol hesabı mı? Bu hesabın işlemleri geçmişe hiç yazılmaz."""
+    if not isinstance(uid, int) or uid >= 0:
+        return False
+    c = con()
+    try:
+        row = c.execute('SELECT is_test FROM web_accounts WHERE id=?', (-uid,)).fetchone()
+    except sqlite3.OperationalError:  # sütun henüz eklenmemişse
+        row = None
+    c.close()
+    return bool(row and row['is_test'])
+
+
+def purge_user_activity(uid):
+    """Hesap test hesabı yapıldığında eski kayıtlarını da geçmişten siler."""
+    c = con()
+    cur = c.execute('DELETE FROM activity_log WHERE user_id=?', (uid,))
+    c.execute('DELETE FROM query_log WHERE user_id=?', (uid,))
+    c.commit()
+    removed = cur.rowcount
+    c.close()
+    return removed
+
+
 def log_activity(uid, action, detail='', level=None):
     """Web kullanıcısının güvenli işlem kaydı; parola ve oturum verisi almaz."""
+    if is_test_uid(uid):
+        return
     action = str(action)[:40]
     category, default_level, _label = ACTIVITY_EVENTS.get(action, ('yonetim', 'bilgi', action))
     level = level if level in ACTIVITY_LEVELS else default_level
@@ -333,6 +363,94 @@ def purge_legacy_activity():
     c.commit()
     c.close()
     return removed
+
+
+# ── Site içi bildirimler ─────────────────────────────────────────────────
+# Bir bildirim kişiye en fazla NOTICE_SESSION_LIMIT ayrı oturumda gösterilir:
+# kullanıcı kapatır, sonraki oturumda yeniden görür, üçüncü oturumdan sonra bir
+# daha çıkmaz. Sayaç oturum anahtarına bakar; sayfanın yenilenmesi sayılmaz.
+NOTICE_SESSION_LIMIT = 3
+
+# 16/9/2026 tarihli tebliğ değişiklikleri kullanıcılara sürümle birlikte duyurulur.
+SEED_NOTICES = [
+    ('teblig-2026-25', 'Mevzuat güncellemesi',
+     '6/1 Numaralı Ticari Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (Tebliğ No: 2024/20)’de '
+     'Değişiklik Yapılmasına Dair Tebliğ (No: 2026/25) güncellemesi modüle eklendi.'),
+    ('teblig-2026-26', 'Mevzuat güncellemesi',
+     '6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (Tebliğ No: 2024/21)’de '
+     'Değişiklik Yapılmasına Dair Tebliğ (No: 2026/26) güncellemesi modüle eklendi.'),
+]
+
+
+def seed_notices():
+    c = con()
+    for code, title, message in SEED_NOTICES:
+        c.execute('INSERT OR IGNORE INTO notices(code,title,message,created_by,created_at,active) '
+                  'VALUES(?,?,?,NULL,?,1)', (code, title, message, datetime.now().isoformat(timespec='seconds')))
+    c.commit()
+    c.close()
+
+
+def create_notice(title, message, created_by):
+    c = con()
+    cur = c.execute('INSERT INTO notices(code,title,message,created_by,created_at,active) VALUES(NULL,?,?,?,?,1)',
+                    (title, message, created_by, datetime.now().isoformat(timespec='seconds')))
+    c.commit()
+    notice_id = cur.lastrowid
+    c.close()
+    return notice_id
+
+
+def stop_notice(notice_id):
+    c = con()
+    c.execute('UPDATE notices SET active=0 WHERE id=?', (int(notice_id),))
+    c.commit()
+    c.close()
+
+
+def admin_notices(limit=30):
+    """Yönetici penceresi için bildirimler ve kaç kişiye ulaştığı."""
+    c = con()
+    rows = c.execute(
+        '''
+        SELECT n.*, COALESCE(w.display_name, '') AS author,
+               (SELECT COUNT(*) FROM notice_views v WHERE v.notice_id = n.id) AS seen_people
+        FROM notices n LEFT JOIN web_accounts w ON w.id = -n.created_by
+        ORDER BY n.active DESC, n.id DESC LIMIT ?''', (int(limit),)).fetchall()
+    c.close()
+    return rows
+
+
+def pending_notices(uid, session_key):
+    """Bu oturumda gösterilecek bildirimleri döndürür ve gösterim sayacını artırır.
+
+    Aynı oturumda yeniden çağrılırsa (sayfa yenileme) sayaç artmaz; bildirim yine
+    döndürülür, böylece kullanıcı kapatmadan yenilerse bildirimi kaçırmaz."""
+    session_key = str(session_key or '')[:64]
+    now = datetime.now().isoformat(timespec='seconds')
+    c = con()
+    rows = c.execute(
+        '''
+        SELECT n.id, n.title, n.message, n.created_at,
+               COALESCE(v.shown, 0) AS shown, COALESCE(v.last_session, '') AS last_session
+        FROM notices n LEFT JOIN notice_views v ON v.notice_id = n.id AND v.user_id = ?
+        WHERE n.active = 1 ORDER BY n.id''', (uid,)).fetchall()
+    pending = []
+    for row in rows:
+        same_session = row['last_session'] == session_key
+        if row['shown'] >= NOTICE_SESSION_LIMIT and not same_session:
+            continue
+        if not same_session:
+            c.execute(
+                '''INSERT INTO notice_views(notice_id,user_id,shown,last_session,updated_at) VALUES(?,?,1,?,?)
+                   ON CONFLICT(notice_id,user_id) DO UPDATE SET shown = notice_views.shown + 1,
+                       last_session = excluded.last_session, updated_at = excluded.updated_at''',
+                (row['id'], uid, session_key, now))
+        pending.append({'id': row['id'], 'title': row['title'], 'message': row['message'],
+                        'created_at': row['created_at']})
+    c.commit()
+    c.close()
+    return pending
 
 
 def create_issue_report(uid, message):

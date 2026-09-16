@@ -293,6 +293,92 @@ def call(path, body=None):
         return e.code, json.loads(e.read() or b'{}')
 
 
+def new_session_call(username, password):
+    """Kendi çerez kavanozuyla yeni bir oturum açar ve istek fonksiyonu döndürür.
+
+    Bildirimin "3 oturum" sayacı oturum çerezine bakar; aynı kavanozla yapılan
+    istekler tek oturum, yeni kavanoz yeni oturum sayılır."""
+    jar = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+
+    def send(path, body=None):
+        req = urllib.request.Request(BASE + path, data=None if body is None else json.dumps(body).encode(),
+                                     headers={'X-Requested-With': 'SuUrunleri', 'Content-Type': 'application/json'})
+        try:
+            with jar.open(req, timeout=60) as r:
+                return r.status, json.loads(r.read() or b'{}')
+        except urllib.error.HTTPError as e:
+            return e.code, json.loads(e.read() or b'{}')
+
+    status, _ = send('/api/login', {'username': username, 'password': password, 'remember': False})
+    return send, status
+
+
+def check_notices(call, errors, work):
+    """Bildirim üç ayrı oturumda gösterilir, dördüncüde gösterilmez."""
+    username, password = 'bildirim', 'BildirimTest123!'
+    status, created = call('/api/people', {'username': username, 'display_name': 'Bildirim Testi',
+                                           'password': password, 'is_admin': False})
+    if status != 200:
+        errors.append((('NOTICE', 'create_user'), status, created))
+        return None
+    person_id = created['person']['id']
+    seen = []
+    for round_no in range(1, 5):
+        send, login_status = new_session_call(username, password)
+        if login_status != 200:
+            errors.append((('NOTICE', f'login{round_no}'), login_status, 'giriş yapılamadı'))
+            return person_id
+        status, payload = send('/api/notices')
+        count = len(payload.get('notices', []))
+        seen.append(count)
+        if round_no == 1:
+            # Aynı oturumda yenileme sayacı artırmamalı.
+            _, again = send('/api/notices')
+            if len(again.get('notices', [])) != count:
+                errors.append((('NOTICE', 'same_session'), 0, 'sayfa yenilemede bildirim kayboldu'))
+    if seen[:3] != [2, 2, 2] or seen[3] != 0:
+        errors.append((('NOTICE', 'three_sessions'), 0, f'oturum başına gösterim: {seen}'))
+    print('notices: üç oturum kuralı', seen)
+
+    # Yönetici yeni bildirim gönderince yalnız o bildirim görünmeli.
+    status, sent = call('/api/notices', {'title': 'Duman testi', 'message': 'Duman testi bildirimi.'})
+    if status != 200:
+        errors.append((('NOTICE', 'send'), status, sent))
+        return person_id
+    send, _ = new_session_call(username, password)
+    _, payload = send('/api/notices')
+    titles = [n['title'] for n in payload.get('notices', [])]
+    if titles != ['Duman testi']:
+        errors.append((('NOTICE', 'new_notice'), 0, titles))
+    status, listed = call('/api/notices/list')
+    if status != 200 or not any(n['title'] == 'Duman testi' for n in listed.get('notices', [])):
+        errors.append((('NOTICE', 'list'), status, listed))
+    return person_id
+
+
+def check_test_account(call, errors, work, person_id, username='bildirim', password='BildirimTest123!'):
+    """Test hesabı işaretlenince geçmişi silinir ve yeni işlemleri kaydedilmez."""
+    if person_id is None:
+        return
+    with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
+        before = audit_db.execute('SELECT COUNT(*) FROM activity_log WHERE user_id=?', (-person_id,)).fetchone()[0]
+    if not before:
+        errors.append((('TEST_ACCOUNT', 'before'), 0, 'test hesabının önceki kaydı yok'))
+    status, marked = call(f'/api/people/{person_id}', {'is_test': True})
+    if status != 200 or not marked.get('person', {}).get('is_test'):
+        errors.append((('TEST_ACCOUNT', 'mark'), status, marked))
+        return
+    send, login_status = new_session_call(username, password)
+    if login_status != 200:
+        errors.append((('TEST_ACCOUNT', 'login'), login_status, 'giriş yapılamadı'))
+    send('/api/issues', {'message': 'Test hesabı kaydı oluşmamalı'})
+    with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
+        after = audit_db.execute('SELECT COUNT(*) FROM activity_log WHERE user_id=?', (-person_id,)).fetchone()[0]
+    if after:
+        errors.append((('TEST_ACCOUNT', 'logged'), 0, f'{after} kayıt yazılmış'))
+    print(f'test account: {before} eski kayıt silindi, yeni kayıt {after}')
+
+
 def text_of(view):
     return '\n'.join(view.get('blocks', []))
 
@@ -632,6 +718,9 @@ def main():
             s, person_view = action(f'admin:person:{candidate["id"]}')
             if s != 200 or 'Hatalı giriş' not in text_of(person_view):
                 errors.append((('ADMIN_PANEL', 'person'), s, text_of(person_view)[:300]))
+
+        notice_person = check_notices(call, errors, work)
+        check_test_account(call, errors, work, notice_person)
 
         with sqlite3.connect(work / 'su_urunleri_kolluk.db') as audit_db:
             activity = dict(audit_db.execute(

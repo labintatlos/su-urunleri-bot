@@ -123,6 +123,7 @@
         <button type="button" role="menuitem" data-cmd="issue">🛠 Sorun bildir</button>
         <button type="button" role="menuitem" data-cmd="password">🔑 Şifremi değiştir</button>
         <button type="button" role="menuitem" data-cmd="people" hidden>👥 Kişiler / Şifreler</button>
+        <button type="button" role="menuitem" data-cmd="notices" hidden>📢 Bildirim gönder</button>
         <button type="button" role="menuitem" data-cmd="logout">🚪 Çıkış yap</button>
       </div>
     </div>
@@ -183,6 +184,31 @@
     <p class="form-error" hidden></p>
     <button type="submit" class="btn primary">Kişiyi ekle</button>
   </form>
+</dialog>
+
+<dialog id="notice-dialog" class="dialog notice">
+  <h2 id="notice-title">Bildirim</h2>
+  <p id="notice-message" class="notice-message"></p>
+  <p id="notice-counter" class="note"></p>
+  <div class="dialog-actions">
+    <button type="button" class="btn primary" data-notice-close>Anladım</button>
+  </div>
+</dialog>
+
+<dialog id="notice-admin-dialog" class="dialog wide">
+  <div class="dialog-head">
+    <h2>Bildirim gönder</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Kapat">✕</button>
+  </div>
+  <form id="notice-form" class="person-form">
+    <p class="note">Bildirim, her kullanıcıya en fazla üç ayrı oturumda gösterilir; kullanıcı kapatınca sonraki
+      oturumda yeniden çıkar, üçüncüden sonra bir daha çıkmaz.</p>
+    <label>Başlık<input name="title" minlength="3" maxlength="80" required></label>
+    <label>Bildirim<textarea name="message" rows="4" minlength="5" maxlength="1000" required></textarea></label>
+    <p class="form-error" hidden></p>
+    <button type="submit" class="btn primary">Gönder</button>
+  </form>
+  <ul id="notice-list" class="people"></ul>
 </dialog>
 
 <div id="busy" class="busy" hidden><div class="busy-card"><span class="spinner"></span><p id="busy-text">Yükleniyor…</p></div></div>

@@ -30,6 +30,9 @@
     passwordDialog: $('#password-dialog'), passwordForm: $('#password-form'),
     issueDialog: $('#issue-dialog'), issueForm: $('#issue-form'),
     peopleDialog: $('#people-dialog'), peopleList: $('#people-list'), personForm: $('#person-form'),
+    noticeDialog: $('#notice-dialog'), noticeTitle: $('#notice-title'), noticeMessage: $('#notice-message'),
+    noticeCounter: $('#notice-counter'),
+    noticeAdminDialog: $('#notice-admin-dialog'), noticeForm: $('#notice-form'), noticeList: $('#notice-list'),
   };
 
   let session = null;
@@ -554,9 +557,11 @@
     $('#account-username').textContent = `@${user.username}${user.is_admin ? ' · yönetici' : ''}`;
     $('#account-initial').textContent = (user.display_name.trim()[0] || '•').toLocaleUpperCase('tr');
     $('[data-cmd=people]', ui.accountMenu).hidden = !user.is_admin;
+    $('[data-cmd=notices]', ui.accountMenu).hidden = !user.is_admin;
     $('[data-cmd=logout]', ui.accountMenu).hidden = user.via === 'ingress';
     const view = await api('GET', 'api/screen');
     render(view, { push: false, focus: false });
+    showNotices();
   }
 
   async function start() {
@@ -584,6 +589,69 @@
     try { await api('POST', 'api/logout', {}); } catch (_) { /* yine de çık */ }
     current = null;
     await start();
+  }
+
+  // ── Site içi bildirimler ───────────────────────────────────────────────
+  // Sunucu, bu oturumda gösterilecek bildirimleri verir ve sayacı kendisi
+  // artırır (üç oturum kuralı). Birden çok bildirim sırayla gösterilir.
+  let noticeQueue = [];
+
+  function showNextNotice() {
+    const notice = noticeQueue.shift();
+    if (!notice) return;
+    ui.noticeTitle.textContent = notice.title;
+    ui.noticeMessage.textContent = notice.message;
+    ui.noticeCounter.textContent = noticeQueue.length ? `${noticeQueue.length} bildirim daha var.` : '';
+    if (!ui.noticeDialog.open) ui.noticeDialog.showModal();
+  }
+
+  async function showNotices() {
+    try {
+      const { notices } = await api('GET', 'api/notices');
+      noticeQueue = notices || [];
+      showNextNotice();
+    } catch (_) { /* bildirim gösterilemezse site normal çalışır */ }
+  }
+
+  function noticeRow(notice) {
+    const item = el('li', `person${notice.active ? '' : ' inactive'}`);
+    const head = el('div', 'person-head');
+    const name = el('div', 'person-name');
+    name.append(el('b', '', notice.title), el('small', '', notice.created_at.replace('T', ' ').slice(0, 16)));
+    const badges = el('div', 'badges');
+    badges.append(el('span', `badge${notice.active ? '' : ' muted'}`, notice.active ? 'Yayında' : 'Durduruldu'));
+    badges.append(el('span', 'badge muted', `${notice.seen_people} kişi gördü`));
+    head.append(name, badges);
+    const meta = el('div', 'person-meta', notice.message);
+    const actions = el('div', 'person-actions');
+    if (notice.active) {
+      actions.append(personAction('⏹ Yayından kaldır', async () => {
+        try {
+          await api('POST', `api/notices/${notice.id}/stop`, {});
+          toast('Bildirim durduruldu.');
+          await loadNoticeList();
+        } catch (error) { toast(error.message, 'error'); }
+      }, 'danger'));
+    }
+    item.append(head, meta, actions);
+    return item;
+  }
+
+  async function loadNoticeList() {
+    const { notices } = await api('GET', 'api/notices/list');
+    ui.noticeList.replaceChildren(...notices.map(noticeRow));
+  }
+
+  async function openNoticeAdmin() {
+    toggleMenu(false);
+    ui.noticeForm.reset();
+    formError(ui.noticeForm, '');
+    try {
+      await loadNoticeList();
+      ui.noticeAdminDialog.showModal();
+    } catch (error) {
+      toast(error.message, 'error');
+    }
   }
 
   // ── Kişiler ────────────────────────────────────────────────────────────
@@ -616,6 +684,7 @@
     if (person.approval_status === 'approved' && !person.is_active) badges.append(el('span', 'badge muted', 'Pasif'));
     if (person.reset_pending) badges.append(el('span', 'badge warning', 'Şifre talebi'));
     if (person.ha_linked) badges.append(el('span', 'badge muted', 'HA paneli bağlı'));
+    if (person.is_test) badges.append(el('span', 'badge muted', 'Test hesabı'));
     head.append(name, badges);
 
     const positionNames = { subay: 'Subay', astsubay: 'Astsubay', uzman: 'Uzman', memur: 'Memur' };
@@ -655,6 +724,10 @@
         personAction(person.is_active ? 'Pasif yap' : 'Etkinleştir',
           () => updatePerson(person.id, { is_active: !person.is_active }, person.is_active ? 'Kişi pasif yapıldı.' : 'Kişi etkinleştirildi.'),
           person.is_active ? 'danger' : ''),
+        personAction(person.is_test ? 'Test işaretini kaldır' : 'Test hesabı yap',
+          () => updatePerson(person.id, { is_test: !person.is_test }, person.is_test
+            ? 'Bu hesabın işlemleri yeniden geçmişe yazılacak.'
+            : 'Test hesabı: işlemleri geçmişe yazılmayacak, eski kayıtları silindi.')),
       );
     }
     item.append(head, meta, actions, passwordBox);
@@ -733,6 +806,7 @@
     toggleMenu(false);
     if (command.dataset.cmd === 'logout') logout();
     if (command.dataset.cmd === 'people') openPeople();
+    if (command.dataset.cmd === 'notices') openNoticeAdmin();
     if (command.dataset.cmd === 'issue') {
       ui.issueForm.reset();
       formError(ui.issueForm, '');
@@ -766,6 +840,22 @@
       ui.issueDialog.close();
       ui.issueForm.reset();
       toast('Sorun bildiriminiz yöneticiye iletildi.');
+    });
+  });
+
+  for (const close of document.querySelectorAll('[data-notice-close]')) {
+    close.addEventListener('click', () => {
+      ui.noticeDialog.close();
+      if (noticeQueue.length) setTimeout(showNextNotice, 200);
+    });
+  }
+
+  ui.noticeForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    submitForm(ui.noticeForm, 'api/notices', async () => {
+      ui.noticeForm.reset();
+      toast('Bildirim gönderildi.');
+      await loadNoticeList();
     });
   });
 
