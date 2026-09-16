@@ -110,7 +110,7 @@
 | :--- | :--- |
 | Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla, Osmaniye | **1 Mart - 31 Mayıs** |
 | Afyonkarahisar, Aksaray, Amasya, Ankara, Balıkesir, Bartın, Bilecik, Bolu, Burdur, Bursa, Çanakkale, Çankırı, Çorum, Düzce, Edirne, Eskişehir, Isparta, İstanbul, Karabük, Karaman, Kastamonu, Kırıkkale, Kırklareli, Kırşehir, Kocaeli, Konya, Kütahya, Nevşehir, Niğde, Sakarya, Tekirdağ, Uşak, Yalova, Zonguldak | **15 Mart - 15 Haziran** |
-| Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat | **1 Nisan - 30 Haziran** |
+| Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat | **15 Nisan - 15 Temmuz** |
 | Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van | **15 Mayıs - 15 Ağustos** |
 
 - **İstisna:** İstilacı türlerin avcılığına Bakanlık, araştırma sonuçlarına göre zaman/araç kısıtlaması gözetmeksizin izin verebilir.
@@ -178,7 +178,7 @@
 | :--- | :--- | :--- |
 | Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\*, Diğer türler | Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla, Osmaniye | 1 Mart - 31 Mayıs |
 | (aynı türler) | Afyonkarahisar…Zonguldak (2. bölge grubu, Dosya 04 §4'teki liste ile aynı) | 15 Mart - 15 Haziran |
-| (aynı türler) | Adıyaman…Yozgat (3. bölge grubu) | 1 Nisan - 30 Haziran |
+| (aynı türler) | Adıyaman…Yozgat (3. bölge grubu) | 15 Nisan - 15 Temmuz |
 | (aynı türler) | Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van | 15 Mayıs - 15 Ağustos |
 | Doğal alabalık (tüm türler) | Tüm bölgeler | 1 Ekim - 28 Şubat |
 | Gökkuşağı alabalığı | Orman içi sular hariç | Yok |

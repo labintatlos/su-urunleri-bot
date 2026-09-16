@@ -85,6 +85,8 @@ ifade eder.
 
 (3) Amatör Balıkçı Belgesi Ek-1'de yer alan forma uygun olarak düzenlenir.
 
+(4) *(Ek: RG-16/9/2026-33372)* On beş yaşını doldurmuş olanlara veli veya vasilerinin yazılı onayı ile Amatör Balıkçı Belgesi düzenlenebilir.
+
 ### Türkiye'de yabancı uyruklu kişilerin amatör balıkçılık yapmaları
 **MADDE 5 –** (1) Ülkemizde devamlı olarak ikamet edenlerden, resmî misafir veya geçici olarak görevli bulunan yabancı uyruklular Misafir Amatör Balıkçı Belgesi ile avlanabilirler. Bu kişilere durumlarını belgelemek kaydıyla, il müdürlüklerince iki yıl süre ile geçerli olmak üzere Misafir Amatör Balıkçı Belgesi verilir. Misafir Amatör Balıkçı Belgesi Ek-2'de yer alan forma uygun olarak düzenlenir.
 
@@ -112,20 +114,20 @@ avlanabilirler.
 | :--- | :--- | :--- | :--- |
 | **Akdeniz foku** | *Monachus monachus* | **Akdeniz mercanı** | *Cladocora caespitosa* |
 | **Alakır alası** | *Salmo kottelati* | **Altı yarıklı bozcamgöz** | *Hexanchus griseus* |
-| **Batman bantlı çöpçü balığı** | *Paraschistura chrysicristinae* | **Beyaz çalı** | *Spinimuricea klavereni* |
-| **Beyaz deniz dalı** | *Eunicella singularis* | **Beyaz yüzgeçli köpekbalığı** | *Carcharhinus longimanus* |
-| **Büyük beyaz köpekbalığı** | *Carcharodon carcharias* | **Büyük camgöz (güneşlenen) köpekbalığı** | *Cetorhinus maximus* |
-| **Camgöz** | *Galeorhinus galeus* | **Çekiç köpekbalığı** | *Sphyrna zygaena* |
-| **Çivili köpekbalığı** | *Echinorhinus brucus* | **Denizatı** | *Hippocampus hippocampus* |
-| **Deniz alası** | *Salmo labrax* | **Deniz çayırları** | *Posidonia oceanica, Nanozostera noltei* |
-| **Deniz kaplumbağaları** | *Caretta caretta, Chelonia mydas, Dermochelys coriacea, Trionyx triunguis* | **Deniz kulağı** | *Tonna galea, Haliotis tuberculata* |
-| **Dikburun harharyas** | *Lamna nasus* | **Dikenli keler** | *Squatina aculeata* |
-| **Dikenli vatoz** | *Raja clavata* | **Domuz köpekbalığı** | *Oxynotus centrina* |
+| **Balina köpek balığı** | *Rhincodon typus* | **Batman bantlı çöpçü balığı** | *Paraschistura chrysicristinae* |
+| **Beyaz çalı** | *Spinimuricea kalvereni* | **Beyaz deniz dalı** | *Eunicella singularis* |
+| **Beyaz yüzgeçli köpekbalığı** | *Carcharhinus longimanus* | **Büyük beyaz köpekbalığı** | *Carcharodon carcharias* |
+| **Büyük camgöz (güneşlenen) köpekbalığı** | *Cetorhinus maximus* | **Camgöz** | *Galeorhinus galeus* |
+| **Çekiç köpekbalığı** | *Sphyrna zygaena* | **Çivili köpekbalığı** | *Echinorhinus brucus* |
+| **Denizatı** | *Hippocampus hippocampus* | **Deniz alası** | *Salmo labrax* |
+| **Deniz çayırları** | *Posidonia oceanica, Nanozostera noltei* | **Deniz kaplumbağaları** | *Caretta caretta, Chelonia mydas, Dermochelys coriacea, Trionyx triunguis* |
+| **Deniz kulağı** | *Tonna galea, Haliotis tuberculata* | **Dikburun harharyas** | *Lamna nasus* |
+| **Dikenli keler** | *Squatina aculeata* | **Domuz köpekbalığı** | *Oxynotus centrina* |
 | **İpeksi köpekbalığı** | *Carcharhinus falciformis* | **İri gözlü sapan köpekbalığı** | *Alopias superciliosus* |
 | **Kazıkkuyruk** | *Gymnura altavela* | **Keler** | *Squatina squatina* |
 | **Kemane** | *Glaucostegus cemiculus* | **Kırmızı mercan** | *Corallium rubrum* |
 | **Kırmızı yıldız** | *Echinaster sepositus* | **Kum köpekbalığı** | *Carcharhinus plumbeus* |
-| **Lekeli keler** | *Squatina oculata* | **Leopar sazanı** | *Luciobarbus subquincunciatus* |
+| **Lekeli keler** | *Squatina oculata* | **Leopar sazanı** | *Luciobarbus supquincunciatus* |
 | **Mahmuzlu camgöz** | *Squalus acanthias, Squalus blainville* | **Mantalar** | *Mobulinae (Mobula mobular, Pteromylaeus bovinus, Rhinoptera marginata)* |
 | **Mavi köpekbalığı** | *Prionace glauca* | **Maya** | *Maja squinado* |
 | **Mersin balıkları** | *Acipenser spp.* | **Mersin morinası** | *Huso huso* |
@@ -136,7 +138,7 @@ avlanabilirler.
 | **Siyah mercan** | *Savalia savaglia* | **Uzun kemane** | *Rhinobatos rhinobatos* |
 | **Ticari deniz süngerleri** | *Spongia officinalis, Spongia agaricina, Hippospongia communis* | **Yağ balığı** | *Pseudophoxinus sp.* |
 | **Yağlı balık** | *Garra rufa* | **Yılan balığı** | *Anguilla anguilla* |
-| **Yunus ve Balinalar** | *Cetacea* | | |
+| **Yunus ve Balinalar** | *Cetacea* |  | |
 
 ### Yemlik balıklar
 **MADDE 7 –** (1) Çizelge 2'de yer alan yemlik balıkların, amatör avcılıkta yemlik balık ağı ile avlanmaları serbesttir.
@@ -262,7 +264,7 @@ avlanabilirler.
 | :--- | :--- | :--- |
 | **Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\*, Diğer türler** | Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla, Osmaniye | 1 Mart - 31 Mayıs |
 | **Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\*, Diğer türler** | Afyonkarahisar, Aksaray, Amasya, Ankara, Balıkesir, Bartın, Bilecik, Bolu, Burdur, Bursa, Çanakkale, Çankırı, Çorum, Düzce, Edirne, Eskişehir, Isparta, İstanbul, Karabük, Karaman, Kastamonu, Kırıkkale, Kırklareli, Kırşehir, Kocaeli, Konya, Kütahya, Nevşehir, Niğde, Sakarya, Tekirdağ, Uşak, Yalova, Zonguldak | 15 Mart - 15 Haziran |
-| **Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\*, Diğer türler** | Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat | 1 Nisan - 30 Haziran |
+| **Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\*, Diğer türler** | Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat | 15 Nisan - 15 Temmuz |
 | **Sazan, Kadife, Siraz, Yayın, Tatlısu kefali\*, Diğer türler** | Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van | 15 Mayıs - 15 Ağustos |
 | **Doğal alabalık (Bütün türler)** | Tüm Bölgeler | 1 Ekim - 28 Şubat |
 | **Gökkuşağı alabalığı** | Orman içi sular hariç | Yok |
@@ -307,6 +309,8 @@ avlanabilirler.
 
 (13) Rekreasyonel amaçlı su ürünleri avcılığı için projeye dayalı olarak kiralanan istihsal sahalarında yapılacak su ürünleri avcılığına ilişkin usul ve esaslar Bakanlıkça belirlenir.
 
+(14) *(Ek: RG-16/9/2026-33372)* Karayla bağlantısı olmayan ve su yüzeyinde serbest hareket edebilen yüzen adalara çıkılarak amatör amaçlı su ürünleri avcılığı yasaktır.
+
 ### Orman içi sularda amatör avcılık
 **MADDE 14 –** (1) Orman içi sulardaki amatör avcılık, bu Tebliğ kapsamındaki esaslar dahilinde yapılır. Ancak;
 * **a)** Gökkuşağı alabalığı avcılığında, doğal alabalıklar için belirtilen tarih aralığındaki zaman yasağı geçerlidir.
@@ -329,9 +333,9 @@ avlanabilirler.
 | **Barbunya** | *Mullus barbatus* | 12 cm | 5 kg | - |
 | **Çipura** | *Sparus aurata* | 20 cm | 5 kg | - |
 | **Deniz böceği** | *Palinurus elephas* | 25 cm | 1 adet | - |
-| **Dil** | *Solea solea* | 20 cm | 5 kg | 1 Ocak - 15 Şubat |
+| **Dil** | *Solea solea* | 20 cm | 5 kg | *(Değişik: RG-16/9/2026-33372)* 1 Şubat - 14 Mart |
 | **Eşkina** | *Sciaena umbra* | 35 cm | 3 adet | - |
-| **İstavrit / İstavrit (karagöz)** | *Trachurus trachurus, Trachurus mediterraneus* | 13 cm | 5 kg | - |
+| **İstavrit / İstavrit (karagöz)** | *Trachurus trachurus, Trachurus mediterraneus* | 12 cm | 5 kg | - |
 | **Istakoz** | *Homarus gammarus* | 25 cm | 1 adet | - |
 | **Kalkan** | *Scophthalmus spp.* | 45 cm | 1 adet | 15 Nisan - 15 Haziran |
 | **Karagöz** | *Diplodus vulgaris* | 18 cm | 5 kg | - |
@@ -344,12 +348,13 @@ avlanabilirler.
 | **Kırma (Kırmızı) mercan** | *Pagellus erythrinus* | 15 cm | 5 kg | - |
 | **Kolyoz** | *Scomber japonicus* | 18 cm | 5 kg | - |
 | **Lagos** | *Epinephelus aeneus* | 50 cm | 1 adet | 1 Haziran - 31 Ağustos |
+| **Lagos** | *Epinephelus spp.* | - | 1 adet | 1 Haziran - 31 Ağustos |
 | **Lipsöz** | *Scorpaena scrofa* | 15 cm | 5 kg | - |
 | **Lambuka** | *Coryphaena hippurus* | 50 cm | 1 adet | 1 Ocak - 14 Ağustos |
 | **Levrek** | *Dicentrarchus labrax* | 25 cm | 5 kg | - |
 | **Lüfer** | *Pomatomus saltatrix* | 18 cm | 5 kg | - |
 | **Mavi yengeç** | *Callinectes sapidus* | 13 cm | 5 kg | - |
-| **Mavi yüzgeçli orkinos\*\*** | *Thunnus thynnus* | 115\* cm | 1 adet | 15 Ekim - 15 Haziran |
+| **Mavi yüzgeçli orkinos** | *Thunnus thynnus* | 115\* cm | 1 adet | 15 Ekim - 15 Haziran |
 | **Mezgit** | *Merlangius merlangus* | 13 cm | 5 kg | - |
 | **Minekop (Kötek, Karakulak)** | *Umbrina cirrosa* | 45 cm | 5 kg | - |
 | **Palamut** | *Sarda sarda* | 25 cm | 5 kg | 1 Nisan - 14 Ağustos |
@@ -365,7 +370,6 @@ avlanabilirler.
 | **Diğer türler** | - | Yok | 5 kg | - |
 
 *\* Çatal boy*  
-*\*\* Her yıl ülke kotasının %0,5'i amatör amaçlı mavi yüzgeçli orkinos avcılığı için tahsis edilir. Avlanılan mavi yüzgeçli orkinoslar için il/ilçe müdürlüklerinden Orkinos Yakalama Dokümanı (e-BCD) düzenlettirilmesi zorunludur. Güncel kota miktarına ilişkin bilgiler Bakanlık web sayfasında yer alır (www.tarimorman.gov.tr/BSGM).*
 
 (2) Çizelgede boy limitleri belirtilen türlerde %5 küçük boylara istisna tanınır.
 
@@ -401,6 +405,10 @@ kullanabilir.
 
 (6) Avlanması tamamen yasak olan türler dışındaki su ürünlerinin avcılığında her türlü doğal yem, mamul doğal yem ve yapay yemlerin denizlerde yapılan amatör avcılıkta kullanılması serbesttir.
 
+(7) *(Ek: RG-16/9/2026-33372)* 1 Eylül 2027 tarihinden itibaren amatör balıkçılık faaliyetinde bulunacak gemiler için il/ilçe müdürlüklerinden "Amatör Balıkçı Gemisi Ruhsat Tezkeresi" alınması zorunludur. "Amatör Balıkçı Gemisi Ruhsat Tezkeresi"ne ilişkin usul ve esaslar Bakanlıkça belirlenir.
+
+(8) *(Ek: RG-16/9/2026-33372)* Amatör ve sportif amaçlı mavi yüzgeçli orkinos avcılığı izne tabi olup usul ve esasları Bakanlıkça belirlenir. Avlanan mavi yüzgeçli orkinoslar için il/ilçe müdürlüklerinden Orkinos Yakalama Dokümanı (e-BCD) düzenlettirilmesi zorunludur.
+
 ### Denizlerdeki yer yasakları ve sınırlamalar
 **MADDE 17 –** (1) Denizlerdeki yer yasakları ve sınırlamalar aşağıda belirtilmiştir:
 * **a)** Mersin İli, Anamur İlçesinde; Kızılliman mevkii Arap Burnu (36° 5' 12.00" K - 33° 5' 27.96" D) ile Gökçevlik (36° 6' 30.00" K - 33° 6' 37.98" D) mevkii arasında kıyıdan itibaren 200 metre mesafe içerisinde (Harita-2),
@@ -433,7 +441,7 @@ kullanabilir.
 * **ı)** *(Değişik: RG-16/4/2025-32872)* İzmir Körfezinde; balıkçı gemilerinin bölgede bulunan balıkçı barınaklarına giriş ve çıkışları serbest olmak üzere; İnciraltı Kent Ormanı (38° 24' 54" K - 27° 3' 36" D) ile Bostanlı (38° 27' 25.18" K - 27° 5' 21.29" D) arasında çekilen hattın doğusunda kalan alanda (Harita-12),
 * **i)** Balıkesir İli, Edremit İlçesinde yapay resif bloklarının bulunduğu (39° 33' 17.64" K - 26° 40' 22.26" D), (39° 33' 13.44" K - 26° 41' 31.98" D), (39° 33' 29.28" K - 26° 42' 18.60" D), (39° 33' 21.48" K - 26° 42' 21.54" D), (39° 33' 1.44" K - 26° 41' 34.86" D), (39° 33' 6.18" K - 26° 40' 18.72" D) koordinat noktaları arasında kalan alanda (Harita-13),
 * **j)** Çanakkale İli, Gökçeada İlçesinde; Gökçeada Deniz Parkının bulunduğu Yıldız Koyu (40° 14' 11.16" K - 25° 54' 43.80" D) ile Çiftlik Koyu (40° 14' 25.92" K - 25° 56' 6.72" D) arasında kıyıdan itibaren 1 mil mesafedeki alanda (Harita-14),
-* **k)** Çanakkale İli, Gelibolu İlçesi ile Lapseki İlçesi arasında bulunan 1915 Çanakkale Köprüsünün yer aldığı (40° 19' 35" K - 26° 39' 2" D), (40° 20' 42" K - 26° 36' 52" D), (40° 21' 8" K - 26° 37' 21" D), (40° 19' 58" K - 26° 39' 40" D) koordinat noktaları arasında kalan deniz alanında (Harita-15),
+* **k)** *(Değişik: RG-16/9/2026-33372)* Çanakkale İli, Gelibolu İlçesi ile Lapseki İlçesi arasında bulunan 1915 Çanakkale Köprüsünün yer aldığı (40° 19' 49.81" K - 26° 39' 33.24" D), (40° 19' 42.26" K - 26° 39' 11.62" D), (40° 20' 49.23" K - 26° 37' 0.13" D), (40° 21' 1.88" K - 26° 37' 16.03" D) koordinat noktaları arasında kalan deniz alanında (Harita-15),
 * **l)** Yalova İli, İDO İskelesinin Önü; (40° 39' 42.41" K - 29° 16' 43.24" D), (40° 39' 46.16" K - 29° 16' 43.93" D), (40° 39' 45.69" K - 29° 16' 49.46" D), (40° 39' 36.87" K - 29° 16' 47.06" D) koordinatları arasında kalan alanda (Harita-16),
 * **m)** Yalova İli, Altınova İlçesi ile Kocaeli İli, Gebze İlçesi arasında bulunan Osmangazi Köprüsü'nün 500 m. sağında ve solunda kalan (40° 44' 12.7" K - 29° 30' 59.22" D), (40° 46' 8.11" K - 29° 31' 22.69" D), (40° 46' 11.03" K - 29° 30' 46.15" D), (40° 43' 55.02" K - 29° 30' 30.06" D) koordinat noktaları arasında kalan alanda (Harita-17),
 * **n)** Samsun İli, Bilgin Samsun Doğalgaz Kombine Çevrim Santralinin bulunduğu (41° 9' 24.81" K - 37° 9' 5.85" D), (41° 9' 24.53" K - 37° 9' 41.43" D), (41° 8' 52.42" K - 37° 9' 41.05" D), (41° 8' 53.97" K - 37° 9' 5.23" D) koordinat noktalarını birleştiren alanda (Harita-18),
@@ -445,6 +453,7 @@ kullanabilir.
   1. Hamam Koyu ve Yavansu Koyunda; (36° 38' 55.19" K - 28° 51' 24.69" D), (36° 38' 16.28" K - 28° 52' 38.47" D) koordinat noktalarını birleştiren hattın güneybatısında kalan alanda (Harita-22-1),
   2. Tersane Adası ve Domuz Adası arasında (36° 40' 0.42" K - 28° 54' 9.96" D), (36° 40' 7.98" K - 28° 54' 38.58" D) koordinat hattı, (36° 38' 57.61" K - 28° 54' 27.09" D), (36° 39' 16.42" K - 28° 54' 57.69" D) koordinat hattı ile (36° 39' 2.25" K - 28° 54' 13.16" D), (36° 39' 6.60" K - 28° 54' 11.88" D) koordinat hattı arasında kalan alanda (Harita-22-2),
   3. Boynuzbükü Koyunda; (36° 42' 28.86" K - 28° 54' 31.68" D), (36° 42' 47.22" K - 28° 54' 33.00" D) koordinat noktalarını birleştiren hattın batısında kalan alanda (Harita-22-3),
+* **ş)** *(Ek: RG-16/9/2026-33372)* Antalya İli, Kemer İlçesi, Üç Adalar Mevkii (36° 27' 44" K - 30° 32' 39" D), (36° 27' 24" K - 30° 32' 37" D), (36° 27' 22" K - 30° 33' 18" D), (36° 27' 43" K - 30° 33' 20" D) koordinat noktaları arasında kalan alanda (Harita-23),
 
 su ürünleri avcılığı yapmak yasaktır.
 
@@ -455,6 +464,8 @@ su ürünleri avcılığı yapmak yasaktır.
 (4) Limanlarda, balıkçı barınak, barınma ve çekek yerlerinde dalış yapılarak su ürünleri avcılığı yasaktır.
 
 (5) Deniz Askeri Yasak Bölgelerinde su ürünleri avcılığı yapmak yasaktır.
+
+(6) *(Ek: RG-16/9/2026-33372)* İstanbul ve Çanakkale Boğazlarında trafik ayırım şeridinde, su ürünleri avcılığı yasaktır.
 
 ---
 

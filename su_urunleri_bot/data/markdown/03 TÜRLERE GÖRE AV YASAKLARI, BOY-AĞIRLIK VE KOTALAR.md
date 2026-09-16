@@ -9,7 +9,7 @@
 ### 1.1) Ticari Avcılıkta Tamamen Yasak Türler *(Madde 16)*
 Aşağıdaki türlerin içsular dahil bütün sularımızda avlanması, toplanması, gemide bulundurulması, karaya çıkarılması, nakli ve satışı yasaktır (taraf olunan uluslararası sözleşme istisnaları hariç):
 
-Akdeniz foku, Akdeniz mercanı, Altı yarıklı bozcamgöz, Batman bantlı çöpçü balığı, Beyaz çalı, Beyaz deniz dalı, Beyaz yüzgeçli köpekbalığı, Büyük beyaz köpekbalığı, Büyük camgöz (güneşlenen), Camgöz, Çekiç köpekbalığı, Çivili köpekbalığı, Denizatı, Deniz alası, Deniz kaplumbağaları (4 tür), Deniz çayırları (2 tür), Dikburun harharyas, Deniz kulağı (2 tür), Dikenli vatoz, Dikenli keler, Domuz köpekbalığı, İpeksi köpekbalığı, İri gözlü sapan köpekbalığı, Kazıkkuyruk, Keler, Kemane, Kırmızı mercan, Kırmızı yıldız, Kum köpekbalığı, Lekeli keler, Leopar sazanı, Mahmuzlu camgöz (2 tür), Mantalar (3 tür), Mavi köpekbalığı, Maya (yengeç), Mersin balıkları, Mersin morinası, Minare, Mor deniz dalı, Mühreler, Orfoz, Pina, Sapan köpekbalığı, Sarı deniz dalı, Sivriburun harharyas, Siyah mercan, Uzun kemane, Yağ balığı, Yağlı balık, Yunus ve Balinalar.
+Akdeniz foku, Akdeniz mercanı, Altı yarıklı bozcamgöz, Balina köpek balığı, Batman bantlı çöpçü balığı, Beyaz çalı, Beyaz deniz dalı, Beyaz yüzgeçli köpekbalığı, Büyük beyaz köpekbalığı, Büyük camgöz (güneşlenen), Camgöz, Çekiç köpekbalığı, Çivili köpekbalığı, Denizatı, Deniz alası, Deniz kaplumbağaları (4 tür), Deniz çayırları (2 tür), Dikburun harharyas, Deniz kulağı (2 tür), Dikenli keler, Domuz köpekbalığı, İpeksi köpekbalığı, İri gözlü sapan köpekbalığı, Kazıkkuyruk, Keler, Kemane, Kırmızı mercan, Kırmızı yıldız, Kum köpekbalığı, Lekeli keler, Leopar sazanı, Mahmuzlu camgöz (2 tür), Mantalar (3 tür), Mavi köpekbalığı, Maya (yengeç), Mersin balıkları, Mersin morinası, Minare, Mor deniz dalı, Mühreler, Orfoz, Pina, Sapan köpekbalığı, Sarı deniz dalı, Sivriburun harharyas, Siyah mercan, Uzun kemane, Yağ balığı, Yağlı balık, Yunus ve Balinalar.
 
 *(Latince adlar için kaynak tebliğ metnindeki tabloya bakınız.)*
 
@@ -45,7 +45,7 @@ Yukarıdaki listenin tamamı + **ayrıca**:
 | Eşkina | 35 | - |
 | Hamsi | 9 | - |
 | İstakoz | 25 | - |
-| İstavrit / İstavrit (Karagöz) | 13 | - |
+| İstavrit / İstavrit (Karagöz) | 12 | - |
 | İstiridye | 6 | - |
 | Kalkan | 45 | - |
 | Karagöz | 18 | - |
@@ -95,9 +95,9 @@ Yukarıdaki listenin tamamı + **ayrıca**:
 | Barbunya | 12 cm | 5 kg | - |
 | Çipura | 20 cm | 5 kg | - |
 | Deniz böceği | 25 cm | 1 adet | - |
-| Dil | 20 cm | 5 kg | 1 Ocak-15 Şubat |
+| Dil | 20 cm | 5 kg | 1 Şubat-14 Mart |
 | Eşkina | 35 cm | 3 adet | - |
-| İstavrit | 13 cm | 5 kg | - |
+| İstavrit | 12 cm | 5 kg | - |
 | Istakoz | 25 cm | 1 adet | - |
 | Kalkan | 45 cm | 1 adet | 15 Nisan-15 Haziran |
 | Karagöz | 18 cm | 5 kg | - |
@@ -110,6 +110,7 @@ Yukarıdaki listenin tamamı + **ayrıca**:
 | Kırma (Kırmızı) mercan | 15 cm | 5 kg | - |
 | Kolyoz | 18 cm | 5 kg | - |
 | Lagos | 50 cm | 1 adet | 1 Haziran-31 Ağustos |
+| Lagos (diğer Epinephelus türleri) | - | 1 adet | 1 Haziran-31 Ağustos |
 | Lipsöz | 15 cm | 5 kg | - |
 | Lambuka | 50 cm | 1 adet | 1 Ocak-14 Ağustos |
 | Levrek | 25 cm | 5 kg | - |
@@ -164,6 +165,9 @@ Yukarıdaki listenin tamamı + **ayrıca**:
 - Gırgır, ortasu trolü, alamana ile hamsi avlayacak gemiler için **İzin Belgesi** zorunlu.
 - Hamsi avcılığı **kota** ile sınırlıdır; kota dolunca avcılık biter, devredilmez; kota kapsamı Bakanlıkça belirlenen yerlerden karaya çıkarılır.
 - **Marmara ve Karadeniz'de** gırgırla hamsi avcılığı yalnız **15.00-09.00** saatleri arasında yapılabilir.
+- **Karadeniz'de Bulgaristan sınırı - Zonguldak Baba Burnu arasında** ortasu trolüyle hamsi avcılığı da yalnız **15.00-09.00** arası yapılır; ağlar bu saatler dışında hamsi amacıyla denizde bulundurulamaz (Harita-65).
+- **İstavrit:** gırgır ve ortasu trolüyle avlayacak gemilere **İzin Belgesi (Ek-2)** zorunlu; avcılık **kota** ile sınırlı (kota dolunca biter, devredilmez, belirlenen yerlerden karaya çıkarılır); avlanan istavritin balık unu/yağı fabrikasına nakli ve kullanımı yasak (1380 sayılı Kanun m.34 kapsamında el konularak satılanlar hariç).
+- **Sezon başlangıcı:** Gırgır ve ortasu trolü ile hamsi ve istavrit avcılığı Karadeniz'de **15 Eylül**'de başlar.
 - Hamsi/istavrit/sardalya nakil kasa/kutu ölçüleri sınırlıdır (kasada 54×9×37 cm + 11 cm ayak; kutuda 59×13×39 cm) — dökme balık unu/yağı sevkiyatı hariç.
 - Uzatma ağı ile sardalya avcılığı **dönem boyunca serbest**.
 - Marmara'dan avlanan hamsi/istavrit/sardalyanın dökme olarak balık unu/yağı fabrikalarına nakli **yasak**.
@@ -173,14 +177,14 @@ Tüm karasularımızda **1 Nisan - 14 Ağustos** arası (ağ dalyanları dahil) 
 
 ### 5.3) Kalkan, Dil, Pisi *(Madde 21)*
 - **Kalkan:** 15 Nisan-15 Haziran avcılık ve ağ bırakma yasağı; ağ gözü ≥400 mm; uzatma ağıyla avlayana İzin Belgesi zorunlu; karaya çıkış noktası belirli; parakete/fanyalı ağ ile avlanamaz; yasak öncesi stoklanan kalkan 7 gün içinde pazarlanmalı; **kota** uygulanır; dip trolünde toplam avın **%30**'undan fazlası kalkan olamaz.
-- **Dil ve pisi:** 1 Ocak-15 Şubat avlanma yasağı; ağ gözü ≥80 mm.
+- **Dil ve pisi:** 1 Şubat-14 Mart avlanma yasağı; ağ gözü ≥72 mm.
 
 ### 5.4) Mavi Yüzgeçli Orkinos *(Madde 22)*
 - ICCAT (Atlantik Ton Balıkları Komisyonu) kotası dahilinde, Bakanlık yönetim planına göre avlanır.
 - Gırgırla avlanan, Bakanlıkça belirlenen sayıdaki gemiye kota tahsis edilir.
 - Kota dolunca avcılık biter, devredilmez.
 - Kiraya verme (yabancı bayraklı gemilerle kota paylaşımı amaçlı) yasaktır; uçak/helikopter/İHA kullanımı yasaktır.
-- **Zaman yasağı:** Akdeniz+Ege karasuları ve bitişik uluslararası sular: **1 Temmuz-14 Mayıs**; diğer alanlar: **1 Temmuz-25 Mayıs**.
+- **Zaman yasağı:** Akdeniz+Ege karasuları ve bitişik uluslararası sular: **1 Temmuz-14 Mayıs**; diğer alanlar: **1 Temmuz-18 Mayıs**.
 - Av/taşıma/destek/yardımcı gemiler İzin Belgesi almalı (tek faaliyet için).
 - **e-BCD olmadan** orkinos/orkinos ürünü bulundurma, taşıma, satış, nakil, besicilik tesisinde bulundurma yasaktır.
 

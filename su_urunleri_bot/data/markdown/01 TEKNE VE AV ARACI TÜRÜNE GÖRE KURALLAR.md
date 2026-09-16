@@ -66,7 +66,9 @@ Trol yasaklı alanlarda, yasak içindeki balıkçı barınaklarından **Bakanlı
 
 ### Orta Su Trolü
 - Karadeniz'de her türlü trolün yasak olduğu yerlerde + **Marmara, Ege ve Akdeniz'in tamamında** ortasu trolü yasaktır.
-- İzinli yer/zamanda **yalnızca çift gemi** ile çekilebilir; **"İzin Belgesi" (Ek-2)** zorunludur.
+- İzinli yer/zamanda **yalnızca çift gemi** ile çekilebilir. *(Ortasu trolü için ayrı İzin Belgesi şartı 16/9/2026 değişikliğiyle kaldırıldı; çaça avcılığında Ek-2 izin belgesi şartı sürüyor.)*
+- 6/1 Tebliğ m.9/4'ün (a) ve (b) bentlerindeki alanlarda **12 milin dışında** ortasu trolü ile avcılık yapılabilir.
+- Karadeniz'de Çayağzı-Taşkana Burnu arasında (15 Nisan-15 Mayıs) çaça avcılığı, **Ek-2 izin belgesiyle ve 05.00-20.00 saatleri arasında** serbesttir.
 - Karadeniz'de **24 metreden sığ sularda** çekilemez; **15 Nisan - 31 Ağustos** yasaktır. **İstisna:** 15 Nisan-15 Mayıs arası Yakakent (Samsun)-Ünye (Ordu) arasında çaça balığı avcılığı serbesttir.
 - Ortasu trolü avında **barbunya, tekir, kalkan, mezgit gibi dip balıkları** gemide bulundurulamaz.
 - Avlanan çaça balığının Bakanlıkça belirlenen yerlerden karaya çıkarılması zorunludur.
@@ -93,12 +95,12 @@ Trol yasaklı alanlarda, yasak içindeki balıkçı barınaklarından **Bakanlı
 | Çanakkale Boğazı, Ege Denizi, Akdeniz | 48 mm |
 
 - **1000 metreden uzun** misina ağı gemide bulundurulamaz/kullanılamaz.
-- Kullanacak gemiler için **"İzin Belgesi" (Ek-2)** zorunludur; yasadışı avcılıkta izin belgesi **iptal edilir** ve o yıl yeniden verilmez.
+- Yasadışı avcılıkta izin belgesi **iptal edilir** ve o yıl yeniden verilmez. *(Misina ağı kullanımı için ayrı İzin Belgesi şartı 16/9/2026 değişikliğiyle kaldırıldı.)*
 
 ### Bölgesel/Tür Bazlı Özel Uzatma Ağı Kuralları
 - **Marmara Denizi:** Karides avcılığında manyat kullanımı, karides kurallarına uymak kaydıyla serbesttir.
 - **Kalkan:** Ağ gözü açıklığı **400 mm**'den küçük olamaz; parakete ve fanyalı ağlarla kalkan avı yasaktır (bkz. Dosya 03).
-- **Dil ve pisi:** Ağ gözü açıklığı **80 mm**'den küçük olamaz.
+- **Dil ve pisi:** Ağ gözü açıklığı **72 mm**'den küçük olamaz (1 Şubat-14 Mart avlanma yasağı).
 - **Van Gölü havzası (içsu):** Uzatma ağı dışında araç kullanılamaz; ağ gözü **40 mm**'den küçük olamaz.
 - **Trabzon-Of bölgesi (belirli dereler):** 1 Nisan-30 Haziran arası, dere ağızları çevresinde (1 km yanal, 500 m deniz yönünde) her türlü sabit ağ kurulması ve su altı tüfeğiyle avcılık yasaktır.
 - **Dolanan (sürüklenen/drift-net) ağlar:** Mantar yakası yüzdürücülü, kurşun yakasız/yetersiz ağırlıklı, akıntıyla sürüklenen ağ türü — **her yerde ve her koşulda tamamen yasaktır** (avcılıkta kullanımı da, gemilerde/barınaklarda bulundurulması da yasak). Kılıç ve uzun kanat orkinos avcılığında da kullanılamaz.
@@ -156,8 +158,9 @@ Bütün karasularımızda **ığrıp, trata, tarlakoz, manyat ve benzeri kıyı 
 
 - Denize bırakılan paraketeler gündüz flama, gece ışıklı şamandıra ile işaretlenmelidir.
 - **İğne büyüklüğü (ağız açıklığı) 7,2 mm'den küçük olamaz.**
-- **Kılıç ve uzun kanat orkinos (tulina)** avında kullanılan paraketelerde **2,8 cm ve üzeri dairesel (yuvarlak) iğne** zorunludur; çapraz boyunlu ise açı 10 dereceyi geçemez.
+- **Kılıç ve uzun kanat orkinos (tulina)** avında kullanılan paraketelerde **iğne boy uzunluğu 7 cm'den küçük olamaz**; çapraz boyunlu ise açı 10 dereceyi geçemez.
 - **Kalkan avcılığında parakete kullanımı yasaktır.**
+- Kalkan avcılığı yapacak **uzatma ağı ve dip trolü** gemileri için **"İzin Belgesi" (Ek-2)** zorunludur.
 - **Lagos avında** sepet, pinter ve benzeri tuzaklar ile parakete/dalarak zıpkın kullanımı yasaktır (bkz. Dosya 03).
 - **Sudak/tatlısu levreği** (içsu) avında parakete ile canlı balık yemi kullanılamaz; Beyşehir Gölü'nde parakete ile avcılık tüm dönem yasaktır (Dosya 04).
 

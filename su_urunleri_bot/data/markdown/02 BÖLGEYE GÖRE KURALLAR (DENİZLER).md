@@ -170,7 +170,10 @@ Marmara Denizi, İstanbul ve Çanakkale Boğazları'nda ışıkla avcılık **ta
 - **Sonar yasağı:** 20 kHz (dahil) ve altı frekanslı sonar kullanımı yasak; Boğazlardan girecek küçük sonarlı tekneler mühürletmelidir (Madde 50/2).
 - **Maden çıkarma yasağı:** I (a) grubu maden çıkarılması Marmara'da tamamen yasaktır (Madde 50/3).
 - **Yardımcı gemi yasağı:** Gırgır ağını çeviren botlar hariç her türlü yardımcı gemi kullanımı ve avlanma sahasında bulunması yasaktır (Madde 50/16).
-- **Hamsi avcılık saatleri:** Marmara ve Karadeniz'de gırgır ile hamsi avcılığı yalnız **15.00-09.00** arası yapılabilir (Madde 19).
+- **Hamsi avcılık saatleri:** Marmara ve Karadeniz'de gırgır ile hamsi avcılığı yalnız **15.00-09.00** arası yapılabilir (Madde 19). Karadeniz'de Bulgaristan sınırı - Zonguldak Baba Burnu arasında **ortasu trolüyle** hamsi avcılığı da aynı saatlerle sınırlıdır (Harita-65). Gırgır ve ortasu trolüyle hamsi/istavrit avcılığı Karadeniz'de **15 Eylül**'de başlar.
+- **İstanbul Boğazı (ticari amaçlı amatör balıkçılık turizmi):** Kuzeyde Türkeli (Rumeli)-Anadolu Feneri hattı ile güneyde Yeniköy Vapur İskelesi-Çubuklu Kozaltı Burnu hattı arasında kalan alanda bu faaliyet **yasaktır** (Harita-64).
+- **İzmit Körfezi (denizkestanesi):** Dil Burnu Feneri-Dil İskelesi Kababurnu hattının doğusunda denizkestanesi avcılığı **yasaktır** (Harita-58-1). Denizkestanesi avcılığı ayrıca **1 Mayıs-31 Ekim** arasında yasaktır.
+- **Antalya, Kemer, Üç Adalar Mevkii:** koordinatlarla belirlenen alanda su ürünleri avcılığı **yasaktır** (Harita-63; amatör avcılıkta Harita-23).
 - **Dökme nakil yasağı:** Marmara'dan avlanan hamsi, istavrit, sardalya gibi ürünlerin dökme halde balık unu/yağı fabrikalarına nakli yasaktır (Madde 19/4).
 
 ### 3.8) Amatör Avcılıkta Marmara Yer Yasakları *(6/2 Tebliğ Madde 17)*

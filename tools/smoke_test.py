@@ -101,7 +101,16 @@ def check_articles():
         raise AssertionError('Yönetmelik Madde 5 metni hâlâ satır sonlarında bölünmüş')
     if (articles[('law', 17)]['title'], articles[('law', 40)]['title']) != ('Muaflıklar', 'Yürürlük'):
         raise AssertionError('Kanun madde başlıkları Markdown başlıklarıyla uyuşmuyor')
-    print(f'articles {len(articles)} madde: Markdown metniyle güncel')
+    # 16/9/2026 tarihli 2026/25 ve 2026/26 değişiklik tebliğleri işlenmiş olmalı.
+    if '| **İstavrit / İstavrit (Karagöz İstavrit)** | *Trachurus trachurus, Trachurus mediterraneus* | 12 |' not in size_article['body']:
+        raise AssertionError('6/1 Md.17: istavrit asgari boyu 12 cm değil')
+    if 'Balina köpek balığı' not in articles[('61', 16)]['body'] or 'Dikenli vatoz' in articles[('61', 16)]['body']:
+        raise AssertionError('6/1 Md.16 yasak tür çizelgesi 2026/25 değişikliğine göre değil')
+    if '1 Şubat - 14 Mart' not in articles[('61', 21)]['body']:
+        raise AssertionError('6/1 Md.21: dil/pisi yasak dönemi güncellenmemiş')
+    if 'Amatör Balıkçı Gemisi Ruhsat Tezkeresi' not in articles[('62', 16)]['body']:
+        raise AssertionError('6/2 Md.16: amatör balıkçı gemisi ruhsat tezkeresi eklenmemiş')
+    print(f'articles {len(articles)} madde: Markdown metniyle güncel (2026/25 ve 2026/26 işlenmiş)')
 
 
 def check_structured_data():
@@ -268,7 +277,7 @@ def check_dataset_migration(work):
         counts = [con.execute(f'SELECT COUNT(*) FROM {table}').fetchone()[0] for table in
                   ('commercial_species', 'amateur_species', 'prohibited_species')]
         dataset = con.execute("SELECT v FROM meta WHERE k='dataset'").fetchone()[0]
-    if dataset != db.DATASET or counts != [65, 54, 53]:
+    if dataset != db.DATASET or counts != [65, 55, 53]:
         raise AssertionError(f'Veri kümesi geçişi başarısız: dataset={dataset}, counts={counts}')
     print(f'dataset migration {dataset}: verified ({counts})')
 

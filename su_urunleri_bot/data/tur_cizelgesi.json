@@ -34,6 +34,14 @@
           },
           {
             "id": "1.1_3",
+            "title": "Balina köpek balığı",
+            "details": {
+              "Türkçe Adı": "Balina köpek balığı",
+              "Kapsam": "Ticari avcılıkta tamamen yasak"
+            }
+          },
+          {
+            "id": "1.1_4",
             "title": "Batman bantlı çöpçü balığı",
             "details": {
               "Türkçe Adı": "Batman bantlı çöpçü balığı",
@@ -41,7 +49,7 @@
             }
           },
           {
-            "id": "1.1_4",
+            "id": "1.1_5",
             "title": "Beyaz çalı",
             "details": {
               "Türkçe Adı": "Beyaz çalı",
@@ -49,7 +57,7 @@
             }
           },
           {
-            "id": "1.1_5",
+            "id": "1.1_6",
             "title": "Beyaz deniz dalı",
             "details": {
               "Türkçe Adı": "Beyaz deniz dalı",
@@ -57,7 +65,7 @@
             }
           },
           {
-            "id": "1.1_6",
+            "id": "1.1_7",
             "title": "Beyaz yüzgeçli köpekbalığı",
             "details": {
               "Türkçe Adı": "Beyaz yüzgeçli köpekbalığı",
@@ -65,7 +73,7 @@
             }
           },
           {
-            "id": "1.1_7",
+            "id": "1.1_8",
             "title": "Büyük beyaz köpekbalığı",
             "details": {
               "Türkçe Adı": "Büyük beyaz köpekbalığı",
@@ -73,7 +81,7 @@
             }
           },
           {
-            "id": "1.1_8",
+            "id": "1.1_9",
             "title": "Büyük camgöz (güneşlenen)",
             "details": {
               "Türkçe Adı": "Büyük camgöz (güneşlenen)",
@@ -81,7 +89,7 @@
             }
           },
           {
-            "id": "1.1_9",
+            "id": "1.1_10",
             "title": "Camgöz",
             "details": {
               "Türkçe Adı": "Camgöz",
@@ -89,7 +97,7 @@
             }
           },
           {
-            "id": "1.1_10",
+            "id": "1.1_11",
             "title": "Çekiç köpekbalığı",
             "details": {
               "Türkçe Adı": "Çekiç köpekbalığı",
@@ -97,7 +105,7 @@
             }
           },
           {
-            "id": "1.1_11",
+            "id": "1.1_12",
             "title": "Çivili köpekbalığı",
             "details": {
               "Türkçe Adı": "Çivili köpekbalığı",
@@ -105,7 +113,7 @@
             }
           },
           {
-            "id": "1.1_12",
+            "id": "1.1_13",
             "title": "Denizatı",
             "details": {
               "Türkçe Adı": "Denizatı",
@@ -113,7 +121,7 @@
             }
           },
           {
-            "id": "1.1_13",
+            "id": "1.1_14",
             "title": "Deniz alası",
             "details": {
               "Türkçe Adı": "Deniz alası",
@@ -121,7 +129,7 @@
             }
           },
           {
-            "id": "1.1_14",
+            "id": "1.1_15",
             "title": "Deniz kaplumbağaları (4 tür)",
             "details": {
               "Türkçe Adı": "Deniz kaplumbağaları (4 tür)",
@@ -129,7 +137,7 @@
             }
           },
           {
-            "id": "1.1_15",
+            "id": "1.1_16",
             "title": "Deniz çayırları (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz çayırları (2 tür)",
@@ -137,7 +145,7 @@
             }
           },
           {
-            "id": "1.1_16",
+            "id": "1.1_17",
             "title": "Dikburun harharyas",
             "details": {
               "Türkçe Adı": "Dikburun harharyas",
@@ -145,18 +153,10 @@
             }
           },
           {
-            "id": "1.1_17",
+            "id": "1.1_18",
             "title": "Deniz kulağı (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz kulağı (2 tür)",
-              "Kapsam": "Ticari avcılıkta tamamen yasak"
-            }
-          },
-          {
-            "id": "1.1_18",
-            "title": "Dikenli vatoz",
-            "details": {
-              "Türkçe Adı": "Dikenli vatoz",
               "Kapsam": "Ticari avcılıkta tamamen yasak"
             }
           },
@@ -501,7 +501,7 @@
               "Türkçe Adı": "Dil",
               "Asgari Boy": "20 cm",
               "Asgari Ağırlık": "—",
-              "Zaman Yasağı": "1 Ocak – 15 Şubat"
+              "Zaman Yasağı": "1 Şubat – 14 Mart"
             }
           },
           {
@@ -539,7 +539,7 @@
             "title": "İstavrit / İstavrit (Karagöz)",
             "details": {
               "Türkçe Adı": "İstavrit / İstavrit (Karagöz)",
-              "Asgari Boy": "13 cm",
+              "Asgari Boy": "12 cm",
               "Asgari Ağırlık": "—",
               "Zaman Yasağı": "—"
             }
@@ -741,7 +741,7 @@
               "Türkçe Adı": "Mavi yüzgeçli orkinos (çatal boy VEYA ağırlık)",
               "Asgari Boy": "115 cm",
               "Asgari Ağırlık": "30 kg",
-              "Zaman Yasağı": "Bölgeye göre: Akdeniz/Ege 1 Temmuz – 14 Mayıs; diğer alanlar 1 Temmuz – 25 Mayıs"
+              "Zaman Yasağı": "Bölgeye göre: Akdeniz/Ege 1 Temmuz – 14 Mayıs; diğer alanlar 1 Temmuz – 18 Mayıs"
             }
           },
           {
@@ -925,6 +925,14 @@
           },
           {
             "id": "2.1_3",
+            "title": "Balina köpek balığı",
+            "details": {
+              "Türkçe Adı": "Balina köpek balığı",
+              "Kapsam": "Amatör avcılıkta tamamen yasak"
+            }
+          },
+          {
+            "id": "2.1_4",
             "title": "Batman bantlı çöpçü balığı",
             "details": {
               "Türkçe Adı": "Batman bantlı çöpçü balığı",
@@ -932,7 +940,7 @@
             }
           },
           {
-            "id": "2.1_4",
+            "id": "2.1_5",
             "title": "Beyaz çalı",
             "details": {
               "Türkçe Adı": "Beyaz çalı",
@@ -940,7 +948,7 @@
             }
           },
           {
-            "id": "2.1_5",
+            "id": "2.1_6",
             "title": "Beyaz deniz dalı",
             "details": {
               "Türkçe Adı": "Beyaz deniz dalı",
@@ -948,7 +956,7 @@
             }
           },
           {
-            "id": "2.1_6",
+            "id": "2.1_7",
             "title": "Beyaz yüzgeçli köpekbalığı",
             "details": {
               "Türkçe Adı": "Beyaz yüzgeçli köpekbalığı",
@@ -956,7 +964,7 @@
             }
           },
           {
-            "id": "2.1_7",
+            "id": "2.1_8",
             "title": "Büyük beyaz köpekbalığı",
             "details": {
               "Türkçe Adı": "Büyük beyaz köpekbalığı",
@@ -964,7 +972,7 @@
             }
           },
           {
-            "id": "2.1_8",
+            "id": "2.1_9",
             "title": "Büyük camgöz (güneşlenen)",
             "details": {
               "Türkçe Adı": "Büyük camgöz (güneşlenen)",
@@ -972,7 +980,7 @@
             }
           },
           {
-            "id": "2.1_9",
+            "id": "2.1_10",
             "title": "Camgöz",
             "details": {
               "Türkçe Adı": "Camgöz",
@@ -980,7 +988,7 @@
             }
           },
           {
-            "id": "2.1_10",
+            "id": "2.1_11",
             "title": "Çekiç köpekbalığı",
             "details": {
               "Türkçe Adı": "Çekiç köpekbalığı",
@@ -988,7 +996,7 @@
             }
           },
           {
-            "id": "2.1_11",
+            "id": "2.1_12",
             "title": "Çivili köpekbalığı",
             "details": {
               "Türkçe Adı": "Çivili köpekbalığı",
@@ -996,7 +1004,7 @@
             }
           },
           {
-            "id": "2.1_12",
+            "id": "2.1_13",
             "title": "Denizatı",
             "details": {
               "Türkçe Adı": "Denizatı",
@@ -1004,7 +1012,7 @@
             }
           },
           {
-            "id": "2.1_13",
+            "id": "2.1_14",
             "title": "Deniz alası",
             "details": {
               "Türkçe Adı": "Deniz alası",
@@ -1012,7 +1020,7 @@
             }
           },
           {
-            "id": "2.1_14",
+            "id": "2.1_15",
             "title": "Deniz kaplumbağaları (4 tür)",
             "details": {
               "Türkçe Adı": "Deniz kaplumbağaları (4 tür)",
@@ -1020,7 +1028,7 @@
             }
           },
           {
-            "id": "2.1_15",
+            "id": "2.1_16",
             "title": "Deniz çayırları (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz çayırları (2 tür)",
@@ -1028,7 +1036,7 @@
             }
           },
           {
-            "id": "2.1_16",
+            "id": "2.1_17",
             "title": "Dikburun harharyas",
             "details": {
               "Türkçe Adı": "Dikburun harharyas",
@@ -1036,18 +1044,10 @@
             }
           },
           {
-            "id": "2.1_17",
+            "id": "2.1_18",
             "title": "Deniz kulağı (2 tür)",
             "details": {
               "Türkçe Adı": "Deniz kulağı (2 tür)",
-              "Kapsam": "Amatör avcılıkta tamamen yasak"
-            }
-          },
-          {
-            "id": "2.1_18",
-            "title": "Dikenli vatoz",
-            "details": {
-              "Türkçe Adı": "Dikenli vatoz",
               "Kapsam": "Amatör avcılıkta tamamen yasak"
             }
           },
@@ -1403,7 +1403,7 @@
               "Asgari Boy": "20 cm",
               "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
-              "Zaman Yasağı": "1 Ocak – 15 Şubat"
+              "Zaman Yasağı": "1 Şubat – 14 Mart"
             }
           },
           {
@@ -1422,7 +1422,7 @@
             "title": "İstavrit",
             "details": {
               "Türkçe Adı": "İstavrit",
-              "Asgari Boy": "13 cm",
+              "Asgari Boy": "12 cm",
               "Asgari Ağırlık": "—",
               "Alıkonulabilir Miktar": "5 kg",
               "Zaman Yasağı": "—"
@@ -1562,6 +1562,17 @@
           },
           {
             "id": "2.2_21",
+            "title": "Lagos (diğer Epinephelus türleri)",
+            "details": {
+              "Türkçe Adı": "Lagos (diğer Epinephelus türleri)",
+              "Asgari Boy": "—",
+              "Asgari Ağırlık": "—",
+              "Alıkonulabilir Miktar": "1 adet",
+              "Zaman Yasağı": "1 Haziran – 31 Ağustos"
+            }
+          },
+          {
+            "id": "2.2_22",
             "title": "Lipsöz",
             "details": {
               "Türkçe Adı": "Lipsöz",
@@ -1572,7 +1583,7 @@
             }
           },
           {
-            "id": "2.2_22",
+            "id": "2.2_23",
             "title": "Lambuka",
             "details": {
               "Türkçe Adı": "Lambuka",
@@ -1583,7 +1594,7 @@
             }
           },
           {
-            "id": "2.2_23",
+            "id": "2.2_24",
             "title": "Levrek",
             "details": {
               "Türkçe Adı": "Levrek",
@@ -1594,7 +1605,7 @@
             }
           },
           {
-            "id": "2.2_24",
+            "id": "2.2_25",
             "title": "Lüfer",
             "details": {
               "Türkçe Adı": "Lüfer",
@@ -1605,7 +1616,7 @@
             }
           },
           {
-            "id": "2.2_25",
+            "id": "2.2_26",
             "title": "Mavi yengeç",
             "details": {
               "Türkçe Adı": "Mavi yengeç",
@@ -1616,7 +1627,7 @@
             }
           },
           {
-            "id": "2.2_26",
+            "id": "2.2_27",
             "title": "Mavi yüzgeçli orkinos (çatal boy)",
             "details": {
               "Türkçe Adı": "Mavi yüzgeçli orkinos (çatal boy)",
@@ -1627,7 +1638,7 @@
             }
           },
           {
-            "id": "2.2_27",
+            "id": "2.2_28",
             "title": "Mezgit",
             "details": {
               "Türkçe Adı": "Mezgit",
@@ -1638,7 +1649,7 @@
             }
           },
           {
-            "id": "2.2_28",
+            "id": "2.2_29",
             "title": "Minekop",
             "details": {
               "Türkçe Adı": "Minekop",
@@ -1649,7 +1660,7 @@
             }
           },
           {
-            "id": "2.2_29",
+            "id": "2.2_30",
             "title": "Palamut",
             "details": {
               "Türkçe Adı": "Palamut",
@@ -1660,7 +1671,7 @@
             }
           },
           {
-            "id": "2.2_30",
+            "id": "2.2_31",
             "title": "Pisi",
             "details": {
               "Türkçe Adı": "Pisi",
@@ -1671,7 +1682,7 @@
             }
           },
           {
-            "id": "2.2_31",
+            "id": "2.2_32",
             "title": "Sargos",
             "details": {
               "Türkçe Adı": "Sargos",
@@ -1682,7 +1693,7 @@
             }
           },
           {
-            "id": "2.2_32",
+            "id": "2.2_33",
             "title": "Sarıağız",
             "details": {
               "Türkçe Adı": "Sarıağız",
@@ -1693,7 +1704,7 @@
             }
           },
           {
-            "id": "2.2_33",
+            "id": "2.2_34",
             "title": "Sarıkuyruk",
             "details": {
               "Türkçe Adı": "Sarıkuyruk",
@@ -1704,7 +1715,7 @@
             }
           },
           {
-            "id": "2.2_34",
+            "id": "2.2_35",
             "title": "Sinagrit",
             "details": {
               "Türkçe Adı": "Sinagrit",
@@ -1715,7 +1726,7 @@
             }
           },
           {
-            "id": "2.2_35",
+            "id": "2.2_36",
             "title": "Tekir",
             "details": {
               "Türkçe Adı": "Tekir",
@@ -1726,7 +1737,7 @@
             }
           },
           {
-            "id": "2.2_36",
+            "id": "2.2_37",
             "title": "Uskumru",
             "details": {
               "Türkçe Adı": "Uskumru",
@@ -1737,7 +1748,7 @@
             }
           },
           {
-            "id": "2.2_37",
+            "id": "2.2_38",
             "title": "Uzun kanat orkinos (tulina)",
             "details": {
               "Türkçe Adı": "Uzun kanat orkinos (tulina)",
@@ -1748,7 +1759,7 @@
             }
           },
           {
-            "id": "2.2_38",
+            "id": "2.2_39",
             "title": "Yazılı orkinos",
             "details": {
               "Türkçe Adı": "Yazılı orkinos",
@@ -1759,7 +1770,7 @@
             }
           },
           {
-            "id": "2.2_39",
+            "id": "2.2_40",
             "title": "Diğer türler",
             "details": {
               "Türkçe Adı": "Diğer türler",
@@ -2173,7 +2184,7 @@
             "title": "Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat",
             "details": {
               "Bölge (İller)": "Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat",
-              "Yasak Dönem": "1 Nisan – 30 Haziran"
+              "Yasak Dönem": "15 Nisan – 15 Temmuz"
             }
           },
           {
@@ -2214,7 +2225,7 @@
             "details": {
               "Türler": "Sazan, Kadife, Siraz, Yayın, Tatlısu kefali (akarsular hariç), Diğer türler",
               "Bölge/İller": "Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli, Yozgat",
-              "Yasak Dönem": "1 Nisan – 30 Haziran"
+              "Yasak Dönem": "15 Nisan – 15 Temmuz"
             }
           },
           {

@@ -64,7 +64,7 @@ COMMERCIAL_TIME = {
     'Akivades': (['04-15/08-31'], 28),
     'Akya': (['04-15/05-15'], 24),
     'Deniz böceği': (['09-02/04-14'], 30),
-    'Dil': (['01-01/02-15'], 21),
+    'Dil': (['02-01/03-14'], 21),
     'İstakoz': (['09-02/04-14'], 30),
     'İstiridye': (['04-15/08-31'], 28),
     'Kalkan': (['04-15/06-15'], 21),
@@ -82,9 +82,10 @@ COMMERCIAL_TIME = {
 
 AMATEUR_TIME = {
     'Ahtapot': ['04-15/10-31'], 'Akya': ['04-15/05-15'],
-    'Dil': ['01-01/02-15'], 'Kalkan': ['04-15/06-15'],
+    'Dil': ['02-01/03-14'], 'Kalkan': ['04-15/06-15'],
     'Kılıç (çatal boy)': ['02-15/03-15', '10-01/11-30'],
-    'Lagos': ['06-01/08-31'], 'Lambuka': ['01-01/08-14'],
+    'Lagos': ['06-01/08-31'], 'Lagos (diğer Epinephelus türleri)': ['06-01/08-31'],
+    'Lambuka': ['01-01/08-14'],
     'Mavi yüzgeçli orkinos (çatal boy)': ['10-15/06-15'],
     'Palamut': ['04-01/08-14'], 'Sarıkuyruk': ['04-15/05-15'],
     'Uzun kanat orkinos (tulina)': ['02-15/03-15', '10-01/11-30'],
@@ -105,7 +106,7 @@ INLAND_AMATEUR_TIME = {
 
 SPECIAL_TIME_TEXT = {
     'Mavi yüzgeçli orkinos (çatal boy VEYA ağırlık)':
-        'Bölgeye göre: Akdeniz/Ege 1 Temmuz – 14 Mayıs; diğer alanlar 1 Temmuz – 25 Mayıs',
+        'Bölgeye göre: Akdeniz/Ege 1 Temmuz – 14 Mayıs; diğer alanlar 1 Temmuz – 18 Mayıs',
 }
 
 INLAND_COMMERCIAL_TIME_TEXT = {

@@ -75,7 +75,7 @@
     "min_kg": null,
     "limit": "5 kg",
     "time_bans": [
-      "01-01/02-15"
+      "02-01/03-14"
     ],
     "source": "62",
     "article": 15,
@@ -95,7 +95,7 @@
   },
   {
     "name": "İstavrit",
-    "min_cm": 13.0,
+    "min_cm": 12.0,
     "min_kg": null,
     "limit": "5 kg",
     "time_bans": [],
@@ -233,6 +233,19 @@
   {
     "name": "Lagos",
     "min_cm": 50.0,
+    "min_kg": null,
+    "limit": "1 adet",
+    "time_bans": [
+      "06-01/08-31"
+    ],
+    "source": "62",
+    "article": 15,
+    "scope": "sea",
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
+    "name": "Lagos (diğer Epinephelus türleri)",
+    "min_cm": null,
     "min_kg": null,
     "limit": "1 adet",
     "time_bans": [

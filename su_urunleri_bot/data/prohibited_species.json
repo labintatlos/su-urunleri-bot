@@ -24,6 +24,14 @@
     "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
   },
   {
+    "name": "Balina köpek balığı",
+    "commercial": true,
+    "amateur": true,
+    "source": "61",
+    "article": 16,
+    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
+  },
+  {
     "name": "Batman bantlı çöpçü balığı",
     "commercial": true,
     "amateur": true,
@@ -137,14 +145,6 @@
   },
   {
     "name": "Deniz kulağı (2 tür)",
-    "commercial": true,
-    "amateur": true,
-    "source": "61",
-    "article": 16,
-    "source_doc": "03 TÜRLERE GÖRE AV YASAKLARI, BOY-AĞIRLIK VE KOTALAR.md"
-  },
-  {
-    "name": "Dikenli vatoz",
     "commercial": true,
     "amateur": true,
     "source": "61",

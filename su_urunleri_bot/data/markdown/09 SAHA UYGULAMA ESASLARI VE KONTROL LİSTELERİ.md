@@ -113,7 +113,7 @@
 
 ### 4.5 Uzatma ağı, parakete ve kıyı sürütme ağları
 - Uzatma ağı göz açıklığı, ağ derinliği, gemide toplam 6000 m sınırı, gündüz flama ve gece ışıklı şamandıra ile işaretleme; monofilament ve multimonofilament ağlarda göz açıklığı, 1000 m sınırı ve Ek-2 İzin Belgesi (6/1 Md.14/2).
-- Parakete işaretlemesi ve 7,2 mm iğne sınırı; kılıç ve tulina paraketesinde dairesel iğne en az 2,8 cm (6/1 Md.15).
+- Parakete işaretlemesi ve 7,2 mm iğne sınırı; kılıç ve tulina paraketesinde iğne boy uzunluğu en az 7 cm (6/1 Md.15).
 - Bütün karasularında ığrıp, trata, tarlakoz, manyat ve benzeri kıyı sürütme ağlarıyla avcılık ve bu ağlar ile donanımın balıkçı gemisinde bulundurulması yasaktır; Marmara karides manyatı istisnası Tebliğ şartlarıyla sınırlıdır (6/1 Md.14/1). İçsularda Bakanlık izni olmadan gümüş balığı avcılığı dışında ığrıp ve manyat kullanılamaz (6/1 Md.51/9).
 - Bakanlıktan izinli mevcut çökertme/kaldırma ağları dışında yenisi kurulamaz (6/1 Md.34).
 
@@ -138,7 +138,7 @@
 ### 4.9 Mavi yüzgeçli orkinos, kılıç ve tulina
 - Mavi yüzgeçli orkinos avcılığı ICCAT kotası ve Bakanlık yönetim planı dahilinde, gemiye verilen kota içinde yapılır; kota dolunca avcılık sona erer (6/1 Md.22/1-a–c).
 - Av, taşıma, destek ve yardımcı gemiler Ek-2 İzin Belgesi alır ve yalnız bir faaliyet için izinlidir (Md.22/2).
-- Akdeniz ve Ege karasuları ile bitişik uluslararası sularda 1 Temmuz–14 Mayıs, diğer alanlarda 1 Temmuz–25 Mayıs arasında avcılık yasaktır; uçak, helikopter ve insansız hava aracı kullanılamaz (Md.22/1-d, e).
+- Akdeniz ve Ege karasuları ile bitişik uluslararası sularda 1 Temmuz–14 Mayıs, diğer alanlarda 1 Temmuz–18 Mayıs arasında avcılık yasaktır; uçak, helikopter ve insansız hava aracı kullanılamaz (Md.22/1-d, e).
 - eBCD olmadan mavi yüzgeçli orkinos ve ürünleri (iç organ ve yumurta hariç) gemide bulundurulamaz, kafeste taşınamaz, satılamaz, nakledilemez ve besi tesisinde bulundurulamaz (Md.22/4).
 - Asgari boy 115 cm / ağırlık 30 kg; 8–30 kg veya 75–115 cm bireylerde adet üzerinden en fazla %5 istisna (Md.17, 18/3). Hedef dışı yakalanan mavi yüzgeçli orkinos için karaya çıkışta tespit ve eBCD düzenlenir (Md.18/1-ç).
 - Kılıç ve tulina: 15 Şubat–15 Mart ve 1 Ekim–30 Kasım arasında avlanma, gemide bulundurma, aktarma, sevk ve karaya çıkarma yasak; önceki yılın 31 Aralık’ına kadar Ek-2 İzin Belgesi ve belirlenen karaya çıkış noktası; bu faaliyette gemide dip trolü ağı, kapıları, ırgatı ve dip balıkları bulunamaz; drift-net kullanılamaz (Md.25).

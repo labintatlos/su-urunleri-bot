@@ -51,6 +51,11 @@
 - Talep halinde il/ilçe müdürlüğünce **5 yıl geçerli Amatör Balıkçı Belgesi (Ek-1)** verilir.
 - **Bu belgenin alınması veya avcılık sırasında bulundurulması zorunlu değildir** — ancak Bakanlık, tür/yer/yönteme göre belge zorunluluğu getirebilir (örn. 2026'dan itibaren sualtı tüfeğiyle avlanacaklar için zorunlu — bkz. §5).
 - Gönüllü amatör balıkçılık kuruluşları üyelerinin belgesini topluca aldırabilir.
+- **On beş yaşını doldurmuş** olanlara veli veya vasilerinin **yazılı onayı** ile Amatör Balıkçı Belgesi düzenlenebilir.
+- **1 Eylül 2027**'den itibaren amatör balıkçılık yapacak **gemiler** için il/ilçe müdürlüğünden **"Amatör Balıkçı Gemisi Ruhsat Tezkeresi"** alınması zorunludur.
+- **Amatör ve sportif amaçlı mavi yüzgeçli orkinos avcılığı izne tabidir**; avlanan orkinoslar için il/ilçe müdürlüğünden **Orkinos Yakalama Dokümanı (e-BCD)** düzenlettirilmesi zorunludur.
+- **Karayla bağlantısı olmayan, su yüzeyinde serbest hareket eden yüzen adalara çıkarak** amatör avcılık yasaktır.
+- **İstanbul ve Çanakkale Boğazlarında trafik ayırım şeridinde** su ürünleri avcılığı yasaktır.
 
 ### Yabancı Uyruklular
 - Ülkemizde sürekli ikamet eden, resmî misafir veya geçici görevli yabancılar: **il müdürlüğünden 2 yıl geçerli Misafir Amatör Balıkçı Belgesi (Ek-2)**.

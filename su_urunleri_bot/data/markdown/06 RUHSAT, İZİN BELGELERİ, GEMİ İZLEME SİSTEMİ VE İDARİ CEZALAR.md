@@ -90,7 +90,9 @@ Balıkçı gemilerinin kimlik/konum/zaman/hız/yön bilgileri ile avcılık faal
 ### Kimler İçin Zorunlu
 - **Boy uzunluğu 12 metre ve üzeri**, denizlerde ticari avcılık yapan ruhsatlı gemiler.
 - Genel Müdürlük, boy/faaliyet tipine bakmaksızın **diğer gemilere de** BAGİS taktırmayı zorunlu tutabilir.
-- 6/1 Tebliğ ile ayrıca: algarna, manyat, dreç ve dalma yöntemiyle avcılık yapan gemiler + ticari amatör turizm gemileri, **1 Eylül 2026**'dan itibaren zorunlu.
+- 6/1 Tebliğ ile ayrıca: algarna, manyat, dreç ve dalma yöntemiyle avcılık yapan gemiler + ticari amatör turizm gemileri, **1 Eylül 2028**'dan itibaren zorunlu.
+- **SUBİS personel kaydı:** 12 metre ve üzeri boydaki ruhsatlı balıkçı gemilerinin sahip/donatanları, gemide avcılık faaliyetinde bulunan gerçek kişileri Bakanlığın belirleyeceği esaslara göre **Su Ürünleri Bilgi Sistemi (SUBİS)'e kaydettirmek zorundadır** (6/1 Tebliğ m.50/17).
+- **Amatör Balıkçı Gemisi Ruhsat Tezkeresi:** 1 Eylül 2027'den itibaren amatör balıkçılık faaliyetinde bulunacak gemiler için zorunludur (6/2 Tebliğ m.16/7).
 
 ### Cihaz ve Masraflar
 - Cihaz, Genel Müdürlükçe ilan edilen yazılım/donanım özelliklerine uygun olmalıdır.

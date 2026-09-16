@@ -16,6 +16,7 @@
 
 * **a) Ağ gözü açıklığı:** Ağ ıslakken, ağ ipinin ve düğümünün kalınlığına bakılmaksızın, gergin halde bir ağ gözünün karşılıklı iki düğümü arasındaki mesafe (Ek-1) olup ağın akış yönü dikkate alınarak, birbirini takip eden yirmi ağ gözünde yapılan ölçümün ortalamasını,
 * **b) Akarsu:** Belirli bir yatak içinde sürekli veya zaman zaman akan nehir, çay, ırmak, dere olarak adlandırılan suları,
+* **cc) İğne boy uzunluğu:** *(Ek: RG-16/9/2026-33372)* Misinanın bağlandığı gözün en üst noktası ile iğne kıvrımının tepe noktası arasındaki sap boyunca ölçülen azami uzunluğu,
 * **c) Akdeniz:** 29° D (doğu) boylamı ile Suriye sınırı arasında kalan suları,
 * **ç) Alamana ağı:** Fanyalı ve fanyasız olabilen, mapa ve tel bulunmayan, alttan büzülmeyen, büzmeye yarayacak herhangi bir düzeneği bulunmayan ve sürütülmeyen voli ağları olarak da adlandırılan çevirme ağlarını,
 * **d) Bakanlık:** Tarım ve Orman Bakanlığını,
@@ -76,6 +77,7 @@ ifade eder.
   6. İnceburun mevkiinde; (36° 11' 33.72" K - 29° 38' 57.24" D) ile (36° 10' 59.46" K - 29° 38' 31.62" D) koordinat noktalarını birleştiren hattın güneyinde kalan alanda (Harita-6-6),
   7. Çondur Burnu mevkiinde; (36° 11' 15" K - 29° 36' 17" D), (36° 11' 12" K - 29° 36' 40" D), (36° 11' 49" K - 29° 37' 01" D) koordinat noktalarını birleştiren hattın batısında kalan alanda (Harita-6-7),
   8. Bucak Denizinde; (36° 12' 20.27" K - 29° 36' 6.66" D) ve (36° 11' 49.06" K - 29° 36' 12.85" D) koordinat noktalarını birleştiren hattın doğusunda kalan alanda (Harita-6-8),
+* **l)** *(Ek: RG-16/9/2026-33372)* Antalya İli, Kemer İlçesi, Üç Adalar Mevkii (36° 27' 44" K - 30° 32' 39" D), (36° 27' 24" K - 30° 32' 37" D), (36° 27' 22" K - 30° 33' 18" D), (36° 27' 43" K - 30° 33' 20" D) koordinat noktaları arasında kalan alanda (Harita-63),
 
 su ürünleri avcılığı yasaktır.
 
@@ -136,7 +138,7 @@ su ürünleri avcılığı yasaktır.
 * **a)** Çanakkale İli, Deniz Polisi Eğitim Merkezi Müdürlüğünün bulunduğu (40° 3' 59.76" K - 26° 21' 4.02" D), (40° 3' 22.50" K - 26° 20' 56.34" D), (40° 3' 26.04" K - 26° 21' 22.80" D), (40° 3' 58.02" K - 26° 21' 21.36" D) koordinat noktalarını birleştiren alan içerisinde (Harita-19-1),
 * **b)** Çanakkale İli, Dardanos mercan resiflerinin bulunduğu (40° 04' 21.82" K - 26° 21' 13.24" D), (40° 04' 21.61" K - 26° 21' 09.62" D), (40° 04' 18.86" K - 26° 21' 10.77" D), (40° 04' 19.13" K - 26° 21' 14.21" D) koordinat noktalarını birleştiren alan içerisinde (Harita-19-2),
 * **c)** Çanakkale İli, Maydos İskelesi Nara Burnunu kapsayan deniz askeri güvenlik bölgesinin yer aldığı (40° 11' 49.02" K - 26° 25' 20.58" D), (40° 9' 25.32" K - 26° 24' 33.00" D) koordinat noktaları arasında kalan alanda kıyıdan itibaren 200 metrelik mesafe içinde (Harita-19-3),
-* **ç)** Çanakkale İli, Gelibolu İlçesi ile Lapseki İlçesi arasında bulunan 1915 Çanakkale Köprüsünün yer aldığı (40° 19' 35" K - 26° 39' 2" D), (40° 20' 42" K - 26° 36' 52" D), (40° 21' 8" K - 26° 37' 21" D), (40° 19' 58" K - 26° 39' 40" D) koordinat noktaları arasında kalan deniz alanında (Harita-19-4),
+* **ç)** *(Değişik: RG-16/9/2026-33372)* Çanakkale İli, Gelibolu İlçesi ile Lapseki İlçesi arasında bulunan 1915 Çanakkale Köprüsünün yer aldığı (40° 19' 49.81" K - 26° 39' 33.24" D), (40° 19' 42.26" K - 26° 39' 11.62" D), (40° 20' 49.23" K - 26° 37' 0.13" D), (40° 21' 1.88" K - 26° 37' 16.03" D) koordinat noktaları arasında kalan deniz alanında, (Harita-19-4),
 * **d)** Çanakkale İli, Biga İlçesi, İÇDAŞ limanında; (40° 24' 41.28" K - 27° 2' 19.02" D), (40° 23' 54.54" K - 27° 2' 33.66" D) koordinat noktalarını birleştiren hat ile mendirek arasında kalan alanda (Harita-19-5),
 * **e)** Avustralya Denizaltısı (A-E 2) batığının bulunduğu (40° 32' 50" K - 27° 16' 00" D) koordinat noktasında (Harita-20-1),
 * **f)** Balıkesir İli, Gönen Çayı ağzı (40° 19' 38" K - 27° 38' 00" D) ile Denizkent (40° 18' 15" K - 27° 30' 45" D) arasında kalan alanda 3 mil içerisinde, 15 Nisan - 31 Ağustos tarihleri arasında (Harita-20-2),
@@ -192,6 +194,7 @@ su ürünleri avcılığı yasaktır.
 * **ç)** Turmeos I ve Turcyos I denizaltı kablolarının geçtiği güzergâhlarda, kabloların 100 metre sağında ve solunda dip trolü ile su ürünleri avcılığı yasaktır.
 * **d)** 1 Nisan - 15 Kasım tarihleri arasındaki dönemde, sahilden itibaren uzaklığı 200 metreyi geçmeyen, şamandıralarla çevrilmiş yüzme alanları içinde su ürünleri avcılığı yasaktır.
 * **e)** Yapay resif sahası olarak deniz seyir haritalarında belirtilen alanlarda olta, çapari ve parakete dışında her türlü istihsal vasıtasıyla su ürünleri avcılığı yasaktır.
+* **f)** *(Ek: RG-16/9/2026-33372)* İstanbul Boğazında; Kuzeyde Türkeli (Rumeli) Feneri (41° 14' 7.56" K - 29° 6' 45.84" D) ile Anadolu Fenerini (41° 13' 6.06" K - 29° 9' 10.38" D) birleştiren hat ile güneyde Yeniköy Vapur İskelesi (41° 07' 18.03" K - 29° 04' 15.72" D) ve Çubuklu Kozaltı Burnunu (41° 6' 35.94" K - 29° 4' 58.38" D) birleştiren hat arasında kalan alanda ticari amaçlı amatör balıkçılık turizmi faaliyetinde bulunulması yasaktır (Harita-64).
 
 ---
 
@@ -298,11 +301,11 @@ dip trolü ile su ürünleri avcılığı yasaktır.
 (15) Marmara Denizi ile İstanbul ve Çanakkale Boğazlarındaki limanlar, balıkçı barınakları, barınma ve çekek yerlerinde Tebliğ dönemi boyunca, mühürsüz olarak trol ağ ve kapıları bulundurulamaz.
 
 ### Ortasu trolüne ilişkin yasaklar
-**MADDE 11 –** (1) Karadeniz'de her türlü trol avcılığının yasaklandığı yerler ile Marmara Denizi, Ege Denizi ve Akdeniz'de ortasu trolü ile su ürünleri avcılığı yasaktır.
+**MADDE 11 –** (1) Karadeniz'de her türlü trol avcılığının yasaklandığı yerler ile Marmara Denizi, Ege Denizi ve Akdeniz'de ortasu trolü ile su ürünleri avcılığı yasaktır. *(Ek: RG-16/9/2026-33372)* Bu Tebliğin 9 uncu maddesinin dördüncü fıkrasının (a) ve (b) bentlerinde belirtilen alanlarda 12 milin dışında ortasu trolü ile su ürünleri avcılığı yapılabilir.
 
-(2) Ortasu trolü, kullanımına izin verilen yer ve zamanlarda sadece çift gemi ile çekilebilir. Ortasu trolü ile avcılık yapacak balıkçı gemileri için, gemi ruhsat tezkeresinin verildiği il/ilçe müdürlüğünden Ek-2'de yer alan avcılık "İzin Belgesi"nin alınması zorunludur.
+(2) Ortasu trolü, kullanımına izin verilen yer ve zamanlarda sadece çift gemi ile çekilebilir. *(Mülga ikinci cümle: RG-16/9/2026-33372)*
 
-(3) Karadeniz'de ortasu trolünün 24 metreden daha sığ sularda çekilmesi ve 15 Nisan - 31 Ağustos tarihleri arasında su ürünleri istihsalinde kullanılması yasaktır. Ancak Karadeniz'de; 15 Nisan - 15 Mayıs tarihleri arasında Samsun İli, Yakakent İlçesi, Çayağzı Burnu (41° 41' 2.40" K - 35° 25' 11.58" D) ile Ordu İli, Ünye İlçesi, Taşkana Burnu (41° 8' 43.50" K - 37° 17' 31.86" D) (Harita-42-4) arasında ortasu trolü ile çaça balığı avcılığı serbesttir.
+(3) Karadeniz'de ortasu trolünün 24 metreden daha sığ sularda çekilmesi ve 15 Nisan - 31 Ağustos tarihleri arasında su ürünleri istihsalinde kullanılması yasaktır. Ancak Karadeniz'de; 15 Nisan - 15 Mayıs tarihleri arasında Samsun İli, Yakakent İlçesi, Çayağzı Burnu (41° 41' 2.40" K - 35° 25' 11.58" D) ile Ordu İli, Ünye İlçesi, Taşkana Burnu (41° 8' 43.50" K - 37° 17' 31.86" D) (Harita-42-4) arasında *(Değişik: RG-16/9/2026-33372)* kalan alanda Ek-2'de yer alan izin belgesinin alınması şartıyla ortasu trolü ile çaça balığı avcılığı 05.00 - 20.00 saatleri arasında serbesttir.
 
 (4) Ortasu trolü avcılığı yapan balıkçı gemilerinde bu faaliyetleri sırasında barbunya, tekir, kalkan, mezgit gibi dip balıkları bulundurulamaz.
 
@@ -413,7 +416,7 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 * **ç)** Denizlerde yapılan su ürünleri avcılığında monofilament (tek kat) ve multimonofilament (çoklu tek kat) misina ağlarının kullanımına ilişkin düzenlemeler aşağıda belirtilmiştir:
   1. İstanbul Boğazı ile Karadeniz ve Marmara Denizi'nde 34 mm'den, Çanakkale Boğazı ile Ege Denizi ve Akdeniz'de *(Değişik ibare: RG-16/4/2025-32872)* 48 mm'den daha küçük göz açıklığına sahip monofilament (tek kat) ve multimonofilament (çoklu tek kat) misina ağlarının kullanılması yasaktır.
   2. *(Değişik ibare: RG-16/4/2025-32872)* 1000 metreden daha uzun monofilament (tek kat) ve multimonofilament (çoklu tek kat) misina ağlarının balıkçı gemilerinde bulundurulması ve kullanılması yasaktır.
-  3. Monofilament (tek kat) ve multimonofilament (çoklu tek kat) misina ağları ile avcılık yapacak balıkçı gemileri için gemi ruhsat tezkeresinin verildiği il/ilçe müdürlüğünden Ek-2'de yer alan avcılık "İzin Belgesi"nin alınması zorunludur.
+  3. *(Mülga: RG-16/9/2026-33372)*
   4. Monofilament (tek kat) ve multimonofilament (çoklu tek kat) misina ağları ile yasadışı avcılık faaliyetinde bulunan balıkçı gemilerinin Ek-2'de yer alan avcılık "İzin Belgesi" iptal edilir. İptal edilen iznin geçerli olduğu yıl boyunca yeni izin belgesi düzenlenmez.
 
 (3) Marmara Denizi'nde; karides avcılığında kullanımına izin verilen manyat ile karides için getirilen düzenlemelere uymak şartıyla karides avcılığı yapılabilir.
@@ -431,7 +434,7 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 
 (2) Parakete ile yapılan su ürünleri avcılığında, büyüklüğü (ağız açıklığı) 7,2 mm'den küçük iğnelerin kullanılması yasaktır.
 
-(3) Kılıç ve uzun kanat orkinos (tulina) avcılığında kullanılan paraketelerde, büyüklüğü (ağız açıklığı) 2,8 cm ve daha büyük dairesel (yuvarlak) iğnelerin kullanılması zorunludur. Bu iğnelerin çapraz boyunlu olması halinde açıları 10 dereceden fazla olamaz.
+(3) Kılıç ve uzun kanat orkinos (tulina) avcılığında kullanılan paraketelerde, *(Değişik: RG-16/9/2026-33372)* iğne boy uzunluğu 7 cm'den küçük olamaz. Bu iğnelerin çapraz boyunlu olması halinde açıları 10 dereceden fazla olamaz.
 
 (4) Parakete ile kalkan avcılığı yasaktır.
 
@@ -445,21 +448,21 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 | Türkçe Adı | Latince Adı | Türkçe Adı | Latince Adı |
 | :--- | :--- | :--- | :--- |
 | **Akdeniz foku** | *Monachus monachus* | **Akdeniz mercanı** | *Cladocora caespitosa* |
-| **Altı yarıklı bozcamgöz** | *Hexanchus griseus* | **Batman bantlı çöpçü balığı** | *Paraschistura chrysicristinae* |
-| **Beyaz çalı** | *Spinimuricea klavereni* | **Beyaz deniz dalı** | *Eunicella singularis* |
-| **Beyaz yüzgeçli köpekbalığı** | *Carcharhinus longimanus* | **Büyük beyaz köpekbalığı** | *Carcharodon carcharias* |
-| **Büyük camgöz (güneşlenen)** | *Cetorhinus maximus* | **Camgöz** | *Galeorhinus galeus* |
-| **Çekiç köpekbalığı** | *Sphyrna zygaena* | **Çivili köpekbalığı** | *Echinorhinus brucus* |
-| **Denizatı** | *Hippocampus hippocampus* | **Deniz alası** | *Salmo labrax* |
-| **Deniz kaplumbağaları** | *Caretta caretta, Chelonia mydas, Dermochelys coriacea, Trionyx triunguis* | **Deniz çayırları** | *Posidonia oceanica, Nanozostera noltei* |
-| **Dikburun harharyas** | *Lamna nasus* | **Deniz kulağı** | *Tonna galea, Haliotis tuberculata* |
-| **Dikenli vatoz** | *Raja clavata* | **Dikenli keler** | *Squatina aculeata* |
+| **Altı yarıklı bozcamgöz** | *Hexanchus griseus* | **Balina köpek balığı** | *Rhincodon typus* |
+| **Batman bantlı çöpçü balığı** | *Paraschistura chrysicristinae* | **Beyaz çalı** | *Spinimuricea kalvereni* |
+| **Beyaz deniz dalı** | *Eunicella singularis* | **Beyaz yüzgeçli köpekbalığı** | *Carcharhinus longimanus* |
+| **Büyük beyaz köpekbalığı** | *Carcharodon carcharias* | **Büyük camgöz (güneşlenen) köpekbalığı** | *Cetorhinus maximus* |
+| **Camgöz** | *Galeorhinus galeus* | **Çekiç köpekbalığı** | *Sphyrna zygaena* |
+| **Çivili köpekbalığı** | *Echinorhinus brucus* | **Denizatı** | *Hippocampus hippocampus* |
+| **Deniz alası** | *Salmo labrax* | **Deniz çayırları** | *Posidonia oceanica, Nanozostera noltei* |
+| **Deniz kaplumbağaları** | *Caretta caretta, Chelonia mydas, Dermochelys coriacea, Trionyx triunguis* | **Deniz kulağı** | *Tonna galea, Haliotis tuberculata* |
+| **Dikburun harharyas** | *Lamna nasus* | **Dikenli keler** | *Squatina aculeata* |
 | **Domuz köpekbalığı** | *Oxynotus centrina* | **İpeksi köpekbalığı** | *Carcharhinus falciformis* |
 | **İri gözlü sapan köpekbalığı** | *Alopias superciliosus* | **Kazıkkuyruk** | *Gymnura altavela* |
 | **Keler** | *Squatina squatina* | **Kemane** | *Glaucostegus cemiculus* |
 | **Kırmızı mercan** | *Corallium rubrum* | **Kırmızı yıldız** | *Echinaster sepositus* |
 | **Kum köpekbalığı** | *Carcharhinus plumbeus* | **Lekeli keler** | *Squatina oculata* |
-| **Leopar sazanı** | *Luciobarbus subquincunciatus* | **Mahmuzlu camgöz** | *Squalus acanthias, Squalus blainville* |
+| **Leopar sazanı** | *Luciobarbus supquincunciatus* | **Mahmuzlu camgöz** | *Squalus acanthias, Squalus blainville* |
 | **Mantalar** | *Mobulinae (Mobula mobular, Pteromylaeus bovinus, Rhinoptera marginata)* | **Mavi köpekbalığı** | *Prionace glauca* |
 | **Maya** | *Maja squinado* | **Mersin balıkları** | *Acipenser spp.* |
 | **Mersin morinası** | *Huso huso* | **Minare** | *Cerithium vulgatum* |
@@ -487,7 +490,7 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 | **Eşkina** | *Sciaena umbra* | 35 | - |
 | **Hamsi** | *Engraulis encrasicolus* | 9 | - |
 | **İstakoz** | *Homarus gammarus* | 25 | - |
-| **İstavrit / İstavrit (Karagöz İstavrit)** | *Trachurus trachurus, Trachurus mediterraneus* | 13 | - |
+| **İstavrit / İstavrit (Karagöz İstavrit)** | *Trachurus trachurus, Trachurus mediterraneus* | 12 | - |
 | **İstiridye** | *Ostrea edulis* | 6 | - |
 | **Kalkan** | *Scophthalmus spp.* | 45 | - |
 | **Karagöz** | *Diplodus vulgaris* | 18 | - |
@@ -551,16 +554,24 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 
 ### Hamsi, sardalya ve istavrit avcılığı
 **MADDE 19 –** (1) Hamsi ile ilgili düzenlemeler aşağıda belirtilmiştir:
-* **a)** Gırgır, ortasu trolü ve alamana (voli) ağlarıyla hamsi avcılığı yapacak balıkçı gemileri için, gemi ruhsat tezkeresinin verildiği il/ilçe müdürlüğünden Ek-2'de yer alan avcılık "İzin Belgesi"nin alınması zorunludur.
+* **a)** *(Değişik: RG-16/9/2026-33372)* Gırgır, ortasu trolü ve alamana (voli) ağlarıyla hamsi avcılığı yapacak balıkçı gemilerinin, il/ilçe müdürlüklerinden Ek-2'de yer alan avcılık "İzin Belgesi"ni alması zorunludur.
 * **b)** Hamsi avcılığı, her av sezonu için Bakanlıkça belirlenerek ilan edilen kota miktarınca yapılır. Kota miktarının dolması durumunda avcılık sona erer. Kotanın avlanmayan miktarı bir sonraki av sezonuna devredilmez. Kota kapsamında avlanan hamsinin, Bakanlıkça belirlenen yerlerden karaya çıkarılması zorunludur. Kotanın uygulanmasına ilişkin usul ve esaslar Bakanlıkça belirlenir.
 * **c)** Marmara Denizi ve Karadeniz'de, gırgır ağları ile hamsi avcılığı 15.00 - 09.00 saatleri arasında yapılır. Gırgır ağları, belirtilen saatler dışında, hamsi avlamak amacıyla denizde bulundurulamaz. Bakanlık stok durumuna göre avlanma zamanlarında düzenleme yapabilir.
 * **ç)** Bakanlık, stokların korunması ve avcılığın sürdürülebilirliğinin sağlanması amacı ile hamsi avcılığına; alan, avlanabilecek ve karaya çıkarılabilecek miktarlar, avcılıkta kullanılacak alet ve ekipmanlar, karaya çıkış noktası, zaman ve nakliyesiyle ilgili yasak, sınırlama ve yükümlülükler getirebilir.
+* **d)** *(Ek: RG-16/9/2026-33372)* Karadeniz'de Bulgaristan sınırı ile Zonguldak İli, Baba Burnu (41° 17' 14" K - 31° 23' 44" D) arasında ortasu trolüyle hamsi avcılığı 15.00 - 09.00 saatleri arasında yapılır. Ortasu trolü ağları, belirtilen saatler dışında, hamsi avlamak amacıyla denizde bulundurulamaz. Bakanlık stok durumuna göre avlanma zamanlarında düzenleme yapabilir (Harita-65).
 
 (2) Dökme olarak balık unu yağı fabrikalarına gönderilecekler hariç; hamsi, istavrit ve sardalya balıklarının naklinde kullanılacak kasaların dıştan dışa ölçülerinin en fazla (54 cm x 9 cm x 37 cm) boyutunda ve 11 cm ayak boyunda; kutuların dıştan dışa ölçülerinin ise en fazla (59 cm x 13 cm x 39 cm) boyutunda olması zorunludur.
 
 (3) Uzatma ağları ile sardalya avcılığı dönem boyunca serbesttir.
 
 (4) Marmara Denizi'nden avcılık yoluyla elde edilen hamsi, istavrit, sardalya başta olmak üzere su ürünlerinin dökme olarak balık unu yağı fabrikalarına nakledilmesi yasaktır.
+
+(5) *(Ek: RG-16/9/2026-33372)* İstavrit ile ilgili düzenlemeler aşağıda belirtilmiştir:
+* **a)** Gırgır ve ortasu trolü ile istavrit avcılığı yapacak balıkçı gemileri için, il/ilçe müdürlüğünden Ek-2'de yer alan avcılık "İzin Belgesi"nin alınması zorunludur.
+* **b)** İstavrit avcılığı, her av sezonu için Bakanlıkça belirlenerek ilan edilen kota miktarınca yapılır. Kota miktarının dolması durumunda avcılık sona erer. Kotanın avlanmayan miktarı bir sonraki av sezonuna devredilmez. Kota kapsamında avlanan istavritin, Bakanlıkça belirlenen yerlerden karaya çıkarılması zorunludur. Kotanın uygulanmasına ilişkin usul ve esaslar Bakanlıkça belirlenir.
+* **c)** Avcılık yoluyla elde edilen istavritin balık unu yağı fabrikalarına nakledilmesi ve kullanılması yasaktır. Ancak, 1380 sayılı Kanunun 34 üncü maddesi kapsamında el konularak satışı yapılanlarda bu hüküm uygulanmaz.
+
+(6) *(Ek: RG-16/9/2026-33372)* Gırgır ve ortasu trolü ile hamsi ve istavrit avcılığı Karadeniz'de 15 Eylül tarihi itibarıyla başlar.
 
 ### Palamut-torik avcılığı
 **MADDE 20 –** (1) Tüm karasularımızda, 1 Nisan - *(Değişik ibare: RG-16/4/2025-32872)* 14 Ağustos tarihleri arasında ağ dalyanları dâhil, her türlü istihsal vasıtası ile palamut ve torik avcılığı yasaktır. *(Mülga ikinci cümle: RG-16/4/2025-32872)*
@@ -571,7 +582,7 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 **MADDE 21 –** (1) Kalkan avcılığına ilişkin düzenlemeler aşağıda belirtilmiştir:
 * **a)** 15 Nisan - 15 Haziran tarihleri arasında her türlü istihsal vasıtası ile kalkan avcılığı yapılması ve kalkan ağlarının denizde bırakılması yasaktır.
 * **b)** Kalkan avcılığında kullanılacak ağların göz açıklığı 400 mm'den küçük olamaz.
-* **c)** Uzatma ağı ile kalkan avcılığı yapacak balıkçı gemileri için, gemi ruhsat tezkeresinin verildiği il/ilçe müdürlüğünden Ek-2'de yer alan "İzin Belgesi"nin alınması zorunludur.
+* **c)** Uzatma ağı *(Ek: RG-16/9/2026-33372)* ve dip trolü ile kalkan avcılığı yapacak balıkçı gemileri için, gemi ruhsat tezkeresinin verildiği il/ilçe müdürlüğünden Ek-2'de yer alan "İzin Belgesi"nin alınması zorunludur.
 * **ç)** Avlanan kalkan balıklarının Bakanlıkça belirlenen yerlerden karaya çıkarılması zorunludur.
 * **d)** Parakete ve fanyalı ağlar ile kalkan avcılığı yasaktır.
 * **e)** Av yasağından önce avlanılarak il/ilçe müdürlüklerine stok tespiti yaptırılan kalkan balıklarının, yasağın başlamasından itibaren en geç 7 gün içerisinde pazarlanması zorunludur.
@@ -579,8 +590,8 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 * **g)** *(Ek: RG-16/4/2025-32872)* Dip trolü avcılığında, toplam avın içerisindeki kalkan miktarının ağırlıkça oranı %30'dan fazla olamaz.
 
 (2) Dil ve pisi avcılığına ilişkin düzenlemeler aşağıda belirtilmiştir:
-* **a)** Bütün karasularımızda, 1 Ocak - 15 Şubat tarihleri arasında her türlü istihsal vasıtası ile dil ve pisi avcılığı yasaktır.
-* **b)** Dil ve pisi avcılığında kullanılacak ağların göz açıklığı 80 mm'den küçük olamaz.
+* **a)** Bütün karasularımızda, *(Değişik: RG-16/9/2026-33372)* 1 Şubat - 14 Mart tarihleri arasında her türlü istihsal vasıtası ile dil ve pisi avcılığı yasaktır.
+* **b)** Dil ve pisi avcılığında kullanılacak ağların göz açıklığı *(Değişik: RG-16/9/2026-33372)* 72 mm'den küçük olamaz.
 
 ### Mavi yüzgeçli orkinos avcılığı
 **MADDE 22 –** (1) Mavi yüzgeçli orkinos avcılığı ile ilgili hususlar aşağıda belirtilmiştir:
@@ -589,7 +600,7 @@ gırgır ağları ile su ürünleri avcılığı yasaktır.
 * **c)** Kota miktarının dolması durumunda avcılık sona erer. Kotanın avlanmayan miktarı bir sonraki av sezonuna devredilmez.
 * **ç)** Bakanlıkça ruhsat tezkeresi düzenlenmiş balıkçı gemilerinin, başka ülkelerin avcılık kotaları kapsamındaki mavi yüzgeçli orkinoslara yönelik herhangi bir faaliyette bulunmak üzere kiraya verilmesi, başka ülke bayraklı gemilerin de ülkemiz kotası dahilindeki mavi yüzgeçli orkinoslara yönelik herhangi bir faaliyette bulunmak üzere kiralanması yasaktır.
 * **d)** Mavi yüzgeçli orkinos avcılığında, uçak veya helikopter ya da herhangi bir insansız hava aracı kullanımı yasaktır.
-* **e)** Akdeniz ve Ege Denizi'ndeki karasularımızda ve bunlara bitişik uluslararası sularda 1 Temmuz - 14 Mayıs tarihleri arasında, diğer alanlarda 1 Temmuz - 25 Mayıs tarihleri arasında mavi yüzgeçli orkinos avcılığı yasaktır.
+* **e)** Akdeniz ve Ege Denizi'ndeki karasularımızda ve bunlara bitişik uluslararası sularda 1 Temmuz - 14 Mayıs tarihleri arasında, diğer alanlarda *(Değişik: RG-16/9/2026-33372)* 1 Temmuz - 18 Mayıs tarihleri arasında mavi yüzgeçli orkinos avcılığı yasaktır.
 
 (2) Mavi yüzgeçli orkinos faaliyetinde av, taşıma, destek ve yardımcı gemi olacak gemilerin, il/ilçe müdürlüklerinden Ek-2'de yer alan "İzin Belgesi"ni alması zorunludur. Bu gemiler yalnızca bir faaliyet için izin alabilirler. İzin Belgesi'nin düzenlenmesine ilişkin usul ve esaslar Bakanlıkça belirlenir.
 
@@ -771,6 +782,8 @@ avcılığı yasaktır.
 * **e)** Denizkestanesi avcılığının uygulama yöntemi, takibi, kullanılacak belgeler, avlanılan ürünlerin karaya çıkarılması ve nakli, izlenmesi, günlük avlanılabilecek miktarı, zaman ve alan ile denizkestanesinin yasadışı avcılığının önlenmesi kapsamında alınacak ek tedbirlere yönelik usul ve esaslar Bakanlıkça belirlenir.
 * **f)** Bakanlıkça belirlenen usul ve esaslara aykırı olarak denizkestanesi avcılığı faaliyetinde bulunan balıkçı gemilerinin Ek-2'de yer alan avcılık "İzin Belgesi" iptal edilir. İptal edilen iznin geçerli olduğu av dönemi için yeni izin belgesi düzenlenmez.
 * **g)** Denizkestanesi avcılığında bulunacak balıkçı gemileri için il/ilçe müdürlüklerinden Ek-6'da yer alan "Nakil/Menşe Belgesi"nin alınması zorunludur.
+* **ğ)** *(Ek: RG-16/9/2026-33372)* Denizkestanesi avcılığı 1 Mayıs - 31 Ekim tarihleri arasında yasaktır.
+* **h)** *(Ek: RG-16/9/2026-33372)* İzmit Körfezinde; Dil Burnu Fenerini (40° 44' 36.54" K - 29° 30' 57.72" D), Dil İskelesi Kababurnuna (40° 46' 6.78" K - 29° 31' 6.24" D) birleştiren hattın doğusunda kalan alanda denizkestanesi avcılığı yasaktır (Harita-58-1).
 
 ### Böcek, ıstakoz, karavida ve mavi yengeç avcılığı
 **MADDE 30 –** (1) Bütün karasularımızda, 15 Nisan - 1 Eylül tarihleri arasında kalan dönem haricinde böcek ve ıstakoz avcılığı yasaktır. Ancak deniz kereviti (*Nephrops norvegicus*) türünün avcılığında zaman yasağı uygulanmaz.
@@ -917,7 +930,7 @@ avcılığı yasaktır.
 **MADDE 37 –** (1) Sazangillere ait zaman yasakları aşağıda belirtilmiştir:
 * **a)** Adana, Antalya, Aydın, Denizli, Gaziantep, Hatay, İzmir, Kilis, Manisa, Mersin, Muğla ve Osmaniye il sınırları içerisinde kalan bütün sularda **1 Mart - 31 Mayıs** tarihleri arasında,
 * **b)** Afyonkarahisar, Aksaray, Amasya, Ankara, Balıkesir, Bartın, Bilecik, Bolu, Burdur, Bursa, Çanakkale, Çankırı, Çorum, Düzce, Edirne, Eskişehir, Isparta, İstanbul, Karabük, Karaman, Kastamonu, Kırıkkale, Kırklareli, Kırşehir, Kocaeli, Konya, Kütahya, Nevşehir, Niğde, Sakarya, Tekirdağ, Uşak, Yalova ve Zonguldak il sınırları içerisinde kalan bütün sularda **15 Mart - 15 Haziran** tarihleri arasında,
-* **c)** Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli ve Yozgat il sınırları içerisinde kalan bütün sularda **1 Nisan - 30 Haziran** tarihleri arasında,
+* **c)** Adıyaman, Artvin, Batman, Bingöl, Diyarbakır, Elazığ, Erzincan, Giresun, Gümüşhane, Kahramanmaraş, Kayseri, Malatya, Mardin, Ordu, Rize, Samsun, Siirt, Sinop, Sivas, Şanlıurfa, Şırnak, Tokat, Trabzon, Tunceli ve Yozgat il sınırları içerisinde kalan bütün sularda *(Değişik: RG-16/9/2026-33372)* **15 Nisan - 15 Temmuz** tarihleri arasında,
 * **ç)** Ağrı, Ardahan, Bayburt, Bitlis, Erzurum, Hakkâri, Iğdır, Kars, Muş, Van il sınırları içerisinde kalan bütün sularda **15 Mayıs - 15 Ağustos** tarihleri arasında,
 
 sazangillerin avcılığı yasaktır (Harita-61).
@@ -1195,9 +1208,11 @@ Bakanlıkça belirlenecek usul ve esaslar çerçevesinde verebilir.
 
 (14) Karides, deniz salyangozu ve midye avcılığı için geçerli özel avcılık izni alan gemiler hariç 12 metrenin altındaki gemilerde vinç, çelik halat, bom direği, matafora ve bu amaçlarla kullanıma yönelik uyarlanmış, modifiye edilmiş donanım, alet ve ekipman bulundurulması yasaktır. Sezonda karides, deniz salyangozu ve midye avcılığı için özel avcılık izni alan gemiler yasak dönemde üzerlerinde mühürsüz donanım bulunduramaz. Mühürleme işlemi, gemi sahip/donatanlarının talebi üzerine il/ilçe müdürlüklerince yapılır.
 
-(15) Algarna, manyat, dreç ve dalma yöntemiyle avcılık yapan balıkçı gemileri ile ticari amaçlı amatör balıkçılık turizm faaliyetinde bulunan gemilerin 1 Eylül 2026 tarihinden itibaren Bakanlıkça istenen gemi izleme ve kayıt cihazlarını işler ve çalışır vaziyette bulundurmaları zorunludur. Bu gemilere takılacak olan cihazlara yönelik usul ve esaslar Bakanlıkça belirlenir.
+(15) Algarna, manyat, dreç ve dalma yöntemiyle avcılık yapan balıkçı gemileri ile ticari amaçlı amatör balıkçılık turizm faaliyetinde bulunan gemilerin *(Değişik: RG-16/9/2026-33372)* 1 Eylül 2028 tarihinden itibaren Bakanlıkça istenen gemi izleme ve kayıt cihazlarını işler ve çalışır vaziyette bulundurmaları zorunludur. Bu gemilere takılacak olan cihazlara yönelik usul ve esaslar Bakanlıkça belirlenir.
 
 (16) *(Ek: RG-16/4/2025-32872)* Marmara Denizi ile İstanbul ve Çanakkale Boğazlarında yapılan avcılık faaliyetlerinde, gırgır ağını çevirmekte kullanılan botlar hariç, her türlü gemi cinsinde yardımcı gemi kullanımı ve bu gemilerin avlanma alanlarında bulunmaları yasaktır. Av gemisine bağlı balıkçılık yardımcı gemileri karaya çıkış noktalarında bulunabilir. Yardımcı gemi kullanımının serbest olduğu diğer denizlere gidecek yardımcı gemilerin il/ilçe müdürlüklerinden Ek-4'te yer alan Geçiş İzin Belgesini alarak en geç 3 gün içerisinde geçiş yapmaları zorunludur.
+
+(17) *(Ek: RG-16/9/2026-33372)* Su ürünleri avcılığı yapmak üzere ruhsatlandırılmış 12 metre ve üzeri boydaki balıkçı gemilerinin sahiplerinin/donatanlarının, Bakanlığın belirleyeceği esaslara göre gemilerinde su ürünleri avcılığı faaliyetinde bulunan gerçek kişileri Su Ürünleri Bilgi Sistemi (SUBİS)'ne kaydettirmeleri zorunludur.
 
 ### İçsularla ilgili diğer hükümler
 **MADDE 51 –** (1) Balıkçı gemisine ihtiyaç duyulmadan istihsal yapılan sülük, kurbağa, kara salyangozu gibi türler hariç olmak üzere, içsularda kiralama yapılmaksızın ticari amaçlı su ürünleri avcılığı yasaktır. Kiralama işlemleri devam etmekte olan, ihalesi yapılmamış veya kiralama işlemleri bitmemiş istihsal sahalarında kiralama işlemi kesinleşinceye kadar ticari olarak su ürünleri avcılığı yapılamaz.
