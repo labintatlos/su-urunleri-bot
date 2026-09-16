@@ -129,6 +129,13 @@ Dönem sonunda yenileriyle değiştirilirler. Kaynak değişiklikleri önce ana 
 klasöründe yapılmalı, sonra `su_urunleri_bot/data/markdown/` kopyası aynı içerikle
 güncellenmelidir.
 
+Madde ekranındaki Kanun, Yönetmelik ve Tebliğ metinleri (`data/articles.json`)
+paketlenmiş Markdown tam metinlerinden `python tools/build_articles.py` ile
+üretilir (`--check` güncelliği doğrular). Paragraflar ve tablolar Markdown'daki
+gibi korunur; ekran tabloları rehber tablolarıyla aynı biçimde çizer. Ekranlarda
+kaynak dosya bilgisi (Excel satırı, PDF sayfası, tablo/belge numarası)
+gösterilmez; duman testi dolaştığı her ekranda bunu denetler.
+
 Kontrol maddelerinin güncel ceza tablosuna bağlanması (Yaptırım Özeti)
 `data/penalty_links.json` dosyasındadır ve `python tools/build_penalty_links.py`
 ile sağlanarak üretilir (`--check` güncelliği doğrular).

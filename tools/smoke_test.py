@@ -29,6 +29,9 @@ WEB_PORT, INGRESS_PORT = 18101, 18099
 BASE = f'http://127.0.0.1:{WEB_PORT}'
 MAX_DEPTH, MAX_PRESSES = 5, 4000
 ERROR_MARKERS = ('Bir hata oluştu', 'Sunucuda beklenmeyen')
+# Kullanıcıya kaynak dosya gösterilmez (6.0.37): Excel satırı, PDF sayfası, 08 tablo numarası.
+SOURCE_MARKERS = ('Excel', 'PDF sayfa', 'Kaynak PDF', 'Metin bölümü', '08 tablo', '08 numaralı', '08 rehber',
+                  'Markdown belge', 'kaynak satırı')
 SAMPLE_TEXTS = ('levrek', '12')
 
 opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
@@ -82,6 +85,23 @@ def check_source_integrity():
             checked += 1
     where = 'ana klasör + paket kopyası' if canonical_present else 'paket kopyası (ana klasör depoda yok)'
     print(f'sources {len(packaged)} Markdown, {checked} dosya özeti ({where}): verified')
+
+
+def check_articles():
+    """Madde metinleri Markdown'dan güncel üretilmiş ve PDF dökümü izi taşımıyor olmalı."""
+    import build_articles
+    if (ADDON / 'data' / 'articles.json').read_bytes() != build_articles.dump(build_articles.build()):
+        raise AssertionError('articles.json Markdown metinlerine göre güncel değil (tools/build_articles.py)')
+    articles = {(a['source'], a['article']): a
+                for a in json.loads((ADDON / 'data' / 'articles.json').read_text(encoding='utf-8'))}
+    size_article = articles[('61', 17)]
+    if '| **Barbunya** | *Mullus barbatus* | 12 |' not in size_article['body']:
+        raise AssertionError('6/1 Tebliğ Madde 17 boy tablosu Markdown tablosu olarak gelmedi')
+    if 'Türk vatandaşı olmaları, 18 yaşını bitirmiş' not in articles[('reg', 5)]['body']:
+        raise AssertionError('Yönetmelik Madde 5 metni hâlâ satır sonlarında bölünmüş')
+    if (articles[('law', 17)]['title'], articles[('law', 40)]['title']) != ('Muaflıklar', 'Yürürlük'):
+        raise AssertionError('Kanun madde başlıkları Markdown başlıklarıyla uyuşmuyor')
+    print(f'articles {len(articles)} madde: Markdown metniyle güncel')
 
 
 def check_structured_data():
@@ -270,6 +290,7 @@ def text_of(view):
 
 def main():
     check_source_integrity()
+    check_articles()
     check_structured_data()
     check_items_table()
     check_sanction_coverage()
@@ -523,6 +544,10 @@ def main():
             if status != 200 or any(m in text_of(view) for m in ERROR_MARKERS):
                 errors.append((path, status, view if status != 200 else text_of(view)[:200]))
                 continue
+            leaked = [m for m in SOURCE_MARKERS if m in text_of(view)
+                      or any(m in b.get('text', '') for row in view.get('buttons', []) for b in row)]
+            if leaked:
+                errors.append((path + ('SOURCE_MARKER',), status, leaked))
             if view.get('mode'):
                 for sample in SAMPLE_TEXTS:
                     s2, v2 = call('/api/text', {'text': sample})

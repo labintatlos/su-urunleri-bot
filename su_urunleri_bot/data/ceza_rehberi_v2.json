@@ -376,7 +376,7 @@
           "İPC": "<12 m: 9.473 TL; 12–<22 m: 18.946 TL; ≥22 m: 28.419 TL",
           "El Koyma": "Ürün: Hayır; vasıta: Hayır",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/a — İzin ve ruhsat tezkeresini talepte göstermeme (3/3): 1.000 TL taban → 9.473 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
+          "Kanun Sağlaması": "➕ Kanundan eklendi (ceza tablosunda yok) · Kanun 36/a — İzin ve ruhsat tezkeresini talepte göstermeme (3/3): 1.000 TL taban → 9.473 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
         }
       }
     ],
@@ -397,8 +397,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "23.692 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -410,8 +410,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "94.811 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -423,8 +423,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "142.217 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -436,8 +436,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "47.397 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -449,8 +449,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "94.811 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -462,8 +462,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "189.630 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -475,8 +475,8 @@
           "Dayanak": "K.4 · Y.Su ürünleri üretiminde kiralama yön. Md. 13/1 · T.- · 36/b",
           "İPC": "237.034 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/b).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/b — İstihsal hakkı kiralama kurallarına aykırılık (Md.4): 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Kooperatif/birlik başkan ve yönetim kurulu üyelerine ayrı ayrı uygulanır. · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       }
     ],
@@ -589,7 +589,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "94.811 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -602,7 +602,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "284.449 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -615,7 +615,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "474.079 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -628,7 +628,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "948.169 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -641,7 +641,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "94.811 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -654,7 +654,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "284.449 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -667,7 +667,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "474.079 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -680,7 +680,7 @@
           "Dayanak": "K.13 · Y.- · T.- · 36/e",
           "İPC": "948.169 TL",
           "Tekrar": "Tesise 90 gün süre verilir; aykırılık sürerse ilk cezanın 2 katı uygulanır ve 30 gün daha süre verilir; yine sürerse 3 katı uygulanır ve tesis mülki amirce kapatılır (Kanun 36/e). Genel tekrar artırımı uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13/1’e aykırı (izinsiz) yetiştiricilik tesisi: 10.000 TL–100.000 TL → 94.811 TL–948.169 TL"
         }
       },
@@ -693,7 +693,7 @@
           "Dayanak": "K.13 · Y.20 · T.- · 36/e",
           "İPC": "331.855 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
         }
       },
@@ -706,7 +706,7 @@
           "Dayanak": "K.13 · Y.20 · T.- · 36/e",
           "İPC": "474.079 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL"
         }
       },
@@ -719,8 +719,8 @@
           "Dayanak": "K.13 · Y.22 · T.- · 36/e",
           "İPC": "47.397 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · 08 tablosundaki değer: art36 = - · Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Ceza tablosundaki değer:art36 = - · Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
         }
       },
       {
@@ -732,8 +732,8 @@
           "Dayanak": "K.13 · Y.22 · T.- · 36/e",
           "İPC": "474.079 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · 08 tablosundaki değer: art36 = - · Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Ceza tablosundaki değer:art36 = - · Kanun 13’e göre çıkarılan yönetmelik hükmüne aykırılık Kanun 36/e ikinci paragraftadır (5.000–50.000 TL)."
         }
       },
       {
@@ -745,8 +745,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "47.397 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -758,8 +758,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "189.630 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -771,8 +771,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "284.449 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -784,8 +784,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "474.079 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -797,8 +797,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "47.397 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -810,8 +810,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "189.630 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -823,8 +823,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "284.449 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -836,8 +836,8 @@
           "Dayanak": "K.13 · Y.Yetiştiricilik Yönetmeliğinde Uygun Madde · T.- · 36/e",
           "İPC": "474.079 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -849,8 +849,8 @@
           "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
           "İPC": "47.397 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -862,8 +862,8 @@
           "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
           "İPC": "94.811 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -875,8 +875,8 @@
           "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
           "İPC": "189.630 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -888,8 +888,8 @@
           "Dayanak": "K.13 · Y.Su Ürünleri Üretiminde Kiralama Yön. Md. 13/3 · T.- · 36/e",
           "İPC": "237.034 TL",
           "Tekrar": "Kanun 36 son fıkralar gereği bu bentte genel tekrar artırımı (2 kat) uygulanmaz.",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/e — Kanun 13’e göre çıkarılan yönetmelik hükümlerine aykırılık: 5.000 TL–50.000 TL → 47.397 TL–474.079 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       }
     ],
@@ -910,8 +910,8 @@
           "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 9 · T.- · 36/f",
           "İPC": "23.692 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -923,8 +923,8 @@
           "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 9 · T.- · 36/f",
           "İPC": "23.692 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -936,8 +936,8 @@
           "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği 13,19 · T.- · 36/f",
           "İPC": "237.034 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -949,8 +949,8 @@
           "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği 13,19, 9 · T.- · 36/f",
           "İPC": "142.217 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -962,8 +962,8 @@
           "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 8, 9 · T.- · 36/f",
           "İPC": "237.034 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       },
       {
@@ -975,8 +975,8 @@
           "Dayanak": "K.17 · Y.Balıkçı Barınakları Yönetmeliği / 8, 9, 4, 19 · T.- · 36/f",
           "İPC": "142.217 TL",
           "Tekrar": "Tekrarında idari para cezası 2 katı uygulanır ve kira sözleşmesi iptal edilir (Kanun 36/f).",
-          "Uyarı/Not": "Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.",
-          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
+          "Uyarı/Not": "Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.",
+          "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/f — Kanun 17’ye dayanan yönetmelik (balıkçı barınakları) hükümlerine aykırılık: 2.500 TL–25.000 TL → 23.692 TL–237.034 TL · Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı."
         }
       }
     ],
@@ -1148,7 +1148,7 @@
           "İPC": "4.730 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Amatör avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 500 TL taban → 4.730 TL · 08 tablosundaki değer: teblig = boş · Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir. · Ürüne ve gemi hariç kullanımı yasak vasıtalara el konur; tekrarında gemi hariç tüm istihsal vasıtalarına. Ticari/amatör ayrımı 6/2 Tebliğ Md.19’a göre yapılır."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Amatör avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 500 TL taban → 4.730 TL · Ceza tablosundaki değer:teblig = boş · Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir. · Ürüne ve gemi hariç kullanımı yasak vasıtalara el konur; tekrarında gemi hariç tüm istihsal vasıtalarına. Ticari/amatör ayrımı 6/2 Tebliğ Md.19’a göre yapılır."
         }
       },
       {
@@ -1161,7 +1161,7 @@
           "İPC": "<12 m: 7.105 TL; 12–<22 m: 14.210 TL; ≥22 m: 21.315 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (Gemi hariç) (Kullanımı yasak olan istihsal vasıtalarına doğrudan el koyulur, tekrarı halinde gemi hariç tüm istihsal vasıtalarına el konulur)",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Amatör avcılık yönetmelik hükümlerine aykırılık — gemi (Md.23): 750 TL taban → 7.105 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: teblig = boş · 08 tablosundaki değer: amounts = boş · Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir. · Kanun 36 boy çarpanı amatör avcılıkta kullanılan geminin sahibine de uygulanır: 7.105 TL; ×2 = 14.210 TL; ×3 = 21.315 TL."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Amatör avcılık yönetmelik hükümlerine aykırılık — gemi (Md.23): 750 TL taban → 7.105 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:teblig = boş · Ceza tablosundaki değer:amounts = boş · Amatör/ticari ayrımı ve 36/k amatör yaptırımı 6/2 Tebliğ Md.19’da düzenlenir. · Kanun 36 boy çarpanı amatör avcılıkta kullanılan geminin sahibine de uygulanır: 7.105 TL; ×2 = 14.210 TL; ×3 = 21.315 TL."
         }
       },
       {
@@ -1172,9 +1172,9 @@
           "Dayanak": "K.23-b · Y.16/14 · T.- · 36/k",
           "İPC": "16.106 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 1.700 TL taban → 16.106 TL · 08 tablosundaki değer: product_seizure = Hayır · 08 tablosundaki değer: means_seizure = Hayır · Kanun 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır. · Kanun 36/k: bölge, zaman veya av aracı vasıflarına aykırılıkta ve tekrarında gemi hariç istihsal vasıtalarına el konur."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 1.700 TL taban → 16.106 TL · Ceza tablosundaki değer:product_seizure = Hayır · Ceza tablosundaki değer:means_seizure = Hayır · Kanun 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır. · Kanun 36/k: bölge, zaman veya av aracı vasıflarına aykırılıkta ve tekrarında gemi hariç istihsal vasıtalarına el konur."
         }
       },
       {
@@ -1185,8 +1185,8 @@
           "Dayanak": "K.23-b · Y.16/14 · T.12 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1198,8 +1198,8 @@
           "Dayanak": "K.23-a · Y.14 · T.12/7 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1211,8 +1211,8 @@
           "Dayanak": "K.23-a · Y.14 · T.21 - 1-d · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1224,8 +1224,8 @@
           "Dayanak": "K.23-b · Y.16/14 · T.29 / 1-ç · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1237,8 +1237,8 @@
           "Dayanak": "K.23-a · Y.17/5 · T.29 / 1-c-(4) · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1250,8 +1250,8 @@
           "Dayanak": "K.23-a · Y.14 · T.12/5 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1263,8 +1263,8 @@
           "Dayanak": "K.23-b · Y.16/14 · T.12 / 6-a · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1276,8 +1276,8 @@
           "Dayanak": "K.23-b · Y.16/7 · T.Deniz: 50/10\nİçsu: 51/5 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1289,8 +1289,8 @@
           "Dayanak": "K.23-a · Y.17/8 · T.49/11 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (3 tekrar sonunda)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1302,8 +1302,8 @@
           "Dayanak": "K.23-a · Y.14 · T.14 / 2-ç · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1315,8 +1315,8 @@
           "Dayanak": "K.23-a · Y.15/3 /  / 14 (markasız av aracı) · T.----\n\n49/2 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1328,8 +1328,8 @@
           "Dayanak": "K.23-a · Y.14 · T.14/1 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1341,8 +1341,8 @@
           "Dayanak": "K.23-a · Y.13 · T.- · 36/k",
           "İPC": "Gırgır: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1354,8 +1354,8 @@
           "Dayanak": "K.23-a · Y.14 · T.50/11 · 36/k",
           "İPC": "Gırgır: 71.076 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1367,8 +1367,8 @@
           "Dayanak": "K.23-a · Y.14 · T.49/13 · 36/k",
           "İPC": "<12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1380,8 +1380,8 @@
           "Dayanak": "K.23-b · Y.16/14 · T.29/c · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1393,8 +1393,8 @@
           "Dayanak": "K.23-b · Y.16/14 · T.28/1,9 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1406,8 +1406,8 @@
           "Dayanak": "K.23-b · Y.16/14 / 14 / 15/4 · T.21 / 1-a · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1419,8 +1419,8 @@
           "Dayanak": "K.23-b · Y.16/14 / 14 · T.20/1 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1432,8 +1432,8 @@
           "Dayanak": "K.23-b · Y.17/6 · T.49/19 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1445,8 +1445,8 @@
           "Dayanak": "K.23-b · Y.16/14 · T.50/8 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1458,9 +1458,9 @@
           "Dayanak": "K.23-b · Y.16/14 · T.6/2 tebliğ\n13-2 · 36/k",
           "İPC": "<12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · 08 tablosundaki değer: amounts = boş · Kanun 36/k gemi sahibi tutarı boy çarpanıyla: 23.692 / 47.384 / 71.076 TL (diğer 36/k kalemleriyle aynı). · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Ceza tablosundaki değer:amounts = boş · Kanun 36/k gemi sahibi tutarı boy çarpanıyla: 23.692 / 47.384 / 71.076 TL (diğer 36/k kalemleriyle aynı). · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
       {
@@ -1471,9 +1471,9 @@
           "Dayanak": "K.23-b · Y.16/14 · T.16/1 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (3 tekrar sonunda gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · 08 tablosundaki değer: amounts.Gırgır = 56.640 TL · Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler. · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Ceza tablosundaki değer:amounts.Gırgır = 56.640 TL · Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler. · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
       {
@@ -1484,9 +1484,9 @@
           "Dayanak": "K.23-b · Y.16/14 · T.17/1 · 36/k",
           "İPC": "Gırgır: 71.076 TL; <12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (3 tekrar sonunda gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · 08 tablosundaki değer: amounts.Gırgır = 56.640 TL · Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler. · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Ceza tablosundaki değer:amounts.Gırgır = 56.640 TL · Kanun 36/k: gırgır gemisi sahibine ceza 3 katı (23.692 × 3 = 71.076 TL); 08 belgesi de bu değeri olası veri girişi hatası olarak işaretler. · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
       {
@@ -1497,9 +1497,9 @@
           "Dayanak": "K.23-b · Y.16/14 · T.13 · 36/k",
           "İPC": "<12 m: 474.079 TL; 12–<22 m: 948.158 TL; ≥22 m: 1.422.237 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir.",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Işıkla avlanma / ışık donanımı bulundurma (İçsu, Karadeniz, Marmara) (Md.23): 50.000 TL taban → 474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.Gırgır = 1.422.237 TL · Kanun 36/k ışık paragrafı gırgır gemisi için 3 katı öngörmez (3 katı yalnız birinci paragraftadır); gırgır gemisine de boyuna göre tutar uygulanır. · Ürüne ve gemi hariç avcılık amacıyla ışık sağlayan her türlü su vasıtası ve edevata el konur."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Işıkla avlanma / ışık donanımı bulundurma (İçsu, Karadeniz, Marmara) (Md.23): 50.000 TL taban → 474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:amounts.Gırgır = 1.422.237 TL · Kanun 36/k ışık paragrafı gırgır gemisi için 3 katı öngörmez (3 katı yalnız birinci paragraftadır); gırgır gemisine de boyuna göre tutar uygulanır. · Ürüne ve gemi hariç avcılık amacıyla ışık sağlayan her türlü su vasıtası ve edevata el konur."
         }
       },
       {
@@ -1510,9 +1510,9 @@
           "Dayanak": "K.24/c · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.11 · 36/k",
           "İPC": "16.106 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 1.700 TL taban → 16.106 TL · 08 tablosundaki değer: product_seizure = Hayır · 08 tablosundaki değer: means_seizure = Hayır · Kanun 24/c ve 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır. · Kanun 36/k: bölge, zaman veya av aracı vasıflarına aykırılıkta ve tekrarında gemi hariç istihsal vasıtalarına el konur."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — kişi (Md.23): 1.700 TL taban → 16.106 TL · Ceza tablosundaki değer:product_seizure = Hayır · Ceza tablosundaki değer:means_seizure = Hayır · Kanun 24/c ve 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır. · Kanun 36/k: bölge, zaman veya av aracı vasıflarına aykırılıkta ve tekrarında gemi hariç istihsal vasıtalarına el konur."
         }
       },
       {
@@ -1523,8 +1523,8 @@
           "Dayanak": "K.24/c · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.11 · 36/k",
           "İPC": "<12 m: 23.692 TL; 12–<22 m: 47.384 TL; ≥22 m: 71.076 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/k — Ticari avcılık yönetmelik hükümlerine aykırılık — gemi sahibi/donatan (Md.23): 2.500 TL taban → 23.692 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · gırgır gemisinde 3 katı · Gırgır gemisiyle işlenirse gemi sahibine 3 katı. Bölge, zaman veya av aracı vasıflarına aykırılıkta gemi hariç istihsal vasıtalarına da el konur."
         }
       },
@@ -1558,9 +1558,9 @@
           "Dayanak": "K.24-1/a · Y.16/14 · T.9-1 · 36/l",
           "İPC": "94.811 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (istihsal vasıtaları)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — İçsu, Marmara ve boğazlarda trol — kişi (Md.24/a): 10.000 TL taban → 94.811 TL · 08 tablosundaki değer: product_seizure = - · 08 tablosundaki değer: means_seizure = - · Kanun 36/l: istihsal olunan su ürünlerine el konulur. · Kanun 36/l: istihsal vasıtalarına el konularak mülkiyetin kamuya geçirilmesine karar verilir."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Uyarı/Not": "Ceza tablosundaki “1” değeri Kanun m.36/l olarak düzeltilmiştir.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — İçsu, Marmara ve boğazlarda trol — kişi (Md.24/a): 10.000 TL taban → 94.811 TL · Ceza tablosundaki değer:product_seizure = - · Ceza tablosundaki değer:means_seizure = - · Kanun 36/l: istihsal olunan su ürünlerine el konulur. · Kanun 36/l: istihsal vasıtalarına el konularak mülkiyetin kamuya geçirilmesine karar verilir."
         }
       },
       {
@@ -1572,8 +1572,8 @@
           "İPC": "<12 m: 189.630 TL; 12–<22 m: 379.260 TL; ≥22 m: 568.890 TL",
           "El Koyma": "Ürün: Evet; vasıta: (İstanbul ve Çanakkale Boğazları ile Marmara Denizinde) İstihsal vasıtaları zapt ve mülkiyeti kamuya geçirilir. Tekrarı halinde 1 yıldan 3 yıla kadar (5.000–10.000 gün adli para cezası) hapis cezası, su ürünleri ve istihsal vasıtalarına el konularak mülkiyeti kamuya geçirilir. (gemi dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında gemi sahibi/donatana 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün ve istihsal vasıtaları müsadere edilir (Kanun 36/l). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — İçsu, Marmara ve boğazlarda trol — gemi sahibi/donatan (Md.24/a): 20.000 TL taban → 189.630 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: license_action = 1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu) · Kanun 36/l birinci paragraf ve Yönetmelik 41 trol yasak alanı (Kanun 24/a) ihlalinde ruhsat geri almayı öngörmez; tekrarında adli yaptırım uygulanır. · Ürün ve istihsal vasıtalarına (gemi dahil) el konur."
+          "Uyarı/Not": "Ceza tablosundaki “1” değeri Kanun m.36/l olarak düzeltilmiştir.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — İçsu, Marmara ve boğazlarda trol — gemi sahibi/donatan (Md.24/a): 20.000 TL taban → 189.630 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:license_action = 1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL · Kanun 36/l birinci paragraf ve Yönetmelik 41 trol yasak alanı (Kanun 24/a) ihlalinde ruhsat geri almayı öngörmez; tekrarında adli yaptırım uygulanır. · Ürün ve istihsal vasıtalarına (gemi dahil) el konur."
         }
       },
       {
@@ -1584,10 +1584,10 @@
           "Dayanak": "K.24/b · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.10 · 36/l",
           "İPC": "66.357 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — kişi (Md.24/b): 7.000 TL taban → 66.357 TL · 08 tablosundaki değer: base_ipc = 23.692 TL · 08 tablosundaki değer: product_seizure = Hayır · 08 tablosundaki değer: means_seizure = Hayır · Kanun 36/l ikinci paragraf dip trolü yasaklarına aykırı hareket edenlere ve gemi sahibine aynı 7.000 TL’yi öngörür (66.357 TL); tablo 36/k gemi tutarını yazmıştı. · Kanun 36/l ikinci paragraf: istihsal olunan su ürünlerine el konulur. · Kanun 36/l: bölge, zaman veya vasıf aykırılığında ve tekrarında gemi hariç istihsal vasıtalarına el konur. · Yasak yer/zamanda dip trol ağı denizde veya bordada bulunması, küçük göz açıklıklı dip trolü bulundurma, orta su/kombine trolü dip trolü olarak kullanma da bu cezaya tabidir."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Uyarı/Not": "Ceza tablosundaki “1” değeri Kanun m.36/l olarak düzeltilmiştir.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/l — Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — kişi (Md.24/b): 7.000 TL taban → 66.357 TL · Ceza tablosundaki değer:base_ipc = 23.692 TL · Ceza tablosundaki değer:product_seizure = Hayır · Ceza tablosundaki değer:means_seizure = Hayır · Kanun 36/l ikinci paragraf dip trolü yasaklarına aykırı hareket edenlere ve gemi sahibine aynı 7.000 TL’yi öngörür (66.357 TL); tablo 36/k gemi tutarını yazmıştı. · Kanun 36/l ikinci paragraf: istihsal olunan su ürünlerine el konulur. · Kanun 36/l: bölge, zaman veya vasıf aykırılığında ve tekrarında gemi hariç istihsal vasıtalarına el konur. · Yasak yer/zamanda dip trol ağı denizde veya bordada bulunması, küçük göz açıklıklı dip trolü bulundurma, orta su/kombine trolü dip trolü olarak kullanma da bu cezaya tabidir."
         }
       },
       {
@@ -1598,9 +1598,9 @@
           "Dayanak": "K.24/b · Y.Ağlar 14 /  / Yer, zaman vs. 16/14 · T.10 · 36/l",
           "İPC": "<12 m: 66.357 TL; 12–<22 m: 132.714 TL; ≥22 m: 199.071 TL",
           "El Koyma": "Ürün: Evet; vasıta: Evet (gemi hariç)",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu).",
-          "Uyarı/Not": "Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.",
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Ruhsat İşlemi": "1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL.",
+          "Uyarı/Not": "Ceza tablosundaki “1” değeri Kanun m.36/l olarak düzeltilmiştir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/l — Dip trolü yasak, sınırlama ve yükümlülüklerine aykırılık — gemi (Md.24/b): 7.000 TL taban → 66.357 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3"
         }
       }
@@ -1659,7 +1659,7 @@
           "İPC": "237.034 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1673,7 +1673,7 @@
           "İPC": "474.079 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1687,7 +1687,7 @@
           "İPC": "948.169 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1701,7 +1701,7 @@
           "İPC": "94.811 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1715,7 +1715,7 @@
           "İPC": "284.449 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1729,7 +1729,7 @@
           "İPC": "948.169 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1743,7 +1743,7 @@
           "İPC": "94.811 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1757,7 +1757,7 @@
           "İPC": "474.079 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1771,7 +1771,7 @@
           "İPC": "474.079 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1785,7 +1785,7 @@
           "İPC": "47.397 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1799,7 +1799,7 @@
           "İPC": "94.811 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1813,7 +1813,7 @@
           "İPC": "142.217 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1827,7 +1827,7 @@
           "İPC": "189.630 TL",
           "El Koyma": "Ürün: Evet; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir. (araç dahil)",
           "Tekrar": "Fiilin 2 yıl içinde tekrarında 1–3 yıl hapis ve 5.000–10.000 gün adli para cezası verilir; ürün, istihsal ve nakil vasıtaları müsadere edilir (Kanun 36/m). Adli makamlara bildirilir.",
-          "Uyarı/Not": "Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.",
+          "Uyarı/Not": "Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/m — Su ürünlerini izinsiz yurt dışına çıkarma / canlı yurda sokma (Md.25/3): 5.000 TL–100.000 TL → 47.397 TL–948.169 TL · Ürüne, istihsal ve nakil vasıtalarına el konulur."
         }
       },
@@ -1852,7 +1852,7 @@
           "İPC": "94.811 TL",
           "El Koyma": "Ürün: Evet (ürün ve yapılan imalat); vasıta: Hayır",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/m — Yasak su ürününü imalatta kullanma, işleme, muhafaza, ihraç (Md.23–25): 10.000 TL taban → 94.811 TL · Ürüne ve yapılan imalata el konulur."
+          "Kanun Sağlaması": "➕ Kanundan eklendi (ceza tablosunda yok) · Kanun 36/m — Yasak su ürününü imalatta kullanma, işleme, muhafaza, ihraç (Md.23–25): 10.000 TL taban → 94.811 TL · Ürüne ve yapılan imalata el konulur."
         }
       }
     ],
@@ -1872,8 +1872,8 @@
           "Dayanak": "K.28 · Y.16/14 · T.49/9 · 36/n",
           "İPC": "<12 m: 6.627 TL; 12–<22 m: 13.254 TL; ≥22 m: 19.881 TL",
           "El Koyma": "Ürün: Hayır; vasıta: Hayır",
-          "Tekrar": "2 yıl içinde tekrar halinde Excel notuna göre 2 kat.",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/n — Bilgi ve belgeleri zamanında ve doğru vermeme (Md.28): 700 TL taban → 6.627 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: teblig = 48/10 · E-seyir defteri yükümlülüğü güncel 6/1 Tebliğde Md.49/9’dadır; 48/10 eski tebliğin numarasıdır (güncel Md.48 turizm faaliyetidir)."
+          "Tekrar": "2 yıl içinde tekrar halinde ceza tablosu notuna göre 2 kat.",
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/n — Bilgi ve belgeleri zamanında ve doğru vermeme (Md.28): 700 TL taban → 6.627 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:teblig = 48/10 · E-seyir defteri yükümlülüğü güncel 6/1 Tebliğde Md.49/9’dadır; 48/10 eski tebliğin numarasıdır (güncel Md.48 turizm faaliyetidir)."
         }
       },
       {
@@ -1906,7 +1906,7 @@
           "İPC": "8.048 TL",
           "El Koyma": "Ürün: Hayır; vasıta: Aykırılığa neden olan av aracı, eşya, alet, edevat, teçhizat vb. zapt ve mülkiyeti kamuya geçirilir.",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Uyarı/Not": "Yeni 08 rehberi bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.",
+          "Uyarı/Not": "Güncel ceza tablosu bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.",
           "Kanun Sağlaması": "✅ Kanuna uygun · Kanun 36/o — İzinsiz yasak vasıta/usulle ilmi-teknik çalışma (Md.29): 850 TL taban → 8.048 TL · Kabahat konusu yasak vasıtalara el konulur."
         }
       }
@@ -1927,7 +1927,7 @@
           "Dayanak": "K.Ek madde - 4 · Y.13 · T.9/3 · 36/p",
           "İPC": "<12 m: 9.473 TL; 12–<22 m: 18.946 TL; ≥22 m: 28.419 TL",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.12–<22 m = 15.098 TL · 08 tablosundaki değer: amounts.≥22 m = 22.647 TL · Kanun 36/p asgari 1.000 TL (9.473 TL) × 2 = 18.946 TL; tablo değeri kanuni asgarinin altındaydı. · Kanun 36/p asgari 1.000 TL (9.473 TL) × 3 = 28.419 TL; tablo değeri kanuni asgarinin altındaydı. · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:amounts.12–<22 m = 15.098 TL · Ceza tablosundaki değer:amounts.≥22 m = 22.647 TL · Kanun 36/p asgari 1.000 TL (9.473 TL) × 2 = 18.946 TL; tablo değeri kanuni asgarinin altındaydı. · Kanun 36/p asgari 1.000 TL (9.473 TL) × 3 = 28.419 TL; tablo değeri kanuni asgarinin altındaydı. · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
         }
       },
       {
@@ -1949,7 +1949,7 @@
           "Dayanak": "K.Ek madde - 4 · Y.13 · T.9/1 · 36/p",
           "İPC": "<12 m: 47.397 TL; 12–<22 m: 94.794 TL; ≥22 m: 142.191 TL",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.12–<22 m = 94.397 TL · Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:amounts.12–<22 m = 94.397 TL · Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
         }
       },
       {
@@ -1960,7 +1960,7 @@
           "Dayanak": "K.Ek madde - 4 · Y.13 · T.7/1 · 36/p",
           "İPC": "<12 m: 47.397 TL; 12–<22 m: 94.794 TL; ≥22 m: 142.191 TL",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.12–<22 m = 94.397 TL · Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:amounts.12–<22 m = 94.397 TL · Boy çarpanı: 47.397 × 2 = 94.794 TL (tabloda yazım hatası). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
         }
       },
       {
@@ -1971,7 +1971,7 @@
           "Dayanak": "K.Ek madde - 4 · Y.13 · T.8/2 · 36/p",
           "İPC": "<12 m: 16.106 TL; 12–<22 m: 32.212 TL; ≥22 m: 48.318 TL",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: amounts.≥22 m = 22.647 TL · Boy çarpanı: 16.106 × 3 = 48.318 TL; tablo değeri 12–22 m tutarından da düşüktü (08 belgesi de işaretler). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/p — İzleme sistemi (BAGİS) yükümlülüğü — gemi (Ek Md.4): 1.000 TL–5.000 TL → 9.473 TL–47.397 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:amounts.≥22 m = 22.647 TL · Boy çarpanı: 16.106 × 3 = 48.318 TL; tablo değeri 12–22 m tutarından da düşüktü (08 belgesi de işaretler). · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
         }
       },
       {
@@ -1983,7 +1983,7 @@
           "Dayanak": "K.Ek madde - 4 · 36/p",
           "İPC": "47.397 TL – 237.034 TL (Kanun aralığı)",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/p — İzleme sistemi yükümlülüğü — yetiştiricilik tesisi (Ek Md.4): 5.000 TL–25.000 TL → 47.397 TL–237.034 TL · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
+          "Kanun Sağlaması": "➕ Kanundan eklendi (ceza tablosunda yok) · Kanun 36/p — İzleme sistemi yükümlülüğü — yetiştiricilik tesisi (Ek Md.4): 5.000 TL–25.000 TL → 47.397 TL–237.034 TL · Aykırılık giderilinceye kadar faaliyete izin verilmez (Kanun Ek Md.4)."
         }
       }
     ],
@@ -2164,7 +2164,7 @@
           "Dayanak": "K.Ek madde - 7 · Y.18 · T.50/4 · 36/t",
           "İPC": "568.890 TL",
           "Tekrar": "Kabahatin tespitinden itibaren 2 yıl içinde tekrarında idari para cezası 2 katı uygulanır (Kanun 36 son fıkralar).",
-          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/t — Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7): 20.000 TL–50.000 TL → 189.630 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · 08 tablosundaki değer: base_ipc = 474.079 TL · Kanun 36/t ruhsatsız gemi asgari 20.000 TL (189.630 TL) × 3 (≥22 m) = 568.890 TL; tablo değeri kanuni asgarinin altındaydı. Kart 107–108 ile aynı “asgari × boy çarpanı” yöntemi."
+          "Kanun Sağlaması": "🛠️ Kanuna göre düzeltildi · Kanun 36/t — Başka ülke suları/uluslararası sularda avcılık — ruhsatsız gemi (Ek Md.7): 20.000 TL–50.000 TL → 189.630 TL–474.079 TL · Gemi sahibi/donatan için 12–22 m ×2, ≥22 m ×3 · Ceza tablosundaki değer:base_ipc = 474.079 TL · Kanun 36/t ruhsatsız gemi asgari 20.000 TL (189.630 TL) × 3 (≥22 m) = 568.890 TL; tablo değeri kanuni asgarinin altındaydı. Kart 107–108 ile aynı “asgari × boy çarpanı” yöntemi."
         }
       }
     ],
@@ -2184,7 +2184,7 @@
           "Dayanak": "K.36 (son fıkralar) · Y.41 · T.49/5 · 36/genel",
           "İPC": "Bu hükümde ayrı idari para cezası yoktur; avcılıkta tespit edilen aykırılığın bendine göre ceza, askıya alma dikkate alınmaksızın ayrıca uygulanır (6/1 Tebliğ 49/5).",
           "El Koyma": "Ürün: -; vasıta: Gemiye, avlanma araçları ve donanımıyla birlikte el konularak mülkiyetin kamuya geçirilmesine karar verilir.",
-          "Kanun Sağlaması": "➕ Kanundan eklendi (08 tablosunda yok) · Kanun 36/genel — Ruhsat tezkeresi geçici geri alınmış gemiyle avcılık (Kanun 36 son fıkralar): Ayrı idari para cezası yok · Gemiye avlanma araçları ve donanımıyla birlikte el konulur; kamuya geçirilen geminin tüm izin ve ruhsatları iptal edilmiş sayılır."
+          "Kanun Sağlaması": "➕ Kanundan eklendi (ceza tablosunda yok) · Kanun 36/genel — Ruhsat tezkeresi geçici geri alınmış gemiyle avcılık (Kanun 36 son fıkralar): Ayrı idari para cezası yok · Gemiye avlanma araçları ve donanımıyla birlikte el konulur; kamuya geçirilen geminin tüm izin ve ruhsatları iptal edilmiş sayılır."
         }
       }
     ],

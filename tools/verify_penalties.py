@@ -251,7 +251,7 @@ CORRECTIONS = [
      'Kanun 36/k gemi sahibi tutarı boy çarpanıyla: 23.692 / 47.384 / 71.076 TL (diğer 36/k kalemleriyle aynı).'),
     (71, 'amounts', 'Gırgır', 1422237, None,
      'Kanun 36/k ışık paragrafı gırgır gemisi için 3 katı öngörmez (3 katı yalnız birinci paragraftadır); gırgır gemisine de boyuna göre tutar uygulanır.'),
-    (73, 'license_action', None, '1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL (Excel bloğu)', None,
+    (73, 'license_action', None, '1. tespit: 1 ay; 2. tespit: 3 ay; sonraki tekrar: İPTAL', None,
      'Kanun 36/l birinci paragraf ve Yönetmelik 41 trol yasak alanı (Kanun 24/a) ihlalinde ruhsat geri almayı öngörmez; tekrarında adli yaptırım uygulanır.'),
     (46, 'product_seizure', None, 'Hayır', 'Evet', 'Kanun 36/k istihsal olunan ürüne el koymayı fiile bağlar; kişi/tayfa satırında da uygulanır.'),
     (46, 'means_seizure', None, 'Hayır', 'Evet (gemi hariç)',
@@ -273,6 +273,12 @@ TEXT_FIXES = [
     ('Artıma sistemi', 'Arıtma sistemi'), ('teslime etmeme', 'teslim etmeme'), ('dahilve', 'dahil ve'),
     ("100 kg kg'a", "100 kg'a"), ('Parekata', 'Parakete'), ('Boğazların ile', 'Boğazları ile'),
     ('(5000-1000 gün adli para cezası)', '(5.000–10.000 gün adli para cezası)'),
+    # Kullanıcıya görünen metinde kaynak dosya (Excel/PDF) adı geçmez (6.0.37).
+    ('Excel notuna göre', 'ceza tablosu notuna göre'), (' (Excel bloğu)', ''),
+    ('Excel kaydı; ilgili alt düzenlemenin asli metni beş PDF kaynak setinde yer almıyorsa bot yalnız Excel bilgisini gösterir.',
+     'Ceza tablosu kaydı; ilgili alt düzenlemenin tam metni sistemde yer almadığından yalnız tablo bilgisi gösterilir.'),
+    ('Bu satır Excel kaynağında ayrıca başka bir düzenlemeye atıf yapıyor. O düzenlemenin asli metni sabit beş PDF arasında yoksa bot atfın içeriğini genişletmez.',
+     'Bu satır ceza tablosunda ayrıca başka bir düzenlemeye atıf yapıyor; o düzenlemenin tam metni sistemde yoksa atfın içeriği genişletilmez.'),
 ]
 TEXT_FIELDS = ('violation', 'option', 'product_seizure', 'means_seizure', 'notes', 'repeat', 'license_action')
 
@@ -321,7 +327,7 @@ TEBLIG_TOPIC = {
 EXTERNAL_REG = ('Yönetmeliğ', 'yön.', 'Yön.')
 
 STATUS_LABEL = {'uyumlu': '✅ Kanuna uygun', 'duzeltildi': '🛠️ Kanuna göre düzeltildi',
-                'eklendi': '➕ Kanundan eklendi (08 tablosunda yok)', 'uyari': '⚠️ Uygulama notu'}
+                'eklendi': '➕ Kanundan eklendi (ceza tablosunda yok)', 'uyari': '⚠️ Uygulama notu'}
 
 
 def load(name):
@@ -563,7 +569,7 @@ def verify(cards):
                 if ('reg', number) not in articles:
                     fails.append(f'Yönetmelik atfı yok: Md.{number}')
         elif regulation:
-            infos.append('Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistem kaynaklarında yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı.')
+            infos.append('Dayanak alt yönetmelik (kiralama, balıkçı barınakları veya yetiştiricilik) sistemde yok; madde numarası doğrulanamadı, tutar Kanun aralığıyla sağlandı.')
         # 5. Excel satırı
         if card.get('origin') != 'kanun' and card.get('layout') != 'block':
             original = card.get('excel_original', {})
@@ -585,7 +591,7 @@ def verify(cards):
             text.append('gırgır gemisinde 3 katı')
         for cid_label, old in (card.get('excel_original') or {}).items():
             shown = tl(old) if isinstance(old, int) else (old or 'boş') if not isinstance(old, dict) else 'boş'
-            text.append(f'08 tablosundaki değer: {cid_label} = {shown}')
+            text.append(f'Ceza tablosundaki değer:{cid_label} = {shown}')
         text += card.get('law_corrections') or []
         if p.get('note'):
             text.append(p['note'])

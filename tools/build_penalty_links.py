@@ -103,12 +103,12 @@ PROFILES = {
                                'label': 'İzinsiz yetiştiricilik tesisi', 'note': 'Tutar tesis türü ve kapasitesine göre seçilir.'},
     'yetistiricilik_yon': {'kind': 'cards', 'bent': 'e', 'cards': [142, 143, 144, 145, 146, 147, 148, 149],
                            'label': 'Yetiştiricilik yönetmeliği hükümlerine aykırılık',
-                           'note': 'Tutar tesis türü ve kapasitesine göre seçilir; dayanak alt yönetmelik sistem kaynaklarında yoktur.'},
+                           'note': 'Tutar tesis türü ve kapasitesine göre seçilir; dayanak alt yönetmelik sistemde yoktur.'},
     'aritma': {'kind': 'cards', 'bent': 'e', 'cards': [140, 141], 'label': 'Arıtma sistemi kurmama veya çalıştırmama'},
     'yok_usul': {'kind': 'none', 'label': 'Usul / delil maddesi',
                  'note': 'Bu maddenin eksikliği tek başına idari para cezası gerektirmez; tespit ve işlem eksiği olarak giderilir.'},
     'yok_tablo': {'kind': 'none', 'label': 'Güncel ceza tablosunda karşılığı yok',
-                  'note': 'Bu hüküm için 08 numaralı tabloda ayrı kalem bulunmuyor. Uygulanacak Kanun 36 bendi somut olaya göre belirlenmeli; sistem tahmini tutar göstermez.'},
+                  'note': 'Bu hüküm için ceza tablosunda ayrı kalem bulunmuyor. Uygulanacak Kanun 36 bendi somut olaya göre belirlenmeli; sistem tahmini tutar göstermez.'},
 }
 
 # Boy kademeli kartlar: (dahil alt sınır, hariç üst sınır; None = sınırsız).
@@ -455,7 +455,7 @@ ACCEPTED_BASIS = {
     ('reg', 18, 'yasak_donem_arac'): 'Uluslararası sulara geçişte yasak bölgede av aracı bulundurma; kart Tebliğ 50/10 dayanaklıdır.',
     ('61', 49, 'hedef_disi'): 'Hedef dışı av bildirimi Tebliğ 18’de düzenlenir; madde genel hükümler (49) altında sorulur, kart 18-b dayanaklıdır.',
     ('61', 49, 'nakil'): 'Nakil/Menşe belgesi Tebliğ 46’da düzenlenir; madde genel hükümler (49) altında sorulur.',
-    ('61', 49, 'seyir'): 'E-seyir defteri güncel 6/1 Tebliğ 49/9’dadır; Excel kartı önceki tebliğ numarasını (48/10) taşır, kalem aynıdır (Kanun 28, 36/n).',
+    ('61', 49, 'seyir'): 'E-seyir defteri güncel 6/1 Tebliğ 49/9’dadır; ceza kartı önceki tebliğ numarasını (48/10) taşır, kalem aynıdır (Kanun 28, 36/n).',
     ('61', 50, 'kum_midyesi'): 'Beyaz kum midyesi açık saha segmentleri Tebliğ 50’de ilan edilir; yer/zaman ihlali kartı Tebliğ 28 dayanaklıdır.',
     ('61', 50, 'nakil'): 'Yardımcı gemide taşınan ürünün nakil belgesi; kart Tebliğ 46 dayanaklıdır.',
     ('61', 29, 'nakil'): 'Deniz patlıcanı / denizkestanesi için Tebliğ 29’daki Nakil/Menşe zorunluluğu; kart Tebliğ 46 dayanaklıdır.',

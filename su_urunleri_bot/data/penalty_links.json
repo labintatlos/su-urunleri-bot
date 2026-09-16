@@ -466,7 +466,7 @@
         149
       ],
       "label": "Yetiştiricilik yönetmeliği hükümlerine aykırılık",
-      "note": "Tutar tesis türü ve kapasitesine göre seçilir; dayanak alt yönetmelik sistem kaynaklarında yoktur."
+      "note": "Tutar tesis türü ve kapasitesine göre seçilir; dayanak alt yönetmelik sistemde yoktur."
     },
     "aritma": {
       "kind": "cards",
@@ -485,7 +485,7 @@
     "yok_tablo": {
       "kind": "none",
       "label": "Güncel ceza tablosunda karşılığı yok",
-      "note": "Bu hüküm için 08 numaralı tabloda ayrı kalem bulunmuyor. Uygulanacak Kanun 36 bendi somut olaya göre belirlenmeli; sistem tahmini tutar göstermez."
+      "note": "Bu hüküm için ceza tablosunda ayrı kalem bulunmuyor. Uygulanacak Kanun 36 bendi somut olaya göre belirlenmeli; sistem tahmini tutar göstermez."
     }
   },
   "guides": {

@@ -350,7 +350,7 @@ PENALTY_TITLES = {
     's': 'S) İzinsiz Balıklandırma',
     't': 'T) Uluslararası Sularda İzinsiz Avcılık',
     'genel': 'Genel Hükümler (Kanun 36 Son Fıkralar)',
-    '-': 'Diğer Excel Kayıtları',
+    '-': 'Diğer Ceza Tablosu Kayıtları',
 }
 
 
@@ -358,20 +358,27 @@ def tr_money(value):
     return f'{int(value):,}'.replace(',', '.') + ' TL'
 
 
+def add_note(card, note, old):
+    notes = card.get('notes') or ''
+    for text in (old, note):
+        notes = notes.replace(text, '')
+    card['notes'] = ' '.join((notes + ' ' + note).split())
+
+
 def build_penalties():
     cards = read_json('penalty_cards.json')
     for card in cards:
         if card.get('art36') == '1':
             card['art36'] = 'l'
+        # Notlarda kaynak dosya adı geçmez (6.0.37); eski ifadeli not da temizlenip
+        # yenisi bir kez eklenir.
         if card.get('art36') == 'l':
-            note = 'Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.'
-            if note not in (card.get('notes') or ''):
-                card['notes'] = ((card.get('notes') or '') + ' ' + note).strip()
+            add_note(card, 'Ceza tablosundaki “1” değeri Kanun m.36/l olarak düzeltilmiştir.',
+                     'Exceldeki “1” değeri yeni 08 rehberine göre Kanun m.36/l olarak düzeltilmiştir.')
         if card.get('id') == 82:
             card['art36'] = 'o'
-            note = 'Yeni 08 rehberi bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.'
-            if note not in (card.get('notes') or ''):
-                card['notes'] = ((card.get('notes') or '') + ' ' + note).strip()
+            add_note(card, 'Güncel ceza tablosu bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.',
+                     'Yeni 08 rehberi bu ihlalin Kanun m.36/o kapsamında olduğunu belirtir.')
         card['source_doc'] = '08 GÜNCEL İDARİ CEZA UYGULAMA TABLOSU (EXCEL - DOĞRULANMIŞ).md'
 
     # Kanun 36, Yönetmelik ve Tebliğlerle sağlama; tablo hataları gerekçeli
@@ -458,7 +465,7 @@ NEW_FIELD_RULES = [
     {'id':'international_waters','cat':'Yer/Saha','title':'MEB, uluslararası sular ve diğer ülke suları','summary':'Başka ülkenin karasularında veya münhasır ekonomik bölgesinde avcılık Bakanlık iznine tabidir; anlaşma kapsamında avlanan ürün izinde gösterilen limandan çıkarılır. Bakanlıkça ayrı düzenleme ilan edilmedikçe karasuları için getirilen kurallar bitişik uluslararası sularda ve MEB’de de aynen uygulanır. Uluslararası sularda avlanacak gemiler yasak yer ve zamanlardan geçerken Bakanlık esaslarına uyar. Başka ülke sularında şartlara aykırı ticari avcılık Kanun Ek Madde 7 ve 36/t kapsamındadır.','refs':[{'s':'61','a':50},{'s':'reg','a':18}]},
     {'id':'bluefin_tuna','cat':'Ürün/Tür','title':'Mavi yüzgeçli orkinos','summary':'Avcılık ICCAT kotası ve Bakanlık yönetim planı çerçevesinde, gemiye verilen kota dahilinde yapılır; av, taşıma, destek ve yardımcı gemiler Ek-2 İzin Belgesi alır ve yalnız bir faaliyet için izinlidir. Akdeniz/Ege karasuları ve bitişik uluslararası sularda 1 Temmuz–14 Mayıs, diğer alanlarda 1 Temmuz–25 Mayıs arası avcılık yasaktır. Uçak, helikopter veya İHA kullanılamaz. eBCD olmadan gemide bulundurma, kafeste taşıma, satış, nakil ve besi tesisinde bulundurma yasaktır. Bu türleri avlayan 12 m ve üzeri gemiler IMO numarası almak zorundadır.','refs':[{'s':'61','a':22},{'s':'61','a':49},{'s':'61','a':18}]},
     {'id':'live_export_permit','cat':'Nakil/Satış','title':'Yurt dışına çıkarma ve canlı ithal izni','summary':'Kaynakların korunması için su ürünlerinin yurt dışına çıkarılması ve canlı olarak yurt içine sokulması izne tabidir. Aykırılıkta ürün, istihsal ve nakil vasıtalarına el konulur; iki yıl içinde tekrarı adli suç oluşturur (Kanun 36/m). Yasak dönem öncesi stoklanan ürünün yasak dönemde ihracatı için stok tespitini yapan il/ilçe müdürlüğünden ihracat izni gerekir.','refs':[{'s':'law','a':25},{'s':'law','a':36},{'s':'61','a':49}]},
-    {'id':'aquaculture_site','cat':'Tesis/Sağlık','title':'Balık çiftliği saha kontrolü','summary':'Yetiştiricilik tesisi Bakanlık izniyle kurulur (izinsiz tesis Kanun 36/e). Denizde ve içsuda sabit kurulan kafes ve istihsal vasıtalarına gündüz flama, gece ışıklı flama veya benzeri işaret konulur. Damızlık, yumurta, larva ve yavru nakli ile sulara bırakma Bakanlık iznine bağlıdır. Tesis sınırına 100 m’den (Karadeniz’de Türk somonu tesislerinde 15 Haziran–31 Ağustos arası 50 m) yakın avcılık yapılamaz; kafeslere 300 m’den yakın ışık yakılamaz. Kafes kapasitesi, koordinat ve teknik personel şartları Su Ürünleri Yetiştiriciliği Yönetmeliği ve tesis izniyle karşılaştırılır; bu yönetmeliğin tam metni sistem kaynaklarında yoktur.','refs':[{'s':'law','a':13},{'s':'reg','a':15},{'s':'reg','a':16},{'s':'61','a':49}]},
+    {'id':'aquaculture_site','cat':'Tesis/Sağlık','title':'Balık çiftliği saha kontrolü','summary':'Yetiştiricilik tesisi Bakanlık izniyle kurulur (izinsiz tesis Kanun 36/e). Denizde ve içsuda sabit kurulan kafes ve istihsal vasıtalarına gündüz flama, gece ışıklı flama veya benzeri işaret konulur. Damızlık, yumurta, larva ve yavru nakli ile sulara bırakma Bakanlık iznine bağlıdır. Tesis sınırına 100 m’den (Karadeniz’de Türk somonu tesislerinde 15 Haziran–31 Ağustos arası 50 m) yakın avcılık yapılamaz; kafeslere 300 m’den yakın ışık yakılamaz. Kafes kapasitesi, koordinat ve teknik personel şartları Su Ürünleri Yetiştiriciliği Yönetmeliği ve tesis izniyle karşılaştırılır; bu yönetmeliğin tam metni sistemde yoktur.','refs':[{'s':'law','a':13},{'s':'reg','a':15},{'s':'reg','a':16},{'s':'61','a':49}]},
 ]
 
 

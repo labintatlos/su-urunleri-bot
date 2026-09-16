@@ -88,7 +88,7 @@ SRC_LABEL = {
     '61': '6/1 Ticari Tebliğ',
     '62': '6/2 Amatör Tebliğ',
     'bagis': 'BAGİS Tebliği',
-    'excel': 'Ceza Excel',
+    'excel': 'Ceza Tablosu',
 }
 
 
@@ -921,11 +921,11 @@ def callback(q, context):
     if data == 'ai:start':
         context.user_data['mode'] = 'ai_analysis'
         text_ai = (
-            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Ekli Markdown belgelerine göre') + '\n' + HR + '\n\n'
+            header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Sistemdeki mevzuata göre') + '\n' + HR + '\n\n'
             'Olayı serbest metinle anlatın — ne yapıldığı, hangi av aracı, hangi belge/ruhsat durumu vb.\n\n'
             '<i>Örnek: Teknenin birincil av aracı algarna ama dip trolü ile avcılık yapıyor.</i>\n\n'
             f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir</b> — sorunuzu göndermeden önce net ve eksiksiz yazın.\n\n'
-            '📄 Yanıt yalnızca sisteme eklenen Markdown belgelerindeki bilgilere dayanır.'
+            '📄 Yanıt yalnızca sistemdeki mevzuat ve rehber bilgilerine dayanır.'
         )
         return q.edit_message_text(text_ai, parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
 
@@ -935,7 +935,7 @@ def callback(q, context):
         prompts = {
             'penalty': '⚖️ İhlali/olayı yazın. Örnek: <code>BAGİS arızası</code>, <code>kalkan parakete</code>, <code>ruhsatsız gemi</code>, <code>nakil belgesi</code>.',
             'gear': '🎣 Av aracını veya yöntemi yazın. Örnek: <code>gırgır</code>, <code>dip trolü</code>, <code>algarna</code>, <code>ışık</code>.',
-            'place': '📍 Yer, il, koy, burun veya saha adını yazın. Koordinatla tarif edilen alanlarda sistem kaynak hükmünü gösterir; geometrik sınırdan emin olmadığı yerde kendiliğinden ihlal kararı vermez.',
+            'place': '📍 Yer, il, koy, burun veya saha adını yazın. Koordinatla tarif edilen alanlarda sistem ilgili hükmü gösterir; geometrik sınırdan emin olmadığı yerde kendiliğinden ihlal kararı vermez.',
             'lawsearch': '📚 Aranacak mevzuat kelimesini veya konuyu yazın. Örnek: <code>el koyma</code>, <code>ruhsat geri alma</code>, <code>gırgır</code>.',
         }
         return q.edit_message_text(prompts[mode], parse_mode=ParseMode.HTML, reply_markup=kb([[('↩️ Ana Menü', 'menu')]]))
@@ -944,7 +944,7 @@ def callback(q, context):
         key = data.split(':', 1)[1]
         if key == 'excel':
             context.user_data['mode'] = 'penalty'
-            return q.edit_message_text('📊 <b>Ceza Excel tablosunda ara</b>\n\nİhlal, madde veya anahtar kelime yazın.', parse_mode=ParseMode.HTML, reply_markup=kb([[('🏠 Ana Menü', 'menu')]]))
+            return q.edit_message_text('📊 <b>Ceza tablosunda ara</b>\n\nİhlal, madde veya anahtar kelime yazın.', parse_mode=ParseMode.HTML, reply_markup=kb([[('🏠 Ana Menü', 'menu')]]))
         context.user_data.update(mode='source_search', source=key)
         return q.edit_message_text(
             f'📚 <b>{esc(SRC_LABEL.get(key, key))}</b>\n\nMadde numarası yazabilir (örn. <code>36</code>) veya deniz, içsu, tesis ve sağlık konularında arama yapabilirsiniz.',
@@ -1199,21 +1199,45 @@ def callback(q, context):
         return send_menu(q, uid, edit=True)
 
 
-def article_chunks(text, limit=2450):
-    text = (text or '').strip()
-    if not text:
-        return ['—']
-    chunks=[]
-    while len(text)>limit:
-        cut=text.rfind('\n',0,limit)
-        if cut<limit//2:
-            cut=text.rfind(' ',0,limit)
-        if cut<limit//2:
-            cut=limit
-        chunks.append(text[:cut].strip())
-        text=text[cut:].strip()
-    if text: chunks.append(text)
-    return chunks or ['—']
+def md_inline(text):
+    """Madde metnindeki **kalın**, *italik* ve kaçışlı \\* işaretlerini güvenli HTML'e çevirir."""
+    out = esc(text.replace('\\*', '\x00'))
+    out = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', out)
+    out = re.sub(r'(?<![\w*])\*(?=\S)(.+?)(?<=\S)\*(?![\w*])', r'<i>\1</i>', out)
+    return out.replace('\x00', '*')
+
+
+def md_table_cells(line):
+    return [cell.strip() for cell in line.strip().strip('|').split('|')]
+
+
+def article_html(body):
+    """Markdown madde metnini ekran HTML'ine çevirir. Tablolar, rehber
+    ekranlarındaki gibi <table> olarak gider; app.js süzgeç ve kaydırmayı ekler."""
+    lines = (body or '').splitlines()
+    out, i = [], 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if (line.startswith('|') and i + 1 < len(lines)
+                and re.match(r'^\|?\s*:?-{3,}', lines[i + 1].strip())):
+            head = ''.join(f'<th>{md_inline(c)}</th>' for c in md_table_cells(line))
+            i += 2
+            body_rows = []
+            while i < len(lines) and lines[i].strip().startswith('|'):
+                cells = ''.join(f'<td>{md_inline(c)}</td>' for c in md_table_cells(lines[i]))
+                body_rows.append(f'<tr>{cells}</tr>')
+                i += 1
+            out.append(f'<table><thead><tr>{head}</tr></thead><tbody>{"".join(body_rows)}</tbody></table>')
+            continue
+        indent = len(lines[i]) - len(lines[i].lstrip())
+        bullet = re.match(r'^[*-]\s+(.*)$', line)
+        if bullet:
+            line = ('   ◦ ' if indent else '• ') + bullet.group(1)
+        elif line.startswith('>'):
+            line = line.lstrip('> ')
+        out.append(md_inline(line))
+        i += 1
+    return re.sub(r'\n{3,}', '\n\n', '\n'.join(out)).strip() or '—'
 
 
 def show_source_list(q, source, page=0):
@@ -1227,7 +1251,7 @@ def show_source_list(q, source, page=0):
     if page>0: nav.append(('◀️ Önceki',f'srclist:{source}:{page-1}'))
     if page+1<pages: nav.append(('Sonraki ▶️',f'srclist:{source}:{page+1}'))
     if nav: rows.append(nav)
-    rows.append([('🔎 Bu Kaynakta Ara',f'src:{source}'),])
+    rows.append([('🔎 Bu Mevzuatta Ara',f'src:{source}'),])
     q.edit_message_text(
         f'📑 <b>{esc(SRC_LABEL.get(source,source))} — TÜM MADDELER</b>\n\nSayfa {page+1}/{pages}. Deniz, içsu, tesis ve genel hükümler birlikte gösterilir.',
         parse_mode=ParseMode.HTML, reply_markup=kb(rows))
@@ -1237,19 +1261,12 @@ def show_article(q, source, article, page=0, context=None):
     row = db.get_article(source, article)
     if not row:
         return q.answer('Madde bulunamadı.', show_alert=True)
-    chunks=article_chunks(row['body'])
-    page=max(0,min(page,len(chunks)-1))
-    pages = str(row['page_start']) if row['page_start'] == row['page_end'] else f'{row["page_start"]}–{row["page_end"]}'
+    # Madde tek ekranda gösterilir; eski "artp:" sayfa düğmeleri de buraya gelir.
     text = f'📚 <b>{esc(SRC_LABEL.get(source, source))} — Madde {article}</b>\n'
     if row['title']:
         text += f'<b>{esc(row["title"])}</b>\n'
-    text += f'<i>Kaynak PDF sayfa {pages} | Metin bölümü {page+1}/{len(chunks)}</i>\n\n{esc(chunks[page])}'
-    nav=[]
-    if page>0: nav.append(('◀️ Önceki',f'artp:{source}:{article}:{page-1}'))
-    if page+1<len(chunks): nav.append(('Sonraki ▶️',f'artp:{source}:{article}:{page+1}'))
-    rows=[]
-    if nav: rows.append(nav)
-    rows.append([('📑 Madde Listesi', f'srclist:{source}:0')])
+    text += '\n' + article_html(row['body'])
+    rows=[[('📑 Madde Listesi', f'srclist:{source}:0')]]
     if context and context.user_data.get('guide_key'):
         rows.append([('🔙 Uygunsuzluk Listesine Dön', 'guide:badmenu')])
     rows.append([('🏠 Ana Menü', 'menu')])
@@ -1523,7 +1540,7 @@ def show_species(q, kind, sid, context=None):
 
     source = '61' if kind == 'commercial' else '62'
     article = row['article_size'] if kind == 'commercial' else row['article']
-    rows = [[('📚 Boy/Miktar Kaynağı', f'art:{source}:{article}'), ('⚖️ Yaptırım Ara', 'mode:penalty')]]
+    rows = [[('📚 Boy/Miktar Maddesi',f'art:{source}:{article}'), ('⚖️ Yaptırım Ara', 'mode:penalty')]]
     
     # Check if a visual guide exists for this species
     vis_key = None
@@ -1595,9 +1612,9 @@ def show_penalty(q, pid, context):
     elif card.get('origin') == 'kanun':
         text += f'\n💰 <b>Kanundan hesaplanan tutar: {money(row["base_ipc"])}</b>\n'
     else:
-        text += f'\n💰 <b>Temel/tekil Excel tutarı: {money(row["base_ipc"])}</b>\n'
+        text += f'\n💰 <b>Temel/tekil tutar: {money(row["base_ipc"])}</b>\n'
     if amounts:
-        text += '💰 <b>Excel’deki özel tutarlar:</b>\n'
+        text += '💰 <b>Özel tutarlar:</b>\n'
         for label, amount in amounts.items():
             text += f'• {esc(label)} → <b>{money(amount)}</b>\n'
         has_length_context = audit_length_band(context) in SANCTION_BANDS
@@ -1606,13 +1623,11 @@ def show_penalty(q, pid, context):
         if selected is not None:
             text += f'➡️ Seçili kontrol bağlamı ({esc(audit_length_label(context))}): <b>{esc(lab)} = {money(selected)}</b>\n'
         if context.user_data.get('audit_gear') == 'gırgır' and 'Gırgır' in amounts:
-            text += f'➡️ Seçili av aracı gırgır: Excel’de ayrıca <b>{money(amounts["Gırgır"])}</b> gösterilmiş.\n'
+            text += f'➡️ Seçili av aracı gırgır: ayrıca <b>{money(amounts["Gırgır"])}</b> uygulanır.\n'
     text += (
         f'\n📜 Kanun: {esc(row["law"])} | Yönetmelik: {esc(row["regulation"])} | Tebliğ: {esc(row["teblig"])} | 36. md: {esc(row["art36"])}\n'
         f'🐟 Ürüne el koyma: {esc(row["product_seizure"])}\n'
-        f'🪢 İstihsal vasıtası: {esc(row["means_seizure"])}\n'
-        + (f'📊 <b>Excel kaynak satırı: {row["source_row"]}</b>' if row['source_row']
-           else '📊 <b>Kaynak: Kanun 36 — 08 tablosunda ayrı kalem yok</b>')
+        f'🪢 İstihsal vasıtası: {esc(row["means_seizure"])}'
     )
     if row['repeat_text']:
         text += f'\n🔁 {esc(row["repeat_text"])}'
@@ -1623,7 +1638,7 @@ def show_penalty(q, pid, context):
     if card.get('law_check'):
         text += f'\n\n⚖️ <b>Mevzuat sağlaması:</b> {esc(card["law_check"]["text"])}'
     text += (
-        '\n\n⚠️ <i>Tutarlar 08 numaralı ceza tablosundandır ve Kanun 36 ile sağlanmıştır; Kanuna aykırı bulunan değerler gerekçesiyle düzeltilmiş, tabloda olmayan hükümler Kanundan eklenmiştir. '
+        '\n\n⚠️ <i>Tutarlar güncel ceza tablosundandır ve Kanun 36 ile sağlanmıştır; Kanuna aykırı bulunan değerler gerekçesiyle düzeltilmiş, tabloda olmayan hükümler Kanundan eklenmiştir. '
         'Sistem farklı katsayıları kendiliğinden üst üste çarpmaz. Somut olayın maddi unsurları ve asli mevzuat maddesi ayrıca kontrol edilmelidir.</i>'
     )
 
@@ -1750,8 +1765,8 @@ def guide_refs(q, context, key):
         rows.append(buttons[i:i+2])
     rows.append([('↩️ Föye Dön', f'guide:open:{key}'), ('🏠 Ana Menü', 'menu')])
     q.edit_message_text(
-        f'📚 <b>{esc(g["short_title"])} — KAYNAK MADDELER</b>\n\n'
-        'Föydeki kontrollerin dayandığı kaynak maddeler aşağıdadır. Somut uygunsuzlukta ilgili maddenin tam metni ve ceza tablosu birlikte doğrulanmalıdır.',
+        f'📚 <b>{esc(g["short_title"])} — İLGİLİ MADDELER</b>\n\n'
+        'Föydeki kontrollerin dayandığı mevzuat maddeleri aşağıdadır. Somut uygunsuzlukta ilgili maddenin tam metni ve ceza tablosu birlikte doğrulanmalıdır.',
         parse_mode=ParseMode.HTML,
         reply_markup=kb(rows),
     )
@@ -1898,7 +1913,7 @@ def guide_finish(q, context, record=True):
         for field in g.get('measure_fields') or []:
             if field in measurements:
                 text += f'• {esc(field)}: <b>{esc(measurements[field])}</b>\n'
-    text += '\n⚠️ <i>“Uygunsuz” işareti nihai yaptırım kararı değildir. İlgili kaynak maddesi ile ceza tablosundaki maddi unsurlar ayrıca doğrulanmalıdır.</i>'
+    text += '\n⚠️ <i>“Uygunsuz” işareti nihai yaptırım kararı değildir. İlgili mevzuat maddesi ile ceza tablosundaki maddi unsurlar ayrıca doğrulanmalıdır.</i>'
     rows = [[('📐 Ölçüm / Kayıt Gir', 'guide:measure:start'), ('🧾 Kontrol Çizelgesi', 'guide:sheet')]]
     if bad:
         rows.append([('⚖️ Yaptırım Özeti', 'sanction:guide'), ('🔎 Ceza Tablosunda Ara', 'guide:badmenu')])
@@ -2220,7 +2235,7 @@ def render_sanction_summary(context, source):
         parts.append('\n\n'.join(block))
     if unchecked:
         parts.append(f'<i>{unchecked} madde kontrol edilmediği için özete alınmadı.</i>')
-    parts.append('⚠️ <i>Tutarlar 08 numaralı güncel idari ceza uygulama tablosundandır ve Kanun 36 ile sağlanmıştır; '
+    parts.append('⚠️ <i>Tutarlar güncel idari ceza uygulama tablosundandır ve Kanun 36 ile sağlanmıştır; '
                  'Kanuna aykırı bulunan tablo değerleri gerekçesiyle düzeltilmiştir. Muhatap (kişi / gemi sahibi), '
                  'tekrar durumu, maddi unsurlar ve tutarın geçerli yılı somut olayda doğrulanmalıdır; bu özet nihai '
                  'yaptırım kararı değildir. Kalemler aynı olaya birlikte uygulanmayabileceğinden toplam tutar gösterilmez.</i>')
@@ -2261,7 +2276,7 @@ def sanction_sheet_block(context, source):
             items.append({'details': {'Tespit': guide_short(text, 90), 'Olası yaptırım': profile['label'],
                                       'Dayanak': basis, 'İPC (tablo)': amount}})
     return ('<b>YAPTIRIM ÖN BİLGİSİ</b>\n'
-            f'<i>Gemi boyu: {esc(length_label)}. 08 numaralı güncel ceza tablosundan; nihai karar değildir, '
+            f'<i>Gemi boyu: {esc(length_label)}. Güncel ceza tablosundan; nihai karar değildir, '
             'toplam tutar gösterilmez.</i>\n' + items_table(items))
 
 
@@ -2980,7 +2995,7 @@ def ai_run(context, chat_id, uid, scenario, show_first, log_action='ai_analysis'
     origin = 'Denetim bilgilerinden' if log_action == 'ai_audit' else 'Serbest metin'
     db.log_activity(uid, 'ai_assessment', f'{origin}: {scenario[:180]}')
     show_first(
-        header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Markdown belgeleri taranıyor, 20-45 sn sürebilir…'),
+        header('⚖️', 'HUKUKİ DEĞERLENDİRME', 'Mevzuat taranıyor, 20-45 sn sürebilir…'),
         parse_mode=ParseMode.HTML,
     )
     try:
@@ -3010,7 +3025,7 @@ def ai_audit_preview(q, context):
         + '\n' + HR + '\n\n'
         + f'<code>{preview}</code>\n\n'
         + f'🕑 <b>Bu özellik {AI_RATE_LIMIT_SECONDS // 60} dakikada bir kez kullanılabilir.</b>\n\n'
-        + '📄 Yanıt yalnızca sisteme eklenen Markdown belgelerindeki bilgilere dayanır.'
+        + '📄 Yanıt yalnızca sistemdeki mevzuat ve rehber bilgilerine dayanır.'
     )
     return q.edit_message_text(
         text, parse_mode=ParseMode.HTML,
@@ -3074,7 +3089,7 @@ def audit_quick_finish(q, context, record=True):
     if procedure:
         text += '\n🧾 <b>Delil / işlem eksikleri</b>\n' + ''.join(f'• {esc(x["tag"])}\n' for x in procedure)
 
-    text += '\n⚠️ <i>Yaptırım uygulanmadan önce ilgili madde ve Excel yaptırım kartındaki maddi unsurlar doğrulanmalıdır.</i>'
+    text += '\n⚠️ <i>Yaptırım uygulanmadan önce ilgili madde ve ceza tablosundaki maddi unsurlar doğrulanmalıdır.</i>'
 
     rows = []
     seen = set()
@@ -3170,7 +3185,7 @@ def amateur_classification_finish(q, context):
         )
     if unknown:
         text+='\n\n🟡 <b>Kontrol edilmemiş ölçütler:</b>\n'+''.join(f'• {esc(CLASSIFICATION_QUESTIONS[i])}\n' for i in unknown)
-    text+='\n\n⚠️ <i>Yaptırım için olayın hangi bent kapsamında olduğuna göre Kanun/Excel ceza kartı ayrıca açılmalıdır.</i>'
+    text+='\n\n⚠️ <i>Yaptırım için olayın hangi bent kapsamında olduğuna göre Kanun ve ceza tablosu kartı ayrıca açılmalıdır.</i>'
     db.log(q.from_user.id,'amateur_classification',f'yes={len(yes)}, unknown={len(unknown)}')
     db.log_activity(q.from_user.id, 'amateur_classification',
                     f'{len(yes)} ticari nitelik ölçütü gerçekleşti, {len(unknown)} bilinmiyor',
@@ -3247,7 +3262,7 @@ def audit_gear_result(q, context):
     rows.append([('⚖️ Bu Denetimi Değerlendir', 'ai:audit')])
     rows.append([('🚨 Kontrole Dön','audit:hub'),('⚖️ Yaptırım Ara', 'mode:penalty')])
     rows.append([('🏠 Ana Menü', 'menu')])
-    q.edit_message_text(text + '📚 İlgili kaynak maddeleri:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
+    q.edit_message_text(text + '📚 İlgili maddeler:', parse_mode=ParseMode.HTML, reply_markup=kb(rows))
 
 
 def text_handler(update, context):
